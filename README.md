@@ -26,6 +26,8 @@ Live at **https://claude.ai/artifact/WJD9KPY74x2MpxwATWixka**.
 ## Repo layout
 
 ```
+dashboard/
+  index.html                   point-in-time backup of the live dashboard's source
 data/
   companies_1000_scored.json   the fully-scored 1,000-company pool (v6 model)
   mc_overrides_applied.json    ticker -> current market cap ($M), mirrors the
