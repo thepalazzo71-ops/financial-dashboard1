@@ -1,0 +1,38 @@
+name: Build dashboard
+
+# Rebuilds docs/index.html from data/*.json whenever they (or the site
+# template) change, and commits the result. This is what keeps the
+# published dashboard in sync with data updates without needing anyone
+# to remember to run scripts/build_site.py by hand.
+#
+# NOTE: update the branch name below if this repo's default branch changes
+# (e.g. after merging into main).
+on:
+  push:
+    branches: [claude/gracious-goldberg-v4yuql]
+    paths:
+      - 'data/**'
+      - 'site/**'
+      - 'scripts/build_site.py'
+      - 'scripts/scoring.py'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/build_site.py
+      - name: Commit rebuilt site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --cached --quiet || git commit -m "Rebuild dashboard from data/ [skip ci]"
+          git diff --cached --quiet || git push

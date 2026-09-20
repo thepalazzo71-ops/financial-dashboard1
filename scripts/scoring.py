@@ -1,0 +1,134 @@
+"""Shared v6 scoring logic, used by both scripts/snapshot.py (xlsx snapshots)
+and scripts/build_site.py (the static dashboard). Keeping this in one place
+means the snapshot and the live dashboard can never silently drift apart.
+
+See docs/handoff-brief.md for the methodology this implements.
+"""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+
+
+def load_companies():
+    return json.load(open(DATA / "companies_1000_scored.json"))
+
+
+def load_overrides():
+    """Returns (mc_overrides, gm_overrides), each {ticker: {...}}."""
+    mc = json.load(open(DATA / "mc_overrides_applied.json"))
+    gm_path = DATA / "gm_overrides_applied.json"
+    gm = json.load(open(gm_path)) if gm_path.exists() else {}
+    return mc, gm
+
+
+def gm_band_points(gm):
+    if gm is None:
+        return None
+    if gm >= 0.60:
+        return 18.0
+    if gm >= 0.50:
+        return 15.3
+    if gm >= 0.40:
+        return 12.6
+    if gm >= 0.30:
+        return 9.9
+    if gm >= 0.20:
+        return 7.2
+    if gm >= 0.10:
+        return 4.5
+    if gm >= 0.05:
+        return 1.8
+    return 0.0
+
+
+def median_gm_points(companies):
+    pts = sorted(gm_band_points(c['gm']) for c in companies if c['gm'] is not None)
+    n = len(pts)
+    if n == 0:
+        return 0.0
+    return pts[n // 2] if n % 2 else (pts[n // 2 - 1] + pts[n // 2]) / 2
+
+
+def effective_mc(c, mc_overrides):
+    o = mc_overrides.get(c['ticker'])
+    return o['mc'] if o and 'mc' in o else c['mc0']
+
+
+def effective_gm(c, gm_overrides):
+    """Returns (gm, is_override, is_fallback)."""
+    o = gm_overrides.get(c['ticker'])
+    if o and 'gm' in o:
+        return o['gm'], True, False
+    if c['gm'] is not None:
+        return c['gm'], False, False
+    return None, False, True
+
+
+def lenses(c, mc, gm):
+    A = B = C = None
+    if gm is not None and gm > 0 and c['revLTM']:
+        A = (mc / c['revLTM']) / gm
+    roe = (c['avgNI'] / c['equity']) if (c['avgNI'] is not None and c['equity']) else None
+    if c['equity'] and c['equity'] > 0 and roe is not None:
+        B = (mc / c['equity']) / max(roe / 0.10, 0.1)
+    if c['avgNI'] is not None and mc:
+        g = min(max(c['revGrowth'] or 0, 0), 2.0)
+        C = (c['avgNI'] / mc) * (1 + g)
+    return A, B, C, roe
+
+
+def percentile_rank(values, idx, higher_better):
+    v = values[idx]
+    if v is None:
+        return None
+    others = [x for x in values if x is not None]
+    n = len(others)
+    if n <= 1:
+        return 100.0
+    beat = sum(1 for x in others if (x < v if higher_better else x > v))
+    return 100.0 * beat / (n - 1)
+
+
+def score_pool(companies, mc_overrides, gm_overrides):
+    """Scores every company against the full pool. Returns a list of dicts,
+    one per company (same order as `companies`), each augmented with:
+    mc, gm, gm_is_override, gm_is_fallback, roe, val_pts, gm_pts, total, pb.
+    """
+    median_gm_pts = median_gm_points(companies)
+
+    mcs, gms, gm_meta = [], [], []
+    for c in companies:
+        mc = effective_mc(c, mc_overrides)
+        gm, is_override, is_fallback = effective_gm(c, gm_overrides)
+        mcs.append(mc)
+        gms.append(gm)
+        gm_meta.append((is_override, is_fallback))
+
+    A_list, B_list, C_list, ROE_list = [], [], [], []
+    for c, mc, gm in zip(companies, mcs, gms):
+        a, b, cc, roe = lenses(c, mc, gm)
+        A_list.append(a)
+        B_list.append(b)
+        C_list.append(cc)
+        ROE_list.append(roe)
+
+    results = []
+    for i, c in enumerate(companies):
+        pA = percentile_rank(A_list, i, False)
+        pB = percentile_rank(B_list, i, False)
+        pC = percentile_rank(C_list, i, True)
+        best = max([p for p in [pA, pB, pC] if p is not None], default=0)
+        val_pts = best / 100 * 18
+        gm = gms[i]
+        gm_pts = gm_band_points(gm) if gm is not None else median_gm_pts
+        total = round(c['fixedSumNoGm'] + gm_pts + val_pts, 2)
+        pb = mcs[i] / c['equity'] if c['equity'] else None
+        is_override, is_fallback = gm_meta[i]
+        results.append({
+            'mc': mcs[i], 'gm': gm, 'gm_is_override': is_override, 'gm_is_fallback': is_fallback,
+            'roe': ROE_list[i], 'pb': pb, 'val_pts': val_pts, 'gm_pts': gm_pts, 'total': total,
+        })
+
+    return results, median_gm_pts

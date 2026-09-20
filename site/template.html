@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>European Small/Mid-Cap Value Shortlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  :root {
+    --paper: #EFEAE0;
+    --paper-raised: #F7F4EC;
+    --ink: #1C2430;
+    --ink-soft: #5B6472;
+    --ink-faint: #8B93A0;
+    --rule: rgba(28,36,48,0.12);
+    --rule-strong: rgba(28,36,48,0.22);
+    --green: #2F4B3C;
+    --green-soft: #E4EBE4;
+    --green-text: #24503C;
+    --brick: #9C4A3B;
+    --brick-soft: #F4E4E0;
+    --gold: #92702C;
+    --gold-soft: #F1E7CE;
+    --accent: #2F4B3C;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #161B22; --paper-raised: #1D232C; --ink: #E9E6DD;
+      --ink-soft: #A9AFB9; --ink-faint: #767E8A;
+      --rule: rgba(233,230,221,0.12); --rule-strong: rgba(233,230,221,0.22);
+      --green: #6FA98A; --green-soft: #1E2C25; --green-text: #8FC3A5;
+      --brick: #D18576; --brick-soft: #2E211E;
+      --gold: #D4B36A; --gold-soft: #2B2418; --accent: #6FA98A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #161B22; --paper-raised: #1D232C; --ink: #E9E6DD;
+    --ink-soft: #A9AFB9; --ink-faint: #767E8A;
+    --rule: rgba(233,230,221,0.12); --rule-strong: rgba(233,230,221,0.22);
+    --green: #6FA98A; --green-soft: #1E2C25; --green-text: #8FC3A5;
+    --brick: #D18576; --brick-soft: #2E211E;
+    --gold: #D4B36A; --gold-soft: #2B2418; --accent: #6FA98A;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  .num { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  a { color: var(--green-text); }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  header.top { margin-bottom: 22px; }
+  header.top h1 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.01em; }
+  header.top .sub { color: var(--ink-soft); font-size: 14px; line-height: 1.5; max-width: 800px; }
+  header.top .sub b { color: var(--ink); font-weight: 600; }
+
+  .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .stat { background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 9px 14px; min-width: 108px; }
+  .stat.warn { border-color: var(--gold); }
+  .stat .n { font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; }
+  .stat .l { font-size: 11px; color: var(--ink-faint); margin-top: 2px; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 22px 0 14px; padding: 12px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 4px; }
+  .toolbar input[type="text"], .toolbar select { font: inherit; font-size: 13px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 7px 10px; }
+  .toolbar input[type="text"] { flex: 1 1 180px; min-width: 140px; }
+  .toolbar select { flex: 0 0 auto; }
+  .btn { font: inherit; font-size: 13px; font-weight: 600; background: var(--green); color: var(--paper); border: none; border-radius: 3px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+  .btn:hover { opacity: 0.88; }
+  .btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-strong); font-weight: 500; }
+  .btn.ghost:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .btn.gold { background: var(--gold); }
+  .btn.small { padding: 4px 9px; font-size: 12px; border-radius: 3px; }
+  .btn.active { background: var(--green-soft); color: var(--green-text); border: 1px solid var(--green-text); }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper-raised); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 980px; }
+  thead th { position: sticky; top: 0; z-index: 2; background: var(--paper-raised); text-align: left; font-weight: 600; font-size: 11.5px; color: var(--ink-soft); padding: 10px 10px; border-bottom: 1px solid var(--rule-strong); white-space: nowrap; }
+  thead th.num-col, td.num-col { text-align: right; }
+  tbody tr.row { border-bottom: 1px solid var(--rule); cursor: pointer; }
+  tbody tr.row:hover { background: rgba(47,75,60,0.05); }
+  tbody tr.row.expanded { background: var(--green-soft); }
+  td { padding: 9px 10px; vertical-align: middle; }
+  td.rank { color: var(--ink-faint); font-family: 'IBM Plex Mono', monospace; font-size: 12px; width: 34px; }
+  td.company .name { font-weight: 600; color: var(--ink); }
+  td.company .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: var(--gold-soft); color: var(--gold); white-space: nowrap; }
+  .tag.rc { background: var(--green-soft); color: var(--green-text); }
+  .tag.dv { background: var(--brick-soft); color: var(--brick); }
+  .tag.bal { background: var(--rule); color: var(--ink-soft); }
+  .tag.needsgm { background: var(--brick-soft); color: var(--brick); cursor: help; }
+  .tag.refreshed { background: var(--green-soft); color: var(--green-text); cursor: help; }
+
+  .mc-cell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+  .mc-cell input { width: 82px; text-align: right; font: inherit; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 4px 6px; }
+  .mc-cell input.edited { border-color: var(--gold); background: var(--gold-soft); }
+  .mc-reset { background: none; border: none; color: var(--ink-faint); cursor: pointer; font-size: 13px; padding: 2px; }
+  .mc-reset:hover { color: var(--brick); }
+
+  .gm-cell { display: flex; align-items: center; gap: 5px; justify-content: flex-end; }
+  .gm-val { font-family: 'IBM Plex Mono', monospace; }
+  .gm-val.fallback { color: var(--ink-faint); font-style: italic; }
+
+  .score-cell { display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; }
+  .score-cell .val { font-weight: 600; font-size: 14px; }
+
+  tr.detail-row td { padding: 0; }
+  .detail { padding: 16px 20px 20px 44px; background: var(--paper-raised); border-bottom: 1px solid var(--rule); }
+  .detail-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+  @media (max-width: 800px) { .detail-grid { grid-template-columns: 1fr; } }
+  .detail h4 { font-size: 11px; color: var(--ink-faint); margin: 0 0 5px; font-weight: 600; }
+  .detail p { font-size: 13px; line-height: 1.5; margin: 0 0 14px; color: var(--ink); }
+  .detail .flags { color: var(--brick); }
+  .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .breakdown { font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+  .breakdown div.bd-row { display: flex; justify-content: space-between; padding: 5px 9px; background: var(--paper); }
+  .breakdown div.bd-row:nth-child(even) { background: var(--paper-raised); }
+  .breakdown div.bd-row b { font-weight: 600; }
+  .spark-block { margin-bottom: 14px; }
+  .spark-block svg { display: block; }
+  .website-link { font-size: 12px; }
+  .no-thesis { font-size: 12.5px; color: var(--ink-faint); font-style: italic; }
+  .gm-source { font-size: 12px; color: var(--ink-soft); }
+  .gm-source a { display: block; }
+
+  .footnote { margin-top: 20px; font-size: 12px; color: var(--ink-faint); line-height: 1.65; max-width: 860px; }
+  .footnote code { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
+  .footnote b.hd { display: block; color: var(--ink); margin: 14px 0 4px; font-size: 12.5px; }
+  .footnote b.hd:first-child { margin-top: 0; }
+
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(20,24,30,0.5); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+  .modal-backdrop.open { display: flex; }
+  .modal { background: var(--paper-raised); border: 1px solid var(--rule-strong); border-radius: 6px; max-width: 580px; width: 100%; padding: 22px; max-height: 86vh; overflow-y: auto; }
+  .modal h3 { font-family: 'Source Serif 4', serif; font-size: 19px; margin: 0 0 6px; }
+  .modal p.hint { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 12px; }
+  .modal textarea { width: 100%; min-height: 160px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 10px; resize: vertical; }
+  .modal .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+  .modal .result { font-size: 12.5px; margin-top: 10px; color: var(--ink-soft); white-space: pre-wrap; }
+  .modal .ticker-list { font-size: 12px; font-family: 'IBM Plex Mono', monospace; background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 10px; max-height: 140px; overflow-y: auto; margin-bottom: 12px; line-height: 1.7; }
+
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 9px 16px; border-radius: 20px; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 60; }
+  .toast.show { opacity: 1; }
+  .empty { text-align: center; padding: 40px 20px; color: var(--ink-faint); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>European Small/Mid-Cap Value Shortlist</h1>
+    <div class="sub">
+      v6 composite score across nine dimensions, percentile-ranked against the <b>full 1,000-candidate pool</b>
+      (Capital IQ extract, 27&nbsp;Nov&nbsp;2024 &middot; quality-gated from 6,109 raw listings &middot;
+      gross margin researched from official filings, 790/1000 covered). Edit market caps or gross margins below
+      to try scenarios — every score and rank updates live, against the whole pool.
+    </div>
+    <div class="stat-row" id="statRow"></div>
+  </header>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Search company, ticker, country…">
+    <select id="countryFilter"><option value="">All countries</option></select>
+    <select id="archetypeFilter"><option value="">All archetypes</option></select>
+    <select id="topNFilter">
+      <option value="150">Show top 150</option>
+      <option value="300">Show top 300</option>
+      <option value="1000">Show all 1,000</option>
+    </select>
+    <select id="sortField">
+      <option value="score">Sort: v6 score</option>
+      <option value="mc">Sort: market cap</option>
+      <option value="gm">Sort: gross margin</option>
+      <option value="roe">Sort: ROE (recent)</option>
+      <option value="revGrowth">Sort: revenue growth</option>
+      <option value="name">Sort: name</option>
+    </select>
+    <button class="btn ghost small" id="editedOnlyBtn">Edited only</button>
+    <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
+    <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
+    <button class="btn" id="bulkUpdateBtn">Update market caps</button>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34px">#</th>
+          <th>Company</th>
+          <th class="num-col">Mkt Cap ($M)</th>
+          <th class="num-col">P/B</th>
+          <th class="num-col">ROE</th>
+          <th class="num-col">Rev Growth</th>
+          <th class="num-col">Gross Margin</th>
+          <th class="num-col">v6 Score</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none">No companies match these filters.</div>
+  </div>
+
+  <div class="footnote">
+    <b class="hd">Scoring pool</b>
+    Every score on this page is computed against the <b>entire 1,000-company candidate pool</b> — the same
+    percentile-ranking basis the methodology uses — regardless of the display filters above (search,
+    country, top-N) which only control what's shown, not what's ranked against what.
+    <b class="hd">What's fixed vs. live</b>
+    Revenue consistency, track record, dilution, profitability, cash-flow, revenue growth and dividend consistency
+    are computed directly from the Capital IQ financial history and don't change here. <b>Gross margin</b> (18&nbsp;pts,
+    banded) and <b>valuation</b> (18&nbsp;pts, best-of-three lenses: GM-adjusted P/S, ROE-adjusted P/B, growth-adjusted
+    earnings yield) recompute live from whatever market cap and gross margin you enter. Companies without a
+    verified gross margin use the pool's median GM-band score as a neutral fallback, and are flagged
+    <span class="tag needsgm">needs GM</span> so you can prioritise them. Companies already refreshed through the
+    data pipeline (below) are flagged <span class="tag refreshed">mc refreshed</span>.
+    <b class="hd">This page is static — how updates actually happen</b>
+    This is a plain, self-contained HTML file with no server and no database: it was generated from the data in
+    this repository's <code>data/</code> folder at build time. Typing a new market cap or gross margin into the
+    table only changes what <i>you</i> see, in <i>this browser</i> — it's saved to this device's local storage
+    (not shared, not synced anywhere) so it survives a reload, but nobody else who opens this page will see it,
+    and it disappears if you clear site data. Use it freely to try scenarios.
+    <br><br>
+    To make an update permanent — visible to everyone who loads the page — edit
+    <code>data/mc_overrides_applied.json</code> (or <code>data/gm_overrides_applied.json</code>) in the repo with
+    the new value and its source, run <code>python3 scripts/build_site.py</code>, and push. The <b>Update market
+    caps</b> / <b>Update gross margins</b> buttons below build you a ready-to-paste list of the current values in
+    the right format as a starting point for that file.
+    <b class="hd">Historical record</b>
+    Every time you apply an update from these buttons, a full snapshot of the pool as it stood right before is
+    downloaded as a dated <code>.xlsx</code> file — save it into this repo's <code>snapshots/</code> folder (or
+    run <code>python3 scripts/snapshot.py</code> directly) to keep a permanent record alongside the data change.
+    <b class="hd">Formula note</b>
+    Dilution banding, the growth power-curve, and percentile tie-handling are this dashboard's best-effort
+    reimplementation of the methodology document — expect the odd rank to differ by a place or two from a
+    prior manual run.
+    <div id="dbStatus" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="mcModalBackdrop">
+  <div class="modal">
+    <h3>Update market caps</h3>
+    <p class="hint">
+      Pre-filled with the current 150 shortlist and their present market caps, in
+      <code>TICKER, value in $M</code> format, so you don't have to assemble the list yourself. Research fresh
+      values from a market-data source, paste them back over this box in the same format, and apply — this
+      previews the effect in your browser only. To make it permanent, copy the same lines into
+      <code>data/mc_overrides_applied.json</code> and rebuild (see the note below the table).
+    </p>
+    <textarea id="mcBulkInput" placeholder="BIT:FNM, 251.0&#10;WSE:TXT, 268.4&#10;XTRA:GFT, 510.2"></textarea>
+    <div class="result" id="mcBulkResult"></div>
+    <div class="actions">
+      <button class="btn ghost" id="mcBulkCancel">Cancel</button>
+      <button class="btn" id="mcBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="gmModalBackdrop">
+  <div class="modal">
+    <h3>Update gross margins</h3>
+    <p class="hint">
+      Paste one company per line as <code>TICKER, GM%, [fiscal year], [source note]</code> — fiscal year and
+      source are optional. Research gross margin from official filings only (annual reports, earnings releases,
+      exchange filings — no third-party aggregators) for the tickers below. This previews the effect in your
+      browser only; to make it permanent, copy the same lines into
+      <code>data/gm_overrides_applied.json</code> and rebuild.
+    </p>
+    <div class="ticker-list" id="needsGmList"></div>
+    <textarea id="gmBulkInput" placeholder="BIT:FNM, 61.5, 2025, FY25 annual report&#10;WSE:TXT, 79.0, 2024, Q4 filing"></textarea>
+    <div class="result" id="gmBulkResult"></div>
+    <div class="actions">
+      <button class="btn ghost" id="gmBulkCancel">Cancel</button>
+      <button class="btn gold" id="gmBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PAYLOAD = __PAYLOAD_JSON__;
+const BUILD_INFO = __BUILD_INFO_JSON__;
+const COMPANIES = PAYLOAD.companies;
+const MEDIAN_GM_PTS = PAYLOAD.median_gm_pts;
+
+const LS_MC_KEY = 'shortlist_mc_overrides_v1';
+const LS_GM_KEY = 'shortlist_gm_overrides_v1';
+
+let mcOverrides = {};   // ticker -> {mc, updatedAt, source} — session/local only
+let gmOverrides = {};   // ticker -> {gm, fiscalYear, sourceNote, updatedAt} — session/local only
+let expandedTicker = null;
+let scoredCache = null;
+let filters = { search: '', country: '', archetype: '', topN: 150, editedOnly: false, needsGm: false, sortField: 'score' };
+
+function loadLocalOverrides() {
+  try { mcOverrides = JSON.parse(localStorage.getItem(LS_MC_KEY) || '{}'); } catch(e) { mcOverrides = {}; }
+  try { gmOverrides = JSON.parse(localStorage.getItem(LS_GM_KEY) || '{}'); } catch(e) { gmOverrides = {}; }
+}
+function saveLocalOverrides() {
+  try { localStorage.setItem(LS_MC_KEY, JSON.stringify(mcOverrides)); } catch(e) {}
+  try { localStorage.setItem(LS_GM_KEY, JSON.stringify(gmOverrides)); } catch(e) {}
+}
+
+function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+function fmtPct(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return (v*100).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})+'%'; }
+
+function effMc(c) { const o = mcOverrides[c.t]; return (o && typeof o.mc==='number') ? o.mc : c.mc0; }
+function isEditedMc(c) { const o = mcOverrides[c.t]; return !!(o && typeof o.mc==='number' && Math.abs(o.mc-c.mc0)>1e-9); }
+function effGm(c) {
+  const o = gmOverrides[c.t];
+  if (o && typeof o.gm === 'number') return { gm: o.gm, isOverride: true, isFallback: false };
+  if (typeof c.gm0 === 'number') return { gm: c.gm0, isOverride: false, isFallback: false };
+  return { gm: null, isOverride: false, isFallback: true };
+}
+
+function gmBandPoints(gm) {
+  if (gm===null||gm===undefined) return null;
+  if (gm>=0.60) return 18.0;
+  if (gm>=0.50) return 15.3;
+  if (gm>=0.40) return 12.6;
+  if (gm>=0.30) return 9.9;
+  if (gm>=0.20) return 7.2;
+  if (gm>=0.10) return 4.5;
+  if (gm>=0.05) return 1.8;
+  return 0.0;
+}
+function computeLenses(c, mc, gmInfo) {
+  let A=null,B=null,C=null;
+  if (gmInfo.gm && gmInfo.gm>0 && c.revLTM) A = (mc/c.revLTM)/gmInfo.gm;
+  const roe = (c.avgNI!==null && c.eq) ? c.avgNI/c.eq : null;
+  if (c.eq && c.eq>0 && roe!==null) B = (mc/c.eq)/Math.max(roe/0.10, 0.1);
+  if (c.avgNI!==null && c.avgNI!==undefined && mc) {
+    const g = Math.min(Math.max(c.revGrowth||0,0),2.0);
+    C = (c.avgNI/mc)*(1+g);
+  }
+  return [A,B,C,roe];
+}
+function percentileRank(values, idx, higherBetter) {
+  const v = values[idx];
+  if (v===null||v===undefined) return null;
+  const others = values.filter(x=>x!==null&&x!==undefined);
+  const n = others.length;
+  if (n<=1) return 100;
+  let beat=0;
+  for (const x of others) { if (higherBetter ? x<v : x>v) beat++; }
+  return 100*beat/(n-1);
+}
+function archetype(gm, revGrowth, roe, pb) {
+  if (gm!==null && gm>=0.40 && (revGrowth||0)>=0.30 && roe!==null && roe<0.08) return 'Revenue Compounder';
+  if (roe!==null && roe>=0.12 && gm!==null && gm>=0.30) return 'Capital-Efficient';
+  if (pb!==null && pb<1.0) return 'Deep Value';
+  return 'Balanced';
+}
+
+// Always score against the FULL pool; filtering happens after.
+function computeAllScores() {
+  const mcs = COMPANIES.map(effMc);
+  const gmInfos = COMPANIES.map(effGm);
+  const A=[], B=[], C=[], ROE=[];
+  COMPANIES.forEach((c,i) => { const [a,b,cc,roe] = computeLenses(c, mcs[i], gmInfos[i]); A.push(a);B.push(b);C.push(cc);ROE.push(roe); });
+  return COMPANIES.map((c,i) => {
+    const pA = percentileRank(A,i,false), pB = percentileRank(B,i,false), pC = percentileRank(C,i,true);
+    const cands = [pA,pB,pC].filter(p=>p!==null);
+    const best = cands.length ? Math.max(...cands) : 0;
+    const valPts = best/100*18;
+    const gmInfo = gmInfos[i];
+    const gmPts = gmInfo.gm!==null ? gmBandPoints(gmInfo.gm) : MEDIAN_GM_PTS;
+    const total = c.fixedSumNoGm + gmPts + valPts;
+    const pb = c.eq ? mcs[i]/c.eq : null;
+    const at = archetype(gmInfo.gm, c.revGrowth, ROE[i], pb);
+    const bestLens = pA===best ? 'A — GM-adjusted P/S' : (pB===best ? 'B — ROE-adjusted P/B' : 'C — growth-adjusted earnings yield');
+    return { c, mc: mcs[i], gmInfo, gmPts, valPts, total, pb, roe: ROE[i], archetype: at, bestLens };
+  });
+}
+function ensureScored() { if (!scoredCache) scoredCache = computeAllScores(); return scoredCache; }
+function invalidate() { scoredCache = null; }
+
+function populateFilterOptions() {
+  const countries = [...new Set(COMPANIES.map(c=>c.co))].sort();
+  const cf = document.getElementById('countryFilter');
+  countries.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; cf.appendChild(o); });
+  ['Revenue Compounder','Capital-Efficient','Deep Value','Balanced'].forEach(v=>{
+    const o=document.createElement('option'); o.value=v; o.textContent=v;
+    document.getElementById('archetypeFilter').appendChild(o);
+  });
+}
+function archetypeTagClass(a) {
+  if (a==='Revenue Compounder') return 'rc';
+  if (a==='Deep Value') return 'dv';
+  if (a==='Capital-Efficient') return '';
+  return 'bal';
+}
+function sparkline(hist, w=220, h=40, color='var(--green-text)') {
+  const vals = hist.filter(v=>typeof v==='number');
+  if (vals.length<2) return '';
+  const min=Math.min(...vals), max=Math.max(...vals), span=(max-min)||1;
+  const step = w/(hist.length-1);
+  let pts=[];
+  hist.forEach((v,i)=>{ if (typeof v!=='number') return; const x=i*step; const y=h-((v-min)/span)*(h-6)-3; pts.push(x.toFixed(1)+','+y.toFixed(1)); });
+  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><polyline points="${pts.join(' ')}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+
+function render() {
+  const all = ensureScored();
+  let scored = all.slice();
+
+  const s = filters.search.trim().toLowerCase();
+  scored = scored.filter(({c}) => {
+    if (filters.country && c.co !== filters.country) return false;
+    if (filters.archetype && archetype2(c) !== filters.archetype) return false;
+    if (filters.editedOnly && !(isEditedMc(c) || gmOverrides[c.t])) return false;
+    if (filters.needsGm) {
+      const gi = effGm(c);
+      if (!gi.isFallback) return false;
+    }
+    if (s) { const hay=(c.n+' '+c.t+' '+c.co).toLowerCase(); if (!hay.includes(s)) return false; }
+    return true;
+  });
+  function archetype2(row) { const found = all.find(r=>r.c.t===row.c.t); return found ? found.archetype : row.archetype; }
+
+  const sf = filters.sortField;
+  scored.sort((x,y) => {
+    if (sf==='score') return y.total - x.total;
+    if (sf==='mc') return y.mc - x.mc;
+    if (sf==='gm') return (y.gmInfo.gm ?? -1) - (x.gmInfo.gm ?? -1);
+    if (sf==='roe') return (y.roe ?? -99) - (x.roe ?? -99);
+    if (sf==='revGrowth') return (y.c.revGrowth ?? -99) - (x.c.revGrowth ?? -99);
+    if (sf==='name') return x.c.n.localeCompare(y.c.n);
+    return 0;
+  });
+
+  // rank is always by full-pool score, independent of display filter
+  const rankByTicker = {};
+  all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
+
+  const topN = filters.topN;
+  scored = scored.filter(r => rankByTicker[r.c.t] <= topN);
+
+  const editedMcCount = COMPANIES.filter(isEditedMc).length;
+  const editedGmCount = Object.keys(gmOverrides).length;
+  const needsGmCount = all.filter(r => r.gmInfo.isFallback).length;
+  const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
+  document.getElementById('statRow').innerHTML = `
+    <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
+    <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
+    <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
+    <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
+    <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
+    <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
+  `;
+
+  const tbody = document.getElementById('tbody');
+  const emptyEl = document.getElementById('emptyState');
+  if (!scored.length) { tbody.innerHTML=''; emptyEl.style.display='block'; return; }
+  emptyEl.style.display='none';
+
+  let html='';
+  scored.forEach(row => {
+    const { c, mc, gmInfo, total, pb, roe, archetype: at, bestLens } = row;
+    const rank = rankByTicker[c.t];
+    const edited = isEditedMc(c);
+    const isOpen = expandedTicker===c.t;
+    html += `
+      <tr class="row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <td class="rank num">${rank}</td>
+        <td class="company">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${(c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+        </td>
+        <td class="num-col">
+          <div class="mc-cell">
+            <input type="number" step="0.1" class="mc-input num ${edited?'edited':''}" data-ticker="${c.t}" value="${mc}">
+            ${edited ? `<button class="mc-reset" data-ticker="${c.t}" title="Reset to build-time value">↺</button>` : ''}
+          </div>
+        </td>
+        <td class="num-col num">${pb!==null ? fmtNum(pb,2) : '—'}</td>
+        <td class="num-col num">${fmtPct(roe)}</td>
+        <td class="num-col num">${fmtPct(c.revGrowth,0)}</td>
+        <td class="num-col">
+          <div class="gm-cell">
+            <span class="gm-val num ${gmInfo.isFallback?'fallback':''}">${gmInfo.gm!==null ? fmtPct(gmInfo.gm,0) : 'median*'}</span>
+          </div>
+        </td>
+        <td class="num-col">
+          <div class="score-cell"><span class="val num">${fmtNum(total,1)}</span></div>
+        </td>
+      </tr>
+    `;
+    if (isOpen) {
+      const th = c.thesis;
+      const links = (c.gmLinks||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+      html += `
+        <tr class="detail-row"><td colspan="8">
+          <div class="detail">
+            <div class="lens-note">Best lens: <b>${bestLens}</b> at $${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
+            <div class="breakdown">
+              <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
+              <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
+              <div class="bd-row"><span>Dilution</span><b>${fmtNum(c.fixedPts.dilution,1)} / 12</b></div>
+              <div class="bd-row"><span>Quality-adj valuation</span><b>${fmtNum(row.valPts,1)} / 18</b></div>
+              <div class="bd-row"><span>Profitability</span><b>${fmtNum(c.fixedPts.profitability,1)} / 16</b></div>
+              <div class="bd-row"><span>CFO positive</span><b>${fmtNum(c.fixedPts.cfo_positive,1)} / 6</b></div>
+              <div class="bd-row"><span>Track record</span><b>${fmtNum(c.fixedPts.track_record,1)} / 8</b></div>
+              <div class="bd-row"><span>Dividend consistency</span><b>${fmtNum(c.fixedPts.dividend_consistency,1)} / 4</b></div>
+              <div class="bd-row"><span>Gross margin</span><b>${fmtNum(row.gmPts,1)} / 18${gmInfo.isFallback?' (fallback)':''}</b></div>
+            </div>
+            <div class="detail-grid">
+              <div>
+                ${th ? `
+                  <h4>Business description</h4><p>${th.business_description || '—'}</p>
+                  <h4>Competitive position</h4><p>${th.competitive_position || '—'}</p>
+                  <h4>Red flags</h4><p class="flags">${th.red_flags || 'None noted.'}</p>
+                ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
+              </div>
+              <div>
+                <h4>Revenue history ($M, LTM&#8209;36 → LTM)</h4>
+                <div class="spark-block">${sparkline(c.revHist)}</div>
+                <h4>Net income history ($M)</h4>
+                <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
+                ${th && th.main_shareholders ? `<h4>Main shareholders</h4><p>${th.main_shareholders}</p>` : ''}
+                ${th && th.website ? `<p class="website-link"><a href="${th.website}" target="_blank" rel="noopener">${th.website}</a></p>` : ''}
+                <h4>Gross margin source</h4>
+                <p class="gm-source">${gmInfo.isOverride ? 'Edited in this browser (local only).' : (gmInfo.gm!==null ? `FY${c.gmFY||'—'} &middot; ${c.gmSrcType||'—'}` : 'No verified source yet.')}${links ? '<br>'+links : ''}</p>
+              </div>
+            </div>
+          </div>
+        </td></tr>
+      `;
+    }
+  });
+  tbody.innerHTML = html;
+
+  tbody.querySelectorAll('tr.row').forEach(tr => {
+    tr.addEventListener('click', e => { if (e.target.closest('.mc-cell')) return; const t=tr.dataset.ticker; expandedTicker = (expandedTicker===t)?null:t; render(); });
+  });
+  tbody.querySelectorAll('.mc-input').forEach(inp => {
+    inp.addEventListener('click', e=>e.stopPropagation());
+    inp.addEventListener('change', () => applyMcEdit(inp.dataset.ticker, parseFloat(inp.value), 'manual'));
+  });
+  tbody.querySelectorAll('.mc-reset').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); resetMc(btn.dataset.ticker); });
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(showToast._h); showToast._h = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+
+// ---- pre-update snapshot: downloaded as .xlsx before any local update is applied ----
+function buildSnapshotAOA() {
+  const all = ensureScored().slice().sort((a,b)=>b.total-a.total);
+  const now = new Date();
+  const stamp = now.toISOString().replace('T',' ').slice(0,16) + ' UTC';
+  const aoa = [
+    ['European Small/Mid-Cap Value Shortlist — Dashboard Snapshot'],
+    [`Captured ${stamp}, before this update was applied`],
+    [`${all.length} companies in candidate pool (percentile-ranked against full pool)`],
+    [],
+    ['Rank','Ticker','Company','Country','Archetype','Mkt Cap ($M)','Mkt Cap edited?','P/B','ROE',
+     'Rev Growth','Gross Margin','GM fallback?','GM FY','GM Source',
+     'RevGrowth pts','RevConsist pts','Dilution pts','Valuation pts',
+     'Profitability pts','CFO+ pts','TrackRecord pts','Dividend pts','GM pts','v6 Total Score']
+  ];
+  all.forEach((row, i) => {
+    const c = row.c, gmInfo = row.gmInfo;
+    aoa.push([
+      i+1, c.t, c.n, c.co, row.archetype, Number(row.mc.toFixed(2)), isEditedMc(c) ? 'Y' : '',
+      row.pb!==null ? Number(row.pb.toFixed(3)) : null,
+      row.roe!==null ? Number(row.roe.toFixed(4)) : null,
+      c.revGrowth!==null ? Number(c.revGrowth.toFixed(4)) : null,
+      gmInfo.gm!==null ? Number(gmInfo.gm.toFixed(4)) : null,
+      gmInfo.isFallback ? 'Y' : '',
+      c.gmFY || '', c.gmSrcType || '',
+      c.fixedPts.revenue_growth, c.fixedPts.revenue_consistency, c.fixedPts.dilution,
+      Number(row.valPts.toFixed(2)), c.fixedPts.profitability, c.fixedPts.cfo_positive,
+      c.fixedPts.track_record, c.fixedPts.dividend_consistency, Number(row.gmPts.toFixed(2)),
+      Number(row.total.toFixed(2))
+    ]);
+  });
+  return aoa;
+}
+
+function saveSnapshotBeforeUpdate() {
+  if (typeof XLSX === 'undefined') { showToast('Snapshot library unavailable — proceeding without a saved record.'); return; }
+  try {
+    const aoa = buildSnapshotAOA();
+    const ws = XLSX.utils.aoa_to_sheet(aoa);
+    ws['!cols'] = [{wch:6},{wch:14},{wch:32},{wch:16},{wch:18},{wch:12},{wch:14},{wch:7},{wch:8},
+                   {wch:10},{wch:12},{wch:11},{wch:7},{wch:16},{wch:12},{wch:12},{wch:11},{wch:12},
+                   {wch:14},{wch:9},{wch:13},{wch:11},{wch:7},{wch:12}];
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Snapshot');
+    const buf = XLSX.write(wb, {bookType:'xlsx', type:'array'});
+    const blob = new Blob([buf], {type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const dateStr = new Date().toISOString().slice(0,10);
+    downloadBlob(blob, `shortlist-snapshot-${dateStr}.xlsx`);
+    showToast('Snapshot downloaded. Applying local preview…');
+  } catch (e) {
+    showToast('Could not build snapshot — continuing without one.');
+  }
+}
+
+function applyMcEdit(ticker, mc, source) {
+  if (!isFinite(mc) || mc<=0) return;
+  mcOverrides[ticker] = { mc, updatedAt: new Date().toISOString(), source };
+  saveLocalOverrides(); invalidate(); render();
+}
+function resetMc(ticker) {
+  delete mcOverrides[ticker]; saveLocalOverrides(); invalidate(); render();
+}
+function applyGmEdit(ticker, gm, fiscalYear, sourceNote) {
+  if (!isFinite(gm)) return;
+  const val = gm > 1 ? gm/100 : gm; // accept both "61.5" and "0.615"
+  gmOverrides[ticker] = { gm: val, fiscalYear: fiscalYear||null, sourceNote: sourceNote||null, updatedAt: new Date().toISOString() };
+  saveLocalOverrides(); invalidate(); render();
+}
+
+function parseBulkLines(text) {
+  return text.split('\n').map(l=>l.trim()).filter(Boolean).map(line => line.split(',').map(p=>p.trim()));
+}
+function tickerLookup(raw) {
+  const up = raw.toUpperCase();
+  return COMPANIES.find(c => c.t.toUpperCase()===up)
+      || COMPANIES.find(c => c.t.toUpperCase().endsWith(':'+up))
+      || COMPANIES.find(c => c.n.toUpperCase()===up);
+}
+
+function wireToolbar() {
+  document.getElementById('search').addEventListener('input', e => { filters.search=e.target.value; render(); });
+  document.getElementById('countryFilter').addEventListener('change', e => { filters.country=e.target.value; render(); });
+  document.getElementById('archetypeFilter').addEventListener('change', e => { filters.archetype=e.target.value; render(); });
+  document.getElementById('topNFilter').addEventListener('change', e => { filters.topN=parseInt(e.target.value,10); render(); });
+  document.getElementById('sortField').addEventListener('change', e => { filters.sortField=e.target.value; render(); });
+  document.getElementById('editedOnlyBtn').addEventListener('click', e => { filters.editedOnly=!filters.editedOnly; e.target.classList.toggle('active', filters.editedOnly); render(); });
+  document.getElementById('needsGmBtn').addEventListener('click', e => { filters.needsGm=!filters.needsGm; e.target.classList.toggle('active', filters.needsGm); render(); });
+
+  const mcBackdrop = document.getElementById('mcModalBackdrop');
+  document.getElementById('bulkUpdateBtn').addEventListener('click', () => {
+    saveSnapshotBeforeUpdate();
+    // Always the true top-150 by full-pool score, regardless of the display's top-N filter.
+    const all = ensureScored();
+    const shortlist150 = all.slice().sort((a,b)=>b.total-a.total).slice(0,150);
+    const template = shortlist150.map(r => `${r.c.t}, ${r.mc}`).join('\n');
+    document.getElementById('mcBulkInput').value = template;
+    document.getElementById('mcBulkResult').textContent =
+      `Pre-filled with the current 150 shortlist and their present market caps (${shortlist150.length} tickers). ` +
+      `Research fresh values, paste them over this list (same TICKER, value format), then apply to preview locally.`;
+    mcBackdrop.classList.add('open');
+  });
+  document.getElementById('mcBulkCancel').addEventListener('click', () => mcBackdrop.classList.remove('open'));
+  mcBackdrop.addEventListener('click', e => { if (e.target===mcBackdrop) mcBackdrop.classList.remove('open'); });
+  document.getElementById('mcBulkApply').addEventListener('click', () => {
+    const rows = parseBulkLines(document.getElementById('mcBulkInput').value);
+    let applied=0, errors=[];
+    for (const parts of rows) {
+      if (parts.length<2) { errors.push(parts.join(',')); continue; }
+      const c = tickerLookup(parts[0]);
+      const val = parseFloat(parts[parts.length-1].replace(/[^0-9.\-]/g,''));
+      if (!c || !isFinite(val)) { errors.push(parts.join(',')); continue; }
+      applyMcEdit(c.t, val, 'manual'); applied++;
+    }
+    document.getElementById('mcBulkResult').textContent = `Applied ${applied} update(s) locally.` + (errors.length?` ${errors.length} line(s) not matched: ${errors.slice(0,5).join(' | ')}`:'');
+    if (applied) showToast(`Updated ${applied} market cap${applied>1?'s':''} (this browser only)`);
+    if (!errors.length) setTimeout(()=>mcBackdrop.classList.remove('open'), 900);
+  });
+
+  const gmBackdrop = document.getElementById('gmModalBackdrop');
+  document.getElementById('gmUpdateBtn').addEventListener('click', () => {
+    saveSnapshotBeforeUpdate();
+    const needs = ensureScored().filter(r=>r.gmInfo.isFallback).map(r=>r.c.t+' — '+r.c.n);
+    document.getElementById('needsGmList').innerHTML = needs.length
+      ? `<b>${needs.length} companies still need GM research:</b><br>` + needs.slice(0,60).join('<br>') + (needs.length>60?`<br>… and ${needs.length-60} more`:'')
+      : 'All companies in the pool have a verified gross margin.';
+    gmBackdrop.classList.add('open');
+  });
+  document.getElementById('gmBulkCancel').addEventListener('click', () => gmBackdrop.classList.remove('open'));
+  gmBackdrop.addEventListener('click', e => { if (e.target===gmBackdrop) gmBackdrop.classList.remove('open'); });
+  document.getElementById('gmBulkApply').addEventListener('click', () => {
+    const rows = parseBulkLines(document.getElementById('gmBulkInput').value);
+    let applied=0, errors=[];
+    for (const parts of rows) {
+      if (parts.length<2) { errors.push(parts.join(',')); continue; }
+      const c = tickerLookup(parts[0]);
+      const val = parseFloat(parts[1].replace(/[^0-9.\-]/g,''));
+      if (!c || !isFinite(val)) { errors.push(parts.join(',')); continue; }
+      applyGmEdit(c.t, val, parts[2]||null, parts[3]||null); applied++;
+    }
+    document.getElementById('gmBulkResult').textContent = `Applied ${applied} update(s) locally.` + (errors.length?` ${errors.length} line(s) not matched: ${errors.slice(0,5).join(' | ')}`:'');
+    if (applied) showToast(`Updated ${applied} gross margin${applied>1?'s':''} (this browser only)`);
+    if (!errors.length) setTimeout(()=>gmBackdrop.classList.remove('open'), 900);
+  });
+}
+
+function init() {
+  loadLocalOverrides();
+  populateFilterOptions();
+  wireToolbar();
+  render();
+  const statusEl = document.getElementById('dbStatus');
+  statusEl.textContent = `Static build — data embedded ${BUILD_INFO.buildDate}. Edits here are local to this browser (localStorage) and never leave your device; see "This page is static" above for how to publish a real update.`;
+}
+init();
+</script>
+</body>
+</html>
