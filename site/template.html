@@ -649,7 +649,9 @@ function wireToolbar() {
 
   const mcBackdrop = document.getElementById('mcModalBackdrop');
   document.getElementById('bulkUpdateBtn').addEventListener('click', () => {
-    saveSnapshotBeforeUpdate();
+    if (confirm('Save a snapshot of the current data (downloads a dated .xlsx) before updating market caps?')) {
+      saveSnapshotBeforeUpdate();
+    }
     // Always the true top-150 by full-pool score, regardless of the display's top-N filter.
     const all = ensureScored();
     const shortlist150 = all.slice().sort((a,b)=>b.total-a.total).slice(0,150);
@@ -679,7 +681,9 @@ function wireToolbar() {
 
   const gmBackdrop = document.getElementById('gmModalBackdrop');
   document.getElementById('gmUpdateBtn').addEventListener('click', () => {
-    saveSnapshotBeforeUpdate();
+    if (confirm('Save a snapshot of the current data (downloads a dated .xlsx) before updating gross margins?')) {
+      saveSnapshotBeforeUpdate();
+    }
     const needs = ensureScored().filter(r=>r.gmInfo.isFallback).map(r=>r.c.t+' — '+r.c.n);
     document.getElementById('needsGmList').innerHTML = needs.length
       ? `<b>${needs.length} companies still need GM research:</b><br>` + needs.slice(0,60).join('<br>') + (needs.length>60?`<br>… and ${needs.length-60} more`:'')
