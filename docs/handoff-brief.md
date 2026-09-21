@@ -398,11 +398,18 @@ company that crossed the top-150 line since the same "previous
 checkpoint" the Δ column uses — split into "Entered top 150" and "Left
 top 150", each row showing the rank move, market cap, v6 score, and the
 company's `newsNote` if one exists (`top150Movers()` /
-`renderTop150Row()` in `site/template.html`). Disabled with no count on
-`baseline` (nothing precedes it to compare to). This is genuinely
-different from "biggest rank movers" — e.g. Installux (`ENXTPA:ALLUX`)
-moved -114 ranks (154→268) but never appears here because it was
-already outside top 150 at both checkpoints; conversely a company can
+`renderTop150Row()` in `site/template.html`). Each row is clickable and
+expands the exact same rich detail panel the main table uses (score
+breakdown, thesis, sparklines) — `renderDetailPanel(row, rank)` was
+extracted out of the main table's row-expand logic specifically so it
+could be reused here too, with its own `expandedTop150Ticker` state and
+a `renderTop150ModalContent()` re-render function (event-delegated
+click handler on `#top150Content`, toggle/collapse, only one row open
+at a time). Disabled with no count on `baseline` (nothing precedes it
+to compare to). This is genuinely different from "biggest rank movers"
+— e.g. Installux (`ENXTPA:ALLUX`) moved -114 ranks (154→268) but never
+appears here because it was already outside top 150 at both
+checkpoints; conversely a company can
 cross the line with a small absolute move if it started right at #150.
 
 ## Missing-dilution fallback policy (2026-09-21)
@@ -460,6 +467,27 @@ If a genuinely better source for these 15 companies' share counts ever
 turns up (annual reports, another data vendor), replace the fallback
 with a real computed value the same way `fix_dilution_gaps.py` did for
 the original 84, and clear `dilutionDataMissing`.
+
+## Full financial data drill-down (2026-09-21)
+
+The user wanted to go deeper than the score breakdown when they open a
+company - see all the raw underlying numbers, not just the derived
+points. Added a "Full financial data ▾" toggle at the bottom of
+`renderDetailPanel()` (`site/template.html`) that reveals
+`renderFullFinancials(row)`: a metrics grid (market cap, equity,
+revenue LTM, avg net income, ROE, P/B, revenue growth, dilution %,
+gross margin, profitable/CFO+/dividend period %s, periods reported,
+revenue consistency %) plus a period-by-period table of the full
+`revHist`/`niHist` arrays (10 LTM snapshots each, oldest→latest, same
+data the sparklines already use but as actual numbers). All of this
+was already in the payload (`c.eq`, `c.revLTM`, `c.avgNI`, etc.) -
+no data pipeline change needed, purely a presentation addition.
+
+Wired via a single delegated click listener on `document.body` (added
+once in `init()`), not per-row listeners - `renderDetailPanel()` is
+shared by the main table (re-rendered constantly) and the Top 150
+modal, so a body-level listener is the only wiring that survives both
+without needing to be re-attached after every re-render.
 
 ## Corporate actions section (2026-09-21)
 

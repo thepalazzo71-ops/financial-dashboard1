@@ -136,6 +136,19 @@
   .no-thesis { font-size: 12.5px; color: var(--ink-faint); font-style: italic; }
   .gm-source { font-size: 12px; color: var(--ink-soft); }
   .gm-source a { display: block; }
+  .fin-toggle-row { margin-top: 4px; }
+  .fin-toggle { background: none; border: none; color: var(--green-text); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; padding: 4px 0; }
+  .fin-toggle:hover { text-decoration: underline; }
+  .full-financials { margin-top: 10px; padding-top: 12px; border-top: 1px dashed var(--rule-strong); }
+  .fin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .fin-item { background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 7px 9px; }
+  .fin-item .fin-label { display: block; font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 2px; }
+  .fin-item .fin-val { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; }
+  .fin-table { width: 100%; border-collapse: collapse; font-size: 11.5px; font-family: 'IBM Plex Mono', monospace; margin-bottom: 4px; }
+  .fin-table th, .fin-table td { padding: 5px 7px; text-align: right; border-bottom: 1px solid var(--rule); }
+  .fin-table th { color: var(--ink-faint); font-weight: 600; font-family: 'Inter', sans-serif; font-size: 10.5px; }
+  .fin-table td:first-child, .fin-table th:first-child { text-align: left; font-family: 'Inter', sans-serif; color: var(--ink-soft); }
+  .fin-table td.latest, .fin-table th.latest { color: var(--ink); font-weight: 600; background: var(--green-soft); }
 
   .footnote { margin-top: 20px; font-size: 12px; color: var(--ink-faint); line-height: 1.65; max-width: 860px; }
   .footnote code { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
@@ -148,8 +161,11 @@
   .modal.wide { max-width: 760px; }
   .modal h4 { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.03em; margin: 18px 0 8px; }
   .modal h4:first-child { margin-top: 0; }
-  .top150-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
-  .top150-row:last-child { border-bottom: none; }
+  .top150-row-wrap:last-child .top150-row { border-bottom: none; }
+  .top150-row { display: flex; gap: 14px; padding: 10px 4px; border-bottom: 1px solid var(--rule); cursor: pointer; border-radius: 3px; }
+  .top150-row:hover { background: rgba(47,75,60,0.05); }
+  .top150-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .top150-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
   .t150-rank { flex: 0 0 60px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; text-align: center; color: var(--ink-soft); line-height: 1.4; }
   .t150-co .name { font-weight: 600; font-size: 13.5px; }
   .t150-co .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
@@ -525,19 +541,125 @@ function corpActionsTotal() {
   const ca = CORPORATE_ACTIONS;
   return (ca.tender_offers||[]).length + (ca.mergers_acquisitions||[]).length + (ca.spinoffs||[]).length + (ca.other||[]).length;
 }
+// Shared by the main table's expand-row and the Top 150 changes modal, so
+// both show the exact same score breakdown / thesis / sparklines - never
+// two versions of "what a company looks like" to drift apart.
+function renderDetailPanel(row, rank) {
+  const { c, mc, gmInfo, bestLens } = row;
+  const th = c.thesis;
+  const links = (c.gmLinks||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  return `
+    <div class="detail">
+      ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
+      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
+      <div class="breakdown">
+        <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
+        <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
+        <div class="bd-row"><span>Dilution${c.dilutionDataMissing ? ' <span class="tag nodata" title="No share-count data exists anywhere in the source extract — this is a neutral pool-median estimate, not a real measurement">&#9679; estimated</span>' : ''}</span><b>${fmtNum(c.fixedPts.dilution,1)} / 12</b></div>
+        <div class="bd-row"><span>Quality-adj valuation</span><b>${fmtNum(row.valPts,1)} / 18</b></div>
+        <div class="bd-row"><span>Profitability</span><b>${fmtNum(c.fixedPts.profitability,1)} / 16</b></div>
+        <div class="bd-row"><span>CFO positive</span><b>${fmtNum(c.fixedPts.cfo_positive,1)} / 6</b></div>
+        <div class="bd-row"><span>Track record</span><b>${fmtNum(c.fixedPts.track_record,1)} / 8</b></div>
+        <div class="bd-row"><span>Dividend consistency</span><b>${fmtNum(c.fixedPts.dividend_consistency,1)} / 4</b></div>
+        <div class="bd-row"><span>Gross margin</span><b>${fmtNum(row.gmPts,1)} / 18${gmInfo.isFallback?' (fallback)':''}</b></div>
+      </div>
+      <div class="detail-grid">
+        <div>
+          ${th ? `
+            <h4>Business description</h4><p>${th.business_description || '—'}</p>
+            <h4>Competitive position</h4><p>${th.competitive_position || '—'}</p>
+            <h4>Red flags</h4><p class="flags">${th.red_flags || 'None noted.'}</p>
+          ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
+        </div>
+        <div>
+          <h4>Revenue history ($M, LTM&#8209;36 → LTM)</h4>
+          <div class="spark-block">${sparkline(c.revHist)}</div>
+          <h4>Net income history ($M)</h4>
+          <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
+          ${th && th.main_shareholders ? `<h4>Main shareholders</h4><p>${th.main_shareholders}</p>` : ''}
+          ${th && th.website ? `<p class="website-link"><a href="${th.website}" target="_blank" rel="noopener">${th.website}</a></p>` : ''}
+          <h4>Gross margin source</h4>
+          <p class="gm-source">${gmInfo.isOverride ? 'Edited in this browser (local only).' : (gmInfo.gm!==null ? `FY${c.gmFY||'—'} &middot; ${c.gmSrcType||'—'}` : 'No verified source yet.')}${links ? '<br>'+links : ''}</p>
+        </div>
+      </div>
+      <div class="fin-toggle-row">
+        <button class="fin-toggle" type="button">Full financial data &#9662;</button>
+      </div>
+      <div class="full-financials" style="display:none">${renderFullFinancials(row)}</div>
+    </div>
+  `;
+}
+function renderFullFinancials(row) {
+  const { c, mc, gmInfo, roe, pb } = row;
+  const items = [
+    ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
+    ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
+    ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
+    ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
+    ['ROE (recent)', fmtPct(roe)],
+    ['P/B', pb!==null ? fmtNum(pb,2)+'x' : '—'],
+    ['Revenue Growth', fmtPct(c.revGrowth,0)],
+    ['Dilution', c.dilution!==null ? fmtPct(c.dilution,1) : (c.dilutionDataMissing ? 'no data' : '—')],
+    ['Gross Margin', gmInfo.gm!==null ? fmtPct(gmInfo.gm,0) : 'fallback'],
+    ['Profitable periods', fmtPct(c.profitPct,0)],
+    ['CFO+ periods', fmtPct(c.cfoPct,0)],
+    ['Dividend periods', fmtPct(c.divPct,0)],
+    ['Periods reported', `${c.nRevPeriods} / 10`],
+    ['Revenue consistency', fmtPct(c.revConsistency,0)],
+  ];
+  const gridHtml = items.map(([label,val]) => `
+    <div class="fin-item"><span class="fin-label">${label}</span><span class="fin-val">${val}</span></div>
+  `).join('');
+  const periodCell = (v, i, n) => `<td class="${i===n-1?'latest':''}">${v!==null&&v!==undefined ? fmtNum(v,1) : '—'}</td>`;
+  const n = c.revHist.length;
+  const headerCells = c.revHist.map((_,i) => `<th class="${i===n-1?'latest':''}">${i===n-1?'Latest':'T&minus;'+(n-1-i)}</th>`).join('');
+  return `
+    <div class="fin-grid">${gridHtml}</div>
+    <h4>Revenue &amp; net income by period ($M, oldest &rarr; latest / LTM)</h4>
+    <table class="fin-table">
+      <thead><tr><th></th>${headerCells}</tr></thead>
+      <tbody>
+        <tr><td>Revenue</td>${c.revHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+        <tr><td>Net Income</td>${c.niHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+      </tbody>
+    </table>
+  `;
+}
+let expandedTop150Ticker = null;
+function renderTop150ModalContent() {
+  const { entrants, exits, prevKey } = top150Movers();
+  const hint = document.getElementById('top150Hint');
+  const content = document.getElementById('top150Content');
+  if (!prevKey) {
+    hint.textContent = 'No earlier checkpoint to compare to yet.';
+    content.innerHTML = '';
+    return;
+  }
+  hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}: ${entrants.length} compan${entrants.length===1?'y':'ies'} entered the top 150, ${exits.length} left it. Click a company for full details.`;
+  content.innerHTML = `
+    <h4>Entered top 150 (${entrants.length})</h4>
+    ${entrants.length ? entrants.map(e=>renderTop150Row(e,'in')).join('') : '<p class="no-thesis">None.</p>'}
+    <h4>Left top 150 (${exits.length})</h4>
+    ${exits.length ? exits.map(e=>renderTop150Row(e,'out')).join('') : '<p class="no-thesis">None.</p>'}
+  `;
+}
 function renderTop150Row(entry, direction) {
   const { row, curRank, prevRank } = entry;
   const c = row.c;
   const arrow = direction === 'in' ? '▲' : '▼';
   const cls = direction === 'in' ? 'up' : 'down';
+  const isOpen = expandedTop150Ticker === c.t;
   return `
-    <div class="top150-row">
-      <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}</span><br>#${prevRank}&rarr;#${curRank}</div>
-      <div class="t150-co">
-        <div class="name">${c.n}</div>
-        <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(row.mc,0)}M mkt cap &middot; v6 ${fmtNum(row.total,1)}</div>
-        ${c.newsNote ? `<div class="t150-news">${c.newsNote}</div>` : ''}
+    <div class="top150-row-wrap">
+      <div class="top150-row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}</span><br>#${prevRank}&rarr;#${curRank}</div>
+        <div class="t150-co">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(row.mc,0)}M mkt cap &middot; v6 ${fmtNum(row.total,1)}</div>
+          ${c.newsNote ? `<div class="t150-news">${c.newsNote}</div>` : ''}
+        </div>
       </div>
+      ${isOpen ? renderDetailPanel(row, curRank) : ''}
     </div>
   `;
 }
@@ -702,46 +824,7 @@ function render() {
       </tr>
     `;
     if (isOpen) {
-      const th = c.thesis;
-      const links = (c.gmLinks||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
-      html += `
-        <tr class="detail-row"><td colspan="9">
-          <div class="detail">
-            ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
-            <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
-            <div class="breakdown">
-              <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
-              <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
-              <div class="bd-row"><span>Dilution${c.dilutionDataMissing ? ' <span class="tag nodata" title="No share-count data exists anywhere in the source extract — this is a neutral pool-median estimate, not a real measurement">&#9679; estimated</span>' : ''}</span><b>${fmtNum(c.fixedPts.dilution,1)} / 12</b></div>
-              <div class="bd-row"><span>Quality-adj valuation</span><b>${fmtNum(row.valPts,1)} / 18</b></div>
-              <div class="bd-row"><span>Profitability</span><b>${fmtNum(c.fixedPts.profitability,1)} / 16</b></div>
-              <div class="bd-row"><span>CFO positive</span><b>${fmtNum(c.fixedPts.cfo_positive,1)} / 6</b></div>
-              <div class="bd-row"><span>Track record</span><b>${fmtNum(c.fixedPts.track_record,1)} / 8</b></div>
-              <div class="bd-row"><span>Dividend consistency</span><b>${fmtNum(c.fixedPts.dividend_consistency,1)} / 4</b></div>
-              <div class="bd-row"><span>Gross margin</span><b>${fmtNum(row.gmPts,1)} / 18${gmInfo.isFallback?' (fallback)':''}</b></div>
-            </div>
-            <div class="detail-grid">
-              <div>
-                ${th ? `
-                  <h4>Business description</h4><p>${th.business_description || '—'}</p>
-                  <h4>Competitive position</h4><p>${th.competitive_position || '—'}</p>
-                  <h4>Red flags</h4><p class="flags">${th.red_flags || 'None noted.'}</p>
-                ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
-              </div>
-              <div>
-                <h4>Revenue history ($M, LTM&#8209;36 → LTM)</h4>
-                <div class="spark-block">${sparkline(c.revHist)}</div>
-                <h4>Net income history ($M)</h4>
-                <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
-                ${th && th.main_shareholders ? `<h4>Main shareholders</h4><p>${th.main_shareholders}</p>` : ''}
-                ${th && th.website ? `<p class="website-link"><a href="${th.website}" target="_blank" rel="noopener">${th.website}</a></p>` : ''}
-                <h4>Gross margin source</h4>
-                <p class="gm-source">${gmInfo.isOverride ? 'Edited in this browser (local only).' : (gmInfo.gm!==null ? `FY${c.gmFY||'—'} &middot; ${c.gmSrcType||'—'}` : 'No verified source yet.')}${links ? '<br>'+links : ''}</p>
-              </div>
-            </div>
-          </div>
-        </td></tr>
-      `;
+      html += `<tr class="detail-row"><td colspan="9">${renderDetailPanel(row, rank)}</td></tr>`;
     }
   });
   tbody.innerHTML = html;
@@ -904,23 +987,18 @@ function wireToolbar() {
   caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
 
   const t150Backdrop = document.getElementById('top150ModalBackdrop');
+  const t150Content = document.getElementById('top150Content');
   document.getElementById('top150ChangesBtn').addEventListener('click', () => {
-    const { entrants, exits, prevKey } = top150Movers();
-    const hint = document.getElementById('top150Hint');
-    const content = document.getElementById('top150Content');
-    if (!prevKey) {
-      hint.textContent = 'No earlier checkpoint to compare to yet.';
-      content.innerHTML = '';
-    } else {
-      hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}: ${entrants.length} compan${entrants.length===1?'y':'ies'} entered the top 150, ${exits.length} left it.`;
-      content.innerHTML = `
-        <h4>Entered top 150 (${entrants.length})</h4>
-        ${entrants.length ? entrants.map(e=>renderTop150Row(e,'in')).join('') : '<p class="no-thesis">None.</p>'}
-        <h4>Left top 150 (${exits.length})</h4>
-        ${exits.length ? exits.map(e=>renderTop150Row(e,'out')).join('') : '<p class="no-thesis">None.</p>'}
-      `;
-    }
+    expandedTop150Ticker = null;
+    renderTop150ModalContent();
     t150Backdrop.classList.add('open');
+  });
+  t150Content.addEventListener('click', e => {
+    const rowEl = e.target.closest('.top150-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedTop150Ticker = (expandedTop150Ticker === t) ? null : t;
+    renderTop150ModalContent();
   });
   document.getElementById('top150Close').addEventListener('click', () => t150Backdrop.classList.remove('open'));
   t150Backdrop.addEventListener('click', e => { if (e.target===t150Backdrop) t150Backdrop.classList.remove('open'); });
@@ -991,6 +1069,18 @@ function init() {
   populateFilterOptions();
   wireToolbar();
   document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
+  // Delegated once on body: the "Full financial data" toggle appears inside
+  // renderDetailPanel(), which is reused by both the main table (re-rendered
+  // often) and the Top 150 modal - a body-level listener survives either
+  // container's innerHTML being replaced, no per-render rewiring needed.
+  document.body.addEventListener('click', e => {
+    const btn = e.target.closest('.fin-toggle');
+    if (!btn) return;
+    const panel = btn.closest('.detail').querySelector('.full-financials');
+    const isOpen = panel.style.display !== 'none';
+    panel.style.display = isOpen ? 'none' : 'block';
+    btn.innerHTML = isOpen ? 'Full financial data &#9662;' : 'Full financial data &#9652;';
+  });
   render();
   const statusEl = document.getElementById('dbStatus');
   statusEl.textContent = `Static build — data embedded ${BUILD_INFO.buildDate}. Edits here are local to this browser (localStorage) and never leave your device; see "This page is static" above for how to publish a real update.`;
