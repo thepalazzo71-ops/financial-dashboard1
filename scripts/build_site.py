@@ -6,16 +6,23 @@ change to data/companies_1000_scored.json, data/mc_overrides_applied.json,
 or data/gm_overrides_applied.json, then commit docs/index.html (or let the
 "Build dashboard" GitHub Action do it automatically on push).
 
+Also resyncs data/companies_1000_scored.json's own valPts/total/rankFull
+against whatever overrides are currently applied, so that file (and
+anything reading it, like scripts/snapshot.py or a batch-selection query)
+never drifts from what the live dashboard actually shows - see
+scoring.resync_pool_ranks for why this matters.
+
 Usage: python3 scripts/build_site.py
 """
 import json
 import re
 from datetime import datetime, timezone
 
-from scoring import ROOT, load_companies, load_overrides, score_pool
+from scoring import DATA, ROOT, load_companies, load_overrides, resync_pool_ranks, score_pool
 
 TEMPLATE = ROOT / "site" / "template.html"
 OUT = ROOT / "docs" / "index.html"
+POOL_PATH = DATA / "companies_1000_scored.json"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
@@ -26,9 +33,7 @@ def parse_links(md):
     return [{'label': label, 'url': url} for label, url in LINK_RE.findall(md)]
 
 
-def build_payload():
-    companies = load_companies()
-    mc_overrides, gm_overrides = load_overrides()
+def build_payload(companies, mc_overrides, gm_overrides):
     scored, median_gm_pts = score_pool(companies, mc_overrides, gm_overrides)
 
     out_companies = []
@@ -66,13 +71,21 @@ def build_payload():
 
 
 def main():
-    payload, build_info = build_payload()
+    companies = load_companies()
+    mc_overrides, gm_overrides = load_overrides()
+
+    resync_pool_ranks(companies, mc_overrides, gm_overrides)
+    with open(POOL_PATH, 'w') as f:
+        json.dump(companies, f)
+
+    payload, build_info = build_payload(companies, mc_overrides, gm_overrides)
     template = TEMPLATE.read_text()
     html = template.replace('__PAYLOAD_JSON__', json.dumps(payload, separators=(',', ':')))
     html = html.replace('__BUILD_INFO_JSON__', json.dumps(build_info))
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html)
-    print(f"built {OUT} ({len(html)/1024:.0f} KB, {build_info['poolSize']} companies, "
+    print(f"resynced ranks for {len(companies)} companies; "
+          f"built {OUT} ({len(html)/1024:.0f} KB, {build_info['poolSize']} companies, "
           f"{build_info['mcRefreshedCount']} mc overrides, {build_info['gmOverrideCount']} gm overrides)")
 
 

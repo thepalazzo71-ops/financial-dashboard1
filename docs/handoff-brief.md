@@ -189,13 +189,43 @@ remain unresolved. Recomputing 69 companies' scores reshuffled the whole
 pool's ranking; **12 companies entered the top 150 and 12 exited**
 (all from the bottom of the old list) — see git history on
 `data/companies_1000_scored.json` for the exact before/after. The 12 new
-entrants (including ProCook, now #77) don't have a market-cap override
-yet and are due for a refresh batch.
+entrants didn't have a market-cap override yet at that point and were
+refreshed in the batch right after (see below).
 
 If more `dilution: null` gaps turn up elsewhere in the pool (outside the
 top 150) or new data sources are added, re-run
 `python3 scripts/fix_dilution_gaps.py` then `scripts/build_site.py` —
 it's idempotent and safe to run repeatedly.
+
+## Rank-sync policy (2026-09-21)
+
+The user caught a real bug: after refreshing ProCook's market cap
+(higher price -> worse P/S and P/B lenses -> lower valuation score, as a
+value model should behave), its `rankFull` in the JSON still said #77 —
+stale, computed before that refresh. The live dashboard was already
+correct (it recomputes rank in-browser from current overrides on every
+load); only the **stored** `rankFull` had drifted, because nothing had
+been resyncing it after routine market-cap batches, only after model
+fixes like the dilution gap.
+
+Fixed properly: `scripts/build_site.py` now calls
+`scoring.resync_pool_ranks()` on every run, which recomputes valPts/
+gmPtsUsed/total/rankFull for the whole pool from current overrides
+(mc0/gm baselines are untouched) and persists that back into
+`data/companies_1000_scored.json` before building the site. Since
+valuation is percentile-ranked across the whole pool, **every** company's
+score can shift slightly whenever *any* single company's price changes —
+not just the ones that were directly refreshed — so top-150 membership
+can churn a little on every rebuild now, which is expected and correct
+(it's what "live" means for a percentile-ranked model). A standalone
+`scripts/resync_ranks.py` does the same resync without a full rebuild, if
+ever needed on its own.
+
+Anything reading `rankFull` (batch selection, coverage counts, `rank`
+in `scripts/build_movers_report.py`-style reports) is now guaranteed
+current as of the last `build_site.py` run — no more manual step to
+remember, and no more silently-stale numbers like the "#77" reported to
+the user before this fix.
 
 ## Progress as of this handoff
 

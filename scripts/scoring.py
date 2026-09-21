@@ -132,3 +132,31 @@ def score_pool(companies, mc_overrides, gm_overrides):
         })
 
     return results, median_gm_pts
+
+
+def resync_pool_ranks(companies, mc_overrides, gm_overrides):
+    """Recomputes valPts/gmPtsUsed/fixedSum/total/rankFull for every company
+    in place, using currently-applied overrides. Does NOT touch mc0/gm
+    baselines - only the derived fields, so this can be re-run any time
+    overrides change to keep the stored pool in sync with what the live
+    dashboard (which does this same computation in-browser) shows.
+
+    Call this after every override batch, not just after a model fix -
+    percentile-ranked valuation means every company's val_pts can shift
+    slightly whenever any single company's effective market cap changes.
+
+    Returns the companies list, re-sorted by total descending (rankFull
+    assigned to match).
+    """
+    scored, _ = score_pool(companies, mc_overrides, gm_overrides)
+    for c, s in zip(companies, scored):
+        c['gmPtsUsed'] = round(s['gm_pts'], 4)
+        c['gmIsFallback'] = s['gm_is_fallback']
+        c['valPts'] = round(s['val_pts'], 4)
+        c['fixedSum'] = round(c['fixedSumNoGm'] + c['gmPtsUsed'], 4)
+        c['total'] = round(c['fixedSum'] + c['valPts'], 4)
+
+    companies.sort(key=lambda c: -c['total'])
+    for i, c in enumerate(companies):
+        c['rankFull'] = i + 1
+    return companies
