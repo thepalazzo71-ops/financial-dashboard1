@@ -5,8 +5,12 @@ data/gm_overrides_applied.json, per the market-cap refresh workflow (see
 docs/handoff-brief.md). Uses scripts/scoring.py for the v6 model so this
 never drifts from what scripts/build_site.py publishes.
 
-Writes a dated snapshot to snapshots/shortlist_snapshot_<date>.xlsx.
+Writes a dated snapshot to snapshots/shortlist_snapshot_<date>.xlsx, plus a
+compact shortlist_snapshot_<date>.json (same data, lean field names) that
+scripts/build_site.py embeds into the dashboard for the "view an older
+date" history feature.
 """
+import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -14,7 +18,7 @@ from pathlib import Path
 import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
 
-from scoring import ROOT, load_companies, load_overrides, score_pool
+from scoring import ROOT, compact_snapshot_rows, load_companies, load_overrides, score_pool
 
 SNAPSHOTS = ROOT / "snapshots"
 
@@ -93,10 +97,24 @@ def write_workbook(rows, out_path):
     wb.save(out_path)
 
 
+def write_history_json(out_path):
+    """Compact per-company records for the dashboard's history dropdown,
+    built straight from scoring.compact_snapshot_rows so this can never
+    drift from what build_site.py embeds for the same date.
+    """
+    companies = load_companies()
+    mc_overrides, gm_overrides = load_overrides()
+    compact = compact_snapshot_rows(companies, mc_overrides, gm_overrides)
+    with open(out_path, 'w') as f:
+        json.dump(compact, f, separators=(',', ':'))
+
+
 if __name__ == '__main__':
     rows = build_rows()
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now(timezone.utc).strftime('%Y-%m-%d')
     SNAPSHOTS.mkdir(exist_ok=True)
-    out_path = SNAPSHOTS / f'shortlist_snapshot_{date_str}.xlsx'
-    write_workbook(rows, out_path)
-    print(f'saved {len(rows)} rows -> {out_path}')
+    xlsx_path = SNAPSHOTS / f'shortlist_snapshot_{date_str}.xlsx'
+    json_path = SNAPSHOTS / f'shortlist_snapshot_{date_str}.json'
+    write_workbook(rows, xlsx_path)
+    write_history_json(json_path)
+    print(f'saved {len(rows)} rows -> {xlsx_path} and {json_path}')

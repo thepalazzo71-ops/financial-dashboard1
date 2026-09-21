@@ -134,6 +134,40 @@ def score_pool(companies, mc_overrides, gm_overrides):
     return results, median_gm_pts
 
 
+def compact_snapshot_rows(companies, mc_overrides, gm_overrides):
+    """Compact per-company records (rank, mc, pts breakdown, ...) for the
+    dashboard's history feature and for before/after movers analysis.
+
+    Pass {} / {} for mc_overrides/gm_overrides to get the *baseline* state
+    (original market caps, no refresh-project overrides applied) - the
+    correct "before" point for comparisons, since it's always freshly
+    computed from the current (dilution-corrected) pool rather than read
+    from a dated file that might predate a since-fixed data bug.
+    """
+    scored, _ = score_pool(companies, mc_overrides, gm_overrides)
+    rows = []
+    for c, s in zip(companies, scored):
+        rows.append({
+            't': c['ticker'], 'n': c['name'], 'co': c['country'],
+            'mc': round(s['mc'], 2),
+            'pb': round(s['pb'], 3) if s['pb'] else None,
+            'roe': round(s['roe'], 4) if s['roe'] is not None else None,
+            'rg': round(c['revGrowth'], 4) if c['revGrowth'] is not None else None,
+            'gm': s['gm'], 'gmFb': s['gm_is_fallback'], 'total': s['total'],
+            'pts': {
+                'rg': c['fixedPts']['revenue_growth'], 'rc': c['fixedPts']['revenue_consistency'],
+                'dl': c['fixedPts']['dilution'], 'vl': round(s['val_pts'], 2),
+                'pf': c['fixedPts']['profitability'], 'cfo': c['fixedPts']['cfo_positive'],
+                'tr': c['fixedPts']['track_record'], 'dv': c['fixedPts']['dividend_consistency'],
+                'gm': round(s['gm_pts'], 2),
+            },
+        })
+    rows.sort(key=lambda r: -r['total'])
+    for i, r in enumerate(rows):
+        r['rank'] = i + 1
+    return rows
+
+
 def resync_pool_ranks(companies, mc_overrides, gm_overrides):
     """Recomputes valPts/gmPtsUsed/fixedSum/total/rankFull for every company
     in place, using currently-applied overrides. Does NOT touch mc0/gm

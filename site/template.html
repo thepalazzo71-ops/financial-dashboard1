@@ -69,6 +69,8 @@
   .toolbar input[type="text"], .toolbar select { font: inherit; font-size: 13px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 7px 10px; }
   .toolbar input[type="text"] { flex: 1 1 180px; min-width: 140px; }
   .toolbar select { flex: 0 0 auto; }
+  #historyDate.active { border-color: var(--gold); background: var(--gold-soft); }
+  .history-banner { margin: -4px 0 14px; padding: 9px 14px; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 4px; font-size: 12.5px; color: var(--ink); }
   .btn { font: inherit; font-size: 13px; font-weight: 600; background: var(--green); color: var(--paper); border: none; border-radius: 3px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
   .btn:hover { opacity: 0.88; }
   .btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-strong); font-weight: 500; }
@@ -177,11 +179,13 @@
       <option value="revGrowth">Sort: revenue growth</option>
       <option value="name">Sort: name</option>
     </select>
+    <select id="historyDate"><option value="live">Live (current)</option></select>
     <button class="btn ghost small" id="editedOnlyBtn">Edited only</button>
     <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
   </div>
+  <div class="history-banner" id="historyBanner" style="display:none"></div>
 
   <div class="tablewrap">
     <table>
@@ -285,6 +289,8 @@ const PAYLOAD = __PAYLOAD_JSON__;
 const BUILD_INFO = __BUILD_INFO_JSON__;
 const COMPANIES = PAYLOAD.companies;
 const MEDIAN_GM_PTS = PAYLOAD.median_gm_pts;
+const HISTORY = PAYLOAD.history || {};
+const HISTORY_DATES = PAYLOAD.historyDates || [];
 
 const LS_MC_KEY = 'shortlist_mc_overrides_v1';
 const LS_GM_KEY = 'shortlist_gm_overrides_v1';
@@ -293,7 +299,8 @@ let mcOverrides = {};   // ticker -> {mc, updatedAt, source} — session/local o
 let gmOverrides = {};   // ticker -> {gm, fiscalYear, sourceNote, updatedAt} — session/local only
 let expandedTicker = null;
 let scoredCache = null;
-let filters = { search: '', country: '', archetype: '', topN: 150, editedOnly: false, needsGm: false, sortField: 'score' };
+let historicalCache = {};  // date -> pre-scored rows, from PAYLOAD.history (read-only, never invalidated)
+let filters = { search: '', country: '', archetype: '', topN: 150, editedOnly: false, needsGm: false, sortField: 'score', historyDate: 'live' };
 
 function loadLocalOverrides() {
   try { mcOverrides = JSON.parse(localStorage.getItem(LS_MC_KEY) || '{}'); } catch(e) { mcOverrides = {}; }
@@ -375,9 +382,45 @@ function computeAllScores() {
     return { c, mc: mcs[i], gmInfo, gmPts, valPts, total, pb, roe: ROE[i], archetype: at, bestLens };
   });
 }
-function ensureScored() { if (!scoredCache) scoredCache = computeAllScores(); return scoredCache; }
+// Historical (read-only) rows: PAYLOAD.history[date] joined against COMPANIES
+// for the descriptive fields (thesis, sparkline history, GM source links)
+// that don't change between snapshots. Numeric/ranking fields all come
+// from the frozen snapshot row itself, never recomputed.
+function historicalScored(date) {
+  const rows = HISTORY[date] || [];
+  const byTicker = {};
+  COMPANIES.forEach(c => { byTicker[c.t] = c; });
+  return rows.map(r => {
+    const live = byTicker[r.t] || {};
+    const gmInfo = { gm: r.gm, isOverride: false, isFallback: !!r.gmFb };
+    const at = archetype(r.gm, r.rg, r.roe, r.pb);
+    const c = Object.assign({}, live, {
+      t: r.t, n: r.n, co: r.co, revGrowth: r.rg,
+      fixedPts: {
+        revenue_growth: r.pts.rg, revenue_consistency: r.pts.rc, dilution: r.pts.dl,
+        profitability: r.pts.pf, cfo_positive: r.pts.cfo, track_record: r.pts.tr,
+        dividend_consistency: r.pts.dv,
+      },
+    });
+    return { c, mc: r.mc, gmInfo, gmPts: r.pts.gm, valPts: r.pts.vl, total: r.total,
+              pb: r.pb, roe: r.roe, archetype: at, bestLens: null, rank: r.rank };
+  });
+}
+function ensureScored() {
+  if (filters.historyDate !== 'live') {
+    const d = filters.historyDate;
+    if (!historicalCache[d]) historicalCache[d] = historicalScored(d);
+    return historicalCache[d];
+  }
+  if (!scoredCache) scoredCache = computeAllScores();
+  return scoredCache;
+}
 function invalidate() { scoredCache = null; }
 
+function historyLabel(key) {
+  if (key === 'baseline') return 'Original (pre-refresh baseline)';
+  return 'As of ' + key;
+}
 function populateFilterOptions() {
   const countries = [...new Set(COMPANIES.map(c=>c.co))].sort();
   const cf = document.getElementById('countryFilter');
@@ -385,6 +428,11 @@ function populateFilterOptions() {
   ['Revenue Compounder','Capital-Efficient','Deep Value','Balanced'].forEach(v=>{
     const o=document.createElement('option'); o.value=v; o.textContent=v;
     document.getElementById('archetypeFilter').appendChild(o);
+  });
+  const hf = document.getElementById('historyDate');
+  HISTORY_DATES.forEach(key => {
+    const o = document.createElement('option'); o.value = key; o.textContent = historyLabel(key);
+    hf.appendChild(o);
   });
 }
 function archetypeTagClass(a) {
@@ -404,22 +452,20 @@ function sparkline(hist, w=220, h=40, color='var(--green-text)') {
 }
 
 function render() {
+  const isHistorical = filters.historyDate !== 'live';
   const all = ensureScored();
   let scored = all.slice();
 
   const s = filters.search.trim().toLowerCase();
-  scored = scored.filter(({c}) => {
+  scored = scored.filter(row => {
+    const c = row.c;
     if (filters.country && c.co !== filters.country) return false;
-    if (filters.archetype && archetype2(c) !== filters.archetype) return false;
-    if (filters.editedOnly && !(isEditedMc(c) || gmOverrides[c.t])) return false;
-    if (filters.needsGm) {
-      const gi = effGm(c);
-      if (!gi.isFallback) return false;
-    }
+    if (filters.archetype && row.archetype !== filters.archetype) return false;
+    if (!isHistorical && filters.editedOnly && !(isEditedMc(c) || gmOverrides[c.t])) return false;
+    if (filters.needsGm && !row.gmInfo.isFallback) return false;
     if (s) { const hay=(c.n+' '+c.t+' '+c.co).toLowerCase(); if (!hay.includes(s)) return false; }
     return true;
   });
-  function archetype2(row) { const found = all.find(r=>r.c.t===row.c.t); return found ? found.archetype : row.archetype; }
 
   const sf = filters.sortField;
   scored.sort((x,y) => {
@@ -432,25 +478,38 @@ function render() {
     return 0;
   });
 
-  // rank is always by full-pool score, independent of display filter
+  // rank is always by full-pool score, independent of display filter.
+  // In historical mode the rank was already fixed at snapshot time.
   const rankByTicker = {};
-  all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
+  if (isHistorical) {
+    all.forEach(r => rankByTicker[r.c.t] = r.rank);
+  } else {
+    all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
+  }
 
   const topN = filters.topN;
   scored = scored.filter(r => rankByTicker[r.c.t] <= topN);
 
-  const editedMcCount = COMPANIES.filter(isEditedMc).length;
-  const editedGmCount = Object.keys(gmOverrides).length;
   const needsGmCount = all.filter(r => r.gmInfo.isFallback).length;
-  const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
-  document.getElementById('statRow').innerHTML = `
-    <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
-    <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
-    <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
-    <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
-    <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
-    <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
-  `;
+  if (isHistorical) {
+    document.getElementById('statRow').innerHTML = `
+      <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
+      <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">needed GM research at this date</div></div>
+      <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
+    `;
+  } else {
+    const editedMcCount = COMPANIES.filter(isEditedMc).length;
+    const editedGmCount = Object.keys(gmOverrides).length;
+    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
+    document.getElementById('statRow').innerHTML = `
+      <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
+      <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
+      <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
+      <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
+      <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
+      <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
+    `;
+  }
 
   const tbody = document.getElementById('tbody');
   const emptyEl = document.getElementById('emptyState');
@@ -461,20 +520,21 @@ function render() {
   scored.forEach(row => {
     const { c, mc, gmInfo, total, pb, roe, archetype: at, bestLens } = row;
     const rank = rankByTicker[c.t];
-    const edited = isEditedMc(c);
+    const edited = !isHistorical && isEditedMc(c);
     const isOpen = expandedTicker===c.t;
     html += `
       <tr class="row ${isOpen?'expanded':''}" data-ticker="${c.t}">
         <td class="rank num">${rank}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${(c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
         </td>
         <td class="num-col">
+          ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `
           <div class="mc-cell">
             <input type="number" step="0.1" class="mc-input num ${edited?'edited':''}" data-ticker="${c.t}" value="${mc}">
             ${edited ? `<button class="mc-reset" data-ticker="${c.t}" title="Reset to build-time value">↺</button>` : ''}
-          </div>
+          </div>`}
         </td>
         <td class="num-col num">${pb!==null ? fmtNum(pb,2) : '—'}</td>
         <td class="num-col num">${fmtPct(roe)}</td>
@@ -495,7 +555,7 @@ function render() {
       html += `
         <tr class="detail-row"><td colspan="8">
           <div class="detail">
-            <div class="lens-note">Best lens: <b>${bestLens}</b> at $${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
+            <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
             <div class="breakdown">
               <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
               <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
@@ -536,13 +596,30 @@ function render() {
   tbody.querySelectorAll('tr.row').forEach(tr => {
     tr.addEventListener('click', e => { if (e.target.closest('.mc-cell')) return; const t=tr.dataset.ticker; expandedTicker = (expandedTicker===t)?null:t; render(); });
   });
-  tbody.querySelectorAll('.mc-input').forEach(inp => {
-    inp.addEventListener('click', e=>e.stopPropagation());
-    inp.addEventListener('change', () => applyMcEdit(inp.dataset.ticker, parseFloat(inp.value), 'manual'));
+  if (!isHistorical) {
+    tbody.querySelectorAll('.mc-input').forEach(inp => {
+      inp.addEventListener('click', e=>e.stopPropagation());
+      inp.addEventListener('change', () => applyMcEdit(inp.dataset.ticker, parseFloat(inp.value), 'manual'));
+    });
+    tbody.querySelectorAll('.mc-reset').forEach(btn => {
+      btn.addEventListener('click', e => { e.stopPropagation(); resetMc(btn.dataset.ticker); });
+    });
+  }
+
+  ['editedOnlyBtn','gmUpdateBtn','bulkUpdateBtn'].forEach(id => {
+    document.getElementById(id).style.display = isHistorical ? 'none' : '';
   });
-  tbody.querySelectorAll('.mc-reset').forEach(btn => {
-    btn.addEventListener('click', e => { e.stopPropagation(); resetMc(btn.dataset.ticker); });
-  });
+  const banner = document.getElementById('historyBanner');
+  const hd = document.getElementById('historyDate');
+  hd.classList.toggle('active', isHistorical);
+  if (isHistorical) {
+    banner.style.display = 'block';
+    banner.textContent = filters.historyDate === 'baseline'
+      ? 'Viewing the original baseline — market caps as first loaded, before this project’s refresh work, with data-quality fixes applied. Read-only; switch to Live to edit or update.'
+      : `Viewing the shortlist as it stood on ${filters.historyDate}. Read-only; switch to Live to edit or update.`;
+  } else {
+    banner.style.display = 'none';
+  }
 }
 
 function showToast(msg) {
@@ -644,6 +721,7 @@ function wireToolbar() {
   document.getElementById('archetypeFilter').addEventListener('change', e => { filters.archetype=e.target.value; render(); });
   document.getElementById('topNFilter').addEventListener('change', e => { filters.topN=parseInt(e.target.value,10); render(); });
   document.getElementById('sortField').addEventListener('change', e => { filters.sortField=e.target.value; render(); });
+  document.getElementById('historyDate').addEventListener('change', e => { filters.historyDate=e.target.value; expandedTicker=null; render(); });
   document.getElementById('editedOnlyBtn').addEventListener('click', e => { filters.editedOnly=!filters.editedOnly; e.target.classList.toggle('active', filters.editedOnly); render(); });
   document.getElementById('needsGmBtn').addEventListener('click', e => { filters.needsGm=!filters.needsGm; e.target.classList.toggle('active', filters.needsGm); render(); });
 

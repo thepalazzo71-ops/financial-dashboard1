@@ -18,11 +18,12 @@ import json
 import re
 from datetime import datetime, timezone
 
-from scoring import DATA, ROOT, load_companies, load_overrides, resync_pool_ranks, score_pool
+from scoring import DATA, ROOT, compact_snapshot_rows, load_companies, load_overrides, resync_pool_ranks, score_pool
 
 TEMPLATE = ROOT / "site" / "template.html"
 OUT = ROOT / "docs" / "index.html"
 POOL_PATH = DATA / "companies_1000_scored.json"
+SNAPSHOTS = ROOT / "snapshots"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
@@ -31,6 +32,32 @@ def parse_links(md):
     if not md:
         return []
     return [{'label': label, 'url': url} for label, url in LINK_RE.findall(md)]
+
+
+def load_history(companies):
+    """History entries for the dashboard's history dropdown.
+
+    'baseline' is always computed fresh here - zero market-cap/GM
+    overrides, against the current (already dilution-corrected) pool -
+    rather than read from a dated file. That's deliberate: any snapshot
+    file captured mid-project could predate a since-fixed data bug (see
+    the 2026-09-21 dilution fix in docs/handoff-brief.md, which briefly
+    had ProCook Group at rank 511 instead of its true ~77) and would
+    misrepresent the "before this refresh project" state if used as-is.
+    Real dated snapshots/shortlist_snapshot_<date>.json files (captured
+    going forward, after that fix) are loaded normally alongside it.
+
+    Returns (history dict keyed by date/'baseline', ordered key list with
+    'baseline' first).
+    """
+    history = {'baseline': compact_snapshot_rows(companies, {}, {})}
+    dated_keys = []
+    for path in sorted(SNAPSHOTS.glob("shortlist_snapshot_*.json")):
+        date_str = path.stem.replace("shortlist_snapshot_", "")
+        with open(path) as f:
+            history[date_str] = json.load(f)
+        dated_keys.append(date_str)
+    return history, ['baseline'] + dated_keys
 
 
 def build_payload(companies, mc_overrides, gm_overrides):
@@ -60,7 +87,11 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'thesis': c.get('thesis'),
         })
 
-    payload = {'median_gm_pts': round(median_gm_pts, 4), 'companies': out_companies}
+    history, history_dates = load_history(companies)
+    payload = {
+        'median_gm_pts': round(median_gm_pts, 4), 'companies': out_companies,
+        'history': history, 'historyDates': history_dates,
+    }
     build_info = {
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
         'poolSize': len(companies),

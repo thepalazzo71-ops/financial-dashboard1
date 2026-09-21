@@ -227,6 +227,53 @@ current as of the last `build_site.py` run — no more manual step to
 remember, and no more silently-stale numbers like the "#77" reported to
 the user before this fix.
 
+## History feature + baseline-vs-live convention (2026-09-21)
+
+Added a read-only history dropdown to the dashboard (`#historyDate` in
+`site/template.html`) so past states of the shortlist can be viewed
+without leaving the live page. This surfaced a second real data-integrity
+issue the user caught: the obvious approach — embedding whichever dated
+`.xlsx`/`.json` snapshots happened to already exist in `snapshots/` —
+would have exposed the buggy pre-dilution-fix state as if it were a
+legitimate "before" point. E.g. the 2026-09-20 snapshot had ProCook Group
+at rank 511 (dilution pts 0, the missing-data bug fixed above), not its
+true baseline rank.
+
+**Fixed by not trusting dated files for the "before" comparison at all.**
+`scripts/scoring.py` now has `compact_snapshot_rows(companies,
+mc_overrides, gm_overrides)`, and `scripts/build_site.py`'s `load_history()`
+always computes a **`baseline`** entry fresh — `compact_snapshot_rows(companies,
+{}, {})`, i.e. original market caps, zero refresh-project overrides,
+against the *current* (already dilution-corrected) pool. This is the only
+"before" state used anywhere now: it can never go stale or carry a
+since-fixed bug, because it's recomputed at every build rather than read
+from a file captured mid-project. `snapshots/shortlist_snapshot_*.json`
+files (any captured going forward, after this fix) load in addition to
+`baseline` as ordinary dated history entries.
+
+Two backfilled snapshot JSONs from before this fix
+(`shortlist_snapshot_2026-09-20.json`, `_2026-09-21.json`) were deleted —
+one had the dilution bug, the other duplicated live exactly, neither was
+a useful history entry. The `.xlsx` audit-trail files for those dates are
+untouched.
+
+**Note on the pre-2026-09-21 "#100" figure**: the original AI-run
+shortlist (`European_SmallMidCap_Value_Shortlist_2.xlsx`, outside this
+repo) had ProCook at rank ~100. This codebase's `baseline` (zero
+overrides, dilution correct) computes it at **rank 77**, not 100 — a
+pre-existing methodology difference between that original run and this
+v6 reimplementation, already covered by the "Formula note" disclaimer on
+the dashboard. It predates and is unrelated to the dilution bug or the
+market-cap refresh project, so **77 → 142** (baseline → live) is the
+correct comparison, not 100 → 142 or 508 → 142.
+
+`scratch/build_rank_movers.py` (rank-movers report) and
+`scratch/build_movers_report.py` (market-cap movers report) both use this
+same baseline-vs-live convention now — `score_pool(companies, {}, {})` vs
+`score_pool(companies, mc_overrides, gm_overrides)` — for any "before vs
+after" analysis, rather than diffing two arbitrary git commits or dated
+files.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
