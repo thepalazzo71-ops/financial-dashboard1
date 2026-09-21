@@ -1,0 +1,10 @@
+{
+  // Deploys docs/ as static assets on Cloudflare Workers (the current
+  // recommended replacement for Cloudflare Pages). No build step, no
+  // Worker script needed — this is a pure static site.
+  "name": "financial-dashboard1",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    "directory": "./docs"
+  }
+}
