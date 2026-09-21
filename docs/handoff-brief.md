@@ -24,7 +24,10 @@ source files:
 
 - `Europe_15m-1B.xls` — raw Capital IQ extract, 6,109 companies, 87 columns
   (revenue, net income, CFO, shares outstanding, dividends, long-term debt;
-  10 quarterly LTM snapshots each, LTM-36 through LTM).
+  10 quarterly LTM snapshots each, LTM-36 through LTM). **Now saved in the
+  repo at `data/raw/Europe_15m-1B.xls`** — it was needed to fix a real
+  scoring gap (see below) and is the only source for shares-outstanding
+  history, so don't lose it again.
 - `European_Shortlist_Methodology.docx` — the full methodology write-up
   (also attached to this chat as a project file). This is the source of
   truth for every filter/formula below.
@@ -150,6 +153,48 @@ Delta Plus Group (returned $0.00), Maschinenfabrik Berthold Hermle AG
 (market cap exactly equaled price × 1,000,000 — a placeholder, not a real
 share count), Maisons du Monde S.A. (quoted price of €0.233/share is far
 below its normal trading range).
+
+## Major fix: dilution scoring gap (2026-09-21)
+
+The user asked why ProCook Group plc (LSE:PROC) wasn't in the shortlist
+anymore — a prior AI-generated run (20 Mar 2026, uploaded as
+`European_SmallMidCap_Value_Shortlist_2.xlsx`) had it ranked **#100**;
+the current pool had it at **#508**. Root cause: ProCook's `dilution`
+field in `data/companies_1000_scored.json` was `null`, which the model
+scores as **0/12 dilution points** — the harshest possible penalty — even
+though ProCook's actual lifetime share growth (6.7%, comfortably in the
+full-marks band) was known in the March run.
+
+**This wasn't isolated to ProCook.** 84 of the 1,000 companies in the pool
+had `dilution: null`. The scored-pool JSON simply never carried a
+shares-outstanding history (`revHist`/`niHist` exist per company, no
+`sharesHist`) — it wasn't a computation bug, the input was missing.
+
+The user supplied the original raw Capital IQ extract
+(`data/raw/Europe_15m-1B.xls`), which has a
+"Weighted Avg. Diluted Shares Out." column for the same 10 LTM periods
+already used for revenue/NI. `scripts/fix_dilution_gaps.py` recomputes
+dilution from that raw data using the exact same formula already implied
+by the ~900 companies that did have a value (reverse-engineered from
+existing (dilution, points) pairs and cross-checked against several
+known-good companies before use — see the script's docstring for the
+formula and full derivation).
+
+**Result:** 69 of the 84 gaps were fixed (real shares data existed once
+Capital IQ's `0.0` "not reported" placeholder was correctly filtered
+out — 0 diluted shares outstanding isn't possible for a real company).
+The other 15 have no shares data at all across any of the 10 periods and
+remain unresolved. Recomputing 69 companies' scores reshuffled the whole
+pool's ranking; **12 companies entered the top 150 and 12 exited**
+(all from the bottom of the old list) — see git history on
+`data/companies_1000_scored.json` for the exact before/after. The 12 new
+entrants (including ProCook, now #77) don't have a market-cap override
+yet and are due for a refresh batch.
+
+If more `dilution: null` gaps turn up elsewhere in the pool (outside the
+top 150) or new data sources are added, re-run
+`python3 scripts/fix_dilution_gaps.py` then `scripts/build_site.py` —
+it's idempotent and safe to run repeatedly.
 
 ## Progress as of this handoff
 
