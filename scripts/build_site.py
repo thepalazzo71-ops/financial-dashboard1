@@ -23,6 +23,7 @@ from scoring import DATA, ROOT, compact_snapshot_rows, load_companies, load_over
 TEMPLATE = ROOT / "site" / "template.html"
 OUT = ROOT / "docs" / "index.html"
 POOL_PATH = DATA / "companies_1000_scored.json"
+NEWS_PATH = DATA / "company_news.json"
 SNAPSHOTS = ROOT / "snapshots"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -32,6 +33,21 @@ def parse_links(md):
     if not md:
         return []
     return [{'label': label, 'url': url} for label, url in LINK_RE.findall(md)]
+
+
+def load_company_news():
+    """ticker -> {note, confidence, ...}: a short, factual one-liner on any
+    *fundamental* event (earnings, M&A, guidance, contract, regulatory...)
+    identified as a plausible cause of a company's rank move since the
+    baseline. Manually researched, not automated - see docs/handoff-brief.md.
+    A missing ticker means no attributable catalyst was found, which is a
+    normal and expected outcome (most rank moves are pool ripple or a plain
+    re-rating with no distinct news event), not a gap to fill in.
+    """
+    if not NEWS_PATH.exists():
+        return {}
+    with open(NEWS_PATH) as f:
+        return json.load(f)
 
 
 def load_history(companies):
@@ -62,11 +78,13 @@ def load_history(companies):
 
 def build_payload(companies, mc_overrides, gm_overrides):
     scored, median_gm_pts = score_pool(companies, mc_overrides, gm_overrides)
+    company_news = load_company_news()
 
     out_companies = []
     for c, s in zip(companies, scored):
         mc_o = mc_overrides.get(c['ticker'])
         gm_o = gm_overrides.get(c['ticker'])
+        news = company_news.get(c['ticker'])
         out_companies.append({
             't': c['ticker'], 'n': c['name'], 'co': c['country'],
             'mc0': round(s['mc'], 2),
@@ -85,6 +103,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'fixedPts': c['fixedPts'], 'fixedSumNoGm': c['fixedSumNoGm'],
             'revHist': c['revHist'], 'niHist': c['niHist'],
             'thesis': c.get('thesis'),
+            'newsNote': news.get('note') if news else None,
         })
 
     history, history_dates = load_history(companies)

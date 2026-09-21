@@ -123,6 +123,8 @@
   .detail p { font-size: 13px; line-height: 1.5; margin: 0 0 14px; color: var(--ink); }
   .detail .flags { color: var(--brick); }
   .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .news-note { font-size: 12.5px; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .news-note b.lbl { display: block; font-size: 10.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
   .breakdown { font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
   .breakdown div.bd-row { display: flex; justify-content: space-between; padding: 5px 9px; background: var(--paper); }
   .breakdown div.bd-row:nth-child(even) { background: var(--paper-raised); }
@@ -599,6 +601,7 @@ function render() {
       html += `
         <tr class="detail-row"><td colspan="9">
           <div class="detail">
+            ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
             <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
             <div class="breakdown">
               <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>

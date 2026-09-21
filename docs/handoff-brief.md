@@ -301,6 +301,35 @@ full-pool snapshot (~250 KB minified JSON) per frozen date, so if batches
 start landing very frequently this may eventually need a lazy-load
 mechanism instead of full embedding; not a concern at the current cadence.
 
+## Fundamental-catalyst news notes (2026-09-21)
+
+The user wants the detail panel to explain, for big rank movers
+specifically, *why* — whether some real fundamental event (earnings,
+guidance, M&A, a contract, regulatory news, leadership change...)
+between the baseline extract and today plausibly caused the move, not
+just "the market cap changed." This is manually/agent-researched, not
+computed: `data/company_news.json` is `{ticker: {note, confidence}}`,
+loaded by `scripts/build_site.py`'s `load_company_news()` and embedded
+as `c.newsNote` in the payload. A missing ticker means no attributable
+catalyst was found or it hasn't been researched yet — both are normal;
+most rank moves are pure pool-ripple (no news of their own at all, see
+the rank-movers report) or a plain re-rating with no distinct trigger,
+so **most companies should have no note**, and that's correct, not a gap.
+`site/template.html`'s detail panel shows a gold "What likely moved the
+rank" callout right at the top when `c.newsNote` is set, above the
+existing lens-note; nothing renders when it's absent.
+
+Scope so far: researched only the ~25 companies with the single biggest
+baseline→live rank swings among the 133 whose own market cap was
+actually refreshed (the ones in `scratch/rank_movers.xlsx`'s "Biggest
+Rank Gains"/"Biggest Rank Declines" tabs) — not all 133, and not the
+620 pure-ripple movers (which by definition have no company-specific
+news to find). To extend coverage, research more tickers the same way
+(Bigdata.com search/tearsheet for a fundamental catalyst in the
+baseline-to-live window, one factual sentence, skip if nothing
+attributable turns up) and add entries to `data/company_news.json`,
+then rebuild.
+
 A new **Δ (rank change)** column sits right after `#` in the main table,
 on every view (live and historical alike) — an up/down arrow plus the
 number of places moved, comparing the row's rank in the view you're on
