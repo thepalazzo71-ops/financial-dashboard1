@@ -4,6 +4,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.134524Z"
   },
+  "AIM:CBOX": {
+    "mc": 109.0,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
+  },
   "AIM:CFX": {
     "mc": 90.35,
     "source": "bigdata.com",
@@ -153,6 +158,11 @@
     "mc": 310.29,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.743544Z"
+  },
+  "DB:TBX0": {
+    "mc": 16.18,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
   },
   "ENXTBR:ABO": {
     "mc": 50.74,
@@ -314,6 +324,16 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
+  "LSE:BYIT": {
+    "mc": 1423.17,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
+  },
+  "LSE:DOCS": {
+    "mc": 862.58,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
+  },
   "LSE:ECEL": {
     "mc": 170.91,
     "source": "bigdata.com",
@@ -343,6 +363,11 @@
     "mc": 1206.4,
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "LSE:PROC": {
+    "mc": 72.95,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
   },
   "LSE:REC": {
     "mc": 111.38,
@@ -413,6 +438,11 @@
     "mc": 483.22,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.919362Z"
+  },
+  "OM:NORB B": {
+    "mc": 61.7,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
   },
   "OM:OGUN B": {
     "mc": 24.07,
@@ -554,10 +584,20 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.901621Z"
   },
+  "XTRA:DR0": {
+    "mc": 499.48,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
+  },
   "XTRA:FAA": {
     "mc": 195.75,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.760521Z"
+  },
+  "XTRA:FQT": {
+    "mc": 1010.36,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T01:24:58.560732Z"
   },
   "XTRA:GFT": {
     "mc": 766.25,

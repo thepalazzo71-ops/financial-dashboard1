@@ -145,7 +145,8 @@ Hartmann AG, Agria Group Holding, Biofarm S.A., XBS Pro-Log S.A., Blue Cap
 AG (listing missing from Bigdata's knowledge graph despite being publicly
 traded), InnoTec TSS AG, TF Bank AB (only a private Finnish subsidiary
 resolves, not the Swedish public parent), Medika d.d., Sopharma Trading
-AD, TOMA a.s., AB Zemaitijos pienas, Messer Tehnogas AD, BasicNet S.p.A.
+AD, TOMA a.s., AB Zemaitijos pienas, Messer Tehnogas AD, BasicNet S.p.A.,
+Comvex S.A., Reti S.p.A., ILPRA S.p.A., Slatinska Banka d.d.
 
 **Excluded — data errors** (resolved with a value, but the value itself is
 implausible and not applied): Gérard Perrier Industrie (~20-40x too high),
@@ -198,10 +199,12 @@ it's idempotent and safe to run repeatedly.
 
 ## Progress as of this handoff
 
-- **125 of 150** shortlist companies have refreshed market caps — every
-  company in the top 150 that Bigdata.com can resolve to a real market
-  cap now has one. The other 25 are known non-coverage or excluded data
-  errors (see above); don't re-attempt without a different data source.
+- **133 of 150** shortlist companies have refreshed market caps — every
+  company in the (post dilution-fix) top 150 that Bigdata.com can resolve
+  to a real market cap now has one, including all 8 of the 12 new
+  entrants from the dilution fix (4 more non-coverage names). The
+  remaining 17 gaps are known non-coverage or excluded data errors (see
+  above); don't re-attempt without a different data source.
 - Market-cap refresh for the top 150 is effectively **done** for now.
   Remaining related work: gross-margin research (still deferred, see
   below), and re-attempting non-coverage names only if a new data source
