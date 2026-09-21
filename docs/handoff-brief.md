@@ -274,23 +274,38 @@ same baseline-vs-live convention now — `score_pool(companies, {}, {})` vs
 after" analysis, rather than diffing two arbitrary git commits or dated
 files.
 
-**Standing policy — freeze a dated snapshot before every override batch.**
-The user wants past dashboard states preserved permanently as new batches
-land, not just `baseline` vs whatever is currently live. So: **before**
-applying any new `data/mc_overrides_applied.json` /
-`data/gm_overrides_applied.json` batch, run `python3 scripts/snapshot.py`
-first (no args = today's date) to freeze the current live state to
-`snapshots/shortlist_snapshot_<date>.json` (+ matching `.xlsx`). That file
-is then a permanent, never-overwritten history entry (the dashboard's
-`load_history()` in `scripts/build_site.py` picks up every
-`snapshots/shortlist_snapshot_*.json` file automatically) — apply the
-batch and rebuild *after*, so "today's before" and "today's after" don't
-collide. If a batch is applied same-day as an earlier one, re-running
-`scripts/snapshot.py` same-day overwrites that day's file with the latest
-pre-batch state, which is correct (one frozen point per calendar day, not
-per batch). A first such snapshot (2026-09-21, today's fully-refreshed
-133-override state at the time of this fix) already exists as the
-baseline for this policy going forward.
+**Standing policy — freeze a dated snapshot BEFORE every override batch,
+never after.** The user wants past dashboard states preserved
+permanently as new batches land, not just `baseline` vs whatever is
+currently live. So: **before** applying any new
+`data/mc_overrides_applied.json` / `data/gm_overrides_applied.json`
+batch, run `python3 scripts/snapshot.py` first (no args = today's date)
+to freeze the current live state to
+`snapshots/shortlist_snapshot_<date>.json` (+ matching `.xlsx`) — *then*
+apply the batch and rebuild. That file becomes a permanent, never-
+overwritten history entry (`load_history()` in `scripts/build_site.py`
+picks up every `snapshots/shortlist_snapshot_*.json` file automatically).
+If a batch is applied same-day as an earlier one, re-running
+`scripts/snapshot.py` same-day overwrites that day's file with the
+latest pre-batch state (one frozen point per calendar day, not per
+batch) — but only call it again if there's a genuinely new pre-batch
+state to capture.
+
+**Mistake made and fixed (2026-09-21):** a same-day snapshot was frozen
+*after* that day's 133-override batch had already landed, so it was
+byte-for-byte identical to live. That silently broke the Δ (rank
+change) column below: it compares the current view to the most recent
+checkpoint, so with "most recent checkpoint" == "live", every company
+showed a flat delta on the live dashboard even though real movement
+existed (e.g. ProCook Group had genuinely moved baseline rank 77 → live
+rank 142). The user caught this ("why can't I see the rank move in the
+live dashboard?"). Fixed by deleting that snapshot file — with no
+dated snapshots yet, `baseline` is once again the live view's "previous
+run", so the Δ column now correctly shows real baseline→live movement.
+**Never freeze a snapshot that has nothing new before it** — only do it
+right before applying a batch that will actually change something, so
+every frozen date is genuinely distinct from whatever "live" becomes
+next.
 
 The dashboard's history dropdown shows `baseline` first, then every
 frozen date, each formatted as "As of D Mon YYYY" (see `formatDateKey` /
