@@ -339,11 +339,22 @@ baseline→live rank swings among the 133 whose own market cap was
 actually refreshed (the ones in `scratch/rank_movers.xlsx`'s "Biggest
 Rank Gains"/"Biggest Rank Declines" tabs) — not all 133, and not the
 620 pure-ripple movers (which by definition have no company-specific
-news to find). Found an attributable catalyst for 17/25 (in
-`data/company_news.json`); 8 came back with no clear finding
-(ALLUX, LSC, FOI B, EVS, CMO, OGUN B, GE, FQT — no coverage in
-Bigdata.com, or the news found didn't fit the direction/magnitude of
-the move, so correctly left blank rather than guessed). To extend
+news to find). Found an attributable catalyst for 18/25 (in
+`data/company_news.json`); 7 came back with no clear finding
+(LSC, FOI B, EVS, CMO, OGUN B, GE, FQT — no coverage in Bigdata.com,
+or the news found didn't fit the direction/magnitude of the move, so
+correctly left blank rather than guessed). ENXTPA:ALLUX (Installux
+S.A.) was flagged "no finding" by the first research pass (no news
+indexed in Bigdata.com's structured content) but the user specifically
+asked about it, and an open-web search turned up the real cause: FCCE
+(the Canty family's controlling holding company) announced a
+simplified tender offer for Installux's minority shares at €500/share
+on 28 May 2026 — a 74% premium to the 60-day VWAP, valuing the company
+at €140.0M for 100% — which is exactly the baseline→live market-cap
+move (+70.8%). Lesson: Bigdata.com's structured content missed this
+one; French financial press (boursier.com in this case) via the open-
+web search lane caught it. Worth trying open-web for other "no
+finding" tickers if the user wants more filled in. To extend
 coverage, research more tickers the same way (Bigdata.com search/
 tearsheet for a fundamental catalyst in the baseline-to-live window,
 one factual sentence, skip if nothing attributable turns up) and add
@@ -381,6 +392,29 @@ exactly why the snapshot-before-every-batch policy above matters — the Δ
 column is only meaningful once there's a prior frozen point to diff
 against, so skipping a pre-batch snapshot leaves "live" comparing itself
 to a stale or absent baseline.
+
+A **"Top 150 changes (N)"** toolbar button opens a modal listing every
+company that crossed the top-150 line since the same "previous
+checkpoint" the Δ column uses — split into "Entered top 150" and "Left
+top 150", each row showing the rank move, market cap, v6 score, and the
+company's `newsNote` if one exists (`top150Movers()` /
+`renderTop150Row()` in `site/template.html`). Disabled with no count on
+`baseline` (nothing precedes it to compare to). This is genuinely
+different from "biggest rank movers" — e.g. Installux (`ENXTPA:ALLUX`)
+moved -114 ranks (154→268) but never appears here because it was
+already outside top 150 at both checkpoints; conversely a company can
+cross the line with a small absolute move if it started right at #150.
+
+## Fixed-income/corporate-action data quality note
+
+Investigating rank movers surfaces real reasons that have nothing to do
+with organic performance - the Installux move above was a **tender
+offer** (FCCE/Canty family buyout of minority shares at €500/share, 28
+May 2026, 74% premium), not earnings. A stock trading near/at an
+announced tender price is a merger-arb situation, not a value
+opportunity, and its v6 score is meaningless until the offer resolves.
+Worth watching for more of these among the 133 refreshed tickers - see
+"Corporate actions" work below if picked up.
 
 ## Progress as of this handoff
 

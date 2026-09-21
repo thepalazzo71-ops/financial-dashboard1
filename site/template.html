@@ -144,6 +144,15 @@
   .modal-backdrop { position: fixed; inset: 0; background: rgba(20,24,30,0.5); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
   .modal-backdrop.open { display: flex; }
   .modal { background: var(--paper-raised); border: 1px solid var(--rule-strong); border-radius: 6px; max-width: 580px; width: 100%; padding: 22px; max-height: 86vh; overflow-y: auto; }
+  .modal.wide { max-width: 760px; }
+  .modal h4 { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.03em; margin: 18px 0 8px; }
+  .modal h4:first-child { margin-top: 0; }
+  .top150-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .top150-row:last-child { border-bottom: none; }
+  .t150-rank { flex: 0 0 60px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; text-align: center; color: var(--ink-soft); line-height: 1.4; }
+  .t150-co .name { font-weight: 600; font-size: 13.5px; }
+  .t150-co .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .t150-news { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
   .modal h3 { font-family: 'Source Serif 4', serif; font-size: 19px; margin: 0 0 6px; }
   .modal p.hint { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 12px; }
   .modal textarea { width: 100%; min-height: 160px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 10px; resize: vertical; }
@@ -189,6 +198,7 @@
     <select id="historyDate"><option value="live">Live (current)</option></select>
     <button class="btn ghost small" id="editedOnlyBtn">Edited only</button>
     <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
+    <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
   </div>
@@ -286,6 +296,17 @@
     <div class="actions">
       <button class="btn ghost" id="gmBulkCancel">Cancel</button>
       <button class="btn gold" id="gmBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="top150ModalBackdrop">
+  <div class="modal wide">
+    <h3>Top 150 changes</h3>
+    <p class="hint" id="top150Hint"></p>
+    <div id="top150Content"></div>
+    <div class="actions">
+      <button class="btn ghost" id="top150Close">Close</button>
     </div>
   </div>
 </div>
@@ -430,6 +451,54 @@ function rankDeltaMap(forKey) {
   (HISTORY[prevKey] || []).forEach(r => { map[r.t] = r.rank; });
   return map;
 }
+function computeRankByTicker(all, isHistorical) {
+  const rankByTicker = {};
+  if (isHistorical) {
+    all.forEach(r => rankByTicker[r.c.t] = r.rank);
+  } else {
+    all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
+  }
+  return rankByTicker;
+}
+// Companies whose full-pool rank crossed the top-150 line since the
+// checkpoint immediately before the current view.
+function top150Movers() {
+  const isHist = filters.historyDate !== 'live';
+  const all = ensureScored();
+  const rankByTicker = computeRankByTicker(all, isHist);
+  const prevRanks = rankDeltaMap(filters.historyDate);
+  const prevKey = previousHistoryKey(filters.historyDate);
+  const entrants = [], exits = [];
+  if (!prevKey) return { entrants, exits, prevKey };
+  all.forEach(row => {
+    const t = row.c.t;
+    const curRank = rankByTicker[t];
+    const prevRank = prevRanks[t];
+    if (prevRank === undefined) return;
+    const wasIn = prevRank <= 150, isIn = curRank <= 150;
+    if (!wasIn && isIn) entrants.push({ row, curRank, prevRank });
+    else if (wasIn && !isIn) exits.push({ row, curRank, prevRank });
+  });
+  entrants.sort((a,b)=>a.curRank-b.curRank);
+  exits.sort((a,b)=>a.curRank-b.curRank);
+  return { entrants, exits, prevKey };
+}
+function renderTop150Row(entry, direction) {
+  const { row, curRank, prevRank } = entry;
+  const c = row.c;
+  const arrow = direction === 'in' ? '▲' : '▼';
+  const cls = direction === 'in' ? 'up' : 'down';
+  return `
+    <div class="top150-row">
+      <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}</span><br>#${prevRank}&rarr;#${curRank}</div>
+      <div class="t150-co">
+        <div class="name">${c.n}</div>
+        <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(row.mc,0)}M mkt cap &middot; v6 ${fmtNum(row.total,1)}</div>
+        ${c.newsNote ? `<div class="t150-news">${c.newsNote}</div>` : ''}
+      </div>
+    </div>
+  `;
+}
 function ensureScored() {
   if (filters.historyDate !== 'live') {
     const d = filters.historyDate;
@@ -510,12 +579,7 @@ function render() {
 
   // rank is always by full-pool score, independent of display filter.
   // In historical mode the rank was already fixed at snapshot time.
-  const rankByTicker = {};
-  if (isHistorical) {
-    all.forEach(r => rankByTicker[r.c.t] = r.rank);
-  } else {
-    all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
-  }
+  const rankByTicker = computeRankByTicker(all, isHistorical);
 
   const topN = filters.topN;
   scored = scored.filter(r => rankByTicker[r.c.t] <= topN);
@@ -667,6 +731,13 @@ function render() {
   } else {
     banner.style.display = 'none';
   }
+
+  const t150 = top150Movers();
+  const t150Btn = document.getElementById('top150ChangesBtn');
+  t150Btn.textContent = t150.prevKey
+    ? `Top 150 changes (${t150.entrants.length + t150.exits.length})`
+    : 'Top 150 changes';
+  t150Btn.disabled = !t150.prevKey;
 }
 
 function showToast(msg) {
@@ -771,6 +842,28 @@ function wireToolbar() {
   document.getElementById('historyDate').addEventListener('change', e => { filters.historyDate=e.target.value; expandedTicker=null; render(); });
   document.getElementById('editedOnlyBtn').addEventListener('click', e => { filters.editedOnly=!filters.editedOnly; e.target.classList.toggle('active', filters.editedOnly); render(); });
   document.getElementById('needsGmBtn').addEventListener('click', e => { filters.needsGm=!filters.needsGm; e.target.classList.toggle('active', filters.needsGm); render(); });
+
+  const t150Backdrop = document.getElementById('top150ModalBackdrop');
+  document.getElementById('top150ChangesBtn').addEventListener('click', () => {
+    const { entrants, exits, prevKey } = top150Movers();
+    const hint = document.getElementById('top150Hint');
+    const content = document.getElementById('top150Content');
+    if (!prevKey) {
+      hint.textContent = 'No earlier checkpoint to compare to yet.';
+      content.innerHTML = '';
+    } else {
+      hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}: ${entrants.length} compan${entrants.length===1?'y':'ies'} entered the top 150, ${exits.length} left it.`;
+      content.innerHTML = `
+        <h4>Entered top 150 (${entrants.length})</h4>
+        ${entrants.length ? entrants.map(e=>renderTop150Row(e,'in')).join('') : '<p class="no-thesis">None.</p>'}
+        <h4>Left top 150 (${exits.length})</h4>
+        ${exits.length ? exits.map(e=>renderTop150Row(e,'out')).join('') : '<p class="no-thesis">None.</p>'}
+      `;
+    }
+    t150Backdrop.classList.add('open');
+  });
+  document.getElementById('top150Close').addEventListener('click', () => t150Backdrop.classList.remove('open'));
+  t150Backdrop.addEventListener('click', e => { if (e.target===t150Backdrop) t150Backdrop.classList.remove('open'); });
 
   const mcBackdrop = document.getElementById('mcModalBackdrop');
   document.getElementById('bulkUpdateBtn').addEventListener('click', () => {

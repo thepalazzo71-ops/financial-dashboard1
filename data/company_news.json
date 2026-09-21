@@ -66,5 +66,9 @@
   "ENXTPA:AUB": {
     "note": "Q2 2026 update (July 2026): raised FY2026 revenue guidance to EUR695-705M (from EUR676-690M) and margin to 9-10%, citing strong H1/international momentum.",
     "confidence": "high"
+  },
+  "ENXTPA:ALLUX": {
+    "note": "FCCE (Canty family holding) announced a simplified tender offer for minority shares at EUR500 (28 May 2026), a 74% premium to the 60-day VWAP - valuing Installux at EUR140.0M for 100%; price move reflects the offer, not operating results.",
+    "confidence": "high"
   }
 }
