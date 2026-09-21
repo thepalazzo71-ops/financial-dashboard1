@@ -29,6 +29,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.405546Z"
   },
+  "AIM:IPX": {
+    "mc": 173.44,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "AIM:LSC": {
     "mc": 615.61,
     "source": "bigdata.com",
@@ -53,6 +58,11 @@
     "mc": 202.12,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.390078Z"
+  },
+  "AIM:WINK": {
+    "mc": 28.52,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "AIM:YOU": {
     "mc": 412.86,
@@ -109,15 +119,35 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
+  "CPSE:DFDS": {
+    "mc": 1350.31,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "CPSE:FED": {
     "mc": 88.36,
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
+  "CPSE:HVID": {
+    "mc": 47.2,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "CPSE:KRE": {
+    "mc": 256.32,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "CPSE:LUXOR B": {
     "mc": 98.42,
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
+  },
+  "CPSE:MATAS": {
+    "mc": 489.95,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "CPSE:TRIFOR": {
     "mc": 310.29,
@@ -128,6 +158,11 @@
     "mc": 50.74,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.05754Z"
+  },
+  "ENXTBR:EVS": {
+    "mc": 423.34,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "ENXTBR:FLOB": {
     "mc": 640.68,
@@ -144,6 +179,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.926397Z"
   },
+  "ENXTPA:ALLUX": {
+    "mc": 156.59,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "ENXTPA:ALMDG": {
     "mc": 61.55,
     "source": "bigdata.com",
@@ -153,6 +193,11 @@
     "mc": 150.25,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.358072Z"
+  },
+  "ENXTPA:ALVU": {
+    "mc": 183.47,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "ENXTPA:AUB": {
     "mc": 748.98,
@@ -179,6 +224,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.845261Z"
   },
+  "ENXTPA:GRVO": {
+    "mc": 28.05,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "ENXTPA:INF": {
     "mc": 297.06,
     "source": "bigdata.com",
@@ -198,6 +248,11 @@
     "mc": 375.98,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.803535Z"
+  },
+  "ENXTPA:PARP": {
+    "mc": 195.52,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "ENXTPA:RBO": {
     "mc": 218.26,
@@ -219,15 +274,30 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
+  "ENXTPA:VETO": {
+    "mc": 982.53,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "HLSE:AALLON": {
     "mc": 39.49,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.910527Z"
   },
+  "HLSE:ADMCM": {
+    "mc": 145.79,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "HLSE:ETTE": {
     "mc": 239.51,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.116355Z"
+  },
+  "HLSE:MEKKO": {
+    "mc": 438.85,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "HLSE:REG1V": {
     "mc": 439.65,
@@ -249,6 +319,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.374909Z"
   },
+  "LSE:FDM": {
+    "mc": 155.8,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "LSE:GAMA": {
     "mc": 1352.29,
     "source": "bigdata.com",
@@ -258,6 +333,16 @@
     "mc": 735.12,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.398034Z"
+  },
+  "LSE:MONY": {
+    "mc": 1330.39,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "LSE:PETS": {
+    "mc": 1206.4,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "LSE:REC": {
     "mc": 111.38,
@@ -284,6 +369,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
+  "OB:SOGN": {
+    "mc": 21.09,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "OM:ACAD": {
     "mc": 1004.08,
     "source": "bigdata.com",
@@ -309,6 +399,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.163042Z"
   },
+  "OM:FOI B": {
+    "mc": 406.3,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "OM:G5EN": {
     "mc": 48.48,
     "source": "bigdata.com",
@@ -318,6 +413,16 @@
     "mc": 483.22,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.919362Z"
+  },
+  "OM:OGUN B": {
+    "mc": 24.07,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "SWX:GAV": {
+    "mc": 140.9,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "SWX:MIKN": {
     "mc": 324.71,
@@ -333,6 +438,16 @@
     "mc": 477.36,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.153635Z"
+  },
+  "SWX:ZEHN": {
+    "mc": 952.64,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "TLSE:SFG1T": {
+    "mc": 44.24,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "WSE:AMB": {
     "mc": 126.68,
@@ -359,6 +474,16 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.517068Z"
   },
+  "WSE:MON": {
+    "mc": 34.2,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "WSE:PBX": {
+    "mc": 53.31,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "WSE:PLW": {
     "mc": 397.33,
     "source": "bigdata.com",
@@ -379,10 +504,20 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.350402Z"
   },
+  "WSE:TOA": {
+    "mc": 199.1,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "WSE:TXT": {
     "mc": 278.92,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.048008Z"
+  },
+  "WSE:VIN": {
+    "mc": 42.24,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "WSE:VOT": {
     "mc": 136.09,
@@ -409,6 +544,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:45:10.442547Z"
   },
+  "XTRA:CSH": {
+    "mc": 78.44,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "XTRA:CWC": {
     "mc": 830.74,
     "source": "bigdata.com",
@@ -429,6 +569,11 @@
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:41:27.885368Z"
   },
+  "XTRA:HXCK": {
+    "mc": 382.24,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
   "XTRA:MED": {
     "mc": 300.02,
     "source": "bigdata.com",
@@ -443,6 +588,11 @@
     "mc": 154.09,
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:46:24.510646Z"
+  },
+  "XTRA:NTG": {
+    "mc": 120.26,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "XTRA:P4O": {
     "mc": 38.49,
@@ -468,5 +618,10 @@
     "mc": 1145.53,
     "source": "bigdata.com",
     "updatedAt": "2026-09-20T19:31:53.125998Z"
+  },
+  "XTRA:UZU": {
+    "mc": 395.07,
+    "source": "bigdata.com",
+    "updatedAt": "2026-09-21T00:55:49.074916Z"
   }
 }
