@@ -29,19 +29,24 @@ or host it anywhere that serves static files.
   having no backend and no ongoing hosting cost. See "Publishing a real
   update" below for how a change becomes permanent for everyone.
 
-### Publishing it live (one-time setup)
+### Publishing it live
 
-This repo builds `docs/index.html` automatically (see **Auto-rebuild**
-below), so making the dashboard a real URL is just a GitHub Pages toggle:
+The dashboard is hosted on **Cloudflare Workers** (static assets), private
+behind **Cloudflare Access** — a login page (email + one-time code) gates
+it, so only approved email addresses can view it. No server to maintain,
+no recurring cost (Cloudflare's free tier covers this; Access is free for
+up to 50 users).
 
-1. On GitHub: **Settings → Pages → Source → Deploy from a branch**.
-2. Branch: `claude/gracious-goldberg-v4yuql` (or `main`, once this is
-   merged) → folder **`/docs`** → **Save**.
-3. GitHub gives you a URL like
-   `https://thepalazzo71-ops.github.io/financial-dashboard1/`.
-
-No Vercel/Netlify account, no server, no recurring cost — GitHub Pages is
-free for this.
+- `wrangler.jsonc` at the repo root points a git-connected Cloudflare
+  Workers project at `./docs` as its static asset directory — that's what
+  Cloudflare's "Connect to Git" deploy flow reads.
+- Access is configured directly on the Worker: **Settings → Domains &
+  Routes → workers.dev → Protect this Worker behind Access**, scope **All
+  traffic**, with an Allow policy listing the approved email(s).
+- We initially also published a public copy via GitHub Pages
+  (`/docs` on this branch) to prove the static rebuild worked with zero
+  claude.ai dependency; that's now disabled (Settings → Pages → Source →
+  None) since Cloudflare + Access is the actual private, permanent home.
 
 ## Repo layout
 
@@ -65,6 +70,9 @@ dashboard/
   index.html                   frozen backup of the old claude.ai Artifact version
 .github/workflows/
   build-site.yml                auto-rebuilds docs/index.html on any data/site change
+wrangler.jsonc
+  Cloudflare Workers config — points the live, Access-protected deployment
+  at ./docs as its static asset directory
 ```
 
 Not yet in the repo (need to be re-sourced — see handoff brief): the raw
