@@ -1,0 +1,164 @@
+{
+  "tender_offers": [
+    {
+      "ticker": "ENXTPA:ALLUX",
+      "company": "Installux S.A.",
+      "date": "2026-05-28",
+      "counterparty": "FCCE (Canty family holding)",
+      "terms": "EUR500/share, 74% premium to 60-day VWAP, values company at EUR140.0M",
+      "note": "Simplified tender offer for minority shares from the controlling family holding; stock now trades near the offer price awaiting resolution.",
+      "source_url": "https://www.boursier.com/actions/actualites/news/installux-pre-offre-a-500-euros-986558.html"
+    },
+    {
+      "ticker": "BIT:BST",
+      "company": "Banca Sistema S.p.A.",
+      "date": "2026-01-16",
+      "counterparty": "Banca CF+ S.p.A.",
+      "terms": "Mandatory + voluntary public tender and exchange offer; consideration in Kruso Kapital (KK) shares, 23 KK shares per Banca Sistema share tendered",
+      "note": "Banca CF+ launched a public tender and exchange offer for all Banca Sistema shares (offer documents approved by Consob 14 Jan and 30 Apr 2026); the offer succeeded, CEO Gianluca Garbi resigned 13 March 2026, and on 24 June 2026 the boards approved a merger plan to absorb Banca CF+ into Banca Sistema, completing the integration.",
+      "source_url": "https://app.bigdata.com/documents/2A7EDD5DC5D5BC6468BCE9CC8F7F5541"
+    },
+    {
+      "ticker": "ENXTPA:ALPOU",
+      "company": "Poulaillon SA",
+      "date": "2026-06-22",
+      "counterparty": "SAS Eugénie (Poulaillon family holding)",
+      "terms": "EUR9.00/share simplified tender offer (OPAS) for the 16.5% of capital (843,402 shares) not already held",
+      "note": "The Poulaillon family's holding company SAS Eugénie filed a simplified public tender offer (filed 23 April 2026, offer period 22 June-3 July 2026) at EUR9 per share to take full control of the bakery/pastry group, similar in structure to the Installux case.",
+      "source_url": "https://app.bigdata.com/documents/C0C41E17B6B79E5AC56CD0068E38B985"
+    },
+    {
+      "ticker": "LSE:GAMA",
+      "company": "Gamma Communications plc",
+      "date": "2026-09-01",
+      "counterparty": "Epiris GP III (via Bradbury Bidco Ltd)",
+      "terms": "GBP11.20/share cash, GBP1.02bn equity value / GBP1.08bn enterprise value, 53% premium to 7 Apr 2026 close",
+      "note": "Gamma's board unanimously recommended a GBP1.02bn all-cash take-private offer from private equity firm Epiris via a scheme of arrangement; a rival, higher offer from Waterland Private Equity was reported to be forthcoming as of 7 September 2026, and closing is expected H1 2027.",
+      "source_url": "https://app.bigdata.com/documents/0219FCEA1F6254510DB27BD4EE755567"
+    },
+    {
+      "ticker": "DB:TSS",
+      "company": "InnoTec TSS AG",
+      "date": "2026-06-25",
+      "counterparty": "GLI Beteiligungsgesellschaft mbH / Grondbach GmbH (bidding consortium)",
+      "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German WpÜG",
+      "note": "A bidding consortium (GLI Beteiligungsgesellschaft and Grondbach GmbH, acting with further parties including Dr. Gerson Link and Reinhart Zech of Hymmen) acquired control of InnoTec TSS AG on 25 June 2026, triggering a mandatory takeover offer for all remaining shares.",
+      "source_url": "https://app.bigdata.com/documents/8A6E7E6020FAFD3B057BCE7F335DD606"
+    }
+  ],
+  "mergers_acquisitions": [
+    {
+      "ticker": "XTRA:ADN1",
+      "company": "adesso SE",
+      "date": "2026-08-12",
+      "counterparty": "omni:us",
+      "role": "acquirer",
+      "terms": "Not disclosed",
+      "note": "adesso SE announced the acquisition of AI-powered insurance claims-processing specialist omni:us to strengthen its in|sure Ecosphere insurance platform.",
+      "source_url": "https://app.bigdata.com/documents/EA484500AC83B49C7D91C870D1E5A516"
+    },
+    {
+      "ticker": "AIM:DOTD",
+      "company": "dotdigital Group Plc",
+      "date": "2026-03-04",
+      "counterparty": "Alia Software Inc.",
+      "role": "acquirer",
+      "terms": "USD30m initial cash consideration, up to USD60m total (earnout-dependent)",
+      "note": "dotdigital agreed to acquire Alia Software, an AI-powered Shopify pop-up/list-growth tool with ~USD8m forward ARR, funded from existing cash.",
+      "source_url": "https://app.bigdata.com/documents/EABE39A871ED4D51C121132DD5DB5CE7"
+    },
+    {
+      "ticker": "OB:MULTI",
+      "company": "Multiconsult ASA",
+      "date": "2026-09-07",
+      "counterparty": "Rejlers AB (Sweden)",
+      "role": "merger of equals (target/merging party)",
+      "terms": "0.9725 Rejlers class B shares per Multiconsult share; 54% Multiconsult / 46% Rejlers ownership of combined company",
+      "note": "Multiconsult and Rejlers announced a cross-border statutory merger to create a pan-Nordic multidisciplinary consultancy group, with boards adopting a joint merger plan on 7 September 2026.",
+      "source_url": "https://app.bigdata.com/documents/1B63087EEA4BDB294B102110CBAD68E0"
+    },
+    {
+      "ticker": "OM:DEDI",
+      "company": "Dedicare AB",
+      "date": "2026-07-15",
+      "counterparty": "Hyldgaard & Larsen and Sustina ApS (Denmark)",
+      "role": "acquirer",
+      "terms": "Cash plus non-cash share issue of SEK 24.3m (429,610 series B shares at SEK 56.63)",
+      "note": "Dedicare completed the acquisition of two Danish social-sector staffing businesses, Hyldgaard & Larsen and Sustina, financed with cash and newly issued shares.",
+      "source_url": "https://app.bigdata.com/documents/DEC7984B97F47D57A93A2907A41490C6"
+    },
+    {
+      "ticker": "HLSE:REG1V",
+      "company": "Revenio Group Oyj",
+      "date": "2026-05-28",
+      "counterparty": "LT International SAS (Visionix International Group)",
+      "role": "acquirer",
+      "terms": "Funded via EUR80m bridge-to-equity facility, later refinanced by a EUR80m rights offering",
+      "note": "Revenio completed a transformative acquisition of Visionix, more than doubling pro forma net sales (to EUR252.8m) and expanding its addressable market ~2.5x in the eye-care sector.",
+      "source_url": "https://app.bigdata.com/documents/E403038B3843DAD4A8DADE2CCFA0B119"
+    },
+    {
+      "ticker": "ENXTPA:LNA",
+      "company": "LNA Santé SA",
+      "date": "2026-07-02",
+      "counterparty": "Clariane group (5 nursing homes) plus a separate operating-license acquisition",
+      "role": "acquirer",
+      "terms": "539 beds acquired; ~EUR25m annualized revenue add (~7-8% of French nursing-home revenue)",
+      "note": "LNA Santé acquired five nursing homes (539 beds) from Clariane plus an operating license for a further 77-bed home, described by analysts as one of its largest deals since 2020.",
+      "source_url": "https://app.bigdata.com/documents/4D254BBCDEDF5AE3BA887C8EA27946F5"
+    },
+    {
+      "ticker": "ENXTPA:JBOG",
+      "company": "Jacques Bogart S.A.",
+      "date": "2026-04-24",
+      "counterparty": "Stadtparfümerie Pieper (Germany) / Marionnaud Group",
+      "role": "target/subject of merger talks",
+      "terms": "Not disclosed",
+      "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparfümerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
+      "source_url": "https://app.bigdata.com/documents/9A3AD1AA300C693D413737F6E3C1BA26"
+    }
+  ],
+  "spinoffs": [],
+  "other": [
+    {
+      "ticker": "ENXTPA:BLC",
+      "company": "Bastide Le Confort Médical SA",
+      "date": "2026-06-01",
+      "type": "divestiture",
+      "note": "Bastide completed the sale of subsidiary New Medical Concept (holding company of the EXPERF home-infusion/clinical-nutrition group, EUR42m revenue) to Sapio Group as part of active portfolio management.",
+      "source_url": "https://app.bigdata.com/documents/576C55C40F0D4DAB5ACA3280DB2B76A1"
+    },
+    {
+      "ticker": "AIM:YOU",
+      "company": "YouGov plc",
+      "date": "2026-03-24",
+      "type": "restructuring/potential_divestiture",
+      "note": "YouGov commenced a strategic review of its Shopper division (the former GfK Consumer Panel Services business), exploring options including a possible sale or combination of the unit's data assets; not yet a completed transaction.",
+      "source_url": "https://app.bigdata.com/documents/E694B1F724C311EE4C062A5A30F99D30"
+    },
+    {
+      "ticker": "BIT:BFF",
+      "company": "BFF Bank S.p.A.",
+      "date": "2026-08-05",
+      "type": "restructuring/potential_partial_sale",
+      "note": "Amid a capital shortfall, BFF Bank's board launched a process to find financial/strategic partners and received non-binding expressions of interest, including from BPER Banca for BFF's payment and custodian-banking businesses specifically; outcome still pending.",
+      "source_url": "https://app.bigdata.com/documents/FE9D1CBDD207774273EE2B7A95AC0C62"
+    },
+    {
+      "ticker": "XTRA:PCZ",
+      "company": "ProCredit Holding AG",
+      "date": "2026-03-01",
+      "type": "divestiture",
+      "note": "ProCredit Holding signed an agreement to sell its majority stake in ProCredit Bank Ecuador (South America segment), expected to close in 2026 subject to local regulatory approval; the business is now reported as discontinued operations.",
+      "source_url": "https://app.bigdata.com/documents/8DA05F28B789FBB45BBB7D446D1C8642"
+    },
+    {
+      "ticker": "ENXTPA:SEFER",
+      "company": "SergeFerrari Group SA",
+      "date": "2026-06-24",
+      "type": "delisting",
+      "note": "SergeFerrari Group transferred its share listing from the regulated market of Euronext Paris to the lighter-touch Euronext Growth Paris multilateral trading facility, effectively delisting from the regulated market (shareholder approval 22 April 2026, effective 24 June 2026).",
+      "source_url": "https://app.bigdata.com/documents/849DBFD0CD50096AF02250A1A2B45FF7"
+    }
+  ]
+}

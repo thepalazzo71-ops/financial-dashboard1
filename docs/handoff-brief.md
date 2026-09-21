@@ -405,16 +405,117 @@ moved -114 ranks (154→268) but never appears here because it was
 already outside top 150 at both checkpoints; conversely a company can
 cross the line with a small absolute move if it started right at #150.
 
-## Fixed-income/corporate-action data quality note
+## Missing-dilution fallback policy (2026-09-21)
+
+The user asked whether the pool might be hiding good candidates behind
+missing/broken data (same class of question that found the original
+dilution-gap bug). Audited the full 1000-company pool for gaps across
+every scoring dimension (`revLTM`, `equity`, `avgNI`, `revGrowth`,
+`mc0`, `gm`, `dilution`) — only `dilution` (15 companies) and `gm` (210,
+already handled via pool-median fallback) have any gaps; everything
+else is fully populated for all 1000, and no company has all 3
+valuation lenses failing (`val_pts == 0`).
+
+**Important distinction from the original dilution-gap fix**: those 84
+companies (ProCook Group included) had *real* share-count data that a
+parsing bug corrupted — Capital IQ uses both a blank cell and a literal
+`0.0` as "not reported" for this field, and the original pipeline only
+filtered blanks, not `0.0`s, so a `0.0` reading got treated as a real
+data point and broke the `(last/first)-1` calculation, defaulting to
+`dilution: null`. Re-parsing the raw extract with correct `0.0`
+filtering recovered ProCook's real dilution (6.7%, full 12/12 marks).
+**These 15 companies are different**: every one of their 10 periods is
+blank or `0.0` — there's no real reading anywhere, even with correct
+filtering. Not a bug; the source data genuinely doesn't exist. (Verify
+with `c['dilutionDataMissing']` in `companies_1000_scored.json` - `False`
+for the 84 that were fixed, `True` only for these 15.)
+
+Until this fix, these 15 scored 0/12 on dilution (the current code's
+implicit "assume the worst" default), the same worst-case treatment
+prior to the ProCook fix, but here it's not recoverable by re-parsing.
+The pool's *median* dilution_pts across the ~985 companies with real
+data is 12.0/12 (most small/mid-caps here dilute very little), so
+"assume the worst" was a real, disproportionate penalty for a data gap,
+not a finding. The user chose (via AskUserQuestion): **pool-median
+fallback, with a visible flag** — not the earlier GM-fallback pattern's
+silent blend, because the user specifically wants this caveat visible
+rather than hidden.
+
+Implementation: `scripts/apply_dilution_fallback.py` (one-off,
+re-runnable) sets `fixedPts.dilution` = pool median for the 15, adjusts
+`fixedSumNoGm` accordingly, and sets `dilutionDataMissing: true` on the
+company record; `resync_pool_ranks()`/`build_site.py` then re-sorts and
+reassigns `rankFull` as normal. **3 companies moved into the top 150**
+as a direct result: Maps S.p.A. (`BIT:MAPS`, was rank 441 → now 42),
+Sto SE & Co. KGaA (`XTRA:STO3`, 583 → 94), Sabaf S.p.A. (`BIT:SAB`, 631
+→ 124). The other 12 are still too far below the cutoff even with full
+credit. The dashboard shows a red "● no share data" tag next to the
+company name (main table meta line) and next to "Dilution" in the
+detail-panel breakdown (`c.dilutionDataMissing` in
+`site/template.html`), with a title tooltip explaining it's an
+estimate, not a measurement — this must stay visible per the user's
+explicit instruction, not be silently blended into the model like GM.
+
+If a genuinely better source for these 15 companies' share counts ever
+turns up (annual reports, another data vendor), replace the fallback
+with a real computed value the same way `fix_dilution_gaps.py` did for
+the original 84, and clear `dilutionDataMissing`.
+
+## Corporate actions section (2026-09-21)
 
 Investigating rank movers surfaces real reasons that have nothing to do
-with organic performance - the Installux move above was a **tender
-offer** (FCCE/Canty family buyout of minority shares at €500/share, 28
-May 2026, 74% premium), not earnings. A stock trading near/at an
-announced tender price is a merger-arb situation, not a value
-opportunity, and its v6 score is meaningless until the offer resolves.
-Worth watching for more of these among the 133 refreshed tickers - see
-"Corporate actions" work below if picked up.
+with organic performance - the Installux move was a **tender offer**
+(FCCE/Canty family buyout of minority shares at €500/share, 28 May
+2026, 74% premium), not earnings. A stock trading near/at an announced
+tender price is a merger-arb situation, not a value opportunity, and
+its v6 score is meaningless until the offer resolves. The user asked
+for a dedicated section covering this event type broadly (tender
+offers, M&A, spinoffs, other restructuring — not just the one case
+found by accident).
+
+`data/corporate_actions.json` — `{tender_offers, mergers_acquisitions,
+spinoffs, other}`, each entry `{ticker, company, date, counterparty (or
+spun_off_entity, or type for "other"), terms, note, source_url}` —
+loaded by `load_corporate_actions()` in `scripts/build_site.py` and
+embedded as `payload.corporateActions`. `site/template.html` has a
+"Corporate actions (N)" toolbar button opening a modal with one section
+per category (`renderCorpActionRow()`/`corpActionsTotal()`). The count
+is static (computed once in `init()`, not per-render) since this data
+doesn't depend on filters or the history dropdown — it's about the
+company itself, not a point-in-time view of it.
+
+**Scope decision**: the user initially asked for coverage across the
+top 500 companies; given the cost of the news-note research pass (25
+companies, ~205s, ~335K tokens for open-ended research), full top-500
+coverage was estimated at 1-2+ hours and heavy usage — comparable to
+the full 1000-company refresh the user already declined once for the
+same reason. Offered three options via AskUserQuestion; user chose
+**top 150 first, expand to 300/500 later if useful** — a narrower,
+targeted screen (≤2 search calls per company: entity resolution + one
+corporate-action-keyword search, retry on the open-web lane only if the
+first comes up empty) rather than the deeper multi-angle research used
+for the 25-company news-note pass. If extending coverage later, follow
+the same two-call-budget discipline — a full open-ended research pass
+does not scale to hundreds of companies.
+
+**Coverage as run (2026-09-21): partial, ~124 of 150.** Bigdata.com ran
+out of API credits partway through (company #125, MEDICLIN AG onward -
+26 companies never screened at all: see the agent's full report for the
+list). The open-web fallback step also never ran even once - every
+company that came up empty on the first structured search (~45 of them)
+was queued for it, but credits ran out before that phase started. Found
+17 real corporate actions from the ~124 screened: 5 tender offers
+(Banca Sistema, Poulaillon, Gamma Communications, InnoTec TSS, plus
+Installux found earlier), 7 M&A (adesso/omni:us, dotdigital/Alia,
+Multiconsult/Rejlers merger-of-equals, Dedicare, Revenio/Visionix, LNA
+Santé, Jacques Bogart - the last one flagged as preliminary/unconfirmed
+by the agent, worth double-checking), 0 spinoffs, 5 other (Bastide Le
+Confort divestiture, YouGov strategic review, BFF Bank capital search,
+ProCredit/Ecuador sale, SergeFerrari delisting from the regulated
+market to Euronext Growth). **To finish this properly**: re-run the
+screen for the ~26 never-reached companies (rank 125-150) plus the
+open-web retry for the ~45 flagged empties, once Bigdata.com credits
+are available again - don't just re-run the whole 150 from scratch.
 
 ## Progress as of this handoff
 

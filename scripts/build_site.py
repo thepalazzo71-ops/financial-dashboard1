@@ -24,6 +24,7 @@ TEMPLATE = ROOT / "site" / "template.html"
 OUT = ROOT / "docs" / "index.html"
 POOL_PATH = DATA / "companies_1000_scored.json"
 NEWS_PATH = DATA / "company_news.json"
+CORP_ACTIONS_PATH = DATA / "corporate_actions.json"
 SNAPSHOTS = ROOT / "snapshots"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -47,6 +48,19 @@ def load_company_news():
     if not NEWS_PATH.exists():
         return {}
     with open(NEWS_PATH) as f:
+        return json.load(f)
+
+
+def load_corporate_actions():
+    """Manually/agent-researched tender offers, M&A, spinoffs and other
+    corporate restructuring found for companies in the shortlist range -
+    see docs/handoff-brief.md. Shown as a standalone dashboard section
+    since these mean a company isn't a live value opportunity (it's
+    trading on deal terms, not fundamentals) regardless of its v6 score.
+    """
+    if not CORP_ACTIONS_PATH.exists():
+        return {'tender_offers': [], 'mergers_acquisitions': [], 'spinoffs': [], 'other': []}
+    with open(CORP_ACTIONS_PATH) as f:
         return json.load(f)
 
 
@@ -92,7 +106,8 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'mcUpdatedAt': mc_o.get('updatedAt') if mc_o else None,
             'mcSource': mc_o.get('source') if mc_o else None,
             'eq': c['equity'], 'revLTM': c['revLTM'], 'revGrowth': c['revGrowth'],
-            'dilution': c['dilution'], 'profitPct': c['profitPct'], 'cfoPct': c['cfoPct'],
+            'dilution': c['dilution'], 'dilutionDataMissing': c.get('dilutionDataMissing', False),
+            'profitPct': c['profitPct'], 'cfoPct': c['cfoPct'],
             'divPct': c['divPct'], 'nRevPeriods': c['nRevPeriods'], 'revConsistency': c['revConsistency'],
             'avgNI': c['avgNI'],
             'gm0': s['gm'],
@@ -110,6 +125,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
     payload = {
         'median_gm_pts': round(median_gm_pts, 4), 'companies': out_companies,
         'history': history, 'historyDates': history_dates,
+        'corporateActions': load_corporate_actions(),
     }
     build_info = {
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
