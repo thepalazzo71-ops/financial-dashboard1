@@ -319,16 +319,40 @@ so **most companies should have no note**, and that's correct, not a gap.
 rank" callout right at the top when `c.newsNote` is set, above the
 existing lens-note; nothing renders when it's absent.
 
-Scope so far: researched only the ~25 companies with the single biggest
+Scope so far: researched the 25 companies with the single biggest
 baseline→live rank swings among the 133 whose own market cap was
 actually refreshed (the ones in `scratch/rank_movers.xlsx`'s "Biggest
 Rank Gains"/"Biggest Rank Declines" tabs) — not all 133, and not the
 620 pure-ripple movers (which by definition have no company-specific
-news to find). To extend coverage, research more tickers the same way
-(Bigdata.com search/tearsheet for a fundamental catalyst in the
-baseline-to-live window, one factual sentence, skip if nothing
-attributable turns up) and add entries to `data/company_news.json`,
-then rebuild.
+news to find). Found an attributable catalyst for 17/25 (in
+`data/company_news.json`); 8 came back with no clear finding
+(ALLUX, LSC, FOI B, EVS, CMO, OGUN B, GE, FQT — no coverage in
+Bigdata.com, or the news found didn't fit the direction/magnitude of
+the move, so correctly left blank rather than guessed). To extend
+coverage, research more tickers the same way (Bigdata.com search/
+tearsheet for a fundamental catalyst in the baseline-to-live window,
+one factual sentence, skip if nothing attributable turns up) and add
+entries to `data/company_news.json`, then rebuild.
+
+**Flagged data-quality issue — ENXTPA:CMO (Caisse Régionale de Crédit
+Agricole du Morbihan) baseline looks wrong.** The rank-movers research
+turned this up: its baseline `mc0` is $630.4M vs. a live override of
+$200.55M, a -68.2% move that looks implausible for a stable regional
+bank cooperative, and no news search explained it. Checked directly
+against Bigdata.com's own live company tearsheet for this ticker
+(rp_entity_id `F0D661`, XPAR:CMO): current market cap is €183.9M —
+consistent with the live override — but the stock's own 6-month price
+change is **+15.4%** (i.e. the price is *up* since ~March 2026, the
+baseline extract date), which is inconsistent with a market cap that's
+supposedly down 68% over the same window. That points to the
+**baseline** `mc0` value being wrong (likely a bad share count or
+similar in the original Capital IQ extract for this one ticker), not
+the refreshed live value, which independently checks out. Not fixed
+yet — flagged for the user rather than corrected unilaterally, per the
+project's rule against hand-editing scores/rankings without a clear,
+verified cause (same standard applied to the 2026-09-21 dilution fix).
+If confirmed, the fix is a `data/companies_1000_scored.json` correction
+to this one ticker's `mc0`, the same pattern as `fix_dilution_gaps.py`.
 
 A new **Δ (rank change)** column sits right after `#` in the main table,
 on every view (live and historical alike) — an up/down arrow plus the

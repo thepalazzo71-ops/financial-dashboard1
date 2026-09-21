@@ -1,1 +1,70 @@
-{}
+{
+  "LSE:BYIT": {
+    "note": "H2 FY2026 results (May 2026) showed recovery from Microsoft incentive-change headwinds, with FY2027 guidance for high-single-to-low-double-digit gross profit growth.",
+    "confidence": "medium"
+  },
+  "OM:KAMBI": {
+    "note": "Q2 2026 earnings beat with raised FY EBITA guidance (EUR23-27M) on FIFA World Cup outperformance and new Canada sportsbook contract wins, reported July 2026.",
+    "confidence": "high"
+  },
+  "XTRA:P4O": {
+    "note": "H1 2026 results (Aug 2026) swung to profit (EBT +EUR116k vs -EUR40k) with reaffirmed full-year growth guidance amid capacity expansion.",
+    "confidence": "medium"
+  },
+  "HLSE:ADMCM": {
+    "note": "Profit warning on weak ARR growth and elevated customer-insolvency churn issued around Q2 2026 (July 2026), plus restructuring affecting ~60 roles.",
+    "confidence": "high"
+  },
+  "LSE:PROC": {
+    "note": "FY2026 results (June 2026): revenue +23%, EBITDA +40%, pretax profit +65%, plus a strong FY27 Q1 start (+22% revenue).",
+    "confidence": "high"
+  },
+  "AIM:POLR": {
+    "note": "AUM surged 43% to GBP30.6bn (further to GBP44.7bn by June) on strong tech/AI fund inflows; FY26 results (July 2026) beat, triggering broker upgrades.",
+    "confidence": "high"
+  },
+  "LSE:MONY": {
+    "note": "H1 2026 results (July 2026): record revenue +6%, adjusted EBITDA +3% (5th consecutive growth period), plus GBP90m planned shareholder returns and new product launches.",
+    "confidence": "high"
+  },
+  "LSE:REC": {
+    "note": "FY2026 results (June 2026): pretax profit -10%, revenue -3.7%, and a cut final dividend, sending shares down ~11% on the day.",
+    "confidence": "high"
+  },
+  "XTRA:MLP": {
+    "note": "H1 2026 results (Aug 2026): record EBIT (+41% y/y to EUR60.4M) and record AUM (EUR68.8bn), with FY26 guidance reaffirmed.",
+    "confidence": "high"
+  },
+  "ENXTPA:LIN": {
+    "note": "H1 2026 results (Sept 2026) showed order intake up 23.4% y/y, signaling recovery from the August 2025 cyberattack despite revenue still down 4.8%.",
+    "confidence": "medium"
+  },
+  "CPSE:MATAS": {
+    "note": "Q1 FY26/27 results (Aug 2026): profit fell 71% y/y (DKK19M vs DKK64M) on margin pressure and inventory write-downs in the KICKS Nordic business.",
+    "confidence": "high"
+  },
+  "AIM:TUNE": {
+    "note": "H2/FY2026 results (July 2026) showed revenue and EBITDA growth despite a Sequential brand impairment from a lost contract manufacturer, plus new cost-saving silicon platform.",
+    "confidence": "medium"
+  },
+  "HLSE:MEKKO": {
+    "note": "Q2 2026 results (Aug 2026): EBIT down 26% y/y on higher fixed costs and weak Finland retail sales; set lower medium-term growth target (10% vs prior 15%).",
+    "confidence": "high"
+  },
+  "ATSE:PPA": {
+    "note": "Aug 27, 2026 EGM approved widening PPA's corporate mandate to allow investment in ports/logistics beyond Piraeus and stakes in other companies, fueling expansion optimism.",
+    "confidence": "medium"
+  },
+  "AIM:CFX": {
+    "note": "Profit upgrade (May 2026) and FY26 results (July 2026): PBT +18.3%, EPS +30%, driven by strong US fabric demand, plus ongoing share buybacks.",
+    "confidence": "high"
+  },
+  "HLSE:REG1V": {
+    "note": "Visionix acquisition (announced Apr 2026) triggered guidance withdrawal and a dilutive EUR80M rights offering (Sept 2026) to repay bridge debt; Q2 profit missed consensus.",
+    "confidence": "high"
+  },
+  "ENXTPA:AUB": {
+    "note": "Q2 2026 update (July 2026): raised FY2026 revenue guidance to EUR695-705M (from EUR676-690M) and margin to 9-10%, citing strong H1/international momentum.",
+    "confidence": "high"
+  }
+}
