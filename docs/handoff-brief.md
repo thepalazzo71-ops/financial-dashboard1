@@ -274,6 +274,46 @@ same baseline-vs-live convention now — `score_pool(companies, {}, {})` vs
 after" analysis, rather than diffing two arbitrary git commits or dated
 files.
 
+**Standing policy — freeze a dated snapshot before every override batch.**
+The user wants past dashboard states preserved permanently as new batches
+land, not just `baseline` vs whatever is currently live. So: **before**
+applying any new `data/mc_overrides_applied.json` /
+`data/gm_overrides_applied.json` batch, run `python3 scripts/snapshot.py`
+first (no args = today's date) to freeze the current live state to
+`snapshots/shortlist_snapshot_<date>.json` (+ matching `.xlsx`). That file
+is then a permanent, never-overwritten history entry (the dashboard's
+`load_history()` in `scripts/build_site.py` picks up every
+`snapshots/shortlist_snapshot_*.json` file automatically) — apply the
+batch and rebuild *after*, so "today's before" and "today's after" don't
+collide. If a batch is applied same-day as an earlier one, re-running
+`scripts/snapshot.py` same-day overwrites that day's file with the latest
+pre-batch state, which is correct (one frozen point per calendar day, not
+per batch). A first such snapshot (2026-09-21, today's fully-refreshed
+133-override state at the time of this fix) already exists as the
+baseline for this policy going forward.
+
+The dashboard's history dropdown shows `baseline` first, then every
+frozen date, each formatted as "As of D Mon YYYY" (see `formatDateKey` /
+`historyLabel` in `site/template.html`). Every history entry is embedded
+directly in `docs/index.html` at build time (the user's explicit choice
+over a lazy-load approach) — the file grows by roughly the size of one
+full-pool snapshot (~250 KB minified JSON) per frozen date, so if batches
+start landing very frequently this may eventually need a lazy-load
+mechanism instead of full embedding; not a concern at the current cadence.
+
+A new **Δ (rank change)** column sits right after `#` in the main table,
+on every view (live and historical alike) — an up/down arrow plus the
+number of places moved, comparing the row's rank in the view you're on
+against its rank in the checkpoint immediately before it
+(`previousHistoryKey()`/`rankDeltaMap()` in `site/template.html`): for
+`live` that's the most recent frozen snapshot (or `baseline` if none has
+been frozen yet); for a dated snapshot it's whichever checkpoint precedes
+it; `baseline` itself (nothing precedes it) shows an em dash. This is
+exactly why the snapshot-before-every-batch policy above matters — the Δ
+column is only meaningful once there's a prior frozen point to diff
+against, so skipping a pre-batch snapshot leaves "live" comparing itself
+to a stale or absent baseline.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
