@@ -55,6 +55,9 @@
   .wrap { max-width: 1320px; margin: 0 auto; padding: 28px 20px 80px; }
 
   header.top { margin-bottom: 22px; }
+  header.top .market-nav { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  header.top .market-nav label { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  header.top .market-nav select { font: inherit; font-size: 13px; background: var(--paper-raised); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 6px 9px; }
   header.top h1 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.01em; }
   header.top .sub { color: var(--ink-soft); font-size: 14px; line-height: 1.5; max-width: 800px; }
   header.top .sub b { color: var(--ink); font-weight: 600; }
@@ -192,6 +195,13 @@
 <body>
 <div class="wrap">
   <header class="top">
+    <div class="market-nav">
+      <label for="marketSelect">Market</label>
+      <select id="marketSelect">
+        <option value="/">Europe</option>
+        <option value="/us.html" selected>USA &amp; Canada</option>
+      </select>
+    </div>
     <h1>USA/Canada Small/Mid-Cap Value Shortlist</h1>
     <div class="sub">
       v6 composite score across nine dimensions, percentile-ranked against the <b>full survivor pool</b> for
@@ -975,6 +985,7 @@ function tickerLookup(raw) {
 }
 
 function wireToolbar() {
+  document.getElementById('marketSelect').addEventListener('change', e => { window.location.href = e.target.value; });
   document.getElementById('search').addEventListener('input', e => { filters.search=e.target.value; render(); });
   document.getElementById('countryFilter').addEventListener('change', e => { filters.country=e.target.value; render(); });
   document.getElementById('archetypeFilter').addEventListener('change', e => { filters.archetype=e.target.value; render(); });
