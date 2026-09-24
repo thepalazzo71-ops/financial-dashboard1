@@ -545,6 +545,78 @@ screen for the ~26 never-reached companies (rank 125-150) plus the
 open-web retry for the ~45 flagged empties, once Bigdata.com credits
 are available again - don't just re-run the whole 150 from scratch.
 
+## USA/Canada dashboard (2026-09-24)
+
+A second market, built to reuse the Europe data coverage that FMP/Twelve
+Data have but Bigdata.com (out of API credits) doesn't. Same v6 model,
+same visual design, hosted alongside Europe on the same Worker:
+
+- **Live at `/us.html`** (Europe stays at `/index.html`) — same
+  `wrangler.jsonc` static-asset config serves it automatically, no Worker
+  changes needed.
+- **New source files**, saved under `data-us/raw/` (same pattern as
+  `data/raw/Europe_15m-1B.xls`):
+  - `USA_and_Canada_15m-1B.xls` — raw Capital IQ extract, 8,300 companies
+    $15M–1B market cap, byte-identical 87-column layout to Europe's file.
+  - `USA_Canada_SmallCap_Value_Shortlist_AllSectors.xlsx` /
+    `USA_Canada_NonFinancial_Shortlist.xlsx` — two prior AI-generated
+    top-150 runs (all-sector and non-financial-only cuts), used both as
+    reference/sanity-check data and as ground truth for sector
+    classification (see below).
+  - `GM_Research_Data_USCanada.xlsx` — gross-margin research, 280
+    companies (one contaminated row, NYSE:CARS, excluded — its Notes
+    field contained a leaked AI-reasoning trace contradicting its own
+    "as reported" source classification).
+- **No prior ingestion code existed for this market** (unlike Europe,
+  where universe construction happened in an earlier Claude.ai chat).
+  `scripts/ingest_us_pool.py` implements the same 7 quality gates from
+  the Methodology sheet in the shortlist files from scratch: fund/SPAC/
+  REIT/trust name-pattern exclusion (plus an explicit
+  `MutualFund:`/`Index:`/`OTCPK:PINK:` ticker-prefix exclusion, added
+  after 12 mutual-fund tickers slipped past the name-pattern check),
+  ≥7/10 periods track record, positive revenue every reported period,
+  ≤20% dilution (missing share-count data → pool-median fallback with a
+  visible flag, same policy as Europe's 15 no-data companies, not an
+  exclusion), positive overall revenue growth, positive latest equity,
+  ≥50% profitable periods. `scripts/us_scoring.py` reproduces the
+  fixedPts formulas (dilution/revenue-growth banding matches Europe's
+  validated curves exactly); `scripts/scoring.py`'s GM banding, lenses,
+  and percentile ranking are reused unchanged via `scripts/build_site_us.py`.
+- **Two independent scored pools, not a filter** — the "Non-financial"
+  survivors are a genuinely separate universe (banks/REITs/insurance/
+  asset-management companies removed *before* scoring, so percentiles
+  and the v6 score itself differ from the all-sector run), toggled
+  in-page via `setSector()` in `site/template_us.html`, which reassigns
+  the top-level `COMPANIES`/`HISTORY`/etc. state and re-renders:
+  - All sectors: **517** survivors (from 8,300 raw rows)
+  - Non-financial only: **288** survivors
+- **Sector classification** had no source column in the raw extract to
+  key off, and name-keyword heuristics proved unreliable (22/66 known
+  financials misclassified — names like "Green Dot Corporation" or
+  "LendingTree, Inc." don't match bank/insurance keywords). Resolved via
+  a layered reference-set approach: the two shortlist files plus the GM
+  research batch (which explicitly excludes financials) cover ~342 of
+  the 517 companies as ground truth; the remaining ~176 were resolved
+  via FMP's `profile-symbol` sector/industry endpoint.
+- **Known data gap, disclosed in the dashboard footnote**: verified
+  gross margin currently covers 305/517 companies (59%) vs. Europe's
+  much higher coverage. Traced (via a full field-by-field replay of
+  NasdaqGS:SLP against a known reference score — every raw input matched
+  exactly) to the valuation-percentile lens being computed against a
+  partial-GM peer pool, not a scoring bug. Expect this market's ranks to
+  drift further from any prior manual run than Europe's do, until GM
+  research coverage is extended (same workflow as Europe's, see
+  "Explicitly deferred" below — no refresh cycle has run for this market
+  yet, so live == baseline for every company).
+- **No live-refresh cycle has run yet** for this market — `mc_overrides`/
+  `gm_overrides` are empty, exactly Europe's pre-first-refresh starting
+  state. The market-cap/GM refresh workflow documented above applies
+  unchanged once someone starts working through this pool (localStorage
+  keys are namespaced separately: `shortlist_us_mc_overrides_v1` /
+  `shortlist_us_gm_overrides_v1`, so Europe's and the US's in-browser
+  edits can't collide).
+- Not yet done: cross-navigation links between the two dashboard pages.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -564,8 +636,13 @@ are available again - don't just re-run the whole 150 from scratch.
   top-1000 pool (same Claude-mediated workflow as market cap: research from
   official filings only — no third-party aggregators — write to
   `gmOverrides`).
-- Once the European dashboard is in steady state, the same pipeline will be
-  applied to other geography/market-cap datasets the user will provide.
+- Completing gross-margin research for the USA/Canada pool (212 of 517
+  all-sector companies still need it — see "USA/Canada dashboard" above),
+  same official-filings-only workflow as Europe.
+- Cross-navigation links between `/index.html` (Europe) and `/us.html`
+  (USA/Canada).
+- Once both dashboards are in steady state, the same pipeline can be
+  applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
   part of the project" per the original brief. Not started.
 
