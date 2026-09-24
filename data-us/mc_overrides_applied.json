@@ -1,0 +1,227 @@
+{
+  "NYSE:ACR": {
+    "mc": 82.83,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:AMN": {
+    "mc": 1310.58,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:ASIX": {
+    "mc": 433.23,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:AVNS": {
+    "mc": 1170.73,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:BBW": {
+    "mc": 315.69,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:BZH": {
+    "mc": 911.86,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:CAL": {
+    "mc": 413.83,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:CARS": {
+    "mc": 586.98,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:CVLG": {
+    "mc": 847.02,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:CWH": {
+    "mc": 326.81,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:DBI": {
+    "mc": 311.01,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:EBF": {
+    "mc": 550.36,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:FC": {
+    "mc": 195.05,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:GCO": {
+    "mc": 380.75,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:GDOT": {
+    "mc": 730.04,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:HTB": {
+    "mc": 759.27,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:HZO": {
+    "mc": 1154.28,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:KFRC": {
+    "mc": 894.91,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:MCI": {
+    "mc": 381.1,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "NYSE:MED": {
+    "mc": 132.32,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "AIM:SOM": {
+    "mc": 171.1,
+    "source": "https://stockanalysis.com/quote/aim/SOM/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "AIM:SPSY": {
+    "mc": 107.2,
+    "source": "https://stockanalysis.com/quote/aim/SPSY/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ADN": {
+    "mc": 226.4,
+    "source": "https://stockanalysis.com/quote/tsx/ADN/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ADW.A": {
+    "mc": 162.4,
+    "source": "https://stockanalysis.com/quote/tsx/ADW.A/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ALC": {
+    "mc": 677.2,
+    "source": "https://stockanalysis.com/quote/tsx/ALC/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:CMG": {
+    "mc": 230.1,
+    "source": "https://stockanalysis.com/quote/tsx/CMG/statistics/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:CPH": {
+    "mc": 292.8,
+    "source": "https://money.tmx.com/en/quote/CPH",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:CXI": {
+    "mc": 101.2,
+    "source": "https://stockanalysis.com/quote/tsx/CXI/statistics/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:DNG": {
+    "mc": 181.8,
+    "source": "https://stockanalysis.com/quote/tsx/DNG/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:DRX": {
+    "mc": 205.1,
+    "source": "https://stockanalysis.com/quote/tsx/DRX/statistics/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ENGH": {
+    "mc": 658.9,
+    "source": "https://www.investing.com/equities/enghouse-systems-limited",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ET": {
+    "mc": 827.3,
+    "source": "https://stockanalysis.com/quote/tsx/ET/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:GH": {
+    "mc": 199.2,
+    "source": "https://stockanalysis.com/quote/tsx/GH/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:GOOS": {
+    "mc": 1090.0,
+    "source": "https://www.gurufocus.com/term/mktcap/GOOS",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:GUD": {
+    "mc": 426.8,
+    "source": "https://money.tmx.com/en/quote/GUD",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:HLF": {
+    "mc": 292.6,
+    "source": "https://stockanalysis.com/quote/tsx/HLF/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:HMM.A": {
+    "mc": 81.3,
+    "source": "https://stockanalysis.com/quote/tsx/HMM.A/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:ISC": {
+    "mc": 672.0,
+    "source": "https://stockanalysis.com/quote/tsx/ISC/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:LAS.A": {
+    "mc": 1103.0,
+    "source": "https://stockanalysis.com/quote/tsx/LAS.A/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:MCB": {
+    "mc": 41.8,
+    "source": "https://stockanalysis.com/quote/tsx/MCB/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:MPC": {
+    "mc": 200.6,
+    "source": "https://www.tradingview.com/symbols/TSX-MPC/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:MRD": {
+    "mc": 391.6,
+    "source": "https://stockanalysis.com/quote/tsx/MRD/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:MTY": {
+    "mc": 630.8,
+    "source": "https://stockanalysis.com/quote/tsx/MTY/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:NOA": {
+    "mc": 350.9,
+    "source": "https://stockanalysis.com/quote/tsx/NOA/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  },
+  "TSX:OLY": {
+    "mc": 162.9,
+    "source": "https://stockanalysis.com/quote/tsx/OLY/market-cap/",
+    "updatedAt": "2026-09-24T16:00:00Z"
+  }
+}

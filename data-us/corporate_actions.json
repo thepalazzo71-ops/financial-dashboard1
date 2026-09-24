@@ -1,0 +1,253 @@
+{
+  "tender_offers": [],
+  "mergers_acquisitions": [
+    {
+      "ticker": "NasdaqCM:AFBI",
+      "company": "Affinity Bancshares, Inc.",
+      "date": "2026-03-30",
+      "counterparty": "Fidelity BancShares (N.C.), Inc. / The Fidelity Bank",
+      "role": "target",
+      "terms": "All-cash deal, ~$142.8 million aggregate value; $23.00 per share in cash (subject to adjustment based on adjusted stockholders' equity)",
+      "note": "Definitive merger agreement executed March 30, 2026; Affinity shareholders approved the deal at a special meeting July 7, 2026; expected to close Q3 2026. Multi-step merger structure with Affinity Bank ultimately merging into Fidelity Bank.",
+      "source_url": "https://www.businesswire.com/news/home/20260330828141/en/Fidelity-BancShares-N.C.-Inc.-and-Fidelity-Bank-Announce-Execution-of-Definitive-Merger-Agreement-to-Acquire-Affinity-Bancshares-Inc.-and-Affinity-Bank"
+    },
+    {
+      "ticker": "NasdaqCM:IROQ",
+      "company": "IF Bancorp, Inc.",
+      "date": "2025-10-29",
+      "counterparty": "ServBanc Holdco, Inc.",
+      "role": "target",
+      "terms": "All-cash transaction, ~$89.8 million total consideration; $26.40 per share in cash",
+      "note": "Merger agreement signed Oct 29, 2025; deal closed and became effective March 12, 2026. IF Bancorp merged into ServBanc, with ServBanc as the surviving entity. Deal is already completed as of screening date.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1514743/000094337426000053/form8k.htm"
+    },
+    {
+      "ticker": "NasdaqCM:FONR",
+      "company": "FONAR Corporation",
+      "date": "2025-12-23",
+      "counterparty": "FONAR LLC / FONAR Acquisition Sub, Inc. (acquisition group led by CEO Timothy Damadian, 57 members)",
+      "role": "target",
+      "terms": "Going-private cash-out merger: $19.00/share for common stock, $6.34/share for Class C shares, $10.50/share for Class A preferred; ~31.5% premium to pre-announcement closing price",
+      "note": "Agreement signed Dec 23, 2025; shareholders approved at special meeting May 28, 2026; deal expected to close June 3, 2026 (i.e., already completed by screening date). Company expected to delist from Nasdaq as a CEO-led take-private transaction.",
+      "source_url": "https://www.newsfilecorp.com/release/279158/FONAR-Signs-Definitive-Agreement-for-Take-Private-Sale-to-Acquisition-Group-Led-by-CEO"
+    },
+    {
+      "ticker": "NYSE:AVNS",
+      "company": "Avanos Medical, Inc.",
+      "date": "2026-04-14",
+      "counterparty": "American Industrial Partners (AIP)",
+      "role": "target",
+      "terms": "$25.00 per share in cash, ~$1.272 billion transaction value",
+      "note": "Merger agreement signed April 13-14, 2026; deal closed and completed July 27, 2026. Avanos is now a private company and its stock has ceased trading on the NYSE.",
+      "source_url": "https://avanos.investorroom.com/2026-04-14-Avanos-Medical,-Inc-Agrees-To-Be-Acquired-by-American-Industrial-Partners-for-Approximately-1-272-Billion"
+    },
+    {
+      "ticker": "NYSE:BZH",
+      "company": "Beazer Homes USA, Inc.",
+      "date": "2026-05-05",
+      "counterparty": "Dream Finders Homes, Inc.",
+      "role": "target",
+      "terms": "$33.50 per share in cash (raised from an initial proposal of $25.75/share on Feb 5, 2026), all-cash deal valued at approximately $2.2 billion",
+      "note": "Dream Finders made an unsolicited proposal in February 2026; a definitive merger agreement was subsequently reached. Deal pending stockholder and regulatory approval; PREM14A/DEFM14A filings indicate the deal is proceeding toward a shareholder vote as of Sept 2026.",
+      "source_url": "https://investors.dreamfindershomes.com/news-events/press-releases/detail/57/dream-finders-homes-proposes-to-acquire-beazer-homes-for"
+    },
+    {
+      "ticker": "NYSE:GDOT",
+      "company": "Green Dot Corporation",
+      "date": "2025-11-24",
+      "counterparty": "Smith Ventures (fintech assets) and CommerceOne Financial Corporation (bank)",
+      "role": "target",
+      "terms": "Two-part breakup: Smith Ventures acquires/privatizes the non-bank fintech business; CommerceOne acquires Green Dot Bank, becoming a new public bank holding company. Total implied value to shareholders ~$14.23-$19.18/share; aggregate deal value $825M-$1.1B, including $470M cash distribution to shareholders.",
+      "note": "Announced Nov 24, 2025. Shareholders of both Green Dot and CommerceOne approved the transaction at special meetings on June 23, 2026; deal was expected to close around Q2 2026. Effectively splits and privatizes/restructures the company - current market cap is not a clean 'value' signal.",
+      "source_url": "https://ir.greendot.com/news-releases/news-release-details/green-dot-and-commerceone-shareholders-approve-pending"
+    },
+    {
+      "ticker": "NYSE:HTB",
+      "company": "HomeTrust Bancshares, Inc.",
+      "date": "2026-08-16",
+      "counterparty": "Blue Ridge Bankshares, Inc.",
+      "role": "acquirer",
+      "terms": "All-stock deal valued at approximately $448.1 million; Blue Ridge shareholders receive 0.086 HomeTrust shares per Blue Ridge share",
+      "note": "Merger agreement signed Aug 16, 2026; expands HomeTrust into Virginia markets, creating a combined bank with over $7 billion in assets. Deal not yet complete as of screening date. HomeTrust is the acquirer, so this dilutes/changes its share count and balance sheet meaningfully.",
+      "source_url": "https://ir.htb.com/news-releases/news-release-details/hometrust-bancshares-inc-expands-attractive-virginia-markets"
+    },
+    {
+      "ticker": "NYSE:HZO",
+      "company": "MarineMax, Inc.",
+      "date": "2026-08-10",
+      "counterparty": "Safe Harbor Marinas (Blackstone Infrastructure portfolio company)",
+      "role": "target",
+      "terms": "$53.00 per share in cash, all-cash deal valued at approximately $1.5 billion (96% premium to Jan 30, 2026 closing price of $27.03)",
+      "note": "Definitive merger agreement announced Aug 10, 2026; deal unanimously approved by MarineMax board, not contingent on financing, expected to close by end of 2026 pending shareholder/regulatory approval. Stock trading near deal price makes current valuation essentially merger arb, not a value signal.",
+      "source_url": "https://www.businesswire.com/news/home/20260809836761/en/MarineMax-Enters-into-Definitive-Agreement-to-be-Acquired-by-Blackstone-Infrastructure-Portfolio-Company-Safe-Harbor-in-a-$1.5-Billion-All-Cash-Transaction"
+    },
+    {
+      "ticker": "NasdaqGM:SWKH",
+      "company": "SWK Holdings Corporation",
+      "date": "2025-10-14",
+      "counterparty": "Runway Growth Finance Corp.",
+      "role": "target",
+      "terms": "NAV-for-NAV merger, ~$220M total; each SWKH share converted into 1.7264 RWAY shares or $20.59 cash (holder election), plus $0.74 cash pro rata guaranteed payment.",
+      "note": "Definitive merger agreement announced October 14, 2025; approved by SWK shareholders March 31, 2026; deal closed April 6, 2026 and SWKH was delisted from Nasdaq.",
+      "source_url": "https://investors.runwaygrowth.com/news-releases/news-release-details/runway-growth-finance-corp-closes-acquisition-swk-holdings-0"
+    },
+    {
+      "ticker": "NasdaqGS:AMWD",
+      "company": "American Woodmark Corporation",
+      "date": "2025-08-05",
+      "counterparty": "MasterBrand, Inc.",
+      "role": "target",
+      "terms": "All-stock merger valued at $3.6B; American Woodmark shareholders received 5.150 shares of MasterBrand common stock for each AMWD share.",
+      "note": "Agreement signed August 5, 2025; FTC closed its investigation and HSR waiting period expired May 22, 2026; merger completed May 28, 2026, with American Woodmark now a wholly owned subsidiary of MasterBrand. AMWD no longer trades independently.",
+      "source_url": "https://www.businesswire.com/news/home/20260528600025/en/MasterBrand-and-American-Woodmark-Successfully-Complete-Merger-Transaction"
+    },
+    {
+      "ticker": "NasdaqGS:APOG",
+      "company": "Apogee Enterprises, Inc.",
+      "date": "2026-05-27",
+      "counterparty": "Keller Companies, Inc. (parent of Kalwall Corporation and Structures Unlimited Inc.)",
+      "role": "acquirer",
+      "terms": "Initial cash payment of $105 million at closing, plus potential earnout of up to $10 million tied to financial performance through fiscal 2027 Q3.",
+      "note": "Apogee entered a merger agreement to acquire Keller Companies (parent of Kalwall) announced May 27, 2026. As acquirer, this is a sizeable capital deployment relative to Apogee's size that could distort near-term valuation metrics; not a threat to Apogee's own independence.",
+      "source_url": "https://www.businesswire.com/news/home/20260528337201/en/Apogee-Enterprises-to-Acquire-Kalwall-Companies"
+    },
+    {
+      "ticker": "NasdaqGS:GIII",
+      "company": "G-III Apparel Group, Ltd.",
+      "date": "2026-05-14",
+      "counterparty": "LVMH Moet Hennessy Louis Vuitton (Marc Jacobs business) / WHP Global",
+      "role": "acquirer",
+      "terms": "G-III and WHP Global formed a joint venture (with a reported ~$500M brand investment plan) to acquire the Marc Jacobs business from LVMH; not disclosed in full.",
+      "note": "Agreements announced May 14, 2026 for G-III/WHP Global JV to acquire Marc Jacobs from LVMH. Sizeable strategic transaction for G-III as acquirer/JV partner, not a threat to G-III's independence.",
+      "source_url": "https://ir.g-iii.com/news-releases/news-release-details/g-iii-apparel-group-ltd-announces-asset-acquisition"
+    },
+    {
+      "ticker": "NasdaqGS:IBCP",
+      "company": "Independent Bank Corporation",
+      "date": "2026-03-18",
+      "counterparty": "HCB Financial Corp. (parent of Highpoint Community Bank)",
+      "role": "acquirer",
+      "terms": "~$70.2 million deal; each HCB share converted into $17.51 cash plus 1.5900 shares of Independent Bank common stock.",
+      "note": "Definitive merger agreement signed March 18, 2026; shareholder and regulatory approvals obtained; acquisition completed July 1, 2026, with system integration targeted for November 9, 2026. IBCP is the acquirer, not target.",
+      "source_url": "https://ir.independentbank.com/news-releases/news-release-details/independent-bank-corporation-announces-completion-hcb-financial"
+    },
+    {
+      "ticker": "OTCPK:HCBN",
+      "company": "HCB Financial Corp.",
+      "date": "2026-03-18",
+      "counterparty": "Independent Bank Corporation (Michigan)",
+      "role": "target",
+      "terms": "Each HCB share converted into $17.51 cash + 1.5900 shares of Independent Bank Corporation common stock; aggregate merger consideration ~$74.9 million (~1.59M IBCP shares + $17.5M cash), total deal value reported around $116 million.",
+      "note": "Definitive merger agreement announced March 18, 2026; regulatory approvals and shareholder approval obtained; transaction completed July 1, 2026. HCB is parent of Highpoint Community Bank (~$590M assets).",
+      "source_url": "https://ir.independentbank.com/news-releases/news-release-details/independent-bank-corporation-and-hcb-financial-corp-announce-definitive"
+    },
+    {
+      "ticker": "OTCPK:MFBP",
+      "company": "M&F Bancorp, Inc.",
+      "date": "2026-07-22",
+      "counterparty": "Optus Financial Corporation",
+      "role": "target",
+      "terms": "Up to $53.30 per common share in cash: $46.57/share payable at closing plus $6.73/share contingent on repurchase of certain MFBP preferred stock within 12 months of closing. Aggregate transaction value expected to exceed $105 million (~$100M base).",
+      "note": "Definitive merger agreement unanimously approved by both boards, announced July 22, 2026; expected to close Q4 2026. Combined institution (~$1.27B assets) expected to become the largest African American-owned financial institution in the US.",
+      "source_url": "https://pulse2.com/optus-financial-and-mf-bancorp-agree-to-more-than-105-million-merger/amp/"
+    },
+    {
+      "ticker": "OTCPK:PSBQ",
+      "company": "PSB Holdings, Inc.",
+      "date": "2026-05-20",
+      "counterparty": "Bank First Corporation",
+      "role": "target",
+      "terms": "All-stock deal: 0.3470 shares of Bank First (BFC) common stock per PSB Holdings share; deal valued at approximately $202.9 million, reported premium of more than 80% to PSB shareholders.",
+      "note": "Agreement signed and announced ~May 20, 2026, unanimously approved by both boards; pending regulatory and PSB shareholder approval; closing and systems conversion expected Q4 2026. PSB Holdings is parent of Peoples State Bank (Wisconsin).",
+      "source_url": "https://www.stocktitan.net/news/BFC/bank-first-corporation-signs-agreement-to-acquire-psb-holdings-omdfflomnzyl.html"
+    },
+    {
+      "ticker": "OTCPK:QNBC",
+      "company": "QNB Corp.",
+      "date": "2025-09-23",
+      "counterparty": "The Victory Bancorp",
+      "role": "acquirer",
+      "terms": "All-stock deal valued at approximately $41 million; Victory shareholders received 0.5 shares of QNB common stock for each Victory share.",
+      "note": "Announced September 23, 2025; shareholders of both companies approved the merger February 19, 2026; merger completed with Victory merging into QNB, creating a combined bank with ~$2.4 billion in assets. As acquirer QNB's own market value is somewhat affected by integration but this is a completed/near-complete deal, worth flagging as a recent major corporate action.",
+      "source_url": "https://www.bankingdive.com/news/qnb-buys-smaller-pennsylvania-bank-41m/761000/"
+    },
+    {
+      "ticker": "TSX:ADW.A",
+      "company": "Andrew Peller Limited",
+      "date": "2026-06-15",
+      "counterparty": "Fairfax Financial Holdings Limited",
+      "role": "target",
+      "terms": "Fairfax to acquire all outstanding Class A Non-Voting shares at $8.00/share and Class B Voting shares at $12.00/share; Class A price ~41% premium to closing price / ~42% premium to 20-day VWAP; equity value ~$397 million, enterprise value ~$579 million.",
+      "note": "Arrangement agreement announced June 15, 2026; shareholders approved August 11, 2026; transaction completed August 14, 2026 -- Andrew Peller is now a private company owned by Fairfax. Stock is fully off-market at the deal price.",
+      "source_url": "https://www.globenewswire.com/news-release/2026/08/14/3345551/0/en/andrew-peller-limited-completes-going-private-transaction-with-fairfax-financial-holdings-limited.html"
+    },
+    {
+      "ticker": "TSX:GH",
+      "company": "Gamehost Inc.",
+      "date": "2026-03-30",
+      "counterparty": "Pure Casino Entertainment Limited Partnership (Indigenous Gaming Partners)",
+      "role": "target",
+      "terms": "All-cash acquisition at $13.65 per Gamehost common share, a ~16% premium to the March 27, 2026 closing price and ~17% premium to the 20-day VWAP.",
+      "note": "Definitive arrangement agreement announced March 30, 2026; shareholders approved June 11, 2026; transaction closed June 24, 2026 and Gamehost shares were delisted from the TSX. Gamehost is now a private subsidiary (renamed 2825587 Alberta Ltd.) of Pure/Indigenous Gaming Partners.",
+      "source_url": "https://www.newsfilecorp.com/release/301429/Gamehost-Receives-Final-Court-Order-Authorizing-Sale-to-Pure-Casino-Entertainment"
+    },
+    {
+      "ticker": "TSX:ISC",
+      "company": "Information Services Corporation",
+      "date": "2026-05-19",
+      "counterparty": "Plenary Americas LP",
+      "role": "target",
+      "terms": "All-cash acquisition at $51.00 per Class A Limited Voting Share; enterprise value approximately $1.2 billion.",
+      "note": "Followed an activist tender offer by Plantro Ltd. in April 2025 that triggered a strategic review and four competing preliminary takeover bids (IMCO, Northleaf, OMERS, QIC). Plenary Americas agreement announced May 19, 2026, unanimously board-approved and shareholder-approved; Saskatchewan government passed legislation (Bill 57) in May 2026 to preserve a 'Golden Share' keeping ISC's IP and head office in Saskatchewan post-close. Deal expected to close Q3 2026, taking ISC private.",
+      "source_url": "https://www.globenewswire.com/news-release/2026/05/19/3297647/0/en/isc-to-be-acquired-by-plenary-americas-in-all-cash-transaction.html"
+    }
+  ],
+  "spinoffs": [],
+  "other": [
+    {
+      "ticker": "NYSE:SSTK",
+      "company": "Shutterstock, Inc.",
+      "date": "2026-06-30",
+      "type": "Terminated merger-of-equals (Getty Images)",
+      "terms": "Original deal (Jan 6, 2025): Getty Images to pay $9.50 cash per Shutterstock share plus a merger-of-equals stock component; Shutterstock stockholders approved June 10, 2025; DOJ cleared the deal Feb 23, 2026, but the UK CMA required divestiture of Shutterstock's editorial business, which Getty declined to do.",
+      "note": "Getty Images announced June 30, 2026 it would not sell Shutterstock's editorial business and terminated the merger agreement effective July 7, 2026. The deal is now dead; recent stock price action reflects post-termination standalone re-rating (potential unwind of merger-arb positioning) rather than a live corporate action, but this is very recent and highly relevant context for the value score.",
+      "source_url": "https://investor.shutterstock.com/news-releases/news-release-details/getty-images-and-shutterstock-receive-unconditional-antitrust"
+    },
+    {
+      "ticker": "NYSE:ACR",
+      "company": "ACRES Commercial Realty Corp.",
+      "date": "2026-04-29",
+      "type": "Internalization merger (REIT internalizes external manager)",
+      "terms": "All-stock merger of ACRES Capital Corp (ACC, parent of external manager) into an ACR subsidiary; each ACC share converted into 2.61882 ACR shares; ~7.5 million new ACR shares issued to ACC stockholders; also completed a $200M 8.625% Senior Secured Notes private placement",
+      "note": "Merger agreement dated April 29, 2026; shareholders approved June 22, 2026; transaction and internalization completed August 6, 2026. Not a buyout/going-private, but materially changes share count and cost structure, so current market cap/valuation metrics reflect a freshly reshaped capital structure rather than a stable baseline.",
+      "source_url": "https://www.morningstar.com/news/pr-newswire/20260430ny47246/acres-commercial-realty-corp-announces-agreement-to-internalize-management-and-acquire-acres-capital-corp"
+    },
+    {
+      "ticker": "TSX:GOOS",
+      "company": "Canada Goose Holdings Inc.",
+      "date": "2025-08-27",
+      "type": "Take-private process (controlling-shareholder exit / strategic review)",
+      "terms": "Not disclosed / not yet a definitive agreement as of the reports found. Verbal take-private bids reportedly valued the company around US$1.35-1.4 billion; interested parties reported to include Boyu Capital, Advent International, Bosideng International, and a FountainVest Capital-Anta Sports consortium.",
+      "note": "Controlling shareholder Bain Capital (majority owner since 2013) reported via Goldman Sachs-advised process to be weighing an exit / take-private sale as of August-September 2025. Status as of this screening (Sept 2026) is unclear -- no definitive agreement was found confirming a signed deal, so this should be treated as an ongoing/unresolved situation rather than a completed transaction; still material enough that GOOS's market pricing may reflect buyout speculation rather than pure fundamentals.",
+      "source_url": "https://www.cnbc.com/2025/08/27/canada-goose-draws-take-private-bids-bain-weighs-exit.html"
+    },
+    {
+      "ticker": "OTCPK:TTSH",
+      "company": "Tile Shop Holdings, Inc.",
+      "date": "2025-12-01",
+      "type": "Going-private transaction / Nasdaq delisting via reverse stock split",
+      "terms": "Reverse stock split at a ratio between 1-for-2,000 and 1-for-4,000; shareholders holding fewer shares than the split denominator are cashed out at $6.60 per share.",
+      "note": "Board approved plan to delist from Nasdaq and terminate SEC reporting obligations, expected to save ~$2.4 million annually. Transaction completed around December 2025, and the stock (ticker now OTCPK:TTSH) trades OTC post-delisting -- current market pricing reflects this going-private cash-out price, not organic value.",
+      "source_url": "https://www.investing.com/news/company-news/tile-shop-plans-to-delist-from-nasdaq-go-private-in-costsaving-move-93CH-4273629"
+    },
+    {
+      "ticker": "OTCPK:VASO",
+      "company": "Vaso Corporation",
+      "date": "2026-08-03",
+      "type": "Divestiture of subsidiary (NetWolves Network Services)",
+      "terms": "Sale of NetWolves Network Services LLC to COEO Solutions, LLC for $14,500,000 in cash, subject to customary post-closing adjustments.",
+      "note": "Completed July 31, 2026 as part of a strategic refocus on core healthcare operations (VasoHealthcare/VasoMedical). A separate prior going-private merger attempt with Achari Ventures Holdings Corp (announced Dec 2023) was terminated in September 2024, so Vaso remains independently traded, but this recent divestiture is a material change to its business mix and cash position.",
+      "source_url": "https://www.stocktitan.net/sec-filings/VASO/8-k-vaso-corp-reports-material-event-9758a50eab73.html"
+    }
+  ]
+}

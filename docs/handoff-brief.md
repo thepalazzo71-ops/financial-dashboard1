@@ -608,14 +608,138 @@ same visual design, hosted alongside Europe on the same Worker:
   research coverage is extended (same workflow as Europe's, see
   "Explicitly deferred" below — no refresh cycle has run for this market
   yet, so live == baseline for every company).
-- **No live-refresh cycle has run yet** for this market — `mc_overrides`/
-  `gm_overrides` are empty, exactly Europe's pre-first-refresh starting
-  state. The market-cap/GM refresh workflow documented above applies
-  unchanged once someone starts working through this pool (localStorage
-  keys are namespaced separately: `shortlist_us_mc_overrides_v1` /
-  `shortlist_us_gm_overrides_v1`, so Europe's and the US's in-browser
-  edits can't collide).
-- Not yet done: cross-navigation links between the two dashboard pages.
+- `gm_overrides` for this market are still empty (no GM refresh cycle has
+  run) — localStorage keys are namespaced separately from Europe's
+  (`shortlist_us_mc_overrides_v1` / `shortlist_us_gm_overrides_v1`), so
+  in-browser edits on the two dashboards can't collide.
+- A market-cap refresh + corporate-actions screen has now run once (first
+  batch, 2026-09-24) — see the dedicated section below for what's done
+  and what's left.
+- Cross-navigation dropdown between the two dashboard pages: **done**
+  (2026-09-24) — see "Market selector dropdown" below.
+
+## Market selector dropdown (2026-09-24)
+
+Both `site/template.html` and `site/template_us.html` now have a small
+"Market" `<select>` above the page title (`#marketSelect`, wired once in
+`wireToolbar()` with a plain `window.location.href = e.target.value`
+change handler — this is page navigation, not app state, so no dashboard
+JS state is involved). Options today: Europe (`/`) and USA & Canada
+(`/us.html`), each page pre-selecting itself. Adding a third market later
+is one more `<option>` in each template plus updating the other pages'
+lists to include it.
+
+## USA/Canada market-cap refresh + corporate actions, batch 1 (2026-09-24)
+
+First live-data pass for this market, run the same day the dashboard
+itself shipped. Scope: the **union of the top-150-by-v6-score companies
+in each sector view** (all-sector ∪ non-financial), 238 unique tickers —
+the same "start with the shortlist, not the full pool" precedent as
+Europe's market-cap refresh.
+
+**Data sources, since Bigdata.com has no credits for this market either:**
+- **FMP `profile-symbol`** for US-exchange-listed tickers (NYSE/NYSEAM/
+  Nasdaq*/OTCPK) — confirmed on this session's connected plan: FMP's
+  `quote` and `company` `market-cap`/`batch-market-cap` endpoints are
+  gated to a higher tier (`ACCESS DENIED` even for well-known names), but
+  `profile-symbol` works and returns `marketCap` directly in USD. 198 of
+  the 238 priority tickers are US-exchange-listed.
+- **WebSearch + live FX conversion** (`Twelve_Data: currency_conversion`)
+  for the 40 Canada-only (TSX/TSXV) and UK-AIM (2 names — Somero
+  Enterprises, Spectra Systems — foreign private issuers that showed up
+  in the Capital IQ US/Canada screen despite their primary listing being
+  London AIM) tickers FMP's plan doesn't cover at all (even `.TO`-suffixed
+  Canadian symbols come back `ACCESS DENIED`).
+- **WebSearch** again for the corporate-actions screen (same 1-2-search-
+  per-company discipline established for Europe's screen — see "Corporate
+  actions section" above).
+
+**Hard limits hit, both confirmed independently (not just agent-reported):**
+- **FMP rate limit** — `profile-symbol` started returning `Rate limit
+  reached for tool "company"` after ~20 calls; confirmed still limited via
+  a direct test call from the main session. No visibility into the reset
+  window from the tool's own error message.
+- **A session-wide WebSearch call budget (200 calls)** — shared across
+  *every* concurrent subagent in the session, not per-agent. Three
+  parallel corporate-actions agents plus the Canada/AIM market-cap agent
+  all drew from the same pool and collectively exhausted it mid-run. This
+  is a real constraint worth remembering for any future large batched
+  WebSearch task in this project: **don't run more than one WebSearch-
+  heavy agent at a time** (or budget ~200 total calls across however many
+  you do run in parallel) — running 4 in parallel here meant none of them
+  got a fair, predictable share.
+- The Canada/AIM agent also tried ~15 different WebFetch domains
+  (stockanalysis.com, TMX, Yahoo/Google Finance, TradingView, GuruFocus,
+  MarketWatch, WSJ, etc.) as a fallback once WebSearch was exhausted —
+  every one came back `EGRESS_BLOCKED` by this sandbox's network proxy.
+  WebFetch is not a viable fallback for market data in this environment.
+
+**Results — market caps: 45 of 238 refreshed** (`data-us/mc_overrides_applied.json`,
+same `{ticker: {mc, source, updatedAt}}` schema as Europe's, shared across
+both sector payloads since a company's real market cap doesn't depend on
+which sector view you're looking at it from — wired into
+`scripts/build_site_us.py`'s `load_mc_overrides()`).
+- 20 via FMP (all US-exchange), 25 via WebSearch+FX (Canada/AIM).
+- Sanity-checked every value against the `mc0` baseline (>5x or <0.2x
+  would have been excluded as likely errors — **none were**). Six 1.5-2x+
+  swings were double-checked individually: four are fully explained by
+  real corporate actions found in the same batch (Beazer Homes, Avanos
+  Medical, and MarineMax all trading toward pending/closed deal prices;
+  ACRES Commercial Realty's *drop* is explained by a dilutive
+  internalization merger that issued ~7.5M new shares) — the other two
+  (AMN Healthcare +82%, Kforce +100%, Build-A-Bear -35%) were screened
+  clean for corporate actions in the same pass, so treated as real,
+  organic moves, not data errors — same judgment call Europe's refresh
+  made for Halfords Group's +87%.
+- **Remaining, saved to `data-us/mc_refresh_remaining.json`** for a clean
+  resume: 178 tickers still need FMP (`fmp_remaining`), 15 still need a
+  market-cap source entirely — 9 TSX + 6 TSXV names the Canada/AIM agent
+  could not reach by any available tool (`websearch_remaining`).
+
+**Results — corporate actions: 25 real events found, 161 of 238 companies
+screened** (`data-us/corporate_actions.json`, same 4-category schema as
+Europe's, wired into `build_site_us.py`'s `load_corporate_actions()`;
+coverage bookkeeping — which 161 were actually screened vs. the 77 not
+reached — saved to `data-us/corporate_actions_coverage.json` so a future
+pass resumes cleanly instead of re-screening everything). Zero tender
+offers, zero spinoffs found this pass. 20 M&A, 5 other/restructuring.
+
+Deals where the *target* receives acquirer securities (not pure cash) —
+flagged since these read differently from a cash buyout for a value
+investor:
+- **Still pending**: PSB Holdings → Bank First Corp (OTCPK:PSBQ, all-
+  stock, 0.3470 BFC/share, ~80% premium, ~Q4 2026 close); Blue Ridge
+  Bankshares → HomeTrust Bancshares (NYSE:HTB is the acquirer in our
+  pool, all-stock, 0.086 HTB/share, not yet closed).
+- **Already closed** (informational — explains a dropped-out ticker,
+  not actionable): HCB Financial → Independent Bank Corp (OTCPK:HCBN /
+  NasdaqGS:IBCP, mixed cash+stock); American Woodmark → MasterBrand
+  (NasdaqGS:AMWD, all-stock, 5.150 shares/AMWD share); SWK Holdings →
+  Runway Growth Finance (NasdaqGM:SWKH, stock-or-cash election); Victory
+  Bancorp → QNB Corp (OTCPK:QNBC is the acquirer, all-stock).
+- Everything else found (Beazer Homes, MarineMax, Avanos Medical, Andrew
+  Peller, Gamehost, Information Services Corp, Green Dot's two-part
+  breakup, Tile Shop's going-private reverse split, Vaso's subsidiary
+  divestiture) is straight cash consideration.
+- One unresolved situation worth a human glance: **Canada Goose
+  (TSX:GOOS)** — press reports (Aug/Sept 2025) of Bain Capital weighing a
+  take-private exit with verbal PE bids around $1.35-1.4B, but no signed
+  definitive agreement found as of this screen. Not added as a confirmed
+  corporate action, but its ~$1.09B live market cap may already be
+  partly pricing in buyout speculation.
+- **Remaining 77 unscreened tickers** are listed in
+  `data-us/corporate_actions_coverage.json`'s `unscreened` array, split
+  roughly evenly across what were three parallel batches.
+
+**To resume this work**: the user was told the FMP rate limit and
+WebSearch budget both reset "tomorrow" (i.e., after 2026-09-24) and asked
+that no further attempts be made until then — wait for explicit
+go-ahead before re-running. When resuming: read
+`data-us/mc_refresh_remaining.json` and `data-us/corporate_actions_coverage.json`'s
+`unscreened` list rather than re-deriving the target lists from scratch,
+and this time **run at most one WebSearch-heavy agent at a time** (or
+explicitly split a fixed ~200-call budget across however many run
+together) given what happened to the four parallel agents in this batch.
 
 ## Progress as of this handoff
 
@@ -639,8 +763,15 @@ same visual design, hosted alongside Europe on the same Worker:
 - Completing gross-margin research for the USA/Canada pool (212 of 517
   all-sector companies still need it — see "USA/Canada dashboard" above),
   same official-filings-only workflow as Europe.
-- Cross-navigation links between `/index.html` (Europe) and `/us.html`
-  (USA/Canada).
+- **Finishing USA/Canada market-cap refresh batch 1**: 178 tickers still
+  need FMP lookups, 15 (TSX/TSXV names FMP's plan can't reach) still need
+  a market-data source entirely — see "USA/Canada market-cap refresh +
+  corporate actions, batch 1" above for the exact resume files. Paused on
+  the user's explicit instruction pending FMP/WebSearch limits resetting;
+  needs their go-ahead before restarting.
+- **Finishing USA/Canada corporate-actions screen**: 77 of 238 priority
+  companies still unscreened — same section above has the exact list.
+  Same pause/resume condition as the market-cap batch.
 - Once both dashboards are in steady state, the same pipeline can be
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last

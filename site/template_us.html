@@ -787,8 +787,10 @@ function render() {
   } else {
     const editedMcCount = COMPANIES.filter(isEditedMc).length;
     const editedGmCount = Object.keys(gmOverrides).length;
+    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
     document.getElementById('statRow').innerHTML = `
       <div class="stat"><div class="n">${COMPANIES.length}</div><div class="l">candidate pool (${filters.sector==='all'?'all sectors':'non-financial'})</div></div>
+      <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
       <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
       <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
       <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
