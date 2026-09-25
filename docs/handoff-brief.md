@@ -629,7 +629,7 @@ JS state is involved). Options today: Europe (`/`) and USA & Canada
 is one more `<option>` in each template plus updating the other pages'
 lists to include it.
 
-## USA/Canada market-cap refresh + corporate actions, batch 1 (2026-09-24)
+## USA/Canada market-cap refresh + corporate actions, batches 1-2 (2026-09-24/25)
 
 First live-data pass for this market, run the same day the dashboard
 itself shipped. Scope: the **union of the top-150-by-v6-score companies
@@ -731,15 +731,60 @@ investor:
   `data-us/corporate_actions_coverage.json`'s `unscreened` array, split
   roughly evenly across what were three parallel batches.
 
-**To resume this work**: the user was told the FMP rate limit and
-WebSearch budget both reset "tomorrow" (i.e., after 2026-09-24) and asked
-that no further attempts be made until then — wait for explicit
-go-ahead before re-running. When resuming: read
-`data-us/mc_refresh_remaining.json` and `data-us/corporate_actions_coverage.json`'s
-`unscreened` list rather than re-deriving the target lists from scratch,
-and this time **run at most one WebSearch-heavy agent at a time** (or
-explicitly split a fixed ~200-call budget across however many run
-together) given what happened to the four parallel agents in this batch.
+**Batch 2 (2026-09-25, run on the user's explicit go-ahead the next day):**
+both limits had reset overnight. Lesson from batch 1 applied this time —
+ran exactly one FMP agent (no WebSearch contention with itself) plus, at
+first, one WebSearch agent for the 15 remaining Canada/AIM market caps;
+once that finished, launched the next WebSearch agent (corporate-actions
+remainder) alone rather than in parallel. No shared-budget starvation
+this round; both finished cleanly.
+
+- **Market caps: 234 of 238 done.** FMP got 174 of its 178 (paced in
+  groups of ~10 with a save between groups, per the batch-1 postmortem —
+  no rate-limit errors this time); 3 of the 4 misses are `.A` share-class
+  tickers (`NasdaqGS:ARTN.A`, `NasdaqGS:VLGE.A`, `OTCPK:RSKI.A`) that came
+  back `ACCESS DENIED` specifically for the dotted-suffix form (a plan-
+  tier restriction, not something a dash-suffix retry would fix — that
+  retry path only applies to `not_found`, not `access_denied`); the 4th
+  (`OTCPK:OAKC`) was a genuine `not_found`. The Canada/AIM WebSearch agent
+  got all 15 remaining Canada/AIM names (`Twelve_Data`'s currency
+  conversion tool wasn't available this round — needs an OAuth login this
+  non-interactive session can't do — so FX was done via a plain WebSearch
+  for the current rate instead: 1 USD = 1.4116 CAD as of 2026-09-25).
+  These last 4 misses are recorded in `data-us/mc_refresh_remaining.json`
+  as **permanently blocked on the current FMP plan tier**, not a
+  pacing/rate-limit issue — don't keep re-attempting them without a plan
+  upgrade or a different data source.
+- Largest new swings vs. baseline, spot-checked: `NasdaqGM:ALOT` (+238%)
+  and `OTCPK:MFBP` (+110%) are both fully explained by corporate actions
+  found in this same pass (AstroNova's buyout, M&F Bancorp's merger);
+  `NYSE:SSTK` (-73%, the single biggest swing in either batch) is
+  explained by the Getty Images merger-of-equals *termination* found in
+  batch 1 crashing the stock back down. `NYSE:NSP` (+125%) and
+  `NYSE:KFRC` (+100%) have no corporate-action explanation (both screened
+  clean) — real, organic moves per the same judgment call used for
+  Halfords/BZH/HZO/ACR in batch 1, not treated as errors.
+- **Corporate actions: all 238 priority companies now screened**
+  (`data-us/corporate_actions_coverage.json`'s `unscreened` is empty).
+  Batch 2 found 11 more real events (1 tender offer, 7 M&A, 3 other) —
+  running total **36**: 1 tender offer, 27 M&A, 0 spinoffs, 8 other.
+  Notable new finds: Simulations Plus (NasdaqGS:SLP) going private via
+  Altaris tender offer at $18.50/share; Safety Insurance Group
+  (NasdaqGS:SAFT) being acquired by MAPFRE at $105.00/share; Sun Country
+  Airlines (NasdaqGS:SNCY) acquired by Allegiant in a mixed cash+stock
+  deal (0.1557 Allegiant shares + $4.10 cash/share); Northrim BanCorp
+  (NasdaqGS:NRIM) as an all-stock acquirer of PBCO Financial; Roots
+  Corporation (TSX:ROOT) going private at C$4.10/share; MTY Food Group
+  (TSX:MTY) in a contested going-private bidding war — flagged by the
+  agent as needing reverification since no definitive agreement was
+  confirmed as of the screening date, treat as preliminary.
+- This batch is **done** — no further scheduled follow-up needed unless
+  the user wants the 4 permanently-blocked market caps pursued via a
+  different source, or wants coverage extended beyond the top-150-union
+  priority pool (the non-financial pool is a strict subset of the
+  all-sector pool, 517 unique tickers total; the 238-ticker priority pool
+  covered here leaves 279 companies — all outside the top-150 in both
+  sector views — never in scope for either batch).
 
 ## Progress as of this handoff
 
