@@ -126,6 +126,8 @@
   .detail h4 { font-size: 11px; color: var(--ink-faint); margin: 0 0 5px; font-weight: 600; }
   .detail p { font-size: 13px; line-height: 1.5; margin: 0 0 14px; color: var(--ink); }
   .detail .flags { color: var(--brick); }
+  .detail .shareholding-row { margin: 0 0 6px; }
+  .detail .shareholding-row b { font-weight: 600; }
   .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note { font-size: 12.5px; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note b.lbl { display: block; font-size: 10.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
@@ -424,6 +426,14 @@ function saveLocalOverrides() {
 }
 
 function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+// Thesis prose fields (main_shareholders, insider_ownership, ...) carry
+// their source citation inline as markdown "([label](url))" - never
+// auto-linked at build time, so it rendered as literal bracket text.
+// Converts it to a real, clickable, new-tab link at render time.
+function mdLinksToHtml(text) {
+  if (!text) return '';
+  return text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
 function fmtPct(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return (v*100).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})+'%'; }
 
 function effMc(c) { const o = mcOverrides[c.t]; return (o && typeof o.mc==='number') ? o.mc : c.mc0; }
@@ -652,6 +662,11 @@ function renderDetailPanel(row, rank) {
           ${th ? `
             <h4>Business description</h4><p>${th.business_description || '—'}</p>
             <h4>Competitive position</h4><p>${th.competitive_position || '—'}</p>
+            ${(th.main_shareholders || th.insider_ownership) ? `
+              <h4>Shareholding</h4>
+              ${th.main_shareholders ? `<p class="shareholding-row"><b>Main shareholders:</b> ${mdLinksToHtml(th.main_shareholders)}</p>` : ''}
+              ${th.insider_ownership ? `<p class="shareholding-row"><b>Insider holdings:</b> ${mdLinksToHtml(th.insider_ownership)}</p>` : ''}
+            ` : ''}
             <h4>Red flags</h4><p class="flags">${th.red_flags || 'None noted.'}</p>
           ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
         </div>
@@ -660,7 +675,6 @@ function renderDetailPanel(row, rank) {
           <div class="spark-block">${sparkline(c.revHist)}</div>
           <h4>Net income history ($M)</h4>
           <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
-          ${th && th.main_shareholders ? `<h4>Main shareholders</h4><p>${th.main_shareholders}</p>` : ''}
           ${th && th.website ? `<p class="website-link"><a href="${th.website}" target="_blank" rel="noopener">${th.website}</a></p>` : ''}
           <h4>Gross margin source</h4>
           <p class="gm-source">${gmInfo.isOverride ? 'Edited in this browser (local only).' : (gmInfo.gm!==null ? `FY${c.gmFY||'—'} &middot; ${c.gmSrcType||'—'}` : 'No verified source yet.')}${links ? '<br>'+links : ''}</p>
