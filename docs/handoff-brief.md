@@ -786,6 +786,79 @@ this round; both finished cleanly.
   covered here leaves 279 companies — all outside the top-150 in both
   sector views — never in scope for either batch).
 
+## Shareholding data: fabrication incident + fix (2026-09-25)
+
+The user asked for a "Shareholding" view in the company detail panel
+(main shareholders, insider/officer ownership). Investigating what
+already existed turned up a real data-integrity problem worth flagging
+prominently for anyone continuing this project.
+
+**What was found**: the US pool's `thesis.main_shareholders` field (from
+the original US shortlist files' Investment Thesis sheet) was mostly
+honest ("Not disclosed in public filings" for 190/517) but **10 entries
+were fabricated** — nine unrelated companies (Stepan, XPEL, Winnebago,
+Virtus, Standard Motor Products, Insteel, HealthStream, Universal
+Logistics, and Crown Crafts) all
+carried the identical invented figures "BlackRock (10.6%), Donald Smith
+& Co. (9.2%), T. Rowe Price Investment Management (7.0%)" — not
+plausible for nine unrelated companies. A tenth (TSX:BNE, Bonterra
+Energy) cited "Allegiant Travel DEF 14A example not Bonterra-specific"
+as its own source — a self-admitted placeholder used for the wrong
+company. **Europe's equivalent data was checked and is clean** (zero
+duplicate values across 136 real entries) — this was a US-only problem.
+
+**Immediate fix**: purged all 10 fabricated `main_shareholders` values
+to `null` before building any UI on top of them.
+
+**UI added** (both dashboards, `renderDetailPanel()` in both templates):
+a new "Shareholding" section in the detail panel's left column (grouped
+with business description/competitive position, not buried among the
+financial sparklines like the old placement), showing main shareholders
+and a new `insider_ownership` field. Also fixed a real bug in the same
+area: these prose fields carry their source citation inline as markdown
+`([label](url))`, which was never being converted to an actual clickable
+link — even the genuine citations rendered as inert bracket text. Added
+`mdLinksToHtml()` to fix this at render time.
+
+**Insider-ownership data source**: checked `mcp__FMP__insiderTrades` and
+`mcp__FMP__form13F` first (user's stated preference, to minimize
+hallucination risk with structured SEC data) — both are **fully gated**
+on this plan tier, not just for certain symbols (`ACCESS DENIED` on every
+call, whole-tool level). WebSearch was the only viable source, so this
+research got extra explicit anti-fabrication discipline given it's the
+exact failure mode that caused the incident: every entry needs a real
+per-company citation, "not disclosed"/null is always an honest fallback,
+and watching for the same institution+percentage combo recurring across
+companies (the actual smoking gun that caught the original problem).
+
+**Wave 1 (2026-09-25)**: researched 195 of the 243-company target list
+(10 previously-fabricated companies first, then the rest of the
+238-ticker US priority pool by rank) before hitting the shared 200-call
+WebSearch budget. Added 122 unique companies' main shareholders and 121
+unique companies' insider ownership (each counted once per sector-pool
+file they appear in — see the commit for exact per-file counts); cleared
+60 stale/boilerplate values that weren't re-verified this round rather
+than leave them unreviewed. All 10 previously-fabricated companies now
+have fresh, cited, ticker-specific data (or an honest null) — spot-
+checked independently for the same duplicate-figure pattern; found none.
+Data-quality notes from the research agent worth knowing: a handful of
+entries use 10-20-year-old proxy data, explicitly caveated as
+"(dated data)" in the text rather than presented as current (anything
+older than ~20 years was dropped to null instead); Pro-Dex
+(NasdaqCM:PDEX) had a self-contradicting source (insiders 94.1% +
+institutions 16.2% summing over 100%) and was left null rather than
+guessed; Silvercrest (NasdaqGM:SAMG) had two conflicting insider-%
+snippets (12.3% vs "under 1%") and was also left null.
+
+**Remaining work** (`data-us/shareholding_research_remaining.json` has
+the exact resume list): 48 US priority-pool tickers unprocessed (one,
+OTCPK:MVLY, was accidentally skipped mid-batch despite falling before
+the budget cutoff — resume there first), plus Europe's existing 150
+thesis companies still need `insider_ownership` added (their
+`main_shareholders` was already clean and is untouched). Same one-
+WebSearch-agent-at-a-time discipline as the market-cap/corporate-actions
+batches applies here too.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -808,15 +881,17 @@ this round; both finished cleanly.
 - Completing gross-margin research for the USA/Canada pool (212 of 517
   all-sector companies still need it — see "USA/Canada dashboard" above),
   same official-filings-only workflow as Europe.
-- **Finishing USA/Canada market-cap refresh batch 1**: 178 tickers still
-  need FMP lookups, 15 (TSX/TSXV names FMP's plan can't reach) still need
-  a market-data source entirely — see "USA/Canada market-cap refresh +
-  corporate actions, batch 1" above for the exact resume files. Paused on
-  the user's explicit instruction pending FMP/WebSearch limits resetting;
-  needs their go-ahead before restarting.
-- **Finishing USA/Canada corporate-actions screen**: 77 of 238 priority
-  companies still unscreened — same section above has the exact list.
-  Same pause/resume condition as the market-cap batch.
+- USA/Canada market-cap refresh and corporate-actions screen are **done**
+  as of batch 2 (see "USA/Canada market-cap refresh + corporate actions,
+  batches 1-2" above) — only 4 permanently-FMP-blocked market caps remain,
+  not worth re-attempting without a plan upgrade.
+- **Shareholding research wave 2**: 48 US priority-pool tickers
+  unprocessed (resume list in `data-us/shareholding_research_remaining.json`,
+  start with OTCPK:MVLY), plus Europe's existing 150 thesis companies
+  still need `insider_ownership` added — see "Shareholding data:
+  fabrication incident + fix" above. Needs the user's go-ahead before
+  starting (same one-WebSearch-agent-at-a-time discipline as the other
+  batches).
 - Once both dashboards are in steady state, the same pipeline can be
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
