@@ -240,6 +240,7 @@
     <button class="btn ghost small" id="editedOnlyBtn">Edited only</button>
     <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
     <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
+    <button class="btn ghost small" id="moversBtn">Biggest movers</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
@@ -366,6 +367,17 @@
   </div>
 </div>
 
+<div class="modal-backdrop" id="moversModalBackdrop">
+  <div class="modal wide">
+    <h3>Biggest movers</h3>
+    <p class="hint" id="moversHint"></p>
+    <div id="moversContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="moversClose">Close</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -389,6 +401,7 @@ function setSector(sector) {
   historicalCache = {};
   expandedTicker = null;
   expandedTop150Ticker = null;
+  expandedMoverTicker = null;
 }
 
 const LS_MC_KEY = 'shortlist_us_mc_overrides_v1';
@@ -553,6 +566,49 @@ function top150Movers() {
   exits.sort((a,b)=>a.curRank-b.curRank);
   return { entrants, exits, prevKey };
 }
+// Biggest rank movers (any position, not just top-150-boundary crossers)
+// since the checkpoint immediately before the current view, with a cause
+// label distinguishing "this company's own data changed" from "pool
+// ripple" (its rank shifted only because other companies' market caps
+// moved around it). Same logic as Europe's dashboard.
+function biggestMovers(n = 15) {
+  const isHist = filters.historyDate !== 'live';
+  const all = ensureScored();
+  const rankByTicker = computeRankByTicker(all, isHist);
+  const prevKey = previousHistoryKey(filters.historyDate);
+  if (!prevKey) return { climbers: [], decliners: [], prevKey: null, totalMoved: 0 };
+  const prevRows = HISTORY[prevKey] || [];
+  const prevByTicker = {};
+  prevRows.forEach(r => prevByTicker[r.t] = r);
+  const movers = [];
+  all.forEach(row => {
+    const t = row.c.t;
+    const b = prevByTicker[t];
+    if (!b) return;
+    const curRank = rankByTicker[t];
+    const rankChange = b.rank - curRank; // positive = moved up (improved)
+    if (rankChange === 0) return;
+    const mcChanged = Math.abs((row.mc||0) - (b.mc||0)) > 0.005;
+    const bGm = (b.gm===null||b.gm===undefined) ? null : b.gm;
+    const rGm = (row.gmInfo.gm===null||row.gmInfo.gm===undefined) ? null : row.gmInfo.gm;
+    const gmChanged = (bGm===null) !== (rGm===null) || (bGm!==null && rGm!==null && Math.abs(bGm-rGm)>1e-6);
+    let cause;
+    if (mcChanged && gmChanged) {
+      cause = `Own market cap ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M) and gross margin updated`;
+    } else if (mcChanged) {
+      const src = row.c.mcRefreshed ? (row.c.mcSource||'data pipeline') : (isEditedMc(row.c) ? 'edited in this browser' : 'data pipeline');
+      cause = `Own market cap updated ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M, via ${src})`;
+    } else if (gmChanged) {
+      cause = 'Own gross margin updated';
+    } else {
+      cause = 'Pool ripple only — no data change for this company; its percentile rank shifted because other companies’ market caps or gross margins were updated';
+    }
+    movers.push({ row, curRank, prevRank: b.rank, rankChange, totalBefore: b.total, totalAfter: row.total, cause });
+  });
+  const climbers = movers.filter(m=>m.rankChange>0).sort((a,b)=>b.rankChange-a.rankChange).slice(0,n);
+  const decliners = movers.filter(m=>m.rankChange<0).sort((a,b)=>a.rankChange-b.rankChange).slice(0,n);
+  return { climbers, decliners, prevKey, totalMoved: movers.length };
+}
 function renderCorpActionRow(a, counterpartyLabel) {
   const counterparty = a.counterparty || a.spun_off_entity;
   return `
@@ -579,7 +635,7 @@ function renderDetailPanel(row, rank) {
   return `
     <div class="detail">
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
-      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
+      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
       <div class="breakdown">
         <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
         <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
@@ -685,6 +741,44 @@ function renderTop150Row(entry, direction) {
           <div class="name">${c.n}</div>
           <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(row.mc,0)}M mkt cap &middot; v6 ${fmtNum(row.total,1)}</div>
           ${c.newsNote ? `<div class="t150-news">${c.newsNote}</div>` : ''}
+        </div>
+      </div>
+      ${isOpen ? renderDetailPanel(row, curRank) : ''}
+    </div>
+  `;
+}
+let expandedMoverTicker = null;
+function renderMoversModalContent() {
+  const { climbers, decliners, prevKey } = biggestMovers();
+  const hint = document.getElementById('moversHint');
+  const content = document.getElementById('moversContent');
+  if (!prevKey) {
+    hint.textContent = 'No earlier checkpoint to compare to yet.';
+    content.innerHTML = '';
+    return;
+  }
+  hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}, across the whole pool (not just the top 150). Click a company for full details.`;
+  content.innerHTML = `
+    <h4>Biggest climbers (${climbers.length})</h4>
+    ${climbers.length ? climbers.map(m=>renderMoverRow(m,'up')).join('') : '<p class="no-thesis">None.</p>'}
+    <h4>Biggest decliners (${decliners.length})</h4>
+    ${decliners.length ? decliners.map(m=>renderMoverRow(m,'down')).join('') : '<p class="no-thesis">None.</p>'}
+  `;
+}
+function renderMoverRow(entry, direction) {
+  const { row, curRank, prevRank, rankChange, totalBefore, totalAfter, cause } = entry;
+  const c = row.c;
+  const arrow = direction === 'up' ? '▲' : '▼';
+  const cls = direction === 'up' ? 'up' : 'down';
+  const isOpen = expandedMoverTicker === c.t;
+  return `
+    <div class="top150-row-wrap">
+      <div class="top150-row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}${Math.abs(rankChange)}</span><br>#${prevRank}&rarr;#${curRank}</div>
+        <div class="t150-co">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; v6 ${fmtNum(totalBefore,1)}&rarr;${fmtNum(totalAfter,1)}</div>
+          <div class="t150-news">${cause}</div>
         </div>
       </div>
       ${isOpen ? renderDetailPanel(row, curRank) : ''}
@@ -891,6 +985,13 @@ function render() {
     ? `Top 150 changes (${t150.entrants.length + t150.exits.length})`
     : 'Top 150 changes';
   t150Btn.disabled = !t150.prevKey;
+
+  const movers = biggestMovers();
+  const moversBtn = document.getElementById('moversBtn');
+  moversBtn.textContent = movers.prevKey
+    ? `Biggest movers (${movers.totalMoved})`
+    : 'Biggest movers';
+  moversBtn.disabled = !movers.prevKey;
 }
 
 function showToast(msg) {
@@ -1041,6 +1142,23 @@ function wireToolbar() {
   });
   document.getElementById('top150Close').addEventListener('click', () => t150Backdrop.classList.remove('open'));
   t150Backdrop.addEventListener('click', e => { if (e.target===t150Backdrop) t150Backdrop.classList.remove('open'); });
+
+  const moversBackdrop = document.getElementById('moversModalBackdrop');
+  const moversContent = document.getElementById('moversContent');
+  document.getElementById('moversBtn').addEventListener('click', () => {
+    expandedMoverTicker = null;
+    renderMoversModalContent();
+    moversBackdrop.classList.add('open');
+  });
+  moversContent.addEventListener('click', e => {
+    const rowEl = e.target.closest('.top150-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedMoverTicker = (expandedMoverTicker === t) ? null : t;
+    renderMoversModalContent();
+  });
+  document.getElementById('moversClose').addEventListener('click', () => moversBackdrop.classList.remove('open'));
+  moversBackdrop.addEventListener('click', e => { if (e.target===moversBackdrop) moversBackdrop.classList.remove('open'); });
 
   const mcBackdrop = document.getElementById('mcModalBackdrop');
   document.getElementById('bulkUpdateBtn').addEventListener('click', () => {
