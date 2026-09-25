@@ -18,7 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scoring import gm_band_points, median_gm_points, score_pool
+from scoring import compact_snapshot_rows, gm_band_points, median_gm_points, score_pool
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_US = ROOT / "data-us"
@@ -76,22 +76,16 @@ def build_sector_payload(companies, mc_overrides):
             'industry': c.get('industry'), 'archetypePrecomputed': c.get('archetype'),
             'newsNote': None,
         })
-    rows_for_history = sorted(
-        [{'t': c['ticker'], 'n': c['name'], 'co': c['country'], 'rank': i + 1,
-          'mc': round(s['mc'], 2), 'pb': (round(s['mc'] / c['equity'], 3) if c['equity'] else None),
-          'roe': round(s['roe'], 4) if s['roe'] is not None else None,
-          'rg': round(c['revGrowth'], 4) if c['revGrowth'] is not None else None,
-          'gm': s['gm'], 'gmFb': s['gm_is_fallback'], 'total': s['total'],
-          'pts': {'rg': c['fixedPts']['revenue_growth'], 'rc': c['fixedPts']['revenue_consistency'],
-                  'dl': c['fixedPts']['dilution'], 'vl': round(s['val_pts'], 2),
-                  'pf': c['fixedPts']['profitability'], 'cfo': c['fixedPts']['cfo_positive'],
-                  'tr': c['fixedPts']['track_record'], 'dv': c['fixedPts']['dividend_consistency'],
-                  'gm': round(s['gm_pts'], 2)}}
-         for i, (c, s) in enumerate(sorted(zip(companies, scored), key=lambda cs: -cs[1]['total']))],
-        key=lambda r: r['rank'])
+    # 'baseline' is always computed fresh with zero overrides - the
+    # "before this refresh project" state - never read off the (now
+    # overridden) `scored` array above. Same convention as build_site.py's
+    # load_history(); mirrored here after finding this had drifted (US
+    # dashboard was accidentally showing baseline == live once real
+    # mc_overrides existed, which flattened the Δ/history comparison).
+    baseline_rows = compact_snapshot_rows(companies, {}, {})
     return {
         'companies': out, 'median_gm_pts': round(median_gm_pts, 4),
-        'history': {'baseline': rows_for_history}, 'historyDates': ['baseline'],
+        'history': {'baseline': baseline_rows}, 'historyDates': ['baseline'],
         'poolSize': len(companies),
     }
 
