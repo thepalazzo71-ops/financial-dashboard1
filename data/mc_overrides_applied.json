@@ -190,9 +190,9 @@
     "updatedAt": "2026-09-20T19:41:27.926397Z"
   },
   "ENXTPA:ALLUX": {
-    "mc": 156.59,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 90.68,
+    "source": "https://www.investing.com/equities/installux",
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "ENXTPA:ALMDG": {
     "mc": 61.55,
@@ -830,9 +830,9 @@
     "updatedAt": "2026-09-29T19:00:00Z"
   },
   "WSE:VOX": {
-    "mc": 393.53,
-    "source": "https://www.investing.com/equities/voxel",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "mc": 398.4,
+    "source": "https://stockanalysis.com/quote/wse/VOX/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "OM:ABSO": {
     "mc": 238.9,
@@ -860,9 +860,9 @@
     "updatedAt": "2026-09-29T19:00:00Z"
   },
   "CPSE:GRLA": {
-    "mc": 325.28,
-    "source": "https://stockanalysis.com/quote/cph/GRLA/market-cap/",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "mc": 327.2,
+    "source": "https://finance.yahoo.com/quote/GRLA.CO/",
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "XTRA:UUU": {
     "mc": 43.4,
@@ -945,9 +945,9 @@
     "updatedAt": "2026-09-29T19:00:00Z"
   },
   "XTRA:IVU": {
-    "mc": 499.3,
-    "source": "https://stockanalysis.com/quote/etr/IVU/market-cap/",
-    "updatedAt": "2026-09-29T19:00:00Z"
+    "mc": 491.6,
+    "source": "https://www.investing.com/equities/ivu-traffic-technologies-ag",
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "ENXTPA:ALATI": {
     "mc": 91.2,
@@ -1007,7 +1007,7 @@
   "BUL:SPDY": {
     "mc": 540.0,
     "source": "https://stockanalysis.com/quote/bul/SPDY/market-cap/",
-    "updatedAt": "2026-09-29T19:00:00Z"
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "WSE:WPL": {
     "mc": 432.4,
@@ -1035,9 +1035,9 @@
     "updatedAt": "2026-09-29T19:00:00Z"
   },
   "BUSE:DUNAHOUSE": {
-    "mc": 142.1,
-    "source": "https://stockanalysis.com/quote/bud/DHGROUP/market-cap/",
-    "updatedAt": "2026-09-29T19:00:00Z"
+    "mc": 135.24,
+    "source": "https://www.investing.com/equities/duna-house",
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "NSEL:APG1L": {
     "mc": 230.9,
@@ -1070,13 +1070,228 @@
     "updatedAt": "2026-09-29T19:00:00Z"
   },
   "AIM:ASY": {
-    "mc": 310.7,
+    "mc": 286.5,
     "source": "https://stockanalysis.com/quote/aim/ASY/market-cap/",
-    "updatedAt": "2026-09-29T19:00:00Z"
+    "updatedAt": "2026-09-29T19:26:00Z"
   },
   "NSEL:GRG1L": {
     "mc": 168.8,
     "source": "https://simplywall.st/stocks/lt/materials/nsel-grg1l/grigeo-group-shares/information",
     "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUL:DUH": {
+    "mc": 116.76,
+    "source": "https://sis.bg/wp-content/uploads/2026/01/DUH-2025-Q2.pdf",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BME:R4": {
+    "mc": 894.3,
+    "source": "https://stockanalysis.com/quote/bme/R4/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "AIM:ELCO": {
+    "mc": 149.15,
+    "source": "https://stockanalysis.com/quote/aim/ELCO/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "HLSE:TITAN": {
+    "mc": 73.7,
+    "source": "https://companiesmarketcap.com/titanium-oyj/marketcap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "OM:SOLNA": {
+    "mc": 45.09,
+    "source": "https://stockanalysis.com/quote/sto/SOLNA/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "XTRA:VIB3": {
+    "mc": 452.5,
+    "source": "https://stockanalysis.com/quote/etr/VIB3/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "WSE:INP": {
+    "mc": 84.3,
+    "source": "https://www.tipranks.com/stocks/pl:inp/market-cap",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ENXTAM:HOLCO": {
+    "mc": 76.16,
+    "source": "https://stockanalysis.com/quote/ams/HOLCO/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "XTRA:BDT": {
+    "mc": 94.05,
+    "source": "https://www.investing.com/equities/bertrandt",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "HLSE:OLVAS": {
+    "mc": 757.4,
+    "source": "https://stockanalysis.com/quote/hel/OLVAS/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BUL:BACB": {
+    "mc": 134.7,
+    "source": "https://www.gurufocus.com/stock/BG003B/summary",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ENXTPA:SAMS": {
+    "mc": 474.1,
+    "source": "https://stockanalysis.com/quote/epa/SAMS/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "LSE:SDY": {
+    "mc": 120.6,
+    "source": "https://stockanalysis.com/quote/lon/SDY/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "CPSE:LOLB": {
+    "mc": 141.6,
+    "source": "https://www.investing.com/equities/lollands-bank",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "CPSE:CHEMM": {
+    "mc": 1350,
+    "source": "https://companiesmarketcap.com/chemometec/marketcap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "OB:MEDI": {
+    "mc": 460.8,
+    "source": "https://stockanalysis.com/quote/osl/MEDI/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ENXTPA:IMDA": {
+    "mc": 412.0,
+    "source": "https://simplywall.st/stocks/fr/real-estate/epa-imda/immobiliere-dassault-shares/valuation",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "NSEL:KNR1L": {
+    "mc": 101.03,
+    "source": "https://www.investing.com/equities/kauno-energija-ab",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BVB:ARCU": {
+    "mc": 20.5,
+    "source": "https://stockanalysis.com/quote/bvb/ARCU/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "CPSE:FLUG B": {
+    "mc": 141.8,
+    "source": "https://www.investing.com/equities/flugger-b",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ENXTPA:NRG": {
+    "mc": 716.6,
+    "source": "https://stockanalysis.com/quote/epa/NRG/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BDL:SOFAF": {
+    "mc": 522.7,
+    "source": "https://stockanalysis.com/quote/lux/SOFAF/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "LSE:SUS": {
+    "mc": 319.9,
+    "source": "https://www.tipranks.com/stocks/gb:sus/market-cap",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "WSE:DEK": {
+    "mc": 150.85,
+    "source": "https://www.investing.com/equities/dekpol-sa",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BME:PRM": {
+    "mc": 256.8,
+    "source": "https://gomarketcap.com/companies/BME-PRM/prim-s-a",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "LSE:ALFA": {
+    "mc": 627.2,
+    "source": "https://www.londonstockexchange.com/stock/ALFA/alfa-financial-software-holdings-plc/company-page",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BIT:INDB": {
+    "mc": 122.98,
+    "source": "https://finbox.com/BIT:INDB/explorer/marketcap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "OM:CEVI": {
+    "mc": 394.4,
+    "source": "https://stockanalysis.com/quote/sto/CEVI/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "LSE:0R4W": {
+    "mc": 173.4,
+    "source": "https://twelvedata.com/markets/596546/stock/lse/0r4w/statistics",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "AIM:TFW": {
+    "mc": 380.8,
+    "source": "https://stockanalysis.com/quote/aim/TFW/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ENXTPA:BASS": {
+    "mc": 940.6,
+    "source": "https://simplywall.st/stocks/fr/real-estate-management-and-development/epa-bass/bassac-societe-anonyme-shares",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "SWX:PMN": {
+    "mc": 474.5,
+    "source": "https://www.investing.com/equities/phoenix-mecano-ag",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ATSE:INLIF": {
+    "mc": 150.55,
+    "source": "https://www.investing.com/equities/interlife",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "OB:ODF": {
+    "mc": 943.2,
+    "source": "https://www.investing.com/equities/odfjell-se",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "OB:BMA": {
+    "mc": 108.4,
+    "source": "https://www.investing.com/equities/byggma",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "NasdaqGS:CRTO": {
+    "mc": 956.92,
+    "source": "https://www.wallstreetzen.com/stocks/us/nasdaq/crto",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "CPSE:GABR": {
+    "mc": 59.8,
+    "source": "https://stockanalysis.com/quote/cph/GABR/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "ZGSE:INGR": {
+    "mc": 33.75,
+    "source": "https://stockanalysis.com/quote/zse/INGR/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BIT:ITD": {
+    "mc": 165.8,
+    "source": "https://stockanalysis.com/quote/bit/ITD/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "WSE:MBR": {
+    "mc": 370,
+    "source": "https://companiesmarketcap.com/mo-bruk/marketcap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BME:REN": {
+    "mc": 26.45,
+    "source": "https://www.investing.com/equities/renta-corp",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "LSE:IPF": {
+    "mc": 684.6,
+    "source": "https://simplywall.st/stocks/gb/diversified-financials/lse-ipf/international-personal-finance-shares/past",
+    "updatedAt": "2026-09-29T19:26:00Z"
+  },
+  "BIT:ELN": {
+    "mc": 1410.5,
+    "source": "https://stockanalysis.com/quote/bit/ELN/market-cap/",
+    "updatedAt": "2026-09-29T19:26:00Z"
   }
 }
