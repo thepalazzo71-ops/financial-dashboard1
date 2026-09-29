@@ -859,6 +859,88 @@ thesis companies still need `insider_ownership` added (their
 WebSearch-agent-at-a-time discipline as the market-cap/corporate-actions
 batches applies here too.
 
+## Coverage extension round, both markets (2026-09-29)
+
+A big round of follow-up work, all on the user's explicit go-ahead
+batch-by-batch. Order matters here since it explains some cross-market
+back-and-forth: shareholding wave 2 (US) → US market-cap next tier →
+Europe market-cap next tier → Europe insider-ownership → Europe
+market-cap tiers 2 and 3 → **user caught a real gap this surfaced**
+(Mercor/mcr S.A.'s divestiture wasn't in corporate actions since it's
+rank 222, outside the original top-150 screen) → Europe corporate-actions
+screen extended to match.
+
+**US shareholding wave 2**: finished the 48 remaining US priority-pool
+tickers from wave 1's resume list (see "Shareholding data" above) —
+38/48 got both fields, 5 got one, 5 came back honest nulls. Independently
+re-verified (not just trusting the agent) for the fabrication pattern
+that started this whole thread: zero duplicates across all 243 companies
+researched across both waves. **US shareholding is done.**
+
+**US market-cap next tier**: +48 companies via FMP (the next tier by
+rank, just below the 238-ticker priority pool) — 272/517 now refreshed.
+2 Canada-only (TSX) tickers in that tier deferred (`data-us/mc_next_tier_deferred.json`).
+
+**Europe market-cap tiers 151-300**: three batches of 50 via WebSearch
+(Bigdata.com still out of credits, FMP has zero non-US coverage,
+Twelve_Data unavailable — same constraints as before). 173 → 216 → 259
+of the 1,000-pool now refreshed. One deliberate sanity-check override:
+Maisons du Monde (ENXTPA:MDM) landed at 0.19x baseline, just under the
+auto-exclude threshold, but multiple sources corroborate a genuine ~85%
+stock collapse from a June 2026 debt-restructuring settlement — kept,
+not excluded (this also reconciles an *earlier* exclusion of the same
+company from months ago as "implausible"; it looks like that earlier low
+price was real after all). One batch's final handback message hit an
+API session rate limit ("You've hit your session limit"), separate from
+the WebSearch budget — but the agent's actual work (all 50 results,
+merge-saved incrementally) was already complete and intact; verified the
+output file before merging rather than re-running.
+
+**Europe insider-ownership research**: added `thesis.insider_ownership`
+for 112 of the existing 150 thesis companies (38 honest nulls) via
+WebSearch, same discipline as the US waves — main_shareholders was
+already clean and untouched. Independently re-verified: zero duplicates,
+zero reused figures.
+
+**The gap this surfaced**: the user asked about WSE:MCR (mcr S.A.,
+formerly Mercor) after noticing its ~53% market-cap drop in the ranks
+251-300 batch, and asked whether it was a spinoff and whether corporate
+actions caught it. It hadn't — Mercor sits at rank 222, outside the
+top-150 the original corporate-actions screen covered. Investigated:
+not a spinoff, a **divestiture** — Mercor sold its fire-ventilation/
+smoke-extraction business to Kingspan Group (up to PLN 420M, closed
+~Oct 2025), rebranded to "mcr Spolka Akcyjna", and paid an outsized
+special dividend from the proceeds. Added to `data/corporate_actions.json`
+under "other". This is exactly the kind of gap that motivates keeping
+corporate-actions coverage in sync with market-cap coverage, not letting
+one race ahead of the other.
+
+**Europe corporate-actions screen extended to ranks 151-300**: three
+batches of 50 (matching the market-cap tiers), 29 real events found
+total across all three parts (46 total corporate actions on file now, up
+from 17). Highlights: Surteco Group SE's mandatory takeover offer
+(rejected by the majority pool) combined with an active plan to divest
+major business lines — structurally the closest analog to the Mercor
+case found; Maisons du Monde's distressed debt-for-equity
+recapitalization (Alteri/Eicos took ~95% of capital, court-validated
+July 2026 — this is the SAME company whose market-cap swing was flagged
+above, now with the full explanation on file); Criteo S.A.'s Vista
+Equity/Quinti Capital take-private bid (~$3.7B), preceded by a
+France-to-Luxembourg re-domiciliation apparently done to enable the deal
+structure; International Personal Finance's essentially-complete
+BasePoint Capital acquisition. Judgment calls preserved rather than
+guessed at: denied/unconfirmed rumors excluded (Pets at Home takeover
+speculation, explicitly denied by BC Partners); stale events excluded
+(Close Brothers' CBAM divestiture, completed Feb 2025, outside the
+~12-18 month lookback); cosmetic-only renames excluded (PageGroup →
+Michael Page plc). One duplicate correctly deduplicated across batches
+(mcr S.A. was independently re-found in part 2, already on file from the
+direct add).
+
+**Result**: both Europe's market-cap coverage (259/1,000) and its
+corporate-actions screen (ranks 1-300) now extend to the same boundary
+— the lesson from the Mercor gap, applied.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -881,17 +963,23 @@ batches applies here too.
 - Completing gross-margin research for the USA/Canada pool (212 of 517
   all-sector companies still need it — see "USA/Canada dashboard" above),
   same official-filings-only workflow as Europe.
-- USA/Canada market-cap refresh and corporate-actions screen are **done**
-  as of batch 2 (see "USA/Canada market-cap refresh + corporate actions,
-  batches 1-2" above) — only 4 permanently-FMP-blocked market caps remain,
-  not worth re-attempting without a plan upgrade.
-- **Shareholding research wave 2**: 48 US priority-pool tickers
-  unprocessed (resume list in `data-us/shareholding_research_remaining.json`,
-  start with OTCPK:MVLY), plus Europe's existing 150 thesis companies
-  still need `insider_ownership` added — see "Shareholding data:
-  fabrication incident + fix" above. Needs the user's go-ahead before
-  starting (same one-WebSearch-agent-at-a-time discipline as the other
-  batches).
+- USA/Canada market-cap refresh (priority pool) and its corporate-actions
+  screen are **done** — only 4 permanently-FMP-blocked market caps
+  remain, not worth re-attempting without a plan upgrade.
+- US and Europe shareholding research are **done** for their current
+  scope (US: 243-ticker priority pool; Europe: 150 thesis companies) —
+  see "Shareholding data" and "Coverage extension round" above.
+- **Continuing the market-cap / corporate-actions frontier**: both
+  dashboards' coverage now extends roughly rank 1-300 (Europe) /
+  272-of-517 (US) for market caps, and Europe's corporate-actions screen
+  matches its market-cap reach (ranks 1-300). The natural next step for
+  either market is the next ~50-company tier — same batch pattern
+  established this round (WebSearch for non-US-exchange market caps and
+  all corporate-actions screening, FMP for US-exchange market caps,
+  never more than one WebSearch-heavy agent running at once). US's
+  corporate-actions screen currently only covers its 238-ticker priority
+  pool, not the newer 272-company market-cap frontier - worth extending
+  to match, same lesson as the Mercor gap.
 - Once both dashboards are in steady state, the same pipeline can be
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
