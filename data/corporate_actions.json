@@ -22,9 +22,9 @@
       "ticker": "ENXTPA:ALPOU",
       "company": "Poulaillon SA",
       "date": "2026-06-22",
-      "counterparty": "SAS Eugénie (Poulaillon family holding)",
+      "counterparty": "SAS Eug\u00e9nie (Poulaillon family holding)",
       "terms": "EUR9.00/share simplified tender offer (OPAS) for the 16.5% of capital (843,402 shares) not already held",
-      "note": "The Poulaillon family's holding company SAS Eugénie filed a simplified public tender offer (filed 23 April 2026, offer period 22 June-3 July 2026) at EUR9 per share to take full control of the bakery/pastry group, similar in structure to the Installux case.",
+      "note": "The Poulaillon family's holding company SAS Eug\u00e9nie filed a simplified public tender offer (filed 23 April 2026, offer period 22 June-3 July 2026) at EUR9 per share to take full control of the bakery/pastry group, similar in structure to the Installux case.",
       "source_url": "https://app.bigdata.com/documents/C0C41E17B6B79E5AC56CD0068E38B985"
     },
     {
@@ -41,7 +41,7 @@
       "company": "InnoTec TSS AG",
       "date": "2026-06-25",
       "counterparty": "GLI Beteiligungsgesellschaft mbH / Grondbach GmbH (bidding consortium)",
-      "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German WpÜG",
+      "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German Wp\u00dcG",
       "note": "A bidding consortium (GLI Beteiligungsgesellschaft and Grondbach GmbH, acting with further parties including Dr. Gerson Link and Reinhart Zech of Hymmen) acquired control of InnoTec TSS AG on 25 June 2026, triggering a mandatory takeover offer for all remaining shares.",
       "source_url": "https://app.bigdata.com/documents/8A6E7E6020FAFD3B057BCE7F335DD606"
     }
@@ -99,22 +99,22 @@
     },
     {
       "ticker": "ENXTPA:LNA",
-      "company": "LNA Santé SA",
+      "company": "LNA Sant\u00e9 SA",
       "date": "2026-07-02",
       "counterparty": "Clariane group (5 nursing homes) plus a separate operating-license acquisition",
       "role": "acquirer",
       "terms": "539 beds acquired; ~EUR25m annualized revenue add (~7-8% of French nursing-home revenue)",
-      "note": "LNA Santé acquired five nursing homes (539 beds) from Clariane plus an operating license for a further 77-bed home, described by analysts as one of its largest deals since 2020.",
+      "note": "LNA Sant\u00e9 acquired five nursing homes (539 beds) from Clariane plus an operating license for a further 77-bed home, described by analysts as one of its largest deals since 2020.",
       "source_url": "https://app.bigdata.com/documents/4D254BBCDEDF5AE3BA887C8EA27946F5"
     },
     {
       "ticker": "ENXTPA:JBOG",
       "company": "Jacques Bogart S.A.",
       "date": "2026-04-24",
-      "counterparty": "Stadtparfümerie Pieper (Germany) / Marionnaud Group",
+      "counterparty": "Stadtparf\u00fcmerie Pieper (Germany) / Marionnaud Group",
       "role": "target/subject of merger talks",
       "terms": "Not disclosed",
-      "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparfümerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
+      "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparf\u00fcmerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
       "source_url": "https://app.bigdata.com/documents/9A3AD1AA300C693D413737F6E3C1BA26"
     }
   ],
@@ -122,7 +122,7 @@
   "other": [
     {
       "ticker": "ENXTPA:BLC",
-      "company": "Bastide Le Confort Médical SA",
+      "company": "Bastide Le Confort M\u00e9dical SA",
       "date": "2026-06-01",
       "type": "divestiture",
       "note": "Bastide completed the sale of subsidiary New Medical Concept (holding company of the EXPERF home-infusion/clinical-nutrition group, EUR42m revenue) to Sapio Group as part of active portfolio management.",
@@ -159,6 +159,15 @@
       "type": "delisting",
       "note": "SergeFerrari Group transferred its share listing from the regulated market of Euronext Paris to the lighter-touch Euronext Growth Paris multilateral trading facility, effectively delisting from the regulated market (shareholder approval 22 April 2026, effective 24 June 2026).",
       "source_url": "https://app.bigdata.com/documents/849DBFD0CD50096AF02250A1A2B45FF7"
+    },
+    {
+      "ticker": "WSE:MCR",
+      "company": "mcr Spolka Akcyjna (formerly Mercor S.A.)",
+      "date": "2025-10-01",
+      "type": "divestiture + special dividend",
+      "terms": "Sold its gravity smoke-extraction and fire-ventilation business (transferred first into a subsidiary, then sold) to Kingspan Group for up to PLN 420M (PLN 90M of that deferred/contingent on trailing-12-month EBITDA through March 2026); transaction closed ~October 2025.",
+      "note": "Company rebranded from Mercor S.A. to mcr Spolka Akcyjna following the sale, and paid an unusually large special dividend (PLN 1.78/share, well above the prior year) from the proceeds. This is a divestiture + cash-return event, not a classic spinoff (shareholders did not receive shares in a new listed entity) - explains both the name change and the ~53% drop in market cap picked up in this project's market-cap refresh, which is a mechanical consequence of the business/cash leaving the company, not organic deterioration.",
+      "source_url": "https://www.bankier.pl/wiadomosc/MERCOR-S-A-Zamkniecie-transakcji-zbycia-spolek-zaleznych-Spolki-posiadajacych-aktywa-zwiazane-z-prowadzeniem-dzialalnosci-w-zakresie-oddymiania-grawitacyjnego-oraz-wentylacji-pozarowej-9018322.html"
     }
   ]
 }
