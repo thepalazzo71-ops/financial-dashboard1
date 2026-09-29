@@ -280,6 +280,56 @@
       "terms": "All-cash going-private deal at C$4.10 per common share, a 36% premium to the closing price as of March 2, 2026",
       "note": "Culmination of a strategic review publicly announced March 3, 2026, involving outreach to a broad pool of potential acquirers. Unanimously recommended by Roots board. Searchlight Capital Partners, Kernwood Limited and all Roots directors/officers (69% of voting interest) have agreed to vote in favor. Special shareholder meeting expected October 2026; closing targeted Q4 2026; Roots will delist from TSX and cease to be a reporting issuer.",
       "source_url": "https://www.businesswire.com/news/home/20260820918160/en/Roots-Corporation-Agrees-to-Go-Private-in-Transaction-Led-by-Marquee-Brands-in-Partnership-with-Canadian-Retail-Leaders-Joseph-Mimran-and-Frank-Rocchetti-to-Position-Roots-for-Next-Chapter-of-Global-Growth"
+    },
+    {
+      "ticker": "NasdaqGS:AROW",
+      "company": "Arrow Financial Corporation",
+      "date": "2026-07-01",
+      "counterparty": "Adirondack Bancorp, Inc.",
+      "role": "acquirer",
+      "terms": "Mixed cash and stock. Each Adirondack share converted into 1.8610 shares of Arrow common stock plus $18.72 cash, implied value ~$82.79/share, aggregate transaction value ~$89.1 million.",
+      "note": "Definitive agreement signed Feb 25, 2026; OCC approval received; deal completed July 1, 2026 with Adirondack Bank merged into Arrow Bank.",
+      "source_url": "https://www.prnewswire.com/news-releases/arrow-financial-corporation-announces-strategic-acquisition-of-adirondack-bancorp-inc-302698063.html"
+    },
+    {
+      "ticker": "NasdaqGS:HWBK",
+      "company": "Hawthorn Bancshares, Inc.",
+      "date": "2026-09-04",
+      "counterparty": "FSC Bancshares, Inc. (Farmers State Bank)",
+      "role": "acquirer",
+      "terms": "Cash and stock transaction valued at approximately $28.3 million in the aggregate.",
+      "note": "Announced April 29, 2026 that Hawthorn would acquire FSC Bancshares (nine branches in northern Missouri); merger completed September 3-4, 2026, bringing combined assets to approximately $2.2 billion. Customer conversion expected Q1 2027.",
+      "source_url": "https://www.nasdaq.com/press-release/hawthorn-bancshares-inc-completes-merger-fsc-bancshares-inc-2026-09-04"
+    },
+    {
+      "ticker": "OTCPK:ENBP",
+      "company": "ENB Financial Corp",
+      "date": "2026-02-01",
+      "counterparty": "Cecil Bancorp, Inc. (Cecil Bank)",
+      "role": "acquirer",
+      "terms": "All-cash, approximately $31.3 million aggregate; Cecil shareholders received $1.88 per share.",
+      "note": "Definitive agreement signed August 13, 2025; deal completed February 1, 2026 after regulatory approvals from OCC and Maryland DFR plus a Federal Reserve waiver. Cecil Bancorp was liquidated/dissolved and Cecil Bank merged into The Ephrata National Bank, creating a ~$2.5 billion-asset combined institution.",
+      "source_url": "https://www.theglobeandmail.com/investing/markets/stocks/ENBP/pressreleases/37386560/enb-financial-completes-cecil-bancorp-acquisition-expansion/"
+    },
+    {
+      "ticker": "OTCPK:CIWV",
+      "company": "Citizens Financial Corp.",
+      "date": "2026-03-20",
+      "counterparty": "Miners & Merchants Bank",
+      "role": "acquirer",
+      "terms": "Terms not disclosed in available search results.",
+      "note": "Citizens Bank of West Virginia (subsidiary of Citizens Financial Corp., OTCID: CIWV) completed its acquisition of Miners & Merchants Bank effective after close of business March 20, 2026; former Miners & Merchants locations in Thomas and Bayard, WV, and Oakland, MD rebranded as Citizens Bank.",
+      "source_url": "https://www.theintermountain.com/news/communities/2026/03/citizens-bank-acquires-miners-merchants-bank/"
+    },
+    {
+      "ticker": "NasdaqGS:UBFO",
+      "company": "United Security Bancshares",
+      "date": "2026-04-01",
+      "counterparty": "Community West Bancshares",
+      "role": "target",
+      "terms": "All-stock. Each UBFO share converted into 0.4520 shares of Community West Bancshares common stock, implied value ~$10.53/share, aggregate deal value ~$191.9 million (~$185.5 million per closing-price calc).",
+      "note": "Merger announced December 17, 2025, approved by UBFO shareholders March 30, 2026, and completed April 1, 2026. United Security Bancshares was delisted from Nasdaq and ceased to exist as an independent company \u2014 its officers/directors roles ended. Any current market cap/valuation data for UBFO is stale/defunct.",
+      "source_url": "https://www.businesswire.com/news/home/20260401074081/en/Community-West-Bancshares-Completes-Merger-With-United-Security-Bancshares-Creating-a-Stronger-Community-Bank-in-Central-California"
     }
   ],
   "spinoffs": [],
@@ -355,6 +405,15 @@
       "terms": "Sale of TheFork (European online restaurant/reservation platform) to American Express Travel Related Services Company for $700.0 million in cash",
       "note": "Put option exercised Aug 1, 2026 following French Works Council consultation; Equity Purchase Agreement signed Aug 2, 2026; sale expected to complete by end of 2026. Separately, Tripadvisor closed its merger with Liberty TripAdvisor Holdings in 2025 (share count reduction of ~23.8 million shares).",
       "source_url": "https://ir.tripadvisor.com/news-releases/news-release-details/tripadvisor-announces-closing-merger-liberty-tripadvisor-and"
+    },
+    {
+      "ticker": "NYSEAM:TMP",
+      "company": "Tompkins Financial Corporation",
+      "date": "2025-11-03",
+      "type": "divestiture",
+      "terms": "Cash, approximately $223 million",
+      "note": "Tompkins Financial sold its wholly-owned insurance subsidiary Tompkins Insurance Agencies, Inc. (TIA) to Arthur J. Gallagher & Co. for approximately $223 million in cash, generating a pre-tax gain of about $183 million. TIA had been part of Tompkins since 2001. Deal closed October 31, 2025, announced November 3, 2025.",
+      "source_url": "https://www.businesswire.com/news/home/20251103605620/en/Tompkins-Financial-Corporation-Announces-Sale-of-Tompkins-Insurance-Agencies-Inc.-to-Arthur-J.-Gallagher-Co."
     }
   ]
 }
