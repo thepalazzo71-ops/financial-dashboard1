@@ -116,6 +116,26 @@
       "terms": "Not disclosed",
       "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparf\u00fcmerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
       "source_url": "https://app.bigdata.com/documents/9A3AD1AA300C693D413737F6E3C1BA26"
+    },
+    {
+      "ticker": "WSE:MUR",
+      "company": "Murapol S.A.",
+      "date": "2026-03-26",
+      "counterparty": "Hampont (controlled by Maciej Dyjas and Nebil Senman)",
+      "role": "target",
+      "terms": "Hampont, an existing Murapol shareholder (16.9% at end of 2025, bought additional shares from exiting Ares fund), filed with Polish competition authority UOKiK on 26 March 2026 for approval to acquire exclusive control of Murapol. By early June 2026, the AEREF V PL Investments (Ares) fund sold its entire stake and Hampont solidified its position as the developer's largest/controlling shareholder. No mandatory tender offer was triggered as 'exclusive control' under concentration rules does not require majority ownership.",
+      "note": "Change of controlling shareholder at a WSE-listed developer, with prior large institutional holder (Ares) fully exiting.",
+      "source_url": "https://www.parkiet.com/budownictwo/art44052371-wiemy-jakie-plany-ma-hampont-wobec-murapolu-po-co-wniosek-do-uokik-u"
+    },
+    {
+      "ticker": "XTRA:CSH",
+      "company": "CENIT Aktiengesellschaft",
+      "date": "2026-07-07",
+      "counterparty": "ISR Information Products AG",
+      "role": "acquirer",
+      "terms": "CENIT increased its stake in subsidiary ISR from 74.9% to 100%, financing the buyout via a rights capital increase of approx. EUR 10.9 million (subscription period Aug 4-17, 2026); principal shareholder PRIMEPULSE SE took up unsubscribed shares.",
+      "note": "ISR is CENIT's most profitable subsidiary (EUR 3.5m net profit 2025); increases CENIT's earnings concentration in ISR and changes share count via capital increase.",
+      "source_url": "https://www.finanznachrichten.de/nachrichten-2026-07/69171461-cenit-finanziert-mit-kapitalerhoehung-die-volle-uebernahme-von-isr-424.htm"
     }
   ],
   "spinoffs": [],
@@ -168,6 +188,42 @@
       "terms": "Sold its gravity smoke-extraction and fire-ventilation business (transferred first into a subsidiary, then sold) to Kingspan Group for up to PLN 420M (PLN 90M of that deferred/contingent on trailing-12-month EBITDA through March 2026); transaction closed ~October 2025.",
       "note": "Company rebranded from Mercor S.A. to mcr Spolka Akcyjna following the sale, and paid an unusually large special dividend (PLN 1.78/share, well above the prior year) from the proceeds. This is a divestiture + cash-return event, not a classic spinoff (shareholders did not receive shares in a new listed entity) - explains both the name change and the ~53% drop in market cap picked up in this project's market-cap refresh, which is a mechanical consequence of the business/cash leaving the company, not organic deterioration.",
       "source_url": "https://www.bankier.pl/wiadomosc/MERCOR-S-A-Zamkniecie-transakcji-zbycia-spolek-zaleznych-Spolki-posiadajacych-aktywa-zwiazane-z-prowadzeniem-dzialalnosci-w-zakresie-oddymiania-grawitacyjnego-oraz-wentylacji-pozarowej-9018322.html"
+    },
+    {
+      "ticker": "ENXTPA:MDM",
+      "company": "Maisons du Monde S.A.",
+      "date": "2026-07",
+      "type": "debt-for-equity recapitalization / change of control",
+      "terms": "After a EUR 406m loss in 2025 and near-insolvency, Maisons du Monde completed a refinancing/restructuring validated by the Nantes commercial court: British funds Alteri Investors and Eicos Investment Group took over ~95% of the company's capital by converting EUR 218m of existing bank debt into equity via a massively dilutive capital increase, plus EUR 25m new financing. Conciliator separately mandated to prepare a 'prepack' disposal for Maisons du Monde France and Maisons du Monde SA.",
+      "note": "Near-total change of control via distressed debt-to-equity swap; existing shareholders massively diluted. Any legacy valuation score is meaningless post-restructuring.",
+      "source_url": "https://www.fusacq.com/buzz/maisons-du-monde-boucle-son-refinancement-et-echappe-au-redressement-judiciaire-a260150_fr_"
+    },
+    {
+      "ticker": "XTRA:SUR",
+      "company": "Surteco Group SE",
+      "date": "2024-10-04 (control) / 2026-01 (divestiture plans)",
+      "type": "mandatory takeover offer + strategic divestiture review",
+      "terms": "BANASINO INVESTMENTS S.a r.l. acquired control of Surteco (30% of voting rights) on Oct 4, 2024, triggering a mandatory offer at EUR 16.96/share; the Surteco Pool (56.87% of voting rights) did not accept and the management/supervisory board did not recommend acceptance. Separately, in January 2026 Surteco confirmed media reports of a strategic review to sell larger parts of the group, including the Profiles and Edgebands (baseboard/technical profiles) business units; in April 2026 the company secured refinancing to 2029 to support the ongoing restructuring.",
+      "note": "Both a 2024 change-of-control event via mandatory tender and an active 2026 plan to divest major business divisions -- directly analogous to the Mercor/Kingspan divestiture pattern.",
+      "source_url": "https://www.finanznachrichten.de/nachrichten-2026-01/67549612-surteco-bestaetigt-medienbericht-verkauf-groesserer-konzernteile-moeglich-424.htm"
+    },
+    {
+      "ticker": "WSE:ALL",
+      "company": "Ailleron S.A.",
+      "date": "2026-04-08",
+      "type": "attempted divestiture of subsidiary (failed)",
+      "terms": "Ailleron was in advanced, exclusive negotiations to sell its Software Mind subsidiary (a software house) to US private equity firm Tailwind Capital Partners IV. Poland's UOKiK antitrust approval was obtained Feb 26, 2026, and the exclusivity period was extended March 17, 2026, but Tailwind halted/withdrew from negotiations on April 8, 2026, citing unfavorable macro/market conditions (not diligence issues).",
+      "note": "A material planned divestiture of Ailleron's core subsidiary that ultimately fell through in April 2026; strategic review of Software Mind may resume, and market may still be pricing in sale expectations.",
+      "source_url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L8N40R07J:0-ailleron-says-tailwind-capital-halts-negotiations-for-sale-of-software-mind-stake/"
+    },
+    {
+      "ticker": "LSE:DATA",
+      "company": "GlobalData Plc",
+      "date": "2026-07-09",
+      "type": "failed takeover approaches + large self-tender buyback",
+      "terms": "GlobalData received takeover approaches from private equity firms KKR (collapsed May 2026) and ICG (talks ended June 2026). Following the collapse, GlobalData launched a GBP 60m tender offer (initially reported as GBP 30m at 85p/share, 16% premium) to return capital to shareholders, on top of an existing GBP 5m buyback (total GBP 45-60m return for the year). Company also moved from AIM to the Main Market in March 2026.",
+      "note": "Stock may still carry residual takeover-premium expectations from the failed PE approaches; large self-tender also changes share count materially.",
+      "source_url": "https://businesscloud.co.uk/news/globaldata-to-launch-tender-offer-following-collapsed-takeover-talks/"
     }
   ]
 }
