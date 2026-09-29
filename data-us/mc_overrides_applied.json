@@ -5,9 +5,9 @@
     "updatedAt": "2026-09-24T16:00:00Z"
   },
   "NYSE:AMN": {
-    "mc": 1310.58,
+    "mc": 1338.89,
     "source": "fmp.com",
-    "updatedAt": "2026-09-24T16:00:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "NYSE:ASIX": {
     "mc": 433.23,
@@ -365,9 +365,9 @@
     "updatedAt": "2026-09-25T15:35:00Z"
   },
   "NasdaqCM:FCAP": {
-    "mc": 206.8,
+    "mc": 204.58,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "NasdaqCM:FCCO": {
     "mc": 307.78,
@@ -465,9 +465,9 @@
     "updatedAt": "2026-09-25T15:35:00Z"
   },
   "NasdaqGM:BWFG": {
-    "mc": 528.54,
+    "mc": 521.76,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "NasdaqGM:CLMB": {
     "mc": 594.81,
@@ -500,9 +500,9 @@
     "updatedAt": "2026-09-25T15:35:00Z"
   },
   "NasdaqGM:LARK": {
-    "mc": 191.46,
+    "mc": 193.63,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "NasdaqGM:MBUU": {
     "mc": 460.07,
@@ -882,7 +882,7 @@
   "OTCPK:CHBH": {
     "mc": 142.89,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:CNBB": {
     "mc": 104.3,
@@ -895,9 +895,9 @@
     "updatedAt": "2026-09-25T15:35:00Z"
   },
   "OTCPK:CSBB": {
-    "mc": 202.39,
+    "mc": 216.6,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:CWBK": {
     "mc": 125.27,
@@ -912,7 +912,7 @@
   "OTCPK:ELMA": {
     "mc": 30.89,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:EMYB": {
     "mc": 163.86,
@@ -935,9 +935,9 @@
     "updatedAt": "2026-09-25T15:35:00Z"
   },
   "OTCPK:FNRN": {
-    "mc": 281.79,
+    "mc": 282.69,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:GOVB": {
     "mc": 24.42,
@@ -1022,7 +1022,7 @@
   "OTCPK:PNBI": {
     "mc": 50.22,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:PPLL": {
     "mc": 103.64,
@@ -1052,7 +1052,7 @@
   "OTCPK:STBI": {
     "mc": 70.27,
     "source": "fmp.com",
-    "updatedAt": "2026-09-25T15:35:00Z"
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OTCPK:SVBT": {
     "mc": 80.52,
@@ -1168,5 +1168,195 @@
     "mc": 31.51,
     "source": "https://ca.finance.yahoo.com/quote/VCI.V/",
     "updatedAt": "2026-09-25T15:35:00Z"
+  },
+  "NYSE:CION": {
+    "mc": 354.75,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:HAFC": {
+    "mc": 928.12,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqCM:HFBL": {
+    "mc": 76.26,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSE:SBSI": {
+    "mc": 901.33,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:FFMH": {
+    "mc": 253.39,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:AROW": {
+    "mc": 610.65,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:PCB": {
+    "mc": 400.07,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:UBFO": {
+    "mc": 185.03,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqCM:FRAF": {
+    "mc": 277.35,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:GSBC": {
+    "mc": 836.38,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSE:EIG": {
+    "mc": 981.74,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:MSBC": {
+    "mc": 361.11,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGM:UNTY": {
+    "mc": 549.13,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:JDVB": {
+    "mc": 127.77,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:ENBP": {
+    "mc": 161.42,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGM:PDLB": {
+    "mc": 482.91,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:CIBN": {
+    "mc": 22.12,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSEAM:TMP": {
+    "mc": 1386.44,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:RRBI": {
+    "mc": 652.28,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:HLFN": {
+    "mc": 66.25,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:ITIC": {
+    "mc": 541.48,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:FFBB": {
+    "mc": 275.97,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:RVCB": {
+    "mc": 78.44,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:FBAK": {
+    "mc": 1045.07,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:TYBT": {
+    "mc": 110.41,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqCM:UBCP": {
+    "mc": 84.75,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGM:AUBN": {
+    "mc": 92.61,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSE:SOR": {
+    "mc": 369.57,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:HWBK": {
+    "mc": 263.19,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:TRUX": {
+    "mc": 281.92,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:FMBL": {
+    "mc": 1190.88,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:CHMG": {
+    "mc": 385.2,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:BKSC": {
+    "mc": 102.38,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSE:OPY": {
+    "mc": 1251.89,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqCM:VALU": {
+    "mc": 384.41,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OTCPK:CIWV": {
+    "mc": 83.8,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSEAM:BDL": {
+    "mc": 82.73,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NYSE:IIIN": {
+    "mc": 557.52,
+    "source": "fmp.com",
+    "updatedAt": "2026-09-29T00:00:00Z"
   }
 }

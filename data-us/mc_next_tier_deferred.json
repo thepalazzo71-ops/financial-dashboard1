@@ -1,0 +1,7 @@
+{
+  "note": "Next-tier batch (2026-09-29): 48 of 50 next-ranked companies beyond the 238-ticker priority pool refreshed via FMP. These 2 Canada-only (TSX) tickers were deferred to a future WebSearch wave rather than compete with the shareholding research for WebSearch budget.",
+  "deferred_tickers": [
+    "TSX:MRC",
+    "TSX:SWP"
+  ]
+}
