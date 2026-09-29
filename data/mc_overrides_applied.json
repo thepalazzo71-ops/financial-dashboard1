@@ -40,9 +40,9 @@
     "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "AIM:LSC": {
-    "mc": 615.61,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:46:24.510646Z"
+    "mc": 632.21,
+    "source": "https://www.londonstockexchange.com/stock/LSC/london-security-plc/company-page",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "AIM:OMG": {
     "mc": 57.4,
@@ -125,9 +125,9 @@
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
   "CPSE:DFDS": {
-    "mc": 1350.31,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 1032.08,
+    "source": "https://companiesmarketcap.com/dfds/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "CPSE:FED": {
     "mc": 88.36,
@@ -140,9 +140,9 @@
     "updatedAt": "2026-09-21T00:55:49.074916Z"
   },
   "CPSE:KRE": {
-    "mc": 256.32,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 182.4,
+    "source": "https://gomarketcap.com/companies/CPH-KRE/kreditbanken-a-s",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "CPSE:LUXOR B": {
     "mc": 98.42,
@@ -340,9 +340,9 @@
     "updatedAt": "2026-09-20T19:45:10.374909Z"
   },
   "LSE:FDM": {
-    "mc": 155.8,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 149.22,
+    "source": "https://www.lse.co.uk/SharePrice.html?shareprice=FDM&share=Fdm-group",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "LSE:GAMA": {
     "mc": 1352.29,
@@ -355,14 +355,14 @@
     "updatedAt": "2026-09-20T19:45:10.398034Z"
   },
   "LSE:MONY": {
-    "mc": 1330.39,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 1199.86,
+    "source": "https://www.londonstockexchange.com/stock/MONY/mony-group-plc/company-page",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "LSE:PETS": {
-    "mc": 1206.4,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 1220.82,
+    "source": "https://www.investing.com/equities/pets-at-home-group-plc",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "LSE:PROC": {
     "mc": 72.95,
@@ -470,9 +470,9 @@
     "updatedAt": "2026-09-20T19:31:53.153635Z"
   },
   "SWX:ZEHN": {
-    "mc": 952.64,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 896.55,
+    "source": "https://stockanalysis.com/quote/swx/ZEHN/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "TLSE:SFG1T": {
     "mc": 44.24,
@@ -535,9 +535,9 @@
     "updatedAt": "2026-09-20T19:45:10.350402Z"
   },
   "WSE:TOA": {
-    "mc": 199.1,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 195.85,
+    "source": "https://stockanalysis.com/quote/wse/TOA/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "WSE:TXT": {
     "mc": 278.92,
@@ -620,9 +620,9 @@
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
   "XTRA:MLP": {
-    "mc": 1143.19,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:46:24.510646Z"
+    "mc": 1125.4,
+    "source": "https://stockanalysis.com/quote/etr/MLP/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "XTRA:MZX": {
     "mc": 154.09,
@@ -630,9 +630,9 @@
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
   "XTRA:NTG": {
-    "mc": 120.26,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:55:49.074916Z"
+    "mc": 122.32,
+    "source": "https://stockanalysis.com/quote/etr/NTG/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   },
   "XTRA:P4O": {
     "mc": 38.49,
@@ -663,5 +663,205 @@
     "mc": 395.07,
     "source": "bigdata.com",
     "updatedAt": "2026-09-21T00:55:49.074916Z"
+  },
+  "OB:FFSB": {
+    "mc": 18.29,
+    "source": "https://stockanalysis.com/quote/osl/FFSB/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OM:TFBANK": {
+    "mc": 1073.28,
+    "source": "https://in.investing.com/equities/tf-bank-ab",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:MDM": {
+    "mc": 10.04,
+    "source": "https://www.investing.com/equities/maisons-du-monde-sas",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:SAVE": {
+    "mc": 949.03,
+    "source": "https://companiesmarketcap.com/savencia/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTBR:TEXF": {
+    "mc": 180.58,
+    "source": "https://stockanalysis.com/quote/ebr/TEXF/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NGM:LINKAB": {
+    "mc": 22.29,
+    "source": "https://stockanalysis.com/quote/sto/LINKAB/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:SFPI": {
+    "mc": 205.38,
+    "source": "https://www.tipranks.com/stocks/fr:sfpi/statistics",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "AIM:TRCS": {
+    "mc": 139.79,
+    "source": "https://stockanalysis.com/quote/aim/TRCS/statistics/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "WSE:TAR": {
+    "mc": 339.16,
+    "source": "https://stockanalysis.com/quote/wse/TAR/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "BUSE:GSPARK": {
+    "mc": 176.19,
+    "source": "https://www.investing.com/equities/graphisoft-park-se-ingatl-eur",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "XTRA:SUR": {
+    "mc": 175.07,
+    "source": "https://companiesmarketcap.com/surteco-group/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:ALPAS": {
+    "mc": 22.14,
+    "source": "https://stockanalysis.com/quote/epa/ALPAS/statistics/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "LSE:DATA": {
+    "mc": 638.35,
+    "source": "https://www.investing.com/pro/LSE:DATA/explorer/marketcap",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "CSE:BLUE": {
+    "mc": 34.15,
+    "source": "https://stockanalysis.com/quote/cys/BLUE/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "DB:SIM0": {
+    "mc": 324.12,
+    "source": "https://www.investing.com/equities/simona-ag",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "XTRA:DAR": {
+    "mc": 39.12,
+    "source": "https://stockanalysis.com/quote/etr/DAR/statistics/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTLS:COR": {
+    "mc": 1050.93,
+    "source": "https://www.investing.com/equities/corticeira-amorim",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTAM:HYDRA": {
+    "mc": 389.42,
+    "source": "https://www.investing.com/equities/hydratec-industries",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "NasdaqGS:GASS": {
+    "mc": 342.04,
+    "source": "https://stockanalysis.com/stocks/gass/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:ALPDX": {
+    "mc": 121.21,
+    "source": "https://stockanalysis.com/quote/epa/ALPDX/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "LSE:BMY": {
+    "mc": 662.0,
+    "source": "https://stockanalysis.com/quote/lon/BMY/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:TFF": {
+    "mc": 402.0,
+    "source": "https://www.investing.com/pro/CHIX:TFFP/explorer/marketcap",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "HLSE:TOKMAN": {
+    "mc": 429.15,
+    "source": "https://www.investing.com/equities/tokmanni-group-oyj",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "AIM:BMT": {
+    "mc": 18.41,
+    "source": "https://stockanalysis.com/quote/aim/BMT/company/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "BIT:EM": {
+    "mc": 155.78,
+    "source": "https://www.investing.com/equities/emak-spa",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "AIM:ARBB": {
+    "mc": 181.23,
+    "source": "https://stockanalysis.com/quote/aim/ARBB/statistics/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OM:RAIL": {
+    "mc": 76.42,
+    "source": "https://www.investing.com/equities/railcare-group-ab",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "AIM:CRL": {
+    "mc": 26.28,
+    "source": "https://www.investing.com/equities/creightons-plc",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "BUSE:FORRAS/T": {
+    "mc": 26.58,
+    "source": "https://www.marketscreener.com/quote/stock/FORR-S-NYRT-64304790/company/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "XTRA:VVV3": {
+    "mc": 200.42,
+    "source": "https://stockanalysis.com/quote/etr/VVV3/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "WBAG:SWUT": {
+    "mc": 30.48,
+    "source": "https://companiesmarketcap.com/sw-umwelttechnik-stoiser-wolschner/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "WSE:MUR": {
+    "mc": 437.54,
+    "source": "https://companiesmarketcap.com/murapol/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ATSE:OLTH": {
+    "mc": 445.03,
+    "source": "https://www.investing.com/equities/theski-port",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "WSE:VOX": {
+    "mc": 393.53,
+    "source": "https://www.investing.com/equities/voxel",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "OM:ABSO": {
+    "mc": 238.95,
+    "source": "https://fintel.io/s/se/abso",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "XTRA:PWO": {
+    "mc": 94.33,
+    "source": "https://companiesmarketcap.com/pwo-ag/marketcap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:ALMOU": {
+    "mc": 81.39,
+    "source": "https://simplywall.st/stocks/fr/materials/epa-almou/moulinvest-shares",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "BIT:LMG": {
+    "mc": 18.6,
+    "source": "https://stockanalysis.com/quote/bit/LMG/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "ENXTPA:CIV": {
+    "mc": 757.6,
+    "source": "https://finance.yahoo.com/quote/CIV.PA/",
+    "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "CPSE:GRLA": {
+    "mc": 325.28,
+    "source": "https://stockanalysis.com/quote/cph/GRLA/market-cap/",
+    "updatedAt": "2026-09-29T00:00:00Z"
   }
 }
