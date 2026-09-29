@@ -44,6 +44,33 @@
       "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German Wp\u00dcG",
       "note": "A bidding consortium (GLI Beteiligungsgesellschaft and Grondbach GmbH, acting with further parties including Dr. Gerson Link and Reinhart Zech of Hymmen) acquired control of InnoTec TSS AG on 25 June 2026, triggering a mandatory takeover offer for all remaining shares.",
       "source_url": "https://app.bigdata.com/documents/8A6E7E6020FAFD3B057BCE7F335DD606"
+    },
+    {
+      "ticker": "BST:FEW0",
+      "company": "Funkwerk AG",
+      "date": "2026-03-20",
+      "counterparty": "H\u00f6rmann Funkwerk Holding GmbH (majority shareholder)",
+      "terms": "Public share buy-back offer to remaining shareholders at EUR 32.80 per share, for a stake of just under 9.5% of share capital; offer period 20 March 2026 to 17 April 2026. Following the offer, Funkwerk's listing on the Munich Stock Exchange free market (Freiverkehr) was withdrawn, with trading ceasing at the end of 31 March 2026.",
+      "note": "Effectively a going-private/delisting transaction by the majority shareholder; stock is being wound down as a publicly-traded security.",
+      "source_url": "https://funkwerk.com/en/latest-news/uebernahmeangebot-der-hoermann-funkwerk-holding-gmbh-an-die-aktionaere-der-funkwerk-ag/"
+    },
+    {
+      "ticker": "WSE:WPL",
+      "company": "Wirtualna Polska Holding S.A.",
+      "date": "2026-05-04",
+      "counterparty": "Company founders (controlling shareholders), acting jointly",
+      "terms": "Wirtualna Polska Holding and its three founders announced a voluntary tender offer (wezwanie) for all outstanding shares of the company at PLN 59 per share; acceptance period 4 May to 2 June. The agreement explicitly does not provide for delisting the company.",
+      "note": "Large-scale voluntary tender offer for all shares by controlling shareholders; distorts market-price-based valuation versus intrinsic fundamentals even though delisting is not planned.",
+      "source_url": "https://www.parkiet.com/technologie/art44252421-jest-wezwanie-na-akcje-wph-dwa-scenariusze"
+    },
+    {
+      "ticker": "ENXTBR:EXM",
+      "company": "Exmar NV",
+      "date": "2025-02-13",
+      "counterparty": "Saverex NV (Nicolas Saverys, controlling shareholder vehicle)",
+      "terms": "Saverex NV launched a voluntary and conditional public takeover offer for all outstanding shares of Exmar not already owned, at EUR 11.50/share. Initial acceptance period 13 Feb-13 Mar 2025; reopened acceptance period ended 16 Apr 2025. Saverex waived the 95% threshold; final result gave Saverex 91.06% (94.36% with affiliated parties) of shares. Saverex intends to launch a simplified squeeze-out bid if/when it crosses 95%/90% acquired-in-bid thresholds.",
+      "note": "Classic go-private tender offer with squeeze-out plans pending; share price is now anchored to deal terms (EUR 11.50) rather than standalone fundamentals.",
+      "source_url": "https://www.hellenicshippingnews.com/saverex-nv-launches-its-voluntary-and-conditional-public-takeover-offer-for-all-outstanding-shares-in-exmar-nv/"
     }
   ],
   "mergers_acquisitions": [
@@ -136,6 +163,56 @@
       "terms": "CENIT increased its stake in subsidiary ISR from 74.9% to 100%, financing the buyout via a rights capital increase of approx. EUR 10.9 million (subscription period Aug 4-17, 2026); principal shareholder PRIMEPULSE SE took up unsubscribed shares.",
       "note": "ISR is CENIT's most profitable subsidiary (EUR 3.5m net profit 2025); increases CENIT's earnings concentration in ISR and changes share count via capital increase.",
       "source_url": "https://www.finanznachrichten.de/nachrichten-2026-07/69171461-cenit-finanziert-mit-kapitalerhoehung-die-volle-uebernahme-von-isr-424.htm"
+    },
+    {
+      "ticker": "XTRA:UUU",
+      "company": "3U Holding AG",
+      "date": "2025-02-03",
+      "counterparty": "EMPUR Gruppe (EMPUR Produktionsgesellschaft mbH, GKS GmbH & Co. KG, EM-Plan GmbH)",
+      "role": "acquirer",
+      "terms": "3U Holding acquired the EMPUR Group, a German manufacturer of water-based underfloor heating systems, effective January 1, 2025, as part of its 'MISSION 2026+' strategy to expand its SHK (heating/plumbing/air-conditioning) segment.",
+      "note": "Bolt-on acquisition materially expanding the SHK segment; distorts trailing per-share metrics for a small-cap holding company.",
+      "source_url": "https://www.onvista.de/news/2025/02-03-eqs-news-3u-holding-ag-erwirbt-empur-gruppe-und-baut-position-im-shk-markt-aus-0-37-26354466"
+    },
+    {
+      "ticker": "AIM:TRCS",
+      "company": "Tracsis plc",
+      "date": "2026-01-01",
+      "counterparty": "Mistral Data Limited",
+      "role": "acquirer",
+      "terms": "Tracsis acquired Mistral Data Limited for \u00a348 million, enhancing recurring revenue and margins, completed in the year ended 31 July 2026.",
+      "note": "Significant acquisition relative to company size; also see divestiture entry (Events Transport business sale) for the same company under 'other'.",
+      "source_url": "https://www.investegate.co.uk/announcement/rns/tracsis--trcs/trading-update-and-completion-of-acquisition/9735245"
+    },
+    {
+      "ticker": "LSE:TPT",
+      "company": "Topps Tiles Plc",
+      "date": "2024-08-19",
+      "counterparty": "CTD Tiles (Tildist Realisations Limited assets) and Fired Earth",
+      "role": "acquirer",
+      "terms": "Topps Tiles acquired certain assets of CTD Tiles (30 retail stores, brands, IP) completed 19 August 2024, with CMA divestiture undertakings closing 22 January 2026; separately acquired Fired Earth on 26 November 2025. CTD deal contributed to an ~18% sales increase and a record turnover year.",
+      "note": "Large bolt-on acquisitions materially changing revenue base and store footprint versus historical organic trend.",
+      "source_url": "https://www.kbbreview.com/78126/news/topps-tiles-enjoys-record-year-after-ctd-takeover/"
+    },
+    {
+      "ticker": "WSE:WPL",
+      "company": "Wirtualna Polska Holding S.A.",
+      "date": "2025-01-01",
+      "counterparty": "Invia Group SE",
+      "role": "acquirer",
+      "terms": "Wirtualna Polska purchased the pan-European online travel group Invia Group SE during 2025.",
+      "note": "Large acquisition expanding WPL's travel/media footprint; see also the tender offer entry for the same company under 'tender_offers'.",
+      "source_url": "https://www.money.pl/wiadomosci/wirtualna-polska.html"
+    },
+    {
+      "ticker": "ENXTPA:ALBFR",
+      "company": "Sidetrade SA",
+      "date": "2025-10-27",
+      "counterparty": "ezyCollect (Australia) and SHS Viveon AG (Germany)",
+      "role": "acquirer",
+      "terms": "Sidetrade completed acquisition of 100% of ezyCollect (Australian order-to-cash SME software) on 27 Oct 2025, valuing it at EUR 37.3m (EUR 34.7m cash + EUR 2.6m shares, plus earn-out up to EUR 5.6m). Separately, after acquiring 44.30% of German credit-risk-management firm SHS Viveon in April 2026, Sidetrade launched a friendly public tender offer for the rest, open 7 May-29 July 2026, taking control of the company.",
+      "note": "Two material acquisitions within the past 12 months, including a cross-border public tender offer in Germany; expands Sidetrade's footprint into APAC and DACH credit-risk management.",
+      "source_url": "https://www.globenewswire.com/news-release/2025/10/27/3174852/0/en/Sidetrade-Completes-Acquisition-of-ezyCollect.html"
     }
   ],
   "spinoffs": [],
@@ -224,6 +301,69 @@
       "terms": "GlobalData received takeover approaches from private equity firms KKR (collapsed May 2026) and ICG (talks ended June 2026). Following the collapse, GlobalData launched a GBP 60m tender offer (initially reported as GBP 30m at 85p/share, 16% premium) to return capital to shareholders, on top of an existing GBP 5m buyback (total GBP 45-60m return for the year). Company also moved from AIM to the Main Market in March 2026.",
       "note": "Stock may still carry residual takeover-premium expectations from the failed PE approaches; large self-tender also changes share count materially.",
       "source_url": "https://businesscloud.co.uk/news/globaldata-to-launch-tender-offer-following-collapsed-takeover-talks/"
+    },
+    {
+      "ticker": "XTRA:ST5",
+      "company": "STEICO SE",
+      "date": "2025-11-01",
+      "type": "majority-stake overhang / potential future takeover offer",
+      "terms": "Kingspan Group holds 61.1% of STEICO (increased from an initial 51% stake purchase from founder Udo Schramek in 2023 at EUR35/share, ~EUR251.4m). Commentary from late 2025 into 2026 discusses the possibility of Kingspan launching a full takeover offer or squeeze-out of the remaining 38.9% free float, given the depressed share price, but no formal bid has been made as of the search date.",
+      "note": "Company trades under a persistent 'Sondersituation' takeover overhang from its majority shareholder; valuation distorted by M&A speculation rather than pure fundamentals.",
+      "source_url": "https://www.intelligent-investieren.net/2025/11/kissigs-nebenwerte-analyse-zu-steico.html"
+    },
+    {
+      "ticker": "XTRA:P4O",
+      "company": "Planoptik AG",
+      "date": "2025-12-18",
+      "type": "divestiture",
+      "terms": "Planoptik AG sold 100% of the shares in its subsidiary AIRTUNE GmbH to an undisclosed buyer on 18 December 2025.",
+      "note": "Divestiture of a subsidiary shortly after Planoptik's own uplisting to the Regulated Market (Frankfurt) in September 2025; company also reported a weak 2025 with expected recovery in 2026.",
+      "source_url": "https://www.it-times.de/news/planoptik-ag-veraeusserung-der-airtune-gmbh-176032/"
+    },
+    {
+      "ticker": "AIM:TRCS",
+      "company": "Tracsis plc",
+      "date": "2025-12-01",
+      "type": "divestiture",
+      "terms": "Tracsis sold its Events Transport Planning & Management division to private equity firm Connection Capital for an enterprise value of \u00a37.25 million (approximately 3.8x EBITDA), described as 'another significant step in reshaping the group' toward a software-led strategy.",
+      "note": "Divestiture of a whole division as the company reshapes its portfolio toward software; see also acquisition of Mistral Data under mergers_acquisitions.",
+      "source_url": "https://www.insidermedia.com/news/yorkshire/tracsis-sells-events-business-to-pe-firm-for-7.25m-another-significant-step-in-reshaping-the-group"
+    },
+    {
+      "ticker": "XTRA:VIB3",
+      "company": "Villeroy & Boch AG",
+      "date": "2025-09-30",
+      "type": "divestiture",
+      "terms": "Villeroy & Boch sold its Gustavsberg and Vatette bathroom-fittings brands (~EUR93 million 2024 net sales) to Finnish faucet manufacturer Oras Group, transaction expected to complete in Q3 2025 (purchase price undisclosed). This follows the company's largest-ever acquisition, Ideal Standard (completed March 2024, ~EUR1.42bn group revenue in 2024, +57.6% YoY), which materially changed the group's size and business mix.",
+      "note": "Divestiture within the screening window plus a still-recent (within ~2 years) transformational acquisition (Ideal Standard) that reshaped group revenue; Q1 2026 revenue declined 13.7% YoY, indicating ongoing integration/normalization effects.",
+      "source_url": "https://www.ahkfinnland.de/de/news/2025-news/villeroy-boch-verkauft-marken-gustavsberg-und-vatette-an-finnischen-armaturenhersteller-oras-group"
+    },
+    {
+      "ticker": "ENXTPA:ALATI",
+      "company": "ACTIA Group S.A.",
+      "date": "2025-02-18",
+      "type": "divestiture",
+      "terms": "ACTIA Group disposed of its remaining 60% stake in subsidiary ACTIA CZ (Czech Republic, renamed ATAL) on 18 February 2025, completing a full exit after an initial 30% disposal in April 2022. Separately, in H1 2026 ACTIA invested EUR2.3m to raise its stake in ACTIA Aerospace to 92.5% (minority buy-in, not a distorting event).",
+      "note": "Full divestiture/exit of a subsidiary, changing group perimeter versus historical financial comparables.",
+      "source_url": "https://www.businesswire.com/news/home/20250717082133/fr"
+    },
+    {
+      "ticker": "BVB:ARCU",
+      "company": "Sifi Cluj Retail SA",
+      "date": "2025-06-01",
+      "type": "divestiture",
+      "terms": "Sifi Cluj Retail SA (controlled ~96.3% by SIF Imobiliare, Cyprus) signed an agreement to sell its entire property portfolio in Cluj-Napoca for EUR 24.3 million.",
+      "note": "Sale of the company's entire real-estate portfolio effectively liquidates the operating business; post-sale entity's asset base and earnings profile bear no relation to historical value metrics. Company subsequently discussed a large dividend distribution (~41m lei) to shareholders from the proceeds.",
+      "source_url": "https://www.zfcorporate.ro/burse-fonduri-mutuale/sifi-cluj-retail-bucuresti-societate-controlata-sif-imobiliare-22293323"
+    },
+    {
+      "ticker": "XTRA:NOEJ",
+      "company": "NORMA Group SE",
+      "date": "2026-02-02",
+      "type": "divestiture",
+      "terms": "NORMA Group sold its Water Management business unit, with the sale completed on 2 February 2026; the unit had been classified as a discontinued operation since Q3 2025. The company then returned capital via two public share buyback offers: one completed 27 March 2026 at EUR16.59/share (~10% of capital, ~EUR52.9m), and a second launched August 2026 for up to 9,306,487 shares at EUR22.35/share (~EUR208m total).",
+      "note": "Major divestiture of an entire business unit followed by large capital-return buybacks; FY2025 group revenue (EUR821.7m) reflects a business mix that will not repeat post-divestiture, and per-share buyback pricing embeds deal-related premia.",
+      "source_url": "https://www.normagroup.com/global/de/news/press-releases/2026/norma-group-closes-financial-year-2025-within-the-forecast-corridors"
     }
   ]
 }
