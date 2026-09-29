@@ -71,6 +71,15 @@
       "terms": "Saverex NV launched a voluntary and conditional public takeover offer for all outstanding shares of Exmar not already owned, at EUR 11.50/share. Initial acceptance period 13 Feb-13 Mar 2025; reopened acceptance period ended 16 Apr 2025. Saverex waived the 95% threshold; final result gave Saverex 91.06% (94.36% with affiliated parties) of shares. Saverex intends to launch a simplified squeeze-out bid if/when it crosses 95%/90% acquired-in-bid thresholds.",
       "note": "Classic go-private tender offer with squeeze-out plans pending; share price is now anchored to deal terms (EUR 11.50) rather than standalone fundamentals.",
       "source_url": "https://www.hellenicshippingnews.com/saverex-nv-launches-its-voluntary-and-conditional-public-takeover-offer-for-all-outstanding-shares-in-exmar-nv/"
+    },
+    {
+      "ticker": "NasdaqGS:CRTO",
+      "company": "Criteo S.A.",
+      "date": "2026-07-07",
+      "counterparty": "Vista Equity Partners and Quinti Capital",
+      "terms": "Private equity consortium bid at more than 50% premium to recent share price, valuing Criteo at approximately $3.7 billion on an equity basis; board had not yet responded as of the report",
+      "note": "Criteo had also just re-domiciled from France to Luxembourg (shareholder vote Feb 27, 2026) explicitly to enable a merger into a US corporation, which appears to have been preparatory to this takeover interest",
+      "source_url": "https://www.mediapost.com/publications/article/416328/criteo-attracts-takeover-bids-from-equity-investm.html"
     }
   ],
   "mergers_acquisitions": [
@@ -213,6 +222,66 @@
       "terms": "Sidetrade completed acquisition of 100% of ezyCollect (Australian order-to-cash SME software) on 27 Oct 2025, valuing it at EUR 37.3m (EUR 34.7m cash + EUR 2.6m shares, plus earn-out up to EUR 5.6m). Separately, after acquiring 44.30% of German credit-risk-management firm SHS Viveon in April 2026, Sidetrade launched a friendly public tender offer for the rest, open 7 May-29 July 2026, taking control of the company.",
       "note": "Two material acquisitions within the past 12 months, including a cross-border public tender offer in Germany; expands Sidetrade's footprint into APAC and DACH credit-risk management.",
       "source_url": "https://www.globenewswire.com/news-release/2025/10/27/3174852/0/en/Sidetrade-Completes-Acquisition-of-ezyCollect.html"
+    },
+    {
+      "ticker": "BUL:BACB",
+      "company": "Bulgarian-American Credit Bank AD",
+      "date": "2026-01-12",
+      "counterparty": "Tokuda Bank EAD",
+      "role": "acquirer",
+      "terms": "BACB acquired 100% of Tokuda Bank EAD's shares (6,800,000 shares), financed entirely with own funds; shareholders of both banks approved the merger of Tokuda Bank into BACB in September 2026, with the legal merger planned for November 2026",
+      "note": "Major consolidation in Bulgarian banking sector; will materially change BACB's balance sheet and valuation metrics",
+      "source_url": "https://seenews.com/news/bulgarias-bacb-shareholders-approve-tokuda-bank-merger-1301583"
+    },
+    {
+      "ticker": "AIM:AMS",
+      "company": "Advanced Medical Solutions Group plc",
+      "date": "2026-06-25",
+      "counterparty": "H.B. Fuller Co.",
+      "role": "target",
+      "terms": "All-cash recommended takeover at 285 pence per share, valuing AMS at approximately \u00a3659 million (enterprise value ~\u00a3715 million including debt); expected to close by end of 2026",
+      "note": "Followed a prolonged period of private-equity interest in AMS (TA Associates walked away in May 2026, Bridgepoint also reported as suitor)",
+      "source_url": "https://uk.finance.yahoo.com/news/advanced-medical-solutions-agrees-659m-083349011.html"
+    },
+    {
+      "ticker": "ZGSE:HPB",
+      "company": "Hrvatska postanska banka d.d.",
+      "date": "2026-03-04",
+      "counterparty": "Croatia banka",
+      "role": "acquirer",
+      "terms": "HPB signed a contract to acquire 100% of Croatia banka's shares for EUR 15 million; competition authority (AZTN) approval received July 2026",
+      "note": "Third major acquisition by HPB in recent years (after Jadranska banka 2019 and Sberbank Hrvatska 2022, both since merged into HPB)",
+      "source_url": "https://tockanai.hr/biznis/financije/aztn-odobrio-hpb-u-preuzimanje-croatia-banke-za-15-milijuna-eura-100360/"
+    },
+    {
+      "ticker": "LSE:ALFA",
+      "company": "Alfa Financial Software Holdings PLC",
+      "date": "2026-04-09",
+      "counterparty": "Thomas H. Lee Partners",
+      "role": "target",
+      "terms": "Confirmed preliminary takeover talks with US private equity firm Thomas H Lee Partners; follows an earlier (2023) approach from EQT at 208 pence/share (19% premium)",
+      "note": "Repeated private-equity interest over multiple years; talks were preliminary/in-progress as of the search date",
+      "source_url": "https://www.sharecast.com/news/news-and-announcements/alfa-financial-in-takeover-talks-with-us-pe-firm-thomas-h-lee-partners--14808409.html"
+    },
+    {
+      "ticker": "LSE:IPF",
+      "company": "International Personal Finance plc",
+      "date": "2026-08-04",
+      "counterparty": "BasePoint Capital (via IPF Parent Holdings Limited)",
+      "role": "target",
+      "terms": "Recommended cash acquisition valued at approximately \u00a3543 million; scheme became effective 4 August 2026 following Court sanction on 31 July 2026; shareholders also received a 15 pence/share special dividend tied to completion",
+      "note": "Deal has completed / is essentially final",
+      "source_url": "https://uk.finance.yahoo.com/news/international-personal-finance-agrees-543m-091130175.html"
+    },
+    {
+      "ticker": "ENXTPA:BASS",
+      "company": "BASSAC Societe anonyme",
+      "date": "2026-02-24",
+      "counterparty": "Feu Vert Group (from Alpha Private Equity)",
+      "role": "acquirer",
+      "terms": "BASSAC entered exclusive negotiations and finalized acquisition of the Feu Vert automotive-maintenance retail group in Q1 2026, subject to regulatory authorizations",
+      "note": "Significant diversification acquisition for BASSAC (previously LNC), a French real-estate developer, into automotive retail",
+      "source_url": "https://www.feuvert-group.com/wp-content/uploads/2026/02/CP_ACQUISITION-BASSAC-FEU-VERT_24022026.pdf"
     }
   ],
   "spinoffs": [],
