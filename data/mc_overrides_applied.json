@@ -325,9 +325,9 @@
     "updatedAt": "2026-09-21T00:46:24.510646Z"
   },
   "LSE:BYIT": {
-    "mc": 1423.17,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T01:24:58.560732Z"
+    "mc": 1307.3,
+    "source": "https://companiesmarketcap.com/bytes-technology/marketcap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "LSE:DOCS": {
     "mc": 862.58,
@@ -635,9 +635,9 @@
     "updatedAt": "2026-09-29T00:00:00Z"
   },
   "XTRA:P4O": {
-    "mc": 38.49,
-    "source": "bigdata.com",
-    "updatedAt": "2026-09-21T00:46:24.510646Z"
+    "mc": 39.0,
+    "source": "https://stockanalysis.com/quote/etr/P4O/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "XTRA:PCZ": {
     "mc": 578.99,
@@ -730,9 +730,9 @@
     "updatedAt": "2026-09-29T00:00:00Z"
   },
   "CSE:BLUE": {
-    "mc": 34.15,
-    "source": "https://stockanalysis.com/quote/cys/BLUE/",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "mc": 26.3,
+    "source": "https://www.stockopedia.com/share-prices/blue-island-CSE:BLUE/",
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "DB:SIM0": {
     "mc": 324.12,
@@ -750,9 +750,9 @@
     "updatedAt": "2026-09-29T00:00:00Z"
   },
   "ENXTAM:HYDRA": {
-    "mc": 389.42,
-    "source": "https://www.investing.com/equities/hydratec-industries",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "mc": 407.1,
+    "source": "https://www.morningstar.com/stocks/xams/hydra/quote",
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "NasdaqGS:GASS": {
     "mc": 342.04,
@@ -825,9 +825,9 @@
     "updatedAt": "2026-09-29T00:00:00Z"
   },
   "ATSE:OLTH": {
-    "mc": 445.03,
+    "mc": 445.0,
     "source": "https://www.investing.com/equities/theski-port",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "WSE:VOX": {
     "mc": 393.53,
@@ -835,9 +835,9 @@
     "updatedAt": "2026-09-29T00:00:00Z"
   },
   "OM:ABSO": {
-    "mc": 238.95,
+    "mc": 238.9,
     "source": "https://fintel.io/s/se/abso",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "XTRA:PWO": {
     "mc": 94.33,
@@ -857,11 +857,226 @@
   "ENXTPA:CIV": {
     "mc": 757.6,
     "source": "https://finance.yahoo.com/quote/CIV.PA/",
-    "updatedAt": "2026-09-29T00:00:00Z"
+    "updatedAt": "2026-09-29T19:00:00Z"
   },
   "CPSE:GRLA": {
     "mc": 325.28,
     "source": "https://stockanalysis.com/quote/cph/GRLA/market-cap/",
     "updatedAt": "2026-09-29T00:00:00Z"
+  },
+  "XTRA:UUU": {
+    "mc": 43.4,
+    "source": "https://www.investing.com/equities/3u-holding-ag",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:ALEXA": {
+    "mc": 218.3,
+    "source": "https://www.investing.com/equities/exacompta-clairefontaine",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:LPE": {
+    "mc": 557.1,
+    "source": "https://companiesmarketcap.com/laurent-perrier/marketcap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:SDG": {
+    "mc": 730.0,
+    "source": "https://stockanalysis.com/quote/epa/SDG/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BME:NEA": {
+    "mc": 137.9,
+    "source": "https://www.investing.com/equities/nicolas-correa-sa",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:ALBFR": {
+    "mc": 267.9,
+    "source": "https://www.etoro.com/markets/albfr.pa",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTBR:MOUR": {
+    "mc": 329.0,
+    "source": "https://www.tradingview.com/symbols/EURONEXT-MOUR/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:ALGIL": {
+    "mc": 476.2,
+    "source": "https://companiesmarketcap.com/groupe-guillin/marketcap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTBR:WEB": {
+    "mc": 161.0,
+    "source": "https://www.marketscreener.com/quote/stock/WAREHOUSES-ESTATES-BELGIU-6107/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BME:NBI": {
+    "mc": 44.7,
+    "source": "https://www.tipranks.com/stocks/es:nbi/market-cap",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTBR:KEYW": {
+    "mc": 20.4,
+    "source": "https://eulerpool.com/en/stock/Keyware-Technologies-Stock-BE0003880979/Marketcapitalization",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "XTRA:EIN3": {
+    "mc": 935.6,
+    "source": "https://www.fool.com/quote/etr/ein/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "WSE:IFI": {
+    "mc": 44.6,
+    "source": "https://www.investing.com/equities/pwrmedia",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUSE:BIF": {
+    "mc": 233.9,
+    "source": "https://tradingeconomics.com/bif:hb:market-capitalization",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUL:ODES": {
+    "mc": 102.1,
+    "source": "https://stockanalysis.com/quote/bul/ODES/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BVB:TRANSI": {
+    "mc": 268.6,
+    "source": "https://fintel.io/s/ro/transi",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "XTRA:IVU": {
+    "mc": 499.3,
+    "source": "https://stockanalysis.com/quote/etr/IVU/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTPA:ALATI": {
+    "mc": 91.2,
+    "source": "https://www.investing.com/equities/actia-group",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "XTRA:NOEJ": {
+    "mc": 616.1,
+    "source": "https://www.investing.com/equities/norma-group-ag",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BIT:TPS": {
+    "mc": 67.2,
+    "source": "https://www.investing.com/equities/technical-publications-service-spa",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "XTRA:BWB": {
+    "mc": 369.9,
+    "source": "https://www.investing.com/equities/baader-bank-ag",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "OM:SOF B": {
+    "mc": 116.4,
+    "source": "https://www.investing.com/equities/softronic-ab",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "LSE:SFR": {
+    "mc": 134.5,
+    "source": "https://www.lse.co.uk/SharePrice.html?shareprice=SFR&share=severfield",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "AIM:MPE": {
+    "mc": 1050.6,
+    "source": "https://www.investing.com/equities/m.p-evans-group",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "WSE:MCR": {
+    "mc": 35.6,
+    "source": "https://stockanalysis.com/quote/wse/MCR/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BST:FEW0": {
+    "mc": 285.4,
+    "source": "https://www.investing.com/pro/XSTU:FEW0/explorer/marketcap",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "XTRA:EDL": {
+    "mc": 125.6,
+    "source": "https://stockanalysis.com/quote/etr/EDL/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "LSE:PAGE": {
+    "mc": 958.5,
+    "source": "https://companiesmarketcap.com/pagegroup/marketcap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUL:SPDY": {
+    "mc": 540.0,
+    "source": "https://stockanalysis.com/quote/bul/SPDY/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "WSE:WPL": {
+    "mc": 432.4,
+    "source": "https://www.investing.com/equities/wirtualna-polska-holding-sa",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ENXTBR:EXM": {
+    "mc": 1001.6,
+    "source": "https://www.investing.com/equities/exmar",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "LSE:TPT": {
+    "mc": 88.0,
+    "source": "https://www.investing.com/equities/topps-tiles",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUL:ATOM": {
+    "mc": 156.8,
+    "source": "https://www.stockopedia.com/share-prices/atomenergoremont-ad-BUL:ATOM/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BME:CEV": {
+    "mc": 245.8,
+    "source": "https://www.investing.com/equities/viviendas-en-alquiler",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "BUSE:DUNAHOUSE": {
+    "mc": 142.1,
+    "source": "https://stockanalysis.com/quote/bud/DHGROUP/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "NSEL:APG1L": {
+    "mc": 230.9,
+    "source": "https://www.investing.com/equities/apranga-apb",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ATSE:OTOEL": {
+    "mc": 612.4,
+    "source": "https://www.investing.com/equities/autohellas",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "WSE:ABS": {
+    "mc": 709.4,
+    "source": "https://www.investing.com/equities/asseco-business-solutions",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "CPSE:STG": {
+    "mc": 850.0,
+    "source": "https://pitchbook.com/profiles/company/57906-55",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "ZGSE:MAIS": {
+    "mc": 801.0,
+    "source": "https://www.investing.com/equities/maistra-dd",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "AIM:TSTL": {
+    "mc": 258.0,
+    "source": "https://www.londonstockexchange.com/stock/TSTL/tristel-plc/company-page",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "AIM:ASY": {
+    "mc": 310.7,
+    "source": "https://stockanalysis.com/quote/aim/ASY/market-cap/",
+    "updatedAt": "2026-09-29T19:00:00Z"
+  },
+  "NSEL:GRG1L": {
+    "mc": 168.8,
+    "source": "https://simplywall.st/stocks/lt/materials/nsel-grg1l/grigeo-group-shares/information",
+    "updatedAt": "2026-09-29T19:00:00Z"
   }
 }
