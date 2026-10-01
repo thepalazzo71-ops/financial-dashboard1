@@ -1081,6 +1081,61 @@ than just excluding it — an override-less "not yet covered" ticker will
 keep getting re-selected into every subsequent tier's target list and
 re-flagged, wasting a research call each time.
 
+## Net Debt box + corporate-actions/thesis catch-up to tier-5 (2026-10-01)
+
+**Net Debt box added to the full financial data drill-down** (both
+dashboards): the user asked for it, but net debt (or cash/total debt)
+was never part of either pool's source data extract, unlike market cap
+which at least started with a baseline. Rather than launch a large
+research project unprompted, asked the user how to scope it - they
+chose to add the UI slot now (`c.netDebt`, wired through both build
+scripts, shows "no data yet") and populate it later via the same
+incremental research pattern already used for gross margin. No company
+currently has a value; this is pure plumbing for future research.
+
+**Corporate-actions and Europe thesis research caught up to the tier-5
+market-cap frontier** (the gap flagged in the previous handoff entry):
+
+- **Europe corporate-actions**: 54-company gap (tickers mc-covered but
+  outside the previously-screened top-300-by-rank) screened via
+  WebSearch. 8 new real events found (2 of the agent's 10 raw findings -
+  Criteo, Advanced Medical Solutions - turned out to be re-discoveries
+  of events already on file, caught by a **ticker-based** dedup pass;
+  a source-URL-based check missed them since each was reported by a
+  different article). Also added `data/corporate_actions_coverage.json`
+  (mirroring the US pool's existing file) to track exactly which
+  tickers have been through a screening pass, so future rounds can
+  compute the gap precisely instead of approximating by rank window.
+  Coverage: 300 → 354.
+- **US corporate-actions**: 89-company gap, split into two 45/44
+  WebSearch batches (sequential, since corporate-actions screening is
+  WebSearch-only for both markets). 23 new events total - mostly bank
+  M&A (community bank consolidation is clearly active in this part of
+  the pool), plus Guardian Capital Group taken private by Desjardins
+  and Varex Imaging acquired by Teledyne. Both agents proactively
+  caught and excluded several name-collision traps (similarly-named
+  banks with unrelated real events). Coverage: 276 → 365 of 364
+  mc-covered (one ticker screened but no longer mc-covered after a rank
+  shuffle - expected and harmless).
+- **Europe qualitative thesis research**: 72-company gap (top-354-by-
+  rank companies with no thesis on file), split into two 36-company
+  WebSearch batches. The first attempt at part 1 hit a session-wide API
+  rate limit almost immediately (empty output, nothing saved - unlike
+  the "already got most of the way through" pattern seen in earlier
+  rate-limit incidents this session); retried after the stated reset
+  time and it completed cleanly. Both parts independently re-verified
+  for duplicated/reused shareholder name+percentage combinations before
+  merging (none found, in either part alone or across both together).
+  Surfaced several notable items for investor awareness: Kraš d.d. is
+  mid-squeeze-out and likely to delist, Eurofins-Cerep is ~96%
+  owned by its parent (thin free float), VIB Vermögen's majority owner
+  pushed through a control/profit-transfer agreement after an earlier
+  related-party-loan dispute, Lion Capital has a live minority-
+  shareholder governance dispute, BFF Bank had a 2024 Bank of Italy
+  probe and dividend suspension, and Mutares was the subject of a 2024
+  short-seller report it disputes. Result: every company in Europe's
+  top 354 now has full qualitative research on file.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1111,19 +1166,22 @@ re-flagged, wasting a research call each time.
   see "Shareholding data" and "Coverage extension round" above.
 - **Continuing the market-cap / corporate-actions frontier**: both
   dashboards' coverage now extends to 354-of-1000 (Europe) / 364-of-517
-  (US/Canada) for market caps (see "Tier-5 market-cap batch" above).
-  Corporate-actions screening (and, for Europe, qualitative thesis
-  research) for both markets still trails the market-cap frontier by
-  two tiers now (last screened at tier-3/tier-4 boundary) — the natural
-  next step is to extend both to match, then take the next ~50-company
-  market-cap tier, same batch pattern as every round so far (WebSearch
-  for non-US-exchange market caps, Canadian TSX/TSXV names, and all
-  corporate-actions screening; FMP for US-exchange market caps; never
-  more than one WebSearch-heavy agent running at once; generate target
-  lists by filtering out already-covered tickers rather than a fixed
-  rank window, since re-ranking after each merge can shuffle a window's
-  contents).
-- Europe's qualitative thesis research now covers the full top-300 (was
+  (US/Canada) for market caps, and corporate-actions screening (plus,
+  for Europe, qualitative thesis research) is fully caught up to that
+  same frontier as of the "Net Debt box + corporate-actions/thesis
+  catch-up to tier-5" entry above — all three are in sync again. The
+  natural next step is the next ~50-company market-cap tier, same batch
+  pattern as every round so far (WebSearch for non-US-exchange market
+  caps, Canadian TSX/TSXV names, and all corporate-actions/thesis
+  screening; FMP for US-exchange market caps; never more than one
+  WebSearch-heavy agent running at once; generate target lists by
+  filtering out already-covered tickers rather than a fixed rank
+  window, since re-ranking after each merge can shuffle a window's
+  contents; both `data/` and `data-us/corporate_actions_coverage.json`
+  now track screened tickers precisely, so future gaps don't need the
+  rank-window approximation used for Europe's first catch-up round).
+- Europe's qualitative thesis research now covers the full top-354
+  (coverage extends as each market-cap tier is caught up - was
   top-150-only) - see above. US has no equivalent "thesis" concept
   (business description/competitive position/shareholders/red flags)
   beyond what the original shortlist files provided; extending it there
@@ -1133,6 +1191,17 @@ re-flagged, wasting a research call each time.
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
   part of the project" per the original brief. Not started.
+- **Net debt research**: the UI slot exists (both dashboards' full
+  financial data drill-down, `c.netDebt`) but no company has a value
+  yet - every entry shows "no data yet". User explicitly chose to add
+  the UI now and populate later rather than launch research
+  immediately. When this is picked up, treat it like gross margin: same
+  official-filings-only sourcing discipline, likely same incremental
+  per-tier batch pattern, and it'll need its own overrides file
+  (`netDebtOverrides` or similar) plus wiring through both build
+  scripts' payload - the `c.netDebt` field is currently just a
+  pass-through of `c.get('netDebt')` which is always `None` in the
+  source data.
 
 ## Source-rule constraints worth preserving
 
