@@ -1037,6 +1037,50 @@ thesis research now trail the new market-cap frontier by one tier
 (ranks 301-350 Europe / tickers 316-363-ish US aren't yet screened) —
 not yet requested, flagged under "Explicitly deferred" below.
 
+## Tier-5 market-cap batch, both markets (2026-10-01)
+
+Same pattern, next ~50-company tier, run immediately after tier-4 per
+explicit "do the next tier of both" request. One change this round: US
+target generation switched from a straight rank-window slice to
+filter-out-already-covered-then-take-next-50 (mirroring the method
+already used for US), after tier-5's initial Europe window turned up
+3 tickers that had already been covered — re-ranking after each merge
+shuffles rank order enough that a fixed window can overlap previous
+coverage.
+
+- **Europe**: 50/50 resolved via WebSearch, no auto-exclude flags.
+  A few names had source disagreement (Delta Plus Group, Atlantic
+  Insurance, Hermle AG - merged with the agent's best estimate) or
+  dated (May-July 2026) quotes - worth rechecking on a future refresh,
+  not urgent. Two flagged swings were corroborated by specific news
+  (EXEL Industries down ~47% trailing year; Swiss Water Decaf up ~80%
+  on a same-day surge headline) and kept as-is. Coverage: 304 → 354 of
+  1000.
+- **US**: 43 FMP-eligible tickers, 42 resolved, 1 not found
+  (OTCPK:OAKC — not in FMP's database at all, not yet researched any
+  other way). **OTCPK:HBIA (Hills Bancorporation) recurred** with the
+  *exact same* $3.27B/4.39x anomaly as tier-4 (identical stale $46.76
+  price both times) — expected, since excluding it from a merge rather
+  than fixing it just means it resurfaces every time a target-list
+  generator re-selects "not yet covered" tickers. Resolved permanently
+  this time: merged a corrected value ($732.96M, consistent with the
+  $745.2M baseline) sourced independently via WebSearch
+  (stockanalysis.com), tagged with a source note explaining FMP's data
+  is bad for this thinly-traded OTC name. Coverage: 315 → 357 of 517.
+- **Canada**: FMP doesn't resolve TSX/TSXV tickers, so the 7 Canadian
+  names due for this tier were folded into the Europe WebSearch batch
+  rather than run as a separate agent (same WebSearch budget either
+  way). All 7 resolved cleanly; two (AGF.B, VCM) had moderate source
+  spread and were merged with a mid-range estimate. Coverage (within
+  the combined 364): 357 → 364 of 517.
+
+**Lesson for future HBIA-like cases**: when an agent flags a specific
+ticker as a likely data-quality outlier under the auto-exclude
+threshold, resolve it with a corrected value in the same round rather
+than just excluding it — an override-less "not yet covered" ticker will
+keep getting re-selected into every subsequent tier's target list and
+re-flagged, wasting a research call each time.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1066,16 +1110,19 @@ not yet requested, flagged under "Explicitly deferred" below.
   scope (US: 243-ticker priority pool; Europe: 150 thesis companies) —
   see "Shareholding data" and "Coverage extension round" above.
 - **Continuing the market-cap / corporate-actions frontier**: both
-  dashboards' coverage now extends to rank 1-350 (Europe) / 315-of-517
-  (US) for market caps (see "Corporate-actions click-to-expand + tier-4
-  market-cap batch" above). Corporate-actions screening (and, for
-  Europe, qualitative thesis research) for both markets still trails
-  the market-cap frontier by this latest tier — the natural next step
-  is to extend both to match, then take the next ~50-company market-cap
-  tier, same batch pattern as every round so far (WebSearch for non-US-
-  exchange market caps and all corporate-actions screening, FMP for
-  US-exchange market caps, never more than one WebSearch-heavy agent
-  running at once).
+  dashboards' coverage now extends to 354-of-1000 (Europe) / 364-of-517
+  (US/Canada) for market caps (see "Tier-5 market-cap batch" above).
+  Corporate-actions screening (and, for Europe, qualitative thesis
+  research) for both markets still trails the market-cap frontier by
+  two tiers now (last screened at tier-3/tier-4 boundary) — the natural
+  next step is to extend both to match, then take the next ~50-company
+  market-cap tier, same batch pattern as every round so far (WebSearch
+  for non-US-exchange market caps, Canadian TSX/TSXV names, and all
+  corporate-actions screening; FMP for US-exchange market caps; never
+  more than one WebSearch-heavy agent running at once; generate target
+  lists by filtering out already-covered tickers rather than a fixed
+  rank window, since re-ranking after each merge can shuffle a window's
+  contents).
 - Europe's qualitative thesis research now covers the full top-300 (was
   top-150-only) - see above. US has no equivalent "thesis" concept
   (business description/competitive position/shareholders/red flags)
