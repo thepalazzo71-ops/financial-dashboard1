@@ -1001,6 +1001,42 @@ limited agent lost its progress.**
 **Result**: every company currently ranking in Europe's top 300 now has
 full qualitative research on file, not just the original top 150.
 
+## Corporate-actions click-to-expand + tier-4 market-cap batch, both markets (2026-10-01)
+
+**Corporate actions modal is now click-to-expand**: each row inside the
+"Corporate actions" modal (both dashboards) resolves its ticker to the
+current scored pool and, on click, expands the same shared
+`renderDetailPanel()` used by the main table, Top-150-changes modal, and
+Biggest-movers modal — score breakdown, business description,
+shareholding, financials, all inline. Same click-to-expand/row-wrap/state-
+toggle scaffolding as the two prior modals, just pointed at a ticker
+lookup (`findScoredRowAndRank`) instead of a precomputed row. Verified via
+Playwright on both dashboards (real `.click()`, not just JS state
+injection) before committing.
+
+**Tier-4 market-cap batch** (next ~50-company tier for both markets,
+continuing the established per-tier pattern):
+- Europe (ranks 301-350, WebSearch-only — Bigdata.com remains out of
+  credits, FMP has no non-US coverage): 50/50 resolved cleanly, no
+  auto-exclude-threshold flags. Europe mc coverage: 259 → 304 of 1000.
+- US (next 48 FMP-eligible tickers beyond existing coverage): 44 of 48
+  resolved (3 `.A`-share-class tickers access-denied, 1 not found).
+  **Excluded OTCPK:HBIA (Hills Bancorporation) from the merge**: FMP
+  returned a $3.27B market cap vs. a $745M baseline (~4.4x) — under the
+  project's 5x auto-exclude threshold but flagged by the agent itself as
+  an outlier. Independent WebSearch verification found Hills Bancorp has
+  ~8.9M shares outstanding and a real market cap of $650-865M across
+  Investing.com/CNBC/Yahoo/SimplyWall.st — confirming the FMP figure was
+  bad data (likely a share-count mismatch on FMP's side) and the
+  $745M baseline was already correct. Left it unmerged rather than
+  overwrite good data with bad. Merged the other 43. US mc coverage:
+  272 → 315 of 517.
+
+Both markets' corporate-actions screening and (for Europe) qualitative
+thesis research now trail the new market-cap frontier by one tier
+(ranks 301-350 Europe / tickers 316-363-ish US aren't yet screened) —
+not yet requested, flagged under "Explicitly deferred" below.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1030,16 +1066,16 @@ full qualitative research on file, not just the original top 150.
   scope (US: 243-ticker priority pool; Europe: 150 thesis companies) —
   see "Shareholding data" and "Coverage extension round" above.
 - **Continuing the market-cap / corporate-actions frontier**: both
-  dashboards' coverage now extends roughly rank 1-300 (Europe) /
-  272-of-517 (US) for market caps, and Europe's corporate-actions screen
-  matches its market-cap reach (ranks 1-300). The natural next step for
-  either market is the next ~50-company tier — same batch pattern
-  established this round (WebSearch for non-US-exchange market caps and
-  all corporate-actions screening, FMP for US-exchange market caps,
-  never more than one WebSearch-heavy agent running at once). US's
-  corporate-actions screen is now caught up too (see above) - both
-  dashboards' market-cap and corporate-actions coverage are in sync as
-  of this handoff.
+  dashboards' coverage now extends to rank 1-350 (Europe) / 315-of-517
+  (US) for market caps (see "Corporate-actions click-to-expand + tier-4
+  market-cap batch" above). Corporate-actions screening (and, for
+  Europe, qualitative thesis research) for both markets still trails
+  the market-cap frontier by this latest tier — the natural next step
+  is to extend both to match, then take the next ~50-company market-cap
+  tier, same batch pattern as every round so far (WebSearch for non-US-
+  exchange market caps and all corporate-actions screening, FMP for
+  US-exchange market caps, never more than one WebSearch-heavy agent
+  running at once).
 - Europe's qualitative thesis research now covers the full top-300 (was
   top-150-only) - see above. US has no equivalent "thesis" concept
   (business description/competitive position/shareholders/red flags)
