@@ -61,7 +61,7 @@ def build_sector_payload(companies, mc_overrides):
             'mcRefreshed': c['ticker'] in mc_overrides,
             'mcUpdatedAt': mc_o.get('updatedAt') if mc_o else None,
             'mcSource': mc_o.get('source') if mc_o else None,
-            'eq': c['equity'], 'revLTM': c['revLTM'], 'revGrowth': c['revGrowth'],
+            'eq': c['equity'], 'netDebt': c.get('netDebt'), 'revLTM': c['revLTM'], 'revGrowth': c['revGrowth'],
             'dilution': c['dilution'], 'dilutionDataMissing': c.get('dilutionDataMissing', False),
             'profitPct': c['profitPct'], 'cfoPct': c['cfoPct'], 'divPct': c['divPct'],
             'nRevPeriods': c['nRevPeriods'], 'revConsistency': c['revConsistency'],

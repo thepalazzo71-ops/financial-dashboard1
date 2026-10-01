@@ -732,6 +732,7 @@ function renderFullFinancials(row) {
   const items = [
     ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
     ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
+    ['Net Debt', c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'],
     ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
     ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
     ['ROE (recent)', fmtPct(roe)],
