@@ -941,6 +941,66 @@ direct add).
 corporate-actions screen (ranks 1-300) now extend to the same boundary
 — the lesson from the Mercor gap, applied.
 
+## US corporate-actions screen extension + Europe qualitative thesis extension (2026-09-29/10-01)
+
+Two more pieces of the "keep coverage in sync" pattern from the round
+above, both prompted by the user's own observations rather than planned
+in advance.
+
+**US corporate-actions screen extended to match market-cap coverage**:
+the same class of gap as the Mercor case, just on the US side - US
+market-cap coverage had grown to 272 companies while corporate-actions
+screening still only covered the original 238-ticker priority pool.
+Screened the 38-company gap via WebSearch; found 6 real events,
+including a direct analog to Mercor: Tompkins Financial Corporation sold
+its wholly-owned insurance subsidiary to Arthur J. Gallagher & Co. for
+~$223M cash. US corporate actions now total 42 (up from 36), and
+coverage (276 tickers screened) matches market-cap coverage (272
+refreshed).
+
+**Europe qualitative thesis research extended to ranks 151-300**: the
+user asked why Admicom Oyj was the dashboard's biggest mover and noted
+it had no qualitative data - investigating turned up that 130 of the 150
+companies now ranking 151-300 had never gotten the original top-150
+deep-dive (business description, competitive position, main
+shareholders, insider ownership, red flags, website), because that
+research was a one-time pass against the original baseline ranking, not
+something that keeps pace as market-cap refreshes reshuffle ranks. The
+user then explicitly asked to "run the qualitative on all the new 150
+entrants."
+
+Scope clarification worth remembering: "ranks 151-300 by current rank"
+and "new entrants to the top-150" are NOT the same set. Admicom itself
+(the company that prompted this whole thread) currently ranks #79 -
+*inside* the top-150 - so it fell outside the 150-company ranks-151-300
+batch and had to be added as a direct, individual addition alongside one
+other true top-150 entrant lacking thesis, Graines Voltz S.A. (whose
+research surfaced a real, dated 2017 minority-shareholder governance
+dispute with the ~70%-controlling Voltz family - relevant context for
+its persistently low valuation, explicitly framed as historical, not
+current).
+
+Research for the 130-company ranks-151-300 tier ran in 3 batches of
+~44 via WebSearch (business_description, competitive_position,
+main_shareholders, insider_ownership, red_flags, website per company),
+same anti-fabrication discipline as every prior research wave - every
+batch was independently re-verified (not just trusting the agent's
+self-report) for exact-duplicate values and reused shareholder
+name+percentage combos before merging; found none across all 130+2
+companies. One batch's agent hit a session-wide API rate limit (distinct
+from the WebSearch-call budget seen earlier) partway through its own
+final report-generation step, but had already completed 30 of 42
+companies with all results merge-saved - verified the output file
+directly and ran a small 12-company follow-up for the remainder rather
+than re-running the whole batch from scratch. This mirrors the earlier
+pattern where a market-cap batch's agent "failed" on the same kind of
+session-limit error but its actual work was already complete and
+intact - **always check the output file before assuming a failed/rate-
+limited agent lost its progress.**
+
+**Result**: every company currently ranking in Europe's top 300 now has
+full qualitative research on file, not just the original top 150.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -977,9 +1037,15 @@ corporate-actions screen (ranks 1-300) now extend to the same boundary
   established this round (WebSearch for non-US-exchange market caps and
   all corporate-actions screening, FMP for US-exchange market caps,
   never more than one WebSearch-heavy agent running at once). US's
-  corporate-actions screen currently only covers its 238-ticker priority
-  pool, not the newer 272-company market-cap frontier - worth extending
-  to match, same lesson as the Mercor gap.
+  corporate-actions screen is now caught up too (see above) - both
+  dashboards' market-cap and corporate-actions coverage are in sync as
+  of this handoff.
+- Europe's qualitative thesis research now covers the full top-300 (was
+  top-150-only) - see above. US has no equivalent "thesis" concept
+  (business description/competitive position/shareholders/red flags)
+  beyond what the original shortlist files provided; extending it there
+  would need the same from-scratch research treatment Europe just got,
+  not yet started or requested.
 - Once both dashboards are in steady state, the same pipeline can be
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
