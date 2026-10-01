@@ -175,8 +175,12 @@
   .t150-co .name { font-weight: 600; font-size: 13.5px; }
   .t150-co .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
   .t150-news { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
-  .ca-row { padding: 10px 0; border-bottom: 1px solid var(--rule); }
-  .ca-row:last-child { border-bottom: none; }
+  .ca-row { padding: 10px 4px; border-bottom: 1px solid var(--rule); border-radius: 3px; }
+  .ca-row-wrap:last-child .ca-row { border-bottom: none; }
+  .ca-row.clickable { cursor: pointer; }
+  .ca-row.clickable:hover { background: rgba(47,75,60,0.05); }
+  .ca-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .ca-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
   .ca-row .name { font-weight: 600; font-size: 13.5px; }
   .ca-row .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
   .ca-row .terms { font-size: 12px; color: var(--gold); margin-top: 3px; font-weight: 600; }
@@ -601,17 +605,52 @@ function biggestMovers(n = 15) {
   const decliners = movers.filter(m=>m.rankChange<0).sort((a,b)=>a.rankChange-b.rankChange).slice(0,n);
   return { climbers, decliners, prevKey, totalMoved: movers.length };
 }
+// Resolves a corporate-action entry's ticker to its current scored row +
+// full-pool rank, so the modal can expand into the same detail panel
+// used everywhere else. Falls back to non-clickable if the ticker isn't
+// found (shouldn't happen - every corp-action ticker is a real pool
+// member - but degrade gracefully rather than throw).
+function findScoredRowAndRank(ticker) {
+  const all = ensureScored();
+  const sorted = all.slice().sort((a,b)=>b.total-a.total);
+  const i = sorted.findIndex(r => r.c.t === ticker);
+  if (i === -1) return null;
+  return { row: sorted[i], rank: i + 1 };
+}
+let expandedCorpActionTicker = null;
 function renderCorpActionRow(a, counterpartyLabel) {
   const counterparty = a.counterparty || a.spun_off_entity;
-  return `
-    <div class="ca-row">
+  const found = findScoredRowAndRank(a.ticker);
+  const isOpen = expandedCorpActionTicker === a.ticker;
+  const body = `
       <div class="name">${a.company}</div>
       <div class="meta">${a.ticker}${a.date ? ' &middot; ' + a.date : ''}${counterparty ? ` &middot; ${counterpartyLabel}: ${counterparty}` : ''}${a.role ? ` (${a.role})` : ''}${a.type ? ` &middot; ${a.type}` : ''}</div>
       ${a.terms ? `<div class="terms">${a.terms}</div>` : ''}
       ${a.note ? `<div class="note">${a.note}</div>` : ''}
       ${a.source_url ? `<div class="src"><a href="${a.source_url}" target="_blank" rel="noopener">source</a></div>` : ''}
+  `;
+  if (!found) {
+    return `<div class="ca-row">${body}</div>`;
+  }
+  return `
+    <div class="ca-row-wrap">
+      <div class="ca-row clickable ${isOpen?'expanded':''}" data-ticker="${a.ticker}">${body}</div>
+      ${isOpen ? renderDetailPanel(found.row, found.rank) : ''}
     </div>
   `;
+}
+function renderCorpActionsModalContent() {
+  const ca = CORPORATE_ACTIONS;
+  const sections = [
+    ['Tender offers', ca.tender_offers, 'Offeror'],
+    ['Mergers & acquisitions', ca.mergers_acquisitions, 'Counterparty'],
+    ['Spinoffs', ca.spinoffs, 'Spun-off entity'],
+    ['Other', ca.other, null],
+  ];
+  document.getElementById('corpActionsContent').innerHTML = sections.map(([label, list, cpLabel]) => `
+    <h4>${label} (${(list||[]).length})</h4>
+    ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
+  `).join('');
 }
 function corpActionsTotal() {
   const ca = CORPORATE_ACTIONS;
@@ -1095,19 +1134,18 @@ function wireToolbar() {
   document.getElementById('needsGmBtn').addEventListener('click', e => { filters.needsGm=!filters.needsGm; e.target.classList.toggle('active', filters.needsGm); render(); });
 
   const caBackdrop = document.getElementById('corpActionsModalBackdrop');
+  const caContent = document.getElementById('corpActionsContent');
   document.getElementById('corpActionsBtn').addEventListener('click', () => {
-    const ca = CORPORATE_ACTIONS;
-    const sections = [
-      ['Tender offers', ca.tender_offers, 'Offeror'],
-      ['Mergers & acquisitions', ca.mergers_acquisitions, 'Counterparty'],
-      ['Spinoffs', ca.spinoffs, 'Spun-off entity'],
-      ['Other', ca.other, null],
-    ];
-    document.getElementById('corpActionsContent').innerHTML = sections.map(([label, list, cpLabel]) => `
-      <h4>${label} (${(list||[]).length})</h4>
-      ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
-    `).join('');
+    expandedCorpActionTicker = null;
+    renderCorpActionsModalContent();
     caBackdrop.classList.add('open');
+  });
+  caContent.addEventListener('click', e => {
+    const rowEl = e.target.closest('.ca-row.clickable');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedCorpActionTicker = (expandedCorpActionTicker === t) ? null : t;
+    renderCorpActionsModalContent();
   });
   document.getElementById('corpActionsClose').addEventListener('click', () => caBackdrop.classList.remove('open'));
   caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
