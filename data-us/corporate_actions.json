@@ -8,6 +8,15 @@
       "terms": "All-cash acquisition at $18.50 per share (26% premium to 60-day VWAP as of June 15, 2026); ~$375 million total deal value; not subject to financing contingency",
       "note": "Merger agreement dated June 15, 2026. Altaris intends to combine Simulations Plus with its portfolio company Chemical Computing Group. Expected to close Q4 2026; company will go private, delisting from Nasdaq.",
       "source_url": "https://www.businesswire.com/news/home/20260616126655/en/Simulations-Plus-to-Be-Acquired-by-Altaris-For-Approximately-$375-Million"
+    },
+    {
+      "ticker": "OTCPK:CSHX",
+      "company": "Cashmere Valley Bank",
+      "date": "2026-04-16",
+      "counterparty": "self (issuer buyback)",
+      "terms": "Self-tender offer to repurchase up to 200,000 shares (~5.12% of shares outstanding) at $75.00/share (~$15M total); preliminary tender in Jan 2026 round accepted ~60.4% proration, final results in an April 2026 round showed ~127,419 shares accepted at $75.00 (~$9.56M)",
+      "note": "Series of self-tender share repurchases, not a change-of-control event; relevant as a capital-return/going-private-adjacent action for a value screen",
+      "source_url": "https://www.stocktitan.net/news/CSHX/cashmere-valley-bank-announces-final-results-of-tender-aloe95sh2cs0.html"
     }
   ],
   "mergers_acquisitions": [
@@ -460,6 +469,46 @@
       "terms": "Cash-and-stock deal valued at approx. $232.2 million; Marine Products shareholders receive $2.43 cash plus 0.232 MasterCraft shares per Marine Products share. MasterCraft shareholders to own ~66.5% of combined company, Marine Products shareholders ~33.5%. Expected close May 15, 2026.",
       "note": "Agreement and Plan of Merger announced Feb 5, 2026; combines two recreational marine boat makers.",
       "source_url": "https://www.kslaw.com/about/news/mastercraft-boat-holdings-inc-to-acquire-marine-products-corporation-for-2322-million"
+    },
+    {
+      "ticker": "OTCPK:MNMB",
+      "company": "Merchants & Marine Bancorp, Inc.",
+      "date": "2025-10-24",
+      "counterparty": "Farmers-Merchants Bank & Trust Company (FM Bank / Farmers Bancorp)",
+      "role": "acquirer",
+      "terms": "All-cash acquisition valued at ~$82 million (~$44.71 per Farmers Bancorp share); FM Bank merged into Merchants & Marine Bank effective 2026-04-01, continuing to operate under its established brand",
+      "note": "Deal announced 2025-10-24, closed 2026-04-01; combined company has ~$1.3B assets",
+      "source_url": "https://www.businesswire.com/news/home/20260401794150/en/Merchants-Marine-Bancorp-Inc.-Completes-Acquisition-of-Farmers-Merchants-Bank"
+    },
+    {
+      "ticker": "OTCPK:NACB",
+      "company": "National Capital Bancorp, Inc.",
+      "date": "2026-09-29",
+      "counterparty": "ODNB Financial Corp. (Old Dominion National Bank)",
+      "role": "target",
+      "terms": "Merger valued at ~$97.8 million; combined bank to have ~$2.4B assets; post-merger ownership split ~68% ODNB / ~32% National Capital shareholders; combined holding company keeps the National Capital Bancorp name and bank keeps The National Capital Bank of Washington name; expected to close Q4 2026",
+      "note": "National Capital Bank of Washington, D.C.'s oldest bank (founded 1889), merging with Reston, VA-based ODNB in a deal where ODNB shareholders hold majority of combined company",
+      "source_url": "https://www.bankingdive.com/news/dc-area-banks-merge-98m-deal-old-dominion-national-capital/823024/"
+    },
+    {
+      "ticker": "OTCPK:PFLC",
+      "company": "Pacific Financial Corporation",
+      "date": "2026-04-30",
+      "counterparty": "Banner Corporation (Banner Bank)",
+      "role": "target",
+      "terms": "All-stock merger valued at ~$177 million; Pacific Financial shareholders receive 0.2633 Banner shares per share (implied ~$17.44/share based on 2026-04-29 Banner close); shareholders approved the merger 2026-08-12; closing expected Q3 2026",
+      "note": "Pacific Financial Corp of Aberdeen, WA is the holding company for Bank of the Pacific; being acquired by Banner Corp to expand presence in WA/OR",
+      "source_url": "https://www.businesswire.com/news/home/20260430779570/en/Banner-Corporation-to-Acquire-Pacific-Financial-Corporation"
+    },
+    {
+      "ticker": "TSX:GCG.A",
+      "company": "Guardian Capital Group Limited",
+      "date": "2025-08-28",
+      "counterparty": "Desjardins Group (Desjardins Global Asset Management)",
+      "role": "target",
+      "terms": "Take-private all-cash acquisition at C$68.00 per share, valued at ~C$1.67 billion (~US$1.21 billion); premium of 66% to Class A shares' / 48% to Common shares' last close; Guardian's directors, executive officers and major shareholders (32.06% of shares) signed support/voting agreements; deal closed 2026-03-23",
+      "note": "Guardian Capital delisted/taken private by Desjardins; combined AUM/AUA with Desjardins Global Asset Management reaches ~C$280 billion",
+      "source_url": "https://www.theglobeandmail.com/business/article-desjardins-guardian-capital-sale-acquisition-expansion-assets/"
     }
   ],
   "spinoffs": [],
@@ -580,6 +629,15 @@
       "terms": "Sold Chesapeake Bank's membership interest in Bearing Insurance Group to an unaffiliated party, generating an estimated $3.75 million pre-tax gain.",
       "note": "Same Bearing Insurance Group divested around the same date by National Bankshares (NKSH); divestiture of insurance agency interest to focus on core banking.",
       "source_url": "https://www.stocktitan.net/news/CPKF/chesapeake-financial-shares-announces-sale-of-interest-in-bearing-l5m6a7m8lvip.html"
+    },
+    {
+      "ticker": "TSX:VCM",
+      "company": "Vecima Networks Inc.",
+      "date": "2026-08-05",
+      "type": "divestiture",
+      "terms": "Sold the assets of its Telematics mobile/fixed-asset tracking segment (including Nero Global Tracking software) to Lantronix in an all-cash deal of ~$16.5M CAD ($14.5M CAD at closing, $2.0M CAD deferred to year-end 2026)",
+      "note": "Portfolio-optimization divestiture to sharpen focus on core broadband/video platform business; not a change-of-control event for Vecima itself",
+      "source_url": "https://www.thefastmode.com/mergers-and-acquisitions/49487-vecima-networks-strengthens-broadband-focus-with-16-5m-cad-telematics-business-sale-to-lantronix"
     }
   ]
 }
