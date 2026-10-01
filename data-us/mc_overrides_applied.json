@@ -1783,5 +1783,40 @@
     "mc": 732.96,
     "source": "WebSearch (stockanalysis.com) - FMP returns a stale/incorrect quote for this thinly-traded OTC stock",
     "updatedAt": "2026-10-01T14:52:52Z"
+  },
+  "TSX:VCM": {
+    "mc": 206.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSX:BNE": {
+    "mc": 154.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSX:SWP": {
+    "mc": 56.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSX:MRC": {
+    "mc": 912.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSXV:UFC": {
+    "mc": 33.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSX:AGF.B": {
+    "mc": 891.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "TSX:GCG.A": {
+    "mc": 1108.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
   }
 }

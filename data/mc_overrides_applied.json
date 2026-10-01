@@ -1518,5 +1518,255 @@
     "mc": 82.6,
     "source": "WebSearch",
     "updatedAt": "2026-10-01T14:44:49Z"
+  },
+  "XSAT:HOME B": {
+    "mc": 65.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "WSE:ALL": {
+    "mc": 49.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "WSE:HOR": {
+    "mc": 23.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BIT:RETI": {
+    "mc": 22.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BELEX:TGAS": {
+    "mc": 600.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:EXE": {
+    "mc": 134.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BIT:SAB": {
+    "mc": 178.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "AIM:WSP": {
+    "mc": 32.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BUL:CHIM": {
+    "mc": 118.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BIT:ILP": {
+    "mc": 107.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XSAT:AMH2 B": {
+    "mc": 41.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ZGSE:MDKA": {
+    "mc": 153.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "DB:MBH3": {
+    "mc": 988.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:MUB": {
+    "mc": 712.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "LJSE:TLSG": {
+    "mc": 1139.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ZGSE:ILRA": {
+    "mc": 70.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BVB:CMVX": {
+    "mc": 176.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "AIM:AMS": {
+    "mc": 803.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:MUM": {
+    "mc": 650.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BIT:MAPS": {
+    "mc": 38.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:CEN": {
+    "mc": 703.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BUL:AGH": {
+    "mc": 48.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "WSE:XBS": {
+    "mc": 18.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ZGSE:LPLH": {
+    "mc": 19.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "DB:TSS": {
+    "mc": 83.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BIT:BAN": {
+    "mc": 365.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "NSEL:IVL1L": {
+    "mc": 383.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "AIM:MFX": {
+    "mc": 41.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ZGSE:SNBA": {
+    "mc": 19.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ZGSE:HPB": {
+    "mc": 756.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:CBSM": {
+    "mc": 147.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:ST5": {
+    "mc": 329.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "DB:SSH": {
+    "mc": 746.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "CSE:ATL": {
+    "mc": 106.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "LSE:CBG": {
+    "mc": 812.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BVB:BIO": {
+    "mc": 285.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:B7E": {
+    "mc": 83.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "SEP:TOMA": {
+    "mc": 91.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "MTSE:GHM": {
+    "mc": 21.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "DB:KGR": {
+    "mc": 176.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:ALPOU": {
+    "mc": 51.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:PERR": {
+    "mc": 360.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "OM:GENI": {
+    "mc": 47.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "NSEL:ZMP1L": {
+    "mc": 122.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "DB:PHH2": {
+    "mc": 924.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "BUL:SFT": {
+    "mc": 122.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:STO3": {
+    "mc": 722.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "XTRA:MLL": {
+    "mc": 43.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:ALDLT": {
+    "mc": 432.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
+  },
+  "ENXTPA:ALPJT": {
+    "mc": 67.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-01T14:54:56Z"
   }
 }
