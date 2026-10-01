@@ -430,6 +430,15 @@ function saveLocalOverrides() {
   try { localStorage.setItem(LS_GM_KEY, JSON.stringify(gmOverrides)); } catch(e) {}
 }
 
+// The 10 revHist/niHist slots are fixed LTM snapshots from the original
+// Capital IQ extract (report run 27-Nov-2024), spaced every 4 months:
+// [LTM-36 ... LTM-4, LTM] - i.e. the 10th/latest slot is the LTM figure
+// as of Nov 2024, not "today". Every company in both pools (confirmed:
+// Europe and US/Canada share the same report date) has exactly 10
+// slots, oldest to latest, so this mapping is fixed and company-
+// independent - replaces the old T-1/T-2/Latest relative labels, which
+// didn't convey what "latest" actually meant.
+const PERIOD_LABELS = ['Nov 2021','Mar 2022','Jul 2022','Nov 2022','Mar 2023','Jul 2023','Nov 2023','Mar 2024','Jul 2024','Nov 2024'];
 function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
 // Thesis prose fields (main_shareholders, insider_ownership, ...) carry
 // their source citation inline as markdown "([label](url))" - never
@@ -711,7 +720,7 @@ function renderDetailPanel(row, rank) {
           ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
         </div>
         <div>
-          <h4>Revenue history ($M, LTM&#8209;36 → LTM)</h4>
+          <h4>Revenue history ($M, ${PERIOD_LABELS[0]} &rarr; ${PERIOD_LABELS[PERIOD_LABELS.length-1]})</h4>
           <div class="spark-block">${sparkline(c.revHist)}</div>
           <h4>Net income history ($M)</h4>
           <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
@@ -751,7 +760,8 @@ function renderFullFinancials(row) {
   `).join('');
   const periodCell = (v, i, n) => `<td class="${i===n-1?'latest':''}">${v!==null&&v!==undefined ? fmtNum(v,1) : '—'}</td>`;
   const n = c.revHist.length;
-  const headerCells = c.revHist.map((_,i) => `<th class="${i===n-1?'latest':''}">${i===n-1?'Latest':'T&minus;'+(n-1-i)}</th>`).join('');
+  const labels = PERIOD_LABELS.slice(PERIOD_LABELS.length - n);
+  const headerCells = c.revHist.map((_,i) => `<th class="${i===n-1?'latest':''}">${labels[i]}</th>`).join('');
   return `
     <div class="fin-grid">${gridHtml}</div>
     <h4>Revenue &amp; net income by period ($M, oldest &rarr; latest / LTM)</h4>
