@@ -80,6 +80,24 @@
       "terms": "Private equity consortium bid at more than 50% premium to recent share price, valuing Criteo at approximately $3.7 billion on an equity basis; board had not yet responded as of the report",
       "note": "Criteo had also just re-domiciled from France to Luxembourg (shareholder vote Feb 27, 2026) explicitly to enable a merger into a US corporation, which appears to have been preparatory to this takeover interest",
       "source_url": "https://www.mediapost.com/publications/article/416328/criteo-attracts-takeover-bids-from-equity-investm.html"
+    },
+    {
+      "ticker": "XTRA:VIH1",
+      "company": "VIB Verm\u00f6gen AG",
+      "date": "2026-08-27",
+      "counterparty": "DIC Real Estate Investments GmbH & Co. KGaA (subsidiary of Branicks Group AG)",
+      "terms": "Control and profit transfer agreement approved at VIB's EGM on 2026-02-12, entered in the commercial register and effective 2026-08-27. DIC REI KGaA grants VIB's outside (minority) shareholders annual compensation payments and an offer to acquire their shares in exchange for newly issued Branicks shares. Acceptance deadline for the compensation/exchange offer expires 2026-10-27.",
+      "note": "Effectively a controlling-shareholder minority buyout/compensation mechanism (German domination and profit transfer agreement) following Branicks Group's prior acquisition of VIB's institutional business (~EUR 360m) in 2025.",
+      "source_url": "https://vib-ag.de/en/2026/08/vib-vermogen-ag-with-successful-annual-general-meeting-and-effective-control-and-profit-transfer-agreement/"
+    },
+    {
+      "ticker": "ZGSE:KRAS",
+      "company": "Kras d.d.",
+      "date": "2026-02-12",
+      "counterparty": "Pivac Holding d.o.o. / Kappa Star Limited (Cyprus)",
+      "terms": "Takeover bid at EUR 130 per ordinary share for the remaining 188,915 shares (~12.61%) not already owned by Pivac Holding and Kappa Star, who together control 87.39% (plus ~3.7% treasury). Approved by Croatian regulator Hanfa.",
+      "note": "Controlling-shareholder consolidation move toward full ownership of the Croatian confectionery producer Kra\u0161.",
+      "source_url": "https://seenews.com/news/pivac-makes-takeover-bid-for-12-61-percent-stake-in-kras-1297183"
     }
   ],
   "mergers_acquisitions": [
@@ -282,9 +300,48 @@
       "terms": "BASSAC entered exclusive negotiations and finalized acquisition of the Feu Vert automotive-maintenance retail group in Q1 2026, subject to regulatory authorizations",
       "note": "Significant diversification acquisition for BASSAC (previously LNC), a French real-estate developer, into automotive retail",
       "source_url": "https://www.feuvert-group.com/wp-content/uploads/2026/02/CP_ACQUISITION-BASSAC-FEU-VERT_24022026.pdf"
+    },
+    {
+      "ticker": "AIM:ELCO",
+      "company": "Eleco plc",
+      "date": "2026-09-10",
+      "counterparty": "Accel-KKR (via Avocet Bidco Ltd)",
+      "role": "target",
+      "terms": "All-cash recommended offer of 235p per share, valuing Eleco's share capital at ~\u00a3207.6 million (enterprise value ~\u00a3192.4 million), a 74.7%-89.9% premium over recent trading prices. Board unanimously recommended; ~45% shareholder support at announcement. Expected completion Q1 2027.",
+      "note": "Construction/built-environment software company being taken private.",
+      "source_url": "https://www.ajbell.co.uk/news/articles/eleco-accepts-gbp200-million-takeover-offer-accel-kkr"
+    },
+    {
+      "ticker": "OM:GOTL A",
+      "company": "Rederiaktiebolaget Gotland",
+      "date": "2026-04-09",
+      "counterparty": "Nordic Ferry Infrastructure Holding AS (Norway) / EQT Fund Management S.\u00e0 r.l.",
+      "role": "acquirer",
+      "terms": "European Commission cleared the acquisition of joint control of Nordic Ferry Infrastructure Holding AS by Gotlandsbolaget and EQT. Nordic Ferry Infrastructure operates passenger and freight ferry routes in Denmark, Norway and Sweden.",
+      "note": "Joint-venture style acquisition expanding Gotlandsbolaget's ferry operations beyond its core Gotland-mainland Sweden routes.",
+      "source_url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-clears-acquisition-nordic-ferry-infrastructure-gotlandsbolaget-and-eqt-2026-07-08_fr"
     }
   ],
-  "spinoffs": [],
+  "spinoffs": [
+    {
+      "ticker": "LSE:CBG",
+      "company": "Close Brothers Group plc",
+      "date": "2025-07-25",
+      "spun_off_entity": "Winterflood (market-making business)",
+      "terms": "Sale of Winterflood to Marex Group plc for approximately \u00a3103.9 million in cash; transaction expected to complete in early 2026, subject to regulatory approval.",
+      "note": "Follows the earlier sale of Close Brothers Asset Management (CBAM) to Oaktree Capital Management (completed 28 Feb 2025, equity value up to \u00a3200m) as part of a broader business-simplification/capital-management programme.",
+      "source_url": "https://www.closebrothers.com/system/files?file=press%2FCBG+2025+Preliminary+Results+Announcement.pdf"
+    },
+    {
+      "ticker": "XTRA:STM",
+      "company": "Stabilus SE",
+      "date": "2026-05",
+      "spun_off_entity": "Fabreeka and Tech Products businesses (part of the former DESTACO industrial-automation unit)",
+      "terms": "Sale of Fabreeka and Tech Products to VMC Group; sale completed in Q3 FY2026.",
+      "note": "Divestiture follows Stabilus's September 2025 transformation program aimed at streamlining the organization and optimizing its production footprint/cost base.",
+      "source_url": "https://group.stabilus.com/news-and-events/press-releases"
+    }
+  ],
   "other": [
     {
       "ticker": "ENXTPA:BLC",
@@ -433,6 +490,24 @@
       "terms": "NORMA Group sold its Water Management business unit, with the sale completed on 2 February 2026; the unit had been classified as a discontinued operation since Q3 2025. The company then returned capital via two public share buyback offers: one completed 27 March 2026 at EUR16.59/share (~10% of capital, ~EUR52.9m), and a second launched August 2026 for up to 9,306,487 shares at EUR22.35/share (~EUR208m total).",
       "note": "Major divestiture of an entire business unit followed by large capital-return buybacks; FY2025 group revenue (EUR821.7m) reflects a business mix that will not repeat post-divestiture, and per-share buyback pricing embeds deal-related premia.",
       "source_url": "https://www.normagroup.com/global/de/news/press-releases/2026/norma-group-closes-financial-year-2025-within-the-forecast-corridors"
+    },
+    {
+      "ticker": "LSE:PAGE",
+      "company": "PageGroup plc",
+      "date": "2026-07",
+      "type": "rebrand",
+      "terms": "PageGroup plc announced plans to rebrand to Michael Page.",
+      "note": "Corporate name/brand change, not an M&A event; included for dashboard awareness of a major restructuring-adjacent change.",
+      "source_url": "https://www.tipranks.com/news/company-announcements/pagegroup-publishes-2025-annual-report-and-sets-date-for-2026-agm"
+    },
+    {
+      "ticker": "BVB:LION",
+      "company": "Lion Capital S.A.",
+      "date": "2026-03-04",
+      "type": "self-tender offer (own-share buyback)",
+      "terms": "Lion Capital S.A. (as bidder) launched a public tender offer on its own shares at RON 4.50/share during 4-17 March 2026, targeting up to 49,600,250 shares (~9.7733% of share capital). ASF-approved offer document (decision 215/25.02.2026).",
+      "note": "Lion Capital is an investment/holding company; this is a capital-return/self-tender action rather than a third-party takeover. A separate related entity, Fondul Proprietatea, also ran tender offers involving Lion Capital in this period; unrelated Biofarm stake was sold by Lion Capital to Polpharma in June 2026.",
+      "source_url": "https://www.lion-capital.ro/docs/en/current-reports/2026/PTO-LION/public-tender-offer-document-LionCapital-2026.pdf"
     }
   ]
 }
