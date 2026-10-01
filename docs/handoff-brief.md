@@ -1136,6 +1136,74 @@ market-cap frontier** (the gap flagged in the previous handoff entry):
   short-seller report it disputes. Result: every company in Europe's
   top 354 now has full qualitative research on file.
 
+## US/Canada qualitative thesis research project (2026-10-01)
+
+User noticed Saul Centers, Inc. (NYSE:BFS) had no qualitative data and
+asked if that was normal - it was: the US dashboard's "thesis" concept
+(business description, competitive position, shareholders, insider
+ownership, red flags, website) had only ever been researched for the
+original ~243-company priority pool from the initial shortlist files,
+never extended as market-cap coverage grew to 364 of 517 the way
+Europe's was. User asked to close that gap for all mc-covered
+companies.
+
+**Found and fixed a real data-quality bug mid-project**: the initial
+gap computation (`mc-covered AND NOT hasThesis`) returned 179
+companies, but the first research batch's merge step (which always
+defensively checks `if c.get('thesis')` before writing, never
+overwriting existing data) found that 16 of its 36 targets already had
+real thesis content despite `hasThesis: false` - a stale/wrong flag
+that predated this project (confirmed via git history on an untouched
+commit). A full sweep fixed the flag everywhere it was wrong: 66
+companies in `companies_pool_all.json`, 35 in
+`companies_pool_nonfinancial.json`. This cut the true remaining gap
+from 179 to 72 after parts 1-2 (which had already been generated from
+the stale list and launched before the bug was caught - their
+redundant targets just no-op'd harmlessly at merge time, no data was
+lost or duplicated). Parts 3-4 were generated from the corrected gap
+and needed no further correction.
+
+Ran as 4 WebSearch batches of 36 companies each (144 total dispatched,
+~107 genuinely new after dedup overlap from parts 1-2's stale targets).
+**Both `companies_pool_all.json` and `companies_pool_nonfinancial.json`
+had to be updated for every ticker** - the non-financial pool is a full
+288-ticker subset of the 517-ticker all-sector pool, stored as a
+separate duplicate JSON array, not a derived view, so a company's
+thesis has to be written to both files or the non-financial sector view
+goes stale. Every batch independently re-verified against the full
+existing dataset (not just its own batch) for duplicated shareholder
+name+percentage combinations before merging. Two recurring "matches"
+surfaced across multiple batches and were judged benign after
+inspection rather than excluded: a generic boilerplate phrase ("insiders
+own under 1%") the regex check mistook for a name, and Dimensional Fund
+Advisors LP appearing at a similar ~6% stake in two unrelated
+companies (The Eastern Company, Riverview Bancorp) - normal for a
+$600B+ index manager with small positions across thousands of
+small-caps, confirmed benign because each citation pointed to its own
+distinct, specific source URL.
+
+**Result**: thesis coverage went from a reported 216/517 (actually
+already higher before the flag fix) to 395/517, with all 364
+mc-covered companies now covered - matching Europe's pattern of
+keeping qualitative research in sync with market-cap coverage. Notable
+items surfaced worth investor attention: several companies are
+mid-acquisition and their standalone thesis is arguably moot (United
+Security Bancshares, Pacific Financial Corp, National Capital Bancorp,
+Diamond Hill Investment Group - already closed), Urbanfund Corp has a
+live related-party-loan red flag (a $10M loan to its own controlling
+shareholder's construction company), Monro has an active activist/
+poison-pill situation (Icahn ~16-17%), and Knight Therapeutics has a
+documented governance dispute over founder conflicts of interest. Full
+list of per-batch findings is in the four commit messages for this
+project (2026-10-01, "US qualitative thesis research part N/4").
+
+**Lesson for future similar projects**: always trust the merge script's
+defensive "don't overwrite existing data" check over an upstream gap
+computation that depends on a flag field - a flag can drift from the
+content it's supposed to describe, but checking the content directly
+at write-time catches that drift before it causes damage, and is worth
+doing at write time even when the gap list was supposedly pre-filtered.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1182,11 +1250,13 @@ market-cap frontier** (the gap flagged in the previous handoff entry):
   rank-window approximation used for Europe's first catch-up round).
 - Europe's qualitative thesis research now covers the full top-354
   (coverage extends as each market-cap tier is caught up - was
-  top-150-only) - see above. US has no equivalent "thesis" concept
-  (business description/competitive position/shareholders/red flags)
-  beyond what the original shortlist files provided; extending it there
-  would need the same from-scratch research treatment Europe just got,
-  not yet started or requested.
+  top-150-only) - see above. **US thesis research is now also caught up
+  to its full mc-covered set (364/517)** as of the "US/Canada
+  qualitative thesis research project" entry above - both dashboards'
+  thesis coverage now tracks their respective market-cap frontiers.
+  Future market-cap tiers for either market should get the matching
+  thesis/corporate-actions extension in the same round (or shortly
+  after), rather than letting the gap re-accumulate.
 - Once both dashboards are in steady state, the same pipeline can be
   applied to further geography/market-cap datasets the user provides.
 - Spin-off / special-situation detection — explicitly deferred to the "last
