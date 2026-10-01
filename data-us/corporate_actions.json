@@ -330,6 +330,136 @@
       "terms": "All-stock. Each UBFO share converted into 0.4520 shares of Community West Bancshares common stock, implied value ~$10.53/share, aggregate deal value ~$191.9 million (~$185.5 million per closing-price calc).",
       "note": "Merger announced December 17, 2025, approved by UBFO shareholders March 30, 2026, and completed April 1, 2026. United Security Bancshares was delisted from Nasdaq and ceased to exist as an independent company \u2014 its officers/directors roles ended. Any current market cap/valuation data for UBFO is stale/defunct.",
       "source_url": "https://www.businesswire.com/news/home/20260401074081/en/Community-West-Bancshares-Completes-Merger-With-United-Security-Bancshares-Creating-a-Stronger-Community-Bank-in-Central-California"
+    },
+    {
+      "ticker": "NYSE:BXC",
+      "company": "BlueLinx Holdings Inc.",
+      "date": "2025-10-31",
+      "counterparty": "Disdero Lumber Co., LLC",
+      "role": "acquirer",
+      "terms": "Acquired for approximately $96 million (~$95.4M purchase price, ~$88M net after ~$8M expected tax benefits), paid from cash on hand; ~7x trailing 12-month EBITDA pro forma. Disdero TTM sales ~$100M.",
+      "note": "Oregon-based specialty wood products distributor; bolt-on expansion of BlueLinx's Western U.S. specialty products business.",
+      "source_url": "https://distributionstrategy.com/2025/11/bluelinx-buys-disdero-lumber-for-96-million-deepening-western-u-s-expansion/"
+    },
+    {
+      "ticker": "NYSE:NGS",
+      "company": "Natural Gas Services Group, Inc.",
+      "date": "2026-06-12",
+      "counterparty": "Flatrock Compression",
+      "role": "acquirer",
+      "terms": "Acquired for $120 million ($110M cash, $10M newly issued NGS common stock); added ~92,600 total horsepower to NGS fleet.",
+      "note": "Closed June 12, 2026; company raised 2026 Adjusted EBITDA guidance to $103-108M partly reflecting the deal.",
+      "source_url": "https://quartr.com/events/natural-gas-services-group-inc-ngs-m-a-announcement_oqx6rC6z"
+    },
+    {
+      "ticker": "NYSE:VRTS",
+      "company": "Virtus Investment Partners, Inc.",
+      "date": "2025-12",
+      "counterparty": "Keystone National Group",
+      "role": "acquirer",
+      "terms": "Virtus to acquire majority stake in private credit manager Keystone National Group; $200 million at closing plus up to $170 million in deferred consideration tied to revenue targets. Funded from existing balance-sheet resources.",
+      "note": "Expected to close Q1 2026 and be accretive to earnings in 2026.",
+      "source_url": "https://www.connectmoney.com/stories/virtus-investment-partners-to-acquire-majority-stake-in-private-credit-manager-keystone-national-group/"
+    },
+    {
+      "ticker": "NasdaqCM:ISBA",
+      "company": "Isabella Bank Corporation",
+      "date": "2026-06-11",
+      "counterparty": "Grand River Commerce, Inc. (parent of Grand River Bank)",
+      "role": "acquirer",
+      "terms": "Cash-and-stock deal valued at approximately $54.6 million ($18.26M cash plus up to 839,003 Isabella shares; 35% cash/65% stock proration).",
+      "note": "Expands Isabella into Grand Rapids, MI market; pro forma ~$2.8B assets, 33 locations. Grand River shareholders approved Sept 18, 2026; expected close Q4 2026.",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/isabella-bank-corporation-acquire-grand-121500764.html"
+    },
+    {
+      "ticker": "NasdaqCM:JMSB",
+      "company": "John Marshall Bancorp, Inc.",
+      "date": "2026-09-08",
+      "counterparty": "Eagle Financial Services, Inc. (parent of Bank of Clarke County)",
+      "role": "acquirer",
+      "terms": "All-stock merger valued at approximately $253 million ($46.72/EFSI share); EFSI shareholders receive 2.00 John Marshall shares per EFSI share.",
+      "note": "Creates a $4.4 billion Virginia community bank; combined company retains John Marshall name/Reston HQ. Expected close early 2027.",
+      "source_url": "https://virginiabusiness.com/john-marshall-bancorp-to-acquire-bank-of-clarke-parent-for-253m/"
+    },
+    {
+      "ticker": "NasdaqCM:PBFS",
+      "company": "Pioneer Bancorp, Inc.",
+      "date": "2026-04-24",
+      "counterparty": "Targeted Lending Co., LLC",
+      "role": "acquirer",
+      "terms": "All-cash acquisition of independent equipment financing company (~$120M loans on balance sheet) valued at approximately $140 million enterprise value, subject to earn-out adjustments over three years.",
+      "note": "Part of a broader diversification push; Pioneer also acquired Brown Financial Management Group (Q4 2025), Reiser Consulting Group and Wyndham Benefits (April 2026), and The College Advisor of New York (July 2026).",
+      "source_url": "https://www.stocktitan.net/news/PBFS/pioneer-announces-acquisition-of-targeted-lending-co-llc-launching-qhwkkhicn961.html"
+    },
+    {
+      "ticker": "NasdaqCM:RMBI",
+      "company": "Richmond Mutual Bancorporation, Inc.",
+      "date": "2025-11-12",
+      "counterparty": "The Farmers Bancorp (Frankfort, Indiana)",
+      "role": "acquirer",
+      "terms": "All-stock merger valued at approximately $82 million ($44.71/Farmers Bancorp share); Farmers shareholders receive 3.40 Richmond Mutual shares per Farmers share. Expected ~35% EPS accretion for RMBI on a run-rate basis.",
+      "note": "Announced Nov 12, 2025; shareholder approvals received May 27, 2026; merger completed effective July 1, 2026; combined bank renamed 'First Bank Midwest'.",
+      "source_url": "https://www.thefarmersbank.com/about-us/news/2025/11/12/richmond-mutual-and-the-farmers-bancorp-announce-transformational-strategic-merger"
+    },
+    {
+      "ticker": "NasdaqGS:DHIL",
+      "company": "Diamond Hill Investment Group, Inc.",
+      "date": "2025-12-10",
+      "counterparty": "First Eagle Investment Management, LLC",
+      "role": "target",
+      "terms": "All-cash acquisition at $175.00 per share, valuing Diamond Hill at approximately $473 million (a 49% premium to the Dec 10, 2025 closing price of $117.48).",
+      "note": "Merger agreement announced Dec 10-11, 2025; shareholders approved March 3, 2026; deal closed April 22, 2026. Diamond Hill became a wholly owned subsidiary of First Eagle and ceased trading on Nasdaq (take-private).",
+      "source_url": "https://www.insidearbitrage.com/2025/12/first-eagle-investments-to-acquire-diamond-hill-for-473-million/"
+    },
+    {
+      "ticker": "NasdaqGS:FCBC",
+      "company": "First Community Bankshares, Inc.",
+      "date": "2025-07-21",
+      "counterparty": "Hometown Bancshares, Inc. (parent of Union Bank, Inc.)",
+      "role": "acquirer",
+      "terms": "Stock-for-stock deal; each Hometown share converted into 11.706 First Community shares (~$472.10/share), aggregate transaction value approximately $41.5 million.",
+      "note": "Merger agreement announced July 21, 2025; acquisition completed Jan 23, 2026, adding 8 West Virginia branches; pro forma ~$3.6B total assets.",
+      "source_url": "https://ir.fcbresource.com/news-events/press-releases/news-details/2026/First-Community-Bankshares-Inc--Completes-Acquisition-of-Hometown-Bancshares-Inc-/default.aspx"
+    },
+    {
+      "ticker": "NasdaqGS:NFBK",
+      "company": "Northfield Bancorp, Inc. (Staten Island, NY)",
+      "date": "2026-02",
+      "counterparty": "Columbia Financial, Inc.",
+      "role": "target",
+      "terms": "Acquired by Columbia Financial in a transaction valued at approximately $597 million; Northfield stockholders could elect cash or Columbia Financial stock, with proration limiting cash consideration to no more than 30% of shares.",
+      "note": "Columbia Financial converted from mutual holding company to fully public stock company to facilitate the deal, creating the third-largest regional bank headquartered in New Jersey (~$18B pro forma assets). Merger completed and Northfield delisted from Nasdaq on July 20, 2026.",
+      "source_url": "https://www.stocktitan.net/news/CLBK/columbia-financial-inc-and-northfield-bancorp-inc-announce-plans-to-23ctcgpmmas2.html"
+    },
+    {
+      "ticker": "NasdaqGS:THRM",
+      "company": "Gentherm Incorporated",
+      "date": "2026-04",
+      "counterparty": "Modine Manufacturing Company (Performance Technologies segment)",
+      "role": "acquirer",
+      "terms": "Reverse Morris Trust transaction: Modine spins off its Performance Technologies business (\"SpinCo\", valued at roughly $1 billion) which then merges with Gentherm in an all-stock deal (~20.7M new Gentherm shares issued); Gentherm shareholders to own ~60% and Modine shareholders ~40% of the combined company, subject to adjustment.",
+      "note": "Shifts combined company's revenue mix toward commercial vehicle, off-highway and power generation markets; targets ~$25M near-term cost synergies and $100M+ commercial opportunities. On track for early Q4 2026 close.",
+      "source_url": "https://www.stocktitan.net/sec-filings/THRM/s-4-a-gentherm-inc-amended-business-combination-registration-79344572a296.html"
+    },
+    {
+      "ticker": "NasdaqGS:VREX",
+      "company": "Varex Imaging Corporation",
+      "date": "2026-08-10",
+      "counterparty": "Teledyne Technologies Incorporated",
+      "role": "target",
+      "terms": "All-cash acquisition at $18.90 per share, aggregate transaction value approximately $1.1 billion (accounting for equity awards and net debt); 52.3% premium to prior closing price.",
+      "note": "Unanimously approved by both boards; no financing condition (Teledyne to use existing credit facility). Varex to become wholly owned subsidiary of Teledyne and delist; expected close early 2027.",
+      "source_url": "https://www.insidearbitrage.com/2026/08/teledyne-technologies-acquires-varex-imaging-for-1-1-billion-in-cash/"
+    },
+    {
+      "ticker": "NYSE:MPX",
+      "company": "Marine Products Corporation",
+      "date": "2026-02-05",
+      "counterparty": "MasterCraft Boat Holdings, Inc.",
+      "role": "target",
+      "terms": "Cash-and-stock deal valued at approx. $232.2 million; Marine Products shareholders receive $2.43 cash plus 0.232 MasterCraft shares per Marine Products share. MasterCraft shareholders to own ~66.5% of combined company, Marine Products shareholders ~33.5%. Expected close May 15, 2026.",
+      "note": "Agreement and Plan of Merger announced Feb 5, 2026; combines two recreational marine boat makers.",
+      "source_url": "https://www.kslaw.com/about/news/mastercraft-boat-holdings-inc-to-acquire-marine-products-corporation-for-2322-million"
     }
   ],
   "spinoffs": [],
@@ -414,6 +544,42 @@
       "terms": "Cash, approximately $223 million",
       "note": "Tompkins Financial sold its wholly-owned insurance subsidiary Tompkins Insurance Agencies, Inc. (TIA) to Arthur J. Gallagher & Co. for approximately $223 million in cash, generating a pre-tax gain of about $183 million. TIA had been part of Tompkins since 2001. Deal closed October 31, 2025, announced November 3, 2025.",
       "source_url": "https://www.businesswire.com/news/home/20251103605620/en/Tompkins-Financial-Corporation-Announces-Sale-of-Tompkins-Insurance-Agencies-Inc.-to-Arthur-J.-Gallagher-Co."
+    },
+    {
+      "ticker": "NasdaqCM:NKSH",
+      "company": "National Bankshares, Inc.",
+      "date": "2026-05-01",
+      "type": "divestiture",
+      "terms": "Sold its membership interest in Bearing Insurance Group, LLC (held via subsidiary National Bankshares Financial Services, Inc.) to an unaffiliated third party; estimated pre-tax gain of approximately $6.57 million recognized in Q2 2026.",
+      "note": "Divestiture of insurance agency business to refocus strategy on core banking.",
+      "source_url": "https://www.stocktitan.net/sec-filings/NKSH/8-k-national-bankshares-inc-reports-material-event-4763f1e7ea1b.html"
+    },
+    {
+      "ticker": "NasdaqGS:TITN",
+      "company": "Titan Machinery Inc.",
+      "date": "2025-11",
+      "type": "divestiture",
+      "terms": "Planned divestiture of its German dealership operations via two separate asset sale transactions.",
+      "note": "Part of portfolio rationalization of Titan's European equipment-dealership footprint.",
+      "source_url": "https://www.quiverquant.com/news/Titan+Machinery+Inc.+Announces+Planned+Divestiture+of+German+Dealership+Operations"
+    },
+    {
+      "ticker": "OTCPK:BURC.A",
+      "company": "Burnham Holdings, Inc.",
+      "date": "2025-05-05",
+      "type": "divestiture",
+      "terms": "Divested substantially all assets of its Thermo Pride and Norwood Manufacturing subsidiaries to R.W. Beckett Corporation for approximately $27.6 million.",
+      "note": "Part of a broader refocus toward its core commercial/industrial boiler service business; company also announced (Dec 2025) further 'major strategic initiatives' to divest legacy subsidiaries holding asbestos-related liabilities to simplify its corporate structure.",
+      "source_url": "https://www.nasdaq.com/press-release/burnham-holdings-inc-announces-subsidiary-divestiture-plan-2025-05-05"
+    },
+    {
+      "ticker": "OTCPK:CPKF",
+      "company": "Chesapeake Financial Shares, Inc.",
+      "date": "2026-05-01",
+      "type": "divestiture",
+      "terms": "Sold Chesapeake Bank's membership interest in Bearing Insurance Group to an unaffiliated party, generating an estimated $3.75 million pre-tax gain.",
+      "note": "Same Bearing Insurance Group divested around the same date by National Bankshares (NKSH); divestiture of insurance agency interest to focus on core banking.",
+      "source_url": "https://www.stocktitan.net/news/CPKF/chesapeake-financial-shares-announces-sale-of-interest-in-bearing-l5m6a7m8lvip.html"
     }
   ]
 }
