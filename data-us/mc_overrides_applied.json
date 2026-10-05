@@ -2028,5 +2028,40 @@
     "mc": 195.65,
     "source": "FMP",
     "updatedAt": "2026-10-05T15:34:47Z"
+  },
+  "TSX:PBL": {
+    "mc": 344.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:CAS": {
+    "mc": 1295.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:MTL": {
+    "mc": 1845.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:MRE": {
+    "mc": 494.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:CKI": {
+    "mc": 253.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:ICE": {
+    "mc": 40.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "TSX:CGO": {
+    "mc": 417.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-05T15:38:56Z"
   }
 }
