@@ -320,6 +320,76 @@
       "terms": "European Commission cleared the acquisition of joint control of Nordic Ferry Infrastructure Holding AS by Gotlandsbolaget and EQT. Nordic Ferry Infrastructure operates passenger and freight ferry routes in Denmark, Norway and Sweden.",
       "note": "Joint-venture style acquisition expanding Gotlandsbolaget's ferry operations beyond its core Gotland-mainland Sweden routes.",
       "source_url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-clears-acquisition-nordic-ferry-infrastructure-gotlandsbolaget-and-eqt-2026-07-08_fr"
+    },
+    {
+      "ticker": "DB:IFS",
+      "company": "Infas Holding AG",
+      "date": "2025-01-01",
+      "counterparty": "Ipsos SA",
+      "role": "target",
+      "terms": "Voluntary public takeover offer at EUR 6.80/share (~EUR 61.2m valuation, ~61% premium); accepted for ~83.72% of shares, completed early January 2025 after German cartel clearance (Dec 20, 2024), Ipsos ended up with 96.6% of shares.",
+      "note": "Ipsos acquired infas to become a major player in German market/social research (now operates as Ipsos infas).",
+      "source_url": "https://www.ipsos.com/en/ipsos-launches-voluntary-public-takeover-offer-infas-acquire-industry-leader-german-public-sector"
+    },
+    {
+      "ticker": "LSE:MHPC",
+      "company": "MHP SE",
+      "date": "2026-05-30",
+      "counterparty": "Th. Nitsiakos AVEE",
+      "role": "acquirer",
+      "terms": "MHP to acquire 70% of Greek poultry producer Nitsiakos (FY2025 revenue ~EUR 540m) in three sequential tranches; remaining 30% subject to a put option exercisable 2030-2035; first tranche expected to close Q1 2027 subject to regulatory clearance; price tied to Nitsiakos EBITDA.",
+      "note": "International expansion deal for MHP; no change of control of MHP itself.",
+      "source_url": "https://www.thepoultrysite.com/news/2026/06/mhp-to-acquire-greek-producer-nitsiakos"
+    },
+    {
+      "ticker": "CPSE:AOJ B",
+      "company": "Br\u00f8drene A & O Johansen A/S",
+      "date": "2026-08-26",
+      "counterparty": "Elektroimport\u00f8ren AS",
+      "role": "acquirer",
+      "terms": "Recommended voluntary cash offer of NOK 22/share for Elektroimport\u00f8ren AS (Norway/Sweden electrical products wholesaler/retailer), implying ~NOK 1.1bn transaction value; acceptances reached ~92.5%, offer completed August 26, 2026; compulsory acquisition of remaining shares to follow.",
+      "note": "AOJ also closed a separate acquisition of JMV Cables A/S in July 2026 and bought the VVS-eksperten.dk e-commerce domain effective Jan 1 2026 - smaller bolt-on deals.",
+      "source_url": "https://www.globenewswire.com/news-release/2026/07/03/3321648/0/en/Br%C3%B8drene-A-O-Johansen-A-S-announces-a-recommended-voluntary-cash-offer-of-NOK-22-per-share-to-the-shareholders-of-Elektroimport%C3%B8ren-AS-and-publishes-offer-document-commencement-of-.html"
+    },
+    {
+      "ticker": "LSE:STEM",
+      "company": "SThree plc",
+      "date": "2026-09-09",
+      "counterparty": "Circle8 Group Inc.",
+      "role": "target",
+      "terms": "Unsolicited, preliminary, highly conditional all-cash takeover approach for SThree's entire issued share capital, disclosed under the UK Takeover Code on Sept 9, 2026 (offer period commenced); SThree's board rejected the approach on Sept 11, 2026. Circle8 had until Oct 7, 2026 (PUSU deadline) to announce a firm intention or walk away.",
+      "note": "Status as of search: rejected by SThree board but formal offer period still open at time of last report; outcome (firm offer vs. walk-away) not yet confirmed in sources found.",
+      "source_url": "https://www.investing.com/news/company-news/sthree-receives-preliminary-takeover-approach-from-circle8-93CH-4893974"
+    },
+    {
+      "ticker": "LSE:SPI",
+      "company": "Spire Healthcare Group plc",
+      "date": "2026-09-05",
+      "counterparty": "Tulip UK Bidco (consortium of Toscafund Asset Management, THCP Advisory and Ares Management)",
+      "role": "target",
+      "terms": "Recommended cash takeover at 250p/share, valuing Spire at ~GBP 1.03bn (~66% premium to the May 13, 2026 pre-approach closing price); board unanimously recommended the offer after a strategic review involving >60 potential buyers over ~8 months; to be implemented via a court-sanctioned scheme of arrangement, expected to complete Q4 2026 or Q1 2027 subject to approvals. CEO Justin Ash to retire; Sir David Sloman interim CEO; Paolo Pieri to become chair post-completion.",
+      "note": "Take-private of the UK's largest private hospital operator.",
+      "source_url": "https://uk.finance.yahoo.com/news/spire-healthcare-agrees-taken-private-073530740.html"
+    },
+    {
+      "ticker": "ENXTLS:ALTR",
+      "company": "Altri, SGPS, S.A.",
+      "date": "2025-07-21",
+      "counterparty": "AeoniQ (and Greenalia Forest / Greenalia Logistics)",
+      "role": "acquirer",
+      "terms": "Altri acquired a controlling 58.7% stake in AeoniQ (sustainable textiles/cellulosic fibre venture, completed July 21, 2025) to support an industrial unit at its Caima facilities; separately completed acquisition of Greenalia Forest and Greenalia Logistics on May 14, 2025.",
+      "note": "Bolt-on diversification deals by Altri (acquirer), not a change-of-control event for Altri itself.",
+      "source_url": "https://finance.yahoo.com/news/altri-sgps-acquires-controlling-stake-113404898.html"
+    },
+    {
+      "ticker": "WSE:QRS",
+      "company": "Quercus TFI S.A.",
+      "date": "2025-11-28",
+      "counterparty": "Templeton Asset Management (Poland) TFI S.A. / Franklin Templeton",
+      "role": "acquirer",
+      "terms": "Quercus TFI merged with Templeton Asset Management (Poland) TFI S.A. (merger registered Nov 28, 2025), taking over management of three Franklin Templeton FIO sub-funds; as part of the deal Franklin Templeton received Quercus shares in exchange plus subscribed new shares at PLN 12/share, ending up with ~7.1-7.8% of Quercus TFI's enlarged capital alongside a strategic cooperation agreement.",
+      "note": "Consolidation in the Polish TFI (fund management) sector; Quercus is the surviving/acquiring entity.",
+      "source_url": "https://quercustfi.pl/aktualnosc/wiadomosci/fuzja-dwoch-tfi-na-polskim-rynku-stala-sie-faktem-quercus-tfi-sa-polaczylo"
     }
   ],
   "spinoffs": [
@@ -340,6 +410,15 @@
       "terms": "Sale of Fabreeka and Tech Products to VMC Group; sale completed in Q3 FY2026.",
       "note": "Divestiture follows Stabilus's September 2025 transformation program aimed at streamlining the organization and optimizing its production footprint/cost base.",
       "source_url": "https://group.stabilus.com/news-and-events/press-releases"
+    },
+    {
+      "ticker": "HLSE:ASPO",
+      "company": "Aspo Oyj",
+      "date": "2026-08-03",
+      "spun_off_entity": "ESL Shipping Group Plc (new listed company housing ESL Shipping Ltd)",
+      "terms": "Aspo's Board approved a demerger plan on Aug 3, 2026 to separate ESL Shipping Ltd into a new independent listed company (ESL Shipping Group); shareholders to receive 1 new share for each Aspo share held; EGM expected Dec 7, 2026; completion planned Dec 31, 2026; trading of new shares on Nasdaq Helsinki expected to start ~Jan 4, 2027. Remaining Aspo will refocus on Telko (compounding/chemicals distribution) as 'Aspo Compounder'.",
+      "note": "Separately, Aspo completed the divestment of its Leipurin business to Lantm\u00e4nnen on March 2, 2026 for an enterprise value of ~EUR 63m (EUR 62m cash at closing, EUR 15m one-off sales gain) - a related portfolio restructuring alongside the ESL Shipping spinoff.",
+      "source_url": "https://www.aspo.com/stock-exchange-releases/inside-information-the-board-of-directors-of-aspo-plc-has-approved-a-demerger-plan-concerning-the-separation-of-esl-shipping-into-a-new-listed-company-3337215"
     }
   ],
   "other": [
