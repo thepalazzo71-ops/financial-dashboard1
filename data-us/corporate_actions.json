@@ -17,6 +17,15 @@
       "terms": "Self-tender offer to repurchase up to 200,000 shares (~5.12% of shares outstanding) at $75.00/share (~$15M total); preliminary tender in Jan 2026 round accepted ~60.4% proration, final results in an April 2026 round showed ~127,419 shares accepted at $75.00 (~$9.56M)",
       "note": "Series of self-tender share repurchases, not a change-of-control event; relevant as a capital-return/going-private-adjacent action for a value screen",
       "source_url": "https://www.stocktitan.net/news/CSHX/cashmere-valley-bank-announces-final-results-of-tender-aloe95sh2cs0.html"
+    },
+    {
+      "ticker": "NasdaqCM:CRWS",
+      "company": "Crown Crafts, Inc.",
+      "date": "2025-06-09",
+      "counterparty": "Crown EK Acquisition LLC (Parent)",
+      "terms": "Cash tender offer for all outstanding Crown Crafts common stock at $3.15/share pursuant to a Merger Agreement; tender offer to commence within 15 business days, remain open 20 business days (subject to extension); not subject to a financing condition. Crown Crafts to become a wholly owned subsidiary upon completion.",
+      "note": "Merger Agreement announced June 9, 2025.",
+      "source_url": "https://www.globenewswire.com/news-release/2025/06/09/3095865/0/en/Crown-Announces-Entry-into-Merger-Agreement.html"
     }
   ],
   "mergers_acquisitions": [
@@ -509,6 +518,76 @@
       "terms": "Take-private all-cash acquisition at C$68.00 per share, valued at ~C$1.67 billion (~US$1.21 billion); premium of 66% to Class A shares' / 48% to Common shares' last close; Guardian's directors, executive officers and major shareholders (32.06% of shares) signed support/voting agreements; deal closed 2026-03-23",
       "note": "Guardian Capital delisted/taken private by Desjardins; combined AUM/AUA with Desjardins Global Asset Management reaches ~C$280 billion",
       "source_url": "https://www.theglobeandmail.com/business/article-desjardins-guardian-capital-sale-acquisition-expansion-assets/"
+    },
+    {
+      "ticker": "NYSE:CABO",
+      "company": "Cable One, Inc.",
+      "date": "2026-01-05",
+      "counterparty": "Mega Broadband Investments Holdings LLC (GTCR affiliates / MBI management)",
+      "role": "acquirer",
+      "terms": "Definitive agreement for Cable One to acquire the ~55% of MBI it does not already own (Cable One owns 45%); purchase price for the remaining stake expected ~$475M-$495M, total transaction value ~$1.3 billion including MBI net debt of ~$845M-$895M. GTCR exercised a put option Jan 2, 2026; deadline extended to Oct 9, 2026.",
+      "note": "MBI provides broadband/fiber/video/voice services to ~210,000 residential and business customers across the Southeast, Northwest and Mid-South US.",
+      "source_url": "https://ir.cableone.net/news-events/investor-news/news-details/2026/Cable-One-to-Acquire-Full-Ownership-of-Mega-Broadband/default.aspx"
+    },
+    {
+      "ticker": "NYSE:MG",
+      "company": "Mistras Group, Inc.",
+      "date": "2026-09-18",
+      "counterparty": "H.I.G. Capital (affiliates)",
+      "role": "target",
+      "terms": "All-cash acquisition at $20.35/share, total transaction value ~$866 million including debt; 40-day go-shop period through Oct 27, 2026; expected to close late 2026/early 2027 subject to stockholder and regulatory approval.",
+      "note": "Board unanimously approved; price reflects ~61% appreciation since Dec 31, 2025.",
+      "source_url": "https://www.citybiz.co/article/905694/h-i-g-capital-to-acquire-mistras-group-in-866-million-deal/"
+    },
+    {
+      "ticker": "TSX:CKI",
+      "company": "Clarke Inc.",
+      "date": "2026-05-29",
+      "counterparty": "Ravelin Properties REIT",
+      "role": "acquirer",
+      "terms": "Arrangement agreement for Clarke to acquire all outstanding units of Ravelin Properties REIT and its 9.00% convertible unsecured subordinated debentures; transaction valued at ~$1.1 billion including assumed debt. REIT unitholders received ~0.582 Clarke common shares per 1,000 REIT units; Clarke issued ~2.5 million shares (~19.3% of post-deal shares outstanding). Deal completed May 29, 2026.",
+      "note": "Existing Clarke shareholders retained ~83.8% of combined company, REIT securityholders ~16.2%.",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/clarke-inc-enters-agreement-acquire-113000412.html"
+    },
+    {
+      "ticker": "NasdaqGS:FRD",
+      "company": "Friedman Industries, Incorporated",
+      "date": "2025-08-29",
+      "counterparty": "Century Metals and Supplies, Inc.",
+      "role": "acquirer",
+      "terms": "Acquired Century Metals and Supplies, Inc. for ~$45.25 million cash plus a $3.5 million note (total ~$48.75 million).",
+      "note": "Provides geographic expansion into southeastern US and Latin American markets and additional processing capabilities; material relative to Friedman's small-cap size.",
+      "source_url": "https://www.steelmarketupdate.com/2025/09/02/friedman-industries-buys-century-metals-and-supplies/"
+    },
+    {
+      "ticker": "OTCPK:MBLU",
+      "company": "Morris State Bancshares, Inc.",
+      "date": "2025-11-20",
+      "counterparty": "Pinnacle Financial Corporation (Georgia) \u2014 combined entity renamed Vallant Financial / Vallant Bank",
+      "role": "target",
+      "terms": "Stock-for-stock merger; each Morris share exchanged for 0.1095 shares of Pinnacle stock plus a special pre-closing cash dividend of $0.54/share. Pinnacle shareholders to own ~54% of combined company, Morris shareholders ~46%. Combined entity ~$3.8-3.98 billion in assets, renamed Vallant Bank. Morris shareholders approved March 18, 2026; merger completed April 1, 2026.",
+      "note": "Creates the largest Georgia-based community bank holding company.",
+      "source_url": "https://www.businesswire.com/news/home/20251120852177/en/Pinnacle-Financial-Corporation-and-Morris-State-Bancshares-Jointly-Announce-Partnership-to-Form-a-Leading-Georgia-Community-Bank"
+    },
+    {
+      "ticker": "OTCPK:OTTW",
+      "company": "Ottawa Bancorp, Inc.",
+      "date": "2026-08-20",
+      "counterparty": "Pontiac Bancorp, Inc. (parent of Bank of Pontiac)",
+      "role": "target",
+      "terms": "All-cash acquisition; Ottawa Bancorp shareholders to receive ~$45.5 million in aggregate (~$19.78/share). Combined institution expected to have ~$1.5 billion in total assets. Approved by both boards; subject to Ottawa shareholder and regulatory approval; targeted to close Q1 2027.",
+      "note": "OSB Community Bank (Ottawa Bancorp's subsidiary) has ~$356 million in assets, 3 full-service branches plus 1 loan production office in LaSalle/Grundy Counties, Illinois.",
+      "source_url": "https://www.globenewswire.com/news-release/2026/08/20/3348730/0/en/pontiac-bancorp-inc-has-agreed-to-acquire-ottawa-bancorp-inc.html"
+    },
+    {
+      "ticker": "NasdaqGS:CCRN",
+      "company": "Cross Country Healthcare, Inc.",
+      "date": "2026-05-06",
+      "counterparty": "Knox Lane (private equity)",
+      "role": "target",
+      "terms": "Definitive agreement to be acquired by Knox Lane for $13.25/share all-cash, total transaction value ~$437 million (~31% premium to May 6, 2026 close, ~45% premium to 90-day VWAP). Company to go private and delist from Nasdaq upon close; expected to close Q3 2026 subject to stockholder/regulatory approval.",
+      "note": "This follows an earlier (2024-2025) proposed acquisition of Cross Country Healthcare by Aya Healthcare that was abandoned around November 2025 after FTC antitrust scrutiny (Second Request issued Feb 2025).",
+      "source_url": "https://www.businesswire.com/news/home/20260506144806/en/Cross-Country-Healthcare-to-be-Acquired-by-Knox-Lane-in-All-Cash-Transaction-Valued-at-$437-Million"
     }
   ],
   "spinoffs": [],
@@ -638,6 +717,33 @@
       "terms": "Sold the assets of its Telematics mobile/fixed-asset tracking segment (including Nero Global Tracking software) to Lantronix in an all-cash deal of ~$16.5M CAD ($14.5M CAD at closing, $2.0M CAD deferred to year-end 2026)",
       "note": "Portfolio-optimization divestiture to sharpen focus on core broadband/video platform business; not a change-of-control event for Vecima itself",
       "source_url": "https://www.thefastmode.com/mergers-and-acquisitions/49487-vecima-networks-strengthens-broadband-focus-with-16-5m-cad-telematics-business-sale-to-lantronix"
+    },
+    {
+      "ticker": "NasdaqGM:PPIH",
+      "company": "Perma-Pipe International Holdings, Inc.",
+      "date": "2025-09-14",
+      "type": "Strategic alternatives review (initiated and later concluded)",
+      "terms": "Board initiated review of strategic alternatives in Sept 2025 (with Energy Capital Solutions as advisor) to maximize shareholder value, exploring options including a tax-efficient sale of one or more divisions or sale of the entire company. In April 2026 the Board concluded the review, determining to remain an independent public company and instead pursue organic growth (US Northeast expansion, AI data center market).",
+      "note": "No sale resulted; review formally concluded April 2026.",
+      "source_url": "https://www.businesswire.com/news/home/20250914478494/en/Perma-Pipe-International-Holdings-Inc.-Announces-Second-Quarter-2025-Financial-Results-and-Initiates-Exploration-of-Strategic-Alternatives-to-Maximize-Shareholder-Value"
+    },
+    {
+      "ticker": "NasdaqGS:CRMT",
+      "company": "America's Car-Mart, Inc.",
+      "date": "2026-05-22",
+      "type": "Special committee formed to review strategic alternatives amid financial distress",
+      "terms": "Board formed a Special Committee (Adam Paul as Chair, Joshua Welch, Jonathan Buba) on May 22, 2026 and retained Houlihan Lokey as financial advisor to evaluate strategic alternatives, including financing/refinancing/recapitalization, equity capital raises, asset sales, debt facility modifications, and possible M&A. Driven by mounting losses (Q1 FY2026 loss of $68M, vehicle sales down 81%), store closures (reduced footprint ~44% since late 2025) and loan covenant defaults.",
+      "note": "No transaction announced yet as of screening date; ongoing process worth monitoring for a possible sale or recapitalization.",
+      "source_url": "https://talkbusiness.net/2026/06/car-mart-hires-investment-firm-appoints-board-member-as-it-evaluates-strategic-alternatives/"
+    },
+    {
+      "ticker": "TSX:CAS",
+      "company": "Cascades Inc.",
+      "date": "2026-02-05",
+      "type": "Business segment exit / plant closures / partial asset sale",
+      "terms": "Cascades announced discontinuation of its honeycomb paperboard and partition packaging product sectors, closing three plants (York, PA; Saint-C\u00e9saire and Berthierville, QC). Berthierville plant closed immediately (52 employees affected); York, PA closed by Feb 19, 2026 (37 employees); Saint-C\u00e9saire ceased operations by April 17, 2026 (25 employees). Emballages LM agreed to acquire certain Berthierville assets for ~$9 million. Separately, Cascades sold its Richmond, BC packaging plant to Crown Paper Group (Jan 2026).",
+      "note": "Strategic refocus on core packaging/tissue markets away from niche segments with declining demand.",
+      "source_url": "https://www.newswire.ca/news-releases/cascades-announces-exit-from-honeycomb-packaging-and-partition-business-segments-840659931.html"
     }
   ]
 }
