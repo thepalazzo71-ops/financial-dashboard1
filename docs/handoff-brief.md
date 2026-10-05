@@ -1204,6 +1204,40 @@ content it's supposed to describe, but checking the content directly
 at write-time catches that drift before it causes damage, and is worth
 doing at write time even when the gap list was supposedly pre-filtered.
 
+## Tier-6 market-cap batch, both markets (2026-10-05)
+
+Next ~50-company tier for both markets, same pattern as every prior
+round.
+
+- **Europe**: 50/50 resolved via WebSearch, no auto-exclude flags.
+  Several swings (LU-VE Group +77%, LEM Holding +86%, Cascades +55%)
+  had no corroborating news in the research agent's own search despite
+  staying under the 5x threshold - independently re-verified via
+  WebSearch before merging rather than accepted on the agent's say-so:
+  all three are real (LU-VE has a record H1 2026 and a €100M
+  hyperscaler data-center-cooling contract; LEM Holding is trading near
+  its 52-week high; Cascades got three broker price-target raises after
+  a strong Q2). Coverage: 354 → 404 of 1000.
+- **US**: 43 FMP-eligible tickers, 42 resolved, 1 not found (OTCPK:OAKC
+  - still not in FMP's database, same as every prior round; needs a
+  WebSearch follow-up outside this batch's scope if it's ever worth
+  revisiting). Three severe outlier ratios (Cable One ~0.10x, Mercer
+  International ~0.17x, America's Car-Mart ~0.08x vs baseline) -
+  independently verified via WebSearch rather than assumed to be FMP
+  data errors: all three are real, multi-source-corroborated crashes
+  (Cable One collapsed from a 52-week high of $180 to ~$11-13; Mercer
+  International is down ~69% over 3 years to ~$0.25/share; America's
+  Car-Mart is down ~96% YoY to ~$1/share - all three independently
+  confirmed across stockanalysis.com, CNN, and wallstreetzen). Coverage:
+  364 → 406 of 517.
+- **Canada**: the usual 7 TSX tickers FMP can't resolve, folded into the
+  Europe WebSearch batch. All 7 resolved cleanly. Combined US/Canada
+  coverage: 406 → 413 of 517.
+
+Corporate-actions screening and Europe's qualitative thesis research
+now trail this new frontier by one tier again - same "extend coverage
+to match" follow-up as every prior round, not yet requested for tier 6.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1233,12 +1267,12 @@ doing at write time even when the gap list was supposedly pre-filtered.
   scope (US: 243-ticker priority pool; Europe: 150 thesis companies) —
   see "Shareholding data" and "Coverage extension round" above.
 - **Continuing the market-cap / corporate-actions frontier**: both
-  dashboards' coverage now extends to 354-of-1000 (Europe) / 364-of-517
-  (US/Canada) for market caps, and corporate-actions screening (plus,
-  for Europe, qualitative thesis research) is fully caught up to that
-  same frontier as of the "Net Debt box + corporate-actions/thesis
-  catch-up to tier-5" entry above — all three are in sync again. The
-  natural next step is the next ~50-company market-cap tier, same batch
+  dashboards' coverage now extends to 404-of-1000 (Europe) / 413-of-517
+  (US/Canada) for market caps as of tier 6 (see above). Corporate-
+  actions screening and Europe's thesis research were fully caught up
+  through tier 5 (see the catch-up entries above) but now trail tier 6
+  by one round again - the natural next step is extending both to
+  match tier 6, then the next ~50-company market-cap tier, same batch
   pattern as every round so far (WebSearch for non-US-exchange market
   caps, Canadian TSX/TSXV names, and all corporate-actions/thesis
   screening; FMP for US-exchange market caps; never more than one
