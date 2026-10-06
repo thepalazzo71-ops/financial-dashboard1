@@ -1238,6 +1238,84 @@ Corporate-actions screening and Europe's qualitative thesis research
 now trail this new frontier by one tier again - same "extend coverage
 to match" follow-up as every prior round, not yet requested for tier 6.
 
+## Tier-6 corporate-actions/thesis catch-up + US partial-thesis backfill (2026-10-05/06)
+
+**Four-batch catch-up to the tier-6 market-cap frontier**, same pattern
+as the tier-5 round:
+- Europe corporate actions (50-company gap): 8 new events found via
+  WebSearch - Infas Holding/Ipsos, MHP SE's Greek poultry acquisition,
+  Brødrene A&O Johansen/Elektroimportøren, SThree's rejected unsolicited
+  approach (offer period still open), Spire Healthcare's £1.03bn
+  take-private, Altri SGPS's AeoniQ/Greenalia stakes, Quercus TFI's
+  merger with Templeton Asset Management Poland, and Aspo Oyj's ESL
+  Shipping demerger. Coverage: 354 → 404.
+- US corporate actions (49-company gap): 11 new events - Crown Crafts
+  tender offer, Cable One's $1.3B Mega Broadband buy-in (likely
+  relevant context for its recent crash - added leverage), Mistras
+  Group/H.I.G. Capital, Clarke Inc/Ravelin Properties REIT, Friedman
+  Industries, two separate bank-merger targets (Morris State, Ottawa
+  Bancorp), Cross Country Healthcare/Knox Lane, plus three "other"
+  situations: Perma-Pipe's concluded strategic-alternatives review
+  (staying independent), America's Car-Mart's special committee amid
+  financial distress, and Cascades' packaging-segment exit. Coverage:
+  276 → 414 (of 413 mc-covered - one ticker drifted off mc-coverage
+  after a rank shuffle, expected/harmless).
+- Europe thesis research (52-company gap): ran in two parts after the
+  first agent hit a session-wide rate limit at 42/52 (confirmed via
+  the output file - no progress lost, resumed with the remaining 10).
+  Flagged governance-concentration items: Brd. Klee A/S (~90-97.6%
+  controlled by Fritz H. Schur entities), IMC S.A. (~76% held by
+  Agrovalley Ltd., plus acute Ukraine war/occupied-farmland risk in its
+  financials), Boreo Oyj (~70-71% Preato Capital), K. Kythreotis
+  Holdings (founder is both Chairman and CEO at ~53.6%). Result: every
+  company in Europe's top 404 (by current rank - the correct scope,
+  since mc_overrides membership drifts slightly from top-N-by-rank
+  after each merge) now has full qualitative research.
+- US thesis research (34-company gap): flagged several companies for
+  shortlist-hygiene review (not acted on - per policy, no manual
+  ranked-list edits): Cross Country Healthcare and Morris State
+  Bancshares are both mid/already-merger, America's Car-Mart has
+  going-concern warnings and ~1/3 of its dealerships closing. Agent
+  caught two aggregator data-quality artifacts and excluded them rather
+  than reporting as fact (a bogus "44% insider stake" at BJ's
+  Restaurants; a CEVA Inc. figure that actually traced to an
+  institutional 13G stake, not insider ownership).
+
+**US partial-thesis backfill (66 companies, user-initiated)**: the user
+asked why Tile Shop Holdings (OTCPK:TTSH) showed no visible qualitative
+data. Investigation found it wasn't actually empty - it had real
+`main_shareholders`/`insider_ownership` data from an early-project
+"shareholding research" phase that predated the full 6-field thesis
+concept, so `hasThesis` was (correctly) `true` and it never surfaced in
+later gap-detection, but the panel showed blank/placeholder values for
+business description, competitive position, red flags, and website,
+which reads as "no research" even though it technically wasn't empty.
+Found 66 companies total in this exact partial state. User confirmed:
+backfill all 66. Ran as two 33-company WebSearch batches, each scoped
+to ONLY the 4 missing fields - the existing shareholding data was left
+untouched. Result: zero partial-thesis companies remain; every company
+with any thesis data now has the complete 6-field set.
+
+Notable items surfaced across the backfill: Tile Shop Holdings itself
+has a documented 2013 related-party-supplier scandal (undisclosed
+CEO brother-in-law-controlled COGS supplier) that led to two
+shareholder-litigation settlements ($9.5M in 2017, $12M in 2020) -
+directly relevant context now that its thesis panel is complete.
+Several companies are already-closed or pending mergers (CBB Bancorp,
+Affinity Bancshares, HCB Financial already closed; PSB Holdings, M&F
+Bancorp, FONAR Corp pending - FONAR's going-private is led by the
+founder's son with active Delaware Chancery litigation over price
+fairness). Sylogist has a live board-control proxy fight; Franklin
+Covey faces fresh securities-fraud investigations after a guidance cut.
+
+**Lesson for future similar gaps**: a company having *some* data in a
+tracking field (like `thesis` or `hasThesis`) doesn't mean it has
+*complete* data - this project has now hit that pattern twice (the
+hasThesis flag/content mismatch in the tier-5 round, and this
+field-level partial-completeness gap in tier-6). When auditing
+coverage, check for the specific fields a complete record should have,
+not just whether the parent field is truthy.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1268,11 +1346,14 @@ to match" follow-up as every prior round, not yet requested for tier 6.
   see "Shareholding data" and "Coverage extension round" above.
 - **Continuing the market-cap / corporate-actions frontier**: both
   dashboards' coverage now extends to 404-of-1000 (Europe) / 413-of-517
-  (US/Canada) for market caps as of tier 6 (see above). Corporate-
-  actions screening and Europe's thesis research were fully caught up
-  through tier 5 (see the catch-up entries above) but now trail tier 6
-  by one round again - the natural next step is extending both to
-  match tier 6, then the next ~50-company market-cap tier, same batch
+  (US/Canada) for market caps, and corporate-actions screening plus
+  both markets' thesis research are fully caught up to that same tier-6
+  frontier as of the "Tier-6 corporate-actions/thesis catch-up" entry
+  above - all four dimensions are in sync again, and the US thesis
+  pool additionally got a one-time 66-company partial-data backfill
+  (every thesis-bearing company now has the complete 6-field set, not
+  just whichever fields happened to get researched first). The natural
+  next step is the next ~50-company market-cap tier, same batch
   pattern as every round so far (WebSearch for non-US-exchange market
   caps, Canadian TSX/TSXV names, and all corporate-actions/thesis
   screening; FMP for US-exchange market caps; never more than one
