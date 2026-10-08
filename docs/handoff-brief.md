@@ -1666,6 +1666,50 @@ verified (150 rows, zero JS console errors), committed, and pushed in two
 commits (US FMP batch, then Europe+stragglers WebSearch batch).
 
 Coverage after this round: Europe market-cap 504/1000, US/Canada market-cap
-511/512 (only OTCPK:OAKC remains uncovered). Corporate-actions and thesis
-research for both markets remain caught up only through tier 8 — the next
-natural step, once requested, is extending both to the tier-9 frontier.
+511/512 (only OTCPK:OAKC remains uncovered).
+
+## Tier-9 corporate-actions / thesis catch-up (2026-10-08)
+
+Same pattern as the tier-8 catch-up: four sequential WebSearch batches
+(never more than one running at once) to resync corporate-actions
+screening and thesis research with the tier-9 market-cap frontier.
+
+- **Europe corporate actions** (50 companies, the tier-9 mc-override set
+  minus already-screened): 7 findings, 43 clean. Notable: ATSE:EXAE
+  (Euronext's completed tender offer for ~74.25% of ATHEX), BVB:PRBU
+  (EGM-approved AeRO delisting), ENXTPA:BEN (Beneteau divesting US
+  power-boat brands), HLSE:TNOM (Talenom's completed spinoff of Easor
+  Plc), LSE:AIRE (active contested hostile takeover - Glenstone vs. AEW
+  UK REIT). LSE:AEP and WSE:SEL appear as acquirer, not target. Coverage:
+  454 -> 504.
+- **US corporate actions** (13 companies): 5 findings, 8 clean. Notable:
+  NYSE:CANG's 2025 change-of-control/business-pivot (sold its PRC auto-
+  finance business, bitcoin-mining pivot, Enduring Wealth Capital taking
+  control), NasdaqGS:RJET confirmed as the post-merger renamed Mesa Air
+  Group entity (closed Nov 2025), NasdaqCM:FSEA mid-acquisition
+  (Cambridge Financial Group, shareholder-approved but not yet confirmed
+  closed). Coverage: 499 -> 512 (now fully caught up).
+- **Europe thesis research** (43 companies, top-504-by-rank lacking a
+  `thesis` field): all 43 completed. Several companies had genuinely
+  limited official-source shareholder data (flagged inline rather than
+  papered over): CPSE:FYNBK, BME:TUB, SWX:ZUBN, SWX:BVZN, AIM:VTU,
+  AIM:MCON, OM:NMAN, XTRA:GXI (also has an active, unresolved activist-
+  investor campaign worth tracking), BIT:ORS. Anti-fabrication re-check
+  (full dataset + batch): zero reused shareholder-name/percentage
+  combinations.
+- **US thesis research** (13 companies, mc-covered lacking `hasThesis`):
+  all 13 completed. NYSE:CANG's control change (Enduring Wealth Capital,
+  ~49.71% voting power per Cango's own filings) and NasdaqGS:RJET's
+  notable red flag (former Republic CEO, now FAA Administrator, reportedly
+  missed his ethics-agreement stock-divestiture deadline - a live,
+  well-sourced conflict-of-interest story) are worth a second look.
+  Anti-fabrication re-check: two regex matches surfaced ("Inc. held
+  13.3%"/"7.4%" patterns) but both confirmed as false positives - distinct
+  holders, distinct companies, distinct source URLs. US/Canada thesis
+  coverage: 511/512 (fully caught up to the market-cap frontier).
+
+All four batches rebuilt both dashboards, Playwright-verified (150 rows,
+zero JS console errors), and were committed/pushed as four separate
+commits. Both markets' corporate-actions and thesis coverage now fully
+match their tier-9 market-cap frontier - the next natural step, once
+requested, is the tier-10 market-cap round for both markets.
