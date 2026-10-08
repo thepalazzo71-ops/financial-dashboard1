@@ -2443,5 +2443,40 @@
     "mc": 1135.27,
     "source": "FMP",
     "updatedAt": "2026-10-08T11:12:09Z"
+  },
+  "TSX:DRM": {
+    "mc": 592.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:MDI": {
+    "mc": 972.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:ARG": {
+    "mc": 879.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:BOS": {
+    "mc": 134.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:CSW.A": {
+    "mc": 292.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:FTG": {
+    "mc": 356.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "TSX:TCW": {
+    "mc": 928.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
   }
 }

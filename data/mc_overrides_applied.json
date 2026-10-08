@@ -2018,5 +2018,255 @@
     "mc": 761.3,
     "source": "WebSearch",
     "updatedAt": "2026-10-05T15:38:56Z"
+  },
+  "XTRA:OBS": {
+    "mc": 49.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "DB:LNSX": {
+    "mc": 296.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:ALCIS": {
+    "mc": 177.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BUSE:ANY": {
+    "mc": 353.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:ALDEL": {
+    "mc": 98.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "DUSE:RLV": {
+    "mc": 147.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "AIM:MBH": {
+    "mc": 89.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "OM:NIL B": {
+    "mc": 57.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "SEP:KOFOL": {
+    "mc": 505.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BUL:TBS": {
+    "mc": 84.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BVB:ALU": {
+    "mc": 18.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "XTRA:2HRA": {
+    "mc": 259.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "XTRA:GXI": {
+    "mc": 1113.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "OB:BOUV": {
+    "mc": 521.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "CPSE:KLEE B": {
+    "mc": 30.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:IDIP": {
+    "mc": 592.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:ALCAF": {
+    "mc": 133.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTBR:ROU": {
+    "mc": 181.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "HLSE:BOREO": {
+    "mc": 81.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "HLSE:WUF1V": {
+    "mc": 32.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BIT:PQ": {
+    "mc": 134.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "XTRA:O4B": {
+    "mc": 342.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:SNK": {
+    "mc": 156.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BIT:GROW": {
+    "mc": 33.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:LSI": {
+    "mc": 51.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BIT:BEC": {
+    "mc": 135.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "MTSE:HSB": {
+    "mc": 601.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ATSE:PETRO": {
+    "mc": 66.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "CPSE:CEMAT": {
+    "mc": 32.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "DB:ALXA": {
+    "mc": 53.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "CPSE:SKJE": {
+    "mc": 573.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "HLSE:ALBAV": {
+    "mc": 927.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ATSE:TELL": {
+    "mc": 343.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:DEL": {
+    "mc": 18.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:SNX": {
+    "mc": 17.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "XTRA:BEZ": {
+    "mc": 60.8,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:ACG": {
+    "mc": 63.5,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:AST": {
+    "mc": 229.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "WSE:IMC": {
+    "mc": 283.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "CPSE:SOLAR B": {
+    "mc": 227.7,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "OM:BORG": {
+    "mc": 164.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:ALNSC": {
+    "mc": 36.0,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTBR:CAMB": {
+    "mc": 362.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "XTRA:HAW": {
+    "mc": 188.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:DPAM": {
+    "mc": 103.2,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BVB:TBK": {
+    "mc": 9.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "BME:TUB": {
+    "mc": 453.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "CSE:PND": {
+    "mc": 110.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "AIM:EAH": {
+    "mc": 89.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
+  },
+  "ENXTPA:SCHP": {
+    "mc": 744.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:18:10Z"
   }
 }
