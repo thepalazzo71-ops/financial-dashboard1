@@ -1,685 +1,742 @@
 {
-  "tender_offers": [
-    {
-      "ticker": "ENXTPA:ALLUX",
-      "company": "Installux S.A.",
-      "date": "2026-05-28",
-      "counterparty": "FCCE (Canty family holding)",
-      "terms": "EUR500/share, 74% premium to 60-day VWAP, values company at EUR140.0M",
-      "note": "Simplified tender offer for minority shares from the controlling family holding; stock now trades near the offer price awaiting resolution.",
-      "source_url": "https://www.boursier.com/actions/actualites/news/installux-pre-offre-a-500-euros-986558.html"
-    },
-    {
-      "ticker": "BIT:BST",
-      "company": "Banca Sistema S.p.A.",
-      "date": "2026-01-16",
-      "counterparty": "Banca CF+ S.p.A.",
-      "terms": "Mandatory + voluntary public tender and exchange offer; consideration in Kruso Kapital (KK) shares, 23 KK shares per Banca Sistema share tendered",
-      "note": "Banca CF+ launched a public tender and exchange offer for all Banca Sistema shares (offer documents approved by Consob 14 Jan and 30 Apr 2026); the offer succeeded, CEO Gianluca Garbi resigned 13 March 2026, and on 24 June 2026 the boards approved a merger plan to absorb Banca CF+ into Banca Sistema, completing the integration.",
-      "source_url": "https://app.bigdata.com/documents/2A7EDD5DC5D5BC6468BCE9CC8F7F5541"
-    },
-    {
-      "ticker": "ENXTPA:ALPOU",
-      "company": "Poulaillon SA",
-      "date": "2026-06-22",
-      "counterparty": "SAS Eug\u00e9nie (Poulaillon family holding)",
-      "terms": "EUR9.00/share simplified tender offer (OPAS) for the 16.5% of capital (843,402 shares) not already held",
-      "note": "The Poulaillon family's holding company SAS Eug\u00e9nie filed a simplified public tender offer (filed 23 April 2026, offer period 22 June-3 July 2026) at EUR9 per share to take full control of the bakery/pastry group, similar in structure to the Installux case.",
-      "source_url": "https://app.bigdata.com/documents/C0C41E17B6B79E5AC56CD0068E38B985"
-    },
-    {
-      "ticker": "LSE:GAMA",
-      "company": "Gamma Communications plc",
-      "date": "2026-09-01",
-      "counterparty": "Epiris GP III (via Bradbury Bidco Ltd)",
-      "terms": "GBP11.20/share cash, GBP1.02bn equity value / GBP1.08bn enterprise value, 53% premium to 7 Apr 2026 close",
-      "note": "Gamma's board unanimously recommended a GBP1.02bn all-cash take-private offer from private equity firm Epiris via a scheme of arrangement; a rival, higher offer from Waterland Private Equity was reported to be forthcoming as of 7 September 2026, and closing is expected H1 2027.",
-      "source_url": "https://app.bigdata.com/documents/0219FCEA1F6254510DB27BD4EE755567"
-    },
-    {
-      "ticker": "DB:TSS",
-      "company": "InnoTec TSS AG",
-      "date": "2026-06-25",
-      "counterparty": "GLI Beteiligungsgesellschaft mbH / Grondbach GmbH (bidding consortium)",
-      "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German Wp\u00dcG",
-      "note": "A bidding consortium (GLI Beteiligungsgesellschaft and Grondbach GmbH, acting with further parties including Dr. Gerson Link and Reinhart Zech of Hymmen) acquired control of InnoTec TSS AG on 25 June 2026, triggering a mandatory takeover offer for all remaining shares.",
-      "source_url": "https://app.bigdata.com/documents/8A6E7E6020FAFD3B057BCE7F335DD606"
-    },
-    {
-      "ticker": "BST:FEW0",
-      "company": "Funkwerk AG",
-      "date": "2026-03-20",
-      "counterparty": "H\u00f6rmann Funkwerk Holding GmbH (majority shareholder)",
-      "terms": "Public share buy-back offer to remaining shareholders at EUR 32.80 per share, for a stake of just under 9.5% of share capital; offer period 20 March 2026 to 17 April 2026. Following the offer, Funkwerk's listing on the Munich Stock Exchange free market (Freiverkehr) was withdrawn, with trading ceasing at the end of 31 March 2026.",
-      "note": "Effectively a going-private/delisting transaction by the majority shareholder; stock is being wound down as a publicly-traded security.",
-      "source_url": "https://funkwerk.com/en/latest-news/uebernahmeangebot-der-hoermann-funkwerk-holding-gmbh-an-die-aktionaere-der-funkwerk-ag/"
-    },
-    {
-      "ticker": "WSE:WPL",
-      "company": "Wirtualna Polska Holding S.A.",
-      "date": "2026-05-04",
-      "counterparty": "Company founders (controlling shareholders), acting jointly",
-      "terms": "Wirtualna Polska Holding and its three founders announced a voluntary tender offer (wezwanie) for all outstanding shares of the company at PLN 59 per share; acceptance period 4 May to 2 June. The agreement explicitly does not provide for delisting the company.",
-      "note": "Large-scale voluntary tender offer for all shares by controlling shareholders; distorts market-price-based valuation versus intrinsic fundamentals even though delisting is not planned.",
-      "source_url": "https://www.parkiet.com/technologie/art44252421-jest-wezwanie-na-akcje-wph-dwa-scenariusze"
-    },
-    {
-      "ticker": "ENXTBR:EXM",
-      "company": "Exmar NV",
-      "date": "2025-02-13",
-      "counterparty": "Saverex NV (Nicolas Saverys, controlling shareholder vehicle)",
-      "terms": "Saverex NV launched a voluntary and conditional public takeover offer for all outstanding shares of Exmar not already owned, at EUR 11.50/share. Initial acceptance period 13 Feb-13 Mar 2025; reopened acceptance period ended 16 Apr 2025. Saverex waived the 95% threshold; final result gave Saverex 91.06% (94.36% with affiliated parties) of shares. Saverex intends to launch a simplified squeeze-out bid if/when it crosses 95%/90% acquired-in-bid thresholds.",
-      "note": "Classic go-private tender offer with squeeze-out plans pending; share price is now anchored to deal terms (EUR 11.50) rather than standalone fundamentals.",
-      "source_url": "https://www.hellenicshippingnews.com/saverex-nv-launches-its-voluntary-and-conditional-public-takeover-offer-for-all-outstanding-shares-in-exmar-nv/"
-    },
-    {
-      "ticker": "NasdaqGS:CRTO",
-      "company": "Criteo S.A.",
-      "date": "2026-07-07",
-      "counterparty": "Vista Equity Partners and Quinti Capital",
-      "terms": "Private equity consortium bid at more than 50% premium to recent share price, valuing Criteo at approximately $3.7 billion on an equity basis; board had not yet responded as of the report",
-      "note": "Criteo had also just re-domiciled from France to Luxembourg (shareholder vote Feb 27, 2026) explicitly to enable a merger into a US corporation, which appears to have been preparatory to this takeover interest",
-      "source_url": "https://www.mediapost.com/publications/article/416328/criteo-attracts-takeover-bids-from-equity-investm.html"
-    },
-    {
-      "ticker": "XTRA:VIH1",
-      "company": "VIB Verm\u00f6gen AG",
-      "date": "2026-08-27",
-      "counterparty": "DIC Real Estate Investments GmbH & Co. KGaA (subsidiary of Branicks Group AG)",
-      "terms": "Control and profit transfer agreement approved at VIB's EGM on 2026-02-12, entered in the commercial register and effective 2026-08-27. DIC REI KGaA grants VIB's outside (minority) shareholders annual compensation payments and an offer to acquire their shares in exchange for newly issued Branicks shares. Acceptance deadline for the compensation/exchange offer expires 2026-10-27.",
-      "note": "Effectively a controlling-shareholder minority buyout/compensation mechanism (German domination and profit transfer agreement) following Branicks Group's prior acquisition of VIB's institutional business (~EUR 360m) in 2025.",
-      "source_url": "https://vib-ag.de/en/2026/08/vib-vermogen-ag-with-successful-annual-general-meeting-and-effective-control-and-profit-transfer-agreement/"
-    },
-    {
-      "ticker": "ZGSE:KRAS",
-      "company": "Kras d.d.",
-      "date": "2026-02-12",
-      "counterparty": "Pivac Holding d.o.o. / Kappa Star Limited (Cyprus)",
-      "terms": "Takeover bid at EUR 130 per ordinary share for the remaining 188,915 shares (~12.61%) not already owned by Pivac Holding and Kappa Star, who together control 87.39% (plus ~3.7% treasury). Approved by Croatian regulator Hanfa.",
-      "note": "Controlling-shareholder consolidation move toward full ownership of the Croatian confectionery producer Kra\u0161.",
-      "source_url": "https://seenews.com/news/pivac-makes-takeover-bid-for-12-61-percent-stake-in-kras-1297183"
-    },
-    {
-      "ticker": "BVB:TBK",
-      "company": "Transilvania Broker de Asigurare S.A.",
-      "date": "2025-11-20",
-      "counterparty": "Partners Financial Services (Czech group)",
-      "terms": "Voluntary/mandatory takeover bid for ~66% of share capital at 15 lei/share; acceptance period 20 Nov - 4 Dec 2025 via intermediary SSIF Goldring SA",
-      "note": "Partners Financial Services (Czech financial-services group) launched a takeover offer for Transilvania Broker; outcome/final stake not confirmed in search results.",
-      "source_url": "https://www.zf.ro/burse-fonduri-mutuale/bursa-cehii-de-la-partners-financial-services-lanseaza-o-oferta-de-22950587"
-    },
-    {
-      "ticker": "ENXTBR:ROU",
-      "company": "Roularta Media Group NV",
-      "date": "2025-06-19",
-      "counterparty": "Koinon NV (controlling shareholder)",
-      "terms": "Voluntary conditional cash bid at EUR 15.50/share for shares not already held by Koinon/affiliates; initial acceptance brought Koinon to 91.17%; bid reopened 23 Jun - 15 Jul 2025 waiving the 95% threshold condition",
-      "note": "Controlling shareholder Koinon NV (already ~72.3%) tendered for the remaining free float; a step toward a possible future squeeze-out/delisting.",
-      "source_url": "https://www.kbc.be/retail/en/products/investing/shares/aandelentransacties/roularta.html"
-    },
-    {
-      "ticker": "OM:NIL B",
-      "company": "Nil\u00f6rngruppen AB",
-      "date": "2026-05-04",
-      "counterparty": "Trimco Group (UK) Limited, a Brookfield portfolio company",
-      "terms": "Recommended public cash offer of SEK 77/share for all outstanding A and B shares, valuing the company at ~SEK 878m; AB Traction (26.3% of shares/58.1% of votes) and other holders (~8%) gave irrevocable undertakings to accept; acceptance period expected ~19 Jun - 10 Jul 2026, completion conditional on >90% acceptance",
-      "note": "Board unanimously recommended the offer; outcome of the acceptance period not confirmed in search results.",
-      "source_url": "https://www.placera.se/telegram/nilorngruppen-brookfield-s-portfolio-company-offers-sek878-million-to-buy-nilorngruppen-20260504"
-    },
-    {
-      "ticker": "XTRA:2HRA",
-      "company": "H&R GmbH & Co. KGaA",
-      "date": "2025-05-16",
-      "counterparty": "H&R Holding GmbH (controlling shareholder vehicle of Nils Hansen)",
-      "terms": "Voluntary public tender offer at EUR 5.00/share (31.23% premium to unaffected price) aiming to raise Hansen's stake from 61.45% toward 85%+; minimum acceptance threshold waived 29 Jul 2025; acceptance period extended to 25 Aug 2025",
-      "note": "Final result: offer accepted for ~7.92% of shares plus ~2.10% bought on-market, bringing bidder's attributed stake to 77.54%; bidder stated intent to examine a delisting offer or squeeze-out afterward.",
-      "source_url": "https://www.lw.com/en/news/2025/05/latham-watkins-advises-hr-holding-gmbh-voluntary-public-tender-offer-all-outstanding-shares-hr-kgaa"
-    }
-  ],
-  "mergers_acquisitions": [
-    {
-      "ticker": "XTRA:ADN1",
-      "company": "adesso SE",
-      "date": "2026-08-12",
-      "counterparty": "omni:us",
-      "role": "acquirer",
-      "terms": "Not disclosed",
-      "note": "adesso SE announced the acquisition of AI-powered insurance claims-processing specialist omni:us to strengthen its in|sure Ecosphere insurance platform.",
-      "source_url": "https://app.bigdata.com/documents/EA484500AC83B49C7D91C870D1E5A516"
-    },
-    {
-      "ticker": "AIM:DOTD",
-      "company": "dotdigital Group Plc",
-      "date": "2026-03-04",
-      "counterparty": "Alia Software Inc.",
-      "role": "acquirer",
-      "terms": "USD30m initial cash consideration, up to USD60m total (earnout-dependent)",
-      "note": "dotdigital agreed to acquire Alia Software, an AI-powered Shopify pop-up/list-growth tool with ~USD8m forward ARR, funded from existing cash.",
-      "source_url": "https://app.bigdata.com/documents/EABE39A871ED4D51C121132DD5DB5CE7"
-    },
-    {
-      "ticker": "OB:MULTI",
-      "company": "Multiconsult ASA",
-      "date": "2026-09-07",
-      "counterparty": "Rejlers AB (Sweden)",
-      "role": "merger of equals (target/merging party)",
-      "terms": "0.9725 Rejlers class B shares per Multiconsult share; 54% Multiconsult / 46% Rejlers ownership of combined company",
-      "note": "Multiconsult and Rejlers announced a cross-border statutory merger to create a pan-Nordic multidisciplinary consultancy group, with boards adopting a joint merger plan on 7 September 2026.",
-      "source_url": "https://app.bigdata.com/documents/1B63087EEA4BDB294B102110CBAD68E0"
-    },
-    {
-      "ticker": "OM:DEDI",
-      "company": "Dedicare AB",
-      "date": "2026-07-15",
-      "counterparty": "Hyldgaard & Larsen and Sustina ApS (Denmark)",
-      "role": "acquirer",
-      "terms": "Cash plus non-cash share issue of SEK 24.3m (429,610 series B shares at SEK 56.63)",
-      "note": "Dedicare completed the acquisition of two Danish social-sector staffing businesses, Hyldgaard & Larsen and Sustina, financed with cash and newly issued shares.",
-      "source_url": "https://app.bigdata.com/documents/DEC7984B97F47D57A93A2907A41490C6"
-    },
-    {
-      "ticker": "HLSE:REG1V",
-      "company": "Revenio Group Oyj",
-      "date": "2026-05-28",
-      "counterparty": "LT International SAS (Visionix International Group)",
-      "role": "acquirer",
-      "terms": "Funded via EUR80m bridge-to-equity facility, later refinanced by a EUR80m rights offering",
-      "note": "Revenio completed a transformative acquisition of Visionix, more than doubling pro forma net sales (to EUR252.8m) and expanding its addressable market ~2.5x in the eye-care sector.",
-      "source_url": "https://app.bigdata.com/documents/E403038B3843DAD4A8DADE2CCFA0B119"
-    },
-    {
-      "ticker": "ENXTPA:LNA",
-      "company": "LNA Sant\u00e9 SA",
-      "date": "2026-07-02",
-      "counterparty": "Clariane group (5 nursing homes) plus a separate operating-license acquisition",
-      "role": "acquirer",
-      "terms": "539 beds acquired; ~EUR25m annualized revenue add (~7-8% of French nursing-home revenue)",
-      "note": "LNA Sant\u00e9 acquired five nursing homes (539 beds) from Clariane plus an operating license for a further 77-bed home, described by analysts as one of its largest deals since 2020.",
-      "source_url": "https://app.bigdata.com/documents/4D254BBCDEDF5AE3BA887C8EA27946F5"
-    },
-    {
-      "ticker": "ENXTPA:JBOG",
-      "company": "Jacques Bogart S.A.",
-      "date": "2026-04-24",
-      "counterparty": "Stadtparf\u00fcmerie Pieper (Germany) / Marionnaud Group",
-      "role": "target/subject of merger talks",
-      "terms": "Not disclosed",
-      "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparf\u00fcmerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
-      "source_url": "https://app.bigdata.com/documents/9A3AD1AA300C693D413737F6E3C1BA26"
-    },
-    {
-      "ticker": "WSE:MUR",
-      "company": "Murapol S.A.",
-      "date": "2026-03-26",
-      "counterparty": "Hampont (controlled by Maciej Dyjas and Nebil Senman)",
-      "role": "target",
-      "terms": "Hampont, an existing Murapol shareholder (16.9% at end of 2025, bought additional shares from exiting Ares fund), filed with Polish competition authority UOKiK on 26 March 2026 for approval to acquire exclusive control of Murapol. By early June 2026, the AEREF V PL Investments (Ares) fund sold its entire stake and Hampont solidified its position as the developer's largest/controlling shareholder. No mandatory tender offer was triggered as 'exclusive control' under concentration rules does not require majority ownership.",
-      "note": "Change of controlling shareholder at a WSE-listed developer, with prior large institutional holder (Ares) fully exiting.",
-      "source_url": "https://www.parkiet.com/budownictwo/art44052371-wiemy-jakie-plany-ma-hampont-wobec-murapolu-po-co-wniosek-do-uokik-u"
-    },
-    {
-      "ticker": "XTRA:CSH",
-      "company": "CENIT Aktiengesellschaft",
-      "date": "2026-07-07",
-      "counterparty": "ISR Information Products AG",
-      "role": "acquirer",
-      "terms": "CENIT increased its stake in subsidiary ISR from 74.9% to 100%, financing the buyout via a rights capital increase of approx. EUR 10.9 million (subscription period Aug 4-17, 2026); principal shareholder PRIMEPULSE SE took up unsubscribed shares.",
-      "note": "ISR is CENIT's most profitable subsidiary (EUR 3.5m net profit 2025); increases CENIT's earnings concentration in ISR and changes share count via capital increase.",
-      "source_url": "https://www.finanznachrichten.de/nachrichten-2026-07/69171461-cenit-finanziert-mit-kapitalerhoehung-die-volle-uebernahme-von-isr-424.htm"
-    },
-    {
-      "ticker": "XTRA:UUU",
-      "company": "3U Holding AG",
-      "date": "2025-02-03",
-      "counterparty": "EMPUR Gruppe (EMPUR Produktionsgesellschaft mbH, GKS GmbH & Co. KG, EM-Plan GmbH)",
-      "role": "acquirer",
-      "terms": "3U Holding acquired the EMPUR Group, a German manufacturer of water-based underfloor heating systems, effective January 1, 2025, as part of its 'MISSION 2026+' strategy to expand its SHK (heating/plumbing/air-conditioning) segment.",
-      "note": "Bolt-on acquisition materially expanding the SHK segment; distorts trailing per-share metrics for a small-cap holding company.",
-      "source_url": "https://www.onvista.de/news/2025/02-03-eqs-news-3u-holding-ag-erwirbt-empur-gruppe-und-baut-position-im-shk-markt-aus-0-37-26354466"
-    },
-    {
-      "ticker": "AIM:TRCS",
-      "company": "Tracsis plc",
-      "date": "2026-01-01",
-      "counterparty": "Mistral Data Limited",
-      "role": "acquirer",
-      "terms": "Tracsis acquired Mistral Data Limited for \u00a348 million, enhancing recurring revenue and margins, completed in the year ended 31 July 2026.",
-      "note": "Significant acquisition relative to company size; also see divestiture entry (Events Transport business sale) for the same company under 'other'.",
-      "source_url": "https://www.investegate.co.uk/announcement/rns/tracsis--trcs/trading-update-and-completion-of-acquisition/9735245"
-    },
-    {
-      "ticker": "LSE:TPT",
-      "company": "Topps Tiles Plc",
-      "date": "2024-08-19",
-      "counterparty": "CTD Tiles (Tildist Realisations Limited assets) and Fired Earth",
-      "role": "acquirer",
-      "terms": "Topps Tiles acquired certain assets of CTD Tiles (30 retail stores, brands, IP) completed 19 August 2024, with CMA divestiture undertakings closing 22 January 2026; separately acquired Fired Earth on 26 November 2025. CTD deal contributed to an ~18% sales increase and a record turnover year.",
-      "note": "Large bolt-on acquisitions materially changing revenue base and store footprint versus historical organic trend.",
-      "source_url": "https://www.kbbreview.com/78126/news/topps-tiles-enjoys-record-year-after-ctd-takeover/"
-    },
-    {
-      "ticker": "WSE:WPL",
-      "company": "Wirtualna Polska Holding S.A.",
-      "date": "2025-01-01",
-      "counterparty": "Invia Group SE",
-      "role": "acquirer",
-      "terms": "Wirtualna Polska purchased the pan-European online travel group Invia Group SE during 2025.",
-      "note": "Large acquisition expanding WPL's travel/media footprint; see also the tender offer entry for the same company under 'tender_offers'.",
-      "source_url": "https://www.money.pl/wiadomosci/wirtualna-polska.html"
-    },
-    {
-      "ticker": "ENXTPA:ALBFR",
-      "company": "Sidetrade SA",
-      "date": "2025-10-27",
-      "counterparty": "ezyCollect (Australia) and SHS Viveon AG (Germany)",
-      "role": "acquirer",
-      "terms": "Sidetrade completed acquisition of 100% of ezyCollect (Australian order-to-cash SME software) on 27 Oct 2025, valuing it at EUR 37.3m (EUR 34.7m cash + EUR 2.6m shares, plus earn-out up to EUR 5.6m). Separately, after acquiring 44.30% of German credit-risk-management firm SHS Viveon in April 2026, Sidetrade launched a friendly public tender offer for the rest, open 7 May-29 July 2026, taking control of the company.",
-      "note": "Two material acquisitions within the past 12 months, including a cross-border public tender offer in Germany; expands Sidetrade's footprint into APAC and DACH credit-risk management.",
-      "source_url": "https://www.globenewswire.com/news-release/2025/10/27/3174852/0/en/Sidetrade-Completes-Acquisition-of-ezyCollect.html"
-    },
-    {
-      "ticker": "BUL:BACB",
-      "company": "Bulgarian-American Credit Bank AD",
-      "date": "2026-01-12",
-      "counterparty": "Tokuda Bank EAD",
-      "role": "acquirer",
-      "terms": "BACB acquired 100% of Tokuda Bank EAD's shares (6,800,000 shares), financed entirely with own funds; shareholders of both banks approved the merger of Tokuda Bank into BACB in September 2026, with the legal merger planned for November 2026",
-      "note": "Major consolidation in Bulgarian banking sector; will materially change BACB's balance sheet and valuation metrics",
-      "source_url": "https://seenews.com/news/bulgarias-bacb-shareholders-approve-tokuda-bank-merger-1301583"
-    },
-    {
-      "ticker": "AIM:AMS",
-      "company": "Advanced Medical Solutions Group plc",
-      "date": "2026-06-25",
-      "counterparty": "H.B. Fuller Co.",
-      "role": "target",
-      "terms": "All-cash recommended takeover at 285 pence per share, valuing AMS at approximately \u00a3659 million (enterprise value ~\u00a3715 million including debt); expected to close by end of 2026",
-      "note": "Followed a prolonged period of private-equity interest in AMS (TA Associates walked away in May 2026, Bridgepoint also reported as suitor)",
-      "source_url": "https://uk.finance.yahoo.com/news/advanced-medical-solutions-agrees-659m-083349011.html"
-    },
-    {
-      "ticker": "ZGSE:HPB",
-      "company": "Hrvatska postanska banka d.d.",
-      "date": "2026-03-04",
-      "counterparty": "Croatia banka",
-      "role": "acquirer",
-      "terms": "HPB signed a contract to acquire 100% of Croatia banka's shares for EUR 15 million; competition authority (AZTN) approval received July 2026",
-      "note": "Third major acquisition by HPB in recent years (after Jadranska banka 2019 and Sberbank Hrvatska 2022, both since merged into HPB)",
-      "source_url": "https://tockanai.hr/biznis/financije/aztn-odobrio-hpb-u-preuzimanje-croatia-banke-za-15-milijuna-eura-100360/"
-    },
-    {
-      "ticker": "LSE:ALFA",
-      "company": "Alfa Financial Software Holdings PLC",
-      "date": "2026-04-09",
-      "counterparty": "Thomas H. Lee Partners",
-      "role": "target",
-      "terms": "Confirmed preliminary takeover talks with US private equity firm Thomas H Lee Partners; follows an earlier (2023) approach from EQT at 208 pence/share (19% premium)",
-      "note": "Repeated private-equity interest over multiple years; talks were preliminary/in-progress as of the search date",
-      "source_url": "https://www.sharecast.com/news/news-and-announcements/alfa-financial-in-takeover-talks-with-us-pe-firm-thomas-h-lee-partners--14808409.html"
-    },
-    {
-      "ticker": "LSE:IPF",
-      "company": "International Personal Finance plc",
-      "date": "2026-08-04",
-      "counterparty": "BasePoint Capital (via IPF Parent Holdings Limited)",
-      "role": "target",
-      "terms": "Recommended cash acquisition valued at approximately \u00a3543 million; scheme became effective 4 August 2026 following Court sanction on 31 July 2026; shareholders also received a 15 pence/share special dividend tied to completion",
-      "note": "Deal has completed / is essentially final",
-      "source_url": "https://uk.finance.yahoo.com/news/international-personal-finance-agrees-543m-091130175.html"
-    },
-    {
-      "ticker": "ENXTPA:BASS",
-      "company": "BASSAC Societe anonyme",
-      "date": "2026-02-24",
-      "counterparty": "Feu Vert Group (from Alpha Private Equity)",
-      "role": "acquirer",
-      "terms": "BASSAC entered exclusive negotiations and finalized acquisition of the Feu Vert automotive-maintenance retail group in Q1 2026, subject to regulatory authorizations",
-      "note": "Significant diversification acquisition for BASSAC (previously LNC), a French real-estate developer, into automotive retail",
-      "source_url": "https://www.feuvert-group.com/wp-content/uploads/2026/02/CP_ACQUISITION-BASSAC-FEU-VERT_24022026.pdf"
-    },
-    {
-      "ticker": "AIM:ELCO",
-      "company": "Eleco plc",
-      "date": "2026-09-10",
-      "counterparty": "Accel-KKR (via Avocet Bidco Ltd)",
-      "role": "target",
-      "terms": "All-cash recommended offer of 235p per share, valuing Eleco's share capital at ~\u00a3207.6 million (enterprise value ~\u00a3192.4 million), a 74.7%-89.9% premium over recent trading prices. Board unanimously recommended; ~45% shareholder support at announcement. Expected completion Q1 2027.",
-      "note": "Construction/built-environment software company being taken private.",
-      "source_url": "https://www.ajbell.co.uk/news/articles/eleco-accepts-gbp200-million-takeover-offer-accel-kkr"
-    },
-    {
-      "ticker": "OM:GOTL A",
-      "company": "Rederiaktiebolaget Gotland",
-      "date": "2026-04-09",
-      "counterparty": "Nordic Ferry Infrastructure Holding AS (Norway) / EQT Fund Management S.\u00e0 r.l.",
-      "role": "acquirer",
-      "terms": "European Commission cleared the acquisition of joint control of Nordic Ferry Infrastructure Holding AS by Gotlandsbolaget and EQT. Nordic Ferry Infrastructure operates passenger and freight ferry routes in Denmark, Norway and Sweden.",
-      "note": "Joint-venture style acquisition expanding Gotlandsbolaget's ferry operations beyond its core Gotland-mainland Sweden routes.",
-      "source_url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-clears-acquisition-nordic-ferry-infrastructure-gotlandsbolaget-and-eqt-2026-07-08_fr"
-    },
-    {
-      "ticker": "DB:IFS",
-      "company": "Infas Holding AG",
-      "date": "2025-01-01",
-      "counterparty": "Ipsos SA",
-      "role": "target",
-      "terms": "Voluntary public takeover offer at EUR 6.80/share (~EUR 61.2m valuation, ~61% premium); accepted for ~83.72% of shares, completed early January 2025 after German cartel clearance (Dec 20, 2024), Ipsos ended up with 96.6% of shares.",
-      "note": "Ipsos acquired infas to become a major player in German market/social research (now operates as Ipsos infas).",
-      "source_url": "https://www.ipsos.com/en/ipsos-launches-voluntary-public-takeover-offer-infas-acquire-industry-leader-german-public-sector"
-    },
-    {
-      "ticker": "LSE:MHPC",
-      "company": "MHP SE",
-      "date": "2026-05-30",
-      "counterparty": "Th. Nitsiakos AVEE",
-      "role": "acquirer",
-      "terms": "MHP to acquire 70% of Greek poultry producer Nitsiakos (FY2025 revenue ~EUR 540m) in three sequential tranches; remaining 30% subject to a put option exercisable 2030-2035; first tranche expected to close Q1 2027 subject to regulatory clearance; price tied to Nitsiakos EBITDA.",
-      "note": "International expansion deal for MHP; no change of control of MHP itself.",
-      "source_url": "https://www.thepoultrysite.com/news/2026/06/mhp-to-acquire-greek-producer-nitsiakos"
-    },
-    {
-      "ticker": "CPSE:AOJ B",
-      "company": "Br\u00f8drene A & O Johansen A/S",
-      "date": "2026-08-26",
-      "counterparty": "Elektroimport\u00f8ren AS",
-      "role": "acquirer",
-      "terms": "Recommended voluntary cash offer of NOK 22/share for Elektroimport\u00f8ren AS (Norway/Sweden electrical products wholesaler/retailer), implying ~NOK 1.1bn transaction value; acceptances reached ~92.5%, offer completed August 26, 2026; compulsory acquisition of remaining shares to follow.",
-      "note": "AOJ also closed a separate acquisition of JMV Cables A/S in July 2026 and bought the VVS-eksperten.dk e-commerce domain effective Jan 1 2026 - smaller bolt-on deals.",
-      "source_url": "https://www.globenewswire.com/news-release/2026/07/03/3321648/0/en/Br%C3%B8drene-A-O-Johansen-A-S-announces-a-recommended-voluntary-cash-offer-of-NOK-22-per-share-to-the-shareholders-of-Elektroimport%C3%B8ren-AS-and-publishes-offer-document-commencement-of-.html"
-    },
-    {
-      "ticker": "LSE:STEM",
-      "company": "SThree plc",
-      "date": "2026-09-09",
-      "counterparty": "Circle8 Group Inc.",
-      "role": "target",
-      "terms": "Unsolicited, preliminary, highly conditional all-cash takeover approach for SThree's entire issued share capital, disclosed under the UK Takeover Code on Sept 9, 2026 (offer period commenced); SThree's board rejected the approach on Sept 11, 2026. Circle8 had until Oct 7, 2026 (PUSU deadline) to announce a firm intention or walk away.",
-      "note": "Status as of search: rejected by SThree board but formal offer period still open at time of last report; outcome (firm offer vs. walk-away) not yet confirmed in sources found.",
-      "source_url": "https://www.investing.com/news/company-news/sthree-receives-preliminary-takeover-approach-from-circle8-93CH-4893974"
-    },
-    {
-      "ticker": "LSE:SPI",
-      "company": "Spire Healthcare Group plc",
-      "date": "2026-09-05",
-      "counterparty": "Tulip UK Bidco (consortium of Toscafund Asset Management, THCP Advisory and Ares Management)",
-      "role": "target",
-      "terms": "Recommended cash takeover at 250p/share, valuing Spire at ~GBP 1.03bn (~66% premium to the May 13, 2026 pre-approach closing price); board unanimously recommended the offer after a strategic review involving >60 potential buyers over ~8 months; to be implemented via a court-sanctioned scheme of arrangement, expected to complete Q4 2026 or Q1 2027 subject to approvals. CEO Justin Ash to retire; Sir David Sloman interim CEO; Paolo Pieri to become chair post-completion.",
-      "note": "Take-private of the UK's largest private hospital operator.",
-      "source_url": "https://uk.finance.yahoo.com/news/spire-healthcare-agrees-taken-private-073530740.html"
-    },
-    {
-      "ticker": "ENXTLS:ALTR",
-      "company": "Altri, SGPS, S.A.",
-      "date": "2025-07-21",
-      "counterparty": "AeoniQ (and Greenalia Forest / Greenalia Logistics)",
-      "role": "acquirer",
-      "terms": "Altri acquired a controlling 58.7% stake in AeoniQ (sustainable textiles/cellulosic fibre venture, completed July 21, 2025) to support an industrial unit at its Caima facilities; separately completed acquisition of Greenalia Forest and Greenalia Logistics on May 14, 2025.",
-      "note": "Bolt-on diversification deals by Altri (acquirer), not a change-of-control event for Altri itself.",
-      "source_url": "https://finance.yahoo.com/news/altri-sgps-acquires-controlling-stake-113404898.html"
-    },
-    {
-      "ticker": "WSE:QRS",
-      "company": "Quercus TFI S.A.",
-      "date": "2025-11-28",
-      "counterparty": "Templeton Asset Management (Poland) TFI S.A. / Franklin Templeton",
-      "role": "acquirer",
-      "terms": "Quercus TFI merged with Templeton Asset Management (Poland) TFI S.A. (merger registered Nov 28, 2025), taking over management of three Franklin Templeton FIO sub-funds; as part of the deal Franklin Templeton received Quercus shares in exchange plus subscribed new shares at PLN 12/share, ending up with ~7.1-7.8% of Quercus TFI's enlarged capital alongside a strategic cooperation agreement.",
-      "note": "Consolidation in the Polish TFI (fund management) sector; Quercus is the surviving/acquiring entity.",
-      "source_url": "https://quercustfi.pl/aktualnosc/wiadomosci/fuzja-dwoch-tfi-na-polskim-rynku-stala-sie-faktem-quercus-tfi-sa-polaczylo"
-    },
-    {
-      "ticker": "MTSE:HSB",
-      "company": "HSBC Bank Malta p.l.c.",
-      "date": "2025-09-01",
-      "counterparty": "CrediaBank S.A. (Greece, formerly Attica Bank)",
-      "role": "target",
-      "terms": "HSBC Continental Europe to sell its 70.03% stake at EUR 0.793/share (~EUR 200m total); CrediaBank to follow with a mandatory tender offer for remaining minority shares at EUR 1.44/share; subject to MFSA/ECB approval, completion expected late 2026/early 2027",
-      "note": "Change-of-control sale of HSBC's majority stake in its Malta subsidiary, with a mandatory tender offer to follow for minority shareholders.",
-      "source_url": "https://www.cliffordchance.com/news/news/2025/10/clifford-chance-advises-hsbc-on-the-sale-of-its-shareholding-in-hsbc-malta-plc.html"
-    },
-    {
-      "ticker": "ENXTPA:SCHP",
-      "company": "S\u00e9ch\u00e9 Environnement SA",
-      "date": "2025-06-05",
-      "counterparty": "Groupe Flamme (France, hazardous/industrial waste); also Hidronor (Chile) and La Filippa (Italy)",
-      "role": "acquirer",
-      "terms": "Unilateral purchase offer signed 5 June 2025 to acquire all shares of Groupe Flamme (~EUR 100m revenue, ~EUR 20m EBITDA, ~560 employees), described as last independent French hazardous-waste operator; Hidronor and La Filippa deals signed and closed in early 2026",
-      "note": "S\u00e9ch\u00e9 is the acquirer in a notable consolidation of the French hazardous-waste sector plus smaller Chile/Italy bolt-ons; Flamme deal status (closed vs pending) not fully confirmed.",
-      "source_url": "https://www.businesswire.com/news/home/20250605552929/en/Sch-Environnement-Signing-of-a-Unilateral-Purchase-Offer-With-a-View-to-Acquiring-Groupe-Flamme"
-    },
-    {
-      "ticker": "XTRA:BEZ",
-      "company": "Berentzen-Gruppe Aktiengesellschaft",
-      "date": "2026-09-21",
-      "counterparty": "Sazerac Company, Inc. (US spirits maker), via vehicle Blitz 26-877 GmbH (to be renamed Sazerac Germany Holding GmbH)",
-      "role": "target",
-      "terms": "Business combination agreement signed 21 Sep 2026; voluntary public cash takeover offer at EUR 5.55/share (~68% premium to unaffected 3-month VWAP); minimum acceptance threshold 50%+1 share; no regulatory clearance required; both management and supervisory boards support the deal; closing expected Q4 2026; Sazerac intends to pursue delisting afterward, supported by the executive board",
-      "note": "Full takeover of the German spirits group by a major US competitor; BaFin review/publication of the formal offer document not confirmed in search results.",
-      "source_url": "https://www.finanzwire.com/press-release/berentzen-group-and-sazerac-to-create-a-leading-spirits-platform-in-europe-1URvrZISGyV"
-    }
-  ],
-  "spinoffs": [
-    {
-      "ticker": "LSE:CBG",
-      "company": "Close Brothers Group plc",
-      "date": "2025-07-25",
-      "spun_off_entity": "Winterflood (market-making business)",
-      "terms": "Sale of Winterflood to Marex Group plc for approximately \u00a3103.9 million in cash; transaction expected to complete in early 2026, subject to regulatory approval.",
-      "note": "Follows the earlier sale of Close Brothers Asset Management (CBAM) to Oaktree Capital Management (completed 28 Feb 2025, equity value up to \u00a3200m) as part of a broader business-simplification/capital-management programme.",
-      "source_url": "https://www.closebrothers.com/system/files?file=press%2FCBG+2025+Preliminary+Results+Announcement.pdf"
-    },
-    {
-      "ticker": "XTRA:STM",
-      "company": "Stabilus SE",
-      "date": "2026-05",
-      "spun_off_entity": "Fabreeka and Tech Products businesses (part of the former DESTACO industrial-automation unit)",
-      "terms": "Sale of Fabreeka and Tech Products to VMC Group; sale completed in Q3 FY2026.",
-      "note": "Divestiture follows Stabilus's September 2025 transformation program aimed at streamlining the organization and optimizing its production footprint/cost base.",
-      "source_url": "https://group.stabilus.com/news-and-events/press-releases"
-    },
-    {
-      "ticker": "HLSE:ASPO",
-      "company": "Aspo Oyj",
-      "date": "2026-08-03",
-      "spun_off_entity": "ESL Shipping Group Plc (new listed company housing ESL Shipping Ltd)",
-      "terms": "Aspo's Board approved a demerger plan on Aug 3, 2026 to separate ESL Shipping Ltd into a new independent listed company (ESL Shipping Group); shareholders to receive 1 new share for each Aspo share held; EGM expected Dec 7, 2026; completion planned Dec 31, 2026; trading of new shares on Nasdaq Helsinki expected to start ~Jan 4, 2027. Remaining Aspo will refocus on Telko (compounding/chemicals distribution) as 'Aspo Compounder'.",
-      "note": "Separately, Aspo completed the divestment of its Leipurin business to Lantm\u00e4nnen on March 2, 2026 for an enterprise value of ~EUR 63m (EUR 62m cash at closing, EUR 15m one-off sales gain) - a related portfolio restructuring alongside the ESL Shipping spinoff.",
-      "source_url": "https://www.aspo.com/stock-exchange-releases/inside-information-the-board-of-directors-of-aspo-plc-has-approved-a-demerger-plan-concerning-the-separation-of-esl-shipping-into-a-new-listed-company-3337215"
-    }
-  ],
-  "other": [
-    {
-      "ticker": "ENXTPA:BLC",
-      "company": "Bastide Le Confort M\u00e9dical SA",
-      "date": "2026-06-01",
-      "type": "divestiture",
-      "note": "Bastide completed the sale of subsidiary New Medical Concept (holding company of the EXPERF home-infusion/clinical-nutrition group, EUR42m revenue) to Sapio Group as part of active portfolio management.",
-      "source_url": "https://app.bigdata.com/documents/576C55C40F0D4DAB5ACA3280DB2B76A1"
-    },
-    {
-      "ticker": "AIM:YOU",
-      "company": "YouGov plc",
-      "date": "2026-03-24",
-      "type": "restructuring/potential_divestiture",
-      "note": "YouGov commenced a strategic review of its Shopper division (the former GfK Consumer Panel Services business), exploring options including a possible sale or combination of the unit's data assets; not yet a completed transaction.",
-      "source_url": "https://app.bigdata.com/documents/E694B1F724C311EE4C062A5A30F99D30"
-    },
-    {
-      "ticker": "BIT:BFF",
-      "company": "BFF Bank S.p.A.",
-      "date": "2026-08-05",
-      "type": "restructuring/potential_partial_sale",
-      "note": "Amid a capital shortfall, BFF Bank's board launched a process to find financial/strategic partners and received non-binding expressions of interest, including from BPER Banca for BFF's payment and custodian-banking businesses specifically; outcome still pending.",
-      "source_url": "https://app.bigdata.com/documents/FE9D1CBDD207774273EE2B7A95AC0C62"
-    },
-    {
-      "ticker": "XTRA:PCZ",
-      "company": "ProCredit Holding AG",
-      "date": "2026-03-01",
-      "type": "divestiture",
-      "note": "ProCredit Holding signed an agreement to sell its majority stake in ProCredit Bank Ecuador (South America segment), expected to close in 2026 subject to local regulatory approval; the business is now reported as discontinued operations.",
-      "source_url": "https://app.bigdata.com/documents/8DA05F28B789FBB45BBB7D446D1C8642"
-    },
-    {
-      "ticker": "ENXTPA:SEFER",
-      "company": "SergeFerrari Group SA",
-      "date": "2026-06-24",
-      "type": "delisting",
-      "note": "SergeFerrari Group transferred its share listing from the regulated market of Euronext Paris to the lighter-touch Euronext Growth Paris multilateral trading facility, effectively delisting from the regulated market (shareholder approval 22 April 2026, effective 24 June 2026).",
-      "source_url": "https://app.bigdata.com/documents/849DBFD0CD50096AF02250A1A2B45FF7"
-    },
-    {
-      "ticker": "WSE:MCR",
-      "company": "mcr Spolka Akcyjna (formerly Mercor S.A.)",
-      "date": "2025-10-01",
-      "type": "divestiture + special dividend",
-      "terms": "Sold its gravity smoke-extraction and fire-ventilation business (transferred first into a subsidiary, then sold) to Kingspan Group for up to PLN 420M (PLN 90M of that deferred/contingent on trailing-12-month EBITDA through March 2026); transaction closed ~October 2025.",
-      "note": "Company rebranded from Mercor S.A. to mcr Spolka Akcyjna following the sale, and paid an unusually large special dividend (PLN 1.78/share, well above the prior year) from the proceeds. This is a divestiture + cash-return event, not a classic spinoff (shareholders did not receive shares in a new listed entity) - explains both the name change and the ~53% drop in market cap picked up in this project's market-cap refresh, which is a mechanical consequence of the business/cash leaving the company, not organic deterioration.",
-      "source_url": "https://www.bankier.pl/wiadomosc/MERCOR-S-A-Zamkniecie-transakcji-zbycia-spolek-zaleznych-Spolki-posiadajacych-aktywa-zwiazane-z-prowadzeniem-dzialalnosci-w-zakresie-oddymiania-grawitacyjnego-oraz-wentylacji-pozarowej-9018322.html"
-    },
-    {
-      "ticker": "ENXTPA:MDM",
-      "company": "Maisons du Monde S.A.",
-      "date": "2026-07",
-      "type": "debt-for-equity recapitalization / change of control",
-      "terms": "After a EUR 406m loss in 2025 and near-insolvency, Maisons du Monde completed a refinancing/restructuring validated by the Nantes commercial court: British funds Alteri Investors and Eicos Investment Group took over ~95% of the company's capital by converting EUR 218m of existing bank debt into equity via a massively dilutive capital increase, plus EUR 25m new financing. Conciliator separately mandated to prepare a 'prepack' disposal for Maisons du Monde France and Maisons du Monde SA.",
-      "note": "Near-total change of control via distressed debt-to-equity swap; existing shareholders massively diluted. Any legacy valuation score is meaningless post-restructuring.",
-      "source_url": "https://www.fusacq.com/buzz/maisons-du-monde-boucle-son-refinancement-et-echappe-au-redressement-judiciaire-a260150_fr_"
-    },
-    {
-      "ticker": "XTRA:SUR",
-      "company": "Surteco Group SE",
-      "date": "2024-10-04 (control) / 2026-01 (divestiture plans)",
-      "type": "mandatory takeover offer + strategic divestiture review",
-      "terms": "BANASINO INVESTMENTS S.a r.l. acquired control of Surteco (30% of voting rights) on Oct 4, 2024, triggering a mandatory offer at EUR 16.96/share; the Surteco Pool (56.87% of voting rights) did not accept and the management/supervisory board did not recommend acceptance. Separately, in January 2026 Surteco confirmed media reports of a strategic review to sell larger parts of the group, including the Profiles and Edgebands (baseboard/technical profiles) business units; in April 2026 the company secured refinancing to 2029 to support the ongoing restructuring.",
-      "note": "Both a 2024 change-of-control event via mandatory tender and an active 2026 plan to divest major business divisions -- directly analogous to the Mercor/Kingspan divestiture pattern.",
-      "source_url": "https://www.finanznachrichten.de/nachrichten-2026-01/67549612-surteco-bestaetigt-medienbericht-verkauf-groesserer-konzernteile-moeglich-424.htm"
-    },
-    {
-      "ticker": "WSE:ALL",
-      "company": "Ailleron S.A.",
-      "date": "2026-04-08",
-      "type": "attempted divestiture of subsidiary (failed)",
-      "terms": "Ailleron was in advanced, exclusive negotiations to sell its Software Mind subsidiary (a software house) to US private equity firm Tailwind Capital Partners IV. Poland's UOKiK antitrust approval was obtained Feb 26, 2026, and the exclusivity period was extended March 17, 2026, but Tailwind halted/withdrew from negotiations on April 8, 2026, citing unfavorable macro/market conditions (not diligence issues).",
-      "note": "A material planned divestiture of Ailleron's core subsidiary that ultimately fell through in April 2026; strategic review of Software Mind may resume, and market may still be pricing in sale expectations.",
-      "source_url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L8N40R07J:0-ailleron-says-tailwind-capital-halts-negotiations-for-sale-of-software-mind-stake/"
-    },
-    {
-      "ticker": "LSE:DATA",
-      "company": "GlobalData Plc",
-      "date": "2026-07-09",
-      "type": "failed takeover approaches + large self-tender buyback",
-      "terms": "GlobalData received takeover approaches from private equity firms KKR (collapsed May 2026) and ICG (talks ended June 2026). Following the collapse, GlobalData launched a GBP 60m tender offer (initially reported as GBP 30m at 85p/share, 16% premium) to return capital to shareholders, on top of an existing GBP 5m buyback (total GBP 45-60m return for the year). Company also moved from AIM to the Main Market in March 2026.",
-      "note": "Stock may still carry residual takeover-premium expectations from the failed PE approaches; large self-tender also changes share count materially.",
-      "source_url": "https://businesscloud.co.uk/news/globaldata-to-launch-tender-offer-following-collapsed-takeover-talks/"
-    },
-    {
-      "ticker": "XTRA:ST5",
-      "company": "STEICO SE",
-      "date": "2025-11-01",
-      "type": "majority-stake overhang / potential future takeover offer",
-      "terms": "Kingspan Group holds 61.1% of STEICO (increased from an initial 51% stake purchase from founder Udo Schramek in 2023 at EUR35/share, ~EUR251.4m). Commentary from late 2025 into 2026 discusses the possibility of Kingspan launching a full takeover offer or squeeze-out of the remaining 38.9% free float, given the depressed share price, but no formal bid has been made as of the search date.",
-      "note": "Company trades under a persistent 'Sondersituation' takeover overhang from its majority shareholder; valuation distorted by M&A speculation rather than pure fundamentals.",
-      "source_url": "https://www.intelligent-investieren.net/2025/11/kissigs-nebenwerte-analyse-zu-steico.html"
-    },
-    {
-      "ticker": "XTRA:P4O",
-      "company": "Planoptik AG",
-      "date": "2025-12-18",
-      "type": "divestiture",
-      "terms": "Planoptik AG sold 100% of the shares in its subsidiary AIRTUNE GmbH to an undisclosed buyer on 18 December 2025.",
-      "note": "Divestiture of a subsidiary shortly after Planoptik's own uplisting to the Regulated Market (Frankfurt) in September 2025; company also reported a weak 2025 with expected recovery in 2026.",
-      "source_url": "https://www.it-times.de/news/planoptik-ag-veraeusserung-der-airtune-gmbh-176032/"
-    },
-    {
-      "ticker": "AIM:TRCS",
-      "company": "Tracsis plc",
-      "date": "2025-12-01",
-      "type": "divestiture",
-      "terms": "Tracsis sold its Events Transport Planning & Management division to private equity firm Connection Capital for an enterprise value of \u00a37.25 million (approximately 3.8x EBITDA), described as 'another significant step in reshaping the group' toward a software-led strategy.",
-      "note": "Divestiture of a whole division as the company reshapes its portfolio toward software; see also acquisition of Mistral Data under mergers_acquisitions.",
-      "source_url": "https://www.insidermedia.com/news/yorkshire/tracsis-sells-events-business-to-pe-firm-for-7.25m-another-significant-step-in-reshaping-the-group"
-    },
-    {
-      "ticker": "XTRA:VIB3",
-      "company": "Villeroy & Boch AG",
-      "date": "2025-09-30",
-      "type": "divestiture",
-      "terms": "Villeroy & Boch sold its Gustavsberg and Vatette bathroom-fittings brands (~EUR93 million 2024 net sales) to Finnish faucet manufacturer Oras Group, transaction expected to complete in Q3 2025 (purchase price undisclosed). This follows the company's largest-ever acquisition, Ideal Standard (completed March 2024, ~EUR1.42bn group revenue in 2024, +57.6% YoY), which materially changed the group's size and business mix.",
-      "note": "Divestiture within the screening window plus a still-recent (within ~2 years) transformational acquisition (Ideal Standard) that reshaped group revenue; Q1 2026 revenue declined 13.7% YoY, indicating ongoing integration/normalization effects.",
-      "source_url": "https://www.ahkfinnland.de/de/news/2025-news/villeroy-boch-verkauft-marken-gustavsberg-und-vatette-an-finnischen-armaturenhersteller-oras-group"
-    },
-    {
-      "ticker": "ENXTPA:ALATI",
-      "company": "ACTIA Group S.A.",
-      "date": "2025-02-18",
-      "type": "divestiture",
-      "terms": "ACTIA Group disposed of its remaining 60% stake in subsidiary ACTIA CZ (Czech Republic, renamed ATAL) on 18 February 2025, completing a full exit after an initial 30% disposal in April 2022. Separately, in H1 2026 ACTIA invested EUR2.3m to raise its stake in ACTIA Aerospace to 92.5% (minority buy-in, not a distorting event).",
-      "note": "Full divestiture/exit of a subsidiary, changing group perimeter versus historical financial comparables.",
-      "source_url": "https://www.businesswire.com/news/home/20250717082133/fr"
-    },
-    {
-      "ticker": "BVB:ARCU",
-      "company": "Sifi Cluj Retail SA",
-      "date": "2025-06-01",
-      "type": "divestiture",
-      "terms": "Sifi Cluj Retail SA (controlled ~96.3% by SIF Imobiliare, Cyprus) signed an agreement to sell its entire property portfolio in Cluj-Napoca for EUR 24.3 million.",
-      "note": "Sale of the company's entire real-estate portfolio effectively liquidates the operating business; post-sale entity's asset base and earnings profile bear no relation to historical value metrics. Company subsequently discussed a large dividend distribution (~41m lei) to shareholders from the proceeds.",
-      "source_url": "https://www.zfcorporate.ro/burse-fonduri-mutuale/sifi-cluj-retail-bucuresti-societate-controlata-sif-imobiliare-22293323"
-    },
-    {
-      "ticker": "XTRA:NOEJ",
-      "company": "NORMA Group SE",
-      "date": "2026-02-02",
-      "type": "divestiture",
-      "terms": "NORMA Group sold its Water Management business unit, with the sale completed on 2 February 2026; the unit had been classified as a discontinued operation since Q3 2025. The company then returned capital via two public share buyback offers: one completed 27 March 2026 at EUR16.59/share (~10% of capital, ~EUR52.9m), and a second launched August 2026 for up to 9,306,487 shares at EUR22.35/share (~EUR208m total).",
-      "note": "Major divestiture of an entire business unit followed by large capital-return buybacks; FY2025 group revenue (EUR821.7m) reflects a business mix that will not repeat post-divestiture, and per-share buyback pricing embeds deal-related premia.",
-      "source_url": "https://www.normagroup.com/global/de/news/press-releases/2026/norma-group-closes-financial-year-2025-within-the-forecast-corridors"
-    },
-    {
-      "ticker": "LSE:PAGE",
-      "company": "PageGroup plc",
-      "date": "2026-07",
-      "type": "rebrand",
-      "terms": "PageGroup plc announced plans to rebrand to Michael Page.",
-      "note": "Corporate name/brand change, not an M&A event; included for dashboard awareness of a major restructuring-adjacent change.",
-      "source_url": "https://www.tipranks.com/news/company-announcements/pagegroup-publishes-2025-annual-report-and-sets-date-for-2026-agm"
-    },
-    {
-      "ticker": "BVB:LION",
-      "company": "Lion Capital S.A.",
-      "date": "2026-03-04",
-      "type": "self-tender offer (own-share buyback)",
-      "terms": "Lion Capital S.A. (as bidder) launched a public tender offer on its own shares at RON 4.50/share during 4-17 March 2026, targeting up to 49,600,250 shares (~9.7733% of share capital). ASF-approved offer document (decision 215/25.02.2026).",
-      "note": "Lion Capital is an investment/holding company; this is a capital-return/self-tender action rather than a third-party takeover. A separate related entity, Fondul Proprietatea, also ran tender offers involving Lion Capital in this period; unrelated Biofarm stake was sold by Lion Capital to Polpharma in June 2026.",
-      "source_url": "https://www.lion-capital.ro/docs/en/current-reports/2026/PTO-LION/public-tender-offer-document-LionCapital-2026.pdf"
-    },
-    {
-      "ticker": "WSE:LSI",
-      "company": "LSI Software S.A.",
-      "date": "2026-04-13",
-      "type": "Strategic review / possible delisting",
-      "terms": "Board announced a review of strategic options on 13 Apr 2026 (possible capital/organizational changes, capital or corporate transactions); free float fell below 10%, leading to removal from WIG/WIG-informatyka/WIG-Poland indices after the 2 Apr 2026 session; draft resolutions circulated in Nov 2025 for an EGM to consider withdrawing shares from the regulated market, alongside repeated buyback tenders (Dec 2025, Feb 2026, Mar 2026)",
-      "note": "Pattern consistent with a controlling shareholder squeezing out free float ahead of a possible delisting; outcome of the strategic review and the delisting vote not confirmed in search results.",
-      "source_url": "https://www.biznesradar.pl/wiadomosci/LSI-SOFTWARE"
-    },
-    {
-      "ticker": "XTRA:GXI",
-      "company": "Gerresheimer AG",
-      "date": "2026-04-17",
-      "type": "Repeated takeover interest / rejected bid",
-      "terms": "Confirmed PE talks since Feb 2025 (Warburg Pincus/KPS Capital Partners, possible bid in the EUR 70s/share; KPS withdrew after due diligence); talks with PE investors ended 16 Jul 2025; US packaging company Silgan made a non-binding approach valuing Gerresheimer at EUR 41/share, which Gerresheimer rejected around 17 Apr 2026, ending those talks",
-      "note": "No deal completed; company reportedly wants to resolve accounting issues and sell US subsidiary Centor before considering further offers. Relevant as repeated, well-sourced takeover speculation/activity, not a completed transaction.",
-      "source_url": "https://finance.yahoo.com/markets/stocks/articles/why-gerresheimer-grrmy-remains-takeover-181958536.html"
-    },
-    {
-      "ticker": "XTRA:O4B",
-      "company": "OVB Holding AG",
-      "date": "2025-12-22",
-      "type": "Indirect change of control (via parent-level merger)",
-      "terms": "Voting-rights notice dated 22 Dec 2025: OVB's majority stake passed indirectly to Helvetia Baloise Holding AG as a result of the merger of Baloise Holding AG into Helvetia; in total 96.98% of OVB's voting rights are now attributed to Helvetia Baloise Holding AG (held directly by Baloise Leben Beteiligungsholding GmbH plus voting-agreement arrangements); no cash changed hands and Helvetia Baloise stated no intent to change OVB's strategy or dividend policy",
-      "note": "Change-of-control notice triggered by the Helvetia/Baloise insurance-group merger rather than a direct bid for OVB; no tender offer to OVB minority holders was identified in search results.",
-      "source_url": "https://www.ovb.eu/fileadmin/assets/Dokumente/ovb_holding/stimmrechtsmitteilungen/2025_12_22_Beteiligungsmitteilung_Helvetia_Baloise_Holding_AG.pdf"
-    }
-  ]
+ "tender_offers": [
+  {
+   "ticker": "ENXTPA:ALLUX",
+   "company": "Installux S.A.",
+   "date": "2026-05-28",
+   "counterparty": "FCCE (Canty family holding)",
+   "terms": "EUR500/share, 74% premium to 60-day VWAP, values company at EUR140.0M",
+   "note": "Simplified tender offer for minority shares from the controlling family holding; stock now trades near the offer price awaiting resolution.",
+   "source_url": "https://www.boursier.com/actions/actualites/news/installux-pre-offre-a-500-euros-986558.html"
+  },
+  {
+   "ticker": "BIT:BST",
+   "company": "Banca Sistema S.p.A.",
+   "date": "2026-01-16",
+   "counterparty": "Banca CF+ S.p.A.",
+   "terms": "Mandatory + voluntary public tender and exchange offer; consideration in Kruso Kapital (KK) shares, 23 KK shares per Banca Sistema share tendered",
+   "note": "Banca CF+ launched a public tender and exchange offer for all Banca Sistema shares (offer documents approved by Consob 14 Jan and 30 Apr 2026); the offer succeeded, CEO Gianluca Garbi resigned 13 March 2026, and on 24 June 2026 the boards approved a merger plan to absorb Banca CF+ into Banca Sistema, completing the integration.",
+   "source_url": "https://app.bigdata.com/documents/2A7EDD5DC5D5BC6468BCE9CC8F7F5541"
+  },
+  {
+   "ticker": "ENXTPA:ALPOU",
+   "company": "Poulaillon SA",
+   "date": "2026-06-22",
+   "counterparty": "SAS Eug\u00e9nie (Poulaillon family holding)",
+   "terms": "EUR9.00/share simplified tender offer (OPAS) for the 16.5% of capital (843,402 shares) not already held",
+   "note": "The Poulaillon family's holding company SAS Eug\u00e9nie filed a simplified public tender offer (filed 23 April 2026, offer period 22 June-3 July 2026) at EUR9 per share to take full control of the bakery/pastry group, similar in structure to the Installux case.",
+   "source_url": "https://app.bigdata.com/documents/C0C41E17B6B79E5AC56CD0068E38B985"
+  },
+  {
+   "ticker": "LSE:GAMA",
+   "company": "Gamma Communications plc",
+   "date": "2026-09-01",
+   "counterparty": "Epiris GP III (via Bradbury Bidco Ltd)",
+   "terms": "GBP11.20/share cash, GBP1.02bn equity value / GBP1.08bn enterprise value, 53% premium to 7 Apr 2026 close",
+   "note": "Gamma's board unanimously recommended a GBP1.02bn all-cash take-private offer from private equity firm Epiris via a scheme of arrangement; a rival, higher offer from Waterland Private Equity was reported to be forthcoming as of 7 September 2026, and closing is expected H1 2027.",
+   "source_url": "https://app.bigdata.com/documents/0219FCEA1F6254510DB27BD4EE755567"
+  },
+  {
+   "ticker": "DB:TSS",
+   "company": "InnoTec TSS AG",
+   "date": "2026-06-25",
+   "counterparty": "GLI Beteiligungsgesellschaft mbH / Grondbach GmbH (bidding consortium)",
+   "terms": "Mandatory public offer at the statutory minimum price (weighted average 3-month domestic exchange price) under German Wp\u00dcG",
+   "note": "A bidding consortium (GLI Beteiligungsgesellschaft and Grondbach GmbH, acting with further parties including Dr. Gerson Link and Reinhart Zech of Hymmen) acquired control of InnoTec TSS AG on 25 June 2026, triggering a mandatory takeover offer for all remaining shares.",
+   "source_url": "https://app.bigdata.com/documents/8A6E7E6020FAFD3B057BCE7F335DD606"
+  },
+  {
+   "ticker": "BST:FEW0",
+   "company": "Funkwerk AG",
+   "date": "2026-03-20",
+   "counterparty": "H\u00f6rmann Funkwerk Holding GmbH (majority shareholder)",
+   "terms": "Public share buy-back offer to remaining shareholders at EUR 32.80 per share, for a stake of just under 9.5% of share capital; offer period 20 March 2026 to 17 April 2026. Following the offer, Funkwerk's listing on the Munich Stock Exchange free market (Freiverkehr) was withdrawn, with trading ceasing at the end of 31 March 2026.",
+   "note": "Effectively a going-private/delisting transaction by the majority shareholder; stock is being wound down as a publicly-traded security.",
+   "source_url": "https://funkwerk.com/en/latest-news/uebernahmeangebot-der-hoermann-funkwerk-holding-gmbh-an-die-aktionaere-der-funkwerk-ag/"
+  },
+  {
+   "ticker": "WSE:WPL",
+   "company": "Wirtualna Polska Holding S.A.",
+   "date": "2026-05-04",
+   "counterparty": "Company founders (controlling shareholders), acting jointly",
+   "terms": "Wirtualna Polska Holding and its three founders announced a voluntary tender offer (wezwanie) for all outstanding shares of the company at PLN 59 per share; acceptance period 4 May to 2 June. The agreement explicitly does not provide for delisting the company.",
+   "note": "Large-scale voluntary tender offer for all shares by controlling shareholders; distorts market-price-based valuation versus intrinsic fundamentals even though delisting is not planned.",
+   "source_url": "https://www.parkiet.com/technologie/art44252421-jest-wezwanie-na-akcje-wph-dwa-scenariusze"
+  },
+  {
+   "ticker": "ENXTBR:EXM",
+   "company": "Exmar NV",
+   "date": "2025-02-13",
+   "counterparty": "Saverex NV (Nicolas Saverys, controlling shareholder vehicle)",
+   "terms": "Saverex NV launched a voluntary and conditional public takeover offer for all outstanding shares of Exmar not already owned, at EUR 11.50/share. Initial acceptance period 13 Feb-13 Mar 2025; reopened acceptance period ended 16 Apr 2025. Saverex waived the 95% threshold; final result gave Saverex 91.06% (94.36% with affiliated parties) of shares. Saverex intends to launch a simplified squeeze-out bid if/when it crosses 95%/90% acquired-in-bid thresholds.",
+   "note": "Classic go-private tender offer with squeeze-out plans pending; share price is now anchored to deal terms (EUR 11.50) rather than standalone fundamentals.",
+   "source_url": "https://www.hellenicshippingnews.com/saverex-nv-launches-its-voluntary-and-conditional-public-takeover-offer-for-all-outstanding-shares-in-exmar-nv/"
+  },
+  {
+   "ticker": "NasdaqGS:CRTO",
+   "company": "Criteo S.A.",
+   "date": "2026-07-07",
+   "counterparty": "Vista Equity Partners and Quinti Capital",
+   "terms": "Private equity consortium bid at more than 50% premium to recent share price, valuing Criteo at approximately $3.7 billion on an equity basis; board had not yet responded as of the report",
+   "note": "Criteo had also just re-domiciled from France to Luxembourg (shareholder vote Feb 27, 2026) explicitly to enable a merger into a US corporation, which appears to have been preparatory to this takeover interest",
+   "source_url": "https://www.mediapost.com/publications/article/416328/criteo-attracts-takeover-bids-from-equity-investm.html"
+  },
+  {
+   "ticker": "XTRA:VIH1",
+   "company": "VIB Verm\u00f6gen AG",
+   "date": "2026-08-27",
+   "counterparty": "DIC Real Estate Investments GmbH & Co. KGaA (subsidiary of Branicks Group AG)",
+   "terms": "Control and profit transfer agreement approved at VIB's EGM on 2026-02-12, entered in the commercial register and effective 2026-08-27. DIC REI KGaA grants VIB's outside (minority) shareholders annual compensation payments and an offer to acquire their shares in exchange for newly issued Branicks shares. Acceptance deadline for the compensation/exchange offer expires 2026-10-27.",
+   "note": "Effectively a controlling-shareholder minority buyout/compensation mechanism (German domination and profit transfer agreement) following Branicks Group's prior acquisition of VIB's institutional business (~EUR 360m) in 2025.",
+   "source_url": "https://vib-ag.de/en/2026/08/vib-vermogen-ag-with-successful-annual-general-meeting-and-effective-control-and-profit-transfer-agreement/"
+  },
+  {
+   "ticker": "ZGSE:KRAS",
+   "company": "Kras d.d.",
+   "date": "2026-02-12",
+   "counterparty": "Pivac Holding d.o.o. / Kappa Star Limited (Cyprus)",
+   "terms": "Takeover bid at EUR 130 per ordinary share for the remaining 188,915 shares (~12.61%) not already owned by Pivac Holding and Kappa Star, who together control 87.39% (plus ~3.7% treasury). Approved by Croatian regulator Hanfa.",
+   "note": "Controlling-shareholder consolidation move toward full ownership of the Croatian confectionery producer Kra\u0161.",
+   "source_url": "https://seenews.com/news/pivac-makes-takeover-bid-for-12-61-percent-stake-in-kras-1297183"
+  },
+  {
+   "ticker": "BVB:TBK",
+   "company": "Transilvania Broker de Asigurare S.A.",
+   "date": "2025-11-20",
+   "counterparty": "Partners Financial Services (Czech group)",
+   "terms": "Voluntary/mandatory takeover bid for ~66% of share capital at 15 lei/share; acceptance period 20 Nov - 4 Dec 2025 via intermediary SSIF Goldring SA",
+   "note": "Partners Financial Services (Czech financial-services group) launched a takeover offer for Transilvania Broker; outcome/final stake not confirmed in search results.",
+   "source_url": "https://www.zf.ro/burse-fonduri-mutuale/bursa-cehii-de-la-partners-financial-services-lanseaza-o-oferta-de-22950587"
+  },
+  {
+   "ticker": "ENXTBR:ROU",
+   "company": "Roularta Media Group NV",
+   "date": "2025-06-19",
+   "counterparty": "Koinon NV (controlling shareholder)",
+   "terms": "Voluntary conditional cash bid at EUR 15.50/share for shares not already held by Koinon/affiliates; initial acceptance brought Koinon to 91.17%; bid reopened 23 Jun - 15 Jul 2025 waiving the 95% threshold condition",
+   "note": "Controlling shareholder Koinon NV (already ~72.3%) tendered for the remaining free float; a step toward a possible future squeeze-out/delisting.",
+   "source_url": "https://www.kbc.be/retail/en/products/investing/shares/aandelentransacties/roularta.html"
+  },
+  {
+   "ticker": "OM:NIL B",
+   "company": "Nil\u00f6rngruppen AB",
+   "date": "2026-05-04",
+   "counterparty": "Trimco Group (UK) Limited, a Brookfield portfolio company",
+   "terms": "Recommended public cash offer of SEK 77/share for all outstanding A and B shares, valuing the company at ~SEK 878m; AB Traction (26.3% of shares/58.1% of votes) and other holders (~8%) gave irrevocable undertakings to accept; acceptance period expected ~19 Jun - 10 Jul 2026, completion conditional on >90% acceptance",
+   "note": "Board unanimously recommended the offer; outcome of the acceptance period not confirmed in search results.",
+   "source_url": "https://www.placera.se/telegram/nilorngruppen-brookfield-s-portfolio-company-offers-sek878-million-to-buy-nilorngruppen-20260504"
+  },
+  {
+   "ticker": "XTRA:2HRA",
+   "company": "H&R GmbH & Co. KGaA",
+   "date": "2025-05-16",
+   "counterparty": "H&R Holding GmbH (controlling shareholder vehicle of Nils Hansen)",
+   "terms": "Voluntary public tender offer at EUR 5.00/share (31.23% premium to unaffected price) aiming to raise Hansen's stake from 61.45% toward 85%+; minimum acceptance threshold waived 29 Jul 2025; acceptance period extended to 25 Aug 2025",
+   "note": "Final result: offer accepted for ~7.92% of shares plus ~2.10% bought on-market, bringing bidder's attributed stake to 77.54%; bidder stated intent to examine a delisting offer or squeeze-out afterward.",
+   "source_url": "https://www.lw.com/en/news/2025/05/latham-watkins-advises-hr-holding-gmbh-voluntary-public-tender-offer-all-outstanding-shares-hr-kgaa"
+  },
+  {
+   "ticker": "ATSE:EXAE",
+   "company": "Hellenic Exchanges - Athens Stock Exchange S.A.",
+   "date": "2025-11-19",
+   "counterparty": "Euronext N.V.",
+   "terms": "Voluntary share-exchange tender offer at a fixed conversion rate of 20 ATHEX ordinary shares for each new Euronext share (implied value ~EUR7.14/share); minimum acceptance threshold revised down to 50%+1 share",
+   "note": "Euronext completed the tender offer on 2025-11-19, acquiring approximately 74.25% of ATHEX's shares; consideration shares issued 2025-11-21, trading from 2025-11-24. Deal targets EUR12m annual run-rate synergies by 2028. This closed in late 2025, just before the 2026 screening window, but is a live, highly material corporate action for this name.",
+   "source_url": "https://www.euronext.com/en/investor-relations/financial-information/news/euronext-nv-announces-successful-outcome-its"
+  },
+  {
+   "ticker": "LSE:AIRE",
+   "company": "Alternative Income REIT Plc",
+   "date": "2026-09-04",
+   "counterparty": "Glenstone (hostile bidder); competing possible offer from AEW UK REIT PLC",
+   "terms": "Glenstone's cash offer, raised to a 'final' 71.4p/share (70.0p net of a 1.4p dividend retained by shareholders), became unconditional after Glenstone secured acceptances covering ~50.4% of issued share capital; AIRE's board, having argued the offer undervalued the ~84.4p NAV (per share, at 31 March), ultimately recommended acceptance given the risk of becoming a minority holder in a Glenstone-controlled vehicle. AEW UK REIT separately proposed a rival all-share deal (0.725 new AEW UK REIT share per AIRE share, implied ~77.4p/share) which AIRE said was superior, urging shareholders who had accepted Glenstone's offer to withdraw.",
+   "note": "Originated from a failed managed-wind-down/sale process; if Glenstone reaches the 90% UK Takeover Code threshold it intends to compulsorily acquire remaining shares. As of search date (early Oct 2026) the final outcome between Glenstone and AEW UK REIT was not fully confirmed in available sources -- this is an active, contested takeover situation.",
+   "source_url": "https://www.ajbell.co.uk/news/articles/glenstone-wins-control-alternative-income-reit-hostile-bid"
+  }
+ ],
+ "mergers_acquisitions": [
+  {
+   "ticker": "XTRA:ADN1",
+   "company": "adesso SE",
+   "date": "2026-08-12",
+   "counterparty": "omni:us",
+   "role": "acquirer",
+   "terms": "Not disclosed",
+   "note": "adesso SE announced the acquisition of AI-powered insurance claims-processing specialist omni:us to strengthen its in|sure Ecosphere insurance platform.",
+   "source_url": "https://app.bigdata.com/documents/EA484500AC83B49C7D91C870D1E5A516"
+  },
+  {
+   "ticker": "AIM:DOTD",
+   "company": "dotdigital Group Plc",
+   "date": "2026-03-04",
+   "counterparty": "Alia Software Inc.",
+   "role": "acquirer",
+   "terms": "USD30m initial cash consideration, up to USD60m total (earnout-dependent)",
+   "note": "dotdigital agreed to acquire Alia Software, an AI-powered Shopify pop-up/list-growth tool with ~USD8m forward ARR, funded from existing cash.",
+   "source_url": "https://app.bigdata.com/documents/EABE39A871ED4D51C121132DD5DB5CE7"
+  },
+  {
+   "ticker": "OB:MULTI",
+   "company": "Multiconsult ASA",
+   "date": "2026-09-07",
+   "counterparty": "Rejlers AB (Sweden)",
+   "role": "merger of equals (target/merging party)",
+   "terms": "0.9725 Rejlers class B shares per Multiconsult share; 54% Multiconsult / 46% Rejlers ownership of combined company",
+   "note": "Multiconsult and Rejlers announced a cross-border statutory merger to create a pan-Nordic multidisciplinary consultancy group, with boards adopting a joint merger plan on 7 September 2026.",
+   "source_url": "https://app.bigdata.com/documents/1B63087EEA4BDB294B102110CBAD68E0"
+  },
+  {
+   "ticker": "OM:DEDI",
+   "company": "Dedicare AB",
+   "date": "2026-07-15",
+   "counterparty": "Hyldgaard & Larsen and Sustina ApS (Denmark)",
+   "role": "acquirer",
+   "terms": "Cash plus non-cash share issue of SEK 24.3m (429,610 series B shares at SEK 56.63)",
+   "note": "Dedicare completed the acquisition of two Danish social-sector staffing businesses, Hyldgaard & Larsen and Sustina, financed with cash and newly issued shares.",
+   "source_url": "https://app.bigdata.com/documents/DEC7984B97F47D57A93A2907A41490C6"
+  },
+  {
+   "ticker": "HLSE:REG1V",
+   "company": "Revenio Group Oyj",
+   "date": "2026-05-28",
+   "counterparty": "LT International SAS (Visionix International Group)",
+   "role": "acquirer",
+   "terms": "Funded via EUR80m bridge-to-equity facility, later refinanced by a EUR80m rights offering",
+   "note": "Revenio completed a transformative acquisition of Visionix, more than doubling pro forma net sales (to EUR252.8m) and expanding its addressable market ~2.5x in the eye-care sector.",
+   "source_url": "https://app.bigdata.com/documents/E403038B3843DAD4A8DADE2CCFA0B119"
+  },
+  {
+   "ticker": "ENXTPA:LNA",
+   "company": "LNA Sant\u00e9 SA",
+   "date": "2026-07-02",
+   "counterparty": "Clariane group (5 nursing homes) plus a separate operating-license acquisition",
+   "role": "acquirer",
+   "terms": "539 beds acquired; ~EUR25m annualized revenue add (~7-8% of French nursing-home revenue)",
+   "note": "LNA Sant\u00e9 acquired five nursing homes (539 beds) from Clariane plus an operating license for a further 77-bed home, described by analysts as one of its largest deals since 2020.",
+   "source_url": "https://app.bigdata.com/documents/4D254BBCDEDF5AE3BA887C8EA27946F5"
+  },
+  {
+   "ticker": "ENXTPA:JBOG",
+   "company": "Jacques Bogart S.A.",
+   "date": "2026-04-24",
+   "counterparty": "Stadtparf\u00fcmerie Pieper (Germany) / Marionnaud Group",
+   "role": "target/subject of merger talks",
+   "terms": "Not disclosed",
+   "note": "Bogart's reference shareholder (the Konckier family) agreed to buy German perfumery chain Stadtparf\u00fcmerie Pieper as a strategic partner for Bogart's fragrance business; separately, a July 2026 report references 'exclusive negotiations' between the Konckier family and the Marionnaud Group and an unspecified 'merger project' involving Bogart - details were not fully retrievable before the data source was exhausted, so treat this second item as preliminary/unconfirmed.",
+   "source_url": "https://app.bigdata.com/documents/9A3AD1AA300C693D413737F6E3C1BA26"
+  },
+  {
+   "ticker": "WSE:MUR",
+   "company": "Murapol S.A.",
+   "date": "2026-03-26",
+   "counterparty": "Hampont (controlled by Maciej Dyjas and Nebil Senman)",
+   "role": "target",
+   "terms": "Hampont, an existing Murapol shareholder (16.9% at end of 2025, bought additional shares from exiting Ares fund), filed with Polish competition authority UOKiK on 26 March 2026 for approval to acquire exclusive control of Murapol. By early June 2026, the AEREF V PL Investments (Ares) fund sold its entire stake and Hampont solidified its position as the developer's largest/controlling shareholder. No mandatory tender offer was triggered as 'exclusive control' under concentration rules does not require majority ownership.",
+   "note": "Change of controlling shareholder at a WSE-listed developer, with prior large institutional holder (Ares) fully exiting.",
+   "source_url": "https://www.parkiet.com/budownictwo/art44052371-wiemy-jakie-plany-ma-hampont-wobec-murapolu-po-co-wniosek-do-uokik-u"
+  },
+  {
+   "ticker": "XTRA:CSH",
+   "company": "CENIT Aktiengesellschaft",
+   "date": "2026-07-07",
+   "counterparty": "ISR Information Products AG",
+   "role": "acquirer",
+   "terms": "CENIT increased its stake in subsidiary ISR from 74.9% to 100%, financing the buyout via a rights capital increase of approx. EUR 10.9 million (subscription period Aug 4-17, 2026); principal shareholder PRIMEPULSE SE took up unsubscribed shares.",
+   "note": "ISR is CENIT's most profitable subsidiary (EUR 3.5m net profit 2025); increases CENIT's earnings concentration in ISR and changes share count via capital increase.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-07/69171461-cenit-finanziert-mit-kapitalerhoehung-die-volle-uebernahme-von-isr-424.htm"
+  },
+  {
+   "ticker": "XTRA:UUU",
+   "company": "3U Holding AG",
+   "date": "2025-02-03",
+   "counterparty": "EMPUR Gruppe (EMPUR Produktionsgesellschaft mbH, GKS GmbH & Co. KG, EM-Plan GmbH)",
+   "role": "acquirer",
+   "terms": "3U Holding acquired the EMPUR Group, a German manufacturer of water-based underfloor heating systems, effective January 1, 2025, as part of its 'MISSION 2026+' strategy to expand its SHK (heating/plumbing/air-conditioning) segment.",
+   "note": "Bolt-on acquisition materially expanding the SHK segment; distorts trailing per-share metrics for a small-cap holding company.",
+   "source_url": "https://www.onvista.de/news/2025/02-03-eqs-news-3u-holding-ag-erwirbt-empur-gruppe-und-baut-position-im-shk-markt-aus-0-37-26354466"
+  },
+  {
+   "ticker": "AIM:TRCS",
+   "company": "Tracsis plc",
+   "date": "2026-01-01",
+   "counterparty": "Mistral Data Limited",
+   "role": "acquirer",
+   "terms": "Tracsis acquired Mistral Data Limited for \u00a348 million, enhancing recurring revenue and margins, completed in the year ended 31 July 2026.",
+   "note": "Significant acquisition relative to company size; also see divestiture entry (Events Transport business sale) for the same company under 'other'.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/tracsis--trcs/trading-update-and-completion-of-acquisition/9735245"
+  },
+  {
+   "ticker": "LSE:TPT",
+   "company": "Topps Tiles Plc",
+   "date": "2024-08-19",
+   "counterparty": "CTD Tiles (Tildist Realisations Limited assets) and Fired Earth",
+   "role": "acquirer",
+   "terms": "Topps Tiles acquired certain assets of CTD Tiles (30 retail stores, brands, IP) completed 19 August 2024, with CMA divestiture undertakings closing 22 January 2026; separately acquired Fired Earth on 26 November 2025. CTD deal contributed to an ~18% sales increase and a record turnover year.",
+   "note": "Large bolt-on acquisitions materially changing revenue base and store footprint versus historical organic trend.",
+   "source_url": "https://www.kbbreview.com/78126/news/topps-tiles-enjoys-record-year-after-ctd-takeover/"
+  },
+  {
+   "ticker": "WSE:WPL",
+   "company": "Wirtualna Polska Holding S.A.",
+   "date": "2025-01-01",
+   "counterparty": "Invia Group SE",
+   "role": "acquirer",
+   "terms": "Wirtualna Polska purchased the pan-European online travel group Invia Group SE during 2025.",
+   "note": "Large acquisition expanding WPL's travel/media footprint; see also the tender offer entry for the same company under 'tender_offers'.",
+   "source_url": "https://www.money.pl/wiadomosci/wirtualna-polska.html"
+  },
+  {
+   "ticker": "ENXTPA:ALBFR",
+   "company": "Sidetrade SA",
+   "date": "2025-10-27",
+   "counterparty": "ezyCollect (Australia) and SHS Viveon AG (Germany)",
+   "role": "acquirer",
+   "terms": "Sidetrade completed acquisition of 100% of ezyCollect (Australian order-to-cash SME software) on 27 Oct 2025, valuing it at EUR 37.3m (EUR 34.7m cash + EUR 2.6m shares, plus earn-out up to EUR 5.6m). Separately, after acquiring 44.30% of German credit-risk-management firm SHS Viveon in April 2026, Sidetrade launched a friendly public tender offer for the rest, open 7 May-29 July 2026, taking control of the company.",
+   "note": "Two material acquisitions within the past 12 months, including a cross-border public tender offer in Germany; expands Sidetrade's footprint into APAC and DACH credit-risk management.",
+   "source_url": "https://www.globenewswire.com/news-release/2025/10/27/3174852/0/en/Sidetrade-Completes-Acquisition-of-ezyCollect.html"
+  },
+  {
+   "ticker": "BUL:BACB",
+   "company": "Bulgarian-American Credit Bank AD",
+   "date": "2026-01-12",
+   "counterparty": "Tokuda Bank EAD",
+   "role": "acquirer",
+   "terms": "BACB acquired 100% of Tokuda Bank EAD's shares (6,800,000 shares), financed entirely with own funds; shareholders of both banks approved the merger of Tokuda Bank into BACB in September 2026, with the legal merger planned for November 2026",
+   "note": "Major consolidation in Bulgarian banking sector; will materially change BACB's balance sheet and valuation metrics",
+   "source_url": "https://seenews.com/news/bulgarias-bacb-shareholders-approve-tokuda-bank-merger-1301583"
+  },
+  {
+   "ticker": "AIM:AMS",
+   "company": "Advanced Medical Solutions Group plc",
+   "date": "2026-06-25",
+   "counterparty": "H.B. Fuller Co.",
+   "role": "target",
+   "terms": "All-cash recommended takeover at 285 pence per share, valuing AMS at approximately \u00a3659 million (enterprise value ~\u00a3715 million including debt); expected to close by end of 2026",
+   "note": "Followed a prolonged period of private-equity interest in AMS (TA Associates walked away in May 2026, Bridgepoint also reported as suitor)",
+   "source_url": "https://uk.finance.yahoo.com/news/advanced-medical-solutions-agrees-659m-083349011.html"
+  },
+  {
+   "ticker": "ZGSE:HPB",
+   "company": "Hrvatska postanska banka d.d.",
+   "date": "2026-03-04",
+   "counterparty": "Croatia banka",
+   "role": "acquirer",
+   "terms": "HPB signed a contract to acquire 100% of Croatia banka's shares for EUR 15 million; competition authority (AZTN) approval received July 2026",
+   "note": "Third major acquisition by HPB in recent years (after Jadranska banka 2019 and Sberbank Hrvatska 2022, both since merged into HPB)",
+   "source_url": "https://tockanai.hr/biznis/financije/aztn-odobrio-hpb-u-preuzimanje-croatia-banke-za-15-milijuna-eura-100360/"
+  },
+  {
+   "ticker": "LSE:ALFA",
+   "company": "Alfa Financial Software Holdings PLC",
+   "date": "2026-04-09",
+   "counterparty": "Thomas H. Lee Partners",
+   "role": "target",
+   "terms": "Confirmed preliminary takeover talks with US private equity firm Thomas H Lee Partners; follows an earlier (2023) approach from EQT at 208 pence/share (19% premium)",
+   "note": "Repeated private-equity interest over multiple years; talks were preliminary/in-progress as of the search date",
+   "source_url": "https://www.sharecast.com/news/news-and-announcements/alfa-financial-in-takeover-talks-with-us-pe-firm-thomas-h-lee-partners--14808409.html"
+  },
+  {
+   "ticker": "LSE:IPF",
+   "company": "International Personal Finance plc",
+   "date": "2026-08-04",
+   "counterparty": "BasePoint Capital (via IPF Parent Holdings Limited)",
+   "role": "target",
+   "terms": "Recommended cash acquisition valued at approximately \u00a3543 million; scheme became effective 4 August 2026 following Court sanction on 31 July 2026; shareholders also received a 15 pence/share special dividend tied to completion",
+   "note": "Deal has completed / is essentially final",
+   "source_url": "https://uk.finance.yahoo.com/news/international-personal-finance-agrees-543m-091130175.html"
+  },
+  {
+   "ticker": "ENXTPA:BASS",
+   "company": "BASSAC Societe anonyme",
+   "date": "2026-02-24",
+   "counterparty": "Feu Vert Group (from Alpha Private Equity)",
+   "role": "acquirer",
+   "terms": "BASSAC entered exclusive negotiations and finalized acquisition of the Feu Vert automotive-maintenance retail group in Q1 2026, subject to regulatory authorizations",
+   "note": "Significant diversification acquisition for BASSAC (previously LNC), a French real-estate developer, into automotive retail",
+   "source_url": "https://www.feuvert-group.com/wp-content/uploads/2026/02/CP_ACQUISITION-BASSAC-FEU-VERT_24022026.pdf"
+  },
+  {
+   "ticker": "AIM:ELCO",
+   "company": "Eleco plc",
+   "date": "2026-09-10",
+   "counterparty": "Accel-KKR (via Avocet Bidco Ltd)",
+   "role": "target",
+   "terms": "All-cash recommended offer of 235p per share, valuing Eleco's share capital at ~\u00a3207.6 million (enterprise value ~\u00a3192.4 million), a 74.7%-89.9% premium over recent trading prices. Board unanimously recommended; ~45% shareholder support at announcement. Expected completion Q1 2027.",
+   "note": "Construction/built-environment software company being taken private.",
+   "source_url": "https://www.ajbell.co.uk/news/articles/eleco-accepts-gbp200-million-takeover-offer-accel-kkr"
+  },
+  {
+   "ticker": "OM:GOTL A",
+   "company": "Rederiaktiebolaget Gotland",
+   "date": "2026-04-09",
+   "counterparty": "Nordic Ferry Infrastructure Holding AS (Norway) / EQT Fund Management S.\u00e0 r.l.",
+   "role": "acquirer",
+   "terms": "European Commission cleared the acquisition of joint control of Nordic Ferry Infrastructure Holding AS by Gotlandsbolaget and EQT. Nordic Ferry Infrastructure operates passenger and freight ferry routes in Denmark, Norway and Sweden.",
+   "note": "Joint-venture style acquisition expanding Gotlandsbolaget's ferry operations beyond its core Gotland-mainland Sweden routes.",
+   "source_url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-clears-acquisition-nordic-ferry-infrastructure-gotlandsbolaget-and-eqt-2026-07-08_fr"
+  },
+  {
+   "ticker": "DB:IFS",
+   "company": "Infas Holding AG",
+   "date": "2025-01-01",
+   "counterparty": "Ipsos SA",
+   "role": "target",
+   "terms": "Voluntary public takeover offer at EUR 6.80/share (~EUR 61.2m valuation, ~61% premium); accepted for ~83.72% of shares, completed early January 2025 after German cartel clearance (Dec 20, 2024), Ipsos ended up with 96.6% of shares.",
+   "note": "Ipsos acquired infas to become a major player in German market/social research (now operates as Ipsos infas).",
+   "source_url": "https://www.ipsos.com/en/ipsos-launches-voluntary-public-takeover-offer-infas-acquire-industry-leader-german-public-sector"
+  },
+  {
+   "ticker": "LSE:MHPC",
+   "company": "MHP SE",
+   "date": "2026-05-30",
+   "counterparty": "Th. Nitsiakos AVEE",
+   "role": "acquirer",
+   "terms": "MHP to acquire 70% of Greek poultry producer Nitsiakos (FY2025 revenue ~EUR 540m) in three sequential tranches; remaining 30% subject to a put option exercisable 2030-2035; first tranche expected to close Q1 2027 subject to regulatory clearance; price tied to Nitsiakos EBITDA.",
+   "note": "International expansion deal for MHP; no change of control of MHP itself.",
+   "source_url": "https://www.thepoultrysite.com/news/2026/06/mhp-to-acquire-greek-producer-nitsiakos"
+  },
+  {
+   "ticker": "CPSE:AOJ B",
+   "company": "Br\u00f8drene A & O Johansen A/S",
+   "date": "2026-08-26",
+   "counterparty": "Elektroimport\u00f8ren AS",
+   "role": "acquirer",
+   "terms": "Recommended voluntary cash offer of NOK 22/share for Elektroimport\u00f8ren AS (Norway/Sweden electrical products wholesaler/retailer), implying ~NOK 1.1bn transaction value; acceptances reached ~92.5%, offer completed August 26, 2026; compulsory acquisition of remaining shares to follow.",
+   "note": "AOJ also closed a separate acquisition of JMV Cables A/S in July 2026 and bought the VVS-eksperten.dk e-commerce domain effective Jan 1 2026 - smaller bolt-on deals.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/07/03/3321648/0/en/Br%C3%B8drene-A-O-Johansen-A-S-announces-a-recommended-voluntary-cash-offer-of-NOK-22-per-share-to-the-shareholders-of-Elektroimport%C3%B8ren-AS-and-publishes-offer-document-commencement-of-.html"
+  },
+  {
+   "ticker": "LSE:STEM",
+   "company": "SThree plc",
+   "date": "2026-09-09",
+   "counterparty": "Circle8 Group Inc.",
+   "role": "target",
+   "terms": "Unsolicited, preliminary, highly conditional all-cash takeover approach for SThree's entire issued share capital, disclosed under the UK Takeover Code on Sept 9, 2026 (offer period commenced); SThree's board rejected the approach on Sept 11, 2026. Circle8 had until Oct 7, 2026 (PUSU deadline) to announce a firm intention or walk away.",
+   "note": "Status as of search: rejected by SThree board but formal offer period still open at time of last report; outcome (firm offer vs. walk-away) not yet confirmed in sources found.",
+   "source_url": "https://www.investing.com/news/company-news/sthree-receives-preliminary-takeover-approach-from-circle8-93CH-4893974"
+  },
+  {
+   "ticker": "LSE:SPI",
+   "company": "Spire Healthcare Group plc",
+   "date": "2026-09-05",
+   "counterparty": "Tulip UK Bidco (consortium of Toscafund Asset Management, THCP Advisory and Ares Management)",
+   "role": "target",
+   "terms": "Recommended cash takeover at 250p/share, valuing Spire at ~GBP 1.03bn (~66% premium to the May 13, 2026 pre-approach closing price); board unanimously recommended the offer after a strategic review involving >60 potential buyers over ~8 months; to be implemented via a court-sanctioned scheme of arrangement, expected to complete Q4 2026 or Q1 2027 subject to approvals. CEO Justin Ash to retire; Sir David Sloman interim CEO; Paolo Pieri to become chair post-completion.",
+   "note": "Take-private of the UK's largest private hospital operator.",
+   "source_url": "https://uk.finance.yahoo.com/news/spire-healthcare-agrees-taken-private-073530740.html"
+  },
+  {
+   "ticker": "ENXTLS:ALTR",
+   "company": "Altri, SGPS, S.A.",
+   "date": "2025-07-21",
+   "counterparty": "AeoniQ (and Greenalia Forest / Greenalia Logistics)",
+   "role": "acquirer",
+   "terms": "Altri acquired a controlling 58.7% stake in AeoniQ (sustainable textiles/cellulosic fibre venture, completed July 21, 2025) to support an industrial unit at its Caima facilities; separately completed acquisition of Greenalia Forest and Greenalia Logistics on May 14, 2025.",
+   "note": "Bolt-on diversification deals by Altri (acquirer), not a change-of-control event for Altri itself.",
+   "source_url": "https://finance.yahoo.com/news/altri-sgps-acquires-controlling-stake-113404898.html"
+  },
+  {
+   "ticker": "WSE:QRS",
+   "company": "Quercus TFI S.A.",
+   "date": "2025-11-28",
+   "counterparty": "Templeton Asset Management (Poland) TFI S.A. / Franklin Templeton",
+   "role": "acquirer",
+   "terms": "Quercus TFI merged with Templeton Asset Management (Poland) TFI S.A. (merger registered Nov 28, 2025), taking over management of three Franklin Templeton FIO sub-funds; as part of the deal Franklin Templeton received Quercus shares in exchange plus subscribed new shares at PLN 12/share, ending up with ~7.1-7.8% of Quercus TFI's enlarged capital alongside a strategic cooperation agreement.",
+   "note": "Consolidation in the Polish TFI (fund management) sector; Quercus is the surviving/acquiring entity.",
+   "source_url": "https://quercustfi.pl/aktualnosc/wiadomosci/fuzja-dwoch-tfi-na-polskim-rynku-stala-sie-faktem-quercus-tfi-sa-polaczylo"
+  },
+  {
+   "ticker": "MTSE:HSB",
+   "company": "HSBC Bank Malta p.l.c.",
+   "date": "2025-09-01",
+   "counterparty": "CrediaBank S.A. (Greece, formerly Attica Bank)",
+   "role": "target",
+   "terms": "HSBC Continental Europe to sell its 70.03% stake at EUR 0.793/share (~EUR 200m total); CrediaBank to follow with a mandatory tender offer for remaining minority shares at EUR 1.44/share; subject to MFSA/ECB approval, completion expected late 2026/early 2027",
+   "note": "Change-of-control sale of HSBC's majority stake in its Malta subsidiary, with a mandatory tender offer to follow for minority shareholders.",
+   "source_url": "https://www.cliffordchance.com/news/news/2025/10/clifford-chance-advises-hsbc-on-the-sale-of-its-shareholding-in-hsbc-malta-plc.html"
+  },
+  {
+   "ticker": "ENXTPA:SCHP",
+   "company": "S\u00e9ch\u00e9 Environnement SA",
+   "date": "2025-06-05",
+   "counterparty": "Groupe Flamme (France, hazardous/industrial waste); also Hidronor (Chile) and La Filippa (Italy)",
+   "role": "acquirer",
+   "terms": "Unilateral purchase offer signed 5 June 2025 to acquire all shares of Groupe Flamme (~EUR 100m revenue, ~EUR 20m EBITDA, ~560 employees), described as last independent French hazardous-waste operator; Hidronor and La Filippa deals signed and closed in early 2026",
+   "note": "S\u00e9ch\u00e9 is the acquirer in a notable consolidation of the French hazardous-waste sector plus smaller Chile/Italy bolt-ons; Flamme deal status (closed vs pending) not fully confirmed.",
+   "source_url": "https://www.businesswire.com/news/home/20250605552929/en/Sch-Environnement-Signing-of-a-Unilateral-Purchase-Offer-With-a-View-to-Acquiring-Groupe-Flamme"
+  },
+  {
+   "ticker": "XTRA:BEZ",
+   "company": "Berentzen-Gruppe Aktiengesellschaft",
+   "date": "2026-09-21",
+   "counterparty": "Sazerac Company, Inc. (US spirits maker), via vehicle Blitz 26-877 GmbH (to be renamed Sazerac Germany Holding GmbH)",
+   "role": "target",
+   "terms": "Business combination agreement signed 21 Sep 2026; voluntary public cash takeover offer at EUR 5.55/share (~68% premium to unaffected 3-month VWAP); minimum acceptance threshold 50%+1 share; no regulatory clearance required; both management and supervisory boards support the deal; closing expected Q4 2026; Sazerac intends to pursue delisting afterward, supported by the executive board",
+   "note": "Full takeover of the German spirits group by a major US competitor; BaFin review/publication of the formal offer document not confirmed in search results.",
+   "source_url": "https://www.finanzwire.com/press-release/berentzen-group-and-sazerac-to-create-a-leading-spirits-platform-in-europe-1URvrZISGyV"
+  },
+  {
+   "ticker": "LSE:AEP",
+   "company": "AEP Plantations Plc",
+   "date": "2026-05",
+   "counterparty": "PT Pinago Utama Tbk (Indonesia) shareholders / AEP Nusantara Holdings Ltd (AEP subsidiary)",
+   "terms": "AEP acquired ~98.26% of PT Pinago Utama Tbk (Indonesia-listed agribusiness) for ~US$162m cash via subsidiary AEP Nusantara Holdings Ltd, announced early May 2026; followed by an Indonesia-law-mandated follow-on mandatory tender offer (MTO) for the remaining Pinago shares, completed 2026-08-21, acquiring a further ~1.21% (raising AEP's stake to ~99.48%, total consideration ~US$160.2m).",
+   "note": "This is AEP acquiring a target, not AEP itself being acquired. AEP also carried out a 10-for-1 share split completed 2026-06-25 (EPS retrospectively adjusted) -- an other/secondary corporate action worth noting alongside the M&A.",
+   "source_url": "https://www.morningstar.co.uk/uk/news/AN_1777969349913426500/aep-plantations-buys-indonesian-agribusiness-pinago-for-usd162-million.aspx"
+  },
+  {
+   "ticker": "WSE:SEL",
+   "company": "Selena FM S.A.",
+   "date": "2026-05-12",
+   "counterparty": "Irm\u00e3os Guimar\u00e3es Martins, SGPS, S.A. (IGM), Portugal (sellers)",
+   "terms": "Selena FM (via its structure) closed the first stage of acquiring IGM, a Portuguese sandwich-panel producer/distributor, buying a 66% stake for ~EUR68m (~PLN288.8m), price subject to post-closing adjustment based on closing-date financial statements; remaining 34% to be acquired in a second stage per the share purchase agreement (timing not confirmed).",
+   "note": "Selena FM is the acquirer here, not the target; described by the company as its most recent major transaction as of its Q1 2026 results release.",
+   "source_url": "https://www.biznesradar.pl/a/147262,selena-fm-sfinalizowala-pierwszy-etap-przejecia-portugalskiej-spolki-igm"
+  }
+ ],
+ "spinoffs": [
+  {
+   "ticker": "LSE:CBG",
+   "company": "Close Brothers Group plc",
+   "date": "2025-07-25",
+   "spun_off_entity": "Winterflood (market-making business)",
+   "terms": "Sale of Winterflood to Marex Group plc for approximately \u00a3103.9 million in cash; transaction expected to complete in early 2026, subject to regulatory approval.",
+   "note": "Follows the earlier sale of Close Brothers Asset Management (CBAM) to Oaktree Capital Management (completed 28 Feb 2025, equity value up to \u00a3200m) as part of a broader business-simplification/capital-management programme.",
+   "source_url": "https://www.closebrothers.com/system/files?file=press%2FCBG+2025+Preliminary+Results+Announcement.pdf"
+  },
+  {
+   "ticker": "XTRA:STM",
+   "company": "Stabilus SE",
+   "date": "2026-05",
+   "spun_off_entity": "Fabreeka and Tech Products businesses (part of the former DESTACO industrial-automation unit)",
+   "terms": "Sale of Fabreeka and Tech Products to VMC Group; sale completed in Q3 FY2026.",
+   "note": "Divestiture follows Stabilus's September 2025 transformation program aimed at streamlining the organization and optimizing its production footprint/cost base.",
+   "source_url": "https://group.stabilus.com/news-and-events/press-releases"
+  },
+  {
+   "ticker": "HLSE:ASPO",
+   "company": "Aspo Oyj",
+   "date": "2026-08-03",
+   "spun_off_entity": "ESL Shipping Group Plc (new listed company housing ESL Shipping Ltd)",
+   "terms": "Aspo's Board approved a demerger plan on Aug 3, 2026 to separate ESL Shipping Ltd into a new independent listed company (ESL Shipping Group); shareholders to receive 1 new share for each Aspo share held; EGM expected Dec 7, 2026; completion planned Dec 31, 2026; trading of new shares on Nasdaq Helsinki expected to start ~Jan 4, 2027. Remaining Aspo will refocus on Telko (compounding/chemicals distribution) as 'Aspo Compounder'.",
+   "note": "Separately, Aspo completed the divestment of its Leipurin business to Lantm\u00e4nnen on March 2, 2026 for an enterprise value of ~EUR 63m (EUR 62m cash at closing, EUR 15m one-off sales gain) - a related portfolio restructuring alongside the ESL Shipping spinoff.",
+   "source_url": "https://www.aspo.com/stock-exchange-releases/inside-information-the-board-of-directors-of-aspo-plc-has-approved-a-demerger-plan-concerning-the-separation-of-esl-shipping-into-a-new-listed-company-3337215"
+  },
+  {
+   "ticker": "HLSE:TNOM",
+   "company": "Talenom Oyj",
+   "date": "2026-02-28",
+   "note": "Talenom completed a partial demerger (spinoff): its software business was transferred to a newly established, separately listed company, Easor Plc/Oyj, while Talenom retained its core accounting business. Shareholders approved the split at an EGM on 2026-01-27; the demerger took effect 2026-02-28; Easor shares began trading on Nasdaq Helsinki on 2026-03-02 at a 1:1 distribution ratio to Talenom shareholders. Talenom now reports the software business as discontinued operations under IFRS 5.",
+   "source_url": "https://www.inderes.fi/en/releases/talenom-plcs-financial-statement-release-2025-a-year-of-major-strategic-changes-demerger-completed-after-the-review-period"
+  }
+ ],
+ "other": [
+  {
+   "ticker": "ENXTPA:BLC",
+   "company": "Bastide Le Confort M\u00e9dical SA",
+   "date": "2026-06-01",
+   "type": "divestiture",
+   "note": "Bastide completed the sale of subsidiary New Medical Concept (holding company of the EXPERF home-infusion/clinical-nutrition group, EUR42m revenue) to Sapio Group as part of active portfolio management.",
+   "source_url": "https://app.bigdata.com/documents/576C55C40F0D4DAB5ACA3280DB2B76A1"
+  },
+  {
+   "ticker": "AIM:YOU",
+   "company": "YouGov plc",
+   "date": "2026-03-24",
+   "type": "restructuring/potential_divestiture",
+   "note": "YouGov commenced a strategic review of its Shopper division (the former GfK Consumer Panel Services business), exploring options including a possible sale or combination of the unit's data assets; not yet a completed transaction.",
+   "source_url": "https://app.bigdata.com/documents/E694B1F724C311EE4C062A5A30F99D30"
+  },
+  {
+   "ticker": "BIT:BFF",
+   "company": "BFF Bank S.p.A.",
+   "date": "2026-08-05",
+   "type": "restructuring/potential_partial_sale",
+   "note": "Amid a capital shortfall, BFF Bank's board launched a process to find financial/strategic partners and received non-binding expressions of interest, including from BPER Banca for BFF's payment and custodian-banking businesses specifically; outcome still pending.",
+   "source_url": "https://app.bigdata.com/documents/FE9D1CBDD207774273EE2B7A95AC0C62"
+  },
+  {
+   "ticker": "XTRA:PCZ",
+   "company": "ProCredit Holding AG",
+   "date": "2026-03-01",
+   "type": "divestiture",
+   "note": "ProCredit Holding signed an agreement to sell its majority stake in ProCredit Bank Ecuador (South America segment), expected to close in 2026 subject to local regulatory approval; the business is now reported as discontinued operations.",
+   "source_url": "https://app.bigdata.com/documents/8DA05F28B789FBB45BBB7D446D1C8642"
+  },
+  {
+   "ticker": "ENXTPA:SEFER",
+   "company": "SergeFerrari Group SA",
+   "date": "2026-06-24",
+   "type": "delisting",
+   "note": "SergeFerrari Group transferred its share listing from the regulated market of Euronext Paris to the lighter-touch Euronext Growth Paris multilateral trading facility, effectively delisting from the regulated market (shareholder approval 22 April 2026, effective 24 June 2026).",
+   "source_url": "https://app.bigdata.com/documents/849DBFD0CD50096AF02250A1A2B45FF7"
+  },
+  {
+   "ticker": "WSE:MCR",
+   "company": "mcr Spolka Akcyjna (formerly Mercor S.A.)",
+   "date": "2025-10-01",
+   "type": "divestiture + special dividend",
+   "terms": "Sold its gravity smoke-extraction and fire-ventilation business (transferred first into a subsidiary, then sold) to Kingspan Group for up to PLN 420M (PLN 90M of that deferred/contingent on trailing-12-month EBITDA through March 2026); transaction closed ~October 2025.",
+   "note": "Company rebranded from Mercor S.A. to mcr Spolka Akcyjna following the sale, and paid an unusually large special dividend (PLN 1.78/share, well above the prior year) from the proceeds. This is a divestiture + cash-return event, not a classic spinoff (shareholders did not receive shares in a new listed entity) - explains both the name change and the ~53% drop in market cap picked up in this project's market-cap refresh, which is a mechanical consequence of the business/cash leaving the company, not organic deterioration.",
+   "source_url": "https://www.bankier.pl/wiadomosc/MERCOR-S-A-Zamkniecie-transakcji-zbycia-spolek-zaleznych-Spolki-posiadajacych-aktywa-zwiazane-z-prowadzeniem-dzialalnosci-w-zakresie-oddymiania-grawitacyjnego-oraz-wentylacji-pozarowej-9018322.html"
+  },
+  {
+   "ticker": "ENXTPA:MDM",
+   "company": "Maisons du Monde S.A.",
+   "date": "2026-07",
+   "type": "debt-for-equity recapitalization / change of control",
+   "terms": "After a EUR 406m loss in 2025 and near-insolvency, Maisons du Monde completed a refinancing/restructuring validated by the Nantes commercial court: British funds Alteri Investors and Eicos Investment Group took over ~95% of the company's capital by converting EUR 218m of existing bank debt into equity via a massively dilutive capital increase, plus EUR 25m new financing. Conciliator separately mandated to prepare a 'prepack' disposal for Maisons du Monde France and Maisons du Monde SA.",
+   "note": "Near-total change of control via distressed debt-to-equity swap; existing shareholders massively diluted. Any legacy valuation score is meaningless post-restructuring.",
+   "source_url": "https://www.fusacq.com/buzz/maisons-du-monde-boucle-son-refinancement-et-echappe-au-redressement-judiciaire-a260150_fr_"
+  },
+  {
+   "ticker": "XTRA:SUR",
+   "company": "Surteco Group SE",
+   "date": "2024-10-04 (control) / 2026-01 (divestiture plans)",
+   "type": "mandatory takeover offer + strategic divestiture review",
+   "terms": "BANASINO INVESTMENTS S.a r.l. acquired control of Surteco (30% of voting rights) on Oct 4, 2024, triggering a mandatory offer at EUR 16.96/share; the Surteco Pool (56.87% of voting rights) did not accept and the management/supervisory board did not recommend acceptance. Separately, in January 2026 Surteco confirmed media reports of a strategic review to sell larger parts of the group, including the Profiles and Edgebands (baseboard/technical profiles) business units; in April 2026 the company secured refinancing to 2029 to support the ongoing restructuring.",
+   "note": "Both a 2024 change-of-control event via mandatory tender and an active 2026 plan to divest major business divisions -- directly analogous to the Mercor/Kingspan divestiture pattern.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-01/67549612-surteco-bestaetigt-medienbericht-verkauf-groesserer-konzernteile-moeglich-424.htm"
+  },
+  {
+   "ticker": "WSE:ALL",
+   "company": "Ailleron S.A.",
+   "date": "2026-04-08",
+   "type": "attempted divestiture of subsidiary (failed)",
+   "terms": "Ailleron was in advanced, exclusive negotiations to sell its Software Mind subsidiary (a software house) to US private equity firm Tailwind Capital Partners IV. Poland's UOKiK antitrust approval was obtained Feb 26, 2026, and the exclusivity period was extended March 17, 2026, but Tailwind halted/withdrew from negotiations on April 8, 2026, citing unfavorable macro/market conditions (not diligence issues).",
+   "note": "A material planned divestiture of Ailleron's core subsidiary that ultimately fell through in April 2026; strategic review of Software Mind may resume, and market may still be pricing in sale expectations.",
+   "source_url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L8N40R07J:0-ailleron-says-tailwind-capital-halts-negotiations-for-sale-of-software-mind-stake/"
+  },
+  {
+   "ticker": "LSE:DATA",
+   "company": "GlobalData Plc",
+   "date": "2026-07-09",
+   "type": "failed takeover approaches + large self-tender buyback",
+   "terms": "GlobalData received takeover approaches from private equity firms KKR (collapsed May 2026) and ICG (talks ended June 2026). Following the collapse, GlobalData launched a GBP 60m tender offer (initially reported as GBP 30m at 85p/share, 16% premium) to return capital to shareholders, on top of an existing GBP 5m buyback (total GBP 45-60m return for the year). Company also moved from AIM to the Main Market in March 2026.",
+   "note": "Stock may still carry residual takeover-premium expectations from the failed PE approaches; large self-tender also changes share count materially.",
+   "source_url": "https://businesscloud.co.uk/news/globaldata-to-launch-tender-offer-following-collapsed-takeover-talks/"
+  },
+  {
+   "ticker": "XTRA:ST5",
+   "company": "STEICO SE",
+   "date": "2025-11-01",
+   "type": "majority-stake overhang / potential future takeover offer",
+   "terms": "Kingspan Group holds 61.1% of STEICO (increased from an initial 51% stake purchase from founder Udo Schramek in 2023 at EUR35/share, ~EUR251.4m). Commentary from late 2025 into 2026 discusses the possibility of Kingspan launching a full takeover offer or squeeze-out of the remaining 38.9% free float, given the depressed share price, but no formal bid has been made as of the search date.",
+   "note": "Company trades under a persistent 'Sondersituation' takeover overhang from its majority shareholder; valuation distorted by M&A speculation rather than pure fundamentals.",
+   "source_url": "https://www.intelligent-investieren.net/2025/11/kissigs-nebenwerte-analyse-zu-steico.html"
+  },
+  {
+   "ticker": "XTRA:P4O",
+   "company": "Planoptik AG",
+   "date": "2025-12-18",
+   "type": "divestiture",
+   "terms": "Planoptik AG sold 100% of the shares in its subsidiary AIRTUNE GmbH to an undisclosed buyer on 18 December 2025.",
+   "note": "Divestiture of a subsidiary shortly after Planoptik's own uplisting to the Regulated Market (Frankfurt) in September 2025; company also reported a weak 2025 with expected recovery in 2026.",
+   "source_url": "https://www.it-times.de/news/planoptik-ag-veraeusserung-der-airtune-gmbh-176032/"
+  },
+  {
+   "ticker": "AIM:TRCS",
+   "company": "Tracsis plc",
+   "date": "2025-12-01",
+   "type": "divestiture",
+   "terms": "Tracsis sold its Events Transport Planning & Management division to private equity firm Connection Capital for an enterprise value of \u00a37.25 million (approximately 3.8x EBITDA), described as 'another significant step in reshaping the group' toward a software-led strategy.",
+   "note": "Divestiture of a whole division as the company reshapes its portfolio toward software; see also acquisition of Mistral Data under mergers_acquisitions.",
+   "source_url": "https://www.insidermedia.com/news/yorkshire/tracsis-sells-events-business-to-pe-firm-for-7.25m-another-significant-step-in-reshaping-the-group"
+  },
+  {
+   "ticker": "XTRA:VIB3",
+   "company": "Villeroy & Boch AG",
+   "date": "2025-09-30",
+   "type": "divestiture",
+   "terms": "Villeroy & Boch sold its Gustavsberg and Vatette bathroom-fittings brands (~EUR93 million 2024 net sales) to Finnish faucet manufacturer Oras Group, transaction expected to complete in Q3 2025 (purchase price undisclosed). This follows the company's largest-ever acquisition, Ideal Standard (completed March 2024, ~EUR1.42bn group revenue in 2024, +57.6% YoY), which materially changed the group's size and business mix.",
+   "note": "Divestiture within the screening window plus a still-recent (within ~2 years) transformational acquisition (Ideal Standard) that reshaped group revenue; Q1 2026 revenue declined 13.7% YoY, indicating ongoing integration/normalization effects.",
+   "source_url": "https://www.ahkfinnland.de/de/news/2025-news/villeroy-boch-verkauft-marken-gustavsberg-und-vatette-an-finnischen-armaturenhersteller-oras-group"
+  },
+  {
+   "ticker": "ENXTPA:ALATI",
+   "company": "ACTIA Group S.A.",
+   "date": "2025-02-18",
+   "type": "divestiture",
+   "terms": "ACTIA Group disposed of its remaining 60% stake in subsidiary ACTIA CZ (Czech Republic, renamed ATAL) on 18 February 2025, completing a full exit after an initial 30% disposal in April 2022. Separately, in H1 2026 ACTIA invested EUR2.3m to raise its stake in ACTIA Aerospace to 92.5% (minority buy-in, not a distorting event).",
+   "note": "Full divestiture/exit of a subsidiary, changing group perimeter versus historical financial comparables.",
+   "source_url": "https://www.businesswire.com/news/home/20250717082133/fr"
+  },
+  {
+   "ticker": "BVB:ARCU",
+   "company": "Sifi Cluj Retail SA",
+   "date": "2025-06-01",
+   "type": "divestiture",
+   "terms": "Sifi Cluj Retail SA (controlled ~96.3% by SIF Imobiliare, Cyprus) signed an agreement to sell its entire property portfolio in Cluj-Napoca for EUR 24.3 million.",
+   "note": "Sale of the company's entire real-estate portfolio effectively liquidates the operating business; post-sale entity's asset base and earnings profile bear no relation to historical value metrics. Company subsequently discussed a large dividend distribution (~41m lei) to shareholders from the proceeds.",
+   "source_url": "https://www.zfcorporate.ro/burse-fonduri-mutuale/sifi-cluj-retail-bucuresti-societate-controlata-sif-imobiliare-22293323"
+  },
+  {
+   "ticker": "XTRA:NOEJ",
+   "company": "NORMA Group SE",
+   "date": "2026-02-02",
+   "type": "divestiture",
+   "terms": "NORMA Group sold its Water Management business unit, with the sale completed on 2 February 2026; the unit had been classified as a discontinued operation since Q3 2025. The company then returned capital via two public share buyback offers: one completed 27 March 2026 at EUR16.59/share (~10% of capital, ~EUR52.9m), and a second launched August 2026 for up to 9,306,487 shares at EUR22.35/share (~EUR208m total).",
+   "note": "Major divestiture of an entire business unit followed by large capital-return buybacks; FY2025 group revenue (EUR821.7m) reflects a business mix that will not repeat post-divestiture, and per-share buyback pricing embeds deal-related premia.",
+   "source_url": "https://www.normagroup.com/global/de/news/press-releases/2026/norma-group-closes-financial-year-2025-within-the-forecast-corridors"
+  },
+  {
+   "ticker": "LSE:PAGE",
+   "company": "PageGroup plc",
+   "date": "2026-07",
+   "type": "rebrand",
+   "terms": "PageGroup plc announced plans to rebrand to Michael Page.",
+   "note": "Corporate name/brand change, not an M&A event; included for dashboard awareness of a major restructuring-adjacent change.",
+   "source_url": "https://www.tipranks.com/news/company-announcements/pagegroup-publishes-2025-annual-report-and-sets-date-for-2026-agm"
+  },
+  {
+   "ticker": "BVB:LION",
+   "company": "Lion Capital S.A.",
+   "date": "2026-03-04",
+   "type": "self-tender offer (own-share buyback)",
+   "terms": "Lion Capital S.A. (as bidder) launched a public tender offer on its own shares at RON 4.50/share during 4-17 March 2026, targeting up to 49,600,250 shares (~9.7733% of share capital). ASF-approved offer document (decision 215/25.02.2026).",
+   "note": "Lion Capital is an investment/holding company; this is a capital-return/self-tender action rather than a third-party takeover. A separate related entity, Fondul Proprietatea, also ran tender offers involving Lion Capital in this period; unrelated Biofarm stake was sold by Lion Capital to Polpharma in June 2026.",
+   "source_url": "https://www.lion-capital.ro/docs/en/current-reports/2026/PTO-LION/public-tender-offer-document-LionCapital-2026.pdf"
+  },
+  {
+   "ticker": "WSE:LSI",
+   "company": "LSI Software S.A.",
+   "date": "2026-04-13",
+   "type": "Strategic review / possible delisting",
+   "terms": "Board announced a review of strategic options on 13 Apr 2026 (possible capital/organizational changes, capital or corporate transactions); free float fell below 10%, leading to removal from WIG/WIG-informatyka/WIG-Poland indices after the 2 Apr 2026 session; draft resolutions circulated in Nov 2025 for an EGM to consider withdrawing shares from the regulated market, alongside repeated buyback tenders (Dec 2025, Feb 2026, Mar 2026)",
+   "note": "Pattern consistent with a controlling shareholder squeezing out free float ahead of a possible delisting; outcome of the strategic review and the delisting vote not confirmed in search results.",
+   "source_url": "https://www.biznesradar.pl/wiadomosci/LSI-SOFTWARE"
+  },
+  {
+   "ticker": "XTRA:GXI",
+   "company": "Gerresheimer AG",
+   "date": "2026-04-17",
+   "type": "Repeated takeover interest / rejected bid",
+   "terms": "Confirmed PE talks since Feb 2025 (Warburg Pincus/KPS Capital Partners, possible bid in the EUR 70s/share; KPS withdrew after due diligence); talks with PE investors ended 16 Jul 2025; US packaging company Silgan made a non-binding approach valuing Gerresheimer at EUR 41/share, which Gerresheimer rejected around 17 Apr 2026, ending those talks",
+   "note": "No deal completed; company reportedly wants to resolve accounting issues and sell US subsidiary Centor before considering further offers. Relevant as repeated, well-sourced takeover speculation/activity, not a completed transaction.",
+   "source_url": "https://finance.yahoo.com/markets/stocks/articles/why-gerresheimer-grrmy-remains-takeover-181958536.html"
+  },
+  {
+   "ticker": "XTRA:O4B",
+   "company": "OVB Holding AG",
+   "date": "2025-12-22",
+   "type": "Indirect change of control (via parent-level merger)",
+   "terms": "Voting-rights notice dated 22 Dec 2025: OVB's majority stake passed indirectly to Helvetia Baloise Holding AG as a result of the merger of Baloise Holding AG into Helvetia; in total 96.98% of OVB's voting rights are now attributed to Helvetia Baloise Holding AG (held directly by Baloise Leben Beteiligungsholding GmbH plus voting-agreement arrangements); no cash changed hands and Helvetia Baloise stated no intent to change OVB's strategy or dividend policy",
+   "note": "Change-of-control notice triggered by the Helvetia/Baloise insurance-group merger rather than a direct bid for OVB; no tender offer to OVB minority holders was identified in search results.",
+   "source_url": "https://www.ovb.eu/fileadmin/assets/Dokumente/ovb_holding/stimmrechtsmitteilungen/2025_12_22_Beteiligungsmitteilung_Helvetia_Baloise_Holding_AG.pdf"
+  },
+  {
+   "ticker": "BVB:PRBU",
+   "company": "Practic S.A.",
+   "date": "2026-08-20",
+   "note": "Practic S.A. shareholders approved delisting the company's shares from BVB's AeRO market (and deregistration from FSA registers), turning it into a private joint stock company; the EGM on 2026-08-20 passed with 94.30% of share capital in favor. Preceded by a July 2026 shareholder change in which a 32.15% stake moved from IBTCYRO Holding Ltd to Wellkept Properties Limited (Cyprus), and a company-published withdrawal-rights valuation (Veridio appraisal) for shareholders wishing to exit ahead of the delisting under Law 24/2017 / FSA Regulation 5/2018.",
+   "source_url": "https://www.bvb.ro/info/Raportari/PRBU/PRBU_20260820165542_Current-Report-Decision-GEMS-GOMS-20-08-2026.pdf"
+  },
+  {
+   "ticker": "ENXTPA:BEN",
+   "company": "B\u00e9n\u00e9teau S.A.",
+   "date": "2026-06",
+   "note": "B\u00e9n\u00e9teau announced plans to discontinue its US power-boat brands (Four Winns, Glastron, Scarab Jet), close its Cadillac, Michigan production plant in Q3 2026, and seek a buyer for the plant and brands. The three US brands lost ~EUR30m operating income combined over 2024-2025 and produced <5% of 2025 group turnover (~EUR850m). As of early Oct 2026 no buyer had been named/sale signed; this is a major restructuring/divestiture process, not a completed M&A transaction.",
+   "source_url": "https://bourse.fortuneo.fr/actualites/beneteau-projet-de-cession-des-marques-four-winns-glastron-et-scarab-aux-etats-unis-4207206"
+  }
+ ]
 }
