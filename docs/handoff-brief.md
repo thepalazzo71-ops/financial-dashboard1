@@ -1316,6 +1316,106 @@ field-level partial-completeness gap in tier-6). When auditing
 coverage, check for the specific fields a complete record should have,
 not just whether the parent field is truthy.
 
+## Systemic dividend-consistency bug fix (2026-10-08)
+
+User asked why Judges Scientific plc (AIM:JDG) - a well-known UK
+founder-led compounder (CEO David Cicurel, ~9.3% stake) with an
+unbroken, growing real dividend since at least 2016 - scored 0/4 on
+dividend consistency. Investigating surfaced a systemic bug affecting
+**both pools in their entirety**: 970 of 1000 Europe companies and all
+517 US companies showed `divPct: 0.0`, i.e. the model treated nearly
+every company as if it had never paid a single dividend across any of
+its 10 tracked periods.
+
+**Root cause**: Capital IQ reports "Total Dividends Paid" in cash-flow-
+statement sign convention - a real payment is a NEGATIVE number (cash
+outflow); exactly `0.0` means no dividend that period. Verified
+directly against both raw `.xls` files (e.g. JDG's raw values are
+`[-3.13, -0.79, -2.3, ..., -8.91]` - all negative, all real payments).
+The original ingestion counted a period as "dividend paid" using
+`v > 0`, which a negative number can never satisfy - so `divPct` came
+out ~0 regardless of actual history, for virtually every company in
+both pools.
+
+**Fix**: re-derived `divPct` directly from each raw `.xls` file for
+every company in both pools, using the correct `v < 0` condition, and
+updated the dependent `fixedPts.dividend_consistency`/`fixedSumNoGm`
+fields to match. 933 of 1000 Europe companies and 371+192 of the two US
+pool files changed (the untouched ones were genuine non-payers,
+correctly still 0.0). Also fixed the root bug in
+`scripts/ingest_us_pool.py`'s `pct_positive_of_n()` so a future
+re-ingestion doesn't reintroduce it - Europe's ingestion predates this
+repo (done in a prior Claude.ai chat session), so there's no equivalent
+script to fix there, but the correction script covered its current data
+directly from the raw file.
+
+**Impact on the Europe shortlist**: reshuffled the actual top-150 - 15
+companies entered, 15 left. Every exit still gained score from the fix
+(dividends never hurt), but gained *less* than the companies that
+leapfrogged them: exits are mostly partial/irregular payers (divPct
+0.1-0.57) or genuine non-payers (Hvidbjerg Bank, Fast Ejendom Danmark,
+Slatinska Banka, Kambi Group), while every entrant is a strong,
+consistent payer (divPct 0.80-1.00) - e.g. FDM Group, GlobalData,
+Pets at Home, Tokmanni Group, Braime Group. A clean, model-consistent
+reshuffle, not noise.
+
+Judges Scientific itself had already been one-off-corrected to
+divPct=1.0 moments before this systemic fix was found (same Card
+Factory-style precedent, verified via its real dividend history on
+dividendmax.com/Fidelity/ADVFN) - the systemic fix confirmed that value
+independently and is now the permanent source of truth; the one-off
+edit is superseded, not stacked.
+
+**Lesson**: when a scoring dimension looks suspiciously uniform across
+a large sample (here, near-100% zeros), check the raw source data
+directly rather than assuming the model's inputs are correct and
+accepting it as "most companies just don't do X." A one-company fix
+request (Judges Scientific) was the entry point to finding a bug
+affecting literally every company in both pools.
+
+## Tier-7/tier-8 market-cap round, both markets (2026-10-06/08)
+
+Two more ~50-company tiers, same pattern as every round so far, with
+one real wrinkle: the first Europe+Canada agent for tier-7 hit a
+session-wide rate limit partway through (32 of 57 saved before the
+cutoff - confirmed via the output file, no progress lost) and was
+finished with a 25-company follow-up batch.
+
+- **Europe tier 7**: 50/50 resolved via WebSearch across two runs, no
+  auto-exclude flags. One coincidental duplicate mc value ($89.4M for
+  both Michelmersh Brick Holdings and ECO Animal Health) verified
+  benign - different sources, different raw local-currency values.
+  Coverage: 404 → 454 of 1000.
+- **US tier 7**: 42 of 43 FMP-eligible tickers resolved (1 not found:
+  OTCPK:OAKC, no FMP coverage at all). Largest divergence (Methode
+  Electronics, ~3.0x vs baseline) independently verified via WebSearch
+  across gurufocus/wallstreetzen - real, not a data error. Coverage:
+  413 → 455 of 517.
+- **US tier 8**: 34 of 36 FMP-eligible tickers resolved. OTCPK:OAKC
+  (Oakworth Capital) showed up as not_found *again* - same recurring
+  pattern flagged earlier for HBIA: a ticker that's never successfully
+  resolved stays out of `mc_overrides`, so every subsequent tier's
+  "not yet covered" target-list filter keeps re-selecting it. One
+  access_denied (TPEX:4971 IntelliEPI - FMP resolved the correct
+  Taipei Exchange symbol but foreign-exchange profile data is gated
+  above this plan tier). Two symbol-format quirks handled (Crawford &
+  Company's real FMP symbol is "CRD-B", hyphenated, not the usual
+  dot-dropping convention). Coverage: 455 → 489 of 517.
+- **Canada tiers 7+8**: 7 + 14 = 21 TSX/TSXV tickers via WebSearch,
+  folded into the Europe batches each round. 20 of 21 resolved; TSX:ECN
+  (ECN Capital) was taken private by a Warburg Pincus-led group in
+  April 2026 and no longer trades - flagged rather than removed, per
+  the no-manual-edits policy. Final combined US/Canada coverage: 502 of
+  517.
+
+Remaining uncovered in the US/Canada pool (3 tickers, all for
+documented reasons, not worth re-attempting without a new data source):
+OTCPK:OAKC (no FMP coverage), TPEX:4971 IntelliEPI (plan-gated foreign
+exchange data), TSX:ECN (delisted/taken private).
+
+Corporate-actions screening and both markets' thesis research now
+trail this new tier-7/8 frontier - not yet requested for this round.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
@@ -1344,18 +1444,17 @@ not just whether the parent field is truthy.
 - US and Europe shareholding research are **done** for their current
   scope (US: 243-ticker priority pool; Europe: 150 thesis companies) —
   see "Shareholding data" and "Coverage extension round" above.
-- **Continuing the market-cap / corporate-actions frontier**: both
-  dashboards' coverage now extends to 404-of-1000 (Europe) / 413-of-517
-  (US/Canada) for market caps, and corporate-actions screening plus
-  both markets' thesis research are fully caught up to that same tier-6
-  frontier as of the "Tier-6 corporate-actions/thesis catch-up" entry
-  above - all four dimensions are in sync again, and the US thesis
-  pool additionally got a one-time 66-company partial-data backfill
-  (every thesis-bearing company now has the complete 6-field set, not
-  just whichever fields happened to get researched first). The natural
-  next step is the next ~50-company market-cap tier, same batch
-  pattern as every round so far (WebSearch for non-US-exchange market
-  caps, Canadian TSX/TSXV names, and all corporate-actions/thesis
+- **Continuing the market-cap / corporate-actions frontier**: market-cap
+  coverage now extends to 454-of-1000 (Europe) / 502-of-517 (US/Canada)
+  as of tier 7/8 (see above) - the US/Canada pool is now almost fully
+  covered, with only 3 tickers left uncovered for documented reasons
+  (see that entry). Corporate-actions screening and both markets'
+  thesis research are only caught up through tier 6 (two tiers behind
+  market-cap now) - the natural next step is extending both to match,
+  then (for Europe, which still has real room) the next ~50-company
+  market-cap tier, same batch pattern as every round so far (WebSearch
+  for non-US-exchange market caps, Canadian TSX/TSXV names, and all
+  corporate-actions/thesis
   screening; FMP for US-exchange market caps; never more than one
   WebSearch-heavy agent running at once; generate target lists by
   filtering out already-covered tickers rather than a fixed rank
