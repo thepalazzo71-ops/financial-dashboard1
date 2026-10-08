@@ -2445,38 +2445,68 @@
     "updatedAt": "2026-10-08T11:12:09Z"
   },
   "TSX:DRM": {
-    "mc": 592.6,
+    "mc": 531.0,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:MDI": {
-    "mc": 972.6,
+    "mc": 958.5,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:ARG": {
-    "mc": 879.3,
+    "mc": 699.1,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:BOS": {
-    "mc": 134.5,
+    "mc": 140.6,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:CSW.A": {
-    "mc": 292.3,
+    "mc": 292.5,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:FTG": {
-    "mc": 356.3,
+    "mc": 446.6,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
   },
   "TSX:TCW": {
-    "mc": 928.9,
+    "mc": 880.4,
     "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:18:10Z"
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSXV:TMG": {
+    "mc": 19.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSX:CF": {
+    "mc": 1057.9,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSX:IFP": {
+    "mc": 380.6,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSX:CFP": {
+    "mc": 1299.3,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSX:NEO": {
+    "mc": 1235.4,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
+  },
+  "TSX:AGTF": {
+    "mc": 974.1,
+    "source": "WebSearch",
+    "updatedAt": "2026-10-08T11:24:25Z"
   }
 }
