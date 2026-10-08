@@ -26,6 +26,33 @@
       "terms": "Cash tender offer for all outstanding Crown Crafts common stock at $3.15/share pursuant to a Merger Agreement; tender offer to commence within 15 business days, remain open 20 business days (subject to extension); not subject to a financing condition. Crown Crafts to become a wholly owned subsidiary upon completion.",
       "note": "Merger Agreement announced June 9, 2025.",
       "source_url": "https://www.globenewswire.com/news-release/2025/06/09/3095865/0/en/Crown-Announces-Entry-into-Merger-Agreement.html"
+    },
+    {
+      "ticker": "NasdaqGM:LWAY",
+      "company": "Lifeway Foods, Inc.",
+      "date": "2024-2026",
+      "counterparty": "Danone North America (largest shareholder, ~22.7% stake)",
+      "terms": "Danone, Lifeway's largest shareholder (~22.7%), proposed to acquire all shares it didn't already own, first at $25.00/share (2024), later raised to approximately $27.00/share. Lifeway's board rejected both proposals as inadequate/opportunistic amid a public founder-family governance dispute (Smolyansky family). In late 2025 Danone abandoned the acquisition effort and, after exploring alternatives, agreed in 2026 to sell its entire stake at $19.50/share (well below its own prior offer price); buyer of the stake not identified in sources found.",
+      "note": "Multi-year attempted minority-to-majority buyout by largest shareholder, ultimately abandoned; combined with an active board/governance fight among the founding family. Worth tracking for any new bidder now that Danone's stake is being sold.",
+      "source_url": "https://www.foodingredientsfirst.com/news/lifeway-foods-rejects-danones-opportunistic-takeover-bid-for-us25-a-share.html"
+    },
+    {
+      "ticker": "NasdaqGM:PAMT",
+      "company": "PAMT CORP (P.A.M. Transportation Services)",
+      "date": "2025-05",
+      "counterparty": "Self-tender (modified Dutch auction)",
+      "terms": "Company tendered for up to 435,000 shares (~2.0% of shares outstanding) in a modified Dutch auction at $14.00-$17.00/share; preliminary results showed ~885,179 shares tendered, with ~870,000 shares purchased (prorated) at the $17.00 clearing price for an aggregate cost of approximately $14.8 million.",
+      "note": "Self-tender buyback, not a change-of-control event, but materially shrinks share count.",
+      "source_url": "https://feeds2.benzinga.com/pressreleases/25/05/b45176482/pamt-corp-announces-preliminary-results-of-its-self-tender-offer"
+    },
+    {
+      "ticker": "NasdaqGS:HCKT",
+      "company": "The Hackett Group, Inc.",
+      "date": "2025-12-04",
+      "counterparty": "Self-tender (modified Dutch auction)",
+      "terms": "Modified Dutch auction tender offer for up to $40 million of stock; expired Dec 4, 2025. Company accepted 2,031,733 shares (including an extra 2% upsize) at $20.00/share for an aggregate cost of ~$40.6 million, equal to about 7.49% of shares outstanding.",
+      "note": "Large self-tender buyback (follows a prior $120M Dutch-auction tender in Dec 2022); meaningfully reduces share count.",
+      "source_url": "https://www.thehackettgroup.com/the-hackett-group-inc-announces-final-results-of-its-40-million-dutch-auction-tender-offer"
     }
   ],
   "mergers_acquisitions": [
@@ -588,9 +615,88 @@
       "terms": "Definitive agreement to be acquired by Knox Lane for $13.25/share all-cash, total transaction value ~$437 million (~31% premium to May 6, 2026 close, ~45% premium to 90-day VWAP). Company to go private and delist from Nasdaq upon close; expected to close Q3 2026 subject to stockholder/regulatory approval.",
       "note": "This follows an earlier (2024-2025) proposed acquisition of Cross Country Healthcare by Aya Healthcare that was abandoned around November 2025 after FTC antitrust scrutiny (Second Request issued Feb 2025).",
       "source_url": "https://www.businesswire.com/news/home/20260506144806/en/Cross-Country-Healthcare-to-be-Acquired-by-Knox-Lane-in-All-Cash-Transaction-Valued-at-$437-Million"
+    },
+    {
+      "ticker": "NYSE:UWMC",
+      "company": "UWM Holdings Corporation",
+      "date": "2025-12 to 2026-06 (unresolved in sources found)",
+      "counterparty": "Two Harbors Investment Corp (NYSE:TWO)",
+      "role": "acquirer",
+      "terms": "UWMC's board approved a merger agreement with Two Harbors in Dec 2025, then competed against a rival all-cash bid from CrossCountry Mortgage; by May 2026 UWMC raised its offer to $12.50/share cash or 2.3328 UWMC Class A shares per TWO share (uncapped cash election), filing a definitive proxy to solicit votes against the CrossCountry deal. As of the latest sources found (June 2026), Two Harbors' board still recommended the CrossCountry transaction and had delayed its vote to June 23, 2026 for further engagement with UWMC.",
+      "note": "Contested bidding war for Two Harbors Investment Corp (TWO); outcome after June 23, 2026 not confirmed in search results - worth follow-up.",
+      "source_url": "https://www.businesswire.com/news/home/20260607948548/en/TWO-Challenges-UWMC-to-Submit-All-Cash-Offer-With-No-Stock-Component"
+    },
+    {
+      "ticker": "NasdaqGM:GDEN",
+      "company": "Golden Entertainment, Inc.",
+      "date": "2026-04-30",
+      "counterparty": "VICI Properties Inc. / Blake L. Sartini (operating business)",
+      "role": "target",
+      "terms": "Deal split Golden into an operating company and a property company. VICI closed a $1.16 billion acquisition of the real property of seven casino properties (0.902 VICI shares per Golden share, ~24.3 million new VICI shares issued, plus VICI assumed and retired $426 million of Golden debt); the operating business was sold for cash distributed as a $2.75/share special dividend and is now owned by Blake Sartini, returning to private family ownership. Shareholders approved at a March 31, 2026 special meeting; deal closed April 30, 2026.",
+      "note": "Golden Entertainment is now private; delisted from Nasdaq and deregistered. Explains market-cap/coverage change (company exited public markets).",
+      "source_url": "https://secure.businesswire.com/news/home/20260430395188/en/VICI-Properties-Inc.-Closes-Sale-Leaseback-Transaction-With-Golden-Entertainment"
+    },
+    {
+      "ticker": "NasdaqCM:FTLF",
+      "company": "FitLife Brands, Inc.",
+      "date": "2025-08-08",
+      "counterparty": "Irwin Naturals (bankruptcy Section 363 asset purchase)",
+      "role": "acquirer",
+      "terms": "FitLife closed the purchase of substantially all of Irwin Naturals' assets for $42.5 million in an August 2025 bankruptcy (Section 363) sale, assuming minimal liabilities. Analyst commentary suggests the deal could roughly double FTLF's 2026 revenue (management guided to $120M+ revenue, ~$25M adjusted EBITDA).",
+      "note": "Major bolt-on acquisition roughly doubling revenue base; not a sale of FitLife itself.",
+      "source_url": "https://jotup.co/node/2596549"
+    },
+    {
+      "ticker": "NasdaqGS:AVO",
+      "company": "Mission Produce, Inc.",
+      "date": "2026-05-28",
+      "counterparty": "Calavo Growers, Inc.",
+      "role": "acquirer",
+      "terms": "Announced Jan 14, 2026 as a cash-and-stock deal valued at ~$430 million ($14.85 cash + 0.9790 Mission shares per Calavo share, ~26% premium to 30-day VWAP); Mission shareholders to hold ~80.3% of combined company. Cleared Mexican antitrust (May 23) and US HSR; closed May 28, 2026 with final consideration reported at ~$465 million (~17.5M Mission shares + ~$266M cash). Expected $25M annualized cost synergies within 18 months.",
+      "note": "Major consolidation of the US/Mexico avocado distribution industry.",
+      "source_url": "https://www.stocktitan.net/news/AVO/mission-produce-announces-agreement-to-acquire-calavo-growers-b4mlskod2xpw.html"
+    },
+    {
+      "ticker": "NasdaqGS:FFIC",
+      "company": "Flushing Financial Corporation",
+      "date": "2026-06-01",
+      "counterparty": "OceanFirst Financial Corp (NASDAQ:OCFC)",
+      "role": "target",
+      "terms": "All-stock merger announced Dec 2025, valued at ~$579 million; Flushing shareholders received 0.85 OceanFirst shares per Flushing share. All regulatory approvals (Fed, NY DFS, OCC) and both companies' shareholder votes obtained by late April 2026. Closed June 1, 2026, alongside a $225 million strategic investment in OceanFirst from Warburg Pincus. Combined entity operates under the OceanFirst brand.",
+      "note": "Flushing Financial no longer trades as a standalone public company (ticker FFIC retired).",
+      "source_url": "https://njbiz.com/oceanfirst-flushing-financial-merger-225m-investment/"
+    },
+    {
+      "ticker": "NasdaqGS:GLDD",
+      "company": "Great Lakes Dredge & Dock Corporation",
+      "date": "2026-04-01",
+      "counterparty": "Saltchuk Resources, Inc.",
+      "role": "target",
+      "terms": "Merger agreement signed Feb 11, 2026; all-cash deal, aggregate equity value ~$1.2B / total value ~$1.5B. Saltchuk subsidiary Huron MergeCo commenced a tender offer at $17.00/share (cash) on March 4, 2026 (a 25% premium to the 90-day VWAP); ~79.88% of shares were validly tendered by the March 31, 2026 expiration. Deal closed April 1, 2026 via a second-step merger at the same $17.00/share price for remaining holders; not subject to a financing condition (fully committed financing from BofA, Wells Fargo, US Bank, PNC).",
+      "note": "GLDD delisted from Nasdaq and now operates as a standalone subsidiary within Saltchuk; a related debt tender offer for GLDD's notes was also referenced but its outcome was not confirmed in sources found.",
+      "source_url": "https://maritime-executive.com/article/saltchuk-agrees-to-buy-great-lakes-dredge-dock-in-1-5b-deal"
     }
   ],
-  "spinoffs": [],
+  "spinoffs": [
+    {
+      "ticker": "NYSE:SRI",
+      "company": "Stoneridge, Inc.",
+      "date": "2026-01-30",
+      "spun_off_entity": "Control Devices segment",
+      "terms": "Sold Control Devices segment to an affiliate of Center Rock Capital Partners for a base purchase price of $59 million (subject to post-closing adjustments), completing a previously announced strategic review of the company's portfolio. Proceeds used to repay debt.",
+      "note": "Divestiture of a full business segment following a formal strategic review; remaining company refocused on vision/safety, connectivity, and vehicle intelligence/electronic controls for commercial vehicle and off-highway markets.",
+      "source_url": "https://pulse2.com/stoneridge-sells-control-devices-segment-to-center-rock-for-59-million"
+    },
+    {
+      "ticker": "NasdaqGS:DNUT",
+      "company": "Krispy Kreme, Inc.",
+      "date": "2025-06",
+      "spun_off_entity": "Insomnia Cookies Holdings, LLC",
+      "terms": "After selling a majority stake in Insomnia Cookies in 2024 (to Verlinvest/Mistral Equity Partners, implying a ~$350M enterprise value) and retaining a minority stake, Krispy Kreme sold its remaining stake in June 2025 for aggregate cash proceeds of $75 million, used toward debt paydown.",
+      "note": "Completes full divestiture of the Insomnia Cookies business; part of a broader deleveraging turnaround that also included halting the dividend, ending the McDonald's USA partnership (July 2, 2025), and restructuring the WAS Restaurant Group joint venture. FY2025 GAAP net loss was $523.8 million.",
+      "source_url": "https://finviz.com/news/153246/krispy-kreme-dnut-divests-remaining-stake-in-insomnia-cookies-at-75-million"
+    }
+  ],
   "other": [
     {
       "ticker": "NYSE:SSTK",
@@ -744,6 +850,42 @@
       "terms": "Cascades announced discontinuation of its honeycomb paperboard and partition packaging product sectors, closing three plants (York, PA; Saint-C\u00e9saire and Berthierville, QC). Berthierville plant closed immediately (52 employees affected); York, PA closed by Feb 19, 2026 (37 employees); Saint-C\u00e9saire ceased operations by April 17, 2026 (25 employees). Emballages LM agreed to acquire certain Berthierville assets for ~$9 million. Separately, Cascades sold its Richmond, BC packaging plant to Crown Paper Group (Jan 2026).",
       "note": "Strategic refocus on core packaging/tissue markets away from niche segments with declining demand.",
       "source_url": "https://www.newswire.ca/news-releases/cascades-announces-exit-from-honeycomb-packaging-and-partition-business-segments-840659931.html"
+    },
+    {
+      "ticker": "NYSE:NL",
+      "company": "NL Industries, Inc.",
+      "date": "2026-05-26",
+      "type": "reincorporation merger and name change",
+      "terms": "Shareholders approved reincorporating from New Jersey to Delaware via a merger with a newly formed subsidiary, NLI Holdings, Inc., which survives and takes that name; effective on or about May 26, 2026.",
+      "note": "Legal domicile change and corporate name change (NL Industries -> NLI Holdings, Inc.); majority-owned by the Contran/Valhi group. Not an M&A event, but ticker/name tracking should be updated.",
+      "source_url": "https://en.wikipedia.org/wiki/NL_Industries"
+    },
+    {
+      "ticker": "NYSEAM:CKX",
+      "company": "CKX Lands, Inc.",
+      "date": "2026-06-30",
+      "type": "strategic alternatives review / potential sale of company or remaining assets",
+      "terms": "Board has run a formal strategic-alternatives process since August 2023 with financial advisor TAP Advisors. Completed sale of its wholly-owned lands to Southern Pine Plantations of Georgia on Nov 18, 2025 for ~$8.6 million. As of its mid-2026 10-Q, the company continues to engage interested parties on a sale of the company's remaining assets or a sale of the company itself (interested parties asked to contact the advisor by June 30, 2026); no definitive agreement found yet.",
+      "note": "Active, ongoing sale process for the entire company/remaining assets; no signed deal confirmed as of latest available source.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/0000352955/000143774926026519/ckx20260630_10q.htm"
+    },
+    {
+      "ticker": "NasdaqCM:RBKB",
+      "company": "Rhinebeck Bancorp, Inc.",
+      "date": "2026-07-21",
+      "type": "second-step mutual-to-stock conversion",
+      "terms": "Rhinebeck Bancorp, MHC (the mutual holding company parent) completed its second-step conversion and ceased to exist; new Rhinebeck Bancorp, Inc. sold 8,880,210 shares at $10.00/share for gross proceeds of $88.8 million. Approved by shareholder/depositor votes on June 29, 2026; new/exchanged shares began trading under the same ticker RBKB on July 22, 2026.",
+      "note": "Major capital-structure/share-count change from full stock-form conversion; not an M&A event but materially affects shares outstanding and capital base.",
+      "source_url": "https://www.webull.com/news/15242997599249408"
+    },
+    {
+      "ticker": "NasdaqGS:FWRD",
+      "company": "Forward Air Corporation",
+      "date": "2025 (ongoing, outcome unconfirmed)",
+      "type": "strategic review / sale process amid activist pressure",
+      "terms": "Following severe shareholder backlash over the ~$3.2B Omni Logistics merger (completed Jan 2024) and a missed-projections dispute with activist Ancora Alternatives, Forward Air engaged in a strategic review that reportedly included a company sale process; a 2025 report (via Axios Pro) said the auction had slowed amid unsatisfactory private-equity bids. Company also reincorporated from Tennessee to Delaware (April 2025, routine domicile merger).",
+      "note": "No confirmed signed deal or sale outcome found in sources through 2025; net debt was ~5.7x EBITDA at mid-2025, elevated leverage following the Omni deal. Worth a follow-up search for 2026 developments.",
+      "source_url": "https://www.freightwaves.com/news/second-round-of-forward-air-takeover-bids-expected-in-september-report-says"
     }
   ]
 }
