@@ -98,6 +98,42 @@
       "terms": "Takeover bid at EUR 130 per ordinary share for the remaining 188,915 shares (~12.61%) not already owned by Pivac Holding and Kappa Star, who together control 87.39% (plus ~3.7% treasury). Approved by Croatian regulator Hanfa.",
       "note": "Controlling-shareholder consolidation move toward full ownership of the Croatian confectionery producer Kra\u0161.",
       "source_url": "https://seenews.com/news/pivac-makes-takeover-bid-for-12-61-percent-stake-in-kras-1297183"
+    },
+    {
+      "ticker": "BVB:TBK",
+      "company": "Transilvania Broker de Asigurare S.A.",
+      "date": "2025-11-20",
+      "counterparty": "Partners Financial Services (Czech group)",
+      "terms": "Voluntary/mandatory takeover bid for ~66% of share capital at 15 lei/share; acceptance period 20 Nov - 4 Dec 2025 via intermediary SSIF Goldring SA",
+      "note": "Partners Financial Services (Czech financial-services group) launched a takeover offer for Transilvania Broker; outcome/final stake not confirmed in search results.",
+      "source_url": "https://www.zf.ro/burse-fonduri-mutuale/bursa-cehii-de-la-partners-financial-services-lanseaza-o-oferta-de-22950587"
+    },
+    {
+      "ticker": "ENXTBR:ROU",
+      "company": "Roularta Media Group NV",
+      "date": "2025-06-19",
+      "counterparty": "Koinon NV (controlling shareholder)",
+      "terms": "Voluntary conditional cash bid at EUR 15.50/share for shares not already held by Koinon/affiliates; initial acceptance brought Koinon to 91.17%; bid reopened 23 Jun - 15 Jul 2025 waiving the 95% threshold condition",
+      "note": "Controlling shareholder Koinon NV (already ~72.3%) tendered for the remaining free float; a step toward a possible future squeeze-out/delisting.",
+      "source_url": "https://www.kbc.be/retail/en/products/investing/shares/aandelentransacties/roularta.html"
+    },
+    {
+      "ticker": "OM:NIL B",
+      "company": "Nil\u00f6rngruppen AB",
+      "date": "2026-05-04",
+      "counterparty": "Trimco Group (UK) Limited, a Brookfield portfolio company",
+      "terms": "Recommended public cash offer of SEK 77/share for all outstanding A and B shares, valuing the company at ~SEK 878m; AB Traction (26.3% of shares/58.1% of votes) and other holders (~8%) gave irrevocable undertakings to accept; acceptance period expected ~19 Jun - 10 Jul 2026, completion conditional on >90% acceptance",
+      "note": "Board unanimously recommended the offer; outcome of the acceptance period not confirmed in search results.",
+      "source_url": "https://www.placera.se/telegram/nilorngruppen-brookfield-s-portfolio-company-offers-sek878-million-to-buy-nilorngruppen-20260504"
+    },
+    {
+      "ticker": "XTRA:2HRA",
+      "company": "H&R GmbH & Co. KGaA",
+      "date": "2025-05-16",
+      "counterparty": "H&R Holding GmbH (controlling shareholder vehicle of Nils Hansen)",
+      "terms": "Voluntary public tender offer at EUR 5.00/share (31.23% premium to unaffected price) aiming to raise Hansen's stake from 61.45% toward 85%+; minimum acceptance threshold waived 29 Jul 2025; acceptance period extended to 25 Aug 2025",
+      "note": "Final result: offer accepted for ~7.92% of shares plus ~2.10% bought on-market, bringing bidder's attributed stake to 77.54%; bidder stated intent to examine a delisting offer or squeeze-out afterward.",
+      "source_url": "https://www.lw.com/en/news/2025/05/latham-watkins-advises-hr-holding-gmbh-voluntary-public-tender-offer-all-outstanding-shares-hr-kgaa"
     }
   ],
   "mergers_acquisitions": [
@@ -390,6 +426,36 @@
       "terms": "Quercus TFI merged with Templeton Asset Management (Poland) TFI S.A. (merger registered Nov 28, 2025), taking over management of three Franklin Templeton FIO sub-funds; as part of the deal Franklin Templeton received Quercus shares in exchange plus subscribed new shares at PLN 12/share, ending up with ~7.1-7.8% of Quercus TFI's enlarged capital alongside a strategic cooperation agreement.",
       "note": "Consolidation in the Polish TFI (fund management) sector; Quercus is the surviving/acquiring entity.",
       "source_url": "https://quercustfi.pl/aktualnosc/wiadomosci/fuzja-dwoch-tfi-na-polskim-rynku-stala-sie-faktem-quercus-tfi-sa-polaczylo"
+    },
+    {
+      "ticker": "MTSE:HSB",
+      "company": "HSBC Bank Malta p.l.c.",
+      "date": "2025-09-01",
+      "counterparty": "CrediaBank S.A. (Greece, formerly Attica Bank)",
+      "role": "target",
+      "terms": "HSBC Continental Europe to sell its 70.03% stake at EUR 0.793/share (~EUR 200m total); CrediaBank to follow with a mandatory tender offer for remaining minority shares at EUR 1.44/share; subject to MFSA/ECB approval, completion expected late 2026/early 2027",
+      "note": "Change-of-control sale of HSBC's majority stake in its Malta subsidiary, with a mandatory tender offer to follow for minority shareholders.",
+      "source_url": "https://www.cliffordchance.com/news/news/2025/10/clifford-chance-advises-hsbc-on-the-sale-of-its-shareholding-in-hsbc-malta-plc.html"
+    },
+    {
+      "ticker": "ENXTPA:SCHP",
+      "company": "S\u00e9ch\u00e9 Environnement SA",
+      "date": "2025-06-05",
+      "counterparty": "Groupe Flamme (France, hazardous/industrial waste); also Hidronor (Chile) and La Filippa (Italy)",
+      "role": "acquirer",
+      "terms": "Unilateral purchase offer signed 5 June 2025 to acquire all shares of Groupe Flamme (~EUR 100m revenue, ~EUR 20m EBITDA, ~560 employees), described as last independent French hazardous-waste operator; Hidronor and La Filippa deals signed and closed in early 2026",
+      "note": "S\u00e9ch\u00e9 is the acquirer in a notable consolidation of the French hazardous-waste sector plus smaller Chile/Italy bolt-ons; Flamme deal status (closed vs pending) not fully confirmed.",
+      "source_url": "https://www.businesswire.com/news/home/20250605552929/en/Sch-Environnement-Signing-of-a-Unilateral-Purchase-Offer-With-a-View-to-Acquiring-Groupe-Flamme"
+    },
+    {
+      "ticker": "XTRA:BEZ",
+      "company": "Berentzen-Gruppe Aktiengesellschaft",
+      "date": "2026-09-21",
+      "counterparty": "Sazerac Company, Inc. (US spirits maker), via vehicle Blitz 26-877 GmbH (to be renamed Sazerac Germany Holding GmbH)",
+      "role": "target",
+      "terms": "Business combination agreement signed 21 Sep 2026; voluntary public cash takeover offer at EUR 5.55/share (~68% premium to unaffected 3-month VWAP); minimum acceptance threshold 50%+1 share; no regulatory clearance required; both management and supervisory boards support the deal; closing expected Q4 2026; Sazerac intends to pursue delisting afterward, supported by the executive board",
+      "note": "Full takeover of the German spirits group by a major US competitor; BaFin review/publication of the formal offer document not confirmed in search results.",
+      "source_url": "https://www.finanzwire.com/press-release/berentzen-group-and-sazerac-to-create-a-leading-spirits-platform-in-europe-1URvrZISGyV"
     }
   ],
   "spinoffs": [
@@ -587,6 +653,33 @@
       "terms": "Lion Capital S.A. (as bidder) launched a public tender offer on its own shares at RON 4.50/share during 4-17 March 2026, targeting up to 49,600,250 shares (~9.7733% of share capital). ASF-approved offer document (decision 215/25.02.2026).",
       "note": "Lion Capital is an investment/holding company; this is a capital-return/self-tender action rather than a third-party takeover. A separate related entity, Fondul Proprietatea, also ran tender offers involving Lion Capital in this period; unrelated Biofarm stake was sold by Lion Capital to Polpharma in June 2026.",
       "source_url": "https://www.lion-capital.ro/docs/en/current-reports/2026/PTO-LION/public-tender-offer-document-LionCapital-2026.pdf"
+    },
+    {
+      "ticker": "WSE:LSI",
+      "company": "LSI Software S.A.",
+      "date": "2026-04-13",
+      "type": "Strategic review / possible delisting",
+      "terms": "Board announced a review of strategic options on 13 Apr 2026 (possible capital/organizational changes, capital or corporate transactions); free float fell below 10%, leading to removal from WIG/WIG-informatyka/WIG-Poland indices after the 2 Apr 2026 session; draft resolutions circulated in Nov 2025 for an EGM to consider withdrawing shares from the regulated market, alongside repeated buyback tenders (Dec 2025, Feb 2026, Mar 2026)",
+      "note": "Pattern consistent with a controlling shareholder squeezing out free float ahead of a possible delisting; outcome of the strategic review and the delisting vote not confirmed in search results.",
+      "source_url": "https://www.biznesradar.pl/wiadomosci/LSI-SOFTWARE"
+    },
+    {
+      "ticker": "XTRA:GXI",
+      "company": "Gerresheimer AG",
+      "date": "2026-04-17",
+      "type": "Repeated takeover interest / rejected bid",
+      "terms": "Confirmed PE talks since Feb 2025 (Warburg Pincus/KPS Capital Partners, possible bid in the EUR 70s/share; KPS withdrew after due diligence); talks with PE investors ended 16 Jul 2025; US packaging company Silgan made a non-binding approach valuing Gerresheimer at EUR 41/share, which Gerresheimer rejected around 17 Apr 2026, ending those talks",
+      "note": "No deal completed; company reportedly wants to resolve accounting issues and sell US subsidiary Centor before considering further offers. Relevant as repeated, well-sourced takeover speculation/activity, not a completed transaction.",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/why-gerresheimer-grrmy-remains-takeover-181958536.html"
+    },
+    {
+      "ticker": "XTRA:O4B",
+      "company": "OVB Holding AG",
+      "date": "2025-12-22",
+      "type": "Indirect change of control (via parent-level merger)",
+      "terms": "Voting-rights notice dated 22 Dec 2025: OVB's majority stake passed indirectly to Helvetia Baloise Holding AG as a result of the merger of Baloise Holding AG into Helvetia; in total 96.98% of OVB's voting rights are now attributed to Helvetia Baloise Holding AG (held directly by Baloise Leben Beteiligungsholding GmbH plus voting-agreement arrangements); no cash changed hands and Helvetia Baloise stated no intent to change OVB's strategy or dividend policy",
+      "note": "Change-of-control notice triggered by the Helvetia/Baloise insurance-group merger rather than a direct bid for OVB; no tender offer to OVB minority holders was identified in search results.",
+      "source_url": "https://www.ovb.eu/fileadmin/assets/Dokumente/ovb_holding/stimmrechtsmitteilungen/2025_12_22_Beteiligungsmitteilung_Helvetia_Baloise_Holding_AG.pdf"
     }
   ]
 }
