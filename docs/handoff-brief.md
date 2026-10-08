@@ -1711,5 +1711,42 @@ screening and thesis research with the tier-9 market-cap frontier.
 All four batches rebuilt both dashboards, Playwright-verified (150 rows,
 zero JS console errors), and were committed/pushed as four separate
 commits. Both markets' corporate-actions and thesis coverage now fully
-match their tier-9 market-cap frontier - the next natural step, once
-requested, is the tier-10 market-cap round for both markets.
+match their tier-9 market-cap frontier.
+
+## Tier-10 market-cap batch, both markets (2026-10-08)
+
+Europe's next 50 companies by current score rank, via WebSearch. The
+US/Canada pool had only one gap left (OTCPK:OAKC, Oakworth Capital Inc. -
+failed to resolve via FMP in every prior round), so it was folded into
+this Europe WebSearch batch as company #51 rather than running a separate
+US agent.
+
+All 51 came back "ok" - no ratio crossed the >5x/<0.2x auto-exclude
+threshold. OAKC finally resolved this round (Motley Fool, $211.69M as of
+2026-08-25, corroborated by several other 2026 snapshots in the
+$162-212M range, consistent with the $187.1M baseline) - genuine
+coverage, not a guess. A few entries had wide cross-source disagreement
+and were manually spot-verified before merging:
+- **WSE:ASB** (ASBISc Enterprises): some scraped sources implied a ~3x
+  jump vs baseline, a currency/unit-labeling error pattern seen a few
+  times this round; used the figure that matches baseline almost
+  exactly instead.
+- **XSAT:ANGL** (Angler Gaming): a Frankfurt EUR line implied ~$260M vs.
+  the native Nordic (SEK) listing's ~$27M; used the native listing.
+- **WSE:DIG** (Digital Network SA): confirmed genuine ~1.9x rally via a
+  consistent implied share count across snapshots - kept as "ok",
+  flagged as a large real move worth watching.
+- **OM:NMAN, AIM:JDG, HLSE:EQV1V, BVB:ARS**: cross-source spread from
+  differing dates/exchanges; used the most recently-dated, best-sourced
+  figure in each case.
+
+Both dashboards rebuilt, Playwright-verified (150 rows, zero JS console
+errors), committed, and pushed.
+
+Coverage after this round: **Europe market-cap 554/1000. US/Canada
+market-cap 512/512 - the US/Canada pool now has zero remaining gaps.**
+Corporate-actions and thesis research for both markets remain caught up
+only through tier 9 - the next natural step, once requested, is
+extending both to the tier-10 frontier (Europe's 50 new companies; the
+US side needs only OAKC's corp-actions/thesis research to stay in sync,
+since market-cap coverage there is now complete).
