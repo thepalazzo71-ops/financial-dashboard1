@@ -492,6 +492,96 @@
    "terms": "Selena FM (via its structure) closed the first stage of acquiring IGM, a Portuguese sandwich-panel producer/distributor, buying a 66% stake for ~EUR68m (~PLN288.8m), price subject to post-closing adjustment based on closing-date financial statements; remaining 34% to be acquired in a second stage per the share purchase agreement (timing not confirmed).",
    "note": "Selena FM is the acquirer here, not the target; described by the company as its most recent major transaction as of its Q1 2026 results release.",
    "source_url": "https://www.biznesradar.pl/a/147262,selena-fm-sfinalizowala-pierwszy-etap-przejecia-portugalskiej-spolki-igm"
+  },
+  {
+   "ticker": "BIT:EQUI",
+   "company": "Equita Group S.p.A.",
+   "date": "2026-03-18",
+   "counterparty": "Xenon Private Equity",
+   "role": "acquirer",
+   "terms": "EUR70m total consideration (up to EUR35m cash, remainder in new Equita shares issued at EUR5.8253/share via reserved capital increase contributed in kind); EUR15m of share consideration held back subject to fundraising targets; Equita buys 100% of Xenon AIFM/Xenon GP plus 20% of carried-interest B shares in Xenon funds",
+   "note": "Binding agreement to acquire alternative-asset manager Xenon Private Equity (~EUR1bn AUM), roughly doubling Equita's AUM to ~EUR2bn; closing expected H2 2026 subject to Equita shareholder approval of the capital increase and regulatory clearances (CSSF/Bank of Italy); Iccrea Banca also to invest, taking >12% of Equita post-deal.",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260318_179146.pdf"
+  },
+  {
+   "ticker": "BIT:ORS",
+   "company": "Orsero S.p.A.",
+   "date": "2026-02-04",
+   "counterparty": "Trucco Holdings / AJ Trucco",
+   "role": "acquirer",
+   "terms": "USD46m deal for a 45% stake in Trucco Holdings and an agreement for a 46% interest in AJ Trucco; option to raise stake to 60% from 2029",
+   "note": "Acquisition gives Orsero a US foothold in fresh-produce distribution; reported via Intesa Sanpaolo analyst note (Feb 2026); Orsero remains Euronext STAR Milan listed with no change-of-control event.",
+   "source_url": "https://it.marketscreener.com/quotazioni/azione/ORSERO-S-P-A-24446344/attualita/Orsero-l-espansione-negli-USA-rafforza-il-profilo-del-gruppo-53677226/"
+  },
+  {
+   "ticker": "BME:DESA",
+   "company": "Desarrollos Especiales de Sistemas de Anclaje, S.A.",
+   "date": "2025-03-04",
+   "counterparty": "Terrers Log\u00edstica, S.L. / Rafael Vall\u00e9s Ar\u00e1ndiga, S.L.",
+   "role": "acquirer",
+   "terms": "Enterprise value ~EUR12m (~6x EV/EBITDA, ~0.7x EV/Sales); payment staged 33% at closing, 34% in year 1, 13% in year 2, 20% in year 3",
+   "note": "Letter of intent to acquire two drywall-fastening-systems makers (referred to as the 'Vall\u00e9s' acquisition); closing was pending due diligence/conditions and predictably delayed into H2 2025; later BME Growth filings (2026) reference the deal's progress but a definitive closing confirmation was not found.",
+   "source_url": "https://institutodeanalistas.com/wp-content/uploads/desa_20250304_1.pdf"
+  },
+  {
+   "ticker": "HLSE:TAALA",
+   "company": "Taaleri Oyj",
+   "date": "2026-04-13",
+   "counterparty": "Nordic Science Investments Oy (NSI)",
+   "role": "acquirer",
+   "terms": "Taaleri acquires 51% of NSI shares",
+   "note": "Completed acquisition of a majority stake in Finnish venture-capital fund manager NSI, announced 13 April 2026 and completed following Finnish FSA approval; CEO Ilkka Laurila described it as a strategic step for Taaleri's venture capital strategy.",
+   "source_url": "https://mfn.se/all/a/taaleri/taaleri-completes-acquisition-of-a-majority-stake-in-nordic-science-investments-7bccf564"
+  },
+  {
+   "ticker": "LSE:PRV",
+   "company": "Porvair plc",
+   "date": "2026-01-01",
+   "counterparty": "Drache Umwelttechnik GmbH",
+   "role": "acquirer",
+   "terms": "EUR20.5m cash, cash-free/debt-free basis",
+   "note": "Porvair acquired German molten-metal-filtration business Drache Umwelttechnik (>GBP17m 2025 revenue) in January 2026. It followed with two further bolt-on deals in its interim results (6 months to 31 May 2026): GV Filtri Industriali, an Italian industrial filtration maker, for EUR6.7m (signed 19 June 2026, completion subject to regulatory approval), and Carekem Limited, a UK lab-servicing company, for GBP1.1m (signed 19 June 2026).",
+   "source_url": "https://shareprices.com/rns/acquisition-of-drache-umwelttechnik-gmbh-4wok4bx8ipuhcsa/"
+  },
+  {
+   "ticker": "OM:NTEK B",
+   "company": "Novotek AB",
+   "date": "2026-07-30",
+   "counterparty": "ServiTecno S.L.R. (Italy)",
+   "role": "acquirer",
+   "terms": "EUR2.97m initial consideration for 70% stake (cash-free, debt-free basis), with an option over the remaining 30% exercisable between mid-2029 and end-2031",
+   "note": "Novotek acquired a 70% stake in Italian industrial-automation company ServiTecno, announced 30 July 2026.",
+   "source_url": "https://storage.mfn.se/ab61659d-6d2f-4e8f-b791-a126dd3efca4/novotek-forvarvar-italienska-servitecno-s-l-r.pdf"
+  },
+  {
+   "ticker": "TLSE:TKM1T",
+   "company": "TKM Grupp AS",
+   "date": "2026-01-07",
+   "counterparty": "Rohe Auto AS / SKO Motors O\u00dc (and associated real-estate holding co.)",
+   "role": "acquirer",
+   "terms": "TKM Auto O\u00dc (wholly owned subsidiary of TKM Grupp) acquires 100% of the two \u0160koda dealership companies from Adole Invest; price undisclosed",
+   "note": "Agreement signed 7 January 2026 to acquire Tallinn/Harju County \u0160koda dealerships (sales, parts, service, used cars); deal required and received Estonian Competition Authority approval, and completed 11 March 2026. Expected to raise TKM's automotive segment turnover by almost a third.",
+   "source_url": "https://www.tkmgrupp.ee/en/acquisition-of-shares-of-rohe-auto-as-sko-motors-ou-and-sko-motors-kinnisvara-ou/"
+  },
+  {
+   "ticker": "WSE:DIG",
+   "company": "Digital Network SA",
+   "date": "2025-10-31",
+   "counterparty": "Braughman Group Media Outdoor (BGMO)",
+   "role": "acquirer",
+   "terms": "Not disclosed in sources reviewed; deal reported to raise Digital Network's sales potential at least 2.5x and add 300+ OOH/DOOH locations",
+   "note": "Takeover of BGMO, a major Polish out-of-home/digital-out-of-home advertising operator, dated 31 October 2025 with consolidation beginning Nov/Dec 2025; drove a ~179% YoY revenue jump in Q1 2026. Slightly predates the 2026 screening window but is the dominant driver of the company's 2026 results and had not previously been logged.",
+   "source_url": "https://www.sii.org.pl/19024/analizy/analizy-i-komentarze/digital-network-widoczny-efekt-przejecia-i-ambitne-plany-na-2026-rok-analiza.html"
+  },
+  {
+   "ticker": "WSE:ENT",
+   "company": "Enter Air S.A.",
+   "date": "2026-07-01",
+   "counterparty": "Nekera (tour operator)",
+   "role": "acquirer",
+   "terms": "Acquisition of 85% of Nekera's share capital; price undisclosed",
+   "note": "Enter Air Sp. z o.o. (subsidiary) took over 85% of Polish tour operator Nekera on 1 July 2026 after obtaining required regulatory consents (notification filed with Polish competition authority UOKiK). Both companies retain current management/sales networks; founder/CEO Maciej Nykiel keeps his management role.",
+   "source_url": "https://www.pasazer.com/news/470300/enter,air,przejmuje,85,proc,udzialow,w,nekerze,transakcja,sfinalizowana.html"
   }
  ],
  "spinoffs": [
@@ -737,6 +827,14 @@
    "date": "2026-06",
    "note": "B\u00e9n\u00e9teau announced plans to discontinue its US power-boat brands (Four Winns, Glastron, Scarab Jet), close its Cadillac, Michigan production plant in Q3 2026, and seek a buyer for the plant and brands. The three US brands lost ~EUR30m operating income combined over 2024-2025 and produced <5% of 2025 group turnover (~EUR850m). As of early Oct 2026 no buyer had been named/sale signed; this is a major restructuring/divestiture process, not a completed M&A transaction.",
    "source_url": "https://bourse.fortuneo.fr/actualites/beneteau-projet-de-cession-des-marques-four-winns-glastron-et-scarab-aux-etats-unis-4207206"
+  },
+  {
+   "ticker": "OM:BULTEN",
+   "company": "Bulten AB",
+   "date": "2026-07-09",
+   "note": "Bulten agreed to sell its European automotive contract-manufacturing arm to Swedish investment firm Maelir AB, at an agreed enterprise value (ex leasing debt) of approximately EUR44.5m (SEK484m). Brand rights to 'Bulten' also transfer to Maelir, with the remaining listed Bulten group retaining a right to use the name/trademark for up to 24 months during transition. Deal subject to regulatory approval, expected to complete no later than October 2026; H1 2026 report presents the automotive operations as discontinued.",
+   "type": "divestiture",
+   "source_url": "https://www.borskollen.se/pressmeddelanden/bulten-ingar-bindande-avtal-om-att-avyttra-europeisk-kontraktstillverkning-inom-fordonsindustrin-till-maelir-ab"
   }
  ]
 }
