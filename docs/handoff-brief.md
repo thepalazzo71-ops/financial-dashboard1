@@ -1745,8 +1745,50 @@ errors), committed, and pushed.
 
 Coverage after this round: **Europe market-cap 554/1000. US/Canada
 market-cap 512/512 - the US/Canada pool now has zero remaining gaps.**
-Corporate-actions and thesis research for both markets remain caught up
-only through tier 9 - the next natural step, once requested, is
-extending both to the tier-10 frontier (Europe's 50 new companies; the
-US side needs only OAKC's corp-actions/thesis research to stay in sync,
-since market-cap coverage there is now complete).
+
+## Tier-10 corporate-actions / thesis catch-up (2026-10-08)
+
+US/Canada needed almost nothing this round - its corp-actions coverage
+was already fully caught up (0 gap), and only one thesis gap remained
+(OTCPK:OAKC, whose first market-cap override landed in tier-10). So this
+was two sequential Europe-focused WebSearch batches rather than four.
+
+- **Europe corporate actions** (50 companies): 10 findings, 40 clean.
+  All ten are bolt-on M&A/divestiture events where the screened company
+  is mostly the acquirer, not target (consistent with the established
+  "role: acquirer" pattern already in the data): BIT:EQUI (Equita Group
+  agreed to acquire Xenon Private Equity, ~doubling AUM to EUR2bn),
+  BIT:ORS (Orsero's US expansion via Trucco Holdings/AJ Trucco),
+  HLSE:TAALA (Taaleri's completed Nordic Science Investments buy),
+  LSE:PRV (Porvair, three bolt-ons), OM:BULTEN (divested its European
+  automotive contract-manufacturing arm), OM:NTEK B (Novotek acquired
+  70% of ServiTecno), TLSE:TKM1T (TKM Grupp's Skoda-dealership buy),
+  WSE:ENT (Enter Air's Nekera acquisition). Two flagged as shakier:
+  BME:DESA (only a 2025 LOI verified, closing unconfirmed) and WSE:DIG
+  (BGMO acquisition dates to Oct 2025, just outside the 2026 window but
+  materially relevant - included with a note). Coverage: 504 -> 554.
+- **Europe + OAKC thesis research** (46 Europe companies + OTCPK:OAKC,
+  47 total): all completed. Anti-fabrication re-check across the full
+  combined dataset: only the same two pre-existing benign false
+  positives from the prior round resurfaced (no new duplicates).
+  Notable: ENXTPA:ALCIS (Catering International & Services) has an
+  official AMF filing showing the founding families held zero shares as
+  of May 2023 (pact terminated) yet they still appear in 2024
+  leadership - an unresolved discrepancy flagged rather than guessed
+  at. OTCPK:OAKC has no 10-K or DEF 14A on EDGAR at all (only 13F-HR/
+  Form D filings) - a structural disclosure gap, documented as such
+  rather than fabricating a beneficial-ownership table. Several other
+  companies (HLSE:SCANFL, SWX:GMI, WSE:ETL, CPSE:RIAS B, BUL:MSH,
+  LJSE:SALR, ZGSE:LKPC) had stale, conflicting, or entirely absent
+  official shareholder data, flagged inline in each case.
+
+Both dashboards rebuilt, Playwright-verified (150 rows, zero JS console
+errors), committed, and pushed as two commits.
+
+Coverage after this round: Europe corporate-actions and thesis research
+now both match the tier-10 market-cap frontier (554). **US/Canada
+corporate-actions and thesis research are both fully caught up (512/512)
+- no gaps remain anywhere in the US/Canada pool.** The next natural
+step, once requested, is the tier-11 market-cap round for Europe (the
+US/Canada pool has nothing left to refresh in this pattern until new
+companies are added or existing ones' prior overrides go stale).
