@@ -1408,10 +1408,11 @@ finished with a 25-company follow-up batch.
   the no-manual-edits policy. Final combined US/Canada coverage: 502 of
   517.
 
-Remaining uncovered in the US/Canada pool (3 tickers, all for
-documented reasons, not worth re-attempting without a new data source):
-OTCPK:OAKC (no FMP coverage), TPEX:4971 IntelliEPI (plan-gated foreign
-exchange data), TSX:ECN (delisted/taken private).
+Remaining uncovered in the US/Canada pool at the time (2 tickers,
+documented reasons): OTCPK:OAKC (no FMP coverage), TPEX:4971 IntelliEPI
+(plan-gated foreign exchange data). TSX:ECN was later dropped from the
+pool entirely (see "Dropped delisted/wound-down companies" below)
+rather than carried as a permanent gap.
 
 Corporate-actions screening and both markets' thesis research now
 trail this new tier-7/8 frontier - not yet requested for this round.
@@ -1478,6 +1479,52 @@ OTCPK:HRGG Heritage NOLA Bancorp (mid wind-down/dissolution). These
 four tickers still carry mc_overrides and now thesis data as if they
 were live going concerns; worth a deliberate decision on whether to
 exclude them from future tiers' target-list generation.
+
+## Dropped delisted/wound-down companies from the US pool (2026-10-08)
+
+User reviewed the four hygiene flags above plus the earlier TSX:ECN
+(ECN Capital) flag from the tier-6 round and authorized removing all
+five from the pool outright - a deliberate, explicit exception to the
+no-manual-ranked-list-edits policy (same class of exception as the
+Card Factory GM correction), since these aren't normal screening
+misses but companies that no longer exist as going concerns:
+
+- **TSX:AGTF** (AGT Food and Ingredients) - taken private 2019, hasn't
+  traded in ~7 years.
+- **NasdaqGM:GDEN** (Golden Entertainment) - go-private merger with
+  VICI Properties/Blake Sartini, closed April 2026.
+- **NasdaqGS:FFIC** (Flushing Financial) - merged into OceanFirst
+  Financial, ticker retired, closed June 2026.
+- **OTCPK:HRGG** (Heritage NOLA Bancorp) - mid wind-down: selling
+  substantially all bank assets, then liquidating the holding company.
+- **TSX:ECN** (ECN Capital) - taken private by a Warburg Pincus-led
+  group, closed April 2026; had never been added to `mc_overrides`
+  (came back `no_coverage` in tier 6, correctly - no public market cap
+  to find), so only needed the pool-membership removal, no overrides
+  cleanup.
+
+Removed from both pool files (all-sector and non-financial, where
+applicable - FFIC/HRGG are banks so financial-sector-only, never in
+the non-financial file), `mc_overrides_applied.json`, and the
+corporate-actions screened-coverage list. Left their
+`corporate_actions.json` entries in place as a factual historical
+record - that file logs events, it isn't a pool-membership list, and
+other now-delisted/merged companies elsewhere in this project were
+handled the same way (kept their corp-action record, just no longer
+counted in the live pool).
+
+**US pool size: 517 → 512 companies** (all-sector), 288 → 286
+(non-financial). Market-cap coverage: 502 → 498 of 512.
+
+**Lesson for future similar cases**: when a research batch flags a
+company as delisted/taken-private/wound-down, that's a different kind
+of finding than a normal missing-data gap - it's a question of whether
+the company belongs in the pool at all, not what data it needs. Surface
+it to the user explicitly rather than either (a) silently continuing to
+carry it as if live, or (b) removing it unilaterally - the existing
+no-manual-edits policy exists to prevent quietly curating the list, but
+a company that factually no longer trades isn't a curation judgment
+call, it's a data-accuracy one, once the user confirms it.
 
 ## Progress as of this handoff
 
