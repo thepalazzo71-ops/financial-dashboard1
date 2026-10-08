@@ -675,6 +675,96 @@
       "terms": "Merger agreement signed Feb 11, 2026; all-cash deal, aggregate equity value ~$1.2B / total value ~$1.5B. Saltchuk subsidiary Huron MergeCo commenced a tender offer at $17.00/share (cash) on March 4, 2026 (a 25% premium to the 90-day VWAP); ~79.88% of shares were validly tendered by the March 31, 2026 expiration. Deal closed April 1, 2026 via a second-step merger at the same $17.00/share price for remaining holders; not subject to a financing condition (fully committed financing from BofA, Wells Fargo, US Bank, PNC).",
       "note": "GLDD delisted from Nasdaq and now operates as a standalone subsidiary within Saltchuk; a related debt tender offer for GLDD's notes was also referenced but its outcome was not confirmed in sources found.",
       "source_url": "https://maritime-executive.com/article/saltchuk-agrees-to-buy-great-lakes-dredge-dock-in-1-5b-deal"
+    },
+    {
+      "ticker": "NasdaqGS:HFWA",
+      "company": "Heritage Financial Corporation",
+      "date": "2025-09-01",
+      "counterparty": "Olympic Bancorp, Inc. (Kitsap Bank)",
+      "role": "acquirer",
+      "terms": "All-stock deal valued at ~$176.6 million; Olympic shareholders received 45.0 Heritage shares per Olympic share. Regulatory approvals received Dec 29, 2025; merger of Olympic into Heritage and Kitsap Bank into Heritage Bank closed Jan 31, 2026.",
+      "note": "Heritage issued ~7.17 million shares. Olympic/Kitsap Bank had ~$1.7B in total assets as of Sept 30, 2025. Some law firms announced shareholder-rights 'investigations' around the deal in Dec 2025 (no confirmed lawsuit found).",
+      "source_url": "https://www.stocktitan.net/news/HFWA/heritage-financial-corporation-announces-completion-of-acquisition-5rvybok8lggx.html"
+    },
+    {
+      "ticker": "NasdaqGS:KE",
+      "company": "Kimball Electronics, Inc.",
+      "date": "2026-07-01",
+      "counterparty": "Helvoet Polymer Technologies (subsidiary of Hydratec Industries)",
+      "role": "acquirer",
+      "terms": "~\u20ac90 million (~$103 million), about 9x expected 2026 adjusted EBITDA; funded with cash and available borrowing capacity. Closed July 1, 2026.",
+      "note": "Part of Kimball's strategy to focus on medical manufacturing/CMO platform and divest non-core assets; company is also rebranding to 'Kimball Solutions.' Helvoet 2025 revenue ~$56M.",
+      "source_url": "https://www.businesswire.com/news/home/20260729603390/en/"
+    },
+    {
+      "ticker": "NasdaqGS:LQDT",
+      "company": "Liquidity Services, Inc.",
+      "date": "2026-10-01",
+      "counterparty": "Auction Holdings, Inc. (Invaluable, AuctionZip, RFC Auction Systems)",
+      "role": "acquirer",
+      "terms": "Agreement and Plan of Merger signed Oct 1, 2026; base purchase price of $80 million cash, funded from cash on hand, subject to adjustments; $9.4M placed in escrow.",
+      "note": "Auction Holdings runs online marketplaces/tech for fine art, antiques, jewelry and estate auction markets.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/0001235468/000119312526410662/lqdt-20261001.htm"
+    },
+    {
+      "ticker": "NasdaqGS:SENE.A",
+      "company": "Seneca Foods Corporation",
+      "date": "2026-03-02",
+      "counterparty": "B&G Foods (Green Giant U.S. frozen vegetable business)",
+      "role": "acquirer",
+      "terms": "Purchase of the Green Giant brand/IP for frozen products, frozen inventory, and a frozen vegetable plant in Yuma, AZ.",
+      "note": "Follow-on to Seneca's Nov 2023 purchase of Green Giant's U.S. shelf-stable vegetable line from B&G Foods. Separately, an Aug 2026 Trefis piece speculated Seneca could be a takeover target (Conagra/Hormel named) at $1.5-1.8B -- this is analyst speculation, not a reported offer.",
+      "source_url": "https://www.barchart.com/story/news/508994/seneca-foods-announces-purchase-of-the-green-giant-u-s-frozen-business"
+    },
+    {
+      "ticker": "NasdaqGS:TBRG",
+      "company": "TruBridge, Inc.",
+      "date": "2026-04-23",
+      "counterparty": "Inventurus Knowledge Solutions, Inc. (IKS Health)",
+      "role": "target",
+      "terms": "All-cash acquisition at $26.25/share, ~$557 million enterprise value (~13.4x EBITDA; ~15% premium to last close). Shareholders approved July 7, 2026; deal closed July 9, 2026; TruBridge delisted from Nasdaq.",
+      "note": "Largest shareholders (Pinetree Capital, L6 Holdings, Ocho Investments, ~27% of shares) signed voting/support agreements. No appraisal rights exercised.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/0001169445/000119312526256370/d12788ddefm14a.htm"
+    },
+    {
+      "ticker": "NasdaqGS:SBGI",
+      "company": "Sinclair, Inc.",
+      "date": "2025-11-24",
+      "counterparty": "The E.W. Scripps Company",
+      "role": "acquirer",
+      "terms": "Sinclair bought an 8.2% stake in Scripps Class A shares (~$15.6M) in Nov 2025 and proposed to acquire all outstanding Scripps shares it doesn't own at $7.00/share (cash + stock), implying ~$622 million deal value (a >240% premium claimed by Sinclair). Scripps board unanimously rejected the proposal in Dec 2025.",
+      "note": "As of the latest found update (Jan 16, 2026), Sinclair publicly released its correspondence pressing Scripps to engage; Scripps continues to prefer its standalone plan. No definitive agreement reached. Sinclair separately approached Tegna about a broadcast-business merger around mid-2025 (no deal resulted).",
+      "source_url": "https://sbgi.net/sinclair-provides-update-on-merger-proposal-discussions-with-the-e-w-scripps-company/"
+    },
+    {
+      "ticker": "TSX:CFP",
+      "company": "Canfor Corporation",
+      "date": "2025-12-03",
+      "counterparty": "Canfor Pulp Products Inc. (TSX:CFX)",
+      "role": "acquirer",
+      "terms": "Plan of arrangement for Canfor Corp to acquire all Canfor Pulp shares it didn't already own (~54.8% owned pre-deal). Minority holders could elect C$0.50/share cash (25% premium) or 0.0425 Canfor Corp shares. Go-shop period expired Jan 19, 2026 with no rival bids; deal closed March 17, 2026; Canfor Pulp delisted from TSX.",
+      "note": "Effectively a controlling-shareholder buy-in/squeeze-out of Canfor Pulp minority shareholders.",
+      "source_url": "https://www.canfor.com/newsroom/2026-03-17/canfor-corporation-completes-acquisition-of-canfor-pulp"
+    },
+    {
+      "ticker": "TSX:TCW",
+      "company": "Trican Well Service Ltd.",
+      "date": "2025-07-03",
+      "counterparty": "Iron Horse Energy Services",
+      "role": "acquirer",
+      "terms": "Stock-and-cash deal, implied value >CAD $200 million (cash component $77.35M plus 33.76M Trican shares). Competition Bureau no-action letter Aug 20, 2025; closed Aug 27, 2025. Trican also raised its quarterly dividend 10% to $0.055/share on closing.",
+      "note": "Iron Horse's chairman/CEO Tom Coolen joined Trican's board at closing.",
+      "source_url": "https://boereport.com/2025/07/03/trican-well-service-buying-iron-horse-energy-services-in-stock-and-cash-deal/"
+    },
+    {
+      "ticker": "OTCPK:CWGL",
+      "company": "Crimson Wine Group, Ltd.",
+      "date": "2026-02-09",
+      "counterparty": "Purple Brands (Raeburn wine brand)",
+      "role": "acquirer",
+      "terms": "Acquisition of the Raeburn wine brand (Sonoma County, Russian River Valley; ~250,000 cases/year) plus certain inventory, effective immediately. Price not disclosed.",
+      "note": "Minor/brand-level acquisition, not a change-of-control event; company's Q2 2026 revenue grew ~20% YoY largely due to Raeburn. Company also flagged a possible rights offering later in 2026.",
+      "source_url": "https://wineindustryadvisor.com/2026/02/09/crimson-wine-group-acquires-raeburn-wine-brand-from-purple-brands/"
     }
   ],
   "spinoffs": [
@@ -886,6 +976,96 @@
       "terms": "Following severe shareholder backlash over the ~$3.2B Omni Logistics merger (completed Jan 2024) and a missed-projections dispute with activist Ancora Alternatives, Forward Air engaged in a strategic review that reportedly included a company sale process; a 2025 report (via Axios Pro) said the auction had slowed amid unsatisfactory private-equity bids. Company also reincorporated from Tennessee to Delaware (April 2025, routine domicile merger).",
       "note": "No confirmed signed deal or sale outcome found in sources through 2025; net debt was ~5.7x EBITDA at mid-2025, elevated leverage following the Omni deal. Worth a follow-up search for 2026 developments.",
       "source_url": "https://www.freightwaves.com/news/second-round-of-forward-air-takeover-bids-expected-in-september-report-says"
+    },
+    {
+      "ticker": "NasdaqGS:LOCO",
+      "company": "El Pollo Loco Holdings, Inc.",
+      "date": "2025-04-06",
+      "type": "unsolicited takeover proposal (unresolved)",
+      "terms": "Biglari Capital (~15.1% holder) made a non-binding, unsolicited indication of interest to acquire all shares it doesn't already own; signed a confidentiality agreement with standstill. Board set no timetable and made no decision. Separately, CapitalSpring signed a 12-month standstill confidentiality agreement around May 21 (year unconfirmed) for separate talks.",
+      "note": "No definitive agreement, rejection, or withdrawal found as of the search date; status appears unresolved/stalled.",
+      "source_url": "https://www.ocbj.com/food/restaurants/el-pollo-loco-receives-buy-offer-from-stakeholder/"
+    },
+    {
+      "ticker": "NasdaqGS:PKOH",
+      "company": "Park-Ohio Holdings Corp.",
+      "date": "2026-05-06",
+      "type": "strategic review / potential divestiture",
+      "terms": "Formal review of options (including possible sale) for its Southwest Steel Processing unit (part of Forged and Machined Products group), with an investment bank engaged. No deadline set.",
+      "note": "Unit is small relative to the company (~$15M revenue, ~$0.50/share loss contribution expected in FY2026 outlook).",
+      "source_url": "https://secure.businesswire.com/news/home/20260506267745/en/ParkOhio-Reports-First-Quarter-2026-Results-Announces-Review-of-Strategic-Alternatives-for-its-Southwest-Steel-Processing-Business-Reaffirms-FY-2026-Outlook"
+    },
+    {
+      "ticker": "NasdaqGS:RELL",
+      "company": "Richardson Electronics, Ltd.",
+      "date": "2025-01-24",
+      "type": "divestiture",
+      "terms": "Sold a substantial portion of its Richardson Healthcare segment to DirectMed Imaging, including a 10-year global supply agreement for repaired Siemens CT X-ray tubes. One-time $4.9M charge recorded in Q3 FY25.",
+      "note": "Asset/business-unit sale, not a sale of the whole company.",
+      "source_url": "https://www.nasdaq.com/articles/richardson-electronics-sells-substantial-portion-its-healthcare-reportable-segment/"
+    },
+    {
+      "ticker": "NasdaqGS:TTEC",
+      "company": "TTEC Holdings, Inc.",
+      "date": "2024-09-27",
+      "type": "going-private proposal (withdrawn)",
+      "terms": "Founder/Chairman/CEO Kenneth Tuchman (owns ~58%) proposed taking the company private at $6.85/share (55% premium to 30-day VWAP). Special Committee (Rothschild & Co, Skadden) reviewed through April 2025. Tuchman withdrew the proposal by letter dated July 31, 2025, citing market conditions.",
+      "note": "No new proposal found as of the search date (through 2026).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/0001013880/000114036125028271/ef20052990_ex99-1.htm"
+    },
+    {
+      "ticker": "OTCPK:HRGG",
+      "company": "Heritage NOLA Bancorp, Inc.",
+      "date": "2025-07-24",
+      "type": "whole-company liquidation via asset sale",
+      "terms": "Heritage Bank of St. Tammany agreed to sell substantially all assets/liabilities to OnPath Federal Credit Union in an all-cash deal valued at $26 million (plus up to $3M reimbursements). Transaction reportedly closed April 1, 2026, followed by bank liquidation and Heritage NOLA Bancorp dissolution; shareholders expected to receive ~$20.00-$20.75/share, with distributions anticipated in Q4 2026.",
+      "note": "Earlier (2023-2024) planned merger with MC Bancshares was mutually terminated in June 2024 after a withdrawn regulatory application. Closing/dissolution details sourced from a secondary aggregator (StockTitan), not independently confirmed via primary filing in this search.",
+      "source_url": "https://www.placera.se/pressmeddelanden/heritage-nola-bancorp-inc-heritage-bank-of-st-tammany-and-onpath-federal-credit-union-sign-an-agreement-for-the-acquisition-of-the-assets-of-heritage-bank-20250724"
+    },
+    {
+      "ticker": "OTCPK:SODI",
+      "company": "Solitron Devices, Inc.",
+      "date": "2026-02-01",
+      "type": "strategic alternatives review",
+      "terms": "After an earlier unsolicited non-binding acquisition proposal lapsed (potential acquirer's exclusivity deadline expired without a deal), the board announced it would explore potential transactions including a merger, sale of the company or a subsidiary, a tender offer, or a special dividend. No investment banker retained yet as of the review's announcement.",
+      "note": "As of the latest update found (July 13, 2026), still uncommitted; next milestone would be board approval of a specific transaction.",
+      "source_url": "https://www.tipranks.com/news/company-announcements/solitron-devices-reports-growth-and-strategic-acquisition"
+    },
+    {
+      "ticker": "OTCPK:WEBC",
+      "company": "Webco Industries, Inc.",
+      "date": "2024-12-31",
+      "type": "large privately negotiated share repurchase",
+      "terms": "Company repurchased 143,443 of its own shares (~16.8% of shares outstanding beforehand) for $28.7 million from a shareholder who approached the board, funded via cash and revolver borrowing.",
+      "note": "Concentrated ownership (families of F. William Weber and management) rose to an estimated ~78.5% afterward. Not a tender offer to all holders.",
+      "source_url": "https://www.webcotube.com/?p=14920"
+    },
+    {
+      "ticker": "TSX:AGTF",
+      "company": "AGT Food and Ingredients Inc.",
+      "date": "2026-03-09",
+      "type": "re-IPO / public relisting",
+      "terms": "AGT Foods completed an IPO on the TSX (treasury offering, ~18.5M shares at C$23, ~C$425M gross proceeds) with a concurrent private placement to majority owner Fairfax Financial. Proceeds used partly to reduce debt (~$920M reduction reported, ~$596M raised in total).",
+      "note": "AGT had gone private in 2019 in a take-private led by CEO Murad Al-Katib with Fairfax Financial and Point North Capital ($18.00/share); this 2026 transaction returns it to public markets under Fairfax's majority control.",
+      "source_url": "https://www.torys.com/fr-ca/work/2026/02/d98c5431-4f31-454e-be95-26f8424fe91c"
+    },
+    {
+      "ticker": "TSX:NEO",
+      "company": "Neo Performance Materials Inc.",
+      "date": "2026-05-01",
+      "type": "divestiture",
+      "terms": "Neo and other shareholders agreed to transfer their combined stake (Neo subsidiary held 43.69%) in the Sarfartoq rare earth project vehicle to Greenland Mines for total consideration of US$35 million (US$20M cash + US$15M in Greenland Mines shares).",
+      "note": "Part of a broader non-core asset simplification; Neo also sold majority stakes in two Chinese rare-earth separation JVs to a Shenghe Resources affiliate in April 2025 (~$28M combined) and sold its Quapaw, OK rare metals facility stake in Dec 2024.",
+      "source_url": "https://www.barchart.com/story/news/2047429/neo-partners-with-greenland-mines-to-advance-sarfartoq-rare-earth-project"
+    },
+    {
+      "ticker": "TSX:CSW.A",
+      "company": "Corby Spirit and Wine Limited",
+      "date": "2026-08-01",
+      "type": "brand divestiture",
+      "terms": "Corby agreed to sell its Lamb's rum brand and associated assets for C$39.2 million, split between Maison des Futailles/Phildan (North American rights) and Glen Turner Company/COFEPP (rest-of-world rights).",
+      "note": "Company said the sale is meant to focus the portfolio on ready-to-drink beverages and premium spirits. Majority owner Pernod Ricard; no whole-company buyout found in this search.",
+      "source_url": "https://www.gamaconsumer.com/canada-corby-spirit-wine-sells-lambs-rum-brand-c39-2-million/"
     }
   ]
 }
