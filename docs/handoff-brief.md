@@ -1612,3 +1612,60 @@ No manual additions or removals to the final ranked list — if a company is
 missed, the fix is to refine the model, not hand-edit the output. The one
 standing exception is Card Factory, where a methodological GM input error
 was corrected.
+
+## Tier-9 market-cap batch, both markets (2026-10-08)
+
+Same batch pattern as tiers 7/8: next ~50 Europe companies by current rank
+(filtering out tickers already in `mc_overrides`) via WebSearch, next ~14 US
+companies via FMP's `profile-symbol` endpoint (two non-FMP-resolvable
+stragglers — TPEX:4971 IntelliEPI, TSX:IFA iFabric Corp. — folded into the
+Europe WebSearch batch instead, same as Canadian names in prior tiers).
+
+- **US FMP batch**: 12 targets, 11 ok / 1 not_found (OTCPK:OAKC — the same
+  ticker that has failed to resolve in every prior round; still unresolved,
+  no further action planned). Two entries were within the 5x/0.2x
+  auto-exclude tolerance but flagged by the agent as worth a human glance;
+  both were manually WebSearch-verified before merging:
+  - **OTCPK:ORBT** (Orbit International Corp., 0.49x vs baseline) — confirmed
+    distinct from the unrelated, bankrupt "Orbital Energy Group" (OIG,
+    Chapter 11 Aug 2023). FMP's $8.79M is roughly consistent with an Oct 2026
+    press-release figure ($8.40M). Looks like a genuine small, thinly-traded
+    company, not a data error.
+  - **NYSE:CANG** (Cango Inc., 0.58x vs baseline) — WebSearch sources
+    conflicted badly (one Benzinga article cited two different market caps
+    for the same company; share-outstanding counts disagreed by an order of
+    magnitude across sources: 41.02M vs 358.6M vs 341.6M). Accepted FMP's
+    self-consistent price x shares figure ($138.81M), which is close to the
+    one WebSearch source (Kraken, $138.65M) that roughly agreed with it.
+  US/Canada overrides: 498 -> 509.
+- **Europe + Canada/Taiwan WebSearch batch**: 52 targets (50 Europe + 2 US
+  pool stragglers), all 52 came back "ok" with no ratio outside roughly
+  0.6x-1.4x of baseline once genuine price moves were accounted for —
+  nothing crossed the >5x/<0.2x auto-exclude threshold. FX rates were
+  resolved once per currency (one WebSearch per currency, reused across all
+  companies sharing it) and recorded per-entry with source/date. Notable
+  findings:
+  - **LSE:BPCR** (BioPharma Credit) trades in USD, not GBP — confirmed
+    against a separate GBP-denominated line (BPCP) for the same company that
+    could easily be confused with it.
+  - **BUL:SFA** (Sopharma) had wildly inconsistent share-count sources
+    (519.26M vs 166.36M shares, ~35% spread in implied market cap). Used a
+    EUR-denominated figure consistent with Bulgaria's Jan 2026 euro adoption
+    that best matched the mc0 baseline — flagged as deserving a closer look
+    if it resurfaces.
+  - **ATSE:EXAE** renamed to "Euronext Athens Holding S.A." (from Hellenic
+    Exchanges) in April 2026.
+  - **TPEX:4971** (IntelliEPI) confirmed distinct from the similarly-named
+    Taiwan ticker 4991 (環宇-KY) that kept surfacing in Chinese-language
+    search results.
+  Europe overrides: 454 -> 504. US/Canada overrides (from the 2 stragglers):
+  509 -> 511.
+
+Both dashboards rebuilt (`build_site.py` / `build_site_us.py`), Playwright-
+verified (150 rows, zero JS console errors), committed, and pushed in two
+commits (US FMP batch, then Europe+stragglers WebSearch batch).
+
+Coverage after this round: Europe market-cap 504/1000, US/Canada market-cap
+511/512 (only OTCPK:OAKC remains uncovered). Corporate-actions and thesis
+research for both markets remain caught up only through tier 8 — the next
+natural step, once requested, is extending both to the tier-9 frontier.
