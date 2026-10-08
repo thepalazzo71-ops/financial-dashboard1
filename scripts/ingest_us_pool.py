@@ -120,11 +120,18 @@ def pct_positive(vals):
 
 def pct_positive_of_n(vals, n):
     """Dividend consistency: denominator is periods *reported* (n =
-    nRevPeriods), since 0.0 is a real 'no dividend' value, not missing."""
+    nRevPeriods), since 0.0 is a real 'no dividend' value, not missing.
+
+    Capital IQ reports "Total Dividends Paid" in cash-flow-statement sign
+    convention - a real payment is NEGATIVE (cash outflow); exactly 0.0
+    means no dividend that period. A `v > 0` check (the original bug here)
+    never matches a real payment, so every company's divPct came out ~0
+    regardless of actual history - confirmed against the raw .xls and
+    corrected across the whole pool in the 2026-10-08 one-off fix."""
     if n == 0:
         return 0.0
-    positive = sum(1 for v in vals[-n:] if v is not None and v > 0)
-    return positive / n
+    paid = sum(1 for v in vals[-n:] if v is not None and v < 0)
+    return paid / n
 
 
 def load_raw_rows():
