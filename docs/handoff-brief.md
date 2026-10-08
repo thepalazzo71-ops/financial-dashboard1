@@ -1416,6 +1416,69 @@ exchange data), TSX:ECN (delisted/taken private).
 Corporate-actions screening and both markets' thesis research now
 trail this new tier-7/8 frontier - not yet requested for this round.
 
+## Tier-8 corporate-actions/thesis catch-up (2026-10-08)
+
+Full four-batch catch-up to the tier-8 market-cap frontier, run as 7
+sequential WebSearch agents (corp-actions for both markets, thesis
+research for both markets split into 2 parts each given volume -
+274 companies total).
+
+- **Europe corporate actions** (50-company gap): 10 new events -
+  4 tender offers (Transilvania Broker, Roularta Media's De Nolf
+  family tendering for the free float to delist after 27 years,
+  Nilörngruppen/Trimco-Brookfield, H&R KGaA's controlling shareholder
+  stating intent to pursue delisting/squeeze-out next), 3 M&A (HSBC
+  selling its Malta stake with a mandatory minority tender to follow,
+  Séché Environnement as acquirer, Berentzen-Gruppe taken over by
+  Sazerac at a ~68% premium), 3 "other" (LSI Software's draft
+  delisting resolutions, Gerresheimer flagged as an ongoing
+  takeover-interest situation despite no completed deal, OVB
+  Holding's indirect change of control via the Helvetia/Baloise
+  merger). Coverage: 404 → 454.
+- **US corporate actions** (89-company gap, 2 parts): 34 new events
+  total - notable ones include Golden Entertainment's go-private,
+  Great Lakes Dredge & Dock taken private, Flushing Financial merged
+  into OceanFirst (ticker retired), TruBridge taken private, a
+  contested UWM Holdings/Two Harbors bidding war (unresolved),
+  Forward Air's unresolved activist-driven sale process, and Canfor's
+  squeeze-out of Canfor Pulp minorities. Coverage: 276 → 503 of 502
+  mc-covered (one ticker drifted off coverage after a rank shuffle -
+  harmless).
+- **Europe thesis research** (62-company gap, 2 parts): flagged
+  several active/pending M&A situations (HSBC Bank Malta's competing
+  bidders, Spire Healthcare's recommended take-private, Roularta's
+  delisting tender, a contested Alternative Income REIT situation) and
+  real red flags (Luceco's 2017/2018 accounting restatement, Practic
+  S.A.'s voluntary-delisting process with squeeze-out risk, WASGAU's
+  Bundeskartellamt review, Astarta's ongoing Ukraine war exposure).
+  Result: every company in Europe's top 454 (by current rank) now has
+  full qualitative research - **both markets' corp-actions screening
+  and Europe's thesis research are now fully caught up.**
+- **US thesis research** (73-company gap, 2 parts): flagged three
+  tickers for shortlist-hygiene review (not acted on, per policy):
+  TSX:AGTF was taken private back in 2019 and hasn't traded in ~7
+  years; Golden Entertainment and Flushing Financial (also just
+  confirmed via the corp-actions batch above) likely no longer trade
+  independently. OTCPK:HRGG (Heritage NOLA Bancorp) is effectively a
+  wind-down/liquidation, not a going concern - flagged explicitly
+  rather than given a normal thesis. Real governance disputes
+  surfaced: American Vanguard's 2022 activist campaign + EPA
+  enforcement action (market cap down ~90% since 2022), Parks!
+  America's active shareholder dispute, TTEC's withdrawn founder-led
+  going-private proposal. Result: every market-cap-covered US company
+  now has full qualitative research - **all four coverage dimensions
+  for both markets are back in sync with the tier-8 frontier.**
+
+**Shortlist-hygiene items flagged across this round, not acted on**
+(per the no-manual-ranked-list-edits policy - surface to the user for
+a decision, don't remove unilaterally): TSX:AGTF (delisted 2019),
+NasdaqGM:GDEN Golden Entertainment and NasdaqGS:FFIC Flushing
+Financial (both completed go-private/merger deals in 2026),
+OTCPK:HRGG Heritage NOLA Bancorp (mid wind-down/dissolution). These
+four tickers still carry mc_overrides and now thesis data as if they
+were live going concerns; worth a deliberate decision on whether to
+exclude them from future tiers' target-list generation.
+
 ## Progress as of this handoff
 
 - **133 of 150** shortlist companies have refreshed market caps — every
