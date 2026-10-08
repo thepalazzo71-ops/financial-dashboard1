@@ -2104,11 +2104,6 @@
     "source": "FMP",
     "updatedAt": "2026-10-06T16:47:18Z"
   },
-  "NasdaqGM:GDEN": {
-    "mc": 753.69,
-    "source": "FMP",
-    "updatedAt": "2026-10-06T16:47:18Z"
-  },
   "NYSEAM:GENC": {
     "mc": 267.65,
     "source": "FMP",
@@ -2349,16 +2344,6 @@
     "source": "FMP",
     "updatedAt": "2026-10-08T11:12:09Z"
   },
-  "OTCPK:HRGG": {
-    "mc": 32.49,
-    "source": "FMP",
-    "updatedAt": "2026-10-08T11:12:09Z"
-  },
-  "NasdaqGS:FFIC": {
-    "mc": 524.18,
-    "source": "FMP",
-    "updatedAt": "2026-10-08T11:12:09Z"
-  },
   "OTCPK:SODI": {
     "mc": 70.72,
     "source": "FMP",
@@ -2501,11 +2486,6 @@
   },
   "TSX:NEO": {
     "mc": 1235.4,
-    "source": "WebSearch",
-    "updatedAt": "2026-10-08T11:24:25Z"
-  },
-  "TSX:AGTF": {
-    "mc": 974.1,
     "source": "WebSearch",
     "updatedAt": "2026-10-08T11:24:25Z"
   }

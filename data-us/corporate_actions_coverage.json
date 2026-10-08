@@ -160,7 +160,6 @@
     "NasdaqGM:EPSN",
     "NasdaqGM:ESCA",
     "NasdaqGM:FNWB",
-    "NasdaqGM:GDEN",
     "NasdaqGM:HIFS",
     "NasdaqGM:KEQU",
     "NasdaqGM:LARK",
@@ -224,7 +223,6 @@
     "NasdaqGS:ERII",
     "NasdaqGS:FBIZ",
     "NasdaqGS:FCBC",
-    "NasdaqGS:FFIC",
     "NasdaqGS:FLWS",
     "NasdaqGS:FNLC",
     "NasdaqGS:FORR",
@@ -368,7 +366,6 @@
     "OTCPK:HCBN",
     "OTCPK:HFBK",
     "OTCPK:HLFN",
-    "OTCPK:HRGG",
     "OTCPK:IBTN",
     "OTCPK:IEHC",
     "OTCPK:JBTC",
@@ -441,7 +438,6 @@
     "TSX:ADN",
     "TSX:ADW.A",
     "TSX:AGF.B",
-    "TSX:AGTF",
     "TSX:ALC",
     "TSX:ARG",
     "TSX:BNE",
@@ -505,6 +501,6 @@
     "TSXV:VCI"
   ],
   "unscreened": [],
-  "total_priority_pool": 503,
+  "total_priority_pool": 499,
   "note": " Extended 2026-09-29 to also cover the 38 market-cap-refreshed companies beyond the original 238-ticker priority pool (now 272 mc-refreshed, all screened for corp actions)."
 }
