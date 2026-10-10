@@ -1788,7 +1788,38 @@ errors), committed, and pushed as two commits.
 Coverage after this round: Europe corporate-actions and thesis research
 now both match the tier-10 market-cap frontier (554). **US/Canada
 corporate-actions and thesis research are both fully caught up (512/512)
-- no gaps remain anywhere in the US/Canada pool.** The next natural
-step, once requested, is the tier-11 market-cap round for Europe (the
-US/Canada pool has nothing left to refresh in this pattern until new
-companies are added or existing ones' prior overrides go stale).
+- no gaps remain anywhere in the US/Canada pool.**
+
+## Tier-11 market-cap batch, Europe only (2026-10-10)
+
+US/Canada has nothing left to refresh in this pattern (512/512, no
+gaps), so this round was Europe-only: next 50 companies by current
+score rank, via WebSearch.
+
+All 50 came back "ok" - ratios ranged 0.53x-1.65x, nothing crossed the
+>5x/<0.2x auto-exclude threshold. Spot-verified the two largest declines
+before merging:
+- **XTRA:ETG** (EnviTec Biogas): 0.53x - a real, large share-price
+  decline through 2026 (EUR276-313M in spring/summer down to EUR206M
+  by Oct 7), corroborated by two independent sources; no corporate
+  action found to explain it.
+- **RISE:BAL1R** (AS Amber Latvijas balzams): 0.58x - two independent
+  recent sources converge on ~$11-12M, down from ~$58-59M a year
+  earlier (an ~80% decline the sources themselves flag as unusual).
+
+Other notable items with real sourcing caveats (kept as "ok", not
+flagged): **ENXTPA:CRTO** (illiquid French cooperative bank with wildly
+inconsistent aggregator figures depending on share-count convention -
+used the full-share-count figure consistent with mc0's methodology),
+**AIM:LTHM** (James Latham - sources conflate two share classes, used a
+converging whole-company estimate), **LJSE:BKP** and **CPSE:EGNETY**
+(lowest-confidence dated sources in the batch, but internally
+consistent).
+
+Dashboard rebuilt, Playwright-verified (150 rows, zero JS console
+errors), committed, and pushed.
+
+Coverage after this round: Europe market-cap 604/1000. US/Canada
+unchanged at 512/512. The next natural step, once requested, is
+extending corporate-actions/thesis research to the tier-11 frontier for
+Europe (50 new companies; nothing pending on the US side).
