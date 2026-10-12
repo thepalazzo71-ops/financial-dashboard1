@@ -279,7 +279,7 @@
     <button class="btn ghost small" id="moversBtn">Biggest movers</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
     <button class="btn ghost small" id="trackerBtn">Tracker</button>
-    <button class="btn ghost small" id="profitBonusBtn">Profitability bonus preview</button>
+    <button class="btn ghost small" id="profitBonusBtn">Profitability bonus benefactors</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
     <button class="btn" id="exportBtn">Download spreadsheet</button>
@@ -439,16 +439,16 @@
 
 <div class="modal-backdrop" id="profitBonusModalBackdrop">
   <div class="modal wide">
-    <h3>Profitability bonus preview</h3>
+    <h3>Profitability bonus benefactors</h3>
     <p class="hint">
-      <b>Not implemented in the real score yet — this is a simulation only.</b> Proposed rule: a company already in
-      the top gross-margin band (&ge;60%, which already earns full gross-margin points) with long-term revenue
-      growth (full-history CAGR &gt;10%/year) that stays broadly cash-generative (CFO positive &ge;70% of reported
-      periods) would get its profitability score topped up to the full 16/16, regardless of how inconsistent its
-      net income actually was — recognizing genuine high-margin growth stories that reinvest heavily rather than
-      penalizing them for uneven GAAP profitability. Shown below: every company that would land in the top 150
-      under this rule, with its real current rank/score alongside the simulated one. Click a row for full details
-      (using today's real, unmodified data).
+      <b>This bonus is live in the real score.</b> Rule: a company already in the top gross-margin band (&ge;60%,
+      which already earns full gross-margin points) with long-term revenue growth (full-history CAGR &gt;10%/year)
+      that stays broadly cash-generative (CFO positive &ge;70% of reported periods) gets its profitability score
+      topped up to the full 16/16, regardless of how inconsistent its net income actually was — recognizing
+      genuine high-margin growth stories that reinvest heavily rather than penalizing them for uneven GAAP
+      profitability. Shown below: every company that actually received this bonus and landed in (or climbed
+      within) the top 150 as a result, with the rank/score it would have had without the bonus alongside its
+      real current one. Click a row for full details.
     </p>
     <div id="profitBonusContent"></div>
     <div class="actions">
@@ -1117,7 +1117,7 @@ function renderProfitBonusModalContent() {
   const content = document.getElementById('profitBonusContent');
   const { inTop150 } = profitabilityBonusPreview();
   if (!inTop150.length) {
-    content.innerHTML = `<p class="no-thesis">No companies qualify.</p>`;
+    content.innerHTML = `<p class="no-thesis">No companies received this bonus.</p>`;
     return;
   }
   content.innerHTML = inTop150.map(r => {
@@ -1132,7 +1132,7 @@ function renderProfitBonusModalContent() {
             <div class="name">${c.n}${isNew ? '<span class="t150-new-tag">NEW</span>' : ''}</div>
             <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(r.row.mc,0)}M mkt cap</div>
             <div class="t150-sim">GM ${fmtPct(r.gm,0)} &middot; CFO+ ${fmtPct(r.cfo,0)} &middot; rev CAGR ${fmtPct(r.cagr,0)}/yr &mdash;
-              profitability <b>${fmtNum(r.oldPts,1)}&rarr;16.0</b>/16, total <b>${fmtNum(r.oldTotal,1)}&rarr;${fmtNum(r.newTotal,1)}</b></div>
+              profitability <b>${fmtNum(r.rawPts,1)}&rarr;16.0</b>/16 (without&rarr;with bonus), total <b>${fmtNum(r.withoutBonusTotal,1)}&rarr;${fmtNum(r.currentTotal,1)}</b></div>
           </div>
         </div>
         ${isOpen ? renderDetailPanel(r.row, r.newRank) : ''}
@@ -1161,13 +1161,17 @@ function liveRowFor(ticker) {
   return ensureLiveScored().find(r => r.c.t === ticker) || null;
 }
 
-// ---- Profitability bonus preview: a pure simulation, computed entirely
-// client-side from data already on the page - no change to the real
-// scoring pipeline or data files. Proposed rule (not yet implemented for
-// real): a company in the top gross-margin band (>=60%) with long-term
-// revenue growth (full-history CAGR >10%/yr) that stays broadly
-// cash-generative (CFO positive >=70% of periods) gets its profitability
-// score topped up to 16/16, however inconsistent its NI actually was.
+// ---- Profitability bonus benefactors: this rule is LIVE in the real
+// score (scripts/scoring.py's apply_profitability_bonus(), applied via
+// scripts/apply_profitability_bonus.py) - a company in the top
+// gross-margin band (>=60%) with long-term revenue growth (full-history
+// CAGR >10%/yr) that stays broadly cash-generative (CFO positive >=70%
+// of periods) gets its profitability score topped up to 16/16, however
+// inconsistent its NI actually was. Since the stored fixedPts.profitability
+// is now permanently 16 for every company this applied to, this view
+// reconstructs what each benefactor's score/rank would have been
+// WITHOUT the bonus (from its unaffected profitPct field) purely to show
+// the effect - it changes nothing, same as before.
 const PROFIT_BONUS_GM_GATE = 0.60, PROFIT_BONUS_CFO_GATE = 0.70, PROFIT_BONUS_GROWTH_GATE = 0.10;
 // Revenue/NI history slots are fixed LTM snapshots spaced every 4 months
 // (see PERIOD_LABELS) - a leading null means "no data that period", NOT
@@ -1187,23 +1191,26 @@ function fullHistoryCagr(revHist) {
 }
 function profitabilityBonusPreview() {
   const all = ensureLiveScored();
-  const oldRank = {};
-  all.slice().sort((a,b)=>b.total-a.total).forEach((r,i) => { oldRank[r.c.t] = i+1; });
   const rows = all.map(row => {
     const c = row.c;
-    const oldPts = c.fixedPts.profitability;
+    const currentPts = c.fixedPts.profitability; // already 16.0 for benefactors - this is live
+    const rawPts = Math.round(c.profitPct * 16.0 * 1e4) / 1e4; // what it'd be without the bonus
     const gm = row.gmInfo.gm;
     const cfo = c.cfoPct;
     const cagr = fullHistoryCagr(c.revHist);
-    const qualifies = gm !== null && gm >= PROFIT_BONUS_GM_GATE &&
+    const benefited = gm !== null && gm >= PROFIT_BONUS_GM_GATE &&
       cfo !== null && cfo !== undefined && cfo >= PROFIT_BONUS_CFO_GATE &&
-      cagr !== null && cagr > PROFIT_BONUS_GROWTH_GATE && oldPts < 16.0;
-    const newTotal = qualifies ? row.total - oldPts + 16.0 : row.total;
-    return { row, oldRank: oldRank[c.t], oldTotal: row.total, newTotal, qualifies, oldPts, gm, cfo, cagr };
+      cagr !== null && cagr > PROFIT_BONUS_GROWTH_GATE &&
+      currentPts >= 16.0 - 1e-6 && rawPts < 16.0 - 1e-6;
+    const withoutBonusTotal = benefited ? row.total - currentPts + rawPts : row.total;
+    return { row, currentTotal: row.total, withoutBonusTotal, benefited, rawPts, currentPts, gm, cfo, cagr };
   });
-  rows.sort((a,b) => b.newTotal - a.newTotal);
-  rows.forEach((r,i) => { r.newRank = i+1; });
-  const inTop150 = rows.filter(r => r.qualifies && r.newRank <= 150).sort((a,b) => a.newRank - b.newRank);
+  const withoutRank = {};
+  rows.slice().sort((a,b)=>b.withoutBonusTotal-a.withoutBonusTotal).forEach((r,i) => { withoutRank[r.row.c.t] = i+1; });
+  const currentRank = {};
+  rows.slice().sort((a,b)=>b.currentTotal-a.currentTotal).forEach((r,i) => { currentRank[r.row.c.t] = i+1; });
+  rows.forEach(r => { r.oldRank = withoutRank[r.row.c.t]; r.newRank = currentRank[r.row.c.t]; });
+  const inTop150 = rows.filter(r => r.benefited && r.newRank <= 150).sort((a,b) => a.newRank - b.newRank);
   return { inTop150 };
 }
 
@@ -1727,7 +1734,7 @@ function wireToolbar() {
     filters.historyDate = 'live'; filters.country = ''; filters.archetype = '';
     populateFilterOptions();
     document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
-    document.getElementById('profitBonusBtn').textContent = `Profitability bonus preview (${profitabilityBonusPreview().inTop150.length})`;
+    document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
     render();
   });
   document.getElementById('editedOnlyBtn').addEventListener('click', e => { filters.editedOnly=!filters.editedOnly; e.target.classList.toggle('active', filters.editedOnly); render(); });
@@ -1920,7 +1927,7 @@ function init() {
   wireToolbar();
   document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
   document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
-  document.getElementById('profitBonusBtn').textContent = `Profitability bonus preview (${profitabilityBonusPreview().inTop150.length})`;
+  document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
   lastAlertTickers = checkTrackerAlerts();
   renderTrackerBanner();
   if (Object.keys(trackerState).length) saveTrackerState();
