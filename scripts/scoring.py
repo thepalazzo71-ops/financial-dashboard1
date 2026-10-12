@@ -43,6 +43,39 @@ def gm_band_points(gm):
     return 0.0
 
 
+def growth_adjusted_profit_pct(ni_hist, rev_hist, cfo_pct, growth_threshold=0.10, cfo_gate=0.70):
+    """Profitability measure used for fixedPts['profitability'] (max 16 pts).
+
+    Same denominator as the original "fraction of reported periods with
+    positive net income" measure. The difference: a loss-making period
+    gets 0.5 credit instead of 0 when that period's own revenue grew more
+    than `growth_threshold` (period-over-period) AND the company is
+    broadly cash-generative overall (cfoPct >= `cfo_gate`) - distinguishing
+    a company that lost money on paper while genuinely reinvesting in
+    growth (new stores, etc., often GAAP-depreciation-heavy) from one
+    that's actually losing money. The cfoPct gate matters: without it this
+    would just reward growth-at-all-costs stories regardless of whether
+    they ever generate real cash, which a value screen shouldn't do.
+
+    Added per explicit user request (2026-10-12) after a methodology
+    discussion triggered by ProCook Group - see docs/handoff-brief.md.
+    """
+    present = [(i, v) for i, v in enumerate(ni_hist) if v is not None]
+    if not present:
+        return 0.0
+    credit = 0.0
+    for i, v in present:
+        if v > 0:
+            credit += 1.0
+            continue
+        if cfo_pct is not None and cfo_pct >= cfo_gate and i > 0:
+            prev_rev, cur_rev = rev_hist[i - 1], rev_hist[i]
+            if prev_rev is not None and cur_rev is not None and prev_rev > 0:
+                if (cur_rev / prev_rev - 1) > growth_threshold:
+                    credit += 0.5
+    return credit / len(present)
+
+
 def median_gm_points(companies):
     pts = sorted(gm_band_points(c['gm']) for c in companies if c['gm'] is not None)
     n = len(pts)
