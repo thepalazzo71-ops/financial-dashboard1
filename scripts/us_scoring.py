@@ -4,6 +4,7 @@ lenses/percentile_rank/score_pool are reused directly, unchanged) - the
 Methodology sheet in data-us/raw/*_Shortlist_1.xlsx documents an
 identical v6 model applied to this universe.
 """
+from scoring import apply_profitability_bonus
 
 
 def dilution_points(dilution):
@@ -33,12 +34,20 @@ def revenue_growth_points(growth):
 def compute_fixed_pts(c):
     """Returns (fixedPts dict, fixedSumNoGm) for a company dict with
     revGrowth, revConsistency, dilution, profitPct, cfoPct, nRevPeriods,
-    divPct already populated (see scripts/ingest_us_pool.py)."""
+    divPct, gm, revHist already populated (see scripts/ingest_us_pool.py).
+
+    profitability applies apply_profitability_bonus() - a company already
+    in the top gross-margin band with long-term revenue growth that stays
+    cash-generative overall gets this topped up to 16.0 regardless of the
+    raw profitPct sign-only measure (added 2026-10-12, see
+    docs/handoff-brief.md)."""
+    profitability = round(c['profitPct'] * 16.0, 4)
+    profitability = apply_profitability_bonus(profitability, c.get('gm'), c['cfoPct'], c['revHist'])
     pts = {
         'revenue_growth': round(revenue_growth_points(c['revGrowth']), 4),
         'revenue_consistency': round(c['revConsistency'] * 12.0, 4),
         'dilution': round(dilution_points(c['dilution']), 4) if c['dilution'] is not None else None,
-        'profitability': round(c['profitPct'] * 16.0, 4),
+        'profitability': profitability,
         'cfo_positive': round(c['cfoPct'] * 6.0, 4),
         'track_record': round((c['nRevPeriods'] / 10.0) * 8.0, 4),
         'dividend_consistency': round(c['divPct'] * 4.0, 4),

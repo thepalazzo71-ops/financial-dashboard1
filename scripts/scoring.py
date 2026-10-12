@@ -23,6 +23,53 @@ def load_overrides():
     return mc, gm
 
 
+def full_history_cagr(rev_hist):
+    """Annualized revenue CAGR from the first to the last REPORTED period
+    (never index 0 blindly - a leading None is "no data that period", not
+    zero revenue, which would otherwise fabricate an absurd growth rate
+    for any company with a short history). Revenue/NI history slots are
+    fixed LTM snapshots spaced every 4 months (10 slots ~= 3 years), so
+    years-between = (last_idx - first_idx) * 4/12. Returns None if there
+    isn't a usable two-point window.
+    """
+    idxs = [i for i, v in enumerate(rev_hist) if v is not None]
+    if len(idxs) < 2:
+        return None
+    fi, li = idxs[0], idxs[-1]
+    sv, ev = rev_hist[fi], rev_hist[li]
+    if sv is None or sv <= 0 or ev is None:
+        return None
+    years = (li - fi) * 4 / 12
+    if years <= 0:
+        return None
+    return (ev / sv) ** (1 / years) - 1
+
+
+def apply_profitability_bonus(old_pts, gm, cfo_pct, rev_hist,
+                               gm_gate=0.60, cfo_gate=0.70, growth_gate=0.10):
+    """Tops up fixedPts['profitability'] to the full 16.0 for a company
+    already in the top gross-margin band (>=60%, which already earns
+    full gross-margin points) with long-term revenue growth (full-history
+    CAGR > 10%/yr) that stays broadly cash-generative overall (CFO
+    positive >=70% of reported periods) - recognizing a genuine
+    high-margin growth story that reinvests heavily rather than
+    penalizing it for inconsistent GAAP net income. Added per explicit
+    user request (2026-10-12) after a methodology discussion triggered by
+    ProCook Group; previewed client-side in both dashboards' "Profitability
+    bonus preview" modal before being applied for real here - see
+    docs/handoff-brief.md for the full reasoning and the (rejected)
+    alternatives tried first.
+    """
+    if old_pts >= 16.0 or gm is None or gm < gm_gate:
+        return old_pts
+    if cfo_pct is None or cfo_pct < cfo_gate:
+        return old_pts
+    cagr = full_history_cagr(rev_hist)
+    if cagr is not None and cagr > growth_gate:
+        return 16.0
+    return old_pts
+
+
 def gm_band_points(gm):
     if gm is None:
         return None
