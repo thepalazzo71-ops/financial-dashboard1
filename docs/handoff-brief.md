@@ -1820,6 +1820,91 @@ Dashboard rebuilt, Playwright-verified (150 rows, zero JS console
 errors), committed, and pushed.
 
 Coverage after this round: Europe market-cap 604/1000. US/Canada
-unchanged at 512/512. The next natural step, once requested, is
-extending corporate-actions/thesis research to the tier-11 frontier for
-Europe (50 new companies; nothing pending on the US side).
+unchanged at 512/512.
+
+**Tier-11 corporate-actions/thesis catch-up (started, then paused by the
+user 2026-10-12):** a WebSearch agent screened the 50 tier-11 companies
+for corporate actions (25 found:true / 25 found:false - results saved to
+`/tmp/.../scratchpad/eu_corpactions_tier11_results.json` in that session's
+scratchpad, NOT yet merged into `data/corporate_actions.json`). The user
+asked to pause this to work on the two dashboard features below instead.
+**This batch's results were deliberately left unmerged** - whoever
+resumes this should either merge them (after a sanity read, since they're
+already researched and saved) or re-run the screen if the scratchpad file
+is gone by then. The tier-11 thesis gap (51 companies) was never started.
+
+## Tracker and spreadsheet export features (2026-10-12)
+
+Two new features added to both dashboards, entirely client-side (no
+backend exists or is planned):
+
+**1. Tracker.** Click "Track this company" inside any company's detail
+panel - which appears identically in the main table, Biggest movers, Top
+150 changes, and Corporate actions modals - to add it to a per-browser
+watchlist (`localStorage`, never leaves the device, namespaced separately
+per market: `shortlist_tracker_v1` for Europe, `shortlist_us_tracker_v1`
+for US/Canada, since both pages share one origin on GitHub Pages and
+would otherwise collide). Each tracked company gets an editable
+market-cap move threshold (default 10%).
+
+Since this is a static page with no live price feed, "checking" happens
+once per page load: the tracked company's officially baked-in market cap
+(`c.mc0` - never a local what-if scenario edit, so playing with numbers
+in the main table never triggers a false alert) is compared against the
+baseline recorded the last time that browser opened the page. A breach:
+(a) shows a banner at the top of the page, (b) logs the move in the
+Tracker modal with whatever explanation is already on file, in priority
+order - a named corporate action (most concrete/dated) > a manually-
+researched news note (`c.newsNote`) > the existing rank-mover "cause"
+logic (own market-cap/GM change vs. pool ripple, refactored out of
+`biggestMovers()` into a shared `causeFromPair()` so both use one
+implementation) > an explicit "nothing on file yet" fallback - and (c)
+advances the baseline to the new value so the same move isn't re-reported
+on every subsequent visit. This is **never a live web search** - the
+explanation only ever draws on what's already in the committed dataset.
+
+**2. Download spreadsheet.** A styled, multi-tab `.xlsx` export of the
+current top-150 view (respects the live/history-date selector, and on
+the US dashboard, respects the sector selector too). Built with
+**ExcelJS** (`cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js`)
+rather than the `xlsx.full.min.js` already loaded for the existing
+pre-update snapshot export - confirmed via a local Node test that the
+open-source SheetJS/`xlsx` build **silently drops cell styling on
+write** (a cell's `.s`/fill/font survives in memory but isn't present
+when the file is reopened), which would have made a "very neat"
+dark-teal-headered export impossible with the library already on the
+page. ExcelJS writes real, readable-back styling.
+
+Tabs: Overview, Investment Thesis, Revenue History, Net Income History,
+Big Movers, Corporate Actions, Tracker, Methodology - the first four
+mirror the layout/column set of the original Europe shortlist workbook
+the user attached as a style reference (dark teal `#1B474D` header fill,
+white bold Calibri), and the last four are new, per the user's explicit
+request to fold in everything the dashboard has grown since that original
+workbook (movers, corporate actions, and now the tracker) as additional
+tabs rather than leaving the export at its original scope.
+
+**Testing note - a real environment limitation, not a workaround:** this
+sandbox's egress proxy blocks `cdnjs.cloudflare.com` entirely (confirmed
+via `curl`: 403, "organization policy" on every CDN domain tried,
+including `unpkg.com` and `cdn.jsdelivr.net`), so Playwright's browser
+can't fetch ExcelJS (or, for that matter, the pre-existing `xlsx.full.min.js`)
+in this session. The Tracker (no CDN dependency) was verified end-to-end
+via Playwright on both dashboards, including surviving a sector switch on
+the US page. The export pipeline was verified differently but just as
+rigorously: the *actual* JS shipped in the built `docs/index.html` and
+`docs/us.html` was extracted and run under Node with the real `exceljs`
+npm package standing in for the CDN script, fed the real production
+payload, and the resulting `.xlsx` was inspected with `openpyxl` to
+confirm sheet structure, real data values, number formats, and - critically -
+that the dark-teal header styling actually persists in the written file.
+One bug this caught before it shipped: the US Methodology sheet initially
+referenced `BUILD_INFO.mcRefreshedCount`/`gmOverrideCount`, which don't
+exist in that dashboard's build-info payload (`scripts/build_site_us.py`
+uses `mcOverrideCount` and has no GM-override count at all) - fixed to
+use the real field name plus a live-computed GM-verified count. End
+users' own browsers will fetch the CDN script with no such restriction;
+this was a limitation of testing inside this sandbox only.
+
+Both features implemented identically in `site/template.html` and
+`site/template_us.html`.
