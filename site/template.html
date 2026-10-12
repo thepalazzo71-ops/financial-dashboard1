@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 <style>
   :root {
     --paper: #EFEAE0;
@@ -74,6 +75,9 @@
   .toolbar select { flex: 0 0 auto; }
   #historyDate.active { border-color: var(--gold); background: var(--gold-soft); }
   .history-banner { margin: -4px 0 14px; padding: 9px 14px; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 4px; font-size: 12.5px; color: var(--ink); }
+  .tracker-banner { margin: -4px 0 14px; padding: 9px 14px; background: var(--brick-soft); border: 1px solid var(--brick); border-radius: 4px; font-size: 12.5px; color: var(--ink); }
+  .tracker-banner b { color: var(--brick); }
+  .tracker-banner a.view-link { color: var(--brick); font-weight: 600; cursor: pointer; text-decoration: underline; margin-left: 4px; }
   .btn { font: inherit; font-size: 13px; font-weight: 600; background: var(--green); color: var(--paper); border: none; border-radius: 3px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
   .btn:hover { opacity: 0.88; }
   .btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-strong); font-weight: 500; }
@@ -131,6 +135,10 @@
   .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note { font-size: 12.5px; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note b.lbl { display: block; font-size: 10.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .detail-actions { margin-bottom: 12px; }
+  .track-btn { font: inherit; font-size: 12px; font-weight: 600; background: var(--paper); color: var(--green-text); border: 1px solid var(--green-text); border-radius: 20px; padding: 5px 12px; cursor: pointer; }
+  .track-btn:hover { background: var(--green-soft); }
+  .track-btn.tracked { background: var(--green); color: var(--paper); border-color: var(--green); }
   .breakdown { font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
   .breakdown div.bd-row { display: flex; justify-content: space-between; padding: 5px 9px; background: var(--paper); }
   .breakdown div.bd-row:nth-child(even) { background: var(--paper-raised); }
@@ -186,6 +194,20 @@
   .ca-row .terms { font-size: 12px; color: var(--gold); margin-top: 3px; font-weight: 600; }
   .ca-row .note { font-size: 12.5px; color: var(--ink); margin-top: 3px; line-height: 1.45; }
   .ca-row .src { font-size: 11.5px; margin-top: 3px; }
+  .tracker-row { padding: 12px 4px; border-bottom: 1px solid var(--rule); }
+  .tracker-row:last-child { border-bottom: none; }
+  .tracker-row .tr-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .tracker-row .name { font-weight: 600; font-size: 13.5px; }
+  .tracker-row .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .tracker-row .tr-controls { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .tracker-row .tr-controls label { font-size: 11px; color: var(--ink-soft); }
+  .tracker-row .tr-threshold { width: 54px; text-align: right; font: inherit; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 4px 6px; }
+  .tracker-row .tr-untrack { background: none; border: 1px solid var(--rule-strong); color: var(--ink-faint); cursor: pointer; font-size: 11.5px; padding: 4px 9px; border-radius: 3px; }
+  .tracker-row .tr-untrack:hover { color: var(--brick); border-color: var(--brick); }
+  .tracker-row .tr-status { font-size: 11.5px; font-weight: 600; margin-top: 8px; padding: 6px 9px; border-radius: 3px; background: var(--green-soft); color: var(--green-text); }
+  .tracker-row .tr-status.alert { background: var(--brick-soft); color: var(--brick); }
+  .tracker-row .tr-explain { font-size: 12px; color: var(--ink); margin-top: 6px; line-height: 1.5; }
+  .tracker-row .tr-explain .src { font-size: 11px; }
   .modal h3 { font-family: 'Source Serif 4', serif; font-size: 19px; margin: 0 0 6px; }
   .modal p.hint { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 12px; }
   .modal textarea { width: 100%; min-height: 160px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 10px; resize: vertical; }
@@ -241,10 +263,13 @@
     <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
     <button class="btn ghost small" id="moversBtn">Biggest movers</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
+    <button class="btn ghost small" id="trackerBtn">Tracker</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
+    <button class="btn" id="exportBtn">Download spreadsheet</button>
   </div>
   <div class="history-banner" id="historyBanner" style="display:none"></div>
+  <div class="tracker-banner" id="trackerBanner" style="display:none"></div>
 
   <div class="tablewrap">
     <table>
@@ -380,6 +405,25 @@
   </div>
 </div>
 
+<div class="modal-backdrop" id="trackerModalBackdrop">
+  <div class="modal wide">
+    <h3>Tracker</h3>
+    <p class="hint">
+      Track specific companies from anywhere on this page (the table, Biggest movers, Top 150 changes, or
+      Corporate actions) by opening their detail panel and clicking <b>Track this company</b>. Set a market-cap
+      move threshold per company below. There's no live price feed here — this is a static page — so the check
+      runs each time you open this page, comparing the market cap baked in at the last data refresh you saw
+      against the one baked in now. A breach shows whatever explanation is already on file (a corporate action,
+      rank-mover analysis, or research note); if nothing is on file, it says so rather than guessing, and it's a
+      flag for manual follow-up. Tracking is local to this browser only.
+    </p>
+    <div id="trackerContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="trackerClose">Close</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -393,9 +437,17 @@ const CORPORATE_ACTIONS = PAYLOAD.corporateActions || { tender_offers: [], merge
 
 const LS_MC_KEY = 'shortlist_mc_overrides_v1';
 const LS_GM_KEY = 'shortlist_gm_overrides_v1';
+const LS_TRACKER_KEY = 'shortlist_tracker_v1';
 
 let mcOverrides = {};   // ticker -> {mc, updatedAt, source} — session/local only
 let gmOverrides = {};   // ticker -> {gm, fiscalYear, sourceNote, updatedAt} — session/local only
+// ticker -> {threshold (%), lastSeenMc, lastSeenAt, lastAlertAt, log: [{date,oldMc,newMc,pct,explanation}, ...]}
+// — session/local only, never leaves this browser. See the Tracker modal's
+// hint text for exactly what "checking" means on a static page with no
+// live price feed: comparison against the baseline recorded the last time
+// this page was opened, not a real-time push.
+let trackerState = {};
+let lastAlertTickers = [];
 let expandedTicker = null;
 let scoredCache = null;
 let historicalCache = {};  // date -> pre-scored rows, from PAYLOAD.history (read-only, never invalidated)
@@ -408,6 +460,12 @@ function loadLocalOverrides() {
 function saveLocalOverrides() {
   try { localStorage.setItem(LS_MC_KEY, JSON.stringify(mcOverrides)); } catch(e) {}
   try { localStorage.setItem(LS_GM_KEY, JSON.stringify(gmOverrides)); } catch(e) {}
+}
+function loadTrackerState() {
+  try { trackerState = JSON.parse(localStorage.getItem(LS_TRACKER_KEY) || '{}'); } catch(e) { trackerState = {}; }
+}
+function saveTrackerState() {
+  try { localStorage.setItem(LS_TRACKER_KEY, JSON.stringify(trackerState)); } catch(e) {}
 }
 
 // The 10 revHist/niHist slots are fixed LTM snapshots from the original
@@ -576,6 +634,24 @@ function top150Movers() {
 // ripple" (its rank shifted only because other companies' market caps
 // moved around it) — same distinction scratch/build_rank_movers.py made
 // as a one-off Excel report; this is that same logic live in the page.
+// Shared by biggestMovers() (capped to its top-N climbers/decliners) and
+// explainTicker() (needs this for ANY single ticker, not just the biggest
+// movers) - one piece of "why did this change" logic, not two versions.
+function causeFromPair(b, row) {
+  const mcChanged = Math.abs((row.mc||0) - (b.mc||0)) > 0.005;
+  const bGm = (b.gm===null||b.gm===undefined) ? null : b.gm;
+  const rGm = (row.gmInfo.gm===null||row.gmInfo.gm===undefined) ? null : row.gmInfo.gm;
+  const gmChanged = (bGm===null) !== (rGm===null) || (bGm!==null && rGm!==null && Math.abs(bGm-rGm)>1e-6);
+  if (mcChanged && gmChanged) {
+    return `Own market cap ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M) and gross margin updated`;
+  } else if (mcChanged) {
+    const src = row.c.mcRefreshed ? (row.c.mcSource||'data pipeline') : (isEditedMc(row.c) ? 'edited in this browser' : 'data pipeline');
+    return `Own market cap updated ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M, via ${src})`;
+  } else if (gmChanged) {
+    return 'Own gross margin updated';
+  }
+  return 'Pool ripple only — no data change for this company; its percentile rank shifted because other companies’ market caps or gross margins were updated';
+}
 function biggestMovers(n = 15) {
   const isHist = filters.historyDate !== 'live';
   const all = ensureScored();
@@ -593,21 +669,7 @@ function biggestMovers(n = 15) {
     const curRank = rankByTicker[t];
     const rankChange = b.rank - curRank; // positive = moved up (improved)
     if (rankChange === 0) return;
-    const mcChanged = Math.abs((row.mc||0) - (b.mc||0)) > 0.005;
-    const bGm = (b.gm===null||b.gm===undefined) ? null : b.gm;
-    const rGm = (row.gmInfo.gm===null||row.gmInfo.gm===undefined) ? null : row.gmInfo.gm;
-    const gmChanged = (bGm===null) !== (rGm===null) || (bGm!==null && rGm!==null && Math.abs(bGm-rGm)>1e-6);
-    let cause;
-    if (mcChanged && gmChanged) {
-      cause = `Own market cap ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M) and gross margin updated`;
-    } else if (mcChanged) {
-      const src = row.c.mcRefreshed ? (row.c.mcSource||'data pipeline') : (isEditedMc(row.c) ? 'edited in this browser' : 'data pipeline');
-      cause = `Own market cap updated ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M, via ${src})`;
-    } else if (gmChanged) {
-      cause = 'Own gross margin updated';
-    } else {
-      cause = 'Pool ripple only — no data change for this company; its percentile rank shifted because other companies’ market caps or gross margins were updated';
-    }
+    const cause = causeFromPair(b, row);
     movers.push({ row, curRank, prevRank: b.rank, rankChange, totalBefore: b.total, totalAfter: row.total, cause });
   });
   const climbers = movers.filter(m=>m.rankChange>0).sort((a,b)=>b.rankChange-a.rankChange).slice(0,n);
@@ -665,6 +727,110 @@ function corpActionsTotal() {
   const ca = CORPORATE_ACTIONS;
   return (ca.tender_offers||[]).length + (ca.mergers_acquisitions||[]).length + (ca.spinoffs||[]).length + (ca.other||[]).length;
 }
+function flattenCorporateActions() {
+  const ca = CORPORATE_ACTIONS;
+  const out = [];
+  [['tender_offers','Tender offer'],['mergers_acquisitions','M&A'],['spinoffs','Spinoff'],['other','Other']].forEach(([key,label]) => {
+    (ca[key]||[]).forEach(a => out.push(Object.assign({categoryKey:key, categoryLabel:label}, a)));
+  });
+  return out;
+}
+function latestCorporateActionFor(ticker) {
+  const matches = flattenCorporateActions().filter(a => a.ticker === ticker);
+  if (!matches.length) return null;
+  matches.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  return matches[0];
+}
+// Pulls together whatever explanation already exists on file for a
+// ticker's move — never a live web search (this is a static page), so if
+// nothing is on file it says so rather than guessing. Priority: a named
+// corporate action (most concrete, dated) > a manually-researched news
+// note > the generic rank-mover "cause" (own data vs. pool ripple) >
+// an explicit "nothing on file" fallback.
+function explainTicker(ticker) {
+  const ca = latestCorporateActionFor(ticker);
+  if (ca) {
+    const bits = [ca.categoryLabel];
+    if (ca.date) bits.push(ca.date);
+    let txt = ca.note || ca.terms || `${ca.categoryLabel} event on file`;
+    return { text: `${bits.join(' &middot; ')}: ${txt}`, sourceUrl: ca.source_url || null };
+  }
+  const row = liveRowFor(ticker);
+  if (row && row.c.newsNote) {
+    return { text: row.c.newsNote, sourceUrl: null };
+  }
+  if (row) {
+    const prevKey = HISTORY_DATES[HISTORY_DATES.length - 1];
+    const prevRow = prevKey ? (HISTORY[prevKey]||[]).find(r => r.t === ticker) : null;
+    if (prevRow) {
+      return { text: causeFromPair(prevRow, row), sourceUrl: null };
+    }
+  }
+  return { text: 'No documented catalyst on file yet (no corporate action, research note, or prior checkpoint to compare against) — treat this as a flag for manual follow-up next time corporate-actions/thesis research is updated.', sourceUrl: null };
+}
+
+// ---- Tracker: client-side only, persisted to this browser's localStorage.
+// See the Tracker modal's hint text for what "checking" actually means on
+// a static page with no live price feed.
+const TRACKER_DEFAULT_THRESHOLD = 10;
+function isTracked(ticker) { return !!trackerState[ticker]; }
+function trackCompany(ticker) {
+  if (trackerState[ticker]) return;
+  const row = liveRowFor(ticker);
+  const mc0 = row ? row.c.mc0 : null;
+  trackerState[ticker] = { threshold: TRACKER_DEFAULT_THRESHOLD, lastSeenMc: mc0, lastSeenAt: new Date().toISOString(), lastAlertAt: null, log: [] };
+  saveTrackerState();
+}
+function untrackCompany(ticker) {
+  delete trackerState[ticker];
+  saveTrackerState();
+}
+function setTrackerThreshold(ticker, pct) {
+  if (!trackerState[ticker] || !isFinite(pct) || pct<=0) return;
+  trackerState[ticker].threshold = pct;
+  saveTrackerState();
+}
+// Runs once per page load (in init(), before the first render): compares
+// each tracked company's OFFICIAL baked-in market cap (c.mc0 — never a
+// local what-if scenario edit, so playing with numbers never triggers a
+// false alert) against the baseline recorded the last time this page was
+// opened. A breach is logged with whatever explanation is on file, then
+// the baseline is advanced to the current value so the same move isn't
+// re-reported on every subsequent visit. Returns the list of tickers that
+// just breached, for the top banner.
+function checkTrackerAlerts() {
+  const breached = [];
+  const now = new Date().toISOString();
+  Object.keys(trackerState).forEach(ticker => {
+    const entry = trackerState[ticker];
+    const row = liveRowFor(ticker);
+    if (!row) return;
+    const currentMc = row.c.mc0;
+    if (typeof currentMc !== 'number') return;
+    if (typeof entry.lastSeenMc === 'number' && entry.lastSeenMc > 0) {
+      const pct = (currentMc - entry.lastSeenMc) / entry.lastSeenMc * 100;
+      if (Math.abs(pct) >= entry.threshold) {
+        const explanation = explainTicker(ticker);
+        entry.log = entry.log || [];
+        entry.log.unshift({ date: now, oldMc: entry.lastSeenMc, newMc: currentMc, pct, explanation });
+        entry.log = entry.log.slice(0, 5);
+        entry.lastAlertAt = now;
+        breached.push(ticker);
+      }
+    }
+    entry.lastSeenMc = currentMc;
+    entry.lastSeenAt = now;
+  });
+  if (Object.keys(trackerState).length) saveTrackerState();
+  return breached;
+}
+function renderTrackerBanner() {
+  const banner = document.getElementById('trackerBanner');
+  if (!lastAlertTickers.length) { banner.style.display = 'none'; return; }
+  const names = lastAlertTickers.map(t => { const r = liveRowFor(t); return r ? r.c.n : t; });
+  banner.innerHTML = `<b>&#9888; Tracker alert:</b> ${names.join(', ')} moved beyond your threshold since you last opened this page. <a class="view-link" id="trackerBannerLink">View in Tracker</a>`;
+  banner.style.display = 'block';
+}
 // Shared by the main table's expand-row and the Top 150 changes modal, so
 // both show the exact same score breakdown / thesis / sparklines - never
 // two versions of "what a company looks like" to drift apart.
@@ -674,6 +840,9 @@ function renderDetailPanel(row, rank) {
   const links = (c.gmLinks||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
   return `
     <div class="detail">
+      <div class="detail-actions">
+        <button class="track-btn ${isTracked(c.t)?'tracked':''}" data-ticker="${c.t}">${isTracked(c.t) ? '★ Tracked — click to untrack' : '☆ Track this company'}</button>
+      </div>
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
       <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
       <div class="breakdown">
@@ -831,6 +1000,50 @@ function renderMoverRow(entry, direction) {
     </div>
   `;
 }
+function renderTrackerModalContent() {
+  const content = document.getElementById('trackerContent');
+  const tickers = Object.keys(trackerState);
+  if (!tickers.length) {
+    content.innerHTML = `<p class="no-thesis">No companies tracked yet. Open any company's detail panel (in the table, Biggest movers, Top 150 changes, or Corporate actions) and click <b>Track this company</b>.</p>`;
+    return;
+  }
+  // Most-recently-alerted first, then alphabetical by ticker.
+  tickers.sort((a,b) => {
+    const la = trackerState[a].lastAlertAt||'', lb = trackerState[b].lastAlertAt||'';
+    if (la !== lb) return lb.localeCompare(la);
+    return a.localeCompare(b);
+  });
+  content.innerHTML = tickers.map(t => {
+    const entry = trackerState[t];
+    const row = liveRowFor(t);
+    const name = row ? row.c.n : t;
+    const co = row ? row.c.co : '';
+    const mc = row ? row.c.mc0 : null;
+    const latestLog = (entry.log||[])[0];
+    const isAlert = latestLog && entry.lastAlertAt === latestLog.date;
+    const statusHtml = isAlert
+      ? `<div class="tr-status alert">&#9888; Moved ${latestLog.pct>=0?'+':''}${fmtNum(latestLog.pct,1)}% ($${fmtNum(latestLog.oldMc,0)}M &rarr; $${fmtNum(latestLog.newMc,0)}M) since last check</div>
+         <div class="tr-explain">${latestLog.explanation.text}${latestLog.explanation.sourceUrl ? ` <a class="src" href="${latestLog.explanation.sourceUrl}" target="_blank" rel="noopener">source</a>` : ''}</div>`
+      : `<div class="tr-status">Within threshold since last check (baseline $${fmtNum(entry.lastSeenMc,0)}M)</div>`;
+    return `
+      <div class="tracker-row" data-ticker="${t}">
+        <div class="tr-top">
+          <div>
+            <div class="name">${name}</div>
+            <div class="meta">${t}${co ? ' &middot; '+co : ''}${mc!==null ? ' &middot; $'+fmtNum(mc,0)+'M now' : ''}</div>
+          </div>
+          <div class="tr-controls">
+            <label>Alert if moves &plusmn;</label>
+            <input type="number" class="tr-threshold" min="0.1" step="0.5" value="${entry.threshold}" data-ticker="${t}">
+            <label>%</label>
+            <button class="tr-untrack" data-ticker="${t}">Untrack</button>
+          </div>
+        </div>
+        ${statusHtml}
+      </div>
+    `;
+  }).join('');
+}
 function ensureScored() {
   if (filters.historyDate !== 'live') {
     const d = filters.historyDate;
@@ -841,6 +1054,16 @@ function ensureScored() {
   return scoredCache;
 }
 function invalidate() { scoredCache = null; }
+// The Tracker always evaluates against the LIVE official state, regardless
+// of whatever history-date the user happens to be browsing — a tracked
+// threshold is about the real dataset, not a historical view.
+function ensureLiveScored() {
+  if (!scoredCache) scoredCache = computeAllScores();
+  return scoredCache;
+}
+function liveRowFor(ticker) {
+  return ensureLiveScored().find(r => r.c.t === ticker) || null;
+}
 
 function formatDateKey(key) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key);
@@ -1108,6 +1331,215 @@ function saveSnapshotBeforeUpdate() {
   }
 }
 
+// ---- Full dashboard export: a styled, multi-tab .xlsx of everything on
+// this page (Overview, Investment Thesis, Revenue/Net-Income history,
+// Big Movers, Corporate Actions, Tracker, Methodology), scoped to
+// whichever view is currently selected (live or a saved history date) —
+// uses ExcelJS rather than the xlsx.full.min.js loaded above, since that
+// library's open-source build silently drops cell styling on write; this
+// is the one export meant to look like a real, polished report.
+const XLSX_TEAL = 'FF1B474D';
+const XLSX_HEADER_FILL = { type:'pattern', pattern:'solid', fgColor:{argb:XLSX_TEAL} };
+const XLSX_HEADER_FONT = { name:'Calibri', size:11, bold:true, color:{argb:'FFFFFFFF'} };
+const XLSX_TITLE_FONT = { name:'Calibri', size:16, bold:true, color:{argb:XLSX_TEAL} };
+const XLSX_SUBTITLE_FONT = { name:'Calibri', size:10, italic:true, color:{argb:'FF5B6472'} };
+function stripHtmlEntities(s) {
+  if (!s) return '';
+  return String(s).replace(/&rarr;/g,'→').replace(/&middot;/g,'·').replace(/&mdash;/g,'—')
+    .replace(/&#9888;/g,'⚠').replace(/<[^>]+>/g,'');
+}
+function xlsxTitleBlock(ws, title, subtitle) {
+  ws.getCell('A1').value = title;
+  ws.getCell('A1').font = XLSX_TITLE_FONT;
+  if (subtitle) { ws.getCell('A2').value = subtitle; ws.getCell('A2').font = XLSX_SUBTITLE_FONT; }
+}
+function xlsxHeaderRow(ws, rowNum, headers, colWidths) {
+  const row = ws.getRow(rowNum);
+  headers.forEach((h,i) => {
+    const cell = row.getCell(i+1);
+    cell.value = h;
+    cell.fill = XLSX_HEADER_FILL;
+    cell.font = XLSX_HEADER_FONT;
+  });
+  if (colWidths) colWidths.forEach((w,i) => { ws.getColumn(i+1).width = w; });
+  ws.views = [{ state:'frozen', ySplit: rowNum }];
+}
+function buildOverviewSheet(wb, rows, viewLabel) {
+  const ws = wb.addWorksheet('Overview');
+  xlsxTitleBlock(ws, 'European Small/Mid-Cap Value Shortlist — Dashboard Export',
+    `${viewLabel} · v6 composite score, full 1,000-company pool · Generated ${new Date().toISOString().slice(0,10)}`);
+  const headers = ['#','Company','Ticker','Country','Archetype','Mkt Cap ($M)','Total Equity ($M)','P/B','ROE',
+    'Rev Growth','Dilution','Profit %','CFO+ %','Gross Margin','v6 Score'];
+  xlsxHeaderRow(ws, 4, headers, [5,32,16,16,18,14,16,8,9,11,10,9,9,13,10]);
+  rows.forEach((r,i) => {
+    const row = r.row, c = row.c;
+    ws.addRow([
+      r.rank, c.n, c.t, c.co, row.archetype, Number(row.mc.toFixed(1)),
+      c.eq!==null&&c.eq!==undefined ? Number(c.eq.toFixed(1)) : null,
+      row.pb!==null ? Number(row.pb.toFixed(2)) : null,
+      row.roe!==null ? Number(row.roe.toFixed(4)) : null,
+      c.revGrowth!==null&&c.revGrowth!==undefined ? Number(c.revGrowth.toFixed(4)) : null,
+      c.dilution!==null&&c.dilution!==undefined ? Number(c.dilution.toFixed(4)) : null,
+      Number((c.profitPct||0).toFixed(4)), Number((c.cfoPct||0).toFixed(4)),
+      row.gmInfo.gm!==null ? Number(row.gmInfo.gm.toFixed(4)) : null,
+      Number(row.total.toFixed(2)),
+    ]);
+  });
+  ['H','I','J','K','L','M','N'].forEach(col => { ws.getColumn(col).numFmt = '0.0%'; });
+  ws.getColumn('H').numFmt = '0.00"x"';
+  ws.getColumn('F').numFmt = '#,##0.0'; ws.getColumn('G').numFmt = '#,##0.0'; ws.getColumn('O').numFmt = '0.0';
+  return ws;
+}
+function buildThesisSheet(wb, rows) {
+  const ws = wb.addWorksheet('Investment Thesis');
+  xlsxTitleBlock(ws, 'Investment Thesis — Qualitative Research Summary');
+  xlsxHeaderRow(ws, 4, ['#','Company','Ticker','Business Description','Competitive Position','Main Shareholders','Red Flags','Website'],
+    [5,32,16,55,45,45,45,28]);
+  rows.forEach(r => {
+    const c = r.row.c, th = c.thesis;
+    ws.addRow([r.rank, c.n, c.t, th?th.business_description||'':'', th?th.competitive_position||'':'',
+      th?th.main_shareholders||'':'', th?th.red_flags||'':'', th?th.website||'':'']);
+  });
+  ws.getColumn('D').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('E').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('F').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('G').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildHistSheet(wb, rows, title, field, withGrowth) {
+  const ws = wb.addWorksheet(title);
+  xlsxTitleBlock(ws, `${title} ($M) — ${PERIOD_LABELS[0]} to ${PERIOD_LABELS[PERIOD_LABELS.length-1]}`);
+  const headers = ['#','Company','Ticker', ...PERIOD_LABELS].concat(withGrowth ? ['Growth'] : []);
+  xlsxHeaderRow(ws, 4, headers, [5,32,16, ...PERIOD_LABELS.map(()=>10)].concat(withGrowth?[10]:[]));
+  rows.forEach(r => {
+    const c = r.row.c;
+    const hist = c[field] || [];
+    const vals = PERIOD_LABELS.map((_,i) => hist[i]!==undefined && hist[i]!==null ? Number(hist[i].toFixed(1)) : null);
+    const line = [r.rank, c.n, c.t, ...vals];
+    if (withGrowth) line.push(c.revGrowth!==null&&c.revGrowth!==undefined ? Number(c.revGrowth.toFixed(4)) : null);
+    ws.addRow(line);
+  });
+  if (withGrowth) ws.getColumn(headers.length).numFmt = '0.0%';
+  return ws;
+}
+function buildMoversSheet(wb, viewLabel) {
+  const ws = wb.addWorksheet('Big Movers');
+  const { climbers, decliners, prevKey } = biggestMovers(50);
+  xlsxTitleBlock(ws, 'Biggest rank movers', prevKey ? `${viewLabel}, vs. ${historyLabel(prevKey)}` : `${viewLabel} — no earlier checkpoint to compare to`);
+  xlsxHeaderRow(ws, 4, ['Direction','Rank Δ','Prev Rank','Cur Rank','Company','Ticker','Country','Score Before','Score After','Cause'],
+    [10,8,10,10,32,16,16,12,12,60]);
+  [...climbers.map(m=>['Up',m]), ...decliners.map(m=>['Down',m])].forEach(([dir,m]) => {
+    ws.addRow([dir, Math.abs(m.rankChange), m.prevRank, m.curRank, m.row.c.n, m.row.c.t, m.row.c.co,
+      Number(m.totalBefore.toFixed(2)), Number(m.totalAfter.toFixed(2)), stripHtmlEntities(m.cause)]);
+  });
+  ws.getColumn('J').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildCorpActionsSheet(wb) {
+  const ws = wb.addWorksheet('Corporate Actions');
+  const all = flattenCorporateActions();
+  xlsxTitleBlock(ws, 'Corporate Actions', `${all.length} event${all.length===1?'':'s'} on file — manually/agent-researched, not automated`);
+  xlsxHeaderRow(ws, 4, ['Category','Ticker','Company','Date','Counterparty / Role','Terms','Note','Source URL'],
+    [16,16,32,12,28,40,55,40]);
+  all.forEach(a => {
+    ws.addRow([a.categoryLabel, a.ticker, a.company, a.date||'', (a.counterparty||a.spun_off_entity||'') + (a.role?` (${a.role})`:''),
+      a.terms||'', a.note||'', a.source_url||'']);
+  });
+  ws.getColumn('F').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('G').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildTrackerSheet(wb) {
+  const ws = wb.addWorksheet('Tracker');
+  const tickers = Object.keys(trackerState);
+  xlsxTitleBlock(ws, 'Tracker', 'Local to this browser — not shared, not synced. See the Tracker modal for how checking works on a static page.');
+  xlsxHeaderRow(ws, 4, ['Ticker','Company','Country','Threshold %','Baseline Mkt Cap ($M)','Current Mkt Cap ($M)','Last Checked','Status','Latest Explanation'],
+    [16,32,16,11,16,16,20,24,60]);
+  if (!tickers.length) {
+    ws.addRow(['', 'No companies tracked in this browser yet.', '', '', '', '', '', '', '']);
+  } else {
+    tickers.forEach(t => {
+      const entry = trackerState[t];
+      const row = liveRowFor(t);
+      const latestLog = (entry.log||[])[0];
+      const isAlert = latestLog && entry.lastAlertAt === latestLog.date;
+      ws.addRow([t, row?row.c.n:'', row?row.c.co:'', entry.threshold, entry.lastSeenMc, row?row.c.mc0:'',
+        entry.lastSeenAt||'', isAlert ? `Alert: ${latestLog.pct>=0?'+':''}${latestLog.pct.toFixed(1)}%` : 'Within threshold',
+        isAlert ? stripHtmlEntities(latestLog.explanation.text) : '']);
+    });
+  }
+  ws.getColumn('I').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildMethodologySheet(wb, viewLabel) {
+  const ws = wb.addWorksheet('Methodology');
+  xlsxTitleBlock(ws, 'v6 Scoring Methodology');
+  const rows = [
+    [],
+    ['View exported', viewLabel],
+    ['Build date', BUILD_INFO.buildDate],
+    ['Candidate pool size', BUILD_INFO.poolSize],
+    ['Market caps refreshed (pipeline)', BUILD_INFO.mcRefreshedCount],
+    ['Gross margins verified', BUILD_INFO.gmOverrideCount],
+    [],
+    ['Scoring dimension', 'Max points'],
+    ['Revenue growth (power-curve)', 6],
+    ['Revenue consistency', 12],
+    ['Dilution', 12],
+    ['Profitability', 16],
+    ['CFO positive', 6],
+    ['Track record', 8],
+    ['Dividend consistency', 4],
+    ['Gross margin (banded)', 18],
+    ['Valuation (best-of-three lens, percentile-ranked)', 18],
+    ['Total', 100],
+    [],
+    ['Notes'],
+    ['Every score is computed against the entire candidate pool and percentile-ranked, regardless of any display filter.'],
+    ['Gross margin and valuation recompute live from whatever market cap and gross margin is current; the other seven dimensions are fixed from the underlying financial history.'],
+    ['Companies without a verified gross margin use the pool median GM-band score as a neutral fallback.'],
+  ];
+  rows.forEach(r => ws.addRow(r));
+  ws.getRow(9).font = XLSX_HEADER_FONT; ws.getRow(9).fill = XLSX_HEADER_FILL;
+  ws.getColumn('A').width = 46; ws.getColumn('B').width = 40;
+  ws.getColumn('A').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+async function exportDashboardSpreadsheet() {
+  if (typeof ExcelJS === 'undefined') { showToast('Export library unavailable — try reloading the page.'); return; }
+  showToast('Building spreadsheet…');
+  try {
+    const isHist = filters.historyDate !== 'live';
+    const all = ensureScored();
+    const rankByTicker = computeRankByTicker(all, isHist);
+    const top150 = all.slice().sort((a,b)=>b.total-a.total).slice(0,150)
+      .map(row => ({ row, rank: rankByTicker[row.c.t] })).sort((a,b)=>a.rank-b.rank);
+    const viewLabel = isHist ? historyLabel(filters.historyDate) : 'Live (current build)';
+
+    const wb = new ExcelJS.Workbook();
+    wb.creator = 'European Small/Mid-Cap Value Shortlist dashboard';
+    wb.created = new Date();
+    buildOverviewSheet(wb, top150, viewLabel);
+    buildThesisSheet(wb, top150);
+    buildHistSheet(wb, top150, 'Revenue History', 'revHist', true);
+    buildHistSheet(wb, top150, 'Net Income History', 'niHist', false);
+    buildMoversSheet(wb, viewLabel);
+    buildCorpActionsSheet(wb);
+    buildTrackerSheet(wb);
+    buildMethodologySheet(wb, viewLabel);
+
+    const buf = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buf], {type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const slug = isHist ? filters.historyDate : 'live';
+    const dateStr = new Date().toISOString().slice(0,10);
+    downloadBlob(blob, `shortlist-dashboard-${slug}-${dateStr}.xlsx`);
+    showToast('Spreadsheet downloaded.');
+  } catch (e) {
+    showToast('Could not build the spreadsheet — see console for details.');
+    console.error(e);
+  }
+}
+
 function applyMcEdit(ticker, mc, source) {
   if (!isFinite(mc) || mc<=0) return;
   mcOverrides[ticker] = { mc, updatedAt: new Date().toISOString(), source };
@@ -1195,6 +1627,37 @@ function wireToolbar() {
   document.getElementById('moversClose').addEventListener('click', () => moversBackdrop.classList.remove('open'));
   moversBackdrop.addEventListener('click', e => { if (e.target===moversBackdrop) moversBackdrop.classList.remove('open'); });
 
+  const trackerBackdrop = document.getElementById('trackerModalBackdrop');
+  const trackerContent = document.getElementById('trackerContent');
+  document.getElementById('trackerBtn').addEventListener('click', () => {
+    renderTrackerModalContent();
+    trackerBackdrop.classList.add('open');
+  });
+  trackerContent.addEventListener('click', e => {
+    const untrackBtn = e.target.closest('.tr-untrack');
+    if (untrackBtn) {
+      untrackCompany(untrackBtn.dataset.ticker);
+      renderTrackerModalContent();
+      refreshAllViews();
+      showToast('Untracked');
+    }
+  });
+  trackerContent.addEventListener('change', e => {
+    const inp = e.target.closest('.tr-threshold');
+    if (inp) { setTrackerThreshold(inp.dataset.ticker, parseFloat(inp.value)); showToast('Threshold updated'); }
+  });
+  document.getElementById('trackerClose').addEventListener('click', () => trackerBackdrop.classList.remove('open'));
+  trackerBackdrop.addEventListener('click', e => { if (e.target===trackerBackdrop) trackerBackdrop.classList.remove('open'); });
+  document.getElementById('trackerBanner').addEventListener('click', e => {
+    if (!e.target.closest('#trackerBannerLink')) return;
+    renderTrackerModalContent();
+    trackerBackdrop.classList.add('open');
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    exportDashboardSpreadsheet();
+  });
+
   const mcBackdrop = document.getElementById('mcModalBackdrop');
   document.getElementById('bulkUpdateBtn').addEventListener('click', () => {
     if (confirm('Save a snapshot of the current data (downloads a dated .xlsx) before updating market caps?')) {
@@ -1256,22 +1719,50 @@ function wireToolbar() {
   });
 }
 
+// The Track button lives inside renderDetailPanel(), which is reused by
+// four different containers (main table, Movers/Top150/CorpActions
+// modals) - re-render whichever of those are currently visible rather
+// than tracking which one the click came from.
+function refreshAllViews() {
+  render();
+  if (document.getElementById('moversModalBackdrop').classList.contains('open')) renderMoversModalContent();
+  if (document.getElementById('top150ModalBackdrop').classList.contains('open')) renderTop150ModalContent();
+  if (document.getElementById('corpActionsModalBackdrop').classList.contains('open')) renderCorpActionsModalContent();
+}
+
 function init() {
   loadLocalOverrides();
+  loadTrackerState();
   populateFilterOptions();
   wireToolbar();
   document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
-  // Delegated once on body: the "Full financial data" toggle appears inside
-  // renderDetailPanel(), which is reused by both the main table (re-rendered
-  // often) and the Top 150 modal - a body-level listener survives either
-  // container's innerHTML being replaced, no per-render rewiring needed.
+  document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
+  lastAlertTickers = checkTrackerAlerts();
+  renderTrackerBanner();
+  if (Object.keys(trackerState).length) saveTrackerState();
+  // Delegated once on body: the "Full financial data" toggle and "Track
+  // this company" button both appear inside renderDetailPanel(), reused
+  // by the main table (re-rendered often) and three modals - a body-level
+  // listener survives any of those containers' innerHTML being replaced,
+  // no per-render rewiring needed.
   document.body.addEventListener('click', e => {
-    const btn = e.target.closest('.fin-toggle');
-    if (!btn) return;
-    const panel = btn.closest('.detail').querySelector('.full-financials');
-    const isOpen = panel.style.display !== 'none';
-    panel.style.display = isOpen ? 'none' : 'block';
-    btn.innerHTML = isOpen ? 'Full financial data &#9662;' : 'Full financial data &#9652;';
+    const finBtn = e.target.closest('.fin-toggle');
+    if (finBtn) {
+      const panel = finBtn.closest('.detail').querySelector('.full-financials');
+      const isOpen = panel.style.display !== 'none';
+      panel.style.display = isOpen ? 'none' : 'block';
+      finBtn.innerHTML = isOpen ? 'Full financial data &#9662;' : 'Full financial data &#9652;';
+      return;
+    }
+    const trackBtn = e.target.closest('.track-btn');
+    if (trackBtn) {
+      const t = trackBtn.dataset.ticker;
+      if (isTracked(t)) { untrackCompany(t); showToast('Untracked ' + t); }
+      else { trackCompany(t); showToast('Tracking ' + t); }
+      document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
+      refreshAllViews();
+      return;
+    }
   });
   render();
   const statusEl = document.getElementById('dbStatus');
