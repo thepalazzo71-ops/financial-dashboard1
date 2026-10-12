@@ -1908,3 +1908,63 @@ this was a limitation of testing inside this sandbox only.
 
 Both features implemented identically in `site/template.html` and
 `site/template_us.html`.
+
+## Profitability scoring: gross-margin + long-term-growth + CFO-positive bonus (2026-10-12)
+
+A real methodology change, shipped to both pools, after a multi-step
+investigation into why ProCook Group plc (LSE:PROC) ranked #162 instead
+of top-150 despite strong fundamentals. Two earlier ideas were tried and
+explicitly **rejected** before landing on this one - worth preserving the
+reasoning since someone will eventually ask "why not just do X":
+
+1. **Trend-based profitability** (redefine a "good" period as NI growing
+   vs. the prior period, instead of NI being positive) - rejected: it
+   didn't move ProCook at all (its down periods weren't growth-investment
+   dips, just real margin compression), and pool-wide it hit 963/1000
+   companies with a heavily lopsided effect (907 worse, 56 better),
+   punishing ordinary earnings lumpiness across nearly the whole pool.
+2. **Standalone revenue-CAGR bonus** (bonus points for >10-15% annualized
+   growth alone) - rejected: 72-82% of the pool already clears that bar
+   on its own (this is a pre-screened growth/value shortlist), so it
+   would've been a near-universal point bump, not a differentiator.
+
+**What shipped instead**: combine three signals that together are much
+more selective. A company already in the top gross-margin band (>=60%,
+which already earns full GM points) with long-term revenue growth
+(full-history CAGR >10%/yr - computed from the first to last *reported*
+period; a leading `null` is "no data that period", never treated as zero
+revenue, which would otherwise fabricate an absurd growth rate for any
+short-history company) that stays broadly cash-generative overall (CFO
+positive >=70% of reported periods) gets its `profitability` fixedPts
+topped up to the full 16/16, however inconsistent its net income actually
+was. Only 54/1000 Europe and 24/512 US companies qualify - the GM gate
+does most of the selecting.
+
+**Process**: previewed client-side first (see the "Profitability bonus
+preview" entry above - a pure simulation, zero data changes) so the user
+could see the exact before/after list before committing to it. Confirmed:
+31 of the 54 Europe qualifiers land in the new top-150 (9 genuinely new
+entrants, 22 already-shortlisted companies that just climb within it).
+Only after reviewing that did the user say to ship it for real.
+
+**Implementation**: `scripts/scoring.py` gained two shared helpers -
+`full_history_cagr()` and `apply_profitability_bonus()`. Ran
+`scripts/apply_profitability_bonus.py` (one-off correction script) against
+`data/companies_1000_scored.json` and both `data-us/companies_pool_*.json`
+files, overwriting `fixedPts['profitability']`/`fixedSumNoGm` wherever the
+rule qualifies and setting a new `profitabilityBonusApplied: true` flag for
+auditability. Also fixed the root US formula
+(`scripts/us_scoring.py`'s `compute_fixed_pts`) for consistency if that
+pool is ever re-ingested from scratch - Europe has no equivalent ingestion
+script in this repo (predates it), so only the stored JSON was corrected
+directly, same situation as the dilution and dividend-sign fixes earlier
+in this project.
+
+**Result**: ProCook Group: profitability 11.43 -> 16.00/16, total score
+85.16 -> 89.73, rank **#162 -> #62** - confirmed live on the real
+dashboard (searched for it directly: shows total 89.7). Both dashboards
+rebuilt and Playwright-verified (150 rows, zero JS errors). The
+"Profitability bonus preview" modal (still present on both pages) now
+correctly shows 0 qualifying companies, since everyone who qualified has
+already been bonused for real - left in place as a working preview tool
+in case the thresholds (60% GM / 10% CAGR / 70% CFO) are ever revisited.
