@@ -194,8 +194,13 @@
   .ca-row .terms { font-size: 12px; color: var(--gold); margin-top: 3px; font-weight: 600; }
   .ca-row .note { font-size: 12.5px; color: var(--ink); margin-top: 3px; line-height: 1.45; }
   .ca-row .src { font-size: 11.5px; margin-top: 3px; }
-  .tracker-row { padding: 12px 4px; border-bottom: 1px solid var(--rule); }
-  .tracker-row:last-child { border-bottom: none; }
+  .tracker-row { padding: 12px 4px; border-bottom: 1px solid var(--rule); border-radius: 3px; }
+  .tracker-row-wrap:last-child .tracker-row { border-bottom: none; }
+  .tracker-row.clickable { cursor: pointer; }
+  .tracker-row.clickable:hover { background: rgba(47,75,60,0.05); }
+  .tracker-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .tracker-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
+  .tracker-row-wrap:last-child .detail { border-bottom: none; }
   .tracker-row .tr-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
   .tracker-row .name { font-weight: 600; font-size: 13.5px; }
   .tracker-row .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
@@ -1022,6 +1027,17 @@ function renderMoverRow(entry, direction) {
     </div>
   `;
 }
+// Live-only rank map (independent of whatever history-date/sector the
+// main page is browsing) so a tracker row can expand into the same
+// detail panel used everywhere else, with a rank that actually matches
+// the live market-cap figures the Tracker itself shows and alerts on.
+function liveRankByTicker() {
+  const all = ensureLiveScored();
+  const map = {};
+  all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>map[r.c.t]=i+1);
+  return map;
+}
+let expandedTrackerTicker = null;
 function renderTrackerModalContent() {
   const content = document.getElementById('trackerContent');
   const tickers = Object.keys(trackerState);
@@ -1035,9 +1051,11 @@ function renderTrackerModalContent() {
     if (la !== lb) return lb.localeCompare(la);
     return a.localeCompare(b);
   });
+  const rankMap = liveRankByTicker();
   content.innerHTML = tickers.map(t => {
     const entry = trackerState[t];
     const row = liveRowFor(t);
+    const rank = rankMap[t];
     const name = row ? row.c.n : t;
     const co = row ? row.c.co : '';
     const mc = row ? row.c.mc0 : null;
@@ -1047,21 +1065,25 @@ function renderTrackerModalContent() {
       ? `<div class="tr-status alert">&#9888; Moved ${latestLog.pct>=0?'+':''}${fmtNum(latestLog.pct,1)}% ($${fmtNum(latestLog.oldMc,0)}M &rarr; $${fmtNum(latestLog.newMc,0)}M) since last check</div>
          <div class="tr-explain">${latestLog.explanation.text}${latestLog.explanation.sourceUrl ? ` <a class="src" href="${latestLog.explanation.sourceUrl}" target="_blank" rel="noopener">source</a>` : ''}</div>`
       : `<div class="tr-status">Within threshold since last check (baseline $${fmtNum(entry.lastSeenMc,0)}M)</div>`;
+    const isOpen = expandedTrackerTicker === t;
     return `
-      <div class="tracker-row" data-ticker="${t}">
-        <div class="tr-top">
-          <div>
-            <div class="name">${name}</div>
-            <div class="meta">${t}${co ? ' &middot; '+co : ''}${mc!==null ? ' &middot; $'+fmtNum(mc,0)+'M now' : ''}</div>
+      <div class="tracker-row-wrap">
+        <div class="tracker-row clickable ${isOpen?'expanded':''}" data-ticker="${t}">
+          <div class="tr-top">
+            <div>
+              <div class="name">${name}</div>
+              <div class="meta">${t}${co ? ' &middot; '+co : ''}${mc!==null ? ' &middot; $'+fmtNum(mc,0)+'M now' : ''}${rank ? ' &middot; rank #'+rank : ''}</div>
+            </div>
+            <div class="tr-controls">
+              <label>Alert if moves &plusmn;</label>
+              <input type="number" class="tr-threshold" min="0.1" step="0.5" value="${entry.threshold}" data-ticker="${t}">
+              <label>%</label>
+              <button class="tr-untrack" data-ticker="${t}">Untrack</button>
+            </div>
           </div>
-          <div class="tr-controls">
-            <label>Alert if moves &plusmn;</label>
-            <input type="number" class="tr-threshold" min="0.1" step="0.5" value="${entry.threshold}" data-ticker="${t}">
-            <label>%</label>
-            <button class="tr-untrack" data-ticker="${t}">Untrack</button>
-          </div>
+          ${statusHtml}
         </div>
-        ${statusHtml}
+        ${isOpen && row ? renderDetailPanel(row, rank) : ''}
       </div>
     `;
   }).join('');
@@ -1673,10 +1695,16 @@ function wireToolbar() {
     const untrackBtn = e.target.closest('.tr-untrack');
     if (untrackBtn) {
       untrackCompany(untrackBtn.dataset.ticker);
-      renderTrackerModalContent();
       refreshAllViews();
       showToast('Untracked');
+      return;
     }
+    if (e.target.closest('.tr-controls')) return; // threshold input / untrack button - not a row-expand click
+    const rowEl = e.target.closest('.tracker-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedTrackerTicker = (expandedTrackerTicker === t) ? null : t;
+    renderTrackerModalContent();
   });
   trackerContent.addEventListener('change', e => {
     const inp = e.target.closest('.tr-threshold');
@@ -1764,6 +1792,7 @@ function refreshAllViews() {
   if (document.getElementById('moversModalBackdrop').classList.contains('open')) renderMoversModalContent();
   if (document.getElementById('top150ModalBackdrop').classList.contains('open')) renderTop150ModalContent();
   if (document.getElementById('corpActionsModalBackdrop').classList.contains('open')) renderCorpActionsModalContent();
+  if (document.getElementById('trackerModalBackdrop').classList.contains('open')) renderTrackerModalContent();
 }
 
 function init() {
