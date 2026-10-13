@@ -28,9 +28,11 @@ def full_history_cagr(rev_hist):
     (never index 0 blindly - a leading None is "no data that period", not
     zero revenue, which would otherwise fabricate an absurd growth rate
     for any company with a short history). Revenue/NI history slots are
-    fixed LTM snapshots spaced every 4 months (10 slots ~= 3 years), so
-    years-between = (last_idx - first_idx) * 4/12. Returns None if there
-    isn't a usable two-point window.
+    Capital IQ LTM snapshots [LTM-36 ... LTM-4, LTM] where the offset is
+    in QUARTERS, so consecutive slots are exactly one year apart (10
+    slots ~= 9 years), and years-between = last_idx - first_idx. (Wrongly
+    treated as months until 2026-10-13, which made every CAGR 3x too
+    high.) Returns None if there isn't a usable two-point window.
     """
     idxs = [i for i, v in enumerate(rev_hist) if v is not None]
     if len(idxs) < 2:
@@ -39,7 +41,7 @@ def full_history_cagr(rev_hist):
     sv, ev = rev_hist[fi], rev_hist[li]
     if sv is None or sv <= 0 or ev is None:
         return None
-    years = (li - fi) * 4 / 12
+    years = li - fi
     if years <= 0:
         return None
     return (ev / sv) ** (1 / years) - 1

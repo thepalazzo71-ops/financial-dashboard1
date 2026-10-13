@@ -24,7 +24,7 @@ source files:
 
 - `Europe_15m-1B.xls` — raw Capital IQ extract, 6,109 companies, 87 columns
   (revenue, net income, CFO, shares outstanding, dividends, long-term debt;
-  10 quarterly LTM snapshots each, LTM-36 through LTM). **Now saved in the
+  10 annual LTM snapshots each - LTM-36 through LTM, offsets in QUARTERS, so one year apart, ~9 years total; see "History slots are yearly" below). **Now saved in the
   repo at `data/raw/Europe_15m-1B.xls`** — it was needed to fix a real
   scoring gap (see below) and is the only source for shares-outstanding
   history, so don't lose it again.
@@ -478,7 +478,7 @@ points. Added a "Full financial data ▾" toggle at the bottom of
 revenue LTM, avg net income, ROE, P/B, revenue growth, dilution %,
 gross margin, profitable/CFO+/dividend period %s, periods reported,
 revenue consistency %) plus a period-by-period table of the full
-`revHist`/`niHist` arrays (10 LTM snapshots each, oldest→latest, same
+`revHist`/`niHist` arrays (10 yearly LTM snapshots each, LTM '15→LTM '24, same
 data the sparklines already use but as actual numbers). All of this
 was already in the payload (`c.eq`, `c.revLTM`, `c.avgNI`, etc.) -
 no data pipeline change needed, purely a presentation addition.
@@ -1968,3 +1968,43 @@ rebuilt and Playwright-verified (150 rows, zero JS errors). The
 correctly shows 0 qualifying companies, since everyone who qualified has
 already been bonused for real - left in place as a working preview tool
 in case the thresholds (60% GM / 10% CAGR / 70% CFO) are ever revisited.
+
+## History slots are yearly, not 4-monthly (2026-10-13)
+
+**Correction of a long-standing misreading.** The 10 `revHist`/`niHist`
+slots come from the Capital IQ columns `[LTM-36, LTM-32, ... LTM-4, LTM]`.
+The offset is in **quarters**, not months, so consecutive slots are exactly
+one **year** apart and the 10 slots span ~9 years (ending with the trailing
+twelve months as of the report run, 27-Nov-2024). The raw extract confirms
+it: the same file carries `Long-Term Debt [Latest Annual -9 ... Latest
+Annual]`, a plain 10-point annual series covering the identical window.
+For years the dashboard labeled the slots `Nov 2021, Mar 2022, ... Nov 2024`
+(a 3-year, 4-monthly grid). That was wrong - spotted by the user from
+ProCook, whose first revenue slot (19.5, USD) is a ~2018-era figure, not
+"Nov 2022".
+
+What changed:
+- `PERIOD_LABELS` (both templates) -> `LTM '15 ... LTM '24` (trailing 12
+  months ending around that year; exact month varies by fiscal calendar).
+- **Scoring itself is unaffected** - every dimension (revenue growth,
+  consistency, profitability %, CFO %, track record, dilution) reads the 10
+  slots as an ordered series, never as dates. So all original scores/ranks
+  stand, and the "ranking uses only ~3 years" statement given in chat on
+  2026-10-13 was wrong: scores use ~9 years of annual LTM data (fewer for
+  companies with short histories).
+- **The profitability bonus (2026-10-12) was affected**: its CAGR assumed
+  4-month spacing, so every CAGR was ~3x too high and the >10%/yr gate was
+  over-awarded. `full_history_cagr()` (scoring.py and the JS in both
+  templates) now uses years = last_idx - first_idx. `scripts/
+  apply_profitability_bonus.py` was rewritten to be idempotent (baseline is
+  always `round(profitPct*16, 4)`, bonus re-derived) and re-run:
+  Europe 54 -> 22 companies, US all-sector 24 -> 8, US non-financial 16 -> 6.
+  In Europe, 4 companies left the top 150 (Mediclin, Monnari Trade,
+  Railcare Group, Wynnstay Properties) and 4 entered (Carlo Gavazzi,
+  Vente-Unique.com, Pets at Home, CENIT). ProCook still qualifies
+  legitimately (CAGR 31%/yr over 6 years, GM 65.8%, CFO+ in 100% of
+  periods) and sits at #58.
+- An interim theory in chat that ProCook's early slots were "post-IPO stub
+  LTM figures" was also wrong - they are real older annual-scale figures.
+  Note all Capital IQ figures here are **USD at the historical rate**
+  (column headers say so), not native currency.
