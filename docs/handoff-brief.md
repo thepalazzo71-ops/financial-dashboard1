@@ -1975,7 +1975,7 @@ in case the thresholds (60% GM / 10% CAGR / 70% CFO) are ever revisited.
 slots come from the Capital IQ columns `[LTM-36, LTM-32, ... LTM-4, LTM]`.
 The offset is in **quarters**, not months, so consecutive slots are exactly
 one **year** apart and the 10 slots span ~9 years (ending with the trailing
-twelve months as of the report run, 27-Nov-2024). The raw extract confirms
+twelve months as of the data pull). The raw extract confirms
 it: the same file carries `Long-Term Debt [Latest Annual -9 ... Latest
 Annual]`, a plain 10-point annual series covering the identical window.
 For years the dashboard labeled the slots `Nov 2021, Mar 2022, ... Nov 2024`
@@ -1986,6 +1986,14 @@ ProCook, whose first revenue slot (19.5, USD) is a ~2018-era figure, not
 What changed:
 - `PERIOD_LABELS` (both templates) -> `LTM '15 ... LTM '24` (trailing 12
   months ending around that year; exact month varies by fiscal calendar).
+  **Corrected again 2026-10-13:** the labels first shipped as `'15..'24`, but
+  the data was actually pulled after FY2025 results (the screen's "27nov24"
+  title is stale), so the slots are `'16..'25`. Evidence: Sopharma Trading's
+  LTM revenue/NI/CFO/equity equal its FY2025 results and MONY's LTM revenue
+  (600.7 USD) = its FY2025 revenue (GBP 446m x ~1.35); ProCook's LTM-4/LTM
+  also line up with TTM to Sep 2024/Sep 2025. Pre-IPO/thin-history companies
+  (ProCook) carry older annual figures in their earliest slots. Sopharma's
+  Capital IQ numbers were spot-checked against reported figures and are fine.
 - **Scoring itself is unaffected** - every dimension (revenue growth,
   consistency, profitability %, CFO %, track record, dilution) reads the 10
   slots as an ordered series, never as dates. So all original scores/ranks

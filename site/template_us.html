@@ -521,17 +521,19 @@ function saveLocalOverrides() {
 }
 
 // The 10 revHist/niHist slots are Capital IQ LTM snapshots from the
-// original extract (report run 27-Nov-2024): [LTM-36 ... LTM-4, LTM],
-// where the offset is in QUARTERS - so consecutive slots are exactly one
-// YEAR apart and the 10 slots span ~9 years, ending with the trailing
-// twelve months as of the latest report at extract time (~2024), not
-// "today". Labels are therefore "LTM 'YY" (trailing-12-months ending
-// around that year; exact month varies with each company's fiscal
-// calendar). Every company in both pools has exactly 10 slots, oldest to
+// original extract: [LTM-36 ... LTM-4, LTM], where the offset is in
+// QUARTERS - so consecutive slots are exactly one YEAR apart and the 10
+// slots span ~9 years. The screen is titled "27nov24" but the data was
+// pulled after FY2025 results (verified: Sopharma Trading's LTM revenue,
+// net income, CFO and equity and MONY's LTM revenue all equal their FY2025
+// figures), so the latest slot is ~2025, not "today". Labels are "LTM 'YY"
+// (trailing-12-months ending around that year; exact month varies with each
+// company's fiscal calendar; thinly-reported/pre-IPO companies can show
+// older annual figures in their earliest slots). Every company in both pools has exactly 10 slots, oldest to
 // latest, so this mapping is fixed and company-independent. (Until
 // 2026-10-13 these were mislabeled as 4-monthly snapshots Nov 2021-Nov
 // 2024.)
-const PERIOD_LABELS = ["LTM '15","LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '21","LTM '22","LTM '23","LTM '24"];
+const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '21","LTM '22","LTM '23","LTM '24","LTM '25"];
 function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
 // Thesis prose fields (main_shareholders, insider_ownership, ...) carry
 // their source citation inline as markdown "([label](url))" - never
