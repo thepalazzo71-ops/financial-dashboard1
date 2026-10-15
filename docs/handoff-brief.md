@@ -2016,3 +2016,41 @@ What changed:
   LTM figures" was also wrong - they are real older annual-scale figures.
   Note all Capital IQ figures here are **USD at the historical rate**
   (column headers say so), not native currency.
+
+## Tier-11 corporate-actions / thesis catch-up resumed (2026-10-15)
+
+Resumed at the user's request after the 2026-10-12 pause.
+
+- **Europe corporate actions** (50 companies, results researched on
+  2026-10-12): 25 findings, 22 merged (18 bolt-on M&A, 3 tender offers /
+  squeeze-outs, 1 other). Excluded as outside the lookback: AIM:ANP
+  (2024-09 bolt-on), MTSE:GO (2024-06 bolt-ons), BIT:KME (2023 tender
+  offer; current delisting status unverified). Spot-verified before
+  merging: XTRA:A1OS (VINCI EUR67.50 offer - ~83.6% per a secondary source,
+  delisting/squeeze-out only intentions), DB:CPX (capsensixx squeeze-out
+  effective 31 Jul 2026), TLSE:EEG1T (Ekspress Grupp - bidder ~96%),
+  AIM:NICL (VitHit EUR75m), XTRA:CLIQ (partial buyback), ENXTLS:CTT (DHL
+  Iberia JV completed 12 May 2026). Coverage 554 -> 604.
+- **Europe thesis research** (51 targets): 30 completed and merged; all 30
+  passed the field/source/duplicate-text checks. 21 not researched because
+  the session hit its shared 200-WebSearch-call budget - list saved as
+  `eu_thesis_tier11_remaining.json` in the scratchpad: RISE:BAL1R, NYSE:OEC,
+  BIT:EQUI, AIM:MSI, BVB:IMP, CPSE:EGNETY, BIT:PMT, DB:FVI, AIM:NTBR,
+  BME:GSJ, WBAG:AGR, WSE:OBL, ENXTBR:COMB, XTRA:SBS, LJSE:BKP, BIT:PHN,
+  AIM:NXQ, WSE:PTW, NSEL:VLP1L, WSE:DIG, BVB:VAC. Notable from the merged
+  set: Azkoyen has a pending EUR10 cash bid (below the prior EUR11.40
+  close); Ekspress Grupp AGM approved a EUR1.26 squeeze-out and delisting;
+  Porvair's G.G.G. S.p.A. holds 29.00% (just under the UK 30% bid
+  threshold).
+
+**Gross-margin research for fallback companies near the #150 cutoff**
+(13 operating companies; banks/insurers/asset managers/property
+excluded): results in scratchpad `eu_gm_results_a.json` /
+`eu_gm_results_b.json`, NOT merged yet - pending re-verification and a
+user decision on Pekabex (FY2025 GM 2.3% in a loss year vs 10.0% FY2024).
+Found: WSE:IFI 35.5% (FY2024), NSEL:ZMP1L 23.6% (FY2024), WSE:PBX 2.3%
+(FY2025). Not determinable under the source rules (costs by nature, no
+gross-profit line): WSE:XBS, ENXTPA:SWP, BUL:AGH, SEP:TOMA, ENXTPA:ALEXA.
+Incomplete/not reached (search budget): ATSE:FLEXO, BUL:SFT, ZGSE:MDKA
+(group COGS not found), ENXTPA:ALGIL, BUL:ODES.
+
