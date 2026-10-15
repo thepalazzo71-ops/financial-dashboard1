@@ -152,6 +152,33 @@
    "terms": "Glenstone's cash offer, raised to a 'final' 71.4p/share (70.0p net of a 1.4p dividend retained by shareholders), became unconditional after Glenstone secured acceptances covering ~50.4% of issued share capital; AIRE's board, having argued the offer undervalued the ~84.4p NAV (per share, at 31 March), ultimately recommended acceptance given the risk of becoming a minority holder in a Glenstone-controlled vehicle. AEW UK REIT separately proposed a rival all-share deal (0.725 new AEW UK REIT share per AIRE share, implied ~77.4p/share) which AIRE said was superior, urging shareholders who had accepted Glenstone's offer to withdraw.",
    "note": "Originated from a failed managed-wind-down/sale process; if Glenstone reaches the 90% UK Takeover Code threshold it intends to compulsorily acquire remaining shares. As of search date (early Oct 2026) the final outcome between Glenstone and AEW UK REIT was not fully confirmed in available sources -- this is an active, contested takeover situation.",
    "source_url": "https://www.ajbell.co.uk/news/articles/glenstone-wins-control-alternative-income-reit-hostile-bid"
+  },
+  {
+   "ticker": "DB:CPX",
+   "company": "capsensixx AG",
+   "date": "2026-07-31",
+   "counterparty": "PEH Wertpapier AG (controlling shareholder, ~92.83% of share capital)",
+   "terms": "Merger squeeze-out; cash compensation of EUR20.23 per share to minority shareholders",
+   "note": "Minority squeeze-out via merger into PEH Wertpapier AG. Shareholder meeting approved it 2026-06-18; merger took effect upon commercial register entry 2026-07-31, ending minority shareholder rights. Verified: squeeze-out effective 31 Jul 2026, EUR20.23 paid 5 Aug 2026 - capsensixx minority shares no longer exist.",
+   "source_url": "https://www.pressetext.com/news/barabfindung-im-rahmen-des-verschmelzungsrechtlichen-squeeze-outs-auf-eur-20-23-festgelegt-20260504024.html"
+  },
+  {
+   "ticker": "TLSE:EEG1T",
+   "company": "AS Ekspress Grupp",
+   "date": "2025-12-22",
+   "counterparty": "HHL R\u00fchm O\u00dc (pre-existing majority shareholder)",
+   "terms": "Voluntary takeover bid at EUR1.25 per share (offer ran 2025-11-25 to 2025-12-22, settlement by 2025-12-31)",
+   "note": "Minority squeeze-out dynamic: 6,982,181 shares (~22.55%) were tendered, raising HHL Ruhm's stake to 96.12% of all shares -- above the 90% threshold enabling a compulsory squeeze-out of remaining minority shareholders (a Grant Thornton fair-value assessment for that process is dated 2026-04-19). Final squeeze-out completion status not confirmed from available sources. Verified: bid closed 22 Dec 2025, bidder at ~96% after tender; squeeze-out completion still unconfirmed.",
+   "source_url": "https://www.inderes.fi/releases/the-results-of-the-voluntary-takeover-bid-made-of-the-shares-of-aktsiaselts-ekspress-grupp"
+  },
+  {
+   "ticker": "XTRA:A1OS",
+   "company": "All for One Group SE",
+   "date": "2026-09-17",
+   "counterparty": "VINCI Energies Deutschland Enterprise Solutions AcquiCo SE (indirect subsidiary of VINCI S.A.)",
+   "terms": "Voluntary public cash tender offer at EUR67.50 per share; acceptance period 2026-08-12 to 2026-09-15; minimum acceptance threshold 75% of outstanding shares plus customary closing conditions including merger control clearance",
+   "note": "All for One Group SE is the TARGET. VINCI Energies' EUR67.50/share cash offer (min. acceptance 75%) was recommended by both boards; a secondary source reports the bidder held ~83.6% by 9 Sep 2026 with an additional acceptance period into October. Delisting and/or squeeze-out are stated intentions only, not completed; bidder committed not to sign a domination agreement before 1 Jan 2029.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/uebernahmeangebot-zielgesellschaft-all-for-one-group-se-bieter-vinci-energies-deutschland-enterprise-solutions-acquico-se-538371.html"
   }
  ],
  "mergers_acquisitions": [
@@ -582,6 +609,186 @@
    "terms": "Acquisition of 85% of Nekera's share capital; price undisclosed",
    "note": "Enter Air Sp. z o.o. (subsidiary) took over 85% of Polish tour operator Nekera on 1 July 2026 after obtaining required regulatory consents (notification filed with Polish competition authority UOKiK). Both companies retain current management/sales networks; founder/CEO Maciej Nykiel keeps his management role.",
    "source_url": "https://www.pasazer.com/news/470300/enter,air,przejmuje,85,proc,udzialow,w,nekerze,transakcja,sfinalizowana.html"
+  },
+  {
+   "ticker": "AIM:MAB1",
+   "company": "Mortgage Advice Bureau",
+   "date": "2026-04-01",
+   "counterparty": "HomeOwners Alliance (founders and Smoove Limited)",
+   "terms": "GBP1.4 million total consideration (50% on completion, balance over two years), plus distributable reserves",
+   "note": "MAB is the ACQUIRER (bolt-on deal), not the target. MAB also acquired Dashly (its mortgage monitoring tech partner) for GBP2.8m in January 2026.",
+   "source_url": "https://www.ajbell.co.uk/news/articles/mortgage-advice-bureau-buys-homeowners-alliance-ps14-million-deal",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "AIM:NICL",
+   "company": "Nichols plc",
+   "date": "2026-08-10",
+   "counterparty": "VITHIT Limited",
+   "terms": "EUR75.0 million cash consideration, debt-free/cash-free basis",
+   "note": "Nichols is the ACQUIRER (bolt-on deal), not the target. VitHit is an Irish soft drinks brand; deal expected to be immediately earnings enhancing.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/nichols--nicl/acquisition-of-vithit/9711892",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "AIM:NWF",
+   "company": "NWF Group plc",
+   "date": "2025-03-01",
+   "counterparty": "Northern Energy Oil",
+   "terms": "Up to GBP8.3m (GBP7.3m cash on completion, GBP1.0m on retention)",
+   "note": "NWF is the ACQUIRER (bolt-on deal), not the target. NWF also acquired Pinnock Brothers (fuels) in June 2025; combined deals added ~55m litres/year (~8%) to fuel volumes.",
+   "source_url": "https://fueloilnews.co.uk/2025/03/nwf-group-acquires-northern-energy-oil-in-8-3m-deal/",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "ATSE:PLAT",
+   "company": "Thrace Plastics Holding Company S.A.",
+   "date": "2026-02-01",
+   "counterparty": "BHA Holdings (Bulk Handling Australia Group)",
+   "terms": "Approx. USD23.3 million (sources vary, one cites $16M); completed Feb 2026",
+   "note": "Thrace Plastics is the ACQUIRER (bolt-on deal), not the target. BHA is an Australian bulk bag/packaging business.",
+   "source_url": "https://greekherald.com.au/?p=210172",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "ATSE:PROF",
+   "company": "Profile Systems & Software SA",
+   "date": "2026-01-22",
+   "counterparty": "Algosystems S.A. (87.23% stake); also Indigo (London) Holdings/Contemi Solutions (100%, completed 2026-01-30)",
+   "terms": "~EUR3.7m for Algosystems stake; ~EUR3.8m for Indigo/Contemi",
+   "note": "Profile Systems & Software is the ACQUIRER (two bolt-on deals), not the target.",
+   "source_url": "https://alternative-protein.dealroom.co/news/feed/profile-software-acquires-algosystems-majority-stake",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "ENXTLS:CTT",
+   "company": "CTT - Correios De Portugal, S.A.",
+   "date": "2026-05-12",
+   "counterparty": "DHL Group (Deutsche Post AG) -- joint venture / reciprocal stake deal",
+   "terms": "CTT acquires 25% of Danzas (sole shareholder of DHL Parcel Iberia); DHL acquires 25% of CTT Expresso; CTT Expresso also acquires DHL Parcel Portugal. Net cash inflow to CTT of ~EUR64 million. Call options for CTT to buy a further 10% of Danzas (and DHL a further 10% of CTT Expresso) exercisable after FY2027/FY2028.",
+   "note": "Reciprocal joint-venture/stake-swap deal, not a simple one-way acquisition; originally announced 2024-12-19, completed 2026-05-12 after European Commission approval. Estimated annual EBIT synergies of >EUR35m within 2-3 years.",
+   "source_url": "https://www.sabado.pt/dinheiro/detalhe/ctt-fecham-negocio-com-dhl-e-encaixam-64-milhoes-de-euros",
+   "role": "joint venture"
+  },
+  {
+   "ticker": "ENXTPA:THEP",
+   "company": "Thermador Groupe SA",
+   "date": "2025-09-30",
+   "counterparty": "Quilinox (Spain)",
+   "terms": "Part of a series of bolt-on acquisitions (also Alto Metering, Jul 2024; C2AI, Jun 2025; Compteur-energie.com and two others for ~EUR3.485m)",
+   "note": "Thermador is the ACQUIRER (serial bolt-on acquirer), not the target. No OPA/takeover of Thermador itself found.",
+   "source_url": "https://www.tipranks.com/news/company-announcements/thermador-groupe-to-acquire-spanish-firm-quilinox",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "ISE:OIZ",
+   "company": "Origin Enterprises plc",
+   "date": "2026-08-04",
+   "counterparty": "Lighthouse Development Consulting",
+   "terms": "Not disclosed",
+   "note": "Origin is the ACQUIRER (small bolt-on deal), not the target. Lighthouse is a UK planning/development consultancy serving renewable energy, cleantech and infrastructure sectors.",
+   "source_url": "https://originenterprises.com/whats-new/",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "LSE:BAG",
+   "company": "A.G. BARR p.l.c.",
+   "date": "2026-02-02",
+   "counterparty": "Fentimans Ltd and Frobishers Ltd",
+   "terms": "GBP38m for Fentimans (completed 2026-02-02); GBP13m for Frobishers; GBP51m combined",
+   "note": "A.G. Barr is the ACQUIRER (two bolt-on deals), not the target. Announced alongside FY25/26 trading update as part of a stated M&A growth strategy.",
+   "source_url": "https://www.foodmanufacture.co.uk/Article/2026/02/03/ag-barr-acquires-adult-soft-drinks-and-mixer-brands-fentimans-and-frobishers-for-51-million",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "LSE:MER",
+   "company": "Mears Group plc",
+   "date": "2025-09-15",
+   "counterparty": "Pennington Choices",
+   "terms": "GBP9.5 million cash, funded from existing cash resources",
+   "note": "Mears is the ACQUIRER (bolt-on deal), not the target. Pennington Choices is a property surveying firm.",
+   "source_url": "https://www.ticker.app/lse/MER/rns/2025-09-15/Acquisition/3035Z",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "OM:BERNER B",
+   "company": "Berner Industrier AB",
+   "date": "2026-01-01",
+   "counterparty": "Typhonix AS (Norway, water treatment)",
+   "terms": "SEK55.1 million total (SEK21.7m at closing, SEK33.4m earn-out); deal announced 2025-12-17, closed early January 2026",
+   "note": "Berner Industrier is the ACQUIRER (bolt-on deal), not the target. Company is positioning as a more active serial acquirer.",
+   "source_url": "https://placera.se/analys/berner-industrier-goda-mojligheter-till-nya-forvarv-2026-05-17",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "OM:HTRO",
+   "company": "Hexatronic Group AB",
+   "date": "2026-06-01",
+   "counterparty": "JOWO Systemtechnik AG (Germany, announced 2026-03-02); Superior Fiber & Data Services (US, agreed 2026-05-06, closed 2026-06-01)",
+   "terms": "JOWO: EV EUR11.8m (4.7x EV/EBITDA) plus earnout payable 2031. Superior Fiber: EV USD29m plus up to USD3m earnout payable 2029, funded via SEK600m directed share issue at SEK38/share",
+   "note": "Hexatronic is the ACQUIRER (two bolt-on deals), not the target.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-05/68414447-hexatronic-group-ab-hexatronic-further-expands-its-data-center-business-area-in-the-us-by-acquiring-superior-fiber-data-services-399.htm",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "OM:ZZ B",
+   "company": "Zinzino AB",
+   "date": "2026-01-26",
+   "counterparty": "It Works! (US direct-sales company); also Sanki assets/Mexico+Colombia+Peru subsidiaries, completed 2026-01-01",
+   "terms": "It Works!: all-share merger, fixed price USD30m paid in new B-shares (1,843,840 shares, ~4.83% dilution) plus up to ~USD4m earnout. Sanki: USD8m fixed price, USD7m settled in new shares",
+   "note": "Zinzino is the ACQUIRER (two bolt-on deals/mergers), not the target. Company expects It Works! combination to add >USD60m revenue in 2026.",
+   "source_url": "https://bebeez.eu/2026/01/26/zinzino-ab-publ-zinzino-announces-merger-of-it-works-into-the-zinzino-family-of-businesses-for-increased-distribution-power-in-north-america-and-europe/",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "SWX:GMI",
+   "company": "Groupe Minoteries SA",
+   "date": "2025-06-01",
+   "counterparty": "Schweizerische Sch\u00e4lm\u00fchle E. Zwicky AG",
+   "terms": "Price not disclosed",
+   "note": "Groupe Minoteries is the ACQUIRER (bolt-on deal, succession arrangement for founding family), not the target. Company also integrated Moulin du Valais; board is reviewing group strategy toward 2030 with 2026 described as a 'transition year'.",
+   "source_url": "https://kellerhals-carrard.ch/de/deals/deal-ticker-kellerhals-carrard-advised-groupe-minoteries-in-the-acquisition-of-zwicky",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "WBAG:AGR",
+   "company": "AGRANA Beteiligungs-Aktiengesellschaft",
+   "date": "2025-10-15",
+   "counterparty": "RWA (seller of remaining 49.99% stake in AUSTRIA JUICE)",
+   "terms": "Approx. EUR54.7 million; AGRANA held 50.01% beforehand, now owns 100%",
+   "note": "AGRANA is the ACQUIRER (bolt-on deal, full consolidation of a former JV), not the target. AGRANA separately announced intent (Sept 2026) to acquire 100% of Austrian flavor maker esarom (completion not yet confirmed).",
+   "source_url": "https://www.marketscreener.com/news/agrana-beteiligungs-aktiengesellschaft-completed-the-acquisition-of-remaining-49-99-stake-in-austri-ce7d5dd8db80f623",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "XTRA:2GB",
+   "company": "2G Energy AG",
+   "date": "2026-06-08",
+   "counterparty": "Celsius & Watt (Belgian energy supplier)",
+   "terms": "Not disclosed; retroactive economic effect from 2026-01-01",
+   "note": "2G Energy is the ACQUIRER (bolt-on deal), not the target.",
+   "source_url": "https://www.boerse-express.com/news/articles/2g-energy-aktie-montagehalle-fuer-300-millionen-euro-935998",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "XTRA:ETG",
+   "company": "EnviTec Biogas AG",
+   "date": "2025-01-01",
+   "counterparty": "LIQVIS (former Uniper subsidiary, LNG filling stations)",
+   "terms": "Not disclosed",
+   "note": "EnviTec Biogas is the ACQUIRER (bolt-on deal), not the target. Company is undergoing a strategic pivot from electricity generation to biomethane production (~EUR100m capex plan 2026-2029); dividend suspended for FY2025.",
+   "source_url": "https://www.uniper.energy/news/de/envitec-biogas-uebernimmt-uniper-tochter-liqvis",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "XTRA:SFQ",
+   "company": "SAF-Holland SE",
+   "date": "2025-04-11",
+   "counterparty": "Anand Group (seller of remaining 40% of Haldex India / Haldex-Anand India Private Limited joint venture)",
+   "terms": "Purchase price in the lower double-digit EUR millions",
+   "note": "SAF-Holland is the ACQUIRER (full consolidation of a former JV), not the target. Part of a broader bolt-on M&A program (Haldex 2023, Tecma and Assali Stefen 2024) under its 'drive2030' strategy.",
+   "source_url": "https://truckandbusbuilder.com/article/2025/05/08/saf-holland-acquires-outstanding-stake-in-haldex-haldex-anand-india",
+   "role": "acquirer"
   }
  ],
  "spinoffs": [
@@ -835,6 +1042,15 @@
    "note": "Bulten agreed to sell its European automotive contract-manufacturing arm to Swedish investment firm Maelir AB, at an agreed enterprise value (ex leasing debt) of approximately EUR44.5m (SEK484m). Brand rights to 'Bulten' also transfer to Maelir, with the remaining listed Bulten group retaining a right to use the name/trademark for up to 24 months during transition. Deal subject to regulatory approval, expected to complete no later than October 2026; H1 2026 report presents the automotive operations as discontinued.",
    "type": "divestiture",
    "source_url": "https://www.borskollen.se/pressmeddelanden/bulten-ingar-bindande-avtal-om-att-avyttra-europeisk-kontraktstillverkning-inom-fordonsindustrin-till-maelir-ab"
+  },
+  {
+   "ticker": "XTRA:CLIQ",
+   "company": "Cliq Digital AG",
+   "date": "2026-07-17",
+   "counterparty": "Dylan Media (major shareholder, ~40.3% stake pre-offer)",
+   "terms": "Public partial share repurchase offer for up to 51% of share capital at EUR3.85/share; 1,387,229 shares actually repurchased (~EUR5.34m); acceptance period extended to 2026-07-08, settlement ~2026-07-17",
+   "note": "Company-initiated partial buyback tied to major shareholder Dylan Media; management said it would consider delisting from the regulated market if Dylan Media's stake reaches >=60% post-offer. Listing was also moved to the Basic Board of the Frankfurt open market effective 2026-03-23. Whether delisting was ultimately pursued is unconfirmed.",
+   "source_url": "https://pro.stockalarm.io/quote/CLQDF/news"
   }
  ]
 }
