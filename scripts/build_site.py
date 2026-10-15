@@ -25,6 +25,7 @@ OUT = ROOT / "docs" / "index.html"
 POOL_PATH = DATA / "companies_1000_scored.json"
 NEWS_PATH = DATA / "company_news.json"
 CORP_ACTIONS_PATH = DATA / "corporate_actions.json"
+DISTRESS_PATH = DATA / "distress_flags.json"
 SNAPSHOTS = ROOT / "snapshots"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -49,6 +50,16 @@ def load_company_news():
         return {}
     with open(NEWS_PATH) as f:
         return json.load(f)
+
+
+def load_distress_flags():
+    """ticker -> {level, summary, asOf, sources}: hand-curated companies in
+    current financial distress (see the file's _definition and
+    docs/handoff-brief.md). Informational only - never changes scores."""
+    if not DISTRESS_PATH.exists():
+        return {}
+    with open(DISTRESS_PATH) as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
 
 
 def load_corporate_actions():
@@ -93,6 +104,7 @@ def load_history(companies):
 def build_payload(companies, mc_overrides, gm_overrides):
     scored, median_gm_pts = score_pool(companies, mc_overrides, gm_overrides)
     company_news = load_company_news()
+    distress = load_distress_flags()
 
     out_companies = []
     for c, s in zip(companies, scored):
@@ -119,6 +131,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'revHist': c['revHist'], 'niHist': c['niHist'],
             'thesis': c.get('thesis'),
             'newsNote': news.get('note') if news else None,
+            'distress': distress.get(c['ticker']),
         })
 
     history, history_dates = load_history(companies)

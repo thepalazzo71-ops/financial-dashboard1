@@ -1,0 +1,13 @@
+{
+ "_definition": "Curated list of companies in current financial distress. 'severe' = in formal insolvency/restructuring/legal-protection proceedings, payment default, or controlled by a parent in such proceedings. 'warning' = going-concern doubt disclosed in current filings and/or operating under covenant waivers. Historical, resolved episodes are NOT flagged. Informational only - does not change scores or ranks. Maintained by hand from thesis red-flag research; see docs/handoff-brief.md.",
+ "NasdaqGS:CRMT": {
+  "level": "warning",
+  "summary": "Going-concern / severe liquidity and debt-risk warning in SEC filings; operating under temporary covenant relief (waivers initially to 7 Sep 2026, conditional extensions to 6 Nov 2026); about a third of dealerships closed after rising delinquencies; securities class-action investigations under way.",
+  "asOf": "2026-10-15",
+  "sources": [
+   "https://www.stocktitan.net/sec-filings/CRMT/ars-americas-carmart-inc-sec-filing-13d61811b0a3.html",
+   "https://finance.yahoo.com/markets/stocks/articles/americas-car-mart-buried-footnote-020000502.html",
+   "https://www.globenewswire.com/news-release/2026/09/29/3371303/673/en/crmt-investor-news-if-you-have-suffered-losses-in-america-s-car-mart-inc-nasdaq-crmt-you-are-encouraged-to-contact-the-rosen-law-firm-about-your-rights.html"
+  ]
+ }
+}

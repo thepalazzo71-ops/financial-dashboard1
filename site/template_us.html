@@ -104,6 +104,7 @@
   .tag.needsgm { background: var(--brick-soft); color: var(--brick); cursor: help; }
   .tag.nodata { background: var(--brick-soft); color: var(--brick); cursor: help; font-weight: 700; }
   .tag.refreshed { background: var(--green-soft); color: var(--green-text); cursor: help; }
+  .tag.distress { background: var(--brick); color: var(--paper, #fff); cursor: help; font-weight: 700; }
 
   .rank-delta { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; white-space: nowrap; }
   .rank-delta.up { color: var(--green-text); }
@@ -135,6 +136,9 @@
   .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note { font-size: 12.5px; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
   .detail .news-note b.lbl { display: block; font-size: 10.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .detail .distress-note { font-size: 12.5px; color: var(--ink); background: var(--brick-soft); border: 1px solid var(--brick); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .distress-note b.lbl { display: block; font-size: 10.5px; color: var(--brick); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .detail .distress-note a { color: var(--brick); }
   .detail-actions { margin-bottom: 12px; }
   .track-btn { font: inherit; font-size: 12px; font-weight: 600; background: var(--paper); color: var(--green-text); border: 1px solid var(--green-text); border-radius: 20px; padding: 5px 12px; cursor: pointer; }
   .track-btn:hover { background: var(--green-soft); }
@@ -534,6 +538,20 @@ function saveLocalOverrides() {
 // 2026-10-13 these were mislabeled as 4-monthly snapshots Nov 2021-Nov
 // 2024.)
 const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '21","LTM '22","LTM '23","LTM '24","LTM '25"];
+// Distress flags (data/distress_flags.json, hand-curated): informational
+// only - they never change scores or ranks.
+function escHtml(v) { return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function distressTag(c) {
+  if (!c.distress) return '';
+  const lvl = c.distress.level === 'severe' ? 'severe distress' : 'distress warning';
+  return ` <span class="tag distress" title="${escHtml(c.distress.summary)}">&#9888; ${lvl}</span>`;
+}
+function distressBox(c) {
+  if (!c.distress) return '';
+  const d = c.distress;
+  const links = (d.sources || []).map((u, i) => `<a href="${escHtml(u)}" target="_blank" rel="noopener">source ${i+1}</a>`).join(' &middot; ');
+  return `<div class="distress-note"><b class="lbl">&#9888; ${d.level === 'severe' ? 'Severe financial distress' : 'Financial distress warning'} (as of ${escHtml(d.asOf || '')})</b>${escHtml(d.summary)}${links ? `<div style="margin-top:4px">${links}</div>` : ''}<div style="margin-top:4px;font-size:11px;color:var(--ink-soft)">The score is based on historical financials and does not reflect this.</div></div>`;
+}
 function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
 // Thesis prose fields (main_shareholders, insider_ownership, ...) carry
 // their source citation inline as markdown "([label](url))" - never
@@ -899,6 +917,7 @@ function renderDetailPanel(row, rank) {
       <div class="detail-actions">
         <button class="track-btn ${isTracked(c.t)?'tracked':''}" data-ticker="${c.t}">${isTracked(c.t) ? '★ Tracked — click to untrack' : '☆ Track this company'}</button>
       </div>
+      ${distressBox(c)}
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
       <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
       <div class="breakdown">
@@ -1346,7 +1365,7 @@ function render() {
         <td class="num-col">${deltaHtml}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
         </td>
         <td class="num-col">
           ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `

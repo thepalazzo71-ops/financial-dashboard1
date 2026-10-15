@@ -2097,3 +2097,35 @@ margin is likely slightly higher - an explicit exception to the
 consolidated-figures convention. Below 5% -> 0 GM pts; #126 -> #508.
 Top-150 effect: Medika out, DB:MBH3 (Maschinenfabrik Berthold Hermle) in.
 
+## Distress flags (2026-10-15)
+
+Added at the user's request after Amber Latvijas balzams turned out to be in
+legal-protection proceedings while scoring benignly on its (historical)
+financials. **Informational only - never changes scores or ranks** (same
+no-manual-edits rule as everywhere else).
+
+- Data: `data/distress_flags.json` (Europe) and `data-us/distress_flags.json`
+  (US/Canada), hand-curated, keyed by ticker: `{level, summary, asOf,
+  sources}`; a `_definition` key documents the criteria. `severe` = formal
+  insolvency/restructuring/legal-protection proceedings, payment default, or
+  a controlling parent in such proceedings. `warning` = going-concern doubt
+  in current filings and/or operating under covenant waivers. Historical,
+  resolved episodes are not flagged.
+- Display: a red "severe distress" / "distress warning" chip on the row's
+  meta line (tooltip = summary) and a red box at the top of the shared
+  detail panel with the summary, as-of date, source links and a note that
+  the score doesn't reflect it. Loaded by `load_distress_flags()` in both
+  build scripts, passed through as `c.distress`.
+- Initial flags (from a keyword scan of every thesis `red_flags` field, then
+  manual review): **RISE:BAL1R** (severe) and **NasdaqGS:CRMT** America's
+  Car-Mart (warning). Reviewed and NOT flagged: ProCook (FY23 going-concern
+  note, resolved), Roots (2020 US-unit liquidation), Central Pacific (2010),
+  Sportsman's Warehouse (2009 Chapter 11 of a predecessor), Cegedim / Mikron
+  (a subsidiary in administration/liquidation), Enwell Energy (going-concern
+  wording unconfirmed for FY2025 and ~$92-97m cash; its problem is a -92%
+  revenue collapse after licence suspensions, not insolvency). Most other
+  keyword hits were "no going-concern issues identified" boilerplate.
+- Coverage limit: only companies with thesis research (red flags) can be
+  screened - Europe ranks beyond the ~604 research frontier aren't covered.
+  Re-run the scan whenever new thesis batches are merged.
+

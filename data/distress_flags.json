@@ -1,0 +1,13 @@
+{
+ "_definition": "Curated list of companies in current financial distress. 'severe' = in formal insolvency/restructuring/legal-protection proceedings, payment default, or controlled by a parent in such proceedings. 'warning' = going-concern doubt disclosed in current filings and/or operating under covenant waivers. Historical, resolved episodes are NOT flagged. Informational only - does not change scores or ranks. Maintained by hand from thesis red-flag research; see docs/handoff-brief.md.",
+ "RISE:BAL1R": {
+  "level": "severe",
+  "summary": "In court-approved legal protection (restructuring) proceedings since early 2026, plan deadline extended to 5 Oct 2026; reported tax debt to the Latvian state above EUR 28m; tens of millions lent to group companies with recoverability doubts flagged by the auditor; 90% parent Amber Beverage Group defaulted on its bonds and is itself in judicial reorganisation.",
+  "asOf": "2026-10-15",
+  "sources": [
+   "https://drinks-intel.com/spirits/amber-beverage-groups-latvijas-balzams-applies-for-legal-protection/",
+   "https://eng.lsm.lv/article/economy/business/20.05.2026-latvijas-balzams-still-in-major-financial-difficulty.a647930/",
+   "https://www.err.ee/1609942850/riia-palsami-tootja-on-pankroti-aarel"
+  ]
+ }
+}

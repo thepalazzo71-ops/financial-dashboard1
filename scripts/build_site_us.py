@@ -26,6 +26,7 @@ TEMPLATE = ROOT / "site" / "template_us.html"
 OUT = ROOT / "docs" / "us.html"
 MC_OVERRIDES_PATH = DATA_US / "mc_overrides_applied.json"
 CORP_ACTIONS_PATH = DATA_US / "corporate_actions.json"
+DISTRESS_PATH = DATA_US / "distress_flags.json"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
@@ -50,8 +51,17 @@ def load_corporate_actions():
         return json.load(f)
 
 
+def load_distress_flags():
+    """Same as build_site.load_distress_flags, for the US/Canada pool."""
+    if not DISTRESS_PATH.exists():
+        return {}
+    with open(DISTRESS_PATH) as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
+
+
 def build_sector_payload(companies, mc_overrides):
     scored, median_gm_pts = score_pool(companies, mc_overrides, {})
+    distress = load_distress_flags()
     out = []
     for c, s in zip(companies, scored):
         mc_o = mc_overrides.get(c['ticker'])
@@ -75,6 +85,7 @@ def build_sector_payload(companies, mc_overrides):
             'thesis': c.get('thesis'),
             'industry': c.get('industry'), 'archetypePrecomputed': c.get('archetype'),
             'newsNote': None,
+            'distress': distress.get(c['ticker']),
         })
     # 'baseline' is always computed fresh with zero overrides - the
     # "before this refresh project" state - never read off the (now
