@@ -2071,3 +2071,19 @@ research, after re-checking each against the company's own documents:
   the 10% band boundary -> 1.8 pts; #117 -> #408.
 Top-150 effect: Pekabex out, HLSE:TOKMAN (Tokmanni) in.
 
+**Tier-11 thesis follow-up (2026-10-15, later the same day):** the 21
+remaining companies were researched (three agents, capped at 7 searches per
+company so all four agents fit the 200-call budget), passed the
+field/source/duplicate checks against the whole dataset, and were merged -
+tier-11 thesis coverage is now complete (51/51). Notable: RISE:BAL1R (Amber
+Latvijas balzams) is in court-approved legal protection with >EUR28m tax
+debt and a defaulted 90% parent; BIT:EQUI saw Iccrea Banca buy ~15% in
+Sep 2026; DB:FVI's controlling holder DEMIRE is in a sale process.
+
+Gross-margin follow-up: ATSE:FLEXO, BUL:SFT, ENXTPA:ALGIL, BUL:ODES remain
+on the fallback (no figure obtainable under the source rules - Guillin and
+Odessos report costs by nature; Flexopack's FY2024/25 gross-profit line and
+Sopharma Trading's consolidated statements could not be read). ZGSE:MDKA:
+only a parent-company derived figure found (4.58% FY2025; group COGS not
+readable) - awaiting a user decision before applying.
+
