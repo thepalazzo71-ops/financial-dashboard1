@@ -2087,3 +2087,13 @@ Sopharma Trading's consolidated statements could not be read). ZGSE:MDKA:
 only a parent-company derived figure found (4.58% FY2025; group COGS not
 readable) - awaiting a user decision before applying.
 
+**ZGSE:MDKA Medika - applied 4.58% (FY2025), parent-company figure (2026-10-15).**
+User decision: use the parent-only figure (Medika d.d. sales of goods
+921,999 minus cost of goods sold 879,783 EUR k, from its own 2025 annual
+report filed on the Zagreb exchange) because the consolidated cost-of-goods
+line could not be read. The parent is ~96% of group revenue (959,879); the
+group includes the Prima Pharme pharmacy chain, so the true consolidated
+margin is likely slightly higher - an explicit exception to the
+consolidated-figures convention. Below 5% -> 0 GM pts; #126 -> #508.
+Top-150 effect: Medika out, DB:MBH3 (Maschinenfabrik Berthold Hermle) in.
+
