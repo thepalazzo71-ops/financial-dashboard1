@@ -2129,3 +2129,37 @@ no-manual-edits rule as everywhere else).
   screened - Europe ranks beyond the ~604 research frontier aren't covered.
   Re-run the scan whenever new thesis batches are merged.
 
+## Tier-12 market-cap + corporate-actions batch, Europe (2026-10-15)
+
+Next 50 Europe companies by current rank without a refreshed market cap
+(ranks 468-645). Two market-cap agents + one corporate-actions agent; all
+three hit the session usage limit once and were resumed from their saved
+partial results (no work lost).
+
+- **Market caps:** 49 merged (48 ok, 1 flag), 1 not found (ZGSE:AUHR Auto
+  Hrvatska - only exchange filings, no price; left on the old value).
+  **BIT:OS Officina Stellare flagged at 5.7x** (USD 940M vs old 165M):
+  verified genuine - the 1 Jun 2026 reverse-takeover merger with Global
+  Aerospace Technologies Group lifted the share count to ~17.4M and the
+  company itself states ~EUR800M (Teleborsa, June 2026). Nothing crossed the
+  5x/0.2x threshold otherwise. Caveats from the agents: GBP/USD (1.346) is
+  from a Jan-2026 source, SEK/PLN from July 2026, RON/NOK/DKK reused from
+  tier 11; RTX (May) and PIHLIS (March) prices are stale; share-class
+  ambiguity at Gurktaler, Mineralbrunnen and Fotex; Azkoyen and Humana trade
+  on live bid terms. **No top-150 effect** (all 50 sit below rank 460);
+  biggest rank moves: GAGS 615->483, BTS B 592->717, LGD1L 590->696, NXQ
+  601->497, FCMC 633->736.
+- **Corporate actions:** all 50 screened, 17 findings, 16 merged (Lectra's
+  immaterial, aggregator-only bolt-on excluded). Four are takeovers or
+  squeeze-outs of the company itself: BME:AZK (Ohmnia EUR10 bid, pending),
+  XTRA:D6H DATAGROUP (KKR EUR54, settled Nov 2025 per the agent; I could
+  only re-verify the April 2025 announcement, flagged in the note),
+  OM:HUM Humana (Ambea offer 90.84% accepted, declared unconditional 1 Oct
+  2026, acceptance extended to 14 Oct - verified against Placera/offer
+  documents), ENXTPA:FCMC (SPD buyout + squeeze-out, AMF review pending).
+  ATSE:QUEST is the *seller* of its ACS courier unit (GLS call option
+  exercisable 30 Oct 2026). Coverage 604 -> 654.
+- **Pending:** tier-12 thesis research (34 companies still without one) -
+  split across turns because the shared 200-WebSearch budget per turn can't
+  fit all of them.
+

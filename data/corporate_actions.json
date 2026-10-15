@@ -179,6 +179,46 @@
    "terms": "Voluntary public cash tender offer at EUR67.50 per share; acceptance period 2026-08-12 to 2026-09-15; minimum acceptance threshold 75% of outstanding shares plus customary closing conditions including merger control clearance",
    "note": "All for One Group SE is the TARGET. VINCI Energies' EUR67.50/share cash offer (min. acceptance 75%) was recommended by both boards; a secondary source reports the bidder held ~83.6% by 9 Sep 2026 with an additional acceptance period into October. Delisting and/or squeeze-out are stated intentions only, not completed; bidder committed not to sign a domination agreement before 1 Jan 2029.",
    "source_url": "https://www.boerse-online.de/dpa-afx/uebernahmeangebot-zielgesellschaft-all-for-one-group-se-bieter-vinci-energies-deutschland-enterprise-solutions-acquico-se-538371.html"
+  },
+  {
+   "ticker": "BME:AZK",
+   "company": "Azkoyen, S.A.",
+   "date": "2026-07-24",
+   "counterparty": "Ohmnia group via Clerbil (Jos\u00e9 Antonio Jainaga), with Fundaci\u00f3n BBK, Kutxabank and Instituto Vasco de Finanzas",
+   "role": "target",
+   "terms": "EUR10.00 per share in cash for 100% (~EUR244.5m for 24.45m shares); conditional on >50% acceptance and regulatory approvals; financed by capital increase plus debt from CaixaBank and Banco Sabadell",
+   "note": "Azkoyen is the TARGET of a voluntary takeover bid (OPA) announced 24 Jul 2026; the board called it 'friendly' though no agreement exists with the offeror, and the price was reported below the prior close of EUR11.40. Status: pending - filed with CNMV 24 Aug 2026, CNMC competition clearance without conditions 25 Sep 2026; CNMV authorisation and acceptance period not confirmed.",
+   "source_url": "https://www.moncloa.com/2026/08/25/opa-azkoyen-jainaga-cnmv-3420711/"
+  },
+  {
+   "ticker": "XTRA:D6H",
+   "company": "DATAGROUP SE",
+   "date": "2025-04-16",
+   "counterparty": "KKR (bidder vehicle Dante Beteiligungen SE)",
+   "role": "target",
+   "terms": "EUR54.00 per share in cash (~33% premium to 15 Apr 2025 Xetra close); tiered increase to EUR56.50 at >=80% / EUR58.00 at >=90% acceptance, otherwise EUR54.00; no minimum acceptance threshold",
+   "note": "DATAGROUP is the TARGET of a KKR takeover offer announced April 2025 (date approx. 16 Apr), supported by management and supervisory board; offer settled November 2025. On 16 Dec 2025 the company applied to revoke its inclusion in the Munich open market (delisting, no delisting offer required) - share price now reflects deal/delisting terms and liquidity may be limited or nil. (Independent check found only April 2025 coverage; the Nov 2025 settlement and Dec 2025 delisting application are as reported by the screening agent and are not independently confirmed.)",
+   "source_url": "https://www.datagroup.de/en/news/datagroup-initiates-delisting-procedure-on-the-munich-stock-exchange"
+  },
+  {
+   "ticker": "OM:HUM",
+   "company": "Humana AB",
+   "date": "2026-06-29",
+   "counterparty": "Ambea AB",
+   "role": "target",
+   "terms": "Per Humana share: SEK20 cash + 0.305 Ambea shares (valued at SEK42.30 total on announcement; ~26.8% premium to SEK49.15 close on 26 Jun 2026) plus a contingent value right paying up to 80% of any damages from Humana's lawsuit against the Swedish state",
+   "note": "Humana is the TARGET of a board-recommended public offer from Ambea announced 29 Jun 2026 (Impilo Care irrevocably committed). On 1 Oct 2026 Ambea declared the offer unconditional with 90.84% acceptance, extended acceptance to 14 Oct, and intends compulsory redemption (squeeze-out) and delisting from Nasdaq Stockholm - price now driven by deal terms.",
+   "source_url": "https://www.placera.se/telegram/ambea-ambea-fullfoljer-budet-pa-humana-accept-pa-knappt-91-procent-av-aktierna-20261001"
+  },
+  {
+   "ticker": "ENXTPA:FCMC",
+   "company": "Soci\u00e9t\u00e9 Fermi\u00e8re du Casino Municipal de Cannes",
+   "date": "2025-12-08",
+   "counterparty": "Soci\u00e9t\u00e9 de Participation Deauvillaise (SPD, Barri\u00e8re family holding)",
+   "role": "target",
+   "terms": "Public buyout offer (OPRA) followed by squeeze-out at EUR2,700 per share (raised on 28 May 2026); initial deal 8 Dec 2025 was SPD buying Casinvest's ~25.9% stake at EUR1,897 per share",
+   "note": "SFCMC is the TARGET of a buyout offer + squeeze-out (delisting) by majority holder SPD (92.18% of capital / 95.02% of votes at filing). Draft offer filed with AMF 1 Jul 2026; SFCMC draft response note with independent expert (BM&A) filed 24 Jul 2026. Pending: offer opening/result and delisting not confirmed.",
+   "source_url": "https://a.storyblok.com/f/287000/x/8e62f06f91/sfcmc-communique-de-presse-spd-ravel-8-12-2025.pdf"
   }
  ],
  "mergers_acquisitions": [
@@ -789,6 +829,126 @@
    "note": "SAF-Holland is the ACQUIRER (full consolidation of a former JV), not the target. Part of a broader bolt-on M&A program (Haldex 2023, Tecma and Assali Stefen 2024) under its 'drive2030' strategy.",
    "source_url": "https://truckandbusbuilder.com/article/2025/05/08/saf-holland-acquires-outstanding-stake-in-haldex-haldex-anand-india",
    "role": "acquirer"
+  },
+  {
+   "ticker": "ENXTBR:COMB",
+   "company": "Compagnie du Bois Sauvage S.A.",
+   "date": "2026-04-16",
+   "counterparty": "Jeff de Bruges (remaining ~34% minority stake)",
+   "role": "acquirer",
+   "terms": "Not disclosed in search results",
+   "note": "Bois Sauvage is the ACQUIRER: it completed (closing 16 Apr 2026) the buyout of the remaining ~34% of French chocolate retailer Jeff de Bruges, taking it to full ownership and strengthening its Chocolate division. No bid for Bois Sauvage itself was found.",
+   "source_url": "https://www.vfb.be/Media/Default/pdf/Com._Presse_Closing_JdB_16.04.2026_NL.pdf"
+  },
+  {
+   "ticker": "OM:BTS B",
+   "company": "BTS Group AB",
+   "date": "2026-10-01",
+   "counterparty": "Edward Lynx (Swedish leadership-assessment firm)",
+   "role": "acquirer",
+   "terms": "Undisclosed; initial cash payment plus performance-based cash earn-out due 2028",
+   "note": "BTS is the ACQUIRER (bolt-on via BTS Sverige), not the target; deal expected to close 30 Oct (announcement date approximate, appears to be 2026). BTS also acquired Sounding Board (US coaching tech) in 2025.",
+   "source_url": "https://www.rttnews.com/3698058/bts-agrees-to-acquire-sweden-s-edward-lynx.aspx"
+  },
+  {
+   "ticker": "LSE:MCB",
+   "company": "McBride plc",
+   "date": "2026-04-02",
+   "counterparty": "Eurotab (Eurotop SAS / Eurotab Group, France)",
+   "role": "acquirer",
+   "terms": "Binding offer EUR40m; completed at enterprise value EUR35.6m (incl. EUR1.8m for acquired tax losses)",
+   "note": "McBride is the ACQUIRER (bolt-on), not the target: binding offer for French tablet maker Eurotab announced 2 Apr 2026, subject to French works-council consultation, later reported completed at a reduced EV of EUR35.6m (completion date not confirmed). McBride also ran a second buyback tranche of up to GBP15.5m to Sep 2026 and issued a profit warning.",
+   "source_url": "https://simplywall.st/stocks/gb/household/bats-chixe-mcbl/mcbride-shares/past"
+  },
+  {
+   "ticker": "WSE:PTW",
+   "company": "Polskie Towarzystwo Wspierania Przedsiebiorczosci S.A.",
+   "date": "2025-12-31",
+   "counterparty": "Gremi Media S.A. (publisher of Rzeczpospolita and Parkiet); also Elamed Media Group",
+   "role": "acquirer",
+   "terms": "Control of Gremi Media acquired in a non-cash deal paid in PTWP shares; 100% of Elamed Media Group acquired early 2026 (price not disclosed in results)",
+   "note": "PTWP is the ACQUIRER: it took majority control of listed Gremi Media at end-2025 (exact date approximate) via a share-for-share transaction, and completed the purchase of 100% of trade publisher Elamed Media Group in early 2026. No bid for PTWP itself found.",
+   "source_url": "https://www.biznesradar.pl/a/146773,przejecia-oraz-rozwoj-organiczny-napedzaja-wyniki-ptwp"
+  },
+  {
+   "ticker": "NSEL:VLP1L",
+   "company": "AB Vilkyskiu pienine",
+   "date": "2026-01-15",
+   "counterparty": "Marijampol\u0117s pieno konservai UAB (seller: Karpis UAB)",
+   "role": "acquirer",
+   "terms": "EUR7.5 million for 100% of shares",
+   "note": "Vilky\u0161ki\u0173 pienin\u0117 (Vilvi Group) is the ACQUIRER: it completed the purchase of 100% of financially troubled dairy MPK in January 2026 (exact day approximate) after Competition Council clearance in late 2025; the SPA was signed May 2025. No takeover or delisting of the company found.",
+   "source_url": "https://www.lrt.lt/naujienos/verslas/4/2744469/vilkyskiu-pieninei-leista-isigyti-marijampoles-pieno-konservus"
+  },
+  {
+   "ticker": "ATSE:QUEST",
+   "company": "Quest Holdings S.A.",
+   "date": "2026-10-30",
+   "counterparty": "GLS (General Logistics Systems) - courier subsidiary ACS",
+   "role": "seller",
+   "terms": "20% of ACS sold to GLS (~EUR74-77m, announced late 2024); GLS call option on remaining 80% at a minimum pre-agreed consideration of EUR296m, exercisable 30 Oct 2026; if not exercised Quest may repurchase the 20% under a pre-agreed mechanism",
+   "note": "Quest is the SELLER of its ACS courier business (not itself a target). GLS declined to exercise the Oct 2025 call-option window; the remaining window falls on 30 Oct 2026 (pending), which would crystallise a large cash disposal. Quest also completed the acquisition of 70% of Benrubi S.A. for ~EUR26m on 31 Jan 2025 (as ACQUIRER).",
+   "source_url": "https://athens.euronext.com/en/node/962022"
+  },
+  {
+   "ticker": "WSE:IZS",
+   "company": "Izostal S.A.",
+   "date": "2026-01-02",
+   "counterparty": "Proma (shares bought from its partners)",
+   "role": "acquirer",
+   "terms": "PLN23.3 million for 100% of Proma shares (preliminary conditional agreement)",
+   "note": "Izostal is the ACQUIRER: it signed a preliminary conditional agreement to buy all shares of Proma, with transfer of ownership scheduled for 2 Jan 2026 if conditions were met; completion not confirmed in search results. The deal is sizeable relative to Izostal's ~PLN120m market cap.",
+   "source_url": "https://www.biznesradar.pl/wiadomosci/IZOSTAL"
+  },
+  {
+   "ticker": "BIT:OS",
+   "company": "Officina Stellare S.p.A.",
+   "date": "2026-06-01",
+   "counterparty": "Global Aerospace Technologies Group S.p.A. (GATG)",
+   "role": "acquirer",
+   "terms": "Merger by incorporation of GATG into Officina Stellare; capital increase of EUR1,134,048.8 via 11,340,488 new ordinary shares to satisfy the exchange ratio (approved by shareholders 23 Feb 2026); GATG-side capital raises reported at ~EUR60-63m",
+   "note": "Officina Stellare is the legal ACQUIRING/surviving entity, but the deal is technically a reverse takeover (GATG held ~57.5% of OS before the merger); completed 1 Jun 2026, company stays listed on Euronext Growth Milan. OS also signed (20 Jul 2026) to buy 100% of Mavel S.r.l. (~80% cash/20% new shares, price undisclosed), closing expected by Oct 2026 subject to Golden Power clearance. Market cap re-rated ~5.7x after the merger (share count ~17.4M); company states ~EUR800M (June 2026).",
+   "source_url": "https://www.teleborsa.it/AMP/News/2026/06/01/officina-stellare-perfezionata-la-fusione-di-global-aerospace-technologies-group-203.html"
+  },
+  {
+   "ticker": "OM:NOTE",
+   "company": "NOTE AB",
+   "date": "2026-03-20",
+   "counterparty": "STI (UK defence EMS provider)",
+   "role": "acquirer",
+   "terms": "Not disclosed in search results",
+   "note": "NOTE is the ACQUIRER, not the target: it completed what it calls a 'transformational' acquisition of UK defence EMS partner STI, consolidated from 20 Mar 2026. It also completed the acquisition of UK-based Kasdon Group in Oct 2025 (GBP28.2m initial, up to GBP5.9m earn-out, part-funded by a directed share issue).",
+   "source_url": "https://www.inderes.fi/en/releases/notes-interim-report-q1-2026"
+  },
+  {
+   "ticker": "OM:MANG",
+   "company": "Mangold Fondkommission AB",
+   "date": "2026-03-25",
+   "counterparty": "Finserve Holding (associated company)",
+   "role": "acquirer",
+   "terms": "~SEK16.0m for an additional ~5.9% (3.0% + 2.3% + 0.7%), paid in newly issued and existing Mangold shares; stake rises from 41.5% to 47.4%",
+   "note": "Mangold is the ACQUIRER, increasing its stake in associate Finserve Holding in March 2026 (completion status not explicitly confirmed). A report also mentions a bid for 25% of fund manager Resscapital (SEK9.3m) but its date is unreliable. No bid for Mangold itself found.",
+   "source_url": "https://mb.cision.com/Main/20125/4349004/4094172.pdf"
+  },
+  {
+   "ticker": "OM:XANO B",
+   "company": "XANO Industri AB",
+   "date": "2026-01-15",
+   "counterparty": "Veldkamp (Industrial Solutions)",
+   "role": "acquirer",
+   "terms": "Not disclosed in search results",
+   "note": "XANO is the ACQUIRER (bolt-on): PitchBook dates the Veldkamp acquisition 15 Jan 2026 (single source; not confirmed by a press release in results), and the H1 2026 report cites ongoing Veldkamp integration. XANO also signed a SEK1,500m Nordea credit facility (+SEK500m accordion) on 26 May 2026 to fund further acquisitions. No bid for XANO itself found.",
+   "source_url": "https://pitchbook.com/profiles/company/65764-18"
+  },
+  {
+   "ticker": "OM:HEBA B",
+   "company": "Heba Fastighets AB",
+   "date": "2026-07-01",
+   "counterparty": "Sl\u00e4tt\u00f6 VI AB (rental housing in Norrt\u00e4lje hamn)",
+   "role": "acquirer",
+   "terms": "Total investment SEK409m (SEK401m under the Sl\u00e4tt\u00f6 agreement), share purchase financed with debt",
+   "note": "Heba is the ACQUIRER (property portfolio purchase, announced ~July 2026, exact date approximate), not a target. Also agreed to buy Viggholmen 1 (SEK420m, closing 30 Jan 2026) and a Norrt\u00e4lje care home (SEK230m, closing autumn 2026), and runs a SEK50m buyback from Aug 2026.",
+   "source_url": "https://www.realtid.se/bors-finans/heba-forvarvar-fastighet-av-slatto-409-mkr/"
   }
  ],
  "spinoffs": [
