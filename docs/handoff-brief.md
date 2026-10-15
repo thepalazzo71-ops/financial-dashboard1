@@ -2054,3 +2054,20 @@ gross-profit line): WSE:XBS, ENXTPA:SWP, BUL:AGH, SEP:TOMA, ENXTPA:ALEXA.
 Incomplete/not reached (search budget): ATSE:FLEXO, BUL:SFT, ZGSE:MDKA
 (group COGS not found), ENXTPA:ALGIL, BUL:ODES.
 
+## Gross margins applied for three near-cutoff fallback companies (2026-10-15)
+
+Written into the base data (`gm`, `gmFiscalYear`, `gmSourceType`,
+`gmSourceUrl`, `gmIsFallback=false`) like the original filings-based
+research, after re-checking each against the company's own documents:
+- **WSE:IFI Ifirma: 35.49% (FY2024)** - 20,679 / 58,273 PLN k, from the
+  company's preliminary 2024 ESPI report (confirmed). Same 9.9-pt band as
+  the fallback, so no rank effect (#164 -> #163).
+- **NSEL:ZMP1L Žemaitijos pienas: 23.62% (FY2024)** - 72,652 / 307,643 EUR k,
+  audited 2024 annual report (ESEF). 7.2 pts; #167 -> #274.
+- **WSE:PBX Pekabex: 9.96% (FY2024)** - 172,181 / 1,728,162 PLN k, company
+  IR results table. **User decision 2026-10-15:** use FY2024 rather than
+  FY2025 (2.3%, a loss year with an operating loss of PLN -66.9m), an
+  explicit exception to the latest-year rule. Note 9.96% falls just below
+  the 10% band boundary -> 1.8 pts; #117 -> #408.
+Top-150 effect: Pekabex out, HLSE:TOKMAN (Tokmanni) in.
+
