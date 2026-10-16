@@ -2163,3 +2163,36 @@ partial results (no work lost).
   split across turns because the shared 200-WebSearch budget per turn can't
   fit all of them.
 
+## Tier-12 thesis research, Europe (2026-10-15/16)
+
+34 companies researched in five agent batches (three had to be restarted
+after a usage-limit stop with nothing saved; the rest completed cleanly at
+4-6 searches per company). All 34 passed the field / source-URL /
+cross-dataset duplicate-text checks, merged, rebuilt and pushed. Neither the
+tier-11 nor tier-12 merge overwrote any existing thesis text (verified
+against the pre-merge commits).
+
+- **No new distress flags.** Scanned all 34 red-flag texts. ENXTLS:ESON
+  (Estoril Sol) is the closest: 2025 loss EUR17.9-25.3m, a reported need to
+  reinforce equity by ~EUR35m for Gaming Law requirements, lost Povoa
+  concession, and an unread EUR36.9m tax-penalty headline - but no
+  going-concern doubt or insolvency proceeding, so it does not meet the
+  documented criteria; surfaced to the user instead. OM:MANG filed a
+  bankruptcy petition against a *counterparty*, not itself.
+- Notable ownership/control: BIT:OS post-merger holders (GATI/Investindustrial
+  59.38%, free float ~15%); ENXTAM:AJAX association 73%; ENXTPA:FCMC SPD
+  92.18% with a pending EUR2,700 buyout + squeeze-out; DATAGROUP's Munich
+  m:access delisting confirmed (revocation effective 30 Jun 2026), Xetra
+  status unconfirmed; OM:HUM delisting application filed ~6 Oct 2026.
+- Many holder tables are aggregator-only, stale (some 2014-2023) or conflict
+  between sources; each entry flags this in its own text.
+
+**Data-hygiene finding:** the pool file's `hasThesis` flag had drifted from
+reality (177 companies had full thesis text with `hasThesis=false`; nothing in
+the scripts or templates reads the flag). It is now synced to
+`bool(thesis)`. Earlier coverage numbers in this brief that were derived from
+the flag understate real coverage. **Actual thesis coverage after tier 12:**
+ranks 1-300 complete (300/300), ranks 301-700 339/400, ranks 701-1000 3/300
+(642 of 1,000 overall). Use `bool(thesis)`, not `hasThesis`, in any future
+gap computation.
+
