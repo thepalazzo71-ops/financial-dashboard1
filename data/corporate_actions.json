@@ -219,6 +219,15 @@
    "terms": "Public buyout offer (OPRA) followed by squeeze-out at EUR2,700 per share (raised on 28 May 2026); initial deal 8 Dec 2025 was SPD buying Casinvest's ~25.9% stake at EUR1,897 per share",
    "note": "SFCMC is the TARGET of a buyout offer + squeeze-out (delisting) by majority holder SPD (92.18% of capital / 95.02% of votes at filing). Draft offer filed with AMF 1 Jul 2026; SFCMC draft response note with independent expert (BM&A) filed 24 Jul 2026. Pending: offer opening/result and delisting not confirmed.",
    "source_url": "https://a.storyblok.com/f/287000/x/8e62f06f91/sfcmc-communique-de-presse-spd-ravel-8-12-2025.pdf"
+  },
+  {
+   "ticker": "ZGSE:CTKS",
+   "company": "Cateks d.d.",
+   "date": "2025-09-26",
+   "counterparty": "SQ Capital d.o.o. (for Primus fund)",
+   "terms": "EUR 43.00 per share in cash (below then-market price of ~EUR 50)",
+   "note": "Hanfa approved SQ Capital's takeover bid for Cateks (company is TARGET); SQ Capital and partners already held ~64.82%. Offer completed: only ~0.61% of shares tendered; no delisting reported, shares still listed in 2026.",
+   "source_url": "https://en.lider.media/2025/09/26/hanfa-approved-tokics-ipo-and-sq-capitals-acquisition-of-cateks/"
   }
  ],
  "mergers_acquisitions": [
@@ -949,6 +958,86 @@
    "terms": "Total investment SEK409m (SEK401m under the Sl\u00e4tt\u00f6 agreement), share purchase financed with debt",
    "note": "Heba is the ACQUIRER (property portfolio purchase, announced ~July 2026, exact date approximate), not a target. Also agreed to buy Viggholmen 1 (SEK420m, closing 30 Jan 2026) and a Norrt\u00e4lje care home (SEK230m, closing autumn 2026), and runs a SEK50m buyback from Aug 2026.",
    "source_url": "https://www.realtid.se/bors-finans/heba-forvarvar-fastighet-av-slatto-409-mkr/"
+  },
+  {
+   "ticker": "BIT:VLS",
+   "company": "Valsoia S.p.A.",
+   "date": "2025-12-01",
+   "counterparty": "Kele & Kele (Slovenia, Krepko kefir brand)",
+   "role": "acquirer",
+   "terms": "70% for ~EUR 3m initial consideration (EV EUR 5.4m); put/call on remaining 30% after 3 years",
+   "note": "Valsoia (ACQUIRER) agreed Dec 2025 (day not confirmed) to buy 70% of Slovenian kefir maker Kele & Kele, funded from existing resources. Small bolt-on; also earlier Loriana wraps deal. No bid for Valsoia itself found.",
+   "source_url": "https://www.milanofinanza.it/news/valsoia-compra-il-70-del-kefir-sloveno-kele-kele-2687167"
+  },
+  {
+   "ticker": "OM:SBOK",
+   "company": "ScandBook Holding AB",
+   "date": "2025-09-01",
+   "counterparty": "N\u00f8rhaven Book A/S and Bjerringholm Ejendomme ApS (Denmark)",
+   "role": "acquirer",
+   "terms": "100% of shares; target had 2024 revenue DKK 123.2m, EBITDA DKK 8.6m (price not captured)",
+   "note": "ScandBook (ACQUIRER) bought Danish book printer N\u00f8rhaven Book in Sept 2025 (day not confirmed); completed, contributed two months to FY2025. Q2 2026 report cites lower additional consideration. No bid for ScandBook found.",
+   "source_url": "https://www.inderes.se/en/releases/scandbook-forvarvar-norhaven-book-forstarker-sin-position-som-ledande-bokproducent-i-nordeuropa"
+  },
+  {
+   "ticker": "CSE:LOG",
+   "company": "Logicom Public Limited",
+   "date": "2025-02-25",
+   "counterparty": "Demetra Holdings Plc (via subsidiary Logicom Services Ltd; seller Eurobank 8.58%)",
+   "role": "acquirer",
+   "terms": "Mandatory public bid EUR 1.55 per Demetra share in cash; acceptance 5 Mar-14 Apr 2025",
+   "note": "Logicom (ACQUIRER, not target) bought Eurobank's 8.58% of Demetra for ~EUR 27m (Jan 2025) then ran a CySEC-approved public offer; held ~38.5% by April 2025 (final offer result not found). In July 2026 CySEC exempted Logicom from a further mandatory bid triggered by Demetra buybacks. Logicom itself remains listed.",
+   "source_url": "https://cyprus-mail.com/2025/02/26/cysec-approves-logicoms-public-offer-for-demetra-holdings"
+  },
+  {
+   "ticker": "BME:ALC",
+   "company": "Altia Consultores, S.A.",
+   "date": "2026-07-21",
+   "counterparty": "EDNON (Santiago de Compostela IT consultancy)",
+   "role": "acquirer",
+   "terms": "100% of share capital; price not disclosed in source",
+   "note": "Altia (ACQUIRER) closed purchase of 100% of EDNON on 21 July 2026; earlier bolt-ons: Verne Data & AI unit (EUR 4.15m, Mar 2025) and IN2 (Dec 2024). Serial small acquirer; no bid for Altia found.",
+   "source_url": "https://www.altiacompany.com/sites/default/files/hechos-relevantes/2026-07/20260721%20IP%20adquisici%C3%B3n%20Ednon.pdf"
+  },
+  {
+   "ticker": "OM:DUNI",
+   "company": "Duni AB",
+   "date": "2025-06-01",
+   "counterparty": "LinePack Oy (Finland); also Poppies (UK) and Solserv",
+   "role": "acquirer",
+   "terms": "Majority stake (reported ~80%) in LinePack; other prices not captured",
+   "note": "Duni (ACQUIRER) did bolt-on deals in 2025-26: Poppies (UK, expected H1 2025), LinePack majority stake (June 2025, day/stake unconfirmed), Solserv (completed by Q2 2026). No offer for Duni itself found (Mellby Gard mandatory bid was 2023).",
+   "source_url": "https://www.dunigroup.com/media/press-releases/?year=2025"
+  },
+  {
+   "ticker": "ENXTAM:SLIGR",
+   "company": "Sligro Food Group N.V.",
+   "date": "2025-06-04",
+   "counterparty": "Gepu (Utrecht cash-and-carry wholesaler)",
+   "role": "acquirer",
+   "terms": "Price not disclosed",
+   "note": "Sligro (ACQUIRER) agreed 4 June 2025 to buy Gepu, expected to finalise by end 2025 (completion not confirmed in sources). Bolt-on; no bid for Sligro found.",
+   "source_url": "https://sligrofoodgroup.nl/sites/default/files/pdf/nieuws/Press%20release%20-%20Sligro%20Food%20Group%20acquires%20GEPU.pdf"
+  },
+  {
+   "ticker": "XTRA:TPE",
+   "company": "PVA TePla AG",
+   "date": "2025-01-30",
+   "counterparty": "desconpro engineering GmbH",
+   "role": "acquirer",
+   "terms": "Not disclosed; effective retroactively 1 Jan 2025",
+   "note": "PVA TePla (ACQUIRER) acquired automation specialist desconpro engineering for vertical integration. Small bolt-on; no bid for PVA TePla found.",
+   "source_url": "https://www.pvatepla.com/fileadmin/sitepackage/pdf/investor_relations/presse/2025/PR-pva-tepla-acquires-desconpro-engineering-GmbH-2025.pdf"
+  },
+  {
+   "ticker": "ENXTBR:ASCE",
+   "company": "Ascencio SA",
+   "date": "2026-06-10",
+   "counterparty": "Arlimmo SA (Espace Shopping Hydrion retail park, Arlon)",
+   "role": "acquirer",
+   "terms": "~EUR 65m; funded by ~EUR 15m accelerated placement, bank lines and EUR 32.9m bond (July 2026)",
+   "note": "Ascencio (ACQUIRER) bought Arlimmo SA (around 10 June 2026; day approximate), which owns a 33,000 m2 retail park with ~EUR 4.5m annual rent. No bid for Ascencio found.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-06/68727842-ascencio-sa-ascencio-continues-its-growth-with-the-acquisition-of-espace-shopping-hydrion-in-arlon-belgium-the-launch-of-a-capital-increase-via-399.htm"
   }
  ],
  "spinoffs": [
@@ -985,6 +1074,24 @@
    "date": "2026-02-28",
    "note": "Talenom completed a partial demerger (spinoff): its software business was transferred to a newly established, separately listed company, Easor Plc/Oyj, while Talenom retained its core accounting business. Shareholders approved the split at an EGM on 2026-01-27; the demerger took effect 2026-02-28; Easor shares began trading on Nasdaq Helsinki on 2026-03-02 at a 1:1 distribution ratio to Talenom shareholders. Talenom now reports the software business as discontinued operations under IFRS 5.",
    "source_url": "https://www.inderes.fi/en/releases/talenom-plcs-financial-statement-release-2025-a-year-of-major-strategic-changes-demerger-completed-after-the-review-period"
+  },
+  {
+   "ticker": "OM:UPSALE",
+   "company": "Upsales Technology AB",
+   "date": "2026-06-03",
+   "spun_off_entity": "Aira (AI Revenue Assistant Software Stockholm AB)",
+   "terms": "1 Aira share per 1 Upsales share; record date 22 May 2026",
+   "note": "Upsales distributed its AI subsidiary Aira to shareholders (AGM approval 15 May 2026) and Aira began trading on Nasdaq First North on 3 June 2026. Completed; Upsales share price will have adjusted for the distribution.",
+   "source_url": "https://upsales.com/investor-relations/press-releases/2026/aira-receives-final-approval-for-admission-to-trading-on-nasdaq-first-north-growth-market/"
+  },
+  {
+   "ticker": "WSE:SNT",
+   "company": "Synektik Sp\u00f3lka Akcyjna",
+   "date": "2026-03-19",
+   "spun_off_entity": "Syn2bio S.A. (new company)",
+   "terms": "Division: Synektik shareholders receive Syn2bio shares; cardiac biomarker/pharma research moved to Syn2bio",
+   "note": "Synektik EGM unanimously approved the split on 19 March 2026; Syn2bio prospectus approved by KNF, first trading planned 16 April 2026 (actual debut not confirmed in sources). Synektik share price will be affected by the distribution.",
+   "source_url": "https://www.biznesradar.pl/a/144591,akcjonariusze-synektika-zatwierdzili-podzial-spolki-i-wydzielenie-projektu-kardioznacznika-do-syn2bio"
   }
  ],
  "other": [
@@ -1211,6 +1318,56 @@
    "terms": "Public partial share repurchase offer for up to 51% of share capital at EUR3.85/share; 1,387,229 shares actually repurchased (~EUR5.34m); acceptance period extended to 2026-07-08, settlement ~2026-07-17",
    "note": "Company-initiated partial buyback tied to major shareholder Dylan Media; management said it would consider delisting from the regulated market if Dylan Media's stake reaches >=60% post-offer. Listing was also moved to the Basic Board of the Frankfurt open market effective 2026-03-23. Whether delisting was ultimately pursued is unconfirmed.",
    "source_url": "https://pro.stockalarm.io/quote/CLQDF/news"
+  },
+  {
+   "ticker": "ENXTAM:TRIO",
+   "company": "Triodos Bank N.V.",
+   "date": "2025-09-01",
+   "type": "restructuring",
+   "counterparty": "n/a (Deutsche Bank bought German fibre loans)",
+   "terms": "Bank-wide restructuring: EUR 12m one-off provision; ~EUR 180m German fibre-optic loan portfolio sold to Deutsche Bank (May 2026, ~EUR 3m one-off loss)",
+   "note": "Triodos announced in Sept 2025 (exact day not confirmed) it will wind down its German operations, targeted for 2027, and sold a non-core German fibre loan portfolio to Deutsche Bank in May 2026. No takeover or delisting of Triodos found; 2025 net loss EUR 25m.",
+   "source_url": "https://www.banken.nl/nieuws/26424/triodos-kondigt-vertrek-uit-duitsland-aan"
+  },
+  {
+   "ticker": "WSE:NVT",
+   "company": "Novita S.A.",
+   "date": "2026-07-30",
+   "type": "strategic_review",
+   "counterparty": "n/a (potential financial or strategic investor)",
+   "terms": "None; no investor or price named",
+   "note": "Novita's board started a review of strategic options on 30 July 2026, which may lead to bringing in a financial/strategic investor or another transaction changing the shareholder structure (controlled by Tebesa/Vaporjet). No decision taken; announcement stage only. Company could become a TARGET.",
+   "source_url": "https://www.bankier.pl/wiadomosc/NOVITA-Rozpoczecie-przegladu-opcji-strategicznych-9175748.html"
+  },
+  {
+   "ticker": "BME:ALNT",
+   "company": "Alantra Partners, S.A.",
+   "date": "2026-04-28",
+   "type": "divestiture",
+   "counterparty": "Bankinter Investment SGIIC (buyer of Access Capital Partners stake)",
+   "terms": "Sale of Alantra's entire stake (49%) in Access Capital Partners; price not captured",
+   "note": "Alantra (SELLER of a subsidiary stake, not target) put the sale of Access Capital Partners stake to Bankinter Investment to an EGM on 28-29 April 2026. Pending regulatory approvals, completion expected H2 2026. No bid for Alantra itself found.",
+   "source_url": "https://www.alantra.com/wp-content/uploads/2026/03/20260428-BOD-Report-on-Essential-Asset-Transaction-ENG-FINAL-VERSION116596.2.pdf"
+  },
+  {
+   "ticker": "ATSE:FOYRK",
+   "company": "Fourlis Holdings S.A.",
+   "date": "2026-08-01",
+   "type": "divestiture",
+   "counterparty": "Trade Estates REIC subsidiary (associate of Fourlis Group)",
+   "terms": "EUR 49.35m for indirect stake in Sofia South Ring Mall (Bulgaria)",
+   "note": "Fourlis subsidiary Wyldes Ltd plans to sell its stake in a Bulgarian mall to a related-party Trade Estates subsidiary to cut net debt (announced Aug 2026, day not confirmed; related-party approval pending). Fourlis also took over Foot Locker stores in Greece/Romania in 2025. Company is not a target.",
+   "source_url": "https://athens.euronext.com/sites/default/files/hermes_3/2026-08/en/1ea03de4-dc33-4a71-a03d-e4dc33da7148/188_5950_2026_English_2.pdf"
+  },
+  {
+   "ticker": "ICSE:SYN",
+   "company": "S\u00fdn hf.",
+   "date": "2026-03-01",
+   "type": "divestiture",
+   "counterparty": "S\u00edminn hf. (via planned \u00c1sar group)",
+   "terms": "Non-binding term sheet: total value ISK 5,250m for S\u00fdn radio and online media assets (~ISK 3,000m annual revenue)",
+   "note": "S\u00fdn is SELLER of its radio and online media assets (V\u00edsir.is, Bylgjan, FM957) to S\u00edminn under a March 2026 term sheet (day not confirmed); conditional, no completion or regulatory approval found. Not a bid for S\u00fdn as a whole.",
+   "source_url": "https://mfn.se/all/a/siminn/siminn-hf-results-for-the-first-quarter-of-2026-271a7fa2"
   }
  ]
 }

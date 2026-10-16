@@ -2196,3 +2196,30 @@ ranks 1-300 complete (300/300), ranks 301-700 339/400, ranks 701-1000 3/300
 (642 of 1,000 overall). Use `bool(thesis)`, not `hasThesis`, in any future
 gap computation.
 
+
+## Tier 13 (Europe) - market caps + corporate-actions screen (2026-10-16)
+
+- **Market caps:** 50 companies (current ranks 622-697, the next 50 without an
+  override) refreshed by two agents at <=2 searches/company: 50 ok, 0 flag,
+  0 not_found; all ratios vs. the Capital IQ cap within 0.74-1.68. Added to
+  `data/mc_overrides_applied.json` (now 703 entries; file kept in its original
+  single-line format). Weak spots recorded by the agents: FX rates are
+  aggregator quotes from 16 Sep-12 Oct; undated or stale (>4 months)
+  snapshots for TSX:GEO, AIM:ALU (Feb 2026), OM:NEOBO, HLSE:ACG1V,
+  ENXTAM:FFARM, MUN:KUL, HLSE:SIILI; undated ENXTPA:MRN (+68%, read as a
+  genuine rise), BIT:CIRC (lower confidence), WSE:GOB, ZGSE:CTKS (price x
+  202,345 shares), ATSE:GEBKA (implied share count). Refresh these first if
+  precision matters.
+- **Corporate actions:** all 50 screened (60 searches); 16 findings appended
+  to `data/corporate_actions.json` (append-only, indent=1): 1 tender offer
+  (ZGSE:CTKS is the *target* of SQ Capital's EUR43 bid; only 0.61% tendered,
+  no delisting), 8 acquirer bolt-ons, 2 spin-offs (OM:UPSALE/Aira completed;
+  WSE:SNT/Syn2bio approved, debut unconfirmed), 5 "other" (WSE:NVT strategic
+  review that may bring in an investor; ENXTAM:TRIO German wind-down;
+  ICSE:SYN, BME:ALNT, ATSE:FOYRK divestitures). Coverage now 703 screened.
+  No company is being taken over/delisted other than the CTKS bid.
+- **Not done:** tier-13 theses (49 of the 50 have none) - next round, since
+  the 200-search/turn cap is shared across agents.
+- **UI fix:** expanded company details inside the "Biggest movers" modal (and
+  the other modals) no longer scroll horizontally - grid columns can shrink
+  and long strings wrap (`site/template*.html`).
