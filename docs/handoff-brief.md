@@ -2223,3 +2223,38 @@ gap computation.
 - **UI fix:** expanded company details inside the "Biggest movers" modal (and
   the other modals) no longer scroll horizontally - grid columns can shrink
   and long strings wrap (`site/template*.html`).
+
+## Tier 14 (Europe) - market caps + corporate-actions screen (2026-10-16)
+
+- **Market caps:** next 50 companies without an override (ranks 684-745).
+  48 ok, 2 not_found, 0 flag; all ratios 0.3-3x vs. Capital IQ (highest
+  IPE 1.89, a genuine tripling per the agent). Added to
+  `data/mc_overrides_applied.json` (now 751). **No override** for
+  ENXTBR:WHATS (What's Cooking - taken private and delisted ~28 Jul 2026;
+  verified: families reached 100% via squeeze-out) and LSE:FORT (Forterra -
+  aggregator figures inconsistent; listing status unconfirmed) - both keep
+  their Capital IQ cap. Weak spots: undated or >2-month-old prices for TTR1,
+  KGL, SWG, VBL1L, BOOT, ASCO, NRST, FAR, FOBANK, RTC, SWTQ, NEOH, HBLN, STEF,
+  ERNT (30 Mar), LWB (30 Apr), ELTON, YAN, SAF1R; share-count conflicts for
+  INWI, AAG, PACT, ASCO, PZV1L, ADE, CCN (whole-company price x shares used);
+  ISK rate is from 10 Jul; part-2 FX is 31 Aug.
+- **Corporate actions:** all 50 screened (58 searches); 18 findings appended.
+  **Six companies are bid targets**: BME:ECR Ercros (Bondalti exclusion bid
+  EUR3.505 accepted by 8.62% of capital -> Bondalti 85.85%, settlement 21 Sep,
+  trading ended ~22-23 Sep 2026 - verified on a second search, so the ranked
+  row is a delisted stock; its override is the bid-driven last price);
+  ENXTBR:WHATS (EUR148 take-private, delisted ~28 Jul 2026, verified);
+  ENXTPA:GPE Pizzorno (Paprec mandatory offer EUR62.50, pending; price
+  pinned to the offer); LSE:IDHC IDH (Hena mandatory offer USD0.50, Hena
+  ~56.7%, still listed); ENXTLS:MAR Martifer (Visabeira offer closed, 0.24%
+  tendered, no squeeze-out); WSE:FHB FoodHub (Sept 2025 tender call PLN2.70,
+  structure unclear). Others: asset sales by SWTQ/BOOT; acquirer bolt-ons
+  (STEF B, PACT, INWI, HBLN); NEOH 20.3% stake purchase; PZC 31.4% block;
+  SKAGI/Islandsbanki merger talks ended Feb 2026; POMRY/Henkell talks ended
+  Aug 2026; AAG 10% self-tender completed; KGL strategic review. Coverage now
+  753 screened.
+- **Open decision for the user:** delisted/delisting names (ECR, WHATS) remain
+  in the ranked list - per the standing "no manual removals" policy they are
+  only annotated via the corporate-actions section. Say if you want a rule for
+  excluding companies with completed delistings.
+- Theses for tier-13/14 targets still outstanding (~98 companies).

@@ -228,6 +228,60 @@
    "terms": "EUR 43.00 per share in cash (below then-market price of ~EUR 50)",
    "note": "Hanfa approved SQ Capital's takeover bid for Cateks (company is TARGET); SQ Capital and partners already held ~64.82%. Offer completed: only ~0.61% of shares tendered; no delisting reported, shares still listed in 2026.",
    "source_url": "https://en.lider.media/2025/09/26/hanfa-approved-tokics-ipo-and-sq-capitals-acquisition-of-cateks/"
+  },
+  {
+   "ticker": "ENXTBR:WHATS",
+   "company": "What's Cooking Group NV",
+   "date": "2026-02-27",
+   "counterparty": "Malaga Investment SCSp (founding families / Famcoo Invest / Efic)",
+   "terms": "EUR 148 per share in cash (~22.3% premium); ~EUR 88m for the ~32% not already held",
+   "note": "Take-private bid by the founding families (already ~68%); intent to squeeze out and delist from Euronext Brussels. A 29 Jul 2026 release reports squeeze-out results and delisting; final acceptance level not verified. The company is the TARGET and appears delisted/being delisted.",
+   "source_url": "https://www.eubelius.com/en/news/eubelius-assists-whats-cooking-group-on-its-take-private-through-a-public-takeover-bid"
+  },
+  {
+   "ticker": "LSE:IDHC",
+   "company": "Integrated Diagnostics Holdings plc",
+   "date": "2026-06-24",
+   "counterparty": "Hena Holdings (vehicle of CEO Hend El Sherbini)",
+   "terms": "Mandatory final cash offer at USD 0.50 per share, valuing equity at ~USD 290.7m (~11% below pre-announcement close)",
+   "note": "Hena bought 21.67% from Actis (Elliott) taking it to ~49.6%, triggering a mandatory offer; independent directors recommended rejection. Hena now holds ~56.67% but IDH remains listed in London; Hena says it will seek cancellation of listing if it reaches 75%. Company is TARGET; delisting possible but not pending.",
+   "source_url": "https://www.billionaires.africa/2026/06/24/idh-chief-executive-hend-el-sherbini-launches-291-million-bid-to-take-egypts-diagnostics-giant-private/"
+  },
+  {
+   "ticker": "ENXTLS:MAR",
+   "company": "Martifer SGPS, S.A.",
+   "date": "2025-08-05",
+   "counterparty": "Visabeira (Visabeira Ind\u00fastria)",
+   "terms": "Mandatory tender offer at EUR 2.057 per share",
+   "note": "Visabeira announced mandatory OPA in Aug 2025 (after shareholder agreement with I'M and Mota-Engil, together 85.59%); bought an 18% stake from I'M on 24 Apr 2026; offer ran 18 May - 3 Jun 2026 but only 0.24% was tendered, missing the 90% squeeze-out threshold. Company is TARGET; a voluntary delisting resolution may be considered.",
+   "source_url": "https://www.rtp.pt/noticias/economia/visabeira-falha-meta-e-compra-apenas-024-da-martifer-em-opa_n1745478"
+  },
+  {
+   "ticker": "WSE:FHB",
+   "company": "FoodHub Spolka Akcyjna",
+   "date": "2025-09-01",
+   "counterparty": "Pawel Szataniak, Mariusz Szataniak and Pamapol (controlling shareholders)",
+   "terms": "PLN 2.70 per share for 5,042,697 shares",
+   "note": "Sept 2025 tender call (wezwanie) by controlling shareholders at PLN 2.70 (company formerly Pamapol, renamed Sep 2025); exact day not found and details/structure unclear from sources. Also PLN 30m ARP financing (Mar 2026) and loss-making 2025. Status unclear.",
+   "source_url": "https://www.biznesradar.pl/wiadomosci/FHB"
+  },
+  {
+   "ticker": "ENXTPA:GPE",
+   "company": "Groupe Pizzorno Environnement",
+   "date": "2026-06-09",
+   "counterparty": "Paprec Group",
+   "terms": "EUR 62.50 per share in cash; simplified mandatory tender offer for up to 991,088 shares (~24.8%)",
+   "note": "Paprec bought 30.64% from the Pizzorno-Devalle family on 9 Jun 2026 (reaching ~50.64%) and filed a mandatory simplified tender offer at the same price; target's draft response filed 29 Jul 2026. No squeeze-out planned. Offer opening/outcome not confirmed. Company is TARGET (no delisting planned).",
+   "source_url": "https://www.abcbourse.com/marches/groupe-pizzorno-environnement-vise-par-une-offre-publique-dachat-de-paprec-a-62_700629"
+  },
+  {
+   "ticker": "BME:ECR",
+   "company": "Ercros, S.A.",
+   "date": "2026-07-24",
+   "counterparty": "Bondalti",
+   "terms": "Voluntary bid ~EUR 329.2m (about EUR 3.60/share per earlier reports); follow-on delisting offer at EUR 3.505 per share in cash",
+   "note": "Bondalti's unsolicited bid gave it ~77.2% control; a delisting tender (CNMV authorised 22 Jul 2026, acceptance 24 Jul - 10 Sep 2026) was accepted by 8.62% of capital, taking Bondalti to ~85.85%. Settlement planned 21 Sep and end of trading ~23 Sep 2026 (forecast, not confirmed). Company is TARGET and being delisted. Dates of the first bid not pinned down; sources conflict on prices.",
+   "source_url": "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/bondalti-concluye-opa-sobre-ercros-con-aceptacion-n-950415"
   }
  ],
  "mergers_acquisitions": [
@@ -1038,6 +1092,106 @@
    "terms": "~EUR 65m; funded by ~EUR 15m accelerated placement, bank lines and EUR 32.9m bond (July 2026)",
    "note": "Ascencio (ACQUIRER) bought Arlimmo SA (around 10 June 2026; day approximate), which owns a 33,000 m2 retail park with ~EUR 4.5m annual rent. No bid for Ascencio found.",
    "source_url": "https://www.finanznachrichten.de/nachrichten-2026-06/68727842-ascencio-sa-ascencio-continues-its-growth-with-the-acquisition-of-espace-shopping-hydrion-in-arlon-belgium-the-launch-of-a-capital-increase-via-399.htm"
+  },
+  {
+   "ticker": "ICSE:SKAGI",
+   "company": "Skagi hf.",
+   "date": "2025-10-06",
+   "counterparty": "\u00cdslandsbanki hf.",
+   "role": "target",
+   "terms": "Skagi shareholders would have received 323,859,440 new \u00cdslandsbanki shares (~15% of merged entity)",
+   "note": "\u00cdslandsbanki and Skagi agreed head of terms for a merger in Oct 2025 (Skagi to be absorbed). \u00cdslandsbanki's board announced on 21 Feb 2026 that merger discussions were discontinued (due diligence findings, relative valuations, higher expected capital requirements). Status: terminated; insurance partnership continues.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-02/67761464-islandsbanki-hf-merger-discussions-between-islandsbanki-and-skagi-hf-discontinued-399.htm"
+  },
+  {
+   "ticker": "SWX:SWTQ",
+   "company": "Schweiter Technologies AG",
+   "date": "2025-07-25",
+   "counterparty": "Hypax (investment firm)",
+   "role": "seller",
+   "terms": "Not disclosed; ~CHF 26m non-cash book loss on disposal",
+   "note": "Schweiter signed a binding agreement to sell its non-core Bus & Rail (Mobility) unit (~3% of group sales) to Hypax; divestiture completed 31 Jul 2025. Announcement date approximate (taken from release file timestamp). No bid for Schweiter itself found.",
+   "source_url": "https://www.schweiter.ch/s1a320/news-2025/schweiter-technologies-divests-its-non-core-bus-rail-business.html"
+  },
+  {
+   "ticker": "BUL:NEOH",
+   "company": "Neochim AD",
+   "date": "2025-01-17",
+   "counterparty": "Agropolychim (via Reya Ventures) / seller Agrofert",
+   "role": "target",
+   "terms": "Indirect 20.3% stake via purchase of Feboran from Agrofert; with ~3.7% held directly, Agropolychim controls ~24.03%",
+   "note": "Reya Ventures (wholly owned by Agropolychim) closed purchase of Feboran, which holds 20.3% of Neochim, from AGROFERT in Jan 2025. Neochim objected, saying the holding gives a blocking minority on 2/3 and 3/4 decisions. Neochim is the target of the stake purchase; no tender offer found.",
+   "source_url": "https://www.ffbham.bg/en/post/reya-ventures-finalised-the-acquisition-of-20-3-in-neochim-neutral--173736123523082"
+  },
+  {
+   "ticker": "LSE:BOOT",
+   "company": "Henry Boot PLC",
+   "date": "2025-09-23",
+   "counterparty": "PWS Construction Limited (management-led vehicle)",
+   "role": "seller",
+   "terms": "Initial GBP 4m via vendor loan note plus contingent payments",
+   "note": "Henry Boot agreed to sell Henry Boot Construction to a management buyout vehicle; completed 31 Dec 2025. Henry Boot is the seller (divesting a division), not a takeover target. CEO succession announced May 2026.",
+   "source_url": "https://www.constructionenquirer.com/2025/09/23/henry-boot-offloads-contracting-arm-in-4m-mbo/"
+  },
+  {
+   "ticker": "OM:INWI",
+   "company": "Inwido AB",
+   "date": "2025-12-09",
+   "counterparty": "AJM Okna-Vrata-Sencila (management holds 30%)",
+   "role": "acquirer",
+   "terms": "70% stake acquired; call/put option over remaining 30% exercisable in early 2028 (price not found)",
+   "note": "Inwido is acquirer: bought 70% of AJM in Dec 2025 and continues a bolt-on acquisition strategy (also Victorian Sliders, described as its largest ever deal). Not a takeover target.",
+   "source_url": "https://www.affarsvarlden.se/artikel/inwido-gor-sitt-storsta-forvarv-nagonsin"
+  },
+  {
+   "ticker": "SWX:HBLN",
+   "company": "Hypothekarbank Lenzburg AG",
+   "date": "2025-01-01",
+   "counterparty": "Sutor Bank GmbH",
+   "role": "acquirer",
+   "terms": "9.9% minority stake; price not found",
+   "note": "Minor: bank bought a 9.9% stake in Sutor Bank GmbH in Jan 2025 (month only; day not given). Swiss Bankers Prepaid Services acquisition completed in 2024 (outside window). Bank is acquirer; no bid for the bank itself found.",
+   "source_url": "https://thepaypers.com/companies/latest-news-on-Hypothekarbank-Lenzburg-AG--33441"
+  },
+  {
+   "ticker": "OM:STEF B",
+   "company": "Stend\u00f6rren Fastigheter AB",
+   "date": "2026-01-23",
+   "counterparty": "Seller of 14 properties near Helsinki Airport (not named)",
+   "role": "acquirer",
+   "terms": "About SEK 1.3bn, funded from cash and bank financing",
+   "note": "Stend\u00f6rren is ACQUIRER of a Helsinki warehouse/light-industrial portfolio (closing expected 20 Feb 2026). A July 2026 Realtid piece mentions an EQT bid, but its dating is inconsistent with 2018-19 coverage and could not be verified, so it is not treated as a current event.",
+   "source_url": "https://www.borskollen.se/pressmeddelanden/stendorren-acquires-a-strategic-property-portfolio-in-helsinki-for-sek-1-3-billion-and-presents-earnings-capacity-as-per-year-end"
+  },
+  {
+   "ticker": "OM:PACT",
+   "company": "Proact IT Group AB",
+   "date": "2026-07-11",
+   "counterparty": "Sepago (German IT consultancy)",
+   "role": "acquirer",
+   "terms": "EUR 12m plus up to EUR 4m earn-out",
+   "note": "Proact is acquirer of Sepago (reported 11 Jul 2026, expected to close early July). Also sold its Dutch staffing business to Resultaatgroep (binding, May 2026) and completed Consular (DKK 65m + earn-outs) in late 2025. No bid for Proact found.",
+   "source_url": "https://www.realtid.se/bors-finans/affarer/proact-koper-tyskt-it-konsultbolag/"
+  },
+  {
+   "ticker": "ENXTPA:POMRY",
+   "company": "Maison Pommery & Associ\u00e9s",
+   "date": "2026-08-05",
+   "counterparty": "Henkell Freixenet",
+   "role": "target",
+   "terms": "Majority stake talks; no price found",
+   "note": "Exclusive talks (from June 2026) for Henkell to take a majority stake ended without agreement on 5 Aug 2026; door left open. Group now pursuing ~EUR 100m non-strategic asset sales and a ~EUR 200m deleveraging plan under a court-approved conciliation agreement. Sold Heidsieck & Co Monopole to Lanson-BCC for EUR 50m (effective 1 Jan 2026). Company is potential TARGET; balance-sheet stress likely drives price.",
+   "source_url": "https://www.just-drinks.com/news/henkell-maison-pommery-deal-fail/"
+  },
+  {
+   "ticker": "MTSE:PZC",
+   "company": "Plaza Centres p.l.c.",
+   "date": "2025-12-18",
+   "counterparty": "Virgata HQ Limited (buyer) / Mapfre MSV Life plc (seller)",
+   "role": "target",
+   "terms": "31.4% block bought at EUR 0.94 per share (~38% premium); Virgata now 37.615%",
+   "note": "Major shareholder change: Virgata raised its stake to 37.615% buying Mapfre's 31.4% (one report dates the block trade 18 December, year not stated; 2025 inferred). No mandatory offer found. Also a EUR buyback from Aug 2026 and a Sliema childcare property purchase (21 Jul 2026). Company is not itself bid for.",
+   "source_url": "https://maltaceos.mt/plaza-shopping-centre-investment-signals-long-term-commitment-to-malta-says-virgata-founder/"
   }
  ],
  "spinoffs": [
@@ -1368,6 +1522,26 @@
    "terms": "Non-binding term sheet: total value ISK 5,250m for S\u00fdn radio and online media assets (~ISK 3,000m annual revenue)",
    "note": "S\u00fdn is SELLER of its radio and online media assets (V\u00edsir.is, Bylgjan, FM957) to S\u00edminn under a March 2026 term sheet (day not confirmed); conditional, no completion or regulatory approval found. Not a bid for S\u00fdn as a whole.",
    "source_url": "https://mfn.se/all/a/siminn/siminn-hf-results-for-the-first-quarter-of-2026-271a7fa2"
+  },
+  {
+   "ticker": "WSE:KGL",
+   "company": "KGL SA",
+   "date": "2026-04-01",
+   "type": "strategic_review",
+   "counterparty": "n/a",
+   "terms": "n/a",
+   "note": "Board is running a review of strategic options alongside a broader operational optimisation plan (reported April 2026, exact day not given); details and outcome not disclosed in sources found. A new corporate strategy publication was timed for July 2026. No bid or transaction identified.",
+   "source_url": "https://www.biznesradar.pl/a/149955,wyniki-kgl-mocno-w-gore-strategia-w-trzecim-kwartale-2026-r"
+  },
+  {
+   "ticker": "XTRA:AAG",
+   "company": "Aumann AG",
+   "date": "2026-06-12",
+   "type": "self_tender",
+   "counterparty": "Aumann AG shareholders (self-tender)",
+   "terms": "Public buyback offer for up to 1,291,704 shares (~10% of capital); price raised from EUR 16.50 to EUR 17.80 per share on 22 Jun 2026",
+   "note": "Company launched a voluntary public share repurchase offer (acceptance period 12 Jun - 3 Jul 2026). 9.36m shares were tendered; about 1.29m shares (~10%) bought at ~6% allotment, payment 16 Jul 2026. Completed. Not tied to delisting and no third-party bidder found; may support the share price.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-aumann-erhoeht-erwerbspreis-des-aktienrueckkaufangebots-auf-1780-eur-je-aktie-deutsch-532963.html"
   }
  ]
 }
