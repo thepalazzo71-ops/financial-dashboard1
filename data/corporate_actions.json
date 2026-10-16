@@ -282,6 +282,15 @@
    "terms": "Voluntary bid ~EUR 329.2m (about EUR 3.60/share per earlier reports); follow-on delisting offer at EUR 3.505 per share in cash",
    "note": "Bondalti's unsolicited bid gave it ~77.2% control; a delisting tender (CNMV authorised 22 Jul 2026, acceptance 24 Jul - 10 Sep 2026) was accepted by 8.62% of capital, taking Bondalti to ~85.85%. Settlement planned 21 Sep and end of trading ~23 Sep 2026 (forecast, not confirmed). Company is TARGET and being delisted. Dates of the first bid not pinned down; sources conflict on prices.",
    "source_url": "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/bondalti-concluye-opa-sobre-ercros-con-aceptacion-n-950415"
+  },
+  {
+   "ticker": "ENXTPA:EDI",
+   "company": "Media 6 SA",
+   "date": "2026-06-23",
+   "counterparty": "Vasco SAS (Vasseur family holding)",
+   "terms": "Buyout offer (OPRA) followed by squeeze-out at EUR9.89 per share in cash (raised from EUR9.69); offer ran 25 May-5 Jun 2026, concert reached 97.90%",
+   "note": "Media 6 is the TARGET of a simplified buyout offer + squeeze-out by its controlling Vasseur-family holding; AMF cleared the offer 21 May 2026 and announced on 9 Jun 2026 that the squeeze-out of the remaining 55,153 shares (2.10% of capital) would take place on 23 Jun 2026, with delisting from Euronext Paris. Missed by the tier-13 corporate-actions screen; found during thesis research and confirmed on a second search. Euronext's own delisting notice not located.",
+   "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ACT/2026/06/FCACT080041_20260609.pdf"
   }
  ],
  "mergers_acquisitions": [
