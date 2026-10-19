@@ -1175,12 +1175,12 @@
   {
    "ticker": "OM:PACT",
    "company": "Proact IT Group AB",
-   "date": "2026-07-11",
-   "counterparty": "Sepago (German IT consultancy)",
+   "date": "2025-10-21",
+   "counterparty": "Consular ApS (Denmark)",
    "role": "acquirer",
-   "terms": "EUR 12m plus up to EUR 4m earn-out",
-   "note": "Proact is acquirer of Sepago (reported 11 Jul 2026, expected to close early July). Also sold its Dutch staffing business to Resultaatgroep (binding, May 2026) and completed Consular (DKK 65m + earn-outs) in late 2025. No bid for Proact found.",
-   "source_url": "https://www.realtid.se/bors-finans/affarer/proact-koper-tyskt-it-konsultbolag/"
+   "terms": "Price not verified (DKK 65m + earn-outs reported by an earlier screen)",
+   "note": "Proact is the ACQUIRER of Danish IT firm Consular ApS (announced 21 Oct 2025, completion confirmed by Proact); small bolt-on, not a bid for Proact. CORRECTION: the earlier screen listed a \"Sepago\" acquisition dated Jul 2026 from an undated article - Sepago was actually bought in June/July 2022 (EUR 12m + EUR 4m earn-out), so it was removed. A sale of the Dutch staffing business to Resultaatgroep (May 2026) appears only in a PitchBook listing and is unverified.",
+   "source_url": "https://www.inderes.dk/releases/proact-has-completed-the-acquisition-of-consular"
   },
   {
    "ticker": "ENXTPA:POMRY",

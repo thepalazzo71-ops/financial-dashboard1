@@ -2258,3 +2258,32 @@ gap computation.
   only annotated via the corporate-actions section. Say if you want a rule for
   excluding companies with completed delistings.
 - Theses for tier-13/14 targets still outstanding (~98 companies).
+
+## Tier 13/14 theses (2026-10-16 to 10-19)
+
+- 97 companies (tier 13+14 targets without a thesis; the delisted ECR and
+  WHATS skipped) researched in three rounds (35 / 35 / 27) at <=5 searches per
+  company; two rounds were interrupted by a session-limit stop and resumed
+  (nothing lost). All 97 passed the field / source-or-gap-marker /
+  duplicate-sentence checks and are merged. **Thesis coverage is now 739 of
+  1,000** (ranks 1-300: 300/300; 301-700: 391/400; 701-1000: 48/300). Still
+  without a thesis in ranks <=700 (they were never in a market-cap tier
+  batch): AIM:JHD, DB:CPX, WSE:APT, BVB:IARV, OM:PROF B, LSE:MER, BVB:SNO,
+  CPSE:SKJE, XTRA:SFQ.
+- Quality caveats written into the entries themselves: many holder tables are
+  aggregator-only (Simply Wall St etc.) or stale (2013-2024); websites not
+  seen in search results are marked "Not confirmed in search results".
+- Corrections found by the thesis agents and applied to
+  `data/corporate_actions.json`: ENXTPA:EDI (Media 6) squeeze-out added (23 Jun
+  2026, confirmed on a second search); WSE:FHB tender call outcome clarified
+  (company bought 914,936 shares; no delisting); **OM:PACT**: the screen's
+  "Sepago, Jul 2026" item was a mis-dated article (Sepago was bought in 2022) -
+  replaced by the verified Consular ApS bolt-on (Oct 2025).
+- Notable flags in the new theses: IDH (Hena ~56.7% after unrecommended
+  mandatory offer), Cateks (SQ Capital concert ~65%, thin float), Ropczyce
+  (shareholder-agreement bloc fell 83.1% -> 63.0%), ADE (value rests on a
+  crypto treasury; one source reports a MiCA authorisation rejection),
+  Pommery (court-approved conciliation protocol, heavy debt), Forterra (still
+  listed per a 12 Oct 2026 buyback notice; no official register check).
+- Not scanned yet: the standing distress-keyword scan over the new red-flag
+  texts (see "distress flags" section) - run before the next review.
