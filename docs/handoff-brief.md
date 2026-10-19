@@ -2317,4 +2317,4 @@ gap computation.
 - Rows now delisted or about to be (PCTN, WHATS, ECR, EDI): still in the
   ranked list, annotated only via corporate actions - open decision for the
   user on an exclusion rule.
-- 150 companies in the Europe pool still have no override (ranks ~800+).
+- 200 companies in the Europe pool still have no override (ranks ~800+; includes WHATS, delisted).
