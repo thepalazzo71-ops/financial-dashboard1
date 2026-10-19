@@ -9,5 +9,14 @@
    "https://eng.lsm.lv/article/economy/business/20.05.2026-latvijas-balzams-still-in-major-financial-difficulty.a647930/",
    "https://www.err.ee/1609942850/riia-palsami-tootja-on-pankroti-aarel"
   ]
+ },
+ "ENXTPA:POMRY": {
+  "level": "warning",
+  "summary": "Operating under a court-approved conciliation protocol (Reims Commercial Court) covering the group and nine subsidiaries; net financial debt about EUR 716-754m (roughly 2.4-2.6x annual revenue); EUR 42.8m of new money from Sept 2026 carries a conciliation privilege and guarantees over vineyard assets; covenants cap shareholder payments and require minimum cash of EUR 2m; financing secured only to June 2027 (possible extension to June 2028); 2025 annual report/AGM postponed and H1 2026 net loss widened. Exclusive talks with Henkell for a majority stake ended without a deal (Aug 2026). No payment default or insolvency proceeding reported.",
+  "asOf": "2026-10-19",
+  "sources": [
+   "https://www.boursorama.com/bourse/actualites/champagne-maison-pommery-n-a-pas-trouve-d-accord-avec-l-allemand-henkell-mais-s-est-refinance-c34ac9c7a717b7bf0798214397c6ca0a",
+   "https://www.maisonpommery.com/wp-content/uploads/2026/08/Communique-05082026-FR.pdf"
+  ]
  }
 }

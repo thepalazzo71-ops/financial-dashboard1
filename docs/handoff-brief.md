@@ -2285,5 +2285,7 @@ gap computation.
   crypto treasury; one source reports a MiCA authorisation rejection),
   Pommery (court-approved conciliation protocol, heavy debt), Forterra (still
   listed per a 12 Oct 2026 buyback notice; no official register check).
-- Not scanned yet: the standing distress-keyword scan over the new red-flag
-  texts (see "distress flags" section) - run before the next review.
+- Distress keyword scan over the 97 new red-flag texts done: one new flag,
+  ENXTPA:POMRY (Pommery) at level "warning" (court-approved conciliation
+  protocol, heavy debt, financing only to Jun 2027; no payment default or
+  insolvency proceeding, so not "severe" - the user can upgrade it).
