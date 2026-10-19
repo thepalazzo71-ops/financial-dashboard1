@@ -2289,3 +2289,32 @@ gap computation.
   ENXTPA:POMRY (Pommery) at level "warning" (court-approved conciliation
   protocol, heavy debt, financing only to Jun 2027; no payment default or
   insolvency proceeding, so not "severe" - the user can upgrade it).
+
+## Tier 15 (Europe) - market caps + corporate-actions screen (2026-10-19)
+
+- **Market caps:** next 50 without an override (ranks 707-798): 49 added
+  (`data/mc_overrides_applied.json` now 800), all ratios 0.6-1.98 vs. Capital
+  IQ (largest: Kinepolis 1.98, Gremi 0.60). ENXTBR:WHATS skipped (delisted
+  July 2026, already recorded). LSE:FORT now has a figure (earlier tier-14
+  attempt had none). Weak spots: several caps computed (price x shares) rather
+  than quoted (BLO, ODL, LBW, BSL, ILYDA, KTJV, PAT, 11B, ICGC); undated
+  (IBG, ISUR, JST, RING, HES, MASI, MPC, PCTN, NEDAP, VDM, Goldplat, Merko);
+  4+ months old (CAI, ECK, IATR, Fintel-sourced one); BSL EUR22.20 vs 27.3
+  conflict; low confidence AmRest, Goldplat, MPC. FX: BdF 16 Oct (part 1),
+  mql5/Bundesbank 8-14 Oct (part 2).
+- **Corporate actions:** 50 screened (62 searches); 17 findings appended
+  (WHATS duplicate skipped). Company-is-target situations: LSE:PCTN Picton
+  (LondonMetric/SREIT scheme effective 10 Sep 2026, trading cancelled ~11 Sep
+  - **delisted**, verified); WBAG:ADKO Addiko (contested RBI vs NLB offers;
+  press accounts conflict, outcome unconfirmed); ENXTPA:ALVDM Voyageurs du
+  Monde (Avantage OPR + squeeze-out at EUR180, held 86.59% already; indicative
+  window 28 Oct-10 Nov, AMF clearance not confirmed - verified); LSE:ICGC
+  Irish Continental (EUR8.00 management buyout, expected Q4 2026); WSE:KVT
+  (PLN9.37 delisting tender Jul 2025, KNF suspended the delisting in May
+  2026); stake deals WSE:GME (56.82% via share swap), MTSE:MPC (BMIT 49%).
+  Acquirer/other items: JST/Hyva, GYLD B, SIRM, EVER, CHRT, FF, KIN; CRI and
+  AURE divestitures; PARKEN strategic review. Coverage 801 screened.
+- Rows now delisted or about to be (PCTN, WHATS, ECR, EDI): still in the
+  ranked list, annotated only via corporate actions - open decision for the
+  user on an exclusion rule.
+- 150 companies in the Europe pool still have no override (ranks ~800+).

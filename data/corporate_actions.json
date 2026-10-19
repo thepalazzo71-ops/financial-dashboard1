@@ -291,6 +291,51 @@
    "terms": "Buyout offer (OPRA) followed by squeeze-out at EUR9.89 per share in cash (raised from EUR9.69); offer ran 25 May-5 Jun 2026, concert reached 97.90%",
    "note": "Media 6 is the TARGET of a simplified buyout offer + squeeze-out by its controlling Vasseur-family holding; AMF cleared the offer 21 May 2026 and announced on 9 Jun 2026 that the squeeze-out of the remaining 55,153 shares (2.10% of capital) would take place on 23 Jun 2026, with delisting from Euronext Paris. Missed by the tier-13 corporate-actions screen; found during thesis research and confirmed on a second search. Euronext's own delisting notice not located.",
    "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ACT/2026/06/FCACT080041_20260609.pdf"
+  },
+  {
+   "ticker": "WBAG:ADKO",
+   "company": "Addiko Bank AG",
+   "date": "2026-04-08",
+   "counterparty": "Raiffeisen Bank International (RBI); competing bidder NLB (Slovenia)",
+   "terms": "RBI voluntary public tender offer announced at EUR 23.05/share, raised to EUR 26.50 (cum dividend 2025) on 13 May 2026; NLB competing offer EUR 29.00/share",
+   "note": "Addiko Bank is the TARGET of a contested takeover. RBI launched a voluntary offer at EUR26.50 per share on 14 May 2026 (acceptance period to 22 Jul; minimum acceptance and regulatory conditions); rival NLB also bid, and press reports give conflicting accounts of the later terms (NLB raised to as much as EUR37 per one source; the board withdrew its backing for RBI; acceptance figures of 50.72% on 29 Jun vs 56.16% of shares covered by the offer differ by source). Final outcome and regulatory approval NOT confirmed - treat the price as deal-driven.",
+   "source_url": "https://www.rbinternational.com/en/investors/news/ir-releases/result-vto.html"
+  },
+  {
+   "ticker": "LSE:PCTN",
+   "company": "Picton Property Income Limited",
+   "date": "2026-07-31",
+   "counterparty": "LondonMetric Property Plc and Schroder Real Estate Investment Trust (SREIT)",
+   "terms": "Per Picton share: 0.190 LondonMetric shares + 0.894 SREIT shares; about GBP 404m; 7.0% premium to 30 Jul 2026 close; scheme of arrangement",
+   "note": "Picton is the TARGET of a recommended all-share offer (0.190 LondonMetric + 0.894 SREIT shares per share, ~GBP404m, 7.0% premium) by LondonMetric and Schroder Real Estate Investment Trust, via a Guernsey scheme of arrangement. Shareholders approved; the scheme became effective 10 Sep 2026, dealings suspended 10 Sep and trading cancelled ~11 Sep 2026 - i.e. the stock is delisted (verified on a second search).",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/londonmetric-property--lmp/recommended-offer-for-picton-property-income/9697083"
+  },
+  {
+   "ticker": "ENXTPA:ALVDM",
+   "company": "Voyageurs du Monde SA",
+   "date": "2026-07-07",
+   "counterparty": "Avantage (controlling holding company of the founders and main investors)",
+   "terms": "Planned tender offer at EUR 180 per share (23.7% premium); EUR 182.52 per convertible bond; to be followed by squeeze-out and delisting if legal thresholds are met",
+   "note": "Announced 7 Jul 2026 (shares +21.7% to EUR 177). Avantage held 62.24% and would reach 86.44% through contributions from institutional investors. Formal AMF filing was reportedly scheduled for early September 2026; filing/completion not confirmed in search. Company is TARGET (take-private/delisting).",
+   "source_url": "https://www.optionfinance.fr/info-financiere-en-continu/d/2026-07-08-voyageurs-du-monde.html"
+  },
+  {
+   "ticker": "LSE:ICGC",
+   "company": "Irish Continental Group plc",
+   "date": "2026-07-24",
+   "counterparty": "Bluefin Bidco (management-led vehicle: CEO Eamonn Rothwell, CFO David Ledwidge, directors Andrew Sheen and Declan Freeman)",
+   "terms": "Recommended cash offer of EUR 8.00 per share (about EUR 1.2bn); premium 25.0%-34.8% to various average prices; terms stated as final, will not be increased; Irish High Court scheme of arrangement",
+   "note": "Management buyout take-private announced 24 Jul 2026, recommended by the independent board; bidders' directors hold about 23.7%. Completion expected Q4 2026, after which shares are cancelled from Euronext Dublin and LSE. A 5 Oct 2026 announcement concerned the court hearing date and satisfaction of an NSIA condition. Pending. Company is TARGET.",
+   "source_url": "https://www.investegate.co.uk/announcement/gnw/irish-continental-group-units-comp-cdi---icgc/recommended-cash-offer-for-irish-continental-/9687462"
+  },
+  {
+   "ticker": "WSE:KVT",
+   "company": "Krynica Vitamin S.A.",
+   "date": "2025-07-01",
+   "counterparty": "Krynica Vitamin (own-share purchase) jointly with Zinat (major shareholder)",
+   "terms": "Tender offer for 1,618,714 shares at PLN 9.37 per share (raised after KNF demanded inclusion of 3-month average market price; initial notice cited PLN 9.07); aim 100% and delisting from GPW",
+   "note": "Delisting-oriented tender offer announced around 1 Jul 2025; take-up was minimal (1,329 shares, about 0.011%). A court suspended the AGM resolution on the buyback; in May 2026 KNF suspended its proceeding on permission to withdraw shares from the regulated market. Delisting not completed/status unresolved. Company is TARGET.",
+   "source_url": "https://strefainwestorow.pl/wiadomosci/20250701/krynica-vitamin-i-zinat-oglosily-wezwanie-na-sprzedaz-akcji-po-937-zlszt"
   }
  ],
  "mergers_acquisitions": [
@@ -1201,6 +1246,96 @@
    "terms": "31.4% block bought at EUR 0.94 per share (~38% premium); Virgata now 37.615%",
    "note": "Major shareholder change: Virgata raised its stake to 37.615% buying Mapfre's 31.4% (one report dates the block trade 18 December, year not stated; 2025 inferred). No mandatory offer found. Also a EUR buyback from Aug 2026 and a Sliema childcare property purchase (21 Jul 2026). Company is not itself bid for.",
    "source_url": "https://maltaceos.mt/plaza-shopping-centre-investment-signals-long-term-commitment-to-malta-says-virgata-founder/"
+  },
+  {
+   "ticker": "XTRA:JST",
+   "company": "JOST Werke SE",
+   "date": "2025-02-01",
+   "counterparty": "Hyva Group",
+   "role": "acquirer",
+   "terms": "Acquisition of Hyva Group, reported at about USD 398 million",
+   "note": "JOST closed the acquisition of Hyva (hydraulic solutions), consolidated from 1 Feb 2025 after unconditional antitrust approval. JOST is ACQUIRER. Follow-on divestments: Hyva cranes business sold to Mutares (completed 2 Dec 2025); Indian tipper body business sold to Belrise Industries for about EUR 5m (announced Aug 2026, completion expected Q4 2026).",
+   "source_url": "https://themachinemaker.com/news/jost-werke-se-acquires-hyva-for-usd-398-million-to-expand-global-reach-and-strengthen-operations-in-india/"
+  },
+  {
+   "ticker": "CPSE:GYLD B",
+   "company": "Gyldendal A/S",
+   "date": "2026-03-01",
+   "counterparty": "Tukan Forlag AB (Tukanen AB) and Bokforlaget Nona AB (Sweden)",
+   "role": "acquirer",
+   "terms": "80% of the shares for about SEK 200m (about DKK 140m) on a cash and debt-free basis; put/call options over the remaining 20%",
+   "note": "Gyldendal is ACQUIRER of the Swedish publishers; completion expected Q2 2026 subject to Swedish regulatory approval (completion not confirmed in search). Exact announcement day not confirmed (March 2026). Gyldendal also made several small Danish publishing acquisitions in 2025 (Strandberg Publishing, Skoledu, Gutkind children's list, Forlaget Alvilda).",
+   "source_url": "https://www.inderes.dk/en/releases/gyldendal-kober-svensk-forlag-og-opjusterer-sine-forventninger-til-2026"
+  },
+  {
+   "ticker": "BUL:SIRM",
+   "company": "Sirma Group Holding AD",
+   "date": "2026-06-05",
+   "counterparty": "DynamiXRM SRL (Romania)",
+   "role": "acquirer",
+   "terms": "Not disclosed in search results",
+   "note": "Sirma subsidiary Roweb Development SA (Romania) signed the contract to acquire DynamiXRM SRL on 5 Jun 2026 to enter the Microsoft Dynamics ecosystem; legal merger into Roweb expected within 2026. Small bolt-on; Sirma is ACQUIRER (via subsidiary). Part of 2023-2026 acquisition-led growth strategy.",
+   "source_url": "https://live.deutsche-boerse.com/news/EQS-News-Sirma-Acquires-Romanian-IT-Company-DynamiXRM-c0e58a0c-d57f-452c-b678-815f41939f50"
+  },
+  {
+   "ticker": "WSE:GME",
+   "company": "Gremi Media S.A.",
+   "date": "2025-11-21",
+   "counterparty": "PTWP (acquirer) / Pluralis B.V. (seller of stake)",
+   "role": "target",
+   "terms": "PTWP acquires 1,017,115 Gremi Media shares (56.82%) from Pluralis in exchange for 369,590 new PTWP series C shares issued at PLN 122.43 (about PLN 45.25m)",
+   "note": "Investment agreement signed 21 Nov 2025; PTWP (controlled by Wojciech Kuspik) takes a majority stake in Gremi Media (publisher of Rzeczpospolita, Parkiet) via share swap; Pluralis gets about 23% of PTWP. Parkiet reports PTWP finalized the transaction. Gremi Media is the TARGET of a controlling-stake change; no mandatory tender offer confirmed in results.",
+   "source_url": "https://www.parkiet.com/firmy/art43531341-ptwp-sfinalizowala-transakcje-z-pluralis-b-v-i-obejmuje-wiekszosciowy-pakiet-akcji-gremi-media"
+  },
+  {
+   "ticker": "MTSE:MPC",
+   "company": "Malta Properties Company p.l.c.",
+   "date": "2025-10-30",
+   "counterparty": "BMIT Technologies plc (buyer); Emirates International Telecommunications (Malta) Ltd (seller)",
+   "role": "target",
+   "terms": "49% stake (49,642,139 shares) at EUR 0.51 per share, about EUR 25.3m",
+   "note": "BMIT agreed (July 2025) to buy EITML's 49% stake in MPC; completed 30 Oct 2025. MPC is the TARGET of a minority/significant stake purchase, not a full takeover; no offer for the remaining shares found.",
+   "source_url": "https://www.go.com.mt/news/bmit-technologies-acquires-49-stake-in-malta-properties-company-plc/"
+  },
+  {
+   "ticker": "BVB:EVER",
+   "company": "Evergent Investments SA",
+   "date": "2026-03-05",
+   "counterparty": "North Lake Development SA (50% stake, via subsidiary Ever Imo)",
+   "role": "acquirer",
+   "terms": "50% of share capital and voting rights; price not stated in search results",
+   "note": "Evergent (via Ever Imo) acquired 50% of North Lake Development SA, gaining indirect control (March 2026 current report). Also ran a public buy-back tender offer to its own shareholders at RON 1.53/share (16-29 Jul 2025, ASF decision 640/2025) and has a 2026 buyback of up to 43.3m shares (max price raised to RON 3) plus cancellation of 26.7m treasury shares; bought 5.11% of Agroserv Mariuta at RON 60/share. Evergent is ACQUIRER/issuer, not a target.",
+   "source_url": "https://www.bvb.ro/infocont/infocont26/EVER_20260306142647_20260305---RC-Achizitie-North-Lake---en.pdf"
+  },
+  {
+   "ticker": "AIM:CHRT",
+   "company": "Cohort plc",
+   "date": "2025-01-31",
+   "counterparty": "EM Solutions Pty Ltd (Australia), sold by Electro Optic Systems",
+   "role": "acquirer",
+   "terms": "A$144.0 million (about GBP 75m); funded in part by a GBP 40m raise",
+   "note": "Cohort completed the acquisition of EM Solutions (naval communications) on 31 Jan 2025 and is ACQUIRER. Also bought ITS for GBP 3.0m (31 May 2024) and sold SEA's Transport undertaking for over GBP 8m (30 Jun 2025).",
+   "source_url": "https://www.morningstar.co.uk/uk/news/AN_1738313326307806400/in-brief-cohort-completes-acquisition-of-australia-based-em-solutions.aspx"
+  },
+  {
+   "ticker": "BIT:FF",
+   "company": "Fine Foods & Pharmaceuticals N.T.M. S.p.A.",
+   "date": "2026-04-17",
+   "counterparty": "Alfasigma (seller of Sofar)",
+   "role": "acquirer",
+   "terms": "100% of Sofar for EUR 23.4m cash (enterprise value EUR 27m), funded by cash and bank debt",
+   "note": "Binding agreement signed 17 Apr 2026; acquisition completed 12 Jun 2026. Fine Foods is ACQUIRER; Sofar had 2025 revenue EUR 31.8m, EBITDA EUR 8.9m; long-term contract manufacturing agreement with Alfasigma at the Trezzano Rosa site.",
+   "source_url": "https://www.teleborsa.it/News/2026/06/12/fine-foods-perfezionata-l-acquisizione-del-100percent-di-sofar-85.html"
+  },
+  {
+   "ticker": "ENXTBR:KIN",
+   "company": "Kinepolis Group NV",
+   "date": "2025-11-01",
+   "counterparty": "Emagine Entertainment (US cinema chain)",
+   "role": "acquirer",
+   "terms": "USD 105 million for 100% of operations plus earn-out of up to USD 15m; funded by an incremental EUR 100m term loan",
+   "note": "Agreement announced in early November 2025 (exact day not confirmed; date field approximate) to buy 14 US theatres (177 screens); closing was expected by end-2025 (not confirmed in results). Kinepolis is ACQUIRER. Second deal: agreed June 2026 to buy 13 Showcase Cinemas (US) from Harbor Lights Entertainment for about USD 30m EV, reported completed around 11 Sep 2026.",
+   "source_url": "https://www.boxofficepro.com/kinepolis-signs-agreement-to-acquire-the-operations-of-u-s-cinema-chain-emagine-entertainment/"
   }
  ],
  "spinoffs": [
@@ -1551,6 +1686,36 @@
    "terms": "Public buyback offer for up to 1,291,704 shares (~10% of capital); price raised from EUR 16.50 to EUR 17.80 per share on 22 Jun 2026",
    "note": "Company launched a voluntary public share repurchase offer (acceptance period 12 Jun - 3 Jul 2026). 9.36m shares were tendered; about 1.29m shares (~10%) bought at ~6% allotment, payment 16 Jul 2026. Completed. Not tied to delisting and no third-party bidder found; may support the share price.",
    "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-aumann-erhoeht-erwerbspreis-des-aktienrueckkaufangebots-auf-1780-eur-je-aktie-deutsch-532963.html"
+  },
+  {
+   "ticker": "ENXTPA:CRI",
+   "company": "Compagnie Chargeurs Invest",
+   "date": "2026-01-26",
+   "type": "divestiture",
+   "counterparty": "KPS Capital Partners",
+   "terms": "Sale of Novacel: about EUR 230m cash consideration, with about EUR 30m reinvested for a 25% minority stake; closed 19 May 2026 with about EUR 225m cash proceeds before reinvestment",
+   "note": "Company is SELLER of its Novacel division (control sold to KPS; closed 19 May 2026). In July 2026 it said it intends a share buyback tender offer (OPRA) at EUR 14 per share (about EUR 36.25m, expected early 2027) instead of an exceptional dividend; reference NAV cited at EUR 24.2/share, so price may be driven by capital-return terms. OPRA timing not yet confirmed by a primary source.",
+   "source_url": "https://bourse.fortuneo.fr/actualites/chargeurs-invest-veut-redistribuer-le-produit-de-la-cession-de-novacel-le-titre-s-envole-1576158"
+  },
+  {
+   "ticker": "ENXTPA:AURE",
+   "company": "Aurea SA",
+   "date": "2025-07-01",
+   "type": "divestiture",
+   "counterparty": "Undisclosed in search results (buyer of M Lego)",
+   "terms": "Not disclosed in search results; net financial debt fell to EUR 9.9m from EUR 22.4m at end-2024 following the sale",
+   "note": "Aurea sold its M Lego business in July 2025 (exclusive negotiations preceded it); exact day in July not confirmed. Company is SELLER of a division, not a takeover target. Management says it may pursue external growth or strategic disposals; no tender offer found.",
+   "source_url": "https://www.boursorama.com/bourse/actualites-amp/aurea-les-taxes-sur-l-aluminium-et-les-provisions-pesent-sur-2025-b5d190a68d888aa6257e53baf45be801"
+  },
+  {
+   "ticker": "CPSE:PARKEN",
+   "company": "PARKEN Sport & Entertainment A/S",
+   "date": "2026-10-13",
+   "type": "strategic_review",
+   "counterparty": "None named; Tifosy Capital & Advisory engaged as exclusive financial adviser",
+   "terms": "No price; strategic review of full or partial sale of F.C. Kobenhavn P/S and possibly PARKEN Ejendomme A/S (stadium and office towers)",
+   "note": "Board announced on 13 Oct 2026 a strategic review of the football activities including possible full or partial divestment of FC Copenhagen; shares rose up to 14.6%. No buyer, bid or agreed deal; company says no certainty a sale will occur. In Oct 2024 media reported investors in talks at DKK 140-150/share, unconfirmed outcome. Pending review, company would be SELLER.",
+   "source_url": "https://www.insideworldfootball.com/2026/10/15/parken-sport-and-entertainment-eyeing-fc-copenhagen-sale/"
   }
  ]
 }
