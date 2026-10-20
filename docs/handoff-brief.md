@@ -2399,3 +2399,33 @@ gap computation.
   Coverage: 951 screened.
 - 49 companies in the Europe pool still have no override (ranks ~950+; includes
   WHATS, TET and S9I, which are delisted and deliberately left alone).
+
+## Tier 19 (Europe) - final market-cap + corporate-actions batch (2026-10-20)
+
+- **Europe pool is now fully covered**: market-cap overrides on 997 of 1,000
+  companies (only the three delisted names WHATS, TET and S9I keep their
+  Capital IQ cap) and all 1,000 screened for corporate actions.
+- **Market caps (ranks 947-1000):** 49 added, ratios 0.68-1.54. Weak spots:
+  most prices 2-4 months old (only LGT 1 Oct, INTA 5 Oct, CONTX 8 Oct, VLE 21
+  Sep, TIV 11 Sep recent); LIB ~Feb 2026, DOMIK Mar 2026, Camellia/Sif/
+  Wielton/Conect >4 months; undated LAY (nominal price, no trades), LRH, LUS1
+  (sources EUR138-188m), PZS, Nordecon, Mostostal Warszawa, Tamex, Prefab, SIT,
+  Foraj Sonde (volatile); ED4 uses ~37.5m shares (25m + 12.5m new, confirmed by
+  the Jun 2026 ad hoc); share-count conflicts: WJG, CONTX (inferred), VLE
+  (treasury shares), KSL (A/B), Saga Furs (3.54m vs ~2.7m), Suominen (135.4m
+  after Jul 2026 rights issue), FACC (EUR735-797m), Nexity (EUR394m used vs
+  PitchBook USD504m).
+- **Corporate actions:** 49 screened (65 searches); 17 findings appended.
+  Target: ENXTPA:SACI Fiducial Office Solutions (Fiducial SC 99.8% holder,
+  squeeze-out offer EUR36, info note 8 Oct 2026, delisting indicatively week of
+  26 Oct - verified). Stake / control events: BME:TLGO (Sidenor-led 29.76%),
+  BVB:PREH (Celco 65%), BVB:INTA, ZGSE:LRH (holder reviewing sale), ENXTLS:SLBEN
+  (minority sale reportedly collapsed), XTRA:ED4 EDAG (ATON to 83.1% via EUR75m
+  raise - verified, no delisting). Other: CSE:LUI trading suspended Aug 2025,
+  WSE:FEE strategic review, SUY1V rights issue, WLT subscription, JSW and CAM
+  disposals; acquirers SVIK, SIT, LUS1, KSL. Coverage: 1,000 screened.
+- **Open items** (unchanged): exclusion rule for delisted rows (PCTN, WHATS,
+  ECR, EDI, TET, S9I; pending ELMRA, ALVDM, SACI, GHH, BAHN B, PSAN...);
+  theses for the 261 Europe companies without one (tiers 15-19 plus older
+  gaps); US refresh / GM gaps; Sopharma Trading and Flexopack GM; Spectra
+  Systems US thesis description.

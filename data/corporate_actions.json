@@ -471,6 +471,15 @@
    "terms": "613,567 shares (~91.75%) at EUR 68.8 per share (>EUR 42m); mandatory takeover offer for remaining shares to follow",
    "note": "Company is the TARGET. Share purchase agreements signed 4 May 2026; completion subject to CNB, ECB, FDI-screening and competition approvals (Serbia, North Macedonia, Montenegro). AikGroup must launch a mandatory offer after closing. Closing and offer launch not confirmed in results (pending).",
    "source_url": "https://www.tportal.hr/biznis/clanak/aikgroup-kupuje-podravsku-banku-20260504"
+  },
+  {
+   "ticker": "ENXTPA:SACI",
+   "company": "Fiducial Office Solutions",
+   "date": "2026-07-08",
+   "counterparty": "Fiducial SC (controlling shareholder, 99.80%)",
+   "terms": "EUR 36.00 per share, cash; offer covers remaining 4,302 shares (0.20%)",
+   "note": "Fiducial Office Solutions is the TARGET of a simplified buyout offer (OPRO) followed by a squeeze-out, filed 8 Jul 2026 by its 99.80% holder Fiducial SC at EUR36 cash (4,302 remaining shares = 0.20% of capital). The information note was made available 8 Oct 2026; an indicative timetable shows the offer running ~12-23 Oct 2026 and delisting from Euronext Paris and the Luxembourg exchange the week of 26 Oct 2026 (indicative; the AMF fixes the calendar). Effective opening and delisting date not yet confirmed (verified on a second search).",
+   "source_url": "https://www.abcbourse.com/marches/fiducial-sc-lance-une-offre-publique-de-retrait-sur-fiducial-office-solutions-a_699443"
   }
  ],
  "mergers_acquisitions": [
@@ -1751,6 +1760,46 @@
    "terms": "Sale of 100% of GA Polyolefins for PLN 1.183bn (cash-free/debt-free); recapitalisation via up to 33.7m Series E shares to the State Treasury then up to 40.5m more via authorised capital (earlier plan up to PLN 1.2bn, State stake up to 50%)",
    "note": "Grupa Azoty is SELLER/restructuring: preliminary agreement signed 31 Mar 2026, EGM approved capital changes 1 Apr 2026, GA Polyolefins in restructuring proceedings, banks accelerated facilities. Closing of sale and share issue not confirmed as of Q2 2026. Likely dilution/state control effects; no takeover bid found.",
    "source_url": "https://quartr.com/events/grupa-azoty-sa-att-q2-2026_ojVKoPnf"
+  },
+  {
+   "ticker": "XTRA:LUS1",
+   "company": "Lang & Schwarz Aktiengesellschaft",
+   "date": "2026-08-26",
+   "counterparty": "P3 group (seller of its stake in P3 finance GmbH)",
+   "role": "acquirer",
+   "terms": "n/a (not disclosed in source)",
+   "note": "Lang & Schwarz announced full takeover of P3 finance GmbH (to be renamed Lang & Schwarz Market Technologies GmbH) after P3 group sold its shares; reported on AGM day (date approximate, source undated). Small bolt-on; company is ACQUIRER. Separately, Trade Republic exclusive partnership ended early Jul 2026 with sharp volume drop.",
+   "source_url": "https://trading-treff.de/wirtschaft/lang-schwarz-aktie-p3-finance-vollstaendig-uebernommen"
+  },
+  {
+   "ticker": "OM:SVIK",
+   "company": "Studsvik AB",
+   "date": "2026-03-09",
+   "counterparty": "K\u00e4rnfull Next AB (Swedish SMR project developer)",
+   "role": "acquirer",
+   "terms": "EV about EUR 6.5m: EUR 3m cash + EUR 3.5m new Studsvik shares at closing; up to EUR 2m further shares to 2029 plus earn-outs up to EUR 14m",
+   "note": "Studsvik announced acquisition of K\u00e4rnfull Next on 9 Mar 2026 to expand into SMR project development; completed 11 May 2026. Studsvik is ACQUIRER. Also acquired BlackStarTech (via Studsvik Inc.) in 2025.",
+   "source_url": "https://energynews.pro/studsvik-acquiert-le-developpeur-suedois-de-smr-karnfull-next-pour-6-5-millions-d-euros"
+  },
+  {
+   "ticker": "HLSE:KSL",
+   "company": "Keskisuomalainen Oyj",
+   "date": "2026-04-01",
+   "counterparty": "Arena Interactive",
+   "role": "acquirer",
+   "terms": "n/a",
+   "note": "Minor bolt-on: company bought Arena Interactive in April 2026 (exact day not shown) to strengthen digital products; also sold Kuopio property for EUR 4.0m and reinvested in KPY Novapolis (~3.5% minority stake). Company is ACQUIRER; no bid or change of control.",
+   "source_url": "https://www.inderes.se/analyst-comments/keskisuomalainens-fastighetsarrangemang-har-slutforts"
+  },
+  {
+   "ticker": "BIT:SIT",
+   "company": "SIT S.p.A.",
+   "date": "2026-02-18",
+   "counterparty": "Conthidra SL (Spanish metering/submetering distributor)",
+   "role": "acquirer",
+   "terms": "Remaining 75.10% bought (SIT already held 24.90%); price undisclosed; Conthidra 2025 turnover about EUR 10m, EBITDA EUR 0.6m",
+   "note": "SIT agreed in Feb 2026 to take Conthidra to 100%; closing expected Q2 2026 and the Q1 2026 release (7 May 2026) refers to the acquisition, but no separate closing notice found. SIT is ACQUIRER; small bolt-on, no impact on net financial position.",
+   "source_url": "https://en.ilsole24ore.com/art/sit-salt-100percent-spanish-conthidra-AIlYJ9UB"
   }
  ],
  "spinoffs": [
@@ -2241,6 +2290,126 @@
    "terms": "No terms; options include withdrawal of shares from the regulated market or more capital for M&A/organic growth",
    "note": "Selvita started a strategic options review on 21 May 2026 (ESPI 16/2026) that could end in a delisting transaction; no decision, bidder or tender offer yet. Strefa Inwestorow suggests finalisation may only come in 2027. Possible TARGET/delisting situation; a deal-price effect is possible.",
    "source_url": "https://www.bankier.pl/wiadomosc/SELVITA-S-A-Rozpoczecie-przegladu-opcji-strategicznych-Commencement-of-a-Strategic-Options-Review-9136769.html"
+  },
+  {
+   "ticker": "XTRA:ED4",
+   "company": "EDAG Engineering Group AG",
+   "date": "2026-06-10",
+   "type": "other",
+   "counterparty": "ATON Austria Holding GmbH (controlling shareholder)",
+   "terms": "12,500,000 new shares at EUR 4.00 (34.23% premium to Xetra close of 10 Jun 2026), EUR 50m gross; plus EUR 25m mandatory convertible loan (6.25m shares at EUR 4.00); total EUR 75m",
+   "note": "EDAG's controlling holder ATON Austria Holding subscribes to a EUR50m cash capital increase (12.5m new shares at EUR4.00, a 34.23% premium to the 10 Jun 2026 Xetra close; existing holders' subscription rights excluded) plus a EUR25m mandatory convertible loan, lifting its stake from 74.66% to 83.11% (85.52% after full conversion). No tender offer, squeeze-out or delisting reported (verified on a second search). Share count after the increase is ~37.5m.",
+   "source_url": "https://www.onvista.de/news/2026/06-10-eqs-adhoc-edag-engineering-group-ag-verwaltungsrat-beschliesst-kapitalmassnahmen-zur-staerkung-der-kapitalbasis-0-37-26520755"
+  },
+  {
+   "ticker": "CSE:LUI",
+   "company": "Louis plc",
+   "date": "2025-08-12",
+   "type": "trading_suspension",
+   "counterparty": "Louis Group of Companies (internal)",
+   "terms": "n/a",
+   "note": "Cyprus Stock Exchange suspended trading in Louis plc shares (max two months to 13 Oct 2025) following an 12 Aug 2025 company announcement of a planned corporate reorganisation of the Louis Group. Whether trading resumed and the final terms of the reorganisation are not confirmed in sources found. Not a takeover; H1 2026 net loss widened to EUR 18.7m.",
+   "source_url": "https://cyprus-mail.com/2025/09/03/louis-group-shares-halted-amid-planned-corporate-restructuring"
+  },
+  {
+   "ticker": "ZGSE:LRH",
+   "company": "Liburnia Riviera Hoteli d.d.",
+   "date": "2025-06-30",
+   "type": "controlling_stake_sale",
+   "counterparty": "Gitone Adriatic (majority shareholder, ~71.24%)",
+   "terms": "n/a (no price disclosed)",
+   "note": "On 30 Jun 2025 LRH notified that majority holder Gitone Adriatic (~71.24%) is reviewing its investment and a potential sale of its controlling stake; ZSE briefly placed LRH in the observation segment (removed 4 Jul 2025). No buyer, bid or completion found as of Oct 2026; status unclear. LRH is the target of a potential change of control (stake sale, not yet a tender offer).",
+   "source_url": "https://eho.zse.hr/en/observation-segment/view/1578"
+  },
+  {
+   "ticker": "BVB:INTA",
+   "company": "S.C. Independenta S.A. (Independenta Sibiu)",
+   "date": "2026-10-06",
+   "type": "controlling_stake_sale",
+   "counterparty": "Transilvania Constructii (buyer); seller Transilvania Investments Alliance (TRANSI)",
+   "terms": "Majority holdings in Independenta Sibiu and Mecanica Codlea valued at ~RON 62m on exchange (combined)",
+   "note": "TRANSI reportedly signed a contract (reported 6 Oct 2026) to sell its majority stake in Independenta to Transilvania Constructii, under exit strategy approved 7 Oct 2025. Controlling-stake sale; closing status and any mandatory-bid implications unconfirmed. Independenta is the target (change of control).",
+   "source_url": "https://www.orange.ro/info/news/zf/article/fondul-investitii-transilvania-investments-vandut-pachetele-majoritare/3000524"
+  },
+  {
+   "ticker": "WSE:FEE",
+   "company": "Feerum S.A.",
+   "date": "2026-06-22",
+   "type": "strategic_review",
+   "counterparty": "n/a (strategic review; Samcrete Silos LLC bought Feerum Egypt stake)",
+   "terms": "Feerum Egypt 50% stake sold for EGP 12.5m (~PLN 0.94m) on 9 Aug 2026",
+   "note": "On 22 Jun 2026 the management board began a review of strategic options to maximise shareholder value (asset sales/acquisitions, JV, financial or strategic investor, or transactions changing shareholder/group structure); no talks or chosen option at that time. Separately sold its 50% stake in Feerum Egypt on 9 Aug 2026. Outcome of the review unknown.",
+   "source_url": "https://www.bankier.pl/wiadomosc/FEERUM-S-A-Informacja-o-rozpoczeciu-przegladu-opcji-strategicznych-9155198.html"
+  },
+  {
+   "ticker": "BME:TLGO",
+   "company": "Talgo, S.A.",
+   "date": "2025-07-24",
+   "type": "other",
+   "counterparty": "Sidenor-led consortium (Sidenor/Clerbil, Basque Government, BBK, Vital) and SEPI",
+   "terms": "Consortium bought 29.76% from Pegaso at EUR 4.25/share (~EUR 156m); new shares: 10,588,235 issued to consortium/SEPI (~EUR 150m total incl. SEPI EUR 45m for ~7.8% plus EUR 30m debt)",
+   "note": "Controlling-stake change: Sidenor-led consortium bought Pegaso 29.76% stake and, with SEPI, subscribed a capital increase (EGM 12 Dec 2025). Earlier Magyar Vagon takeover bid was blocked by Spanish government on national-security grounds. Whether a mandatory OPA arises or 2026 status is unconfirmed. Talgo is TARGET (not delisted).",
+   "source_url": "https://www.elindependiente.com/economia/2025/07/24/la-sepi-inyectara-75-millones-en-talgo-y-se-hara-con-una-participacion-del-78/"
+  },
+  {
+   "ticker": "AIM:CAM",
+   "company": "Camellia Plc",
+   "date": "2025-03-13",
+   "type": "divestiture",
+   "counterparty": "Buyer of Chulsa Tea Estate (via subsidiary Goodricke)",
+   "terms": "Chulsa Tea Estate approx GBP 1.7m (INR 181m)",
+   "note": "Divestiture of non-core tea estate by Indian subsidiary Goodricke (RNS 13 Mar 2025); also non-binding MoU to sell Leesh River estate, and headline of a tender offer up to GBP 19m (Apr/May 2025, terms unverified). Earlier BF&M stake sale (USD 100m) dates from 2023-24. Small, not a change of control.",
+   "source_url": "https://www.ticker.app/lse/CAM/rns/2025-03-13/Disposal/4408A"
+  },
+  {
+   "ticker": "ENXTLS:SLBEN",
+   "company": "Sport Lisboa e Benfica - Futebol, SAD",
+   "date": "2026-04-27",
+   "type": "controlling_stake_sale",
+   "counterparty": "Entrepreneur Equity Partners (US fund) / sellers Jose Antonio dos Santos and Grupo Valouro",
+   "terms": "16.38% stake (3,767,400 shares); sellers wanted about EUR 12/share",
+   "note": "US fund agreed to buy 16.38% of Benfica SAD; the club invoked its statutes (Art. 13) to block the transfer and reports (June 2026) say the deal fell through; Sept 2026 the club said it is open to buying the stake itself at market prices. Minority-stake transaction, not a takeover; Benfica holds about 63.7%. Final status unclear.",
+   "source_url": "https://econews.pt/2026/04/27/us-fund-buys-16-38-stake-in-benfica-sad/"
+  },
+  {
+   "ticker": "BVB:PREH",
+   "company": "Prefab S.A.",
+   "date": "2025-09-02",
+   "type": "other",
+   "counterparty": "Celco SA (Constanta; Dusu brothers) buying from Petre MiLut and Andrei Carol Stieber",
+   "terms": "Celco bought 52% (Milut) + 13% (Stieber) of shares; deal worth about RON 65m",
+   "note": "Controlling-stake sale reported 2 Sep 2025: Celco took control of Prefab Bucuresti. No tender offer or delisting reported in sources found (possible mandatory-bid implications not confirmed). Earlier 2024-25 plans to absorb Romerica International and Prefab Invest; completion unconfirmed. Prefab is TARGET of the change of control.",
+   "source_url": "https://www.zf.ro/burse-fonduri-mutuale/bursa-celco-constanta-preia-controlul-prefab-bucuresti-intr-o-22893380"
+  },
+  {
+   "ticker": "HLSE:SUY1V",
+   "company": "Suominen Oyj",
+   "date": "2026-06-08",
+   "type": "rights_issue",
+   "counterparty": "Ahlstrom Capital, Etola Group, Etra Invest (main shareholders, ~49%, subscription commitments/underwriting)",
+   "terms": "Fully underwritten rights issue of about EUR 28m; subscription price EUR 0.36 per new share (about 45.1% discount to TERP); up to 77,121,272 new shares",
+   "note": "Board resolved the rights issue on 8 Jun 2026 to fund the Full Potential Program and strengthen the capital structure; subscription period ended 29 Jun 2026, reported oversubscribed per adviser. Heavily dilutive (share count from ~58m to up to ~135m) and the share price is driven by rights-issue terms. No takeover or delisting.",
+   "source_url": "https://www.inderes.fi/en/releases/inside-information-the-board-of-directors-of-suominen-corporation-has-resolved-on-a-fully-underwritten-rights-issue-of-approximately-eur-28-million-and-publishes-the-terms-and-conditions-of-the-rights-issue"
+  },
+  {
+   "ticker": "WSE:WLT",
+   "company": "Wielton S.A.",
+   "date": "2026-04-07",
+   "type": "equity_subscription",
+   "counterparty": "MP Inwestors (Luxembourg)",
+   "terms": "5,567,634 series H shares at PLN 5.40 each, about PLN 30m, private subscription",
+   "note": "Capital increase subscribed by MP Inwestors under EGM resolution of 7 Apr 2026; registered effective 10 Jul 2026 and series H admitted to WSE trading around 24 Jul 2026. Strategic equity injection, dilutive; no takeover bid reported. Whether MP Inwestors gains a controlling position is not stated in the sources found.",
+   "source_url": "https://www.parkiet.com/komunikaty-espi/art44115651-wielton-spolka-akcyjna-zawarcie-umowy-objecia-akcji-serii-h-wielton-s-a"
+  },
+  {
+   "ticker": "WSE:JSW",
+   "company": "Jastrzebska Spolka Weglowa S.A.",
+   "date": "2026-03-09",
+   "type": "divestiture",
+   "counterparty": "Agencja Rozwoju Przemyslu (ARP, state agency)",
+   "terms": "Preliminary agreement to sell 95.81% of PBSz and 59.39% of JZR; value above PLN 1bn; completion deadline moved from 30 Jun to 31 Jul 2026",
+   "note": "JSW signed a preliminary agreement on 9 Mar 2026 to sell subsidiaries Przedsiebiorstwo Budowy Szybow and Jastrzebskie Zaklady Remontowe to ARP, as part of a 2026-2035 Recovery Programme (workforce cut to under 16,000; PLN 850m ARP-backed loan approved 8 Jun 2026; further asset sales considered). Group net loss PLN 6.25bn in 2025. Completion status after 31 Jul 2026 not confirmed. JSW is SELLER, not a takeover target.",
+   "source_url": "https://xyz.pl/dzieje-sie/jsw-przesuwa-termin-sprzedazy-spolek-miliard-zlotych-ale-pozniej-2381"
   }
  ]
 }
