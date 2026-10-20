@@ -2370,3 +2370,32 @@ gap computation.
   PEH (subsidiary squeeze-out), CCR, ORIOLA, FIH, ABJC, HAS, EYDAP.
   Coverage: 901 screened.
 - 99 companies in the Europe pool still have no override (ranks ~900+).
+
+## Tier 18 (Europe) - market caps + corporate-actions screen (2026-10-20)
+
+- **Market caps:** next 50 without an override (ranks 897-951): all 50 added
+  (`data/mc_overrides_applied.json` now 948; ratios 0.75-2.80; GR6 Gradus 2.80
+  is a genuine rally). Caveats: FX = Banque de France 15-16 Oct 2026 crosses;
+  PDBA price dated 5 Dec 2025 (AikGroup deal implies ~EUR46m); CTG, PVT, GFM,
+  ADPL ~4 months old; undated AVT B (low confidence, SEK171-282m), SKMO, KBG,
+  JDW, Foamit, BayWa (low confidence), Toplofikatsia-Ruse, Viktor Lenac,
+  Kompap; Grupa Azoty may exclude a planned 33.7m-share issue (+34% if
+  registered); RS2 ordinary shares only; computed (price x shares) values for
+  ERB, GR6, TOR, GBT, ATRAV, NAE; share-count disagreements for Passus, Lenac,
+  Allerthal.
+- **Corporate actions:** 50 screened (61 searches); 21 findings appended.
+  Company-is-target (second-search verified where noted): XTRA:PSAN PSI
+  Software (Warburg Pincus EUR45 offer, >82% control Jan 2026, delisting
+  intended; the screen's "delisting offer Sep 2026" NOT confirmed); DB:CTNK
+  centrotherm (Ardian control closed 18 Dec 2025, squeeze-out requested 17
+  Dec 2025); ENXTPA:NAE North Atlantic Energies/Esso SAF (82.89% bought at
+  EUR26.19, simplified offer EUR28.93, squeeze-out intended); BUSE:RABA (4iG
+  74.34%, HUF1,789 offer no acceptances, second bid HUF3,425 closed 27 Apr
+  2026, competition approval pending); ZGSE:PDBA (AikGroup 91.75% at EUR68.8,
+  mandatory offer to follow); SWX:APGN (NZZ to 45%); WSE:SLV strategic review;
+  WSE:TOR State stake sale pending. Others: acquirers GR6, MCAP, REVOIL,
+  FOAMIT, BRK; ATT/BYW/GBT restructuring-type items; PANNERGY/PAS buybacks;
+  POSTI state IPO sale. Three pre-2025 events were dropped by the agent.
+  Coverage: 951 screened.
+- 49 companies in the Europe pool still have no override (ranks ~950+; includes
+  WHATS, TET and S9I, which are delisted and deliberately left alone).

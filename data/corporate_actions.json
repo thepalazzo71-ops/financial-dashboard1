@@ -426,6 +426,51 @@
    "terms": "Recommended cash offer ~1,230p per share (+4.9p interim dividend; some sources say 1,234.9p) valuing equity at ~GBP 345.6m, EV ~GBP 400.5m; scheme of arrangement",
    "note": "Gooch & Housego is TARGET of a board-recommended takeover announced 16 Jul 2026 (after earlier rejected approaches); completion expected Q4 2026 subject to shareholder, antitrust and national-security approvals. Pending; completion not verified. Also bought Global Photonics for $17.5m (completed 18 Jun 2025). Verified on a second search: Greenlight Bidco (Arlington Capital Partners) pays 1,230p cash (plus a 4.9p interim dividend; ~GBP345.6m equity, ~GBP400m EV), 40.7% premium; court meeting 26 Aug 2026 passed with 79.17% in favour and the court has sanctioned the scheme - effective on delivery of the order to Companies House, after which trading ends (delisting imminent/completed).",
    "source_url": "https://www.ajbell.co.uk/news/articles/gooch-housego-shares-jump-agrees-gbp3456-million-takeover"
+  },
+  {
+   "ticker": "XTRA:PSAN",
+   "company": "PSI Software SE",
+   "date": "2025-10-09",
+   "counterparty": "Warburg Pincus (Zest Bidco GmbH)",
+   "terms": "Voluntary public takeover offer at EUR 45.00 cash per share; follow-on delisting acquisition offer at statutory minimum price (6-month VWAP), 4-week acceptance period, no conditions",
+   "note": "PSI Software is the TARGET of Warburg Pincus' (Zest BidCo) voluntary public takeover offer at EUR45 per share cash (~EUR702m; announced Oct 2025 at an 83.7% premium); control reached ~80.8% after the regular acceptance period (15 Dec 2025) and >82% after the additional period (ended 2 Jan 2026); E.ON keeps 17.77%. Delisting is the stated intention; the screen's \"delisting offer announced Sep 2026\" was NOT confirmed on a second search (sources end Jan 2026). Squeeze-out / domination agreement possible.",
+   "source_url": "https://www.psi.de/en/company/newsroom/press-releases/psi-enters-into-a-delisting-agreement-with-warburg-pincus-warburg-pincus-announces-public-delisting-acquisition-offer-for-psi-software-se"
+  },
+  {
+   "ticker": "DB:CTNK",
+   "company": "centrotherm international AG",
+   "date": "2025-12-18",
+   "counterparty": "Ardian Semiconductor (via Centrotherm AcquiCo AG); seller Solarpark Blautal GmbH",
+   "terms": "Cash compensation for minority squeeze-out to be set ('angemessene Barabfindung'); amount not found",
+   "note": "centrotherm international is the TARGET of a control acquisition by Ardian Semiconductor Fund together with Solarpark Blautal (agreed Nov 2025, closed 18 Dec 2025; founder family Hartung stays indirectly invested). Centrotherm AcquiCo AG requested the merger squeeze-out of minority holders on 17 Dec 2025; cash compensation and registration not found (second search).",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-centrotherm-international-ag-centrotherm-acquico-ag-uebermittelt-verlangen-zur-durchfuehrung-eines-ausschlusses-der-minderheitsaktionaere-der-centrotherm-international-ag-deutsch-490955.html"
+  },
+  {
+   "ticker": "BUSE:RABA",
+   "company": "RABA Jarmuipari Holding Nyrt.",
+   "date": "2026-03-19",
+   "counterparty": "4iG Group (4iG SDT EGY Zrt. / 4iG Space and Defence Technologies)",
+   "terms": "Mandatory offers at HUF1,789 (autumn 2025, no acceptances) and HUF3,425 per share (Mar-Apr 2026)",
+   "note": "RABA is the TARGET: 4iG's project company bought a 74% stake (74.34% closed 5 Jan 2026) and made a mandatory offer at HUF1,789 per share which nobody accepted in autumn 2025; a second mandatory bid at HUF3,425 per share (MNB-approved, published 19 Mar 2026) closed on 27 Apr 2026 with only 32,970 shares offered, transfers awaiting competition approval (verified on a second search). Delisting not indicated.",
+   "source_url": "https://telex.hu/gazdasag/2025/09/24/mnb-jovahagyas-raba-felvasarlas-4ig-vedelmi-ipar-hadiipar"
+  },
+  {
+   "ticker": "ENXTPA:NAE",
+   "company": "North Atlantic Energies (formerly Esso S.A.F.)",
+   "date": "2025-11-28",
+   "counterparty": "North Atlantic France SAS (acquired ExxonMobil's controlling stake)",
+   "terms": "EUR 26.19/share for ExxonMobil's stake (closing 28 Nov 2025); mandatory simplified tender offer for remaining shares planned at EUR 28.93/share",
+   "note": "North Atlantic Energies (formerly Esso S.A.F.) is the TARGET: North Atlantic France bought ExxonMobil's 82.89% at EUR26.19 per share (closed 28 Nov 2025; FDI and EU subsidies clearances obtained) and will run a simplified tender offer for the rest at EUR28.93 (10.46% above the block price; originally described as mandatory), with a squeeze-out intended if thresholds are met; independent expert Ledouble appointed. Offer document / AMF clearance status not confirmed on a second search.",
+   "source_url": "https://www.optionfinance.fr/info-financiere-en-continu/d/2025-11-28-esso-saf-devient-north-atlantic-energies.html"
+  },
+  {
+   "ticker": "ZGSE:PDBA",
+   "company": "Podravska banka d.d.",
+   "date": "2026-05-04",
+   "counterparty": "AikGroup (Aleksandar Kostic, Cyprus-based holding)",
+   "terms": "613,567 shares (~91.75%) at EUR 68.8 per share (>EUR 42m); mandatory takeover offer for remaining shares to follow",
+   "note": "Company is the TARGET. Share purchase agreements signed 4 May 2026; completion subject to CNB, ECB, FDI-screening and competition approvals (Serbia, North Macedonia, Montenegro). AikGroup must launch a mandatory offer after closing. Closing and offer launch not confirmed in results (pending).",
+   "source_url": "https://www.tportal.hr/biznis/clanak/aikgroup-kupuje-podravsku-banku-20260504"
   }
  ],
  "mergers_acquisitions": [
@@ -1626,6 +1671,86 @@
    "terms": "Acquires all of Asahi UK's UK wholesale interests for nominal consideration; folded into Matthew Clark Bibendum",
    "note": "C&C is ACQUIRER of Asahi UK's UK wholesale interests (announced 11 Sep 2026 with H1 trading update; status per announcement, completion not verified). Separately, activist Engine Capital (<5%) has called for a strategy review aimed at a sale (date unclear, appears 2025) and the CEO resigned; no bid or formal review found.",
    "source_url": "https://www.investegate.co.uk/announcement/rns/c-c-group-cdi---ccr/acquisition-and-trading-update/9766652"
+  },
+  {
+   "ticker": "BUL:GR6",
+   "company": "Gradus AD",
+   "date": "2026-06-17",
+   "counterparty": "Seller of poultry complex in Burgas (not identified in search results)",
+   "role": "acquirer",
+   "terms": "Not found",
+   "note": "Gradus is the ACQUIRER. Capital.bg article dated 17 Jun 2026 reports Gradus acquired a poultry complex in Burgas, described by management as a step toward becoming a leading European chicken meat producer. Price and closing status not confirmed (article is in Bulgarian, only headline/summary seen; a follow-up search found nothing more). Also an undated report of a EUR 21m purchase of Gold Farm 91 from a major shareholder, year not verified.",
+   "source_url": "https://www.capital.bg/biznes/kompanii/2026/06/17/4925448_s_pridobivaneto_na_kompleksa_v_burgas_gradus_izgrajda/"
+  },
+  {
+   "ticker": "OM:MCAP",
+   "company": "MedCap AB",
+   "date": "2026-06-26",
+   "counterparty": "Biopsafe ApS (Denmark)",
+   "role": "acquirer",
+   "terms": "Not disclosed in search results",
+   "note": "MedCap is the ACQUIRER (serial bolt-on buyer). Signed agreement 26 Jun 2026 to acquire Biopsafe ApS; closing not confirmed. Three acquisitions in 2025 incl. LivAssured (via Abilia) and XGX Pharma (Specialty Pharma, Jul 2025). No bid for MedCap itself.",
+   "source_url": "https://storage.mfn.se/a4dc78b1-d7c7-403a-9225-7ee84803c9e2/medcap-interim-report-q2-2026.pdf"
+  },
+  {
+   "ticker": "SWX:APGN",
+   "company": "APG|SGA SA",
+   "date": "2026-01-23",
+   "counterparty": "NZZ (Neue Zuercher Zeitung AG); sellers JCDecaux and Pargesa",
+   "role": "target",
+   "terms": "NZZ raising stake from 25% to 45% at CHF 220 per share, ~CHF 132m total",
+   "note": "APG|SGA is the TARGET of a stake build-up, not a full takeover. Deal agreed Dec 2025; shareholders approved selective opting-up on 23 Jan 2026 (so no mandatory offer); JCDecaux's ~11% sale (CHF 71.6m) completed ~end Apr 2026, leaving JCDecaux ~5.6%. Completion of the Pargesa portion not confirmed.",
+   "source_url": "https://www.lenzstaehelin.com/news-and-insights/browse-deals-and-cases/dealscases-detail/nzz-increases-stake-in-apg-sga-apg-shareholders-approve-opting-up/"
+  },
+  {
+   "ticker": "ATSE:REVOIL",
+   "company": "Revoil S.A.",
+   "date": "2025-11-01",
+   "counterparty": "Malteza (MALTEZOS A.V.E.E.)",
+   "role": "acquirer",
+   "terms": "Not found for Malteza; separate undated report of 100% of G. Kesidis Oryktelaia for EUR 2.6m",
+   "note": "Revoil is the ACQUIRER. A Nov 2025 ATHEX filing (day approximate) described the Malteza acquisition as about to complete; completion not confirmed. No bid for Revoil itself found. The Kesidis purchase article was undated so year not verified.",
+   "source_url": "https://www.athexgroup.gr/sites/default/files/hermes_3/2025-11/el/0fbbbf2b-1b4c-4a34-bbbf-2b1b4c2a344a/969_7803_2025_Greek_1.pdf"
+  },
+  {
+   "ticker": "HLSE:FOAMIT",
+   "company": "Foamit Oyj",
+   "date": "2025-06-01",
+   "counterparty": "Tesi (Finnish Industry Investment) - minority holder of Foamit Group",
+   "role": "acquirer",
+   "terms": "Stake in Foamit Group raised to 99% via purchase of Tesi's stake (price not found)",
+   "note": "Foamit Oyj (apparently the former Partnera Oyj) is the ACQUIRER of Tesi's stake in operating subsidiary Foamit Group, June 2025 (day approximate; source is an aggregator summary). Also JV letters of intent: Reiling/Veriso in Germany (Oct 2025, agreements targeted by Mar 2026, outcome unknown) and Sterhoek NV in Belgium (Apr 2026). No bid for Foamit Oyj found.",
+   "source_url": "https://app.dealroom.co/news/feed/partnera-increases-foamit-stake-to-99"
+  },
+  {
+   "ticker": "LSE:BRK",
+   "company": "Brooks Macdonald Group plc",
+   "date": "2025-02-03",
+   "counterparty": "LIFT Financial Group / LIFT-Invest",
+   "role": "acquirer",
+   "terms": "Up to GBP 45m: GBP 30m initial cash plus GBP 15m contingent on financial targets",
+   "note": "Brooks Macdonald is the ACQUIRER. Completion of LIFT Financial reported early Feb 2025 (financial planning business now ~GBP 6.4bn AUA). Integrity Wealth Solutions deal also seen but undated, so not counted. No bid for Brooks Macdonald found.",
+   "source_url": "https://www.morningstar.co.uk/uk/news/AN_1738600543014777400/in-brief-brooks-macdonald-completes-lift-acquisition.aspx"
+  },
+  {
+   "ticker": "MTSE:RS2",
+   "company": "RS2 p.l.c.",
+   "date": "2025-05-01",
+   "counterparty": "HSBC Continental Europe (70% holder of HSBC Bank Malta)",
+   "role": "acquirer",
+   "terms": "Media reported a joint bid above EUR 204m for HSBC's 70% stake",
+   "note": "Status unclear and contested: Times of Malta-sourced reports said RS2 with an unnamed bank bid for HSBC Malta; RS2 itself said in May 2025 it is not the bidder; a Sigma report says RS2 pulled out after HSBC raised its price. Exact dates not shown (day approximate). Treat as unconfirmed/failed approach; nothing for 2026.",
+   "source_url": "https://www.maltatoday.com.mt/business/business_news/134639/rs2_bids_for_hsbc_malta_hopes_to_revive_the_midmed_bank_brand"
+  },
+  {
+   "ticker": "WSE:ATT",
+   "company": "Grupa Azoty S.A.",
+   "date": "2026-03-31",
+   "counterparty": "Orlen (buyer of GA Polyolefins); State Treasury (recapitalisation)",
+   "role": "seller",
+   "terms": "Sale of 100% of GA Polyolefins for PLN 1.183bn (cash-free/debt-free); recapitalisation via up to 33.7m Series E shares to the State Treasury then up to 40.5m more via authorised capital (earlier plan up to PLN 1.2bn, State stake up to 50%)",
+   "note": "Grupa Azoty is SELLER/restructuring: preliminary agreement signed 31 Mar 2026, EGM approved capital changes 1 Apr 2026, GA Polyolefins in restructuring proceedings, banks accelerated facilities. Closing of sale and share issue not confirmed as of Q2 2026. Likely dilution/state control effects; no takeover bid found.",
+   "source_url": "https://quartr.com/events/grupa-azoty-sa-att-q2-2026_ojVKoPnf"
   }
  ],
  "spinoffs": [
@@ -2036,6 +2161,86 @@
    "terms": "Sale of Czech Rep., Denmark, Hungary, Luxembourg, Romania and Sweden operations; net proceeds ~GBP 4m",
    "note": "Hays is SELLER in a portfolio-reshaping disposal programme; sale to Meraki completed 16 Jun 2026. Options being explored for a further 7 markets (Belgium, Brazil, Greater China, Malaysia, Netherlands, Singapore, UAE). No takeover approach for Hays found.",
    "source_url": "https://financialfilings.com/filings/hays-plc/ma-activity/2026/48095375/"
+  },
+  {
+   "ticker": "BUSE:PANNERGY",
+   "company": "PannErgy Nyrt.",
+   "date": "2025-09-01",
+   "type": "buyback",
+   "counterparty": "MVM Energetika",
+   "terms": "Repurchase of 1,675,745 own shares at HUF 1,512 each; treasury holding rose to 2,593,365 shares (above 15% of capital)",
+   "note": "Company bought back the stake held by MVM Energetika, final tranche settled early Sep 2025 (day approximate, source says early September). Company is neither acquirer nor target of a takeover; no bid for PannErgy found. A prior buyback programme expired 10 Apr 2026 and no new one proposed.",
+   "source_url": "https://finder.techleap.nl/news/feed/pannergy-acquires-mvm-stake-for-huf-1-512-share"
+  },
+  {
+   "ticker": "WSE:TOR",
+   "company": "Torpol S.A.",
+   "date": "2026-06-01",
+   "type": "controlling_stake_sale",
+   "counterparty": "State Treasury / CPK (38% holder); possible buyers incl. Mirbud (10% holder)",
+   "terms": "38% stake valued around PLN 600m by Parkiet; no price agreed",
+   "note": "Potential controlling-stake sale: deputy minister said in June 2026 (day approximate) the State wants to decide in July 2026 on the future of its 38% stake, with interested parties; Mirbud says current price is too high. Outcome not found. Torpol would be the TARGET of any stake sale; nothing announced as of search.",
+   "source_url": "https://www.bankier.pl/wiadomosc/SP-chce-w-lipcu-podjac-decyzje-w-sprawie-przyszlosci-Torpolu-Malepszak-9159986.html"
+  },
+  {
+   "ticker": "ENXTPA:GBT",
+   "company": "Guerbet SA",
+   "date": "2026-06-30",
+   "type": "restructuring",
+   "counterparty": "Lenders (syndicated credit facility and two bonds)",
+   "terms": "Waiver of net debt/EBITDA covenant (3.5x) on EUR 350M syndicated facility plus two EUR 50M bonds; tests covered through June 2027",
+   "note": "Restructuring/financing stress rather than a deal: transformation plan with French job-protection plan (PSE), 2026 FCF guided to -EUR 50-70M, covenant waiver secured after expected breach at the 30 Jun 2026 test (date shown is the test date; waiver announcement date not confirmed). New CEO Jan 2026. No M&A found.",
+   "source_url": "https://bourse.fortuneo.fr/actualites/guerbet-devoile-ses-previsions-2026-2315935"
+  },
+  {
+   "ticker": "WSE:PAS",
+   "company": "Passus S.A.",
+   "date": "2025-06-10",
+   "type": "buyback",
+   "counterparty": "Family foundations linked to Passus founders",
+   "terms": "Buyback of 26.5% of shares in three tranches: 208,506 shares at PLN 28.06 (2025), 146,584 (2026), 117,936 (2027)",
+   "note": "Large repurchase from founders (authorised at AGM 10 Jun 2025), shares to be cancelled or used for incentives; further agreements/annexes signed Mar and Jun 2026. Not tied to delisting and no takeover found; could be considered routine by the dashboard.",
+   "source_url": "https://strefainwestorow.pl/wiadomosci/20250728/grupa-passus-skupi-akcje-od-swoich-zalozycieli"
+  },
+  {
+   "ticker": "AIM:CTG",
+   "company": "Christie Group plc",
+   "date": "2025-12-19",
+   "type": "other",
+   "counterparty": "Digital Ticketing Systems",
+   "terms": "GBP 0.5m cash on completion plus up to GBP 0.9m deferred within 18 months",
+   "note": "Small divestment of Vennersys (visitor attraction software); agreed 19 Dec 2025, completed 16 Jan 2026. Company is SELLER; no bid for Christie. Earlier Orridge sale (Nov 2024) is outside the window.",
+   "source_url": "https://www.ticker.app/lse/CTG/rns/2025-12-22/Sale-of-Vennersys/3746M"
+  },
+  {
+   "ticker": "XTRA:BYW",
+   "company": "BayWa Aktiengesellschaft",
+   "date": "2025-12-01",
+   "type": "restructuring",
+   "counterparty": "Cefetra buyer (not identified); BayWa r.e. and T&G Global to be sold; lender banks",
+   "terms": "Cefetra sold for ~EUR 125m (+EUR 62m shareholder-loan repayment); BayWa r.e. sale now expected ~EUR 900m vs ~EUR 1.7bn originally",
+   "note": "BayWa is a distressed SELLER in a restructuring: Cefetra sale signed Dec 2025 (day approximate), completed Q1 2026; BayWa r.e. and T&G Global sales pending; restructuring plan revised Mar 2026, standstill with banks, revised plan due autumn 2026 incl. ~EUR 1bn debt waivers and 1,300 job cuts; major shareholders (~67.1%) put shares in trust for lenders; CEO resigned. No takeover of BayWa found.",
+   "source_url": "https://www.boerse-express.com/news/articles/baywa-aktie-sanierung-wankt-875654"
+  },
+  {
+   "ticker": "HLSE:POSTI",
+   "company": "Posti Group Oyj",
+   "date": "2025-10-10",
+   "type": "controlling_stake_sale",
+   "counterparty": "Finnish State (Prime Minister's Office) as selling shareholder; IPO investors",
+   "terms": "IPO / state share sale of 11.6m shares at EUR 7.50 (employees EUR 6.75); ~EUR 303m valuation; ~EUR 100m to State, ~EUR 3m to Posti",
+   "note": "Nasdaq Helsinki prelist 10 Oct 2025, main list 14 Oct 2025. State retains ~65.8% so it remains controlling holder (relevant to free float, not a takeover). Included as an IPO/listing-related capital event; no M&A or tender offer found.",
+   "source_url": "https://valtioneuvosto.fi/en/-/posti-group-shares-attract-investors-from-finland-and-abroad-share-sales-oversubscribed-many-times-over"
+  },
+  {
+   "ticker": "WSE:SLV",
+   "company": "Selvita S.A.",
+   "date": "2026-05-21",
+   "type": "strategic_review",
+   "counterparty": "n/a",
+   "terms": "No terms; options include withdrawal of shares from the regulated market or more capital for M&A/organic growth",
+   "note": "Selvita started a strategic options review on 21 May 2026 (ESPI 16/2026) that could end in a delisting transaction; no decision, bidder or tender offer yet. Strefa Inwestorow suggests finalisation may only come in 2027. Possible TARGET/delisting situation; a deal-price effect is possible.",
+   "source_url": "https://www.bankier.pl/wiadomosc/SELVITA-S-A-Rozpoczecie-przegladu-opcji-strategicznych-Commencement-of-a-Strategic-Options-Review-9136769.html"
   }
  ]
 }
