@@ -2318,3 +2318,31 @@ gap computation.
   ranked list, annotated only via corporate actions - open decision for the
   user on an exclusion rule.
 - 200 companies in the Europe pool still have no override (ranks ~800+; includes WHATS, delisted).
+
+## Tier 16 (Europe) - market caps + corporate-actions screen (2026-10-20)
+
+- **Market caps:** next 50 without an override (ranks 789-847): 49 added
+  (`data/mc_overrides_applied.json` now 849; ratios 0.65-2.13). **No override
+  for LSE:TET** (Treatt - taken private by Dohler at 305p, delisted 3 Jul
+  2026; keeps its Capital IQ cap). Large moves look genuine (James Cropper
+  2.13 after a strong trading update; Kaufman & Broad 0.65). Weak spots:
+  undated (Dinkelacker, Avicola Slobozia, CTT, Harvest Tech, Moara Cibin,
+  Econocom, HiTechPros, Atelierele CFR, Bonasudden, HAE1T, BIOKA, LKRI -
+  currency assumed EUR, low confidence -, FHW, ELIN); 4+ months old (ALCM,
+  WIIT, BERG B, STRN, Elma, Moda Bagno, Antibiotice); Dinkelacker share-count
+  conflict; FX = ECB/other reference rates from mid-Sep 2026 (no October
+  rates found).
+- **Corporate actions:** 50 screened (59 searches); 18 findings appended.
+  Bid targets: LSE:TET Treatt (Dohler 305p scheme, delisted 3 Jul 2026);
+  OB:ELMRA Elmera (Fortum NOK47 offer, ~91.6% accepted, settlement ~23 Oct,
+  delisting intended but unconfirmed - verified); OM:BAHN B Bahnhof (Telenor
+  buying 57.5% at SEK60-62 then mandatory offer at SEK62, approvals pending -
+  verified); DB:FHW Fernheizwerk Neukolln (BEW delisting offer announced 24 Sep
+  2026; the EUR24.20 price quoted by the screen could NOT be confirmed);
+  ENXTAM:CTAC Ctac (Value8 mandatory offer EUR3.50 from Apr 2025; outcome not
+  found). The rest are acquirer bolt-ons (FM, PRT, IEG, IBAB, PERF, BOW,
+  BONAS, BERG B, TRIONA, HMU, MONB, GRN, SPEL). Coverage: 851 screened.
+- Delisted / being delisted rows still in the ranked list: PCTN, WHATS, ECR,
+  EDI, TET (and ELMRA, ALVDM, BAHN B pending). Exclusion-rule question remains
+  open with the user.
+- 149 companies in the Europe pool still have no override (ranks ~850+).

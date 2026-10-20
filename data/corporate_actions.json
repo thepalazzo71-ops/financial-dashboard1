@@ -336,6 +336,51 @@
    "terms": "Tender offer for 1,618,714 shares at PLN 9.37 per share (raised after KNF demanded inclusion of 3-month average market price; initial notice cited PLN 9.07); aim 100% and delisting from GPW",
    "note": "Delisting-oriented tender offer announced around 1 Jul 2025; take-up was minimal (1,329 shares, about 0.011%). A court suspended the AGM resolution on the buyback; in May 2026 KNF suspended its proceeding on permission to withdraw shares from the regulated market. Delisting not completed/status unresolved. Company is TARGET.",
    "source_url": "https://strefainwestorow.pl/wiadomosci/20250701/krynica-vitamin-i-zinat-oglosily-wezwanie-na-sprzedaz-akcji-po-937-zlszt"
+  },
+  {
+   "ticker": "OM:BAHN B",
+   "company": "Bahnhof AB",
+   "date": "2026-07-08",
+   "counterparty": "Telenor Group",
+   "terms": "Telenor buys 57.5% of shares / 87.9% of votes from founders (K.N. Telecom, SEK 60/share) and Investment AB Oresund (SEK 62/share); mandatory cash offer to remaining shareholders at SEK 62/share within four weeks of completion; EV ~SEK 6.1bn",
+   "note": "Bahnhof is TARGET. Telenor agreed 8 Jul 2026 to acquire a controlling stake; mandatory public offer to follow after closing. Pending competition authority approval (expected autumn 2026). Securities Council interpretation request filed 27 Sep 2026. Verified on a second search: Telenor buys the founders' 50.8% (86% of votes) at SEK 60 and Oresund's 6.7% at SEK 62, then plans a mandatory cash offer at SEK 62 within four weeks of completion and intends to delist; completion subject to regulatory approvals (authority/timeline not found).",
+   "source_url": "https://www.roschier.com/newsroom/telenor-group-has-agreed-to-acquire-a-controlling-stake-in-bahnhof-in-a-transaction-valuing-the-company-at-sek-6-1-billion"
+  },
+  {
+   "ticker": "LSE:TET",
+   "company": "Treatt plc",
+   "date": "2026-04-29",
+   "counterparty": "Dohler Group SE (Dohler Finance Management)",
+   "terms": "305p per share in cash (~GBP 183m equity value, 48% premium); court-sanctioned scheme of arrangement",
+   "note": "Treatt is TARGET. Rule 2.7 recommended cash offer 29 Apr 2026; scheme became effective 2 Jul 2026 and shares were delisted from LSE Main Market on 3 Jul 2026 (COMPLETED). Earlier in 2025 a separate recommended approach by Natara (~GBP 156.6m) had been reported, outcome superseded by Dohler.",
+   "source_url": "https://www.treatt.com/media/pages/investor-relations/offer-for-treatt/ac49a213cc-1777458309/rule-2.7-announcement-29.04.2026.pdf"
+  },
+  {
+   "ticker": "ENXTAM:CTAC",
+   "company": "Ctac N.V.",
+   "date": "2025-04-04",
+   "counterparty": "Value8 N.V.",
+   "terms": "Mandatory public cash offer EUR 3.50 per share (cum dividend); Value8 held 42.9% at announcement",
+   "note": "Ctac is TARGET. Value8 announced mandatory offer 4 Apr 2025; offer document published 5 Sep 2025; Ctac boards position statement 6 Oct 2025; AFM notice 5 Nov 2025. Final outcome/acceptance level/delisting not confirmed in search results. A second search confirmed the April 2025 mandatory offer (Value8 held 42.9% at announcement, ~44% in April; offer document 5 Sep 2025, board position statement 6 Oct 2025) but found no result or delisting notice - outcome unknown.",
+   "source_url": "https://www.ctac.nl/app/uploads/2025/10/251006-Standpuntbepaling-biedingsbericht-Value8.pdf"
+  },
+  {
+   "ticker": "DB:FHW",
+   "company": "Fernheizwerk Neuk\u00f6lln Aktiengesellschaft",
+   "date": "2026-09-24",
+   "counterparty": "BEW Berliner Energie und W\u00e4rme GmbH",
+   "terms": "Voluntary public delisting purchase offer; expected cash consideration about EUR 24.20 per share (per announcement excerpt; final binding price in offer document); bidder holds ~80.8% of voting rights",
+   "note": "FHW is TARGET of a delisting purchase offer announced 24 Sep 2026 by BEW (owned by State of Berlin, which bought FHW's majority shareholder in 2023-24). FHW agreed to apply to revoke admission / end open-market inclusion before the acceptance period expires. Pending. A second search confirmed the BEW voluntary delisting offer decision (published 24 Sep 2026 under WpUEG/BoerseG 39) but did NOT confirm the EUR24.20 price quoted by the screen - treat the price as unverified.",
+   "source_url": "https://stock3.com/news/pta-wpueg-bew-berliner-energie-und-waerme-gmbh-entscheidung-zur-abgabe-eines-delisting-erwerbsangebots-zielgesellschaft-fernheizwerk-neukoelln-aktiengesellschaft-17302376"
+  },
+  {
+   "ticker": "OB:ELMRA",
+   "company": "Elmera Group ASA",
+   "date": "2026-06-29",
+   "counterparty": "Fortum (Fortum Consumer Solutions)",
+   "terms": "Recommended voluntary cash tender offer NOK 47 per share; 90% minimum acceptance condition",
+   "note": "Elmera is the TARGET of Fortum's recommended voluntary cash tender offer at NOK 47 per share (~NOK 5.1bn; agreed 29 Jun 2026). Acceptances reached ~91.6% of share capital (95.8% excluding treasury shares) by expiry on 2 Oct 2026, so the 90% minimum was met; settlement expected ~23 Oct 2026. Fortum intends a compulsory acquisition and delisting from Oslo Bors afterwards - delisting not yet confirmed (verified on a second search).",
+   "source_url": "https://www.placera.se/pressmeddelanden/fortum-fortum-announces-settlement-and-results-of-its-recommended-voluntary-cash-tender-offer-for-elmera-group-asa-20261002"
   }
  ],
  "mergers_acquisitions": [
@@ -1336,6 +1381,136 @@
    "terms": "USD 105 million for 100% of operations plus earn-out of up to USD 15m; funded by an incremental EUR 100m term loan",
    "note": "Agreement announced in early November 2025 (exact day not confirmed; date field approximate) to buy 14 US theatres (177 screens); closing was expected by end-2025 (not confirmed in results). Kinepolis is ACQUIRER. Second deal: agreed June 2026 to buy 13 Showcase Cinemas (US) from Harbor Lights Entertainment for about USD 30m EV, reported completed around 11 Sep 2026.",
    "source_url": "https://www.boxofficepro.com/kinepolis-signs-agreement-to-acquire-the-operations-of-u-s-cinema-chain-emagine-entertainment/"
+  },
+  {
+   "ticker": "BIT:FM",
+   "company": "Fiera Milano S.p.A.",
+   "date": "2026-02-18",
+   "counterparty": "Stipa (51%) and Made in Steel organiser (70%)",
+   "role": "acquirer",
+   "terms": "Stipa: 51% for about EUR 12.1m (implied 100% EV ~EUR 23.8m) with options on remainder; Made in Steel: 70% for up to ~EUR 9.1m; funded from cash",
+   "note": "Fiera Milano is ACQUIRER of control stakes in two small private trade-fair businesses (binding agreements Feb 2026, closing expected Q1 2026; completion not confirmed in search). Also bought 51% of Expotrans (logistics) for EUR 6.3m in April 2025. No bid for Fiera Milano itself found.",
+   "source_url": "https://financecommunity.it/fiera-milano-al-controllo-di-made-in-steel-e-stipe-ecco-gli-advisor/"
+  },
+  {
+   "ticker": "ENXTPA:SPEL",
+   "company": "Fonci\u00e8re Volta",
+   "date": "2026-08-31",
+   "counterparty": "Distrimo group (50/50 JV partner); seller Amundi Immobilier",
+   "role": "joint venture",
+   "terms": "Marco Polo office building in Clichy (~7,890 sqm), reported price EUR 17.5m (CoStar)",
+   "note": "Fonci\u00e8re Volta acquired the Marco Polo office building via a 50/50 joint company with Distrimo, managed by Volta (Aug 2026). Also launched a partial buyback of up to EUR 11m of its EUR 16.5m Dec-2026 bonds at EUR 1,030.70 per bond (Aug 2026). Company is not a takeover target.",
+   "source_url": "https://www.abcbourse.com/marches/fonciere-volta-acquiert-l-immeuble-quot-marco-polo-quot-a-clichy_701824"
+  },
+  {
+   "ticker": "BIT:PRT",
+   "company": "Esprinet S.p.A.",
+   "date": "2025-10-01",
+   "counterparty": "Vamat (photovoltaic distributor, Benelux and Ireland)",
+   "role": "acquirer",
+   "terms": "Max EUR 18m provisional price, EUR 12.6m paid in cash at closing, subject to adjustment mechanisms",
+   "note": "Esprinet is ACQUIRER; closed bolt-on acquisition of Vamat on 1 Oct 2025. No bid for Esprinet itself found.",
+   "source_url": "https://www.esprinet.com/wp-content/uploads/2025/10/2025-10-01-PR-ESPRINET-VAMAT-ENG.pdf"
+  },
+  {
+   "ticker": "ATSE:PERF",
+   "company": "Performance Technologies S.A.",
+   "date": "2026-01-01",
+   "counterparty": "Ascentum Real Estate and Tourism LLC (related party)",
+   "role": "acquirer",
+   "terms": "100% for EUR 1.5m",
+   "note": "Performance Technologies is ACQUIRER; board approved buying 100% of related-party Ascentum (real estate/leasing) in Jan 2026 (exact day not confirmed). Also acquired 60% of Adaptera in 2025 and continues bolt-on M&A. No bid for the company itself found.",
+   "source_url": "https://financialfilings.com/filings/performance-technologies-ae/ma-activity/2026/13700962/"
+  },
+  {
+   "ticker": "WSE:BOW",
+   "company": "Bowim S.A.",
+   "date": "2026-01-01",
+   "counterparty": "BPT Steel (sheet-metal blank producer)",
+   "role": "acquirer",
+   "terms": "Preliminary agreement for 60% of shares for PLN 600k; subject to merger-control clearance",
+   "note": "Bowim is ACQUIRER of a small 60% stake in BPT Steel; announcement date not shown in search results (date field is a placeholder, year-level only) and completion status unclear. Immaterial relative to market cap.",
+   "source_url": "https://www.biznesradar.pl/a/137886,bowim-planuje-przejecie-producenta-wypalek-z-blachy-bpt-steel"
+  },
+  {
+   "ticker": "ENXTBR:IBAB",
+   "company": "Ion Beam Applications SA",
+   "date": "2025-12-01",
+   "counterparty": "ORA (Belgian radiochemistry company); also PhantomX GmbH (Nov 2025)",
+   "role": "acquirer",
+   "terms": "Total consideration EUR 15-20m, cash-free debt-free (ORA)",
+   "note": "IBA is ACQUIRER of ORA (Dec 2025) and reportedly PhantomX (Nov 2025). Also Jan 2025 sale of up to 633k shares to Management Anchorage (management vehicle); Sustainable Anchorage remains ~20% shareholder. No bid for IBA found.",
+   "source_url": "https://www.iba-worldwide.com/iba-delivers-strong-fy-2025-results-solid-execution-all-segments"
+  },
+  {
+   "ticker": "OM:BONAS",
+   "company": "Bon\u00e4sudden Holding AB",
+   "date": "2025-11-21",
+   "counterparty": "Sm\u00e5landsvist AB (property-owning subsidiaries in V\u00e4xj\u00f6 and Kalmar)",
+   "role": "acquirer",
+   "terms": "Property value SEK 676m; consideration 1,033,060 newly issued shares; approved at EGM 10 Dec 2025",
+   "note": "Bon\u00e4sudden is ACQUIRER via share-funded purchase of two property companies; Swedish Securities Council received a mandatory-bid exemption application for Per-Olof Persson / P&E Persson / Sm\u00e5landsvist (they become larger holders). New strategy adopted Jan 2026. Not a takeover target.",
+   "source_url": "https://www.inderes.se/en/releases/bonasudden-ingar-avtal-om-forvarv-av-tva-nyproducerade-bostadsfastigheter-i-vaxjo-och-kalmar-med-ett-overenskommet-fastighetsvarde-om-676-miljoner-kronor"
+  },
+  {
+   "ticker": "BIT:IEG",
+   "company": "Italian Exhibition Group S.p.A.",
+   "date": "2025-01-01",
+   "counterparty": "Fiera Milano (joint 70% of EMAC); Deutsche Messe AG (proposed North America JV); Fenagra, Movestro",
+   "role": "acquirer",
+   "terms": "EMAC: IEG and Fiera Milano each 35% (founder keeps 30%); Deutsche Messe: non-binding MoU for equal 50/50 JV of North American/Mexican fair businesses; four acquisitions in H1 2025 incl. majority of Fenagra (Brazil) and 51% of Movestro",
+   "note": "IEG is ACQUIRER/JV partner in serial small exhibition-business deals during 2025 (EMAC 35% jointly with Fiera Milano; Fenagra; Movestro). Deutsche Messe North America JV is a non-binding MoU, outcome and dates unconfirmed. No bid for IEG itself found. Date field is year-level placeholder.",
+   "source_url": "https://www.cimunity.com/en/fiera-milano-and-ieg-acquire-majority-stake-in-emac-s-r-l/"
+  },
+  {
+   "ticker": "OM:BERG B",
+   "company": "Bergman & Beving AB",
+   "date": "2026-09-01",
+   "counterparty": "Hava-Skyltar AB (Malmo, ~SEK 17m revenue); also All Coating Industrilackeringar AB (1 Apr 2026, ~SEK 25m revenue)",
+   "role": "acquirer",
+   "terms": "100% of shares; prices not disclosed in search results",
+   "note": "Bergman & Beving is ACQUIRER of small bolt-ons via subsidiaries (Collinder bought Hava-Skyltar 1 Sep 2026; Uveco bought All Coating 1 Apr 2026); marginally EPS-positive. No bid for the company itself found.",
+   "source_url": "https://www.inderes.se/releases/bergman-and-beving-acquires-hava-skyltar"
+  },
+  {
+   "ticker": "NGM:TRIONA",
+   "company": "Triona AB",
+   "date": "2025-10-01",
+   "counterparty": "Marjetas Academy Oy (Finland)",
+   "role": "acquirer",
+   "terms": "EUR 970,000 total; 40% via non-cash share issue (~1.56% dilution), rest cash",
+   "note": "Triona is ACQUIRER of a small Finnish company (turnover ~EUR 1m, 10 staff); announced autumn 2025 (exact day not confirmed). No bid for Triona found.",
+   "source_url": "https://triona.no/nyheter/2025/triona-strengthens-its-position-in-the-finnish-market-through-strategic-acquisition/"
+  },
+  {
+   "ticker": "XTRA:HMU",
+   "company": "HMS Bergbau AG",
+   "date": "2026-02-01",
+   "counterparty": "Hoshoza Resources Vryheid (South Africa, 75%); majority stake in a Botswana coal mine",
+   "role": "acquirer",
+   "terms": "75% of South African mining company; consolidation gave one-off gain of ~EUR 8.4m; price not found",
+   "note": "HMS is ACQUIRER (Feb 2026, exact day unconfirmed). Also majority stake in Botswana mine and, in Jul 2026, tap of its 10% 2025/2030 bond by EUR 25m to EUR 95m. No bid for HMS itself found.",
+   "source_url": "https://www.placera.se/pressmeddelanden/hms-bergbau-ag-announces-preliminary-financial-results-for-the-first-half-of-2026-20260819"
+  },
+  {
+   "ticker": "BUL:MONB",
+   "company": "Monbat AD",
+   "date": "2025-12-01",
+   "counterparty": "Societe Nouvelle des Accumulateurs NOUR (Tunisia) minority holders",
+   "role": "acquirer",
+   "terms": "Remaining 40% for EUR 9m in three instalments (EUR 4m at completion); implies NOUR equity value EUR 22.5m",
+   "note": "Monbat is ACQUIRER of the remaining 40% of NOUR (announced Dec 2025, closing expected Q1 2026 subject to Central Bank of Tunisia approval; completion not confirmed). No bid for Monbat itself found.",
+   "source_url": "https://monbatgroup.com/wp-content/uploads/2025/12/Announcement-122025-4.pdf"
+  },
+  {
+   "ticker": "WSE:GRN",
+   "company": "Grodno Spolka Akcyjna",
+   "date": "2026-08-01",
+   "counterparty": "Unnamed electrical wholesale chain (about 10 branches)",
+   "role": "acquirer",
+   "terms": "Conditional purchase of ~10 branches, combined annual revenue potential ~PLN 60m; price not found",
+   "note": "Grodno is ACQUIRER; conditional agreement Aug 2026 with closing targeted end Aug 2026 (completion unconfirmed; exact day unknown). Company is a consolidator and interested in further deals. No bid for Grodno itself found.",
+   "source_url": "https://www.biznesradar.pl/a/149904,grodno-na-zakupach-przejmuje-biznes-kolejnego-konkurenta"
   }
  ],
  "spinoffs": [
