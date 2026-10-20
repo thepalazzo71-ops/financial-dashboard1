@@ -381,6 +381,51 @@
    "terms": "Recommended voluntary cash tender offer NOK 47 per share; 90% minimum acceptance condition",
    "note": "Elmera is the TARGET of Fortum's recommended voluntary cash tender offer at NOK 47 per share (~NOK 5.1bn; agreed 29 Jun 2026). Acceptances reached ~91.6% of share capital (95.8% excluding treasury shares) by expiry on 2 Oct 2026, so the 90% minimum was met; settlement expected ~23 Oct 2026. Fortum intends a compulsory acquisition and delisting from Oslo Bors afterwards - delisting not yet confirmed (verified on a second search).",
    "source_url": "https://www.placera.se/pressmeddelanden/fortum-fortum-announces-settlement-and-results-of-its-recommended-voluntary-cash-tender-offer-for-elmera-group-asa-20261002"
+  },
+  {
+   "ticker": "ZGSE:ZPKL",
+   "company": "Zagrebacke Pekarne Klara d.d.",
+   "date": "2025-01-16",
+   "counterparty": "Cakovecki mlinovi d.d.",
+   "terms": "Takeover bid at EUR 120.25 per ordinary share (Hanfa approval Feb 2025)",
+   "note": "Cakovecki mlinovi announced a takeover bid for Klara (Klara is TARGET; Hanfa approved 26 Feb 2025; bid covered the remaining 39,466 shares); bidder held ~89.5% by mid-2025. ZSE placed Klara under observation 19-25 Aug 2026 due to a proposed General Assembly decision to withdraw the shares from the regulated market (delisting proposed; outcome/squeeze-out completion not confirmed). Second search confirmed Hanfa approval on 26 Feb 2025 for EUR120.25 per share for the remaining 39,466 shares (bidder + concert already held 244,294) but found no delisting/squeeze-out notice - status of the delisting proposal unconfirmed.",
+   "source_url": "https://en.lider.media/2025/01/16/cakovecki-mlinovi-will-announce-a-binding-offer-for-zagrebacke-pekarne-klara/"
+  },
+  {
+   "ticker": "WSE:ECH",
+   "company": "Echo Investment S.A.",
+   "date": "2026-10-02",
+   "counterparty": "Lisala (Wing / Griffin Capital Partners vehicle; majority holder ~62%)",
+   "terms": "Tender offer at PLN 5.20 per share for 155,295,466 shares (~PLN 807.5m); about 4.4% below 2 Oct 2026 close of PLN 5.44",
+   "note": "Majority shareholder Lisala announced a tender offer for the remaining ~37.6% (Echo is TARGET); could lead to delisting from the WSE but no delisting timetable stated. Single secondary source (Aurum Proptech, 14 Oct 2026); primary KNF/GPW filing not seen; offer outcome unknown. Second search found the same 2 Oct 2026 announcement (Erste Biuro Maklerskie; 155.3m shares = 37.63% at PLN5.20, ~4.4% BELOW the 2 Oct close of PLN5.44; Lisala already holds 62.37%) but only via secondary sites - no primary filing seen. Possible delisting, no timetable.",
+   "source_url": "https://www.aurumproptech.in/pulse/media/wing-and-griffin-plan-to-take-echo-investment-private"
+  },
+  {
+   "ticker": "LSE:PPH",
+   "company": "PPHE Hotel Group Limited",
+   "date": "2025-11-21",
+   "counterparty": "Fattal Hotel Group (then a second unnamed party)",
+   "terms": "Fattal indicative cash proposal GBP 22.00 per share (~GBP 930m) in May 2026; no firm offer",
+   "note": "PPHE was TARGET: strategic review and formal sale process / offer period began 21 Nov 2025 after the two largest holders (~44%) considered a partial sale. Fattal's GBP 22 proposal (27 May 2026) collapsed when Euro Plaza (~29-33% holder) opposed; a second party made an indicative approach. Review ended without a deal on 2 Jul 2026 (no longer in offer period; no deliverable proposal), per Sharecast/HL report.",
+   "source_url": "https://www.hl.co.uk/shares/stock-market-news/company--news/pphe-hotel-shares-slide-as-strategic-review-ends-with-no-takeover-deal"
+  },
+  {
+   "ticker": "HMSE:S9I",
+   "company": "Stemmer Imaging AG",
+   "date": "2024-11-29",
+   "counterparty": "MiddleGround Capital (Ventrifossa BidCo AG)",
+   "terms": "Public delisting tender offer at EUR 48.00 cash per share",
+   "note": "Stemmer is TARGET of a delisting tender offer. Offer document published 29 Nov 2024 (before the 2025 window), acceptance period ended 27 Dec 2024, bidder held ~83.5%, Frankfurt Prime Standard admission revocation effective, settlement expected 16 Jan 2025. Domination/profit-transfer agreement negotiations requested; any 2025-26 squeeze-out/domination step not confirmed. Included because settlement and follow-ups fall in 2025. Outside the Jan-2025 screen window, but the company is delisted (taken private ~27 Dec 2024), so it is recorded for the ranked list.",
+   "source_url": "https://app.boersengefluester.de/en/newswire/DE000A2G9MZ9/stemmer-imaging-ag/management-board-and-supervisory-board-recommend-acceptance-of-middleground-capitals-public-delisting-tender-offer-2046899"
+  },
+  {
+   "ticker": "AIM:GHH",
+   "company": "Gooch & Housego PLC",
+   "date": "2026-07-16",
+   "counterparty": "Arlington Capital Partners VII, L.P.",
+   "terms": "Recommended cash offer ~1,230p per share (+4.9p interim dividend; some sources say 1,234.9p) valuing equity at ~GBP 345.6m, EV ~GBP 400.5m; scheme of arrangement",
+   "note": "Gooch & Housego is TARGET of a board-recommended takeover announced 16 Jul 2026 (after earlier rejected approaches); completion expected Q4 2026 subject to shareholder, antitrust and national-security approvals. Pending; completion not verified. Also bought Global Photonics for $17.5m (completed 18 Jun 2025). Verified on a second search: Greenlight Bidco (Arlington Capital Partners) pays 1,230p cash (plus a 4.9p interim dividend; ~GBP345.6m equity, ~GBP400m EV), 40.7% premium; court meeting 26 Aug 2026 passed with 79.17% in favour and the court has sanctioned the scheme - effective on delivery of the order to Companies House, after which trading ends (delisting imminent/completed).",
+   "source_url": "https://www.ajbell.co.uk/news/articles/gooch-housego-shares-jump-agrees-gbp3456-million-takeover"
   }
  ],
  "mergers_acquisitions": [
@@ -1511,6 +1556,76 @@
    "terms": "Conditional purchase of ~10 branches, combined annual revenue potential ~PLN 60m; price not found",
    "note": "Grodno is ACQUIRER; conditional agreement Aug 2026 with closing targeted end Aug 2026 (completion unconfirmed; exact day unknown). Company is a consolidator and interested in further deals. No bid for Grodno itself found.",
    "source_url": "https://www.biznesradar.pl/a/149904,grodno-na-zakupach-przejmuje-biznes-kolejnego-konkurenta"
+  },
+  {
+   "ticker": "CSE:PHL",
+   "company": "Petrolina",
+   "date": "2026-01-31",
+   "counterparty": "ExxonMobil Cyprus Limited (renamed eWise Cyprus)",
+   "role": "acquirer",
+   "terms": "EUR 45.1m for 100% of ExxonMobil Cyprus (agreement signed Nov 2024; Eurobank-financed)",
+   "note": "Petrolina (via subsidiary Med Energywise) completed the acquisition on 31 Jan 2026; Petrolina is ACQUIRER. Consolidation lifted H1 2026 turnover 56% and net profit to EUR 9.9m.",
+   "source_url": "https://cyprus-mail.com/2026/02/02/petrolina-completes-e45-1m-acquisition-of-exxonmobil-cyprus"
+  },
+  {
+   "ticker": "ENXTPA:ALHEX",
+   "company": "Hexaom S.A.",
+   "date": "2025-01-29",
+   "counterparty": "Groupe HDV (Bordeaux-area homebuilder)",
+   "role": "acquirer",
+   "terms": "75.5% stake; HDV 2023 revenue EUR 98m (price not seen in results)",
+   "note": "Hexaom completed acquisition of 75.5% of HDV on 29 Jan 2025 (agreement Dec 2024); Hexaom is ACQUIRER. Completed.",
+   "source_url": "https://www.costar.com/article/1883422444/hexaom-acquires-755-stake-in-hdv-group"
+  },
+  {
+   "ticker": "HLSE:ORIOLA",
+   "company": "Oriola Oyj",
+   "date": "2025-03-01",
+   "counterparty": "Apotekstjanst Sverige AB (sale of Svensk dos AB)",
+   "role": "seller",
+   "terms": "Sale of Swedish dose-dispensing unit Svensk dos (price not seen)",
+   "note": "Oriola is SELLER. Sale agreed Oct 2023, blocked by Swedish Competition Authority Apr 2024, prohibition overturned by Patent and Market Court of Appeal in Mar 2025; completion was expected Q2 2025 but closing not confirmed in results. Oriola also has JV stake in Kronans Apotek (large 2025 goodwill impairment).",
+   "source_url": "https://news.cision.com/oriola-oyj/r/inside-information--oriola-to-sell-svensk-dos-ab-to-apotekstjanst-sverige-ab---new-outlook-for-2023-,c3853689"
+  },
+  {
+   "ticker": "DB:PEH",
+   "company": "PEH Wertpapier AG",
+   "date": "2026-07-31",
+   "counterparty": "capsensixx AG (minority squeeze-out via merger)",
+   "role": "acquirer",
+   "terms": "Cash compensation EUR 20.23 per capsensixx share; PEH held ~92.83%",
+   "note": "PEH is ACQUIRER/majority holder: merger squeeze-out of capsensixx minorities demanded 13 Feb 2026, AGM approved 18 Jun 2026, merger effective on register entry 31 Jul 2026 (completed). No offer for PEH itself found.",
+   "source_url": "https://stock3.com/news/pta-news-peh-wertpapier-ag-bekanntmachung-ueber-den-ausschluss-der-minderheitsaktionaere-der-capsensixx-ag-17217684"
+  },
+  {
+   "ticker": "AIM:FIH",
+   "company": "FIH group plc",
+   "date": "2026-08-28",
+   "counterparty": "Compagnie Generale du Roumois SAS (Horus Finance) - Momart sale",
+   "role": "seller",
+   "terms": "Momart International sold for GBP 7.6m cash; earlier Portsmouth Harbour Ferry Co sold to TC Gosport Bidco for GBP 11.62m (Mar 2026)",
+   "note": "FIH is SELLER in a series of disposals. Momart sale is a fundamental change of business needing shareholder approval at the general meeting on 28 Aug 2026 (date shown is the GM date; announcement date not seen), completion expected by end Sept 2026 - completion unconfirmed. Post-sale the group will focus on Falkland Islands Company; GBP 13.8m special dividends returned. Share price jumped >20% on the announcement.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/fih-group--fih/disposal-of-momart-international-/9702436"
+  },
+  {
+   "ticker": "BRVM:ABJC",
+   "company": "Servair Abidjan S.A.",
+   "date": "2026-04-23",
+   "counterparty": "Enko Capital",
+   "role": "seller",
+   "terms": "Sale of Servair Cote d'Ivoire fast-food operations incl. Burger King Cote d'Ivoire franchise (price not seen)",
+   "note": "Partial divestment finalised and announced 23 Apr 2026; Servair Abidjan is SELLER of the fast-food unit and refocuses on airline catering. No takeover or offer for the listed company itself found; whether control of the listed entity changed is not established.",
+   "source_url": "https://www.ecofinagency.com/news-finances/2404-55004-enko-capital-buys-burger-king-cote-d-ivoire-in-servair-restructuring"
+  },
+  {
+   "ticker": "LSE:CCR",
+   "company": "C&C Group plc",
+   "date": "2026-09-11",
+   "counterparty": "Asahi UK",
+   "role": "acquirer",
+   "terms": "Acquires all of Asahi UK's UK wholesale interests for nominal consideration; folded into Matthew Clark Bibendum",
+   "note": "C&C is ACQUIRER of Asahi UK's UK wholesale interests (announced 11 Sep 2026 with H1 trading update; status per announcement, completion not verified). Separately, activist Engine Capital (<5%) has called for a strategy review aimed at a sale (date unclear, appears 2025) and the CEO resigned; no bid or formal review found.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/c-c-group-cdi---ccr/acquisition-and-trading-update/9766652"
   }
  ],
  "spinoffs": [
@@ -1891,6 +2006,36 @@
    "terms": "No price; strategic review of full or partial sale of F.C. Kobenhavn P/S and possibly PARKEN Ejendomme A/S (stadium and office towers)",
    "note": "Board announced on 13 Oct 2026 a strategic review of the football activities including possible full or partial divestment of FC Copenhagen; shares rose up to 14.6%. No buyer, bid or agreed deal; company says no certainty a sale will occur. In Oct 2024 media reported investors in talks at DKK 140-150/share, unconfirmed outcome. Pending review, company would be SELLER.",
    "source_url": "https://www.insideworldfootball.com/2026/10/15/parken-sport-and-entertainment-eyeing-fc-copenhagen-sale/"
+  },
+  {
+   "ticker": "LSE:APTD",
+   "company": "Aptitude Software Group plc",
+   "date": "2026-04-08",
+   "type": "strategic_review",
+   "counterparty": "n/a (no bidder named)",
+   "terms": "No offer price; strategic review including Formal Sale Process under the Takeover Code",
+   "note": "With FY2025 results (8 Apr 2026) Aptitude launched a strategic review including a formal sale process (options: sale of company, equity raise, strategic partner, sale of eSuite/IFRS Rules engines); buyback suspended. 27 May 2026 AGM update said review progressing; no bidder or offer found. Company would be TARGET if a bid emerges.",
+   "source_url": "https://www.morningstar.co.uk/uk/news/AN_1775637860717615300/aptitude-software-posts-weaker-profit-launches-strategic-review-.aspx"
+  },
+  {
+   "ticker": "ATSE:EYDAP",
+   "company": "Athens Water Supply and Sewerage Company S.A.",
+   "date": "2026-03-03",
+   "type": "other",
+   "counterparty": "GEK TERNA (via subsidiary Urban Services)",
+   "terms": "9.71% stake bought for ~EUR 103.4m via stock exchange",
+   "note": "GEK TERNA subsidiary bought a 9.71% stake in EYDAP on 3 Mar 2026 (EYDAP is the investee, not a bid target). State holds 50%+1 share; no confirmed tender offer, merger or privatization sale in 2025-26 found. Minor event.",
+   "source_url": "https://www.athexgroup.gr/sites/default/files/hermes_3/2026-03/en/b592b064-bcea-4e40-92b0-64bcea5e408b/227_1115_2026_English_2.pdf"
+  },
+  {
+   "ticker": "LSE:HAS",
+   "company": "Hays plc",
+   "date": "2026-06-16",
+   "type": "divestiture",
+   "counterparty": "Meraki Capital (buyer of six European country operations)",
+   "terms": "Sale of Czech Rep., Denmark, Hungary, Luxembourg, Romania and Sweden operations; net proceeds ~GBP 4m",
+   "note": "Hays is SELLER in a portfolio-reshaping disposal programme; sale to Meraki completed 16 Jun 2026. Options being explored for a further 7 markets (Belgium, Brazil, Greater China, Malaysia, Netherlands, Singapore, UAE). No takeover approach for Hays found.",
+   "source_url": "https://financialfilings.com/filings/hays-plc/ma-activity/2026/48095375/"
   }
  ]
 }

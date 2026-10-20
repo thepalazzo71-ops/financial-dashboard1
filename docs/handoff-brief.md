@@ -2346,3 +2346,27 @@ gap computation.
   EDI, TET (and ELMRA, ALVDM, BAHN B pending). Exclusion-rule question remains
   open with the user.
 - 149 companies in the Europe pool still have no override (ranks ~850+).
+
+## Tier 17 (Europe) - market caps + corporate-actions screen (2026-10-20)
+
+- **Market caps:** next 50 without an override (ranks 838-900): 49 added
+  (`data/mc_overrides_applied.json` now 898; ratios 0.56-1.63). **No override
+  for HMSE:S9I** (Stemmer Imaging - taken private by MiddleGround, delisted
+  ~27 Dec 2024). Caveats: FX is Aug-Oct reference rates (up to ~2-3% error;
+  GBP/CHF 1 Jul); undated (ZPKL, SEC, COOR, ELSTR, ACI, PFB, AKKO, PEH, ULM,
+  AQU, FIH, ALSTW); KINGS ~8 months old; ZPKL cap could be ~1.8x higher if an
+  Oct 2025 capital increase is not in the share count; HARB B share-class
+  conflict (range USD 69-107m, 88m used); HAS share count (Sep 2025) unverified
+  (1.63x); ALHEX possibly overstated; APTD share count derived.
+- **Corporate actions:** 50 screened (57 searches); 15 findings appended.
+  Bid targets: AIM:GHH Gooch & Housego (Arlington 1,230p cash, court-sanctioned,
+  delisting imminent - verified); WSE:ECH Echo Investment (Lisala, 62.37%
+  holder, tender at PLN5.20 for 37.63%, a ~4% DISCOUNT to the market price,
+  possible delisting - only secondary sources); ZGSE:ZPKL Klara (Cakovecki
+  mlinovi EUR120.25 bid approved Feb 2025, bidder ~89.5%; delisting proposal
+  unconfirmed); LSE:APTD Aptitude (formal sale process since Apr 2026);
+  LSE:PPH PPHE (Fattal proposal collapsed Jul 2026); HMSE:S9I Stemmer
+  (delisted Dec 2024, recorded though pre-window). Others: CSE:PHL, ALHEX,
+  PEH (subsidiary squeeze-out), CCR, ORIOLA, FIH, ABJC, HAS, EYDAP.
+  Coverage: 901 screened.
+- 99 companies in the Europe pool still have no override (ranks ~900+).
