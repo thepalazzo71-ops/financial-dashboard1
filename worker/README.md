@@ -6,9 +6,11 @@ comments in **Cloudflare KV** (durable, synced across devices) instead of only i
 the browser. Everything is behind **Cloudflare Access** (email one-time code); the
 Worker keys each person's comments to their Access email.
 
-**Status: code written and tested locally, NOT activated.** `wrangler.jsonc` still
-deploys static assets only. Until the steps below are done the pages simply fall
-back to browser-only comments (+ Export / `data/comments.json`).
+**Status: ACTIVATED 2026-10-21.** `wrangler.jsonc` now includes the Worker and the
+`STATE` KV binding (namespace `financial-dashboard-state`, id
+`e65191f8f3af4477ad405715098f267a`). `wrangler deploy --dry-run` validates. If the
+API is ever unreachable the pages fall back to browser-only comments (+ Export /
+`data/comments.json`).
 
 ## Activation (needs the user's Cloudflare account)
 

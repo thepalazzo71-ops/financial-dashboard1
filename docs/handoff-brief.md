@@ -2541,7 +2541,7 @@ gap computation.
   (`initComments()` etc.). Also fixed a stale hard-coded "790/1000 covered" GM
   coverage figure in the Europe header (now computed).
 
-## Cloudflare-backed comments (2026-10-21) - built, NOT yet activated
+## Cloudflare-backed comments (2026-10-21) - activated
 
 - `worker/index.js` (+ `worker/README.md`, `worker/wrangler.activated.jsonc`,
   `worker/test_local.mjs`): a Worker adding `/api/comments` (GET/POST/DELETE,
@@ -2558,3 +2558,13 @@ gap computation.
   (see README). Pending the user's Cloudflare connector authorization (or a KV
   id) and confirmation of the deploy branch. `wrangler.jsonc` was deliberately
   left unchanged so a missing binding cannot break the live deploy.
+
+- **Activated:** the user created KV namespace `financial-dashboard-state`
+  (id `e65191f8f3af4477ad405715098f267a`); `wrangler.jsonc` now carries `main`,
+  the `ASSETS` binding with `run_worker_first: ["/api/*"]`, the `STATE` binding
+  and `preview_urls: false`; `wrangler@4 deploy --dry-run` passes. The only git
+  branch on the remote is `claude/gracious-goldberg-v4yuql`, assumed to be the
+  one Cloudflare deploys. To verify live: open `/api/ping` on the site (should
+  return `{"ok":true,"email":...}`), add a comment, then open the site in a
+  second browser. If it fails check the Workers Builds log and that the Access
+  application covers all traffic on the hostname (incl. `/api/*`).
