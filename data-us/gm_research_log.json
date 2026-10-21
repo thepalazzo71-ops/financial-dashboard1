@@ -1,0 +1,493 @@
+{
+ "_note": "Result of the 2026-10-21 US/Canada gross-margin research pass over the 54 non-financial companies without a verified GM (agents, WebSearch only, company filings/IR only). status 'ok' + applied=true were written into data-us/companies_pool_*.json (gm, gmIsVerified, gmFiscalYear, gmSourceUrl). Everything else stays on the pool-median fallback; no_gross_profit_line = the company reports no cost-of-sales/gross-profit concept (utilities, trucking, airlines, lessors, banks/brokers, oil & gas royalty, land...).",
+ "results": {
+  "TSX:CFP": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://www.sedarplus.ca/csa-party/records/document.html?id=6063d95280a2ef64b277c8ad34ed58c8fe81b383fba16955f50c5d1e10e1509a",
+   "note": "Canfor's income statement runs Sales (C$5,339.0M) less manufacturing and product costs (4,437.3M), freight and other distribution costs (600.0M), duties and tariff expense (163.7M), amortization (410.4M) and SG&A (168.5M) with no cost-of-sales or gross-profit subtotal, so no gross margin is computed. Figures read from a search extract of the SEDAR+ financial statements.",
+   "applied": false
+  },
+  "NYSE:MMI": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1578732/000162828026012419/mmi-20251231.htm",
+   "note": "Brokerage firm; income statement shows total revenue $755.2M, 'cost of services' $470.5M (mainly agent commissions), SG&A and D&A but no gross profit line, so none is derived.",
+   "applied": false
+  },
+  "NasdaqGS:MRTN": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774926005971/mrtn20251231_10k.htm",
+   "note": "Truckload carrier; statement of operations lists operating expenses (salaries/wages/benefits, purchased transportation, fuel, etc.) with an operating ratio of 97.4% and no cost-of-sales or gross-profit concept. Operating revenue $883.7M.",
+   "applied": false
+  },
+  "NYSE:UTL": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/755001/000119312526042983/utl-20251231.htm",
+   "note": "Regulated utility; consolidated statement of earnings shows operating revenues less purchased electricity/gas, O&M, depreciation and taxes with no gross profit line. Unitil discloses non-GAAP 'adjusted gross margin' by segment (electric $114.6M, gas $199.1M), not a GAAP consolidated gross profit.",
+   "applied": false
+  },
+  "TSX:MRC": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://www.newswire.ca/news-releases/morguard-corporation-announces-2025-results-and-regular-eligible-dividend-845965683.html",
+   "note": "Real estate owner/operator; reports revenue from real estate properties (C$1,033.0M) less property operating expenses (C$480.9M) to arrive at net operating income, which is a property NOI measure rather than a cost-of-sales gross profit, so none is derived.",
+   "applied": false
+  },
+  "TSX:AGF.B": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (Nov 30, 2025)",
+   "currency": "CAD",
+   "source_url": "https://www.agf.com/agf-files/en/investor-relations/annual-reports/corp144-2025-agf-annual-report.pdf",
+   "note": "Asset manager; income is management/advisory fees net presentation with trailing commissions (C$150.3M), SG&A and other expenses but no cost-of-sales or gross-profit concept.",
+   "applied": false
+  },
+  "TSX:CF": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (Mar 31, 2025)",
+   "currency": "CAD",
+   "source_url": "https://www.newswire.ca/news-releases/canaccord-genuity-group-inc-reports-fourth-quarter-and-fiscal-2025-results-829162680.html",
+   "note": "Investment dealer; IFRS statements show revenue (C$1,769.1M) and expenses (incentive compensation, SG&A, interest etc., C$1,715.5M) with no gross profit concept. Checked FY2025 release; FY2026 (March 2026) is likely published since but the structure is the same and was not separately checked.",
+   "applied": false
+  },
+  "NasdaqGS:SNCY": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1743907/000174390726000032/sncy-20251231.htm",
+   "note": "Airline; statement lists operating revenue ($1,126.8M) and operating expenses (salaries/wages/benefits, aircraft fuel, etc., total $1,026.2M, operating income $100.6M) with no cost-of-sales or gross-profit line.",
+   "applied": false
+  },
+  "NasdaqGS:RJET": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810332/000162828026019614/rjet-20251231.htm",
+   "note": "Regional airline; income statement presents operating revenues and operating expenses by nature (wages, maintenance, depreciation, etc.) with no cost-of-sales or gross-profit concept. Line items themselves not retrieved; classification based on industry statement format.",
+   "applied": false
+  },
+  "NasdaqGS:HTLD": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/799233/000079923326000006/htld-20251231.htm",
+   "note": "Truckload carrier; consolidated statement shows operating revenue ($805.7M) less operating expenses (salaries, rent and purchased transportation, fuel, etc.) with no cost-of-sales or gross-profit line.",
+   "applied": false
+  },
+  "NasdaqGS:BJRI": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://investors.bjsrestaurants.com/news/news-details/2026/BJs-Restaurants-Inc--Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Results/default.aspx",
+   "note": "Restaurant operator; 'cost of sales' (about $353M on about $1.4B revenue) covers food and beverage only, with labor, occupancy and other operating costs shown separately and no gross profit subtotal, so revenue minus cost of sales would overstate margin and is not used.",
+   "applied": false
+  },
+  "NYSE:CABO": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1632127/000163212726000005/cabo-20251231.htm",
+   "note": "Cable/broadband operator; statement of operations shows revenues, operating costs (excluding D&A), SG&A and depreciation/amortization with no cost-of-sales or gross-profit subtotal. Line amounts not retrieved from the filing.",
+   "applied": false
+  },
+  "TSX:DRM": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://www.businesswire.com/news/home/20260224901144/en/Dream-Unlimited-Corp.-Reports-Strong-Fourth-Quarter-Results",
+   "note": "Dream reports revenue less 'direct operating costs' = 'gross margin' (Q3 2025 nine months: revenue 251.2M, direct costs 174.5M), and FY2025 revenue was C$462.95M, but the FY2025 consolidated direct operating costs and gross margin were not found in a company document within the search budget.",
+   "applied": false
+  },
+  "TSX:ISC": {
+   "status": "partial",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://www.isc.ca/hubfs/ISC%20Reports%20Financial%20Results%20for%20the%20Three%20Months%20and%20Year%20Ended%20December%2031%2c%202025.pdf",
+   "note": "Revenue C$257.8M and total expenses C$204.1M; expenses include a 'cost of goods sold' that company commentary ties to the Services segment, alongside salaries and D&A, and no consolidated gross profit was found, so no single gross margin is given.",
+   "applied": false
+  },
+  "NasdaqGS:DNUT": {
+   "status": "partial",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1857154/000185715426000015/dnut-20251228.htm",
+   "note": "Revenue and cost in USD millions (52 weeks ended Dec 28, 2025). Company reports 'product and distribution costs' (ingredients, packaging, distribution) but no gross profit line; shop labour/occupancy sit in operating expenses, so revenue less product & distribution costs (~75.5%) is not a true gross margin and was not used.",
+   "applied": false
+  },
+  "NasdaqCM:ARKO": {
+   "status": "partial",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1823794/000119312526071464/arko-20251231.htm",
+   "note": "Revenue in USD millions (fuel 6,038.9 + merchandise 1,482.5 + other 122.1). ARKO presents fuel/merchandise costs within operating expenses and reports gross profit/contribution only by segment (e.g. merchandise margin 33.7%), not a consolidated gross profit; total cost-of-sales figure not retrieved.",
+   "applied": false
+  },
+  "NYSE:HY": {
+   "status": "ok",
+   "gm": 0.1679,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1173514/000117351426000084/hyar2025entire.pdf",
+   "note": "USD millions. Revenues 3,769.3, cost of sales 3,136.5, gross profit 632.8 per consolidated statement of operations (annual report/ARS; 10-K at .../000117351426000049/hy-20251231.htm). Cost of sales includes ~US$100m of tariff costs.",
+   "applied": true
+  },
+  "NasdaqGS:FWRD": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/912728/000162828026016793/fwrd-20251231.htm",
+   "note": "Revenue approx USD millions (company Q4'25 deck: LTM operating revenue ~$2,495m). Income statement lists operating revenue and operating expenses (purchased transportation, salaries, etc.) with no cost-of-sales or gross profit subtotal; purchased transportation (~$1,244m) is only one cost component.",
+   "applied": false
+  },
+  "NasdaqGS:LEGH": {
+   "status": "partial",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1436208/000110465926027133/legh-20251231x10k.htm",
+   "note": "USD millions. Total net revenue 164.567 (includes ~US$47.6m of interest income/other vs product sales 116.932); cost of product sales 84.829 + cost of other sales 1.723 = 86.552. A consolidated gross profit line was not confirmed; product-sales-only margin = (116.932-84.829)/116.932 = 27.5%, while total-revenue basis would be 47.4% (mixes finance income), so no single GM given.",
+   "applied": false
+  },
+  "NYSE:MCS": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/62234/000006223426000011/mcs-20251231.htm",
+   "note": "USD millions (fiscal year ended Dec 2025; revenues 758.5 incl. theatres ~462.7 and hotels/resorts ~295.3). Statement of earnings presents costs by function (theatre operations, hotels and resorts operations, advertising, administrative, D&A) with no cost of sales or gross profit subtotal; statement layout recalled from filing structure, line items not individually retrieved.",
+   "applied": false
+  },
+  "NasdaqGS:YORW": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/108985/000010898526000015/form10k.htm",
+   "note": "USD millions. Regulated water utility: operating revenues 77.488 with operating expenses (operation and maintenance, administrative and general, depreciation, taxes) and no cost-of-sales/gross profit concept.",
+   "applied": false
+  },
+  "TSX:IFP": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://interfor.com/wp-content/uploads/2026/02/Interfor-Reports-Q425-Results.pdf",
+   "note": "CAD millions. Interfor reports sales of 2,805.9 and expenses by nature (production costs 2,620.0, selling & administration 61.6, export duties 271.5, freight, depreciation) leading to operating earnings (loss) of (406.9); no cost-of-sales/gross profit subtotal, so none derived (production costs exclude freight, duties and depreciation).",
+   "applied": false
+  },
+  "NasdaqGS:PKOH": {
+   "status": "ok",
+   "gm": 0.1696,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1068148/000106814826000003/pkoh-20251231.htm",
+   "note": "USD millions from 10-K MD&A: net sales 1,599.1, cost of sales 1,327.9 (gross profit ~271.2); company-stated full-year gross margin ~17%.",
+   "applied": true
+  },
+  "NasdaqGS:ARTN.A": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/863110/000086311026000025/form10k.htm",
+   "note": "USD millions. Regulated water/wastewater utility: revenues 112.9 and utility operating expenses (utility operating expenses, depreciation, taxes) with no cost-of-sales/gross profit concept.",
+   "applied": false
+  },
+  "NasdaqGS:CCRN": {
+   "status": "ok",
+   "gm": 0.203,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1141103/000162828026014650/ccrn20251231-q4prexhibit991.htm",
+   "note": "USD millions. Q4'25 earnings release states full-year consolidated gross profit margin of 20.3%; 10-K income statement shows revenue from services 1,054.3 and 'direct operating expenses' ~840.7 (cost of services: clinician pay, housing, etc.; 10-K has no gross profit line itself). Cost figure approximate.",
+   "applied": true
+  },
+  "NasdaqGS:TBRG": {
+   "status": "ok",
+   "gm": 0.5301,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1169445/000143774926010657/ex_939684.htm",
+   "note": "USD millions. Total revenue 346.836 less total costs of revenue (exclusive of amortization and depreciation) 162.974 (47% of revenue, consistent with 10-K); company shows no gross profit subtotal, and cost excludes D&A so margin is somewhat flattered.",
+   "applied": true
+  },
+  "TSX:CKI": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "CAD",
+   "source_url": "https://www.newswire.ca/news-releases/clarke-inc-reports-2025-fourth-quarter-and-year-end-results-875965167.html",
+   "note": "Investment holding company (hotel, residential/real estate, other); company release reports segment net operating income (hotel NOI 21.5m, residential NOI 7.4m) and fair-value gains, not cost of sales/gross profit. Full statements not reviewed; revenue not retrieved; source is newswire distribution of company release.",
+   "applied": false
+  },
+  "OTCPK:MNPP": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": null,
+   "currency": "USD",
+   "source_url": null,
+   "note": "Real estate lessor (rental income, property expenses, SG&A); no FY2025 company filing was retrievable via search (only aggregators). Likely no cost-of-sales concept but not verified from a company document.",
+   "applied": false
+  },
+  "NYSEAM:INFU": {
+   "status": "ok",
+   "gm": 0.56,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1337013/000162828026010859/infu-20260224xexx991earnin.htm",
+   "note": "Company-reported FY2025 net revenues $143.4M, gross profit $80.3M, gross margin 56.0% (Q4/FY2025 earnings release, 8-K Ex. 99.1). Cost of revenues (rental/service and product costs) is derived as revenue minus gross profit from rounded $M figures.",
+   "applied": true
+  },
+  "OTCPK:LICT": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://lictcorp.com/wp-content/uploads/2026/03/2025-Q4-PressRelease.pdf",
+   "note": "LICT presents a 'cost of revenue' line (excluding depreciation and amortization) but no gross profit line; the full-year FY2025 cost of revenue could not be retrieved from the company release (FY2025 results were preliminary/unaudited; revenue ~$141.1M per company site). No gross margin computed.",
+   "applied": false
+  },
+  "OTCPK:OAKC": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.prnewswire.com/news-releases/oakworth-capital-inc-reports-24-increase-in-diluted-eps-302674210.html",
+   "note": "Bank holding company; income statement reports interest income/expense, net interest income and noninterest income/expense with no cost of sales or gross profit concept. 'Revenue' of ~$82.7M is the company's own total-revenue measure (net interest income plus noninterest income).",
+   "applied": false
+  },
+  "NasdaqGM:PAMT": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/798287/000143774926007960/ptsi20251231_10k.htm",
+   "note": "Truckload carrier; statement of operations lists operating expense categories (salaries/wages/benefits, fuel and supplies, rent and purchased transportation, depreciation, taxes, insurance, etc.) with no cost-of-revenue or gross-profit line. Statement structure per company 10-K format; line items not individually retrieved in search snippets.",
+   "applied": false
+  },
+  "NasdaqGS:TTEC": {
+   "status": "ok",
+   "gm": 0.2182,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://investors.ttec.com/news-releases/news-release-details/ttec-announces-fourth-quarter-and-full-year-2025-financial",
+   "note": "Revenue $2,136,899K and gross profit $466,212K (FY2025 release/fact sheet); cost of revenue = 'cost of services' (derived as revenue minus gross profit, $1,670,687K), excludes depreciation/amortization shown separately and impairment charges.",
+   "applied": true
+  },
+  "NYSE:TRAK": {
+   "status": "ok",
+   "gm": 0.858,
+   "fiscal_year": "FY2026 (June 30, 2026)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000050471/000143774926031392/trak20260630_10k.htm",
+   "note": "Revenue $23,287,319 less 'cost of revenue and product support' $3,306,855 from the FY2026 10-K. The company reports no gross profit subtotal (cost line sits within operating expenses), so GM is computed from its own two lines; caveat: cost line may exclude some support/hosting costs captured elsewhere.",
+   "applied": true
+  },
+  "OTCPK:FTCO": {
+   "status": "ok",
+   "gm": 0.541,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1828377/000110465926022879/ftco-20251231x10k.htm",
+   "note": "Net sales $18,411K; company 'mine cost of sales' $8,450K (production costs 6,107 + D&A 2,187 + reclamation 156) gives company-reported mine gross profit $9,961K. Corporate G&A, exploration and similar costs are excluded from mine gross profit.",
+   "applied": true
+  },
+  "NasdaqCM:JYNT": {
+   "status": "ok",
+   "gm": 0.7955,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://ir.thejoint.com/press-releases/detail/311/the-joint-corp-reports-2025-fourth-quarter-and-full-year",
+   "note": "Continuing operations: revenue ~$54.9M (rounded, per FY2025 release) and total cost of revenues $11,225,474 (franchise/regional-developer royalty costs ~$9.5M plus IT costs ~$1.7M). No gross profit subtotal is reported, so GM is computed; cost of revenues excludes clinic/corporate operating expenses and D&A.",
+   "applied": false,
+   "not_applied_reason": "Revenue confirmed on a second search, but the cost-of-revenues line (franchise royalty + IT costs, 79.6% implied margin) could not be verified and clinic operating costs sit elsewhere; left on fallback."
+  },
+  "NYSE:AVD": {
+   "status": "ok",
+   "gm": 0.2865,
+   "fiscal_year": "FY2025",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/5981/000119312526108593/avd-20251231.htm",
+   "note": "FY2025 10-K: net sales $515,114K, cost of sales $367,553K, gross profit $147,561K (company-reported gross margin ~29%). Cost of sales includes inventory write-downs.",
+   "applied": true
+  },
+  "TSX:CXI": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (Oct 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.ceifx.com/news/currency-exchange-international-reports-fourth-quarter-and-fiscal-2025-results",
+   "note": "Foreign-exchange/payments business whose statements report revenue (banknotes, payments) against operating expenses (salaries, rent, etc.) and EBITDA, with no cost-of-sales or gross-profit line. Statement structure not verified line-by-line in retrieved snippets; audited statements are on SEDAR+.",
+   "applied": false
+  },
+  "NasdaqGS:CRMT": {
+   "status": "partial",
+   "gm": 0.354,
+   "fiscal_year": "FY2026 (April 30, 2026)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000799850/000117184326004623/exh_991.htm",
+   "note": "Company reports gross margin 35.4% of SALES (vehicle sales only, excluding ~$253.7M interest income) for FY2026; total revenue $1,281.5M. The 35.4% full-year figure was seen via a press-release reprint (finviz), not directly in the sec.gov snippet (which showed Q4 31.2% and 9M 36.7%); dollar sales/cost of sales not retrieved. Verify against 8-K Ex. 99.1.",
+   "applied": false,
+   "not_applied_reason": "35.4% is vehicle-sales gross margin only (excludes ~$254M interest income); seen only in a finviz reprint."
+  },
+  "OTCPK:CPTP": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2024",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/202947/000095017025016420/cptp-20241231.htm",
+   "note": "Lessor of Providence land under long-term ground leases (single leasing segment); income statement shows lease revenue and operating expenses with no cost of sales or gross profit. FY2025 10-K not located in search; FY2024 used for structure.",
+   "applied": false
+  },
+  "NasdaqCM:MAYS": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (July 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/54187/000120677425000720/mays4503731-ex13.htm",
+   "note": "Real-estate lessor; statements show revenues of $22,469,710 against 'real estate operating expenses' ($15,655,276) and administrative and general expenses, with no cost-of-sales or gross-profit line. FY2026 (July 2026) 10-K not yet filed as of search.",
+   "applied": false
+  },
+  "NasdaqCM:DLHC": {
+   "status": "ok",
+   "gm": 0.1892,
+   "fiscal_year": "FY2025 (year ended Sep 30, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/785557/000078555725000161/exhibit991-dlhxfy25q4xearn.htm",
+   "note": "Cost of revenue = 'Contract costs' line in the FY2025 Q4 earnings release (8-K Ex. 99.1) statement of operations; the company does not itself print a gross profit line in the table, so GM is computed as (revenue - contract costs)/revenue. Revenue and contract costs read via search-result snippets of the sec.gov release, not a direct fetch.",
+   "applied": true
+  },
+  "NYSEAM:LPA": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1997711/000199771126000045/lpa-20251231.htm",
+   "note": "Industrial real-estate lessor reporting IFRS rental revenue (about $50.1M) and net operating income ($40,963,907) with property operating costs, not a cost of sales/gross profit; no gross margin derived. Statement line structure inferred from company-reported NOI reconciliation, not read line by line.",
+   "applied": false
+  },
+  "NasdaqGM:CPHC": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1672909/000143774926007464/cphc20251231_10k.htm",
+   "note": "Racetrack/card casino/F&B operator whose statement of income presents net revenues less operating expenses (income from operations $2,461,618) with no cost-of-sales or gross profit line; structure not verified line by line.",
+   "applied": false
+  },
+  "NasdaqGS:DLTH": {
+   "status": "ok",
+   "gm": 0.534,
+   "fiscal_year": "FY2025 (year ended Feb 1, 2026)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1649744/000119312526165278/d122165dars.pdf",
+   "note": "Company's 2025 Annual Report states full-year net sales of $565.2 million and gross margin of 53.4% (up 420 bp). Cost of goods sold includes product cost, freight, and distribution/occupancy-type costs per the company's definition; exact gross profit dollars not retrieved (revenue is rounded to $0.1M).",
+   "applied": true
+  },
+  "OTCPK:NUVR": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/71557/000143774926008309/nuvr20251231_10k.htm",
+   "note": "Rural telecom with a utility-style income statement (operating revenues less operating expenses incl. cost of services and D&A) and no gross profit line; structure not verified line by line from snippets.",
+   "applied": false
+  },
+  "OTCPK:IEHC": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2026 (year ended Mar 31, 2026)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/50292/000117494726000663/ex99-1.htm",
+   "note": "Company press release gives FY2026 revenue $29,417,600 (operating loss $1,625,634) but FY2026 cost of products sold was not found in a company/SEC document within the search budget (only aggregator values, which are not used). For reference, FY2025 10-K shows revenue $28,783,861 and cost of products sold $21,309,983 (implied GM about 26.0%; income statement appears to have no printed gross profit line).",
+   "applied": false
+  },
+  "TSXV:UFC": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "CAD",
+   "source_url": "https://www.stockwatch.com/News/Item/Z-C!UFC-3811878/C/UFC",
+   "note": "Real estate developer/landlord reporting IFRS statements (FY2025 filed April 2026); no company-reported gross profit line could be confirmed. Only aggregator 'cost of revenue' figures were seen, which are not used. SEDAR+ filings could not be read directly.",
+   "applied": false
+  },
+  "OTCPK:PRKA": {
+   "status": "partial",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Sep 28, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297937/000149315225027496/form10-k.htm",
+   "note": "Company reports total revenue $10,471,575 and a cost of animal food, merchandise and food of about $1,325,860, but this is only a narrow cost-of-goods line within park operating expenses; I could not confirm a consolidated gross profit line in the statement of operations, so no single gross margin is given.",
+   "applied": false
+  },
+  "TSXV:IEI": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Sep 30, 2025)",
+   "currency": "CAD",
+   "source_url": "https://imperialequities.com/wp-content/uploads/2026/02/IEI-2025-Annual-Report-Digital.pdf",
+   "note": "Industrial/commercial landlord presenting rental revenue less property operating costs (NOI-style) under IFRS; no cost of sales or gross profit line. Line structure not read in detail.",
+   "applied": false
+  },
+  "OTCPK:AMEN": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.businesswire.com/news/home/20260316102324/en/Amen-Properties-Reports-Results-for-Fourth-Quarter-of-2025-and-Announces-Dividend",
+   "note": "Oil and gas royalty/working-interest holding company (FY2025 revenue about $2.3M per company release); upstream/royalty statements have operating expenses (lease operating, DD&A) and no gross profit line. Structure not verified from the annual statements.",
+   "applied": false
+  },
+  "NasdaqGM:ARKR": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Sep 27, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/779544/000077954425000055/arkr-20250927.htm",
+   "note": "Restaurant operator reporting total costs and expenses (food and beverage cost of sales $46,427K, payroll, occupancy, etc.) with no gross profit line; food cost alone is only a partial cost of revenue so no gross margin is derived.",
+   "applied": false
+  },
+  "NYSEAM:MXC": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2026 (year ended Mar 31, 2026)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/66418/000149315226030386/form10-k.htm",
+   "note": "Oil and gas producer/royalty owner: operating revenues $6,561,324 against costs and expenses (production costs $1,428,353, DD&A, G&A); no cost of sales or gross profit line.",
+   "applied": false
+  },
+  "NYSEAM:CKX": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025 (year ended Dec 31, 2025)",
+   "currency": "USD",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/352955/000143774926010434/ckx20251231_10k.htm",
+   "note": "Land company with oil and gas, timber and surface revenue (about $838.5K total) and small segment cost lines but no consolidated gross profit line; no gross margin derived.",
+   "applied": false
+  }
+ }
+}

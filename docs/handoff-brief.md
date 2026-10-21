@@ -2485,3 +2485,31 @@ gap computation.
 - **To add a name when its delisting completes:** add an entry to
   `data/delisted.json` and rebuild. Candidates to watch: OB:ELMRA, AIM:GHH,
   ENXTPA:SACI, ENXTPA:ALVDM, XTRA:PSAN, DB:CTNK, LSE:ICGC, OM:BAHN B, DB:FHW.
+
+## US/Canada gross-margin research (2026-10-21)
+
+- **Scope:** of 208 US/Canada companies without a verified GM, 154 are
+  financial-sector (banks, insurers, asset managers; GM not meaningful, left
+  alone by design) and **54 are non-financial**. 4 agents (WebSearch only,
+  <=3 searches/company, company filings / IR releases only) researched the 54.
+  Full per-company outcome (incl. reasons) is in `data-us/gm_research_log.json`.
+- **Applied (11)** into both US pools (`gm`, `gmIsVerified`, `gmFiscalYear`,
+  `gmSourceUrl`; `build_site_us.py` now shows the FY and a "Company filing"
+  link): NYSE:HY 16.8%, NasdaqGS:PKOH 17.0%, NasdaqGS:CCRN 20.3%,
+  NasdaqGS:TBRG 53.0% (cost excludes D&A, so flattered), NYSEAM:INFU 56.0%,
+  NasdaqGS:TTEC 21.8%, NYSE:TRAK 85.8% (computed from "cost of revenue and
+  product support"), OTCPK:FTCO 54.1% ("mine gross profit"), NYSE:AVD 28.6%,
+  NasdaqCM:DLHC 18.9% (computed from "contract costs"), NasdaqGS:DLTH 53.4%.
+  `scripts/apply_profitability_bonus.py` re-run: no change to the bonus set.
+- **Effect (US all-sector view):** having a GM turns on valuation lens A, so
+  several jumped: DLTH #489->#137, TTEC #407->#136, TRAK #345->#147, INFU
+  #419->#205, AVD #422->#236, TBRG #488->#267 (market caps are weeks old - the
+  US refresh is still pending, so treat these as provisional).
+- **Not applied:** NasdaqCM:JYNT (79.6% - cost line unverified on a second
+  search), NasdaqGS:CRMT (vehicle-only 35.4%, finviz reprint), partials DNUT,
+  ARKO, LEGH, PRKA, ISC; not found DRM, LICT, IEHC (FY2025 ~26% implied, no
+  company document), MNPP; **no gross-profit line (~30)**: CFP, MMI, MRTN, UTL,
+  MRC, AGF.B, CF, SNCY, RJET, HTLD, BJRI (food-and-beverage cost only), CABO,
+  FWRD, MCS, YORW, ARTN.A, IFP, CKI, OAKC, PAMT, CXI, CPTP, MAYS, LPA, UFC, IEI,
+  CKX, AMEN, MXC, CPHC, NUVR, ARKR. Several of those classifications rest on
+  search extracts of the statement structure (noted in the log).
