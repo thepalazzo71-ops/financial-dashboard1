@@ -1,0 +1,62 @@
+{
+ "_definition": "Companies whose stock is no longer tradable because a takeover, squeeze-out or delisting has COMPLETED (verified from at least one source). They remain in the 1,000-company scoring pool (so no other company's score or rank changes) but are hidden from the main table and the movers list and shown in the 'Delisted' window instead. Offers that are merely announced or pending are NOT listed here - those stay visible, annotated in Corporate actions. Maintained by hand; see docs/handoff-brief.md.",
+ "ENXTBR:WHATS": {
+  "date": "2026-07-28",
+  "price": "EUR 148.00 per share",
+  "reason": "Taken private by the founding families (Malaga Investment SCSp); simplified squeeze-out completed, families own 100%, delisted from Euronext Brussels (Brussels Times reported it ~29 Jul 2026; exact day inferred).",
+  "sources": [
+   "https://www.brusselstimes.com/business/2250062/whats-cooking-food-group-now-fully-owned-by-two-belgian-families",
+   "https://www.eubelius.com/en/news/eubelius-assists-whats-cooking-group-on-its-take-private-through-a-public-takeover-bid"
+  ]
+ },
+ "BME:ECR": {
+  "date": "2026-09-22",
+  "price": "EUR 3.505 per share (delisting offer)",
+  "reason": "Bondalti's delisting tender was accepted by 8.62% of capital, taking Bondalti to ~85.85%; settlement 21 Sep 2026 and trading ended ~22-23 Sep 2026 (sources differ by a day; check CNMV).",
+  "sources": [
+   "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/bondalti-concluye-opa-sobre-ercros-con-aceptacion-n-950415",
+   "https://www.ocu.org/inversiones/invertir/acciones/articulos/ercros-deja-cotizar-que-pasa-acciones"
+  ]
+ },
+ "LSE:PCTN": {
+  "date": "2026-09-11",
+  "price": "All-share: 0.190 LondonMetric + 0.894 SREIT shares per Picton share (~GBP 404m)",
+  "reason": "Court-sanctioned scheme of arrangement effective 10 Sep 2026; dealings suspended 10 Sep, trading cancelled ~11 Sep 2026.",
+  "sources": [
+   "https://www.investegate.co.uk/announcement/rns/londonmetric-property--lmp/scheme-of-arrangement-becomes-effective/9765569",
+   "https://www.investegate.co.uk/announcement/rns/londonmetric-property--lmp/recommended-offer-for-picton-property-income/9697083"
+  ]
+ },
+ "LSE:TET": {
+  "date": "2026-07-03",
+  "price": "305p cash per share",
+  "reason": "Acquired by Dohler via a scheme of arrangement: effective 2 Jul 2026, delisted 3 Jul 2026.",
+  "sources": [
+   "https://www.treatt.com/media/pages/investor-relations/offer-for-treatt/ac49a213cc-1777458309/rule-2.7-announcement-29.04.2026.pdf"
+  ]
+ },
+ "HMSE:S9I": {
+  "date": "2024-12-27",
+  "price": "EUR 48.00 per share",
+  "reason": "Taken private by MiddleGround Capital via a delisting tender (Nov-Dec 2024, settled Jan 2025); delisted ~27 Dec 2024.",
+  "sources": [
+   "https://app.boersengefluester.de/en/newswire/DE000A2G9MZ9/stemmer-imaging-ag/management-board-and-supervisory-board-recommend-acceptance-of-middleground-capitals-public-delisting-tender-offer-2046899"
+  ]
+ },
+ "ENXTPA:EDI": {
+  "date": "2026-06-23",
+  "price": "EUR 9.89 per share",
+  "reason": "Buyout offer followed by squeeze-out by the Vasseur-family holding Vasco SAS (97.9% reached); the AMF announced the squeeze-out of the remaining 2.10% for 23 Jun 2026 with delisting from Euronext Paris (Euronext's own notice not located).",
+  "sources": [
+   "https://echanges.dila.gouv.fr/OPENDATA/AMF/ACT/2026/06/FCACT080041_20260609.pdf"
+  ]
+ },
+ "DB:CPX": {
+  "date": "2026-07-31",
+  "price": "EUR 20.23 per share (cash compensation)",
+  "reason": "Merger squeeze-out into PEH Wertpapier AG registered in the commercial register on 31 Jul 2026; minority shares ceased to exist, compensation paid 5 Aug 2026.",
+  "sources": [
+   "https://www.pressetext.com/news/barabfindung-im-rahmen-des-verschmelzungsrechtlichen-squeeze-outs-auf-eur-20-23-festgelegt-20260504024.html"
+  ]
+ }
+}

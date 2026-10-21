@@ -26,6 +26,7 @@ POOL_PATH = DATA / "companies_1000_scored.json"
 NEWS_PATH = DATA / "company_news.json"
 CORP_ACTIONS_PATH = DATA / "corporate_actions.json"
 DISTRESS_PATH = DATA / "distress_flags.json"
+DELISTED_PATH = DATA / "delisted.json"
 SNAPSHOTS = ROOT / "snapshots"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -59,6 +60,17 @@ def load_distress_flags():
     if not DISTRESS_PATH.exists():
         return {}
     with open(DISTRESS_PATH) as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
+
+
+def load_delisted():
+    """ticker -> {date, price, reason, sources}: companies whose delisting /
+    take-private has COMPLETED (see the file's _definition). They stay in the
+    scoring pool (so no score or rank changes) but the dashboard hides them
+    from the main table and movers and lists them in a 'Delisted' window."""
+    if not DELISTED_PATH.exists():
+        return {}
+    with open(DELISTED_PATH) as f:
         return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
 
 
@@ -139,6 +151,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
         'median_gm_pts': round(median_gm_pts, 4), 'companies': out_companies,
         'history': history, 'historyDates': history_dates,
         'corporateActions': load_corporate_actions(),
+        'delisted': load_delisted(),
     }
     build_info = {
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),

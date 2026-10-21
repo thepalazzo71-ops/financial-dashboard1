@@ -2464,3 +2464,24 @@ gap computation.
 - **Open decisions for the user:** exclusion rule for delisted/delisting rows;
   whether to rerun thin entries; US refresh (market caps weeks old, 208 GM
   unverified); Sopharma Trading / Flexopack GM; Spectra Systems thesis text.
+
+## Delisted-company rule (2026-10-21)
+
+- **Rule (agreed with the user):** a ranked company whose delisting / takeover /
+  squeeze-out has **completed** (verified from at least one source) is hidden
+  from the Europe dashboard's main table and "Biggest movers", and listed in a
+  new **Delisted** window (button next to Corporate actions) with date, deal
+  price, reason and sources. Announced or pending offers are NOT hidden - they
+  stay visible and are annotated in Corporate actions.
+- **Implementation:** `data/delisted.json` (hand-maintained, `_definition` inside),
+  loaded by `scripts/build_site.py` into `payload.delisted`; `site/template.html`
+  filters in `render()` and `biggestMovers()` and renders the window. The
+  companies **stay in the scoring pool**, so no other company's score or rank
+  changes and displayed ranks keep their gaps (hidden rows' ranks are shown in
+  the Delisted window as "would rank #N"). The US dashboard has no delisted
+  list (none known) and its template is unchanged.
+- **Currently listed (7):** ENXTBR:WHATS, BME:ECR, LSE:PCTN, LSE:TET,
+  HMSE:S9I, ENXTPA:EDI (Euronext's own notice not located), DB:CPX.
+- **To add a name when its delisting completes:** add an entry to
+  `data/delisted.json` and rebuild. Candidates to watch: OB:ELMRA, AIM:GHH,
+  ENXTPA:SACI, ENXTPA:ALVDM, XTRA:PSAN, DB:CTNK, LSE:ICGC, OM:BAHN B, DB:FHW.
