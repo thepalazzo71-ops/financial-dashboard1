@@ -456,7 +456,7 @@
     <p class="hint">
       Every comment you have written on a company, newest first, each stamped with the date and time you wrote it.
       You can add a comment from the bottom of any company's detail panel (after "Full financial data").
-      Comments marked <b>saved to repo</b> are stored permanently in the repository (<code>data/comments.json</code>, built into the page like the market caps) and show on every device. New comments are first kept in <b>this browser only</b> (localStorage) and are marked as such until you click <b>Export</b>, send the file to Claude, and it is merged into the repo and the page rebuilt. Use <b>Import</b> to load an export file into another browser.
+      Comments marked <b>saved to Cloudflare</b> are stored in your private Cloudflare store (behind the same login as this site) and appear on every device; <b>saved to repo</b> ones are built into the page from <code>data/comments.json</code>. If the Cloudflare store is not reachable, new comments are kept in <b>this browser only</b> (localStorage) and marked as such — use <b>Export</b> to keep a backup file (or send it to Claude to save into the repo) and <b>Import</b> to load one elsewhere.
     </p>
     <div id="commentsContent"></div>
     <div class="actions">
@@ -571,17 +571,21 @@ const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '2
 // Distress flags (data/distress_flags.json, hand-curated): informational
 // only - they never change scores or ranks.
 function escHtml(v) { return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-// ---- Comments: your own timestamped notes per company. Two layers:
-//  1. SAVED comments live in the repo (data/comments.json, embedded at build
-//     time next to the market caps) - permanent, versioned, visible on every
-//     device. They are read-only here.
-//  2. NEW comments are written to this browser's localStorage immediately
-//     (same key on the Europe and US/Canada pages - tickers never overlap)
-//     and flagged "browser only" until you Export them and have them merged
-//     into data/comments.json (scripts/merge_comments.py) and rebuilt.
+// ---- Comments: your own timestamped notes per company. Three layers,
+// merged by comment id (priority top to bottom):
+//  1. REPO: data/comments.json embedded at build time (read-only, permanent).
+//  2. CLOUD: the Cloudflare Worker's KV store (GET/POST/DELETE /api/comments,
+//     behind Cloudflare Access, keyed to your login) - saved instantly, shown
+//     on every device. Used automatically when the page is served by that
+//     Worker; silently skipped on file:// or when the API is not deployed.
+//  3. BROWSER: this browser's localStorage - written immediately, and the
+//     fallback (flagged "browser only") until the cloud copy is confirmed.
+//     Same key on the Europe and US/Canada pages - tickers never overlap.
 const LS_COMMENTS_KEY = 'shortlist_comments_v1';
-const SAVED_COMMENTS = PAYLOAD.savedComments || {};   // ticker -> [{id, ts, text}]
-let commentsState = {};   // browser-only: ticker -> [{id, ts, text}]
+const SAVED_COMMENTS = PAYLOAD.savedComments || {};   // repo layer: ticker -> [{id, ts, text}]
+let cloudComments = {};                               // cloud layer
+let cloudState = 'unknown';                           // 'unknown' | 'ok' | 'unavailable'
+let commentsState = {};                               // browser layer (not yet confirmed in the cloud)
 function loadComments() {
   try { commentsState = JSON.parse(localStorage.getItem(LS_COMMENTS_KEY) || '{}') || {}; } catch(e) { commentsState = {}; }
 }
@@ -590,33 +594,39 @@ function saveComments() {
 }
 function commentsFor(t) {
   const seen = new Set(), out = [];
-  (SAVED_COMMENTS[t] || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ saved: true }, x)); } });
-  (commentsState[t] || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ saved: false }, x)); } });
+  const add = (list, layer) => (list || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ layer }, x)); } });
+  add(SAVED_COMMENTS[t], 'repo'); add(cloudComments[t], 'cloud'); add(commentsState[t], 'local');
   return out.sort((a, b) => (b.ts || '').localeCompare(a.ts || ''));
 }
-function commentTickers() { return Array.from(new Set(Object.keys(SAVED_COMMENTS).concat(Object.keys(commentsState)))); }
+function commentTickers() { return Array.from(new Set(Object.keys(SAVED_COMMENTS).concat(Object.keys(cloudComments), Object.keys(commentsState)))); }
 function commentCount(t) { return commentsFor(t).length; }
 function commentsTotal() { return commentTickers().reduce((n, t) => n + commentCount(t), 0); }
-function unsavedCommentsTotal() { return commentTickers().reduce((n, t) => n + commentsFor(t).filter(x => !x.saved).length, 0); }
+function unsavedCommentsTotal() { return commentTickers().reduce((n, t) => n + commentsFor(t).filter(x => x.layer === 'local').length, 0); }
 function cmFmt(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return String(iso);
   return d.toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
-function cmStatus(x) { return x.saved ? 'saved to repo' : 'browser only — not backed up yet'; }
+function cmStatus(x) {
+  if (x.layer === 'repo') return 'saved to repo';
+  if (x.layer === 'cloud') return 'saved to Cloudflare';
+  return cloudState === 'ok' ? 'saving to Cloudflare…' : 'browser only — not backed up yet';
+}
+function cmCanDelete(x) { return x.layer !== 'repo'; }
 function commentTag(c) {
   const n = commentCount(c.t);
   return ` <span class="tag cm cm-tag" data-ticker="${c.t}" ${n ? '' : 'style="display:none"'} title="You have ${n} comment(s) on this company">&#128172; ${n}</span>`;
 }
 function commentsBoxInner(t) {
   const list = commentsFor(t);
+  const hint = cloudState === 'ok' ? 'Comments are saved to your Cloudflare store automatically.' : 'New comments are kept in this browser until you Export them (Comments window) and have them saved to the repo.';
   return `
     <h4>Your comments (${list.length})</h4>
     <textarea class="cm-input" data-ticker="${escHtml(t)}" placeholder="Write a comment — it is saved with today's date and time (Ctrl/Cmd+Enter to add)"></textarea>
-    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">New comments are kept in this browser until you Export them (Comments window) and have them saved to the repo.</span></div>
+    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">${hint}</span></div>
     ${list.map(x => `
       <div class="cm-item">
-        <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${x.saved ? '' : `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>`}</div>
+        <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</div>
         <div class="cm-text">${escHtml(x.text)}</div>
       </div>`).join('')}
   `;
@@ -635,6 +645,38 @@ function refreshCommentUI(t) {
   if (btn) btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
   if (document.getElementById('commentsModalBackdrop').classList.contains('open')) renderCommentsModal();
 }
+function refreshAllCommentUI() { commentTickers().forEach(refreshCommentUI); refreshCommentUI('__none__'); }
+// ---- cloud sync
+async function cloudFetch(path, opts) {
+  if (location.protocol === 'file:') throw new Error('file protocol');
+  const r = await fetch(path, Object.assign({ credentials: 'same-origin', redirect: 'manual', headers: { 'content-type': 'application/json' } }, opts || {}));
+  const ct = r.headers.get('content-type') || '';
+  if (!r.ok || !ct.includes('application/json')) throw new Error('cloud unavailable (' + r.status + ')');
+  return r.json();
+}
+async function pushLocalToCloud() {
+  for (const t of Object.keys(commentsState)) {
+    for (const x of commentsState[t].slice()) {
+      try {
+        await cloudFetch('/api/comments', { method: 'POST', body: JSON.stringify({ ticker: t, id: x.id, ts: x.ts, text: x.text }) });
+        (cloudComments[t] = cloudComments[t] || []).push({ id: x.id, ts: x.ts, text: x.text });
+        commentsState[t] = commentsState[t].filter(y => y.id !== x.id);
+        if (!commentsState[t].length) delete commentsState[t];
+        saveComments();
+      } catch (e) { cloudState = 'unavailable'; return; }
+    }
+  }
+}
+async function syncComments() {
+  try {
+    const d = await cloudFetch('/api/comments');
+    cloudComments = d.comments || {};
+    cloudState = 'ok';
+  } catch (e) { cloudState = 'unavailable'; refreshAllCommentUI(); return; }
+  refreshAllCommentUI();
+  await pushLocalToCloud();
+  refreshAllCommentUI();
+}
 function addComment(t, text) {
   text = (text || '').trim();
   if (!text) return false;
@@ -642,12 +684,21 @@ function addComment(t, text) {
   (commentsState[t] = commentsState[t] || []).unshift(entry);
   saveComments();
   refreshCommentUI(t);
+  if (cloudState !== 'unavailable' && location.protocol !== 'file:') pushLocalToCloud().then(() => refreshAllCommentUI());
   return true;
 }
-function deleteComment(t, id) {
+async function deleteComment(t, id) {
+  const wasCloud = (cloudComments[t] || []).some(x => x.id === id);
   commentsState[t] = (commentsState[t] || []).filter(x => x.id !== id);
   if (!commentsState[t].length) delete commentsState[t];
   saveComments();
+  if (wasCloud) {
+    try {
+      await cloudFetch(`/api/comments?ticker=${encodeURIComponent(t)}&id=${encodeURIComponent(id)}`, { method: 'DELETE' });
+      cloudComments[t] = (cloudComments[t] || []).filter(x => x.id !== id);
+      if (!cloudComments[t].length) delete cloudComments[t];
+    } catch (e) { alert('Could not delete from the cloud store right now - try again later.'); }
+  }
   refreshCommentUI(t);
 }
 function renderCommentsModal() {
@@ -657,13 +708,17 @@ function renderCommentsModal() {
   commentTickers().forEach(t => commentsFor(t).forEach(x => items.push({ t, x })));
   items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
   const unsaved = unsavedCommentsTotal();
-  const banner = unsaved ? `<p class="cm-hint" style="margin:0 0 10px"><b>${unsaved} comment(s) exist only in this browser.</b> Click Export and send the file to Claude to have them saved permanently in the repo.</p>` : '';
+  const banner = unsaved
+    ? (cloudState === 'ok'
+        ? `<p class="cm-hint" style="margin:0 0 10px">${unsaved} comment(s) are still being sent to Cloudflare…</p>`
+        : `<p class="cm-hint" style="margin:0 0 10px"><b>${unsaved} comment(s) exist only in this browser.</b> Click Export and send the file to Claude to have them saved permanently in the repo.</p>`)
+    : (cloudState === 'ok' ? `<p class="cm-hint" style="margin:0 0 10px">Connected to your Cloudflare comment store — new comments save automatically.</p>` : '');
   document.getElementById('commentsContent').innerHTML = banner + (items.length ? items.map(({ t, x }) => {
     const c = byT[t];
     return `
       <div class="cm-item">
         <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>
-          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && !x.saved) ? ' &middot; ' : ''}${x.saved ? '' : `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>`}</span></div>
+          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && cmCanDelete(x)) ? ' &middot; ' : ''}${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</span></div>
         <div class="cm-text">${escHtml(x.text)}</div>
       </div>`;
   }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>');
@@ -684,7 +739,7 @@ function showCompanyInTable(t) {
   if (row) row.scrollIntoView({ block: 'center' });
 }
 function exportComments() {
-  // Full backup = saved + browser-only, so the file is complete on its own.
+  // Full backup = every layer, so the file is complete on its own.
   const all = {};
   commentTickers().forEach(t => { all[t] = commentsFor(t).map(x => ({ id: x.id, ts: x.ts, text: x.text })); });
   const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: all }, null, 1)], { type: 'application/json' });
@@ -713,9 +768,10 @@ function importComments(file) {
         });
       });
       saveComments();
-      commentTickers().forEach(refreshCommentUI);
+      refreshAllCommentUI();
       renderCommentsModal();
       msg.textContent = `Imported ${added} new comment(s).`;
+      if (added && cloudState === 'ok') pushLocalToCloud().then(() => { refreshAllCommentUI(); renderCommentsModal(); });
     } catch (e) { msg.textContent = 'Import failed: that file is not a comments export.'; }
   };
   reader.readAsText(file);
@@ -751,6 +807,7 @@ function initComments() {
       addComment(e.target.dataset.ticker, e.target.value);
     }
   });
+  syncComments();
 }
 function distressTag(c) {
   if (!c.distress) return '';

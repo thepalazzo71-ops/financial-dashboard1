@@ -2540,3 +2540,21 @@ gap computation.
 - Implementation lives in `site/template.html` and `site/template_us.html`
   (`initComments()` etc.). Also fixed a stale hard-coded "790/1000 covered" GM
   coverage figure in the Europe header (now computed).
+
+## Cloudflare-backed comments (2026-10-21) - built, NOT yet activated
+
+- `worker/index.js` (+ `worker/README.md`, `worker/wrangler.activated.jsonc`,
+  `worker/test_local.mjs`): a Worker adding `/api/comments` (GET/POST/DELETE,
+  per-user via the Cloudflare Access email, stored in KV key
+  `comments:<email>` with dated `backup:` copies). Tested locally with the real
+  Worker code + in-memory KV + browser: add, second-device read, delete, 401
+  without Access, graceful browser-only fallback.
+- Both page templates now have three comment layers (repo `data/comments.json`
+  -> Cloudflare KV -> browser localStorage), merged by id; the page syncs
+  automatically when it is served by the Worker and silently falls back
+  otherwise (file://, API missing, not logged in).
+- **To activate:** create a KV namespace, copy `worker/wrangler.activated.jsonc`
+  over `wrangler.jsonc` with the id, push to the branch Cloudflare deploys
+  (see README). Pending the user's Cloudflare connector authorization (or a KV
+  id) and confirmation of the deploy branch. `wrangler.jsonc` was deliberately
+  left unchanged so a missing binding cannot break the live deploy.

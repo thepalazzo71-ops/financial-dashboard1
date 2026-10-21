@@ -1,0 +1,17 @@
+{
+  // Drop-in replacement for the repo-root wrangler.jsonc once the KV namespace
+  // exists (see worker/README.md). Static site unchanged; only /api/* runs the
+  // Worker.
+  "name": "financial-dashboard1",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    "directory": "./docs",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "STATE", "id": "PUT_THE_KV_NAMESPACE_ID_HERE" }
+  ],
+  "preview_urls": false
+}
