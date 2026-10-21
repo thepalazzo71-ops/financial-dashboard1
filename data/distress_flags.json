@@ -18,5 +18,15 @@
    "https://www.boursorama.com/bourse/actualites/champagne-maison-pommery-n-a-pas-trouve-d-accord-avec-l-allemand-henkell-mais-s-est-refinance-c34ac9c7a717b7bf0798214397c6ca0a",
    "https://www.maisonpommery.com/wp-content/uploads/2026/08/Communique-05082026-FR.pdf"
   ]
+ },
+ "WSE:MSW": {
+  "level": "warning",
+  "summary": "Mostostal Warszawa reported significant 2025 losses that left equity negative and disclosed a material threat to the continuation of operations (company and group). It said it would need PLN 425-570m of extra financing from July 2026 (later revised to PLN 375-520m after contract-indexation annexes); a capital-increase resolution failed at the first shareholder meeting and an EGM was called for 29 Jul 2026 (outcome not found). Majority holder Acciona (62.13% of votes) says recapitalisation is needed and that it stays ready to take part, subject to minority support and KNF approval. No insolvency proceeding or payment default reported.",
+  "asOf": "2026-10-21",
+  "sources": [
+   "https://www.biznesradar.pl/a/145921,mostostal-warszawa-istotne-zagrozenie-dotyczace-kontynuacji-funkcjonowania-spolki",
+   "https://www.biznesradar.pl/a/149514,acciona-podtrzymuje-gotowosc-do-dokapitalizowania-mostostalu-warszawa",
+   "https://xyz.pl/dzieje-sie/mostostal-warszawa-z-duzymi-stratami-ryzyko-dla-dalszego-funkcjonowania-3728"
+  ]
  }
 }
