@@ -1,0 +1,4 @@
+{
+ "_note": "The user's own timestamped per-company comments (ticker -> [{id, ts (ISO UTC), text}]). Merged from the dashboard's Export file by scripts/merge_comments.py; embedded read-only in both pages at build time (shown as 'saved to repo'). Never hand-edit ids/timestamps.",
+ "comments": {}
+}

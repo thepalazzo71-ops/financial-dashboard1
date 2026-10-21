@@ -2523,10 +2523,20 @@ gap computation.
   confirmation. A 💬 n tag appears in the company's table row. A **Comments (n)**
   button opens a window with all comments across companies, newest first,
   with "show in table", Export (JSON backup) and Import (merge by comment id).
-- **Storage:** browser `localStorage`, key `shortlist_comments_v1`, shared by both
-  pages (disjoint tickers). It is NOT synced between browsers/devices and is
-  lost if site data is cleared - hence Export/Import. No backend exists on the
-  static GitHub Pages site; a synced version would need a hosted store.
+- **Storage (two layers):** (1) **saved comments** live in the repo in
+  `data/comments.json`, next to the market caps, are embedded read-only in both
+  pages at build time (`payload.savedComments`, shown as "saved to repo") and
+  therefore show on every device; (2) **new comments** are written to browser
+  `localStorage` (`shortlist_comments_v1`, shared by both pages) and flagged
+  "browser only - not backed up yet" until saved. **Saving workflow:** the user
+  clicks Export in the Comments window (a JSON file with ALL comments) and
+  gives the file to Claude, who runs `python3 scripts/merge_comments.py
+  <file>` (de-dupes by comment id), rebuilds both pages, commits and pushes.
+  Saved comments cannot be deleted from the page - ask Claude to remove one
+  from `data/comments.json`. No backend exists (Cloudflare Workers static
+  assets behind Access); an automatic synced store would need a Worker + KV
+  namespace (the user must authorize the Cloudflare connector or give a KV
+  id) - offered, not built.
 - Implementation lives in `site/template.html` and `site/template_us.html`
   (`initComments()` etc.). Also fixed a stale hard-coded "790/1000 covered" GM
   coverage figure in the Europe header (now computed).

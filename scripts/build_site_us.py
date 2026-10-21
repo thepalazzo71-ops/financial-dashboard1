@@ -101,6 +101,18 @@ def build_sector_payload(companies, mc_overrides):
     }
 
 
+def load_saved_comments():
+    """ticker -> [{id, ts, text}]: the user's own timestamped per-company
+    comments, kept in data/comments.json (merged from the dashboard's Export
+    file by scripts/merge_comments.py) so they are saved in the repo like
+    the market caps. Embedded read-only in the page."""
+    path = Path(__file__).resolve().parent.parent / "data" / "comments.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        return json.load(f).get("comments", {})
+
+
 def main():
     all_sector = json.load(open(DATA_US / "companies_pool_all.json"))
     nonfin = json.load(open(DATA_US / "companies_pool_nonfinancial.json"))
@@ -112,6 +124,7 @@ def main():
             'nonfinancial': build_sector_payload(nonfin, mc_overrides),
         },
         'corporateActions': load_corporate_actions(),
+        'savedComments': load_saved_comments(),
     }
     build_info = {
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),

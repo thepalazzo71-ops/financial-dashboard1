@@ -456,9 +456,7 @@
     <p class="hint">
       Every comment you have written on a company, newest first, each stamped with the date and time you wrote it.
       You can add a comment from the bottom of any company's detail panel (after "Full financial data").
-      <b>Comments are stored in this browser only</b> (localStorage, shared by the Europe and US/Canada pages on the same
-      site address) — they are not synced to other browsers or devices, and clearing site data deletes them. Use
-      <b>Export</b> now and then to keep a backup file, and <b>Import</b> to restore or merge it elsewhere.
+      Comments marked <b>saved to repo</b> are stored permanently in the repository (<code>data/comments.json</code>, built into the page like the market caps) and show on every device. New comments are first kept in <b>this browser only</b> (localStorage) and are marked as such until you click <b>Export</b>, send the file to Claude, and it is merged into the repo and the page rebuilt. Use <b>Import</b> to load an export file into another browser.
     </p>
     <div id="commentsContent"></div>
     <div class="actions">
@@ -573,38 +571,52 @@ const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '2
 // Distress flags (data/distress_flags.json, hand-curated): informational
 // only - they never change scores or ranks.
 function escHtml(v) { return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-// ---- Comments: your own timestamped notes per company. Client-side only,
-// persisted to this browser's localStorage (same key on the Europe and
-// US/Canada pages - their tickers never overlap). Export/Import (JSON) in
-// the "Comments" window is the backup / move-to-another-browser route.
+// ---- Comments: your own timestamped notes per company. Two layers:
+//  1. SAVED comments live in the repo (data/comments.json, embedded at build
+//     time next to the market caps) - permanent, versioned, visible on every
+//     device. They are read-only here.
+//  2. NEW comments are written to this browser's localStorage immediately
+//     (same key on the Europe and US/Canada pages - tickers never overlap)
+//     and flagged "browser only" until you Export them and have them merged
+//     into data/comments.json (scripts/merge_comments.py) and rebuilt.
 const LS_COMMENTS_KEY = 'shortlist_comments_v1';
-let commentsState = {};   // ticker -> [{id, ts (ISO), text}], newest first
+const SAVED_COMMENTS = PAYLOAD.savedComments || {};   // ticker -> [{id, ts, text}]
+let commentsState = {};   // browser-only: ticker -> [{id, ts, text}]
 function loadComments() {
   try { commentsState = JSON.parse(localStorage.getItem(LS_COMMENTS_KEY) || '{}') || {}; } catch(e) { commentsState = {}; }
 }
 function saveComments() {
   try { localStorage.setItem(LS_COMMENTS_KEY, JSON.stringify(commentsState)); } catch(e) {}
 }
-function commentCount(t) { return (commentsState[t] || []).length; }
-function commentsTotal() { return Object.values(commentsState).reduce((n, l) => n + l.length, 0); }
+function commentsFor(t) {
+  const seen = new Set(), out = [];
+  (SAVED_COMMENTS[t] || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ saved: true }, x)); } });
+  (commentsState[t] || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ saved: false }, x)); } });
+  return out.sort((a, b) => (b.ts || '').localeCompare(a.ts || ''));
+}
+function commentTickers() { return Array.from(new Set(Object.keys(SAVED_COMMENTS).concat(Object.keys(commentsState)))); }
+function commentCount(t) { return commentsFor(t).length; }
+function commentsTotal() { return commentTickers().reduce((n, t) => n + commentCount(t), 0); }
+function unsavedCommentsTotal() { return commentTickers().reduce((n, t) => n + commentsFor(t).filter(x => !x.saved).length, 0); }
 function cmFmt(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return String(iso);
   return d.toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
+function cmStatus(x) { return x.saved ? 'saved to repo' : 'browser only — not backed up yet'; }
 function commentTag(c) {
   const n = commentCount(c.t);
   return ` <span class="tag cm cm-tag" data-ticker="${c.t}" ${n ? '' : 'style="display:none"'} title="You have ${n} comment(s) on this company">&#128172; ${n}</span>`;
 }
 function commentsBoxInner(t) {
-  const list = commentsState[t] || [];
+  const list = commentsFor(t);
   return `
     <h4>Your comments (${list.length})</h4>
     <textarea class="cm-input" data-ticker="${escHtml(t)}" placeholder="Write a comment — it is saved with today's date and time (Ctrl/Cmd+Enter to add)"></textarea>
-    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">Saved in this browser only — see the Comments window to export a backup.</span></div>
+    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">New comments are kept in this browser until you Export them (Comments window) and have them saved to the repo.</span></div>
     ${list.map(x => `
       <div class="cm-item">
-        <div class="cm-meta"><span>${cmFmt(x.ts)}</span><button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button></div>
+        <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${x.saved ? '' : `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>`}</div>
         <div class="cm-text">${escHtml(x.text)}</div>
       </div>`).join('')}
   `;
@@ -642,17 +654,19 @@ function renderCommentsModal() {
   const byT = {};
   COMPANIES.forEach(c => { byT[c.t] = c; });
   const items = [];
-  Object.keys(commentsState).forEach(t => commentsState[t].forEach(x => items.push({ t, x })));
+  commentTickers().forEach(t => commentsFor(t).forEach(x => items.push({ t, x })));
   items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
-  document.getElementById('commentsContent').innerHTML = items.length ? items.map(({ t, x }) => {
+  const unsaved = unsavedCommentsTotal();
+  const banner = unsaved ? `<p class="cm-hint" style="margin:0 0 10px"><b>${unsaved} comment(s) exist only in this browser.</b> Click Export and send the file to Claude to have them saved permanently in the repo.</p>` : '';
+  document.getElementById('commentsContent').innerHTML = banner + (items.length ? items.map(({ t, x }) => {
     const c = byT[t];
     return `
       <div class="cm-item">
-        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)}</span>
-          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button> &middot; ` : ''}<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button></span></div>
+        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>
+          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && !x.saved) ? ' &middot; ' : ''}${x.saved ? '' : `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>`}</span></div>
         <div class="cm-text">${escHtml(x.text)}</div>
       </div>`;
-  }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>';
+  }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>');
 }
 function showCompanyInTable(t) {
   const c = COMPANIES.find(x => x.t === t);
@@ -670,7 +684,10 @@ function showCompanyInTable(t) {
   if (row) row.scrollIntoView({ block: 'center' });
 }
 function exportComments() {
-  const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: commentsState }, null, 1)], { type: 'application/json' });
+  // Full backup = saved + browser-only, so the file is complete on its own.
+  const all = {};
+  commentTickers().forEach(t => { all[t] = commentsFor(t).map(x => ({ id: x.id, ts: x.ts, text: x.text })); });
+  const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: all }, null, 1)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = `shortlist-comments-${new Date().toISOString().slice(0, 10)}.json`;
@@ -688,16 +705,15 @@ function importComments(file) {
       let added = 0;
       Object.keys(src).forEach(t => {
         if (!Array.isArray(src[t])) return;
-        const have = new Set((commentsState[t] || []).map(x => x.id));
+        const have = new Set(commentsFor(t).map(x => x.id));
         src[t].forEach(x => {
           if (x && typeof x.id === 'string' && typeof x.text === 'string' && typeof x.ts === 'string' && !have.has(x.id)) {
             (commentsState[t] = commentsState[t] || []).push({ id: x.id, ts: x.ts, text: x.text }); have.add(x.id); added++;
           }
         });
-        if (commentsState[t]) commentsState[t].sort((a, b) => b.ts.localeCompare(a.ts));
       });
       saveComments();
-      Object.keys(commentsState).forEach(refreshCommentUI);
+      commentTickers().forEach(refreshCommentUI);
       renderCommentsModal();
       msg.textContent = `Imported ${added} new comment(s).`;
     } catch (e) { msg.textContent = 'Import failed: that file is not a comments export.'; }

@@ -74,6 +74,18 @@ def load_delisted():
         return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
 
 
+def load_saved_comments():
+    """ticker -> [{id, ts, text}]: the user's own timestamped per-company
+    comments, kept in data/comments.json (merged from the dashboard's Export
+    file by scripts/merge_comments.py) so they are saved in the repo like
+    the market caps. Embedded read-only in the page."""
+    path = DATA / "comments.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        return json.load(f).get("comments", {})
+
+
 def load_corporate_actions():
     """Manually/agent-researched tender offers, M&A, spinoffs and other
     corporate restructuring found for companies in the shortlist range -
@@ -152,6 +164,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
         'history': history, 'historyDates': history_dates,
         'corporateActions': load_corporate_actions(),
         'delisted': load_delisted(),
+        'savedComments': load_saved_comments(),
     }
     build_info = {
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
