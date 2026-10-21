@@ -2513,3 +2513,20 @@ gap computation.
   FWRD, MCS, YORW, ARTN.A, IFP, CKI, OAKC, PAMT, CXI, CPTP, MAYS, LPA, UFC, IEI,
   CKX, AMEN, MXC, CPHC, NUVR, ARKR. Several of those classifications rest on
   search extracts of the statement structure (noted in the log).
+
+## Per-company comments (2026-10-21)
+
+- Both dashboards (Europe and US/Canada) now have a **Comments** feature:
+  a comment box at the bottom of every company's detail panel (right after the
+  collapsible "Full financial data"), each comment stamped with the local date
+  and time, newest first; add with the button or Ctrl/Cmd+Enter; delete with
+  confirmation. A 💬 n tag appears in the company's table row. A **Comments (n)**
+  button opens a window with all comments across companies, newest first,
+  with "show in table", Export (JSON backup) and Import (merge by comment id).
+- **Storage:** browser `localStorage`, key `shortlist_comments_v1`, shared by both
+  pages (disjoint tickers). It is NOT synced between browsers/devices and is
+  lost if site data is cleared - hence Export/Import. No backend exists on the
+  static GitHub Pages site; a synced version would need a hosted store.
+- Implementation lives in `site/template.html` and `site/template_us.html`
+  (`initComments()` etc.). Also fixed a stale hard-coded "790/1000 covered" GM
+  coverage figure in the Europe header (now computed).

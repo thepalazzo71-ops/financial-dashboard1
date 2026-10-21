@@ -142,6 +142,17 @@
   .detail .distress-note b.lbl { display: block; font-size: 10.5px; color: var(--brick); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
   .detail .distress-note a { color: var(--brick); }
   .detail-actions { margin-bottom: 12px; }
+  .comments-box { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule-strong); }
+  .comments-box h4 { margin: 0 0 6px; }
+  .cm-input { display: block; width: 100%; min-height: 64px; box-sizing: border-box; font: inherit; font-size: 13px; line-height: 1.45; color: var(--ink); background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 8px 10px; resize: vertical; }
+  .cm-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; flex-wrap: wrap; }
+  .cm-hint { font-size: 11px; color: var(--ink-faint); }
+  .cm-item { padding: 8px 10px; border: 1px solid var(--rule); border-radius: 3px; background: var(--paper); margin-bottom: 6px; }
+  .cm-meta { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; color: var(--ink-faint); }
+  .cm-text { font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 3px; color: var(--ink); }
+  .cm-del { background: none; border: none; color: var(--ink-faint); cursor: pointer; font: inherit; font-size: 11px; padding: 0; }
+  .cm-del:hover { color: var(--brick); text-decoration: underline; }
+  .tag.cm { background: var(--green-soft); color: var(--green-text); cursor: help; }
   .track-btn { font: inherit; font-size: 12px; font-weight: 600; background: var(--paper); color: var(--green-text); border: 1px solid var(--green-text); border-radius: 20px; padding: 5px 12px; cursor: pointer; }
   .track-btn:hover { background: var(--green-soft); }
   .track-btn.tracked { background: var(--green); color: var(--paper); border-color: var(--green); }
@@ -249,7 +260,7 @@
     <div class="sub">
       v6 composite score across nine dimensions, percentile-ranked against the <b>full 1,000-candidate pool</b>
       (Capital IQ extract, March&nbsp;2026 &middot; quality-gated from 6,109 raw listings &middot;
-      gross margin researched from official filings, 790/1000 covered). Edit market caps or gross margins below
+      gross margin researched from official filings, <span id="gmCoverage">790/1000</span> covered). Edit market caps or gross margins below
       to try scenarios — every score and rank updates live, against the whole pool.
     </div>
     <div class="stat-row" id="statRow"></div>
@@ -280,6 +291,7 @@
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
     <button class="btn ghost small" id="delistedBtn">Delisted</button>
     <button class="btn ghost small" id="trackerBtn">Tracker</button>
+    <button class="btn ghost small" id="commentsBtn">Comments</button>
     <button class="btn ghost small" id="profitBonusBtn">Profitability bonus benefactors</button>
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
@@ -438,6 +450,27 @@
   </div>
 </div>
 
+<div class="modal-backdrop" id="commentsModalBackdrop">
+  <div class="modal wide">
+    <h3>My comments</h3>
+    <p class="hint">
+      Every comment you have written on a company, newest first, each stamped with the date and time you wrote it.
+      You can add a comment from the bottom of any company's detail panel (after "Full financial data").
+      <b>Comments are stored in this browser only</b> (localStorage, shared by the Europe and US/Canada pages on the same
+      site address) — they are not synced to other browsers or devices, and clearing site data deletes them. Use
+      <b>Export</b> now and then to keep a backup file, and <b>Import</b> to restore or merge it elsewhere.
+    </p>
+    <div id="commentsContent"></div>
+    <div class="actions">
+      <span class="cm-hint" id="commentsImportMsg" style="margin-right:auto"></span>
+      <button class="btn ghost" id="commentsExport">Export</button>
+      <button class="btn ghost" id="commentsImport">Import</button>
+      <input type="file" id="commentsImportFile" accept="application/json,.json" style="display:none">
+      <button class="btn ghost" id="commentsClose">Close</button>
+    </div>
+  </div>
+</div>
+
 <div class="modal-backdrop" id="trackerModalBackdrop">
   <div class="modal wide">
     <h3>Tracker</h3>
@@ -540,6 +573,169 @@ const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '2
 // Distress flags (data/distress_flags.json, hand-curated): informational
 // only - they never change scores or ranks.
 function escHtml(v) { return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// ---- Comments: your own timestamped notes per company. Client-side only,
+// persisted to this browser's localStorage (same key on the Europe and
+// US/Canada pages - their tickers never overlap). Export/Import (JSON) in
+// the "Comments" window is the backup / move-to-another-browser route.
+const LS_COMMENTS_KEY = 'shortlist_comments_v1';
+let commentsState = {};   // ticker -> [{id, ts (ISO), text}], newest first
+function loadComments() {
+  try { commentsState = JSON.parse(localStorage.getItem(LS_COMMENTS_KEY) || '{}') || {}; } catch(e) { commentsState = {}; }
+}
+function saveComments() {
+  try { localStorage.setItem(LS_COMMENTS_KEY, JSON.stringify(commentsState)); } catch(e) {}
+}
+function commentCount(t) { return (commentsState[t] || []).length; }
+function commentsTotal() { return Object.values(commentsState).reduce((n, l) => n + l.length, 0); }
+function cmFmt(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return String(iso);
+  return d.toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+function commentTag(c) {
+  const n = commentCount(c.t);
+  return ` <span class="tag cm cm-tag" data-ticker="${c.t}" ${n ? '' : 'style="display:none"'} title="You have ${n} comment(s) on this company">&#128172; ${n}</span>`;
+}
+function commentsBoxInner(t) {
+  const list = commentsState[t] || [];
+  return `
+    <h4>Your comments (${list.length})</h4>
+    <textarea class="cm-input" data-ticker="${escHtml(t)}" placeholder="Write a comment — it is saved with today's date and time (Ctrl/Cmd+Enter to add)"></textarea>
+    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">Saved in this browser only — see the Comments window to export a backup.</span></div>
+    ${list.map(x => `
+      <div class="cm-item">
+        <div class="cm-meta"><span>${cmFmt(x.ts)}</span><button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button></div>
+        <div class="cm-text">${escHtml(x.text)}</div>
+      </div>`).join('')}
+  `;
+}
+function commentsBox(t) { return `<div class="comments-box" data-ticker="${escHtml(t)}">${commentsBoxInner(t)}</div>`; }
+function refreshCommentUI(t) {
+  document.querySelectorAll('.comments-box').forEach(el => { if (el.dataset.ticker === t) el.innerHTML = commentsBoxInner(t); });
+  document.querySelectorAll('.cm-tag').forEach(el => {
+    if (el.dataset.ticker !== t) return;
+    const n = commentCount(t);
+    el.style.display = n ? '' : 'none';
+    el.innerHTML = '&#128172; ' + n;
+    el.title = `You have ${n} comment(s) on this company`;
+  });
+  const btn = document.getElementById('commentsBtn');
+  if (btn) btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
+  if (document.getElementById('commentsModalBackdrop').classList.contains('open')) renderCommentsModal();
+}
+function addComment(t, text) {
+  text = (text || '').trim();
+  if (!text) return false;
+  const entry = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7), ts: new Date().toISOString(), text };
+  (commentsState[t] = commentsState[t] || []).unshift(entry);
+  saveComments();
+  refreshCommentUI(t);
+  return true;
+}
+function deleteComment(t, id) {
+  commentsState[t] = (commentsState[t] || []).filter(x => x.id !== id);
+  if (!commentsState[t].length) delete commentsState[t];
+  saveComments();
+  refreshCommentUI(t);
+}
+function renderCommentsModal() {
+  const byT = {};
+  COMPANIES.forEach(c => { byT[c.t] = c; });
+  const items = [];
+  Object.keys(commentsState).forEach(t => commentsState[t].forEach(x => items.push({ t, x })));
+  items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
+  document.getElementById('commentsContent').innerHTML = items.length ? items.map(({ t, x }) => {
+    const c = byT[t];
+    return `
+      <div class="cm-item">
+        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)}</span>
+          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button> &middot; ` : ''}<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button></span></div>
+        <div class="cm-text">${escHtml(x.text)}</div>
+      </div>`;
+  }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>';
+}
+function showCompanyInTable(t) {
+  const c = COMPANIES.find(x => x.t === t);
+  if (!c) return;
+  document.getElementById('commentsModalBackdrop').classList.remove('open');
+  filters.historyDate = 'live';
+  const hs = document.getElementById('historyDate'); if (hs) hs.value = 'live';
+  filters.search = c.t; filters.country = ''; filters.archetype = ''; filters.editedOnly = false; filters.needsGm = false;
+  const si = document.getElementById('search'); if (si) si.value = c.t;
+  const sel = document.getElementById('topNFilter');
+  if (sel && sel.options.length) { const last = sel.options[sel.options.length - 1]; sel.value = last.value; filters.topN = parseInt(last.value, 10); }
+  expandedTicker = c.t;
+  render();
+  const row = document.querySelector('tr.row.expanded');
+  if (row) row.scrollIntoView({ block: 'center' });
+}
+function exportComments() {
+  const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: commentsState }, null, 1)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `shortlist-comments-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function importComments(file) {
+  const msg = document.getElementById('commentsImportMsg');
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      const src = data && data.comments ? data.comments : null;
+      if (!src || typeof src !== 'object') throw new Error('not a comments export');
+      let added = 0;
+      Object.keys(src).forEach(t => {
+        if (!Array.isArray(src[t])) return;
+        const have = new Set((commentsState[t] || []).map(x => x.id));
+        src[t].forEach(x => {
+          if (x && typeof x.id === 'string' && typeof x.text === 'string' && typeof x.ts === 'string' && !have.has(x.id)) {
+            (commentsState[t] = commentsState[t] || []).push({ id: x.id, ts: x.ts, text: x.text }); have.add(x.id); added++;
+          }
+        });
+        if (commentsState[t]) commentsState[t].sort((a, b) => b.ts.localeCompare(a.ts));
+      });
+      saveComments();
+      Object.keys(commentsState).forEach(refreshCommentUI);
+      renderCommentsModal();
+      msg.textContent = `Imported ${added} new comment(s).`;
+    } catch (e) { msg.textContent = 'Import failed: that file is not a comments export.'; }
+  };
+  reader.readAsText(file);
+}
+function initComments() {
+  loadComments();
+  const backdrop = document.getElementById('commentsModalBackdrop');
+  const btn = document.getElementById('commentsBtn');
+  btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
+  btn.addEventListener('click', () => { document.getElementById('commentsImportMsg').textContent = ''; renderCommentsModal(); backdrop.classList.add('open'); });
+  document.getElementById('commentsClose').addEventListener('click', () => backdrop.classList.remove('open'));
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.classList.remove('open'); });
+  document.getElementById('commentsExport').addEventListener('click', exportComments);
+  const file = document.getElementById('commentsImportFile');
+  document.getElementById('commentsImport').addEventListener('click', () => file.click());
+  file.addEventListener('change', () => { if (file.files[0]) importComments(file.files[0]); file.value = ''; });
+  document.addEventListener('click', e => {
+    const add = e.target.closest('.cm-add');
+    if (add) {
+      const box = add.closest('.comments-box');
+      const ta = box && box.querySelector('.cm-input');
+      if (ta) addComment(add.dataset.ticker, ta.value);
+      return;
+    }
+    const show = e.target.closest('.cm-show');
+    if (show) { showCompanyInTable(show.dataset.ticker); return; }
+    const del = e.target.closest('.cm-del');
+    if (del && del.dataset.id) { if (confirm('Delete this comment?')) deleteComment(del.dataset.ticker, del.dataset.id); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && e.target.classList && e.target.classList.contains('cm-input')) {
+      e.preventDefault();
+      addComment(e.target.dataset.ticker, e.target.value);
+    }
+  });
+}
 function distressTag(c) {
   if (!c.distress) return '';
   const lvl = c.distress.level === 'severe' ? 'severe distress' : 'distress warning';
@@ -976,6 +1172,7 @@ function renderDetailPanel(row, rank) {
         <button class="fin-toggle" type="button">Full financial data &#9662;</button>
       </div>
       <div class="full-financials" style="display:none">${renderFullFinancials(row)}</div>
+      ${commentsBox(c.t)}
     </div>
   `;
 }
@@ -1384,7 +1581,7 @@ function render() {
         <td class="num-col">${deltaHtml}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
         </td>
         <td class="num-col">
           ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `
@@ -1958,6 +2155,8 @@ function refreshAllViews() {
 function init() {
   loadLocalOverrides();
   loadTrackerState();
+  initComments();
+  { const el = document.getElementById('gmCoverage'); if (el) el.textContent = `${COMPANIES.filter(c => c.gm0 !== null && c.gm0 !== undefined).length}/${COMPANIES.length}`; }
   populateFilterOptions();
   wireToolbar();
   document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
