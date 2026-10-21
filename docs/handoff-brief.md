@@ -2429,3 +2429,38 @@ gap computation.
   theses for the 261 Europe companies without one (tiers 15-19 plus older
   gaps); US refresh / GM gaps; Sopharma Trading and Flexopack GM; Spectra
   Systems US thesis description.
+
+## Europe theses completed (2026-10-19 to 10-21)
+
+- **Thesis coverage: 995 of 1,000.** The five without one are deliberately
+  skipped delisted names: ENXTBR:WHATS, BME:ECR, LSE:PCTN, LSE:TET, HMSE:S9I.
+  (ENXTPA:EDI/Media 6 has one, written before its squeeze-out was found.)
+- Ran in rounds of 35 (5 agents x 7, <=5 searches/company), ~256 companies in
+  all, merged via a scratchpad script that checks field presence, a source URL
+  or an explicit research-gap marker per field, and cross-dataset duplicate
+  sentences. Repeated "could not locate ..." boilerplate is expected and fine.
+  **Process incidents:** two usage-limit stops mid-run (resumed; placeholder
+  entries for LUS1/GR6/ALLHB were NOT merged and were redone); the scratchpad
+  was wiped once (repo unaffected; scripts rebuilt).
+- **Thin entries worth a rerun** (agents hit the search limit after only 2-3
+  searches each): round 6 parts 2-4 - HLSE:FOAMIT, ZGSE:VLEN, OM:ELAN B,
+  BUSE:PANNERGY, OM:AVEN, WBAG:RAT, ATSE:REVOIL, ZGSE:PDBA, BUL:KBG,
+  XTRA:BYW, WSE:PAS, BUL:TPLR, LSE:FSTA, LSE:BRK, WSE:PPS, WSE:ELT, LSE:HAS,
+  ATSE:ATTICA, WSE:ZUE, WSE:KMP, WSE:SFD (competitive position / insider
+  holdings / websites mostly marked as gaps).
+- **Distress flags now:** RISE:BAL1R (severe), ENXTPA:POMRY (warning),
+  WSE:MSW Mostostal Warszawa (warning: negative equity + disclosed going-concern
+  threat + PLN375-520m recapitalisation need; Acciona 62.13%). Considered and
+  NOT flagged (no confirmed going-concern/waiver/proceeding): ENXTPA:GBT Guerbet
+  (agent claimed covenant waivers; second search found only the FDA warning
+  letter and a guided debt/revenue hit), XTRA:KTA Knaus Tabbert, XTRA:ED4 EDAG,
+  CSE:LUI Louis, ENXTPA:NXI Nexity, ENXTLS:ESON Estoril Sol.
+- Corrections applied to `data/corporate_actions.json` from thesis research:
+  ENXTPA:EDI (squeeze-out added), WSE:FHB, OM:PACT (Sepago was 2022, replaced by
+  Consular), XTRA:PSAN (delisting agreement 8 Sep 2026 at the statutory minimum
+  price), ENXTPA:NAE (squeeze-out reportedly dropped), BVB:PREH. Unverified
+  entries still present: BVB:EVER (North Lake stake), WSE:ECH (single
+  secondary source), WBAG:ADKO (conflicting accounts).
+- **Open decisions for the user:** exclusion rule for delisted/delisting rows;
+  whether to rerun thin entries; US refresh (market caps weeks old, 208 GM
+  unverified); Sopharma Trading / Flexopack GM; Spectra Systems thesis text.
