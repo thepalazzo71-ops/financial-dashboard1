@@ -430,10 +430,10 @@
   {
    "ticker": "XTRA:PSAN",
    "company": "PSI Software SE",
-   "date": "2025-10-09",
+   "date": "2026-09-08",
    "counterparty": "Warburg Pincus (Zest Bidco GmbH)",
-   "terms": "Voluntary public takeover offer at EUR 45.00 cash per share; follow-on delisting acquisition offer at statutory minimum price (6-month VWAP), 4-week acceptance period, no conditions",
-   "note": "PSI Software is the TARGET of Warburg Pincus' (Zest BidCo) voluntary public takeover offer at EUR45 per share cash (~EUR702m; announced Oct 2025 at an 83.7% premium); control reached ~80.8% after the regular acceptance period (15 Dec 2025) and >82% after the additional period (ended 2 Jan 2026); E.ON keeps 17.77%. Delisting is the stated intention; the screen's \"delisting offer announced Sep 2026\" was NOT confirmed on a second search (sources end Jan 2026). Squeeze-out / domination agreement possible.",
+   "terms": "Delisting offer at the statutory minimum price (6-month VWAP), after the EUR45 takeover offer of Oct 2025",
+   "note": "PSI Software is the TARGET of Warburg Pincus' (Zest BidCo) EUR45 takeover offer (announced Oct 2025; control ~80.8% after the regular acceptance period, press reports of the final stake range from ~82% to ~83%; E.ON keeps 17.77%). On 8 Sep 2026 PSI and Zest BidCo signed a DELISTING AGREEMENT: a public delisting acquisition offer will be made in cash at the statutory minimum price (six-month weighted average market price, NOT EUR45), unconditional, with a four-week acceptance period; the board undertakes to apply for revocation of the regulated-market admission in Frankfurt at the latest ten banking days before the end of the acceptance period. Offer document / BaFin permission and price not yet published (verified on a second search).",
    "source_url": "https://www.psi.de/en/company/newsroom/press-releases/psi-enters-into-a-delisting-agreement-with-warburg-pincus-warburg-pincus-announces-public-delisting-acquisition-offer-for-psi-software-se"
   },
   {
