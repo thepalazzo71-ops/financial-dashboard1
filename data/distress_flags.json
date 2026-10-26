@@ -28,5 +28,14 @@
    "https://www.biznesradar.pl/a/149514,acciona-podtrzymuje-gotowosc-do-dokapitalizowania-mostostalu-warszawa",
    "https://xyz.pl/dzieje-sie/mostostal-warszawa-z-duzymi-stratami-ryzyko-dla-dalszego-funkcjonowania-3728"
   ]
+ },
+ "BIT:EDAC": {
+  "level": "warning",
+  "summary": "Shares were suspended from late May to 7 Sep 2026 over delayed FY2025 accounts; FY2025 net loss EUR 17m, net financial debt EUR 61.5m, and in Aug 2026 it agreed a rescheduling of its bank and bond debt maturities with lenders; H1 2026 net loss EUR 4.6m. The shares fell about 24% on resumption.",
+  "asOf": "2026-10-26",
+  "sources": [
+   "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/ediliziacrobatica-accordo-con-ceto-bancario-per-riscadenziamento-debito-finanziario-29_2026-08-04_TLB.html?lang=it",
+   "https://www.teleborsa.it/News/2026/09/10/ediliziacrobatica-ceo-difficolta-sono-risultato-di-fattori-esterni-e-interni-reagito-con-tempestivita-41.html"
+  ]
  }
 }

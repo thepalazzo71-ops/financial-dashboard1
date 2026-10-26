@@ -2613,3 +2613,26 @@ the only copy of the attached files. Tested locally with `worker/test_local.mjs`
 (Playwright: upload, thumbnail, download headers, >10 MB rejection, reload persistence,
 delete cascade) on both pages. The Worker must be redeployed (Cloudflare rebuilds from the
 branch on push) before the Attach button works on the live site.
+
+### Research pass on the 45 rescued companies (2026-10-26)
+Market caps, corporate-actions screen, theses and gross margins were researched by agents
+(WebSearch only) for the 37 Europe + 8 US/Canada companies added by the dilution-stub rule.
+- **Market caps**: 36 Europe (Loihde: no 2026 price found, raw-extract value kept) and 8 US written
+  to `mc_overrides_applied.json`. Many are aggregator quotes dated Jun-Oct 2026 with approximate FX
+  (EUR/USD ~1.14, GBP/USD ~1.33); treat them as indicative until a normal tier refresh. Flagged
+  low-confidence: VIM, MANO, TTS, KEYS, FPH (Class A vs A+B), TBL (FX implied by the input file).
+- **Corporate actions**: all 45 screened (`*_coverage.json`). Notables: Kenmare (non-binding IRH
+  proposal 2026-10-06, deadline 17 Nov), Procimmo (Vaudoise 97.2%, squeeze-out at CHF 9.50 planned,
+  delisting not yet confirmed), SMCP (majority holders' sale process led by Lazard), Funko (formal
+  strategic review incl. possible sale), Audax (Elmera bid outbid by Fortum).
+- **Delisted**: Animalcare (AIM:ANCR) was taken private by Charterhouse (336p, effective 30 Jul 2026,
+  delisted 31 Jul) - added to `data/delisted.json`, so hidden from the table (verified on a second search).
+- **Distress**: EdiliziAcrobatica (BIT:EDAC) flagged 'warning' (suspension until 7 Sep 2026, FY2025
+  loss EUR 17m, debt rescheduled Aug 2026) - verified on a second search. DF Deutsche Forfait
+  (first pre-tax loss since 2018, supervisory board lost quorum) and Funko (covenant waivers) are in their
+  red-flags text but not flagged.
+- **Gross margins**: only 6 Europe + 6 US/Canada found from company releases; no-gross-profit-line
+  names (banks/insurers/property/lessors/football club) and `not_found` ones stay on the pool-median
+  fallback. SMCP's 75% is the company's own "management gross margin". Candidate (unverified)
+  margins in the agents' notes: KMR ~5.6%, KEYS ~25.5%, TAM ~44.5%, VIRSI ~11.1%.
+- **Ranks**: Foresight Group #27, SMCP #83 and Purcari #109 enter the top 150; next best is Kenmare #227.

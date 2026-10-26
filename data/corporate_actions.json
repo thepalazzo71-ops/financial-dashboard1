@@ -480,6 +480,36 @@
    "terms": "EUR 36.00 per share, cash; offer covers remaining 4,302 shares (0.20%)",
    "note": "Fiducial Office Solutions is the TARGET of a simplified buyout offer (OPRO) followed by a squeeze-out, filed 8 Jul 2026 by its 99.80% holder Fiducial SC at EUR36 cash (4,302 remaining shares = 0.20% of capital). The information note was made available 8 Oct 2026; an indicative timetable shows the offer running ~12-23 Oct 2026 and delisting from Euronext Paris and the Luxembourg exchange the week of 26 Oct 2026 (indicative; the AMF fixes the calendar). Effective opening and delisting date not yet confirmed (verified on a second search).",
    "source_url": "https://www.abcbourse.com/marches/fiducial-sc-lance-une-offre-publique-de-retrait-sur-fiducial-office-solutions-a_699443"
+  },
+  {
+   "ticker": "LSE:KMR",
+   "company": "Kenmare Resources plc",
+   "date": "2026-10-06",
+   "counterparty": "International Resources Holding RSC Ltd (IRH, Abu Dhabi; subsidiary of International Holding Company)",
+   "role": "target",
+   "terms": "Non-binding proposal for possible cash offer for entire issued and to be issued share capital; price undisclosed; Irish Takeover Rules put-up-or-shut-up deadline 5pm 17 Nov 2026 (extendable only with Panel consent); no certainty of firm offer.",
+   "note": "Kenmare board confirmed approach and ongoing talks; prior 2025 approach by Carvill/Oryx (530p proposal) was rejected/terminated.",
+   "source_url": "https://miningmx.com/2026-10-06-kenmare-confirms-buyout-proposal-from-abu-dhabi-s-irh/"
+  },
+  {
+   "ticker": "BIT:GVS",
+   "company": "GVS S.p.A.",
+   "date": "2026-07-14",
+   "counterparty": "GVS S.p.A. (issuer self-tender for own treasury/shares)",
+   "role": "issuer",
+   "terms": "Voluntary partial tender offer by GVS for up to 23,255,813 own shares (~12.29% of capital) at EUR 4.30/share (~12% premium to VWAP at 10 Apr 2026). Final result 14 Jul 2026: 4,352,863 shares tendered (2.30% of capital; 18.72% of offer), total EUR 18.7m; GVS to hold 6,070,062 shares (3.21%) after settlement.",
+   "note": "Company buy-back style partial tender; undersubscribed at EUR 4.30, no change of control.",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-07/20260714_186860.pdf"
+  },
+  {
+   "ticker": "AIM:ANCR",
+   "company": "Animalcare Group plc",
+   "date": "2026-04-16",
+   "counterparty": "Charterhouse Capital Partners (CCP Paw 2 Limited)",
+   "role": "target",
+   "terms": "Recommended cash offer 336p/share, equity value GBP 235.2m, ~36% premium to 247p close on 15 Apr 2026; Part 26 scheme of arrangement (alternative reinvestment into Topco available but not recommended). Scheme document 12 May 2026; shareholder approval 8 Jun 2026; court sanction 28 Jul 2026; effective 30 Jul 2026; AIM cancellation 31 Jul 2026. Harwood Capital's 18.4% was among 42% irrevocables/support at announcement.",
+   "note": "Completed take-private; Animalcare is delisted from AIM as of 2026-07-31.",
+   "source_url": "https://www.morningstar.co.uk/uk/news/AN_1776330814377272500/animalcare-group-agrees-gbp235-million-bid-from-charterhouse-capital.aspx"
   }
  ],
  "mergers_acquisitions": [
@@ -1800,6 +1830,186 @@
    "terms": "Remaining 75.10% bought (SIT already held 24.90%); price undisclosed; Conthidra 2025 turnover about EUR 10m, EBITDA EUR 0.6m",
    "note": "SIT agreed in Feb 2026 to take Conthidra to 100%; closing expected Q2 2026 and the Q1 2026 release (7 May 2026) refers to the acquisition, but no separate closing notice found. SIT is ACQUIRER; small bolt-on, no impact on net financial position.",
    "source_url": "https://en.ilsole24ore.com/art/sit-salt-100percent-spanish-conthidra-AIlYJ9UB"
+  },
+  {
+   "ticker": "BVB:WINE",
+   "company": "Purcari Wineries Public Company Limited",
+   "date": "2026-01-29",
+   "counterparty": "Serve Ceptura SRL",
+   "role": "acquirer",
+   "terms": "Binding offer for 100% of shares; price undisclosed; subject to definitive documents, approvals and FDI clearance. Target: ~60 ha vineyards, ~0.5m bottles/yr, EUR 2.4m 2024 revenue, EUR 0.44m net loss.",
+   "note": "Purcari filed binding offer for Dealu Mare rival Serve Ceptura; closing status not confirmed in sources.",
+   "source_url": "https://bvb.ro/infocont/infocont26/WINE_20260129175305_Purcari-Wineries-Current-report-SERVE-transaction-29-01-2026.pdf"
+  },
+  {
+   "ticker": "BVB:WINE",
+   "company": "Purcari Wineries Public Company Limited",
+   "date": "2026-04-03",
+   "counterparty": "CaraprodVin SRL",
+   "role": "acquirer",
+   "terms": "Crama Ceptura (Purcari subsidiary) agreed to buy 100% of CaraprodVin (Varsteciu, Vrancea; production facilities, vinification platform, 33.18 ha vineyards); price undisclosed; subject to regulatory approvals.",
+   "note": "Second 2026 bolt-on acquisition in Romania.",
+   "source_url": "https://www.bvb.ro/infocont/infocont26/WINE_20260403063052_Purcari-Wineries-Press-Release-Caraprod-03-04-2026.pdf"
+  },
+  {
+   "ticker": "RISE:VIRSI",
+   "company": "AS Virsi-A",
+   "date": "2026-02-19",
+   "counterparty": "SIA Naftimpeks (Astarte-branded fuel stations)",
+   "role": "acquirer",
+   "terms": "Takeover (long-term lease rights, not outright purchase) of Astarte-branded stations: filed for 19, Competition Council approved 17 on 2026-05-18; takeover completed 2026-07-08 bringing network to 101 stations; price confidential.",
+   "note": "Network expansion via lease of Naftimpeks stations, rebranding to Virsi by year-end.",
+   "source_url": "https://eng.lsm.lv/article/economy/business/18.05.2026-virsi-gets-approval-for-fuel-station-takeover.a647601/"
+  },
+  {
+   "ticker": "RISE:VIRSI",
+   "company": "AS Virsi-A",
+   "date": "2026-08-13",
+   "counterparty": "four further fuel stations (Preili, Cesvaine, Koknese, Viski)",
+   "role": "acquirer",
+   "terms": "Additional four stations to be taken over, subject to Competition Council review; terms undisclosed.",
+   "note": "Pending at last report; status after Aug 2026 not confirmed.",
+   "source_url": "https://eng.lsm.lv/article/economy/business/13.08.2026-virsi-to-take-over-four-more-fuel-stations.a658623/"
+  },
+  {
+   "ticker": "AIM:FRP",
+   "company": "FRP Advisory Group plc",
+   "date": "2025-11-14",
+   "counterparty": "Arc & Co Structured Finance Ltd",
+   "role": "acquirer",
+   "terms": "Upfront GBP 6.0m (c.GBP 4.9m cash + c.GBP 1.8m new shares, 1,285,714 shares) plus ~GBP 0.65m net assets and 3-year performance earn-out; target revenue GBP 5.4m, EBITDA GBP 1.6m (y/e 30 Jun, unaudited).",
+   "note": "Creates new FRP Real Estate Advisory service line; FRP's 15th acquisition since 2020 IPO.",
+   "source_url": "https://www.ajbell.co.uk/news/articles/frp-advisory-buys-arc-co-structured-finance-ps67-million-deal"
+  },
+  {
+   "ticker": "BRSE:SEGN",
+   "company": "Procimmo Group AG",
+   "date": "2026-03-18",
+   "counterparty": "Vaudoise Assurances Group (via Vaudoise Asset Management SA / Vaudoise Real Estate)",
+   "role": "target",
+   "terms": "Negotiated purchase of majority stake from main shareholders at CHF 9.50/share (set after 2025 dividend); closed 2026-07-01 with Vaudoise holding 97.2%; squeeze-out merger with cash compensation CHF 9.50/share planned for H2 2026 (a Dealroom report cites EGM 3 Nov 2026 and different figures - unreliable).",
+   "note": "Procimmo being absorbed; completed delisting/squeeze-out not yet confirmed in sources found.",
+   "source_url": "https://www.vermoegenszentrum.ch/boersen-und-maerkte/news/vaudoise-schliesst-procimmo-uebernahme-ab-und-will-minderheitsaktionaere"
+  },
+  {
+   "ticker": "OM:TEQ",
+   "company": "Teqnion AB (publ)",
+   "date": "2026-02-17",
+   "counterparty": "Cambs Compressor Engineering Limited (UK)",
+   "role": "acquirer",
+   "terms": "Acquired 100% of shares; price undisclosed in sources seen.",
+   "note": "Compressed-air systems and services.",
+   "source_url": "https://mfn.se/all/a/teqnion/teqnion-acquires-cambs-compressor-engineering-limited-258714a6"
+  },
+  {
+   "ticker": "OM:TEQ",
+   "company": "Teqnion AB (publ)",
+   "date": "2026-06-01",
+   "counterparty": "Theatre and Endoscopy Service Technicians Limited (T.E.S.T., UK)",
+   "role": "acquirer",
+   "terms": "Signed agreement; price undisclosed in sources seen; closing not confirmed.",
+   "note": "Decontamination equipment, validation and testing services.",
+   "source_url": "https://mfn.se/all/a/teqnion/teqnion-acquires-theatre-and-endoscopy-service-technicians-limited-db682ed0"
+  },
+  {
+   "ticker": "OM:TEQ",
+   "company": "Teqnion AB (publ)",
+   "date": "2026-06-02",
+   "counterparty": "Norband Ltd Oy (Nordic Wristbands, Finland)",
+   "role": "acquirer",
+   "terms": "Signed agreement; price undisclosed; closing not confirmed.",
+   "note": "Access control and RFID/NFC event products; joins Teqnion Nord.",
+   "source_url": "https://mfn.se/beq/a/teqnion/teqnion-acquires-norband-ltd-oy-f3be9a77"
+  },
+  {
+   "ticker": "OM:TEQ",
+   "company": "Teqnion AB (publ)",
+   "date": "2026-09-02",
+   "counterparty": "Abercromby Vending Limited (Scotland)",
+   "role": "acquirer",
+   "terms": "Signed agreement; price undisclosed; closing not confirmed.",
+   "note": "Vending and fresh-food services; joins Teqnion Vast.",
+   "source_url": "https://mfn.se/all/a/teqnion/teqnion-acquires-abercromby-vending-limited-1a682a85"
+  },
+  {
+   "ticker": "OM:TEQ",
+   "company": "Teqnion AB (publ)",
+   "date": "2026-09-03",
+   "counterparty": "TJ Hydraulic AB (Lidkoping, Sweden)",
+   "role": "acquirer",
+   "terms": "Signed agreement; price undisclosed; closing not confirmed.",
+   "note": "Hydraulic components and systems; joins Teqnion North.",
+   "source_url": "https://mfn.se/all/a/teqnion/teqnion-acquires-tj-hydraulic-ab-6fc396f2"
+  },
+  {
+   "ticker": "OM:ARPL",
+   "company": "Arla Plast AB",
+   "date": "2025-10-15",
+   "counterparty": "Aikolon Oy (Finland)",
+   "role": "acquirer",
+   "terms": "Acquisition announced 2025-10-15; price and details not retrieved.",
+   "note": "Contributes to strategy; part of Finland operations that are being restructured in 2026.",
+   "source_url": "https://quartr.com/events/arla-plast-arpl-q2-2026_3grmkuTK"
+  },
+  {
+   "ticker": "BME:ADX",
+   "company": "Audax Renovables, S.A.",
+   "date": "2026-06-25",
+   "counterparty": "Elmera Group ASA (Norway)",
+   "role": "acquirer",
+   "terms": "Announced intention to launch voluntary cash offer at NOK 41.20/share (~NOK 4.5bn equity value). Competing recommended offer from Fortum at NOK 47/share (~NOK 5.1bn), board recommended Fortum; Fortum received regulatory clearances in Sept 2026. Audax said it was ready to evaluate raising its price subject to due diligence.",
+   "note": "Audax's bid for Elmera is outbid by recommended Fortum offer; final outcome (Fortum 90% acceptance / Audax bid lapse) not confirmed in sources seen.",
+   "source_url": "https://mfn.se/all/a/elmera/elmra-audax-renovables-s-a-announces-intention-to-launch-a-voluntary-offer-to-acquire-all-shares-in-elmera-group-asa-6606c414"
+  },
+  {
+   "ticker": "BVB:PBK",
+   "company": "Patria Bank SA",
+   "date": "2026-03-10",
+   "counterparty": "BRD Asset Management SAI (Societe Generale group)",
+   "role": "target",
+   "terms": "Sale of Patria Bank's 99.9% stake in SAI Patria Asset Management to BRD Asset Management for EUR 5.5m; ASF approval and completion reported July 2026.",
+   "note": "Divestiture of asset management subsidiary (manages BET Patria-Tradeville ETF); Patria Bank is the seller.",
+   "source_url": "https://businessforum.ro/finance/20260310/patria-bank-to-sell-asset-management-unit-to-brd-for-eur55-million-2965"
+  },
+  {
+   "ticker": "OM:PION B",
+   "company": "PION Group AB (publ)",
+   "date": "2025-09-30",
+   "counterparty": "Dreamwork Group (Norwegian operations)",
+   "role": "target",
+   "terms": "Divestment of PION's Norwegian operations to Dreamwork Group, agreed Sept 2025, effective 2025-10-15",
+   "note": "PION is the seller; divestment of loss-making Norwegian business.",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/pion-group-q3-revenue-slips-81-as-it-reports-profits-turnaround"
+  },
+  {
+   "ticker": "OM:PION B",
+   "company": "PION Group AB (publ)",
+   "date": "2025-10-01",
+   "counterparty": "Optivio AB (related party) - Roi Rekrytering Sverige AB",
+   "role": "target",
+   "terms": "Sale of subsidiary Roi Rekrytering Sverige AB to Optivio AB for SEK 200k, effective 2025-10-01; related-party deal requiring EGM approval",
+   "note": "Small divestment (PION as seller).",
+   "source_url": "https://mfn.se/all/a/pion-group/pion-group-avyttrar-roi-rekrytering-sverige-ab-ed497076"
+  },
+  {
+   "ticker": "OM:PION B",
+   "company": "PION Group AB (publ)",
+   "date": "2026-01-01",
+   "counterparty": "Dreamwork Scandinavia AB",
+   "role": "acquirer",
+   "terms": "Acquisition of Dreamwork Scandinavia AB, consolidated in the Poolia business area from Q1 2026 (price not found)",
+   "note": "Date approximate (Q1 2026); contributed to +6% Q1 2026 sales growth.",
+   "source_url": "https://www.inderes.dk/third-party-research/pion-group-strategic-management-changes-in-q1-abg"
+  },
+  {
+   "ticker": "HLSE:LOIHDE",
+   "company": "Loihde Oyj",
+   "date": "2025-11-05",
+   "counterparty": "BLC Turva Oy",
+   "role": "acquirer",
+   "terms": "Acquisition of 100% of BLC Turva Oy, debt-free price EUR 28m (about EUR 20.5m cash and EUR 7.5m in new Loihde shares via directed issue). KKV conditional approval 2026-05-27 requiring local divestments (Loihde's Lappeenranta locking and Mikkeli locking/security businesses; BLC Turva's Jyvaskyla local locking); combined revenue of divested businesses just under EUR 10m. Completed 2026-10-01; largest acquisition in Loihde's history. Loihde withdrew its 2026 financial guidance the same day.",
+   "note": "Completed acquisition; signed Nov 2025, closed Oct 2026.",
+   "source_url": "https://www.inderes.fi/releases/kilpailu-ja-kuluttajavirasto-on-hyvaksynyt-loihde-oyjn-blc-turva-yritysoston-ehdollisena"
   }
  ],
  "spinoffs": [
@@ -2410,6 +2620,233 @@
    "terms": "Preliminary agreement to sell 95.81% of PBSz and 59.39% of JZR; value above PLN 1bn; completion deadline moved from 30 Jun to 31 Jul 2026",
    "note": "JSW signed a preliminary agreement on 9 Mar 2026 to sell subsidiaries Przedsiebiorstwo Budowy Szybow and Jastrzebskie Zaklady Remontowe to ARP, as part of a 2026-2035 Recovery Programme (workforce cut to under 16,000; PLN 850m ARP-backed loan approved 8 Jun 2026; further asset sales considered). Group net loss PLN 6.25bn in 2025. Completion status after 31 Jul 2026 not confirmed. JSW is SELLER, not a takeover target.",
    "source_url": "https://xyz.pl/dzieje-sie/jsw-przesuwa-termin-sprzedazy-spolek-miliard-zlotych-ale-pozniej-2381"
+  },
+  {
+   "ticker": "LSE:FSG",
+   "company": "Foresight Group Holdings Limited",
+   "date": "2026-06-11",
+   "type": "divestiture (public markets division, Foresight Capital Management)",
+   "role": "seller",
+   "terms": "Sale of Foresight Capital Management (c.GBP 1.0bn AUM, ~7% of group AUM, 16 employees) to Guinness Global Investors; price not disclosed. Completed 2026-09-07.",
+   "note": "Group streamlines to Real Assets and Private Equity; FCM shown as discontinued operations in FY26.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/foresight-group-holdings-limited-npv--fsg/sale-completion-of-public-markets-division-to-ggi/9757523"
+  },
+  {
+   "ticker": "BIT:EDAC",
+   "company": "EdiliziAcrobatica S.p.A.",
+   "date": "2026-08-04",
+   "type": "debt restructuring / rescheduling agreement with lenders and 2020 bondholder",
+   "terms": "Agreement to reschedule the group's financial debt, with financial covenants; effectiveness conditional on approval/delivery of FY2025 accounts by 5 Sep 2026.",
+   "note": "Accounts were approved 24 Aug 2026 and published 4 Sep; shares readmitted to trading 7 Sep 2026 after suspension since late May for delayed 2025 accounts.",
+   "source_url": "https://www.teleborsa.it/News/2026/08/04/ediliziacrobatica-accordo-con-ceto-bancario-per-riscadenziamento-debito-finanziario-29.html"
+  },
+  {
+   "ticker": "DB:OT8",
+   "company": "Eleving Group S.A.",
+   "date": "2026-10-06",
+   "type": "bond refinancing / exchange offer",
+   "terms": "Reported EUR 200m 9% senior secured bond (c.1.5x oversubscribed) to refinance EUR 90m 2028 bonds; EUR 25m exchange offer to existing bondholders 6-20 Oct 2026; listing Frankfurt/Nasdaq Riga ~20 Oct 2026.",
+   "note": "Single secondary source (Dealroom/LinkedIn summary); no official Eleving release found, and a Sept-Oct 2025 bond offer (up to EUR 250m, exchange of 2021/2026 bonds) also exists - dates may be conflated; verify.",
+   "source_url": "https://dealroom.co/news/158423-eleving-group-raises-200m-in-9-senior-secured-bond-1-5x-oversubscribed/"
+  },
+  {
+   "ticker": "BRSE:SEGN",
+   "company": "Procimmo Group AG",
+   "date": "2026-07-01",
+   "type": "divestiture (Streetbox SA and PIO 1 SA)",
+   "role": "seller",
+   "terms": "Sale of Streetbox SA and PIO 1 SA to Procimmo founders Arno Kneubuhler, Cedric Leimer and Michel Niklaus, completed 2026-07-01; real estate holdings unaffected; price not stated in snippet.",
+   "note": "Related-party divestment coinciding with Vaudoise closing.",
+   "source_url": "https://www.immobilienbusiness.ch/en/personalia/2026-07-06/procimmo-gruender-kaufen-streetbox-gesellschaften/"
+  },
+  {
+   "ticker": "LSE:ASAI",
+   "company": "ASA International Group PLC",
+   "date": "2026-07-30",
+   "type": "wind-down of India operations",
+   "terms": "ASA India wind-down: Gross OLP down 86% y/y to USD 4.3m, clients -70% q/q to 10k, branches -67% to 25; minimal negative income-statement impact now; no sale reported.",
+   "note": "India exit with FY2025 India-related impairments; group Gross OLP USD 604.1m at 30 Jun 2026 (+12%).",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/asa-international-group--asai/q2-2026-business-update/9694641"
+  },
+  {
+   "ticker": "OM:ARPL",
+   "company": "Arla Plast AB",
+   "date": "2026-07-01",
+   "type": "restructuring (Finland operations)",
+   "terms": "Ongoing restructuring in Finland per Q2 2026 summary; date approximate (Q2 report); no financial terms found.",
+   "note": "Plus ongoing investments in production efficiency and quality.",
+   "source_url": "https://quartr.com/events/arla-plast-arpl-q2-2026_3grmkuTK"
+  },
+  {
+   "ticker": "DB:3ITN",
+   "company": "audius SE",
+   "date": "2025-11",
+   "type": "shareholder restructuring",
+   "terms": "Shareholder left holding audius AG and received ~14.7% of audius SE directly (multi-year staggered lock-up); audius AG sold 3.4% to institutional investors; CEO Rainer Francisi raised his stake in audius AG; majority holder's share fell to 63.5% (free float 36.5%).",
+   "note": "Date given only as month (Nov 2025); aims to raise trading liquidity. No takeover offer or delisting found.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-news-umstrukturierung-beim-grossaktionaer-fuehrt-zur-vergroesserung-des-streubesitzes-auf-365-vorstandsvorsitzender-rainer-francisi-erhoeht-gleichzeitig-seinen-anteil-am-unternehmen-deutsch-482857.html"
+  },
+  {
+   "ticker": "BME:ADX",
+   "company": "Audax Renovables, S.A.",
+   "date": "2026-07-01",
+   "type": "EUR 75m revolving credit facility (3-year initial maturity); also EUR 50m bond buy-back programme earlier",
+   "terms": "EUR 75m revolving financing contract, 3-year initial maturity",
+   "note": "Financing-related item reported in H1 2026 coverage (date approximate; month only).",
+   "source_url": "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/audax-renovables-considera-incrementar-su-oferta-n-930183"
+  },
+  {
+   "ticker": "ENXTPA:SMCP",
+   "company": "SMCP S.A.",
+   "date": "2025-11-27",
+   "type": "Shareholder stake sale process (up to 51.2% of capital) with possible mandatory takeover bid",
+   "terms": "SMCP informed that a sale process led by Lazard Freres was launched for up to 51.2% of capital (28.0% held by GLAS as trustee for European TopSoho bonds, 15.5% returned to European TopSoho by courts in Aug 2025, ~7.7%-8% held by ETS under receivers). If acquirer exceeds 30% it may need to file a public offer for all shares. Process expected to last several months.",
+   "note": "No buyer or offer identified in sources seen as of search; status after Nov 2025 unconfirmed.",
+   "source_url": "https://www.smcp.com/en/smcp-press-release-shares-sales-project/"
+  },
+  {
+   "ticker": "XTRA:DFTK",
+   "company": "DF Deutsche Forfait AG",
+   "date": "2026-02-28",
+   "type": "Governance: supervisory board chairman resigned",
+   "terms": "Supervisory board chair Dr Ludolf von Wartenberg left office 2026-02-28; board with 2 members not quorate; court appointment under s.104 AktG to be requested",
+   "note": "Governance event, no M&A/tender found in the last 12 months.",
+   "source_url": "https://app.parqet.com/aktien/df-dtforfait-ag-na-on-DE000A2AA204"
+  },
+  {
+   "ticker": "LSE:TRN",
+   "company": "Trainline plc",
+   "date": "2025-09-11",
+   "type": "Share buyback programme",
+   "terms": "GBP150m share purchase programme announced 11 Sep 2025; by ~July 2026 62,249,221 shares bought for GBP136.7m; 353,153,078 ordinary shares in issue after cancellations",
+   "note": "Ongoing capital return; no takeover approach, M&A or divestiture found in 2025-10 to 2026-10 sources.",
+   "source_url": "https://pdf.dfcfw.com/pdf/H22_AN202607201827150648_1.pdf"
+  },
+  {
+   "ticker": "BVB:PBK",
+   "company": "Patria Bank SA",
+   "date": "2025-07-01",
+   "type": "Majority shareholder considering full or partial stake sale",
+   "terms": "EEAF Financial Services BV (84.05%) evaluating strategic options including sale; no decision made as of July 2025; no later update found.",
+   "note": "Dated before 2025-10 window but unresolved; no follow-up found.",
+   "source_url": "https://www.romania-insider.com/patria-bank-majority-shareholder-sale-july-2025"
+  },
+  {
+   "ticker": "XTRA:FC9",
+   "company": "FCR Immobilien AG",
+   "date": "2026-04-01",
+   "type": "Bond reopening / public offer (2025-2030 bond, ISIN DE000A4DFCG6)",
+   "terms": "Public offer of the 2025/2030 bond reopened in early April 2026, expected to run until 2027-03-30",
+   "note": "Financing action only; no takeover, merger, spin-off or buyback found in the last 12 months.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-news-fcr-immobilien-ag-mit-stabiler-geschaeftsentwicklung-im-ersten-quartal-2026-deutsch-526283.html"
+  },
+  {
+   "ticker": "XSAT:FREETR",
+   "company": "Freetrailer Group A/S",
+   "date": "2026-08-31",
+   "type": "Share repurchase programme",
+   "terms": "Up to DKK 20m of own shares, 31 Aug - 31 Dec 2026, to support warrant programmes and keep room for future acquisitions; shares not planned to be cancelled",
+   "note": "Also: Byggmax partnership to end spring 2027 (<3% of revenue). No M&A or takeover found.",
+   "source_url": "https://mfn.se/cis/a/freetrailer-group/freetrailer-initiates-share-repurchase-programme-468e7fc1"
+  },
+  {
+   "ticker": "SWX:GURN",
+   "company": "Gurit Holding AG",
+   "date": "2026-01-23",
+   "type": "Portfolio exits / discontinued business (strategic business exits)",
+   "terms": "FY2025 net sales CHF 319.6m (-26% reported) of which continued business CHF 293.6m and discontinued business CHF 26.0m; restructuring expenses CHF 4.3m; operating margin -13.5% after restructuring, impairments and divestment losses",
+   "note": "Exits executed during 2025 and reported in the 23 Jan 2026 ad hoc release; specific counterparties not identified in sources seen.",
+   "source_url": "https://www.gurit.com/gurit-reports-net-sales-of-chf-319-6-million-for-the-calendar-year-2025-and-expects-margin-to-improve-versus-2024/"
+  },
+  {
+   "ticker": "SWX:GURN",
+   "company": "Gurit Holding AG",
+   "date": "2026-07-23",
+   "type": "Management change",
+   "terms": "CEO Tobias Luhrig resigned; CFO Viktor Bernhardt named interim CEO and later appointed Group CEO (Aug 2026)",
+   "note": "Governance event, no M&A/tender found.",
+   "source_url": "https://www.gurit.com/?p=23808"
+  },
+  {
+   "ticker": "HLSE:LOIHDE",
+   "company": "Loihde Oyj",
+   "date": "2026-09-23",
+   "type": "Share buyback programme",
+   "terms": "Up to 550,000 shares (~9.5%) with max spend EUR 6.0m, purchases 25 Sep 2026 to 8 Mar 2027 on First North Finland, under 2026-04-28 AGM authorisation",
+   "note": "Programme announced 2026-09-23.",
+   "source_url": "https://www.sttinfo.fi/ir-files/69818886/72352421/28065/Download%20announcement%20as%20PDF.pdf"
+  },
+  {
+   "ticker": "BRSE:SQL",
+   "company": "Matador Partners Group AG",
+   "date": "2026-06-15",
+   "type": "Listing: admission to SIX Swiss Exchange (from BX Swiss/Berne), index inclusion",
+   "terms": "Existing bearer shares admitted to SIX Swiss Exchange under ticker SQL on 2026-06-15 without new share issue; company renamed Matador Secondary Private Equity AG; included in SPI and SPI Extra from 2026-09-21",
+   "note": "Venue change, no capital change.",
+   "source_url": "https://www.webdisclosure.com/article/matador-partners-group-ag-etr-matador-secondary-private-equity-ag-to-list-on-six-swiss-exchange-fwa9FCKWjlm"
+  },
+  {
+   "ticker": "BRSE:SQL",
+   "company": "Matador Partners Group AG",
+   "date": "2026-03-18",
+   "type": "Divestment of last direct investment",
+   "terms": "Per FY2025 report, following sale of last direct investment, additional EUR 15m available for new private equity secondary transactions; FY2025 profit CHF 4.3m, cash distributions CHF 6.6m (slug-derived figures; verify)",
+   "note": "Portfolio divestment, details/counterparty not found.",
+   "source_url": "https://finanzwire.com/press-release/matador-partners-group-ag-etr-ad-hoc-matador-secondary-private-equity-ag-annual-report-2025chf-43m-in-profit-and-chf-66m-in-cash-distributions-from-the-private-equity-portfolio-currency-adjusted-profit-19m-chf-Y7J9sgoKAZN"
+  },
+  {
+   "ticker": "BST:GBQ",
+   "company": "GBK Beteiligungen AG",
+   "date": "2026-02-19",
+   "type": "Portfolio divestment: sale of LACON Electronic GmbH (Karlsfeld) stake",
+   "terms": "Completion of sale of stake in LACON Electronic GmbH announced via ad hoc 2026-02-19; price not stated in snippet",
+   "note": "Portfolio exit by GBK as seller.",
+   "source_url": "https://app.boersengefluester.de/en/newswire/DE0005850903/gbk-beteiligungen-ag/vollzieht-die-verausserung-der-anteile-an-der-lacon-electronic-gmbh-karlsfeld-2278706"
+  },
+  {
+   "ticker": "BST:GBQ",
+   "company": "GBK Beteiligungen AG",
+   "date": "2026-04-28",
+   "type": "Portfolio divestment: partial sale of Zeeh Design GmbH (Puchheim) stake",
+   "terms": "Partial sale of 5.7% stake completed 2026-04-28 after conditions satisfied",
+   "note": "Portfolio exit by GBK as seller.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-gbk-beteiligungen-ag-gbk-beteiligungen-ag-vollzieht-den-teilverkauf-der-von-ihr-gehaltenen-anteile-an-der-zeeh-design-gmbh-puchheim-deutsch-520368.html"
+  },
+  {
+   "ticker": "BST:GBQ",
+   "company": "GBK Beteiligungen AG",
+   "date": "2026-05-18",
+   "type": "Portfolio divestment: sale of Schiller Fleisch GmbH (Bad Vilbel) stake",
+   "terms": "Sale of ~9.4% stake in Schiller Fleisch GmbH completed 2026-05-18",
+   "note": "Portfolio exit by GBK as seller.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-gbk-beteiligungen-ag-gbk-beteiligungen-ag-vollzieht-die-veraeusserung-der-anteile-an-der-schiller-fleisch-gmbh-bad-vilbel-deutsch-525540.html"
+  },
+  {
+   "ticker": "BST:GBQ",
+   "company": "GBK Beteiligungen AG",
+   "date": "2026-04-01",
+   "type": "Change of corporate status: ending UBGG (Unternehmensbeteiligungsgesellschaft) status and broadening corporate purpose",
+   "terms": "Board resolved to give up UBGG status; AGM (28 May 2026) asked to extend corporate purpose to financial instruments under WpIG",
+   "note": "Date approximate (April 2026); regulatory/structural change.",
+   "source_url": "https://www.boerse-online.de/dpa-afx/eqs-adhoc-gbk-beteiligungen-ag-gbk-beteiligungen-ag-beschliesst-beendigung-des-status-als-unternehmensbeteiligungsgesellschaft-nach-ubbg-deutsch-514331.html"
+  },
+  {
+   "ticker": "AIM:AOM",
+   "company": "ActiveOps Plc",
+   "date": "2026-04-01",
+   "type": "Divestment of trademarks (IP) after FY26 year-end",
+   "terms": "Sale of ActiveOps trademarks in UK, US, Australia and EU for USD 10.0m cash with no transfer of products or customers; use of proceeds to be updated with FY26 results on 2 July 2026",
+   "note": "Date approximate (announced in April 2026 trading update). Enlighten acquisition (USD 8.5m initial + up to USD 13m contingent) completed 2025-06-30, i.e. before the 12-month window.",
+   "source_url": "https://www.lse.co.uk/news/AOM/activeops-flags-strong-full-year-trading-performance-wbh7ogfs8weq1sz.html"
+  },
+  {
+   "ticker": "AIM:AOM",
+   "company": "ActiveOps Plc",
+   "date": "2026-10-12",
+   "type": "Profit warning: major customer non-renewal",
+   "terms": "Major customer intends not to renew contract due next March; ~GBP 3.8m revenue removed in full from FY28 expectations; H1 FY27 revenue +21% to GBP 25.3m (includes GBP 1.5m one-off termination receipt); FY27 expectations unchanged; shares fell ~47%",
+   "note": "Not M&A; included as material event. No takeover/tender found.",
+   "source_url": "https://www.ajbell.co.uk/news/articles/activeops-shares-slump-lowers-outlook-amid-major-contract-loss"
   }
  ]
 }
