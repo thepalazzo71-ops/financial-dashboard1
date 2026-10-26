@@ -801,6 +801,26 @@
    "terms": "All-stock combination announced April 7, 2025: legacy Republic Airways merged into Mesa Air Group, with the Mesa legal entity surviving and renamed 'Republic Airways Holdings Inc.' Legacy Republic stockholders ended up owning ~88% of the combined company and Mesa stockholders ~6-12%.",
    "note": "Deal received Mesa shareholder approval Nov 17, 2025 and closed Nov 25, 2025, with the combined company beginning to trade as RJET on Nasdaq that day. This is a completed transaction (pre-2026) that defines the current RJET entity; no new 2026 M&A activity found.",
    "source_url": "https://www.barchart.com/story/news/36304724/republic-airways-and-mesa-air-group-complete-merger"
+  },
+  {
+   "ticker": "NasdaqCM:BBCP",
+   "company": "Concrete Pumping Holdings, Inc.",
+   "date": "2025-11-11",
+   "counterparty": "C.G.A. Concrete Pumping Ltd (Cork, Ireland)",
+   "role": "acquirer",
+   "terms": "Acquired by Brundage-Bone subsidiary; financial terms not disclosed",
+   "note": "Tuck-in expansion of concrete pumping into the Republic of Ireland.",
+   "source_url": "https://ir.concretepumpingholdings.com/press-releases/detail/100/concrete-pumpings-brundage-bone-subsidiary-expands"
+  },
+  {
+   "ticker": "NasdaqCM:BBCP",
+   "company": "Concrete Pumping Holdings, Inc.",
+   "date": "2026-04-01",
+   "counterparty": "Templant Hire Limited (UK temporary power rental)",
+   "role": "acquirer",
+   "terms": "Acquired by Camfaud (UK subsidiary); price not disclosed; expected to be net debt neutral; fleet of 250+ generators",
+   "note": "Entry into UK temporary power market.",
+   "source_url": "https://ir.concretepumpingholdings.com/press-releases/detail/105/concrete-pumping-holdings-announces-strategic-acquisition"
   }
  ],
  "spinoffs": [
@@ -1111,6 +1131,42 @@
    "terms": "Share-swap strategic alliance approved by both boards: IET-KY issues new shares to Guang Sheng at a ratio of 5.1 IET-KY shares per 1 Guang Sheng share (and vice versa via new share issuance on each side). Upon completion, Guang Sheng is projected to hold ~15.26% of IET-KY (becoming its single largest shareholder) while IET-KY holds ~1.79% of Guang Sheng.",
    "note": "Not a full merger or tender offer -- a cross-shareholding/strategic alliance via share exchange. Record date postponed multiple times pending Taiwan Investment Commission and stock exchange approvals (from Jan 19, 2026 to Apr 24, then May 5, 2026). At its June 23, 2026 shareholder meeting, IET-KY said Guang Sheng would not immediately take a board seat. Completion status after mid-2026 unconfirmed in search results.",
    "source_url": "https://money.udn.com/money/story/5607/9275289"
+  },
+  {
+   "ticker": "NasdaqCM:TH",
+   "company": "Target Hospitality Corp.",
+   "date": "2026-05-28",
+   "type": "secondary offering by controlling holders",
+   "terms": "7,000,000 shares sold by Arrow Holdings (TDR Capital affiliate) and MFA Global at $17.00 per share; an earlier April 2026 secondary of 7,000,000 shares priced at $14.00 was also reported (exact date not confirmed)",
+   "note": "Selling shareholders, not the company, sold down stakes; no proceeds to company.",
+   "source_url": "https://s2.q4cdn.com/280189305/files/doc_news/Target-Hospitality-Announces-Pricing-of-Secondary-Offering-982d4e032-2026.pdf"
+  },
+  {
+   "ticker": "NasdaqCM:TH",
+   "company": "Target Hospitality Corp.",
+   "date": "2026-07-24",
+   "type": "debt refinancing",
+   "terms": "Replaced $175mm ABL revolver with new $660mm asset-based revolving credit facility maturing July 2031",
+   "note": "Larger revolver to fund growth in the Workforce Hospitality Solutions segment (AI infrastructure community contracts).",
+   "source_url": "https://s2.q4cdn.com/280189305/files/doc_news/Target-Hospitality-Announces-Second-Quarter-2026-Results-Highlighting-Strong-Execution-on-Recent-Contract-Awards-and-Sustained-Moment-EODY4.pdf"
+  },
+  {
+   "ticker": "NasdaqGS:FNKO",
+   "company": "Funko, Inc.",
+   "date": "2026-02-13",
+   "type": "credit agreement amendment/extension (covenant waivers)",
+   "terms": "Fifth Amendment extended loan maturity from 2026-09-17 to 2027-12-31, waived/modified financial covenants, margin raised to 4.5%, quarterly mandatory revolver prepayment from cash above $50.0mm; credit agreement included a milestone covenant tied to a refinancing or sale",
+   "note": "Averted a September 2026 maturity/default; a further limited consent was signed 2026-05-29.",
+   "source_url": "https://investor.funko.com/news-and-events/press-releases/Press-Releases/2026/Funko-Announces-Amendment-and-Extension-of-Existing-Credit-Agreement/default.aspx"
+  },
+  {
+   "ticker": "NasdaqGS:FNKO",
+   "company": "Funko, Inc.",
+   "date": "2026-02",
+   "type": "activist investor / strategic alternatives review (potential sale of company)",
+   "terms": "Pleasant Lake Partners (Fund 1 Investments) disclosed ~10% stake and urged a formal sale process; Funko's board initiated a formal review of strategic alternatives including a potential sale, with no defined timeline (per 10-Q)",
+   "note": "No definitive sale, tender or merger agreement found as of 2026-10-26; Q2 2026 results (Aug 6) did not announce a transaction.",
+   "source_url": "https://news.bgov.com/mergers-and-acquisitions/toymaker-funko-attracts-deal-minded-investor-pleasant-lake"
   }
  ]
 }

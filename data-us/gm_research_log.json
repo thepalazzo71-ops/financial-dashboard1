@@ -488,6 +488,62 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/352955/000143774926010434/ckx20251231_10k.htm",
    "note": "Land company with oil and gas, timber and surface revenue (about $838.5K total) and small segment cost lines but no consolidated gross profit line; no gross margin derived.",
    "applied": false
+  },
+  "NasdaqCM:TH": {
+   "status": "ok",
+   "gm": 0.133,
+   "fiscal_year": "FY2025",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1712189/000110465926026114/th-20260311xex99d1.htm",
+   "applied": true
+  },
+  "NasdaqCM:VMD": {
+   "status": "ok",
+   "gm": 0.5752,
+   "fiscal_year": "FY2025",
+   "source_url": "https://viemed2018if.q4web.com/news-releases/press-release-details/2026/Viemed-Healthcare-Announces-Record-2025-Financial-Results/default.aspx",
+   "applied": true
+  },
+  "NYSE:FPH": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "source_url": "https://ir.fivepoint.com/~/media/Files/F/FivePoint-IR-V2/press-release/ex-99-1-fph-12-31-25-8k-ir.pdf",
+   "applied": false
+  },
+  "NasdaqCM:BBCP": {
+   "status": "ok",
+   "gm": 0.3846,
+   "fiscal_year": "FY2025 (Oct 31, 2025)",
+   "source_url": "https://ir.concretepumpingholdings.com/press-releases/detail/102",
+   "applied": true
+  },
+  "TSX:TBL": {
+   "status": "ok",
+   "gm": 0.1081,
+   "fiscal_year": "FY2025 (Dec 31, 2025)",
+   "source_url": "https://www.taigabuilding.com/wp-content/uploads/2026/03/Press-Release-FY2025-Q4-V3.pdf",
+   "applied": true
+  },
+  "NYSE:NREF": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1786248/000119312526134672/nref-20251231.htm",
+   "applied": false
+  },
+  "NasdaqGS:FNKO": {
+   "status": "ok",
+   "gm": 0.3868,
+   "fiscal_year": "FY2025 (Dec 31, 2025)",
+   "source_url": "https://www.businesswire.com/news/home/20260312671831/en",
+   "applied": true
+  },
+  "NasdaqCM:OPXS": {
+   "status": "ok",
+   "gm": 0.292,
+   "fiscal_year": "FY2025 (Sep 28, 2025)",
+   "source_url": "https://www.accessnewswire.com/newsroom/en/electronics-and-engineering/optex-systems-holdings-inc.-announces-financial-highlights-for-the-year-1118394",
+   "applied": true
   }
  }
 }

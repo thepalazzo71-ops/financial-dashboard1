@@ -511,7 +511,15 @@
   "TSXV:RX",
   "TSXV:TMG",
   "TSXV:UFC",
-  "TSXV:VCI"
+  "TSXV:VCI",
+  "NasdaqCM:TH",
+  "NasdaqCM:VMD",
+  "NYSE:FPH",
+  "NasdaqCM:BBCP",
+  "TSX:TBL",
+  "NYSE:NREF",
+  "NasdaqGS:FNKO",
+  "NasdaqCM:OPXS"
  ],
  "unscreened": [],
  "total_priority_pool": 512,
