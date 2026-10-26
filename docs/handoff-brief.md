@@ -2598,3 +2598,18 @@ excluded** (45.4m → 77.5m = +71% after its IPO ramp is genuine placings).
 - Known pre-existing quirk: `is_financial_sector` in `ingest_us_pool.py` lower-cases the
   name but the 'REIT' hint is upper-case, so REITs (e.g. NexPoint Real Estate Finance)
   are not flagged financial.
+
+## Comment attachments (2026-10-26)
+
+Each comment can carry up to 5 files (10 MB each). Bytes live in Cloudflare KV under
+`file:<email>:<id>` (the Worker's `PUT/GET/DELETE /api/files/<id>`); a comment stores only
+`attachments: [{id, name, size, type}]`. The UI uploads the files first, then saves the
+comment, so a failed upload adds nothing. Attaching needs the Cloudflare connection
+(button disabled on file:// or when the API is unreachable); deleting a comment deletes its
+files. Images show as thumbnails, other files as download links. Export/Import and
+`scripts/merge_comments.py` carry the attachment metadata only - the dated KV backups
+(`backup:<email>:<date>`) also hold comment metadata but NOT file bytes, so Cloudflare is
+the only copy of the attached files. Tested locally with `worker/test_local.mjs`
+(Playwright: upload, thumbnail, download headers, >10 MB rejection, reload persistence,
+delete cascade) on both pages. The Worker must be redeployed (Cloudflare rebuilds from the
+branch on push) before the Attach button works on the live site.

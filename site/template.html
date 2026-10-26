@@ -152,6 +152,14 @@
   .cm-text { font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 3px; color: var(--ink); }
   .cm-del { background: none; border: none; color: var(--ink-faint); cursor: pointer; font: inherit; font-size: 11px; padding: 0; }
   .cm-del:hover { color: var(--brick); text-decoration: underline; }
+  .cm-files { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; align-items: center; }
+  .cm-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; padding: 2px 8px; border: 1px solid var(--rule-strong); border-radius: 12px; background: var(--paper); color: var(--ink); max-width: 100%; }
+  .cm-chip button { background: none; border: none; cursor: pointer; color: var(--ink-faint); font: inherit; padding: 0; }
+  .cm-chip button:hover { color: var(--brick); }
+  .cm-att { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .cm-att a { font-size: 12px; overflow-wrap: anywhere; }
+  .cm-att .cm-thumb { display: block; max-width: 160px; max-height: 120px; border: 1px solid var(--rule); border-radius: 3px; }
+  .cm-att .cm-file-link { padding: 3px 8px; border: 1px solid var(--rule); border-radius: 3px; background: var(--paper); }
   .tag.cm { background: var(--green-soft); color: var(--green-text); cursor: help; }
   .track-btn { font: inherit; font-size: 12px; font-weight: 600; background: var(--paper); color: var(--green-text); border: 1px solid var(--green-text); border-radius: 20px; padding: 5px 12px; cursor: pointer; }
   .track-btn:hover { background: var(--green-soft); }
@@ -613,6 +621,30 @@ function cmStatus(x) {
   return cloudState === 'ok' ? 'saving to Cloudflare…' : 'browser only — not backed up yet';
 }
 function cmCanDelete(x) { return x.layer !== 'repo'; }
+// ---- attachments: file bytes live in Cloudflare KV (PUT/GET /api/files/<id>); a comment only holds
+// [{id, name, size, type}]. Uploading needs the Cloudflare connection (cloudState 'ok').
+const CM_MAX_FILES = 5, CM_MAX_FILE = 10 * 1024 * 1024;
+const pendingFiles = {};                              // ticker -> File[] chosen but not yet posted
+const uploading = {};                                 // ticker -> true while a comment with files is being sent
+function cmSize(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+function cmNewId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+function cmAttachmentsHtml(x) {
+  if (!x.attachments || !x.attachments.length) return '';
+  return `<div class="cm-att">${x.attachments.map(a => {
+    const u = '/api/files/' + encodeURIComponent(a.id);
+    const label = `${escHtml(a.name)} (${cmSize(a.size)})`;
+    if (/^image\/(png|jpeg|gif|webp)$/.test(a.type || '')) return `<a href="${u}" target="_blank" rel="noopener" title="${label}"><img class="cm-thumb" src="${u}" alt="${label}" loading="lazy"></a>`;
+    return `<a class="cm-file-link" href="${u}" target="_blank" rel="noopener" ${/^application\/pdf$/.test(a.type || '') ? '' : `download="${escHtml(a.name)}"`}>&#128206; ${label}</a>`;
+  }).join('')}</div>`;
+}
+function cmPickerHtml(t) {
+  const files = pendingFiles[t] || [];
+  const can = cloudState === 'ok';
+  return `<div class="cm-files"><input type="file" class="cm-file" data-ticker="${escHtml(t)}" multiple hidden>
+    <button class="btn small cm-pick" type="button" data-ticker="${escHtml(t)}" ${can ? '' : 'disabled'} title="${can ? `Up to ${CM_MAX_FILES} files, 10 MB each` : 'File attachments need the Cloudflare connection (not available on this page right now)'}">&#128206; Attach files</button>
+    ${files.map((f, i) => `<span class="cm-chip">${escHtml(f.name)} (${cmSize(f.size)}) <button class="cm-unpick" type="button" data-ticker="${escHtml(t)}" data-i="${i}" title="Remove">&times;</button></span>`).join('')}
+    ${uploading[t] ? '<span class="cm-hint">Uploading…</span>' : ''}</div>`;
+}
 function commentTag(c) {
   const n = commentCount(c.t);
   return ` <span class="tag cm cm-tag" data-ticker="${c.t}" ${n ? '' : 'style="display:none"'} title="You have ${n} comment(s) on this company">&#128172; ${n}</span>`;
@@ -623,17 +655,24 @@ function commentsBoxInner(t) {
   return `
     <h4>Your comments (${list.length})</h4>
     <textarea class="cm-input" data-ticker="${escHtml(t)}" placeholder="Write a comment — it is saved with today's date and time (Ctrl/Cmd+Enter to add)"></textarea>
-    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}">Add comment</button><span class="cm-hint">${hint}</span></div>
+    ${cmPickerHtml(t)}
+    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}" ${uploading[t] ? 'disabled' : ''}>Add comment</button><span class="cm-hint">${hint}</span></div>
     ${list.map(x => `
       <div class="cm-item">
         <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</div>
-        <div class="cm-text">${escHtml(x.text)}</div>
+        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
       </div>`).join('')}
   `;
 }
 function commentsBox(t) { return `<div class="comments-box" data-ticker="${escHtml(t)}">${commentsBoxInner(t)}</div>`; }
 function refreshCommentUI(t) {
-  document.querySelectorAll('.comments-box').forEach(el => { if (el.dataset.ticker === t) el.innerHTML = commentsBoxInner(t); });
+  document.querySelectorAll('.comments-box').forEach(el => {
+    if (el.dataset.ticker !== t) return;
+    const ta = el.querySelector('.cm-input'), draft = ta ? ta.value : '', focus = ta && document.activeElement === ta;
+    el.innerHTML = commentsBoxInner(t);
+    const nt = el.querySelector('.cm-input');
+    if (nt && draft) { nt.value = draft; if (focus) nt.focus(); }
+  });
   document.querySelectorAll('.cm-tag').forEach(el => {
     if (el.dataset.ticker !== t) return;
     const n = commentCount(t);
@@ -645,7 +684,11 @@ function refreshCommentUI(t) {
   if (btn) btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
   if (document.getElementById('commentsModalBackdrop').classList.contains('open')) renderCommentsModal();
 }
-function refreshAllCommentUI() { commentTickers().forEach(refreshCommentUI); refreshCommentUI('__none__'); }
+function refreshAllCommentUI() {
+  const ts = new Set(commentTickers());
+  document.querySelectorAll('.comments-box').forEach(el => ts.add(el.dataset.ticker));
+  ts.forEach(refreshCommentUI); refreshCommentUI('__none__');
+}
 // ---- cloud sync
 async function cloudFetch(path, opts) {
   if (location.protocol === 'file:') throw new Error('file protocol');
@@ -654,12 +697,13 @@ async function cloudFetch(path, opts) {
   if (!r.ok || !ct.includes('application/json')) throw new Error('cloud unavailable (' + r.status + ')');
   return r.json();
 }
+function cmPlain(x) { return x.attachments && x.attachments.length ? { id: x.id, ts: x.ts, text: x.text, attachments: x.attachments } : { id: x.id, ts: x.ts, text: x.text }; }
 async function pushLocalToCloud() {
   for (const t of Object.keys(commentsState)) {
     for (const x of commentsState[t].slice()) {
       try {
-        await cloudFetch('/api/comments', { method: 'POST', body: JSON.stringify({ ticker: t, id: x.id, ts: x.ts, text: x.text }) });
-        (cloudComments[t] = cloudComments[t] || []).push({ id: x.id, ts: x.ts, text: x.text });
+        await cloudFetch('/api/comments', { method: 'POST', body: JSON.stringify(Object.assign({ ticker: t }, cmPlain(x))) });
+        (cloudComments[t] = cloudComments[t] || []).push(cmPlain(x));
         commentsState[t] = commentsState[t].filter(y => y.id !== x.id);
         if (!commentsState[t].length) delete commentsState[t];
         saveComments();
@@ -677,18 +721,46 @@ async function syncComments() {
   await pushLocalToCloud();
   refreshAllCommentUI();
 }
-function addComment(t, text) {
+async function uploadFile(f) {
+  const id = cmNewId() + Math.random().toString(36).slice(2, 6);
+  const r = await fetch('/api/files/' + id, { method: 'PUT', credentials: 'same-origin', redirect: 'manual',
+    headers: { 'content-type': f.type || 'application/octet-stream', 'x-file-name': encodeURIComponent(f.name) }, body: f });
+  const ct = r.headers.get('content-type') || '';
+  if (!r.ok || !ct.includes('application/json')) throw new Error('upload failed (' + r.status + ')');
+  return { id, name: f.name, size: f.size, type: (f.type || 'application/octet-stream').slice(0, 100) };
+}
+async function addComment(t, text) {
   text = (text || '').trim();
-  if (!text) return false;
-  const entry = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7), ts: new Date().toISOString(), text };
+  const files = pendingFiles[t] || [];
+  if (!text && !files.length) return false;
+  if (uploading[t]) return false;
+  let attachments = [];
+  if (files.length) {
+    if (cloudState !== 'ok') { alert('File attachments need the Cloudflare connection, which is not available on this page right now.'); return false; }
+    uploading[t] = true; refreshCommentUI(t);
+    try {
+      for (const f of files) attachments.push(await uploadFile(f));
+    } catch (e) {
+      attachments.forEach(a => fetch('/api/files/' + a.id, { method: 'DELETE', credentials: 'same-origin' }).catch(() => {}));
+      uploading[t] = false; refreshCommentUI(t);
+      alert('Could not upload the attachment(s): ' + e.message + '. Your comment was not added; try again.');
+      return false;
+    }
+    delete pendingFiles[t]; uploading[t] = false;
+  }
+  const entry = { id: cmNewId(), ts: new Date().toISOString(), text };
+  if (attachments.length) entry.attachments = attachments;
   (commentsState[t] = commentsState[t] || []).unshift(entry);
   saveComments();
   refreshCommentUI(t);
+  const ta = document.querySelector(`.comments-box[data-ticker="${CSS.escape(t)}"] .cm-input`);
+  if (ta) ta.value = '';
   if (cloudState !== 'unavailable' && location.protocol !== 'file:') pushLocalToCloud().then(() => refreshAllCommentUI());
   return true;
 }
 async function deleteComment(t, id) {
   const wasCloud = (cloudComments[t] || []).some(x => x.id === id);
+  if (!wasCloud) (commentsState[t] || []).filter(x => x.id === id).forEach(x => (x.attachments || []).forEach(a => fetch('/api/files/' + a.id, { method: 'DELETE', credentials: 'same-origin' }).catch(() => {})));
   commentsState[t] = (commentsState[t] || []).filter(x => x.id !== id);
   if (!commentsState[t].length) delete commentsState[t];
   saveComments();
@@ -719,7 +791,7 @@ function renderCommentsModal() {
       <div class="cm-item">
         <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>
           <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && cmCanDelete(x)) ? ' &middot; ' : ''}${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</span></div>
-        <div class="cm-text">${escHtml(x.text)}</div>
+        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
       </div>`;
   }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>');
 }
@@ -741,7 +813,7 @@ function showCompanyInTable(t) {
 function exportComments() {
   // Full backup = every layer, so the file is complete on its own.
   const all = {};
-  commentTickers().forEach(t => { all[t] = commentsFor(t).map(x => ({ id: x.id, ts: x.ts, text: x.text })); });
+  commentTickers().forEach(t => { all[t] = commentsFor(t).map(cmPlain); });
   const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: all }, null, 1)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -763,7 +835,7 @@ function importComments(file) {
         const have = new Set(commentsFor(t).map(x => x.id));
         src[t].forEach(x => {
           if (x && typeof x.id === 'string' && typeof x.text === 'string' && typeof x.ts === 'string' && !have.has(x.id)) {
-            (commentsState[t] = commentsState[t] || []).push({ id: x.id, ts: x.ts, text: x.text }); have.add(x.id); added++;
+            (commentsState[t] = commentsState[t] || []).push(cmPlain(x)); have.add(x.id); added++;
           }
         });
       });
@@ -796,10 +868,36 @@ function initComments() {
       if (ta) addComment(add.dataset.ticker, ta.value);
       return;
     }
+    const pick = e.target.closest('.cm-pick');
+    if (pick) { const inp = pick.parentElement.querySelector('.cm-file'); if (inp) inp.click(); return; }
+    const unpick = e.target.closest('.cm-unpick');
+    if (unpick) {
+      const t = unpick.dataset.ticker;
+      (pendingFiles[t] || []).splice(parseInt(unpick.dataset.i, 10), 1);
+      if (!(pendingFiles[t] || []).length) delete pendingFiles[t];
+      refreshCommentUI(t);
+      return;
+    }
     const show = e.target.closest('.cm-show');
     if (show) { showCompanyInTable(show.dataset.ticker); return; }
     const del = e.target.closest('.cm-del');
     if (del && del.dataset.id) { if (confirm('Delete this comment?')) deleteComment(del.dataset.ticker, del.dataset.id); }
+  });
+  document.addEventListener('change', e => {
+    const inp = e.target.closest && e.target.closest('.cm-file');
+    if (!inp) return;
+    const t = inp.dataset.ticker, list = pendingFiles[t] || [];
+    const problems = [];
+    Array.from(inp.files).forEach(f => {
+      if (f.size > CM_MAX_FILE) problems.push(`${f.name} is larger than 10 MB`);
+      else if (f.size === 0) problems.push(`${f.name} is empty`);
+      else if (list.length >= CM_MAX_FILES) problems.push(`${f.name}: at most ${CM_MAX_FILES} files per comment`);
+      else list.push(f);
+    });
+    inp.value = '';
+    if (list.length) pendingFiles[t] = list;
+    refreshCommentUI(t);
+    if (problems.length) alert('Not attached:\n' + problems.join('\n'));
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && e.target.classList && e.target.classList.contains('cm-input')) {

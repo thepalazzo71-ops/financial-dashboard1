@@ -8,7 +8,12 @@ import worker from './index.js';
 
 const kv = new Map();
 const env = {
-  STATE: { get: async k => kv.get(k) ?? null, put: async (k, v) => { kv.set(k, v); } },
+  STATE: {
+    get: async (k, t) => { const e = kv.get(k); if (!e) return null; return (t === 'arrayBuffer' || t?.type === 'arrayBuffer') ? e.v : (typeof e.v === 'string' ? e.v : new TextDecoder().decode(e.v)); },
+    getWithMetadata: async (k, t) => { const e = kv.get(k); if (!e) return { value: null, metadata: null }; return { value: (t?.type === 'arrayBuffer' || t === 'arrayBuffer') ? e.v : e.v, metadata: e.m ?? null }; },
+    put: async (k, v, o) => { kv.set(k, { v, m: o?.metadata }); },
+    delete: async (k) => { kv.delete(k); },
+  },
   ASSETS: { fetch: async req => {
     const p = new URL(req.url).pathname;
     const f = path.join(process.cwd(), 'docs', p === '/' ? 'index.html' : p);

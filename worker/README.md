@@ -36,8 +36,11 @@ API is ever unreachable the pages fall back to browser-only comments (+ Export /
 |---|---|
 | `GET /api/ping` | `{ok, email}` |
 | `GET /api/comments` | `{comments: {ticker: [{id, ts, text}]}, updatedAt}` |
-| `POST /api/comments` | add `{ticker, id, ts, text}` (idempotent by id; text <= 5000 chars) |
-| `DELETE /api/comments?ticker=..&id=..` | remove one comment |
+| `POST /api/comments` | add `{ticker, id, ts, text, attachments?}` (idempotent by id; text <= 5000 chars, may be empty if there are attachments; <= 5 attachments `{id,name,size,type}` that were uploaded first) |
+| `DELETE /api/comments?ticker=..&id=..` | remove one comment and its attachments |
+| `PUT /api/files/<id>` | upload one attachment: raw body (<= 10 MB), headers `Content-Type`, `X-File-Name` (URL-encoded) |
+| `GET /api/files/<id>` | the file: png/jpeg/gif/webp/pdf inline, everything else forced to download (`nosniff`) |
+| `DELETE /api/files/<id>` | remove an uploaded file (cleanup of an aborted upload) |
 
 KV keys: `comments:<email>` (live) and `backup:<email>:<YYYY-MM-DD>` (dated copy
 on every write, kept 180 days).

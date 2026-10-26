@@ -26,9 +26,14 @@ def main():
             continue
         have = {x["id"] for x in store.get(ticker, [])}
         for x in items:
+            atts = x.get("attachments") if isinstance(x, dict) else None
+            atts = atts if isinstance(atts, list) and atts else None
             if (isinstance(x, dict) and isinstance(x.get("id"), str) and isinstance(x.get("ts"), str)
-                    and isinstance(x.get("text"), str) and x["text"].strip() and x["id"] not in have):
-                store.setdefault(ticker, []).append({"id": x["id"], "ts": x["ts"], "text": x["text"]})
+                    and isinstance(x.get("text"), str) and (x["text"].strip() or atts) and x["id"] not in have):
+                item = {"id": x["id"], "ts": x["ts"], "text": x["text"]}
+                if atts:  # metadata only: the file bytes stay in Cloudflare
+                    item["attachments"] = atts
+                store.setdefault(ticker, []).append(item)
                 have.add(x["id"])
                 added += 1
         if ticker in store:
