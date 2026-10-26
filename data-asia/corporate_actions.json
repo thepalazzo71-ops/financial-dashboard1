@@ -1,6 +1,185 @@
 {
- "tender_offers": [],
- "mergers_acquisitions": [],
- "spinoffs": [],
- "other": []
+ "tender_offers": [
+  {
+   "ticker": "KOSDAQ:A230360",
+   "company": "Echomarketing Co.,Ltd.",
+   "date": "2026-01-01",
+   "counterparty": "BCPE Avid Co1 (Bain Capital SPC)",
+   "terms": "First tender: 17,497,530 shares (56.4%) at KRW16,000 (49.53% premium), 2026-01-02..01-21, agent NH Investment & Securities",
+   "note": "Bain Capital take-private of Echomarketing; minority holders objected to valuation.",
+   "source_url": "https://core.asiae.co.kr/article/2026010210033122486"
+  },
+  {
+   "ticker": "KOSDAQ:A230360",
+   "company": "Echomarketing Co.,Ltd.",
+   "date": "2026-01-26",
+   "counterparty": "BCPE Avid Co1 (Bain Capital SPC)",
+   "terms": "Second tender 2026-01-26..02-25 at KRW16,000; combined stake ~91% incl. founder and ESOP; a 3rd tender reported in March 2026",
+   "note": "Stake reached ~91% (later ~95%) after additional on-market purchases.",
+   "source_url": "https://view.asiae.co.kr/article/2026022817373302158"
+  },
+  {
+   "ticker": "SGX:5VS",
+   "company": "Hafary Holdings Limited",
+   "date": "2026-09-28",
+   "counterparty": "23 Capital Pte Ltd (founding Low family vehicle)",
+   "terms": "Voluntary conditional cash offer S$0.64/share, ~S$275.6m total; irrevocables 89.96%; aims to delist; open >=28 days; final unless competing offer",
+   "note": "Founders' privatisation; premium 4.9% to last trade S$0.61 and 19.9% to 12m VWAP.",
+   "source_url": "https://recordowl.com/news/hafary-founding-family-privatisation-offer-64-cents"
+  }
+ ],
+ "mergers_acquisitions": [
+  {
+   "ticker": "SEHK:240",
+   "company": "Build King Holdings Limited",
+   "date": "2026-07-23",
+   "counterparty": "Four Hong Kong construction companies in provisional liquidation (acquired via PrimeStone Capital, wholly-owned sub)",
+   "role": "acquirer",
+   "terms": "Up to HK$100m aggregate price plus up to HK$15m restructuring costs; conditional on HK court-sanctioned schemes of arrangement",
+   "note": "Acquisition of ~100% of four licence-holding contractors to expand tender capacity; source is an AI-generated filing summary, primary HKEX filing not seen.",
+   "source_url": "https://filingreader.com/news-wire/hongkong/2026-07-24/build-king-unit-agrees-to-acquire-four-construction-companies"
+  },
+  {
+   "ticker": "KOSDAQ:A036800",
+   "company": "Nice Information & Telecommunication, Inc.",
+   "date": "2026-06-02",
+   "counterparty": "KIS Information & Communication (KIS\uc815\ubcf4\ud1b5\uc2e0, affiliate)",
+   "role": "acquirer",
+   "terms": "Acquire 4,491,623 shares for ~KRW112.3bn, raising stake to 96.1%; scheduled 2026-07-02 (consolidation expected 3Q26)",
+   "note": "Acquisition of affiliate KIS Info & Comm (2025 revenue KRW216.5bn, OP KRW15.5bn) to consolidate it as subsidiary.",
+   "source_url": "https://biz.sbs.co.kr/amp/article/20000314138"
+  },
+  {
+   "ticker": "KOSDAQ:A067160",
+   "company": "Soop Co., Ltd.",
+   "date": "2026-05-18",
+   "counterparty": "Pepper Savings Bank volleyball club (KOVO women's pro volleyball team)",
+   "role": "acquirer",
+   "terms": "Intent to acquire conveyed to KOVO; club to be run by subsidiary SOOP TV (\uc232\ud2f0\ube44); price not seen",
+   "note": "Sports-franchise acquisition, small relative to group.",
+   "source_url": "https://sports.khan.co.kr/article/202605181650003"
+  },
+  {
+   "ticker": "KOSDAQ:A230360",
+   "company": "Echomarketing Co.,Ltd.",
+   "date": "2026-04-03",
+   "counterparty": "BCPE Avid Co1 (Bain Capital SPC)",
+   "role": "target",
+   "terms": "Cash-based comprehensive share exchange at ~KRW16,000, completion planned 2026-06-15, then delisting",
+   "note": "Board approved share exchange making Echomarketing a wholly owned sub of Bain SPC and leading to delisting.",
+   "source_url": "https://core.asiae.co.kr/article/2026050716381204138"
+  },
+  {
+   "ticker": "SGX:5VS",
+   "company": "Hafary Holdings Limited",
+   "date": "2026-09-28",
+   "counterparty": "23 Capital / Hap Seng Consolidated (seller)",
+   "role": "target",
+   "terms": "Hap Seng sells 50.82% (218.79m shares) for ~S$140.0m (RM446m) under irrevocable; completion expected by Dec 2026",
+   "note": "Hap Seng exits its subsidiary Hafary via the offer.",
+   "source_url": "https://www.thestar.com.my/business/business-news/2026/09/28/hap-seng-to-sell-5082-stake-in-hafary-for-rm446mil"
+  },
+  {
+   "ticker": "KOSE:A057050",
+   "company": "Hyundai Home Shopping Network Corporation",
+   "date": "2026-06-30",
+   "counterparty": "Hyundai GF Holdings",
+   "role": "target",
+   "terms": "Share exchange making HHS a 100% subsidiary of Hyundai GF Holdings (resolves dual listing); ~KRW100bn buyback/cancellation by holdco",
+   "note": "Date approximate and unverified (from search-summary of broker/news); implies possible HHS delisting - verify before use.",
+   "source_url": "https://dealsite.co.kr/articles/149274"
+  },
+  {
+   "ticker": "KOSE:A029460",
+   "company": "KC Co., Ltd.",
+   "date": "2026-10-16",
+   "counterparty": "TrueBlue Partners / NVESTOR consortium (sole preferred bidder); other finalists BNK-Hanwha-Shinhan consortium (~KRW300bn offer)",
+   "role": "target",
+   "terms": "Astra Asset Management (+UAMCO-IBK funds, bought Feb 2025 for KRW170.5bn) selling ~100% excl. 9.09% treasury; price expected KRW300bn range; sale launched late Sep 2026, 4 finalists mid-Oct",
+   "note": "PEF owners selling control; price/financing terms of preferred bidder not disclosed; not signed as of sources.",
+   "source_url": "https://dealsite.co.kr/articles/170820"
+  },
+  {
+   "ticker": "SGX:OU8",
+   "company": "Centurion Corporation Limited",
+   "date": "2026-06-24",
+   "counterparty": "Concorde South (key worker accommodation asset, South Hedland, Western Australia)",
+   "role": "acquirer",
+   "terms": "Acquisition announced 2026-04-27 via indirect subsidiary, completed 2026-06-24; price not seen in source",
+   "note": "Centurion completed purchase of the Concorde South worker accommodation asset in Australia.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/6UCNTCCS0DS8SRX7/894089_CCL%20Completion%20of%20Acq%20of%20Concorde%20South%20in%20South%20Hedland%20Australia-20260624.pdf"
+  },
+  {
+   "ticker": "KOSE:A317450",
+   "company": "Myung In Pharmaceutical LTD.",
+   "date": "2026-01-01",
+   "counterparty": "P2B (Israel) - Paxroyla (Parkinson's drug) assets",
+   "role": "acquirer",
+   "terms": "Asset acquisition via Israeli court-supervised bid; price not seen; exact day unknown (reported Jan 2026)",
+   "note": "Won the bid for Paxroyla capsule assets; Tel Aviv court consolidated rights to Myung In (asset deal, not equity M&A).",
+   "source_url": "https://dealsite.co.kr/articles/160104"
+  }
+ ],
+ "spinoffs": [
+  {
+   "ticker": "KOSE:A057050",
+   "company": "Hyundai Home Shopping Network Corporation",
+   "date": "2026-08-05",
+   "spun_off_entity": "Hyundai Home Shopping Holdings (tentative name; investment business incl. Handsome stake)",
+   "terms": "Personal-basis (\uc778\uc801) split of investment business; new co to merge with Hyundai GF Holdings; HHS retains home-shopping business",
+   "note": "Per Hyundai GF Holdings disclosure reported 2026-08-05; search summary only, verify in DART.",
+   "source_url": "https://dealsite.co.kr/articles/166637"
+  }
+ ],
+ "other": [
+  {
+   "ticker": "KOSDAQ:A067160",
+   "company": "Soop Co., Ltd.",
+   "date": "2026-09-04",
+   "type": "asset purchase (HQ building)",
+   "counterparty": "Pangyo HQ land and building",
+   "terms": "~KRW131.5bn, funded by own funds and borrowings",
+   "note": "Purchase of Pangyo headquarters for 20th anniversary.",
+   "source_url": "https://www.mt.co.kr/en/stock/2026/09/04/2026090417282444286"
+  },
+  {
+   "ticker": "ASX:CUV",
+   "company": "Clinuvel Pharmaceuticals Limited",
+   "date": "2026-08-27",
+   "type": "redomiciliation / ASX delisting and Nasdaq listing via scheme of arrangement",
+   "terms": "New foreign HoldCo to become parent under scheme; holders get equivalent HoldCo shares; delist from ASX (and Frankfurt); US HQ from 2027-01-01; subject to final board decision and shareholder/court/ASX approvals",
+   "note": "Board considering moving primary listing to Nasdaq (ADS Level II uplisting completed Aug 2026); no final decision as of search. Company post titled 'Risk, Cash and a Hostile Takeover' suggests takeover-risk motive (not verified).",
+   "source_url": "https://announcements.asx.com.au/asxpdf/20260827/pdf/073bcstbrllq9z.pdf"
+  },
+  {
+   "ticker": "TSE:6966",
+   "company": "Mitsui High-tec, Inc.",
+   "date": "2026-01-01",
+   "counterparty": "type: subsidiary liquidation (Hong Kong subsidiary)",
+   "role": "",
+   "terms": "Hong Kong subsidiary liquidated Jan 2026 (day unknown)",
+   "note": "Minor wind-down of a HK subsidiary, per securities-report history; not an M&A.",
+   "source_url": "https://edinetdb.jp/company/E02293/history"
+  },
+  {
+   "ticker": "KOSDAQ:A092730",
+   "company": "NeoPharm CO., LTD.",
+   "date": "2025-10-28",
+   "counterparty": "type: controlling shareholder stake increase (Hanbul)",
+   "role": "",
+   "terms": "Hanbul raised stake to 40.12% via on-market purchases",
+   "note": "Controlling shareholder Hanbul increased its holding to 40.12%; not a tender offer.",
+   "source_url": "https://www.digitaltoday.co.kr/aigongsi/4333/major-shareholder-its-hanbul-neopharm-stake-increase"
+  },
+  {
+   "ticker": "KOSE:A007540",
+   "company": "Sempio Company",
+   "date": "2026-09-09",
+   "counterparty": "type: share cancellation (\uc8fc\uc2dd\uc18c\uac01\uacb0\uc815); also 1-day trading halt/lift same day",
+   "role": "",
+   "terms": "Terms (size) not seen; Butler lists 09.09 trading halt & resumption and 09.09 share-cancellation decision",
+   "note": "Sempio decided to cancel shares (likely treasury) on 2026-09-09; stock halted and resumed same day.",
+   "source_url": "https://www.butler.works/ko/companies/00130091"
+  }
+ ]
 }
