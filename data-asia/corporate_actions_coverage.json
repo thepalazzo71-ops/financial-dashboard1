@@ -1,0 +1,6 @@
+{
+ "_note": "screened = tickers that have gone through an explicit corporate-actions WebSearch pass",
+ "screened": [],
+ "unscreened": [],
+ "total_priority_pool": 0
+}

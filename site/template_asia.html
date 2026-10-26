@@ -1,0 +1,2362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asia/Pacific Small/Mid-Cap Value Shortlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<style>
+  :root {
+    --paper: #EFEAE0;
+    --paper-raised: #F7F4EC;
+    --ink: #1C2430;
+    --ink-soft: #5B6472;
+    --ink-faint: #8B93A0;
+    --rule: rgba(28,36,48,0.12);
+    --rule-strong: rgba(28,36,48,0.22);
+    --green: #2F4B3C;
+    --green-soft: #E4EBE4;
+    --green-text: #24503C;
+    --brick: #9C4A3B;
+    --brick-soft: #F4E4E0;
+    --gold: #92702C;
+    --gold-soft: #F1E7CE;
+    --accent: #2F4B3C;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #161B22; --paper-raised: #1D232C; --ink: #E9E6DD;
+      --ink-soft: #A9AFB9; --ink-faint: #767E8A;
+      --rule: rgba(233,230,221,0.12); --rule-strong: rgba(233,230,221,0.22);
+      --green: #6FA98A; --green-soft: #1E2C25; --green-text: #8FC3A5;
+      --brick: #D18576; --brick-soft: #2E211E;
+      --gold: #D4B36A; --gold-soft: #2B2418; --accent: #6FA98A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #161B22; --paper-raised: #1D232C; --ink: #E9E6DD;
+    --ink-soft: #A9AFB9; --ink-faint: #767E8A;
+    --rule: rgba(233,230,221,0.12); --rule-strong: rgba(233,230,221,0.22);
+    --green: #6FA98A; --green-soft: #1E2C25; --green-text: #8FC3A5;
+    --brick: #D18576; --brick-soft: #2E211E;
+    --gold: #D4B36A; --gold-soft: #2B2418; --accent: #6FA98A;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  .num { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  a { color: var(--green-text); }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  header.top { margin-bottom: 22px; }
+  header.top .market-nav { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  header.top .market-nav label { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  header.top .market-nav select { font: inherit; font-size: 13px; background: var(--paper-raised); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 6px 9px; }
+  header.top h1 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.01em; }
+  header.top .sub { color: var(--ink-soft); font-size: 14px; line-height: 1.5; max-width: 800px; }
+  header.top .sub b { color: var(--ink); font-weight: 600; }
+
+  .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .stat { background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 9px 14px; min-width: 108px; }
+  .stat.warn { border-color: var(--gold); }
+  .stat .n { font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; }
+  .stat .l { font-size: 11px; color: var(--ink-faint); margin-top: 2px; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 22px 0 14px; padding: 12px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 4px; }
+  .toolbar input[type="text"], .toolbar select { font: inherit; font-size: 13px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 7px 10px; }
+  .toolbar input[type="text"] { flex: 1 1 180px; min-width: 140px; }
+  .toolbar select { flex: 0 0 auto; }
+  #historyDate.active { border-color: var(--gold); background: var(--gold-soft); }
+  .history-banner { margin: -4px 0 14px; padding: 9px 14px; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 4px; font-size: 12.5px; color: var(--ink); }
+  .tracker-banner { margin: -4px 0 14px; padding: 9px 14px; background: var(--brick-soft); border: 1px solid var(--brick); border-radius: 4px; font-size: 12.5px; color: var(--ink); }
+  .tracker-banner b { color: var(--brick); }
+  .tracker-banner a.view-link { color: var(--brick); font-weight: 600; cursor: pointer; text-decoration: underline; margin-left: 4px; }
+  .btn { font: inherit; font-size: 13px; font-weight: 600; background: var(--green); color: var(--paper); border: none; border-radius: 3px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+  .btn:hover { opacity: 0.88; }
+  .btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-strong); font-weight: 500; }
+  .btn.ghost:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .btn.gold { background: var(--gold); }
+  .btn.small { padding: 4px 9px; font-size: 12px; border-radius: 3px; }
+  .btn.active { background: var(--green-soft); color: var(--green-text); border: 1px solid var(--green-text); }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper-raised); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 980px; }
+  thead th { position: sticky; top: 0; z-index: 2; background: var(--paper-raised); text-align: left; font-weight: 600; font-size: 11.5px; color: var(--ink-soft); padding: 10px 10px; border-bottom: 1px solid var(--rule-strong); white-space: nowrap; }
+  thead th.num-col, td.num-col { text-align: right; }
+  tbody tr.row { border-bottom: 1px solid var(--rule); cursor: pointer; }
+  tbody tr.row:hover { background: rgba(47,75,60,0.05); }
+  tbody tr.row.expanded { background: var(--green-soft); }
+  td { padding: 9px 10px; vertical-align: middle; }
+  td.rank { color: var(--ink-faint); font-family: 'IBM Plex Mono', monospace; font-size: 12px; width: 34px; }
+  td.company .name { font-weight: 600; color: var(--ink); }
+  td.company .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: var(--gold-soft); color: var(--gold); white-space: nowrap; }
+  .tag.rc { background: var(--green-soft); color: var(--green-text); }
+  .tag.dv { background: var(--brick-soft); color: var(--brick); }
+  .tag.bal { background: var(--rule); color: var(--ink-soft); }
+  .tag.needsgm { background: var(--brick-soft); color: var(--brick); cursor: help; }
+  .tag.nodata { background: var(--brick-soft); color: var(--brick); cursor: help; font-weight: 700; }
+  .tag.refreshed { background: var(--green-soft); color: var(--green-text); cursor: help; }
+  .tag.distress { background: var(--brick); color: var(--paper, #fff); cursor: help; font-weight: 700; }
+
+  .rank-delta { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; white-space: nowrap; }
+  .rank-delta.up { color: var(--green-text); }
+  .rank-delta.down { color: var(--brick); }
+  .rank-delta.flat, .rank-delta.new { color: var(--ink-faint); }
+
+  .mc-cell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+  .mc-cell input { width: 82px; text-align: right; font: inherit; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 4px 6px; }
+  .mc-cell input.edited { border-color: var(--gold); background: var(--gold-soft); }
+  .mc-reset { background: none; border: none; color: var(--ink-faint); cursor: pointer; font-size: 13px; padding: 2px; }
+  .mc-reset:hover { color: var(--brick); }
+
+  .gm-cell { display: flex; align-items: center; gap: 5px; justify-content: flex-end; }
+  .gm-val { font-family: 'IBM Plex Mono', monospace; }
+  .gm-val.fallback { color: var(--ink-faint); font-style: italic; }
+
+  .score-cell { display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; }
+  .score-cell .val { font-weight: 600; font-size: 14px; }
+
+  tr.detail-row td { padding: 0; }
+  .detail { padding: 16px 20px 20px 44px; background: var(--paper-raised); border-bottom: 1px solid var(--rule); }
+  .detail-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px; }
+  .detail-grid > *, .detail { min-width: 0; overflow-wrap: anywhere; }
+  .modal .detail-grid { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  @media (max-width: 800px) { .detail-grid { grid-template-columns: 1fr; } }
+  .detail h4 { font-size: 11px; color: var(--ink-faint); margin: 0 0 5px; font-weight: 600; }
+  .detail p { font-size: 13px; line-height: 1.5; margin: 0 0 14px; color: var(--ink); }
+  .detail .flags { color: var(--brick); }
+  .detail .shareholding-row { margin: 0 0 6px; }
+  .detail .shareholding-row b { font-weight: 600; }
+  .detail .lens-note { font-size: 12px; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .news-note { font-size: 12.5px; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .news-note b.lbl { display: block; font-size: 10.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .detail .distress-note { font-size: 12.5px; color: var(--ink); background: var(--brick-soft); border: 1px solid var(--brick); border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; }
+  .detail .distress-note b.lbl { display: block; font-size: 10.5px; color: var(--brick); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .detail .distress-note a { color: var(--brick); }
+  .detail-actions { margin-bottom: 12px; }
+  .comments-box { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule-strong); }
+  .comments-box h4 { margin: 0 0 6px; }
+  .cm-input { display: block; width: 100%; min-height: 64px; box-sizing: border-box; font: inherit; font-size: 13px; line-height: 1.45; color: var(--ink); background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 8px 10px; resize: vertical; }
+  .cm-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; flex-wrap: wrap; }
+  .cm-hint { font-size: 11px; color: var(--ink-faint); }
+  .cm-item { padding: 8px 10px; border: 1px solid var(--rule); border-radius: 3px; background: var(--paper); margin-bottom: 6px; }
+  .cm-meta { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; color: var(--ink-faint); }
+  .cm-text { font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 3px; color: var(--ink); }
+  .cm-del { background: none; border: none; color: var(--ink-faint); cursor: pointer; font: inherit; font-size: 11px; padding: 0; }
+  .cm-del:hover { color: var(--brick); text-decoration: underline; }
+  .cm-files { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; align-items: center; }
+  .cm-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; padding: 2px 8px; border: 1px solid var(--rule-strong); border-radius: 12px; background: var(--paper); color: var(--ink); max-width: 100%; }
+  .cm-chip button { background: none; border: none; cursor: pointer; color: var(--ink-faint); font: inherit; padding: 0; }
+  .cm-chip button:hover { color: var(--brick); }
+  .cm-att { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .cm-att a { font-size: 12px; overflow-wrap: anywhere; }
+  .cm-att .cm-thumb { display: block; max-width: 160px; max-height: 120px; border: 1px solid var(--rule); border-radius: 3px; }
+  .cm-att .cm-file-link { padding: 3px 8px; border: 1px solid var(--rule); border-radius: 3px; background: var(--paper); }
+  .tag.cm { background: var(--green-soft); color: var(--green-text); cursor: help; }
+  .track-btn { font: inherit; font-size: 12px; font-weight: 600; background: var(--paper); color: var(--green-text); border: 1px solid var(--green-text); border-radius: 20px; padding: 5px 12px; cursor: pointer; }
+  .track-btn:hover { background: var(--green-soft); }
+  .track-btn.tracked { background: var(--green); color: var(--paper); border-color: var(--green); }
+  .breakdown { font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+  .breakdown div.bd-row { display: flex; justify-content: space-between; padding: 5px 9px; background: var(--paper); }
+  .breakdown div.bd-row:nth-child(even) { background: var(--paper-raised); }
+  .breakdown div.bd-row b { font-weight: 600; }
+  .spark-block { margin-bottom: 14px; }
+  .spark-block svg { display: block; max-width: 100%; height: auto; }
+  .website-link { font-size: 12px; }
+  .no-thesis { font-size: 12.5px; color: var(--ink-faint); font-style: italic; }
+  .gm-source { font-size: 12px; color: var(--ink-soft); }
+  .gm-source a { display: block; }
+  .fin-toggle-row { margin-top: 4px; }
+  .fin-toggle { background: none; border: none; color: var(--green-text); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; padding: 4px 0; }
+  .fin-toggle:hover { text-decoration: underline; }
+  .full-financials { margin-top: 10px; padding-top: 12px; border-top: 1px dashed var(--rule-strong); }
+  .fin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .fin-item { background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 7px 9px; }
+  .fin-item .fin-label { display: block; font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 2px; }
+  .fin-item .fin-val { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; }
+  .fin-table { width: 100%; border-collapse: collapse; font-size: 11.5px; font-family: 'IBM Plex Mono', monospace; margin-bottom: 4px; }
+  .fin-table th, .fin-table td { padding: 5px 7px; text-align: right; border-bottom: 1px solid var(--rule); }
+  .fin-table th { color: var(--ink-faint); font-weight: 600; font-family: 'Inter', sans-serif; font-size: 10.5px; }
+  .fin-table td:first-child, .fin-table th:first-child { text-align: left; font-family: 'Inter', sans-serif; color: var(--ink-soft); }
+  .fin-table td.latest, .fin-table th.latest { color: var(--ink); font-weight: 600; background: var(--green-soft); }
+
+  .footnote { margin-top: 20px; font-size: 12px; color: var(--ink-faint); line-height: 1.65; max-width: 860px; }
+  .footnote code { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
+  .footnote b.hd { display: block; color: var(--ink); margin: 14px 0 4px; font-size: 12.5px; }
+  .footnote b.hd:first-child { margin-top: 0; }
+
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(20,24,30,0.5); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+  .modal-backdrop.open { display: flex; }
+  .modal { background: var(--paper-raised); border: 1px solid var(--rule-strong); border-radius: 6px; max-width: 580px; width: 100%; padding: 22px; max-height: 86vh; overflow-y: auto; }
+  .modal.wide { max-width: 760px; }
+  .modal h4 { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.03em; margin: 18px 0 8px; }
+  .modal h4:first-child { margin-top: 0; }
+  .top150-row-wrap:last-child .top150-row { border-bottom: none; }
+  .t150-co { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+  .top150-row { display: flex; gap: 14px; padding: 10px 4px; border-bottom: 1px solid var(--rule); cursor: pointer; border-radius: 3px; }
+  .top150-row:hover { background: rgba(47,75,60,0.05); }
+  .top150-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .top150-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
+  .t150-rank { flex: 0 0 60px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; text-align: center; color: var(--ink-soft); line-height: 1.4; }
+  .t150-co .name { font-weight: 600; font-size: 13.5px; }
+  .t150-co .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .t150-news { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+  .t150-new-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 20px; background: var(--gold); color: var(--paper); margin-left: 6px; vertical-align: middle; }
+  .t150-sim { font-size: 11.5px; color: var(--ink-faint); margin-top: 2px; }
+  .t150-sim b { color: var(--green-text); }
+  .ca-row { padding: 10px 4px; border-bottom: 1px solid var(--rule); border-radius: 3px; }
+  .ca-row-wrap:last-child .ca-row { border-bottom: none; }
+  .ca-row.clickable { cursor: pointer; }
+  .ca-row.clickable:hover { background: rgba(47,75,60,0.05); }
+  .ca-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .ca-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
+  .ca-row .name { font-weight: 600; font-size: 13.5px; }
+  .ca-row .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .ca-row .terms { font-size: 12px; color: var(--gold); margin-top: 3px; font-weight: 600; }
+  .ca-row .note { font-size: 12.5px; color: var(--ink); margin-top: 3px; line-height: 1.45; }
+  .ca-row .src { font-size: 11.5px; margin-top: 3px; }
+  .tracker-row { padding: 12px 4px; border-bottom: 1px solid var(--rule); border-radius: 3px; }
+  .tracker-row-wrap:last-child .tracker-row { border-bottom: none; }
+  .tracker-row.clickable { cursor: pointer; }
+  .tracker-row.clickable:hover { background: rgba(47,75,60,0.05); }
+  .tracker-row.expanded { background: var(--green-soft); border-bottom-color: transparent; }
+  .tracker-row-wrap .detail { padding: 0 4px 16px; border-bottom: 1px solid var(--rule); }
+  .tracker-row-wrap:last-child .detail { border-bottom: none; }
+  .tracker-row .tr-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .tracker-row .name { font-weight: 600; font-size: 13.5px; }
+  .tracker-row .meta { color: var(--ink-faint); font-size: 11.5px; margin-top: 1px; }
+  .tracker-row .tr-controls { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .tracker-row .tr-controls label { font-size: 11px; color: var(--ink-soft); }
+  .tracker-row .tr-threshold { width: 54px; text-align: right; font: inherit; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 4px 6px; }
+  .tracker-row .tr-untrack { background: none; border: 1px solid var(--rule-strong); color: var(--ink-faint); cursor: pointer; font-size: 11.5px; padding: 4px 9px; border-radius: 3px; }
+  .tracker-row .tr-untrack:hover { color: var(--brick); border-color: var(--brick); }
+  .tracker-row .tr-status { font-size: 11.5px; font-weight: 600; margin-top: 8px; padding: 6px 9px; border-radius: 3px; background: var(--green-soft); color: var(--green-text); }
+  .tracker-row .tr-status.alert { background: var(--brick-soft); color: var(--brick); }
+  .tracker-row .tr-explain { font-size: 12px; color: var(--ink); margin-top: 6px; line-height: 1.5; }
+  .tracker-row .tr-explain .src { font-size: 11px; }
+  .modal h3 { font-family: 'Source Serif 4', serif; font-size: 19px; margin: 0 0 6px; }
+  .modal p.hint { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 12px; }
+  .modal textarea { width: 100%; min-height: 160px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 10px; resize: vertical; }
+  .modal .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+  .modal .result { font-size: 12.5px; margin-top: 10px; color: var(--ink-soft); white-space: pre-wrap; }
+  .modal .ticker-list { font-size: 12px; font-family: 'IBM Plex Mono', monospace; background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 10px; max-height: 140px; overflow-y: auto; margin-bottom: 12px; line-height: 1.7; }
+
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 9px 16px; border-radius: 20px; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 60; }
+  .toast.show { opacity: 1; }
+  .empty { text-align: center; padding: 40px 20px; color: var(--ink-faint); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="market-nav">
+      <label for="marketSelect">Market</label>
+      <select id="marketSelect">
+        <option value="/">Europe</option>
+        <option value="/us.html">USA &amp; Canada</option>
+        <option value="/asia.html" selected>Asia / Pacific</option>
+      </select>
+    </div>
+    <h1>Asia/Pacific Small/Mid-Cap Value Shortlist</h1>
+    <div class="sub">
+      v6 composite score across nine dimensions, percentile-ranked against the <b>full survivor pool</b> for
+      whichever sector view you're on (Capital IQ extract &middot; quality-gated from 8,237 raw Asia/Pacific
+      listings ($15M&ndash;$1B; Japan, South Korea, Australia, Singapore, Hong Kong, New Zealand and offshore-incorporated Asian
+      companies) down to <span class="poolAll">1,895</span> all-sector / <span class="poolNonfin">1,860</span> non-financial survivors &middot; gross margin
+      verified from official filings for <span id="gmCoverage">0%</span> of the pool, pool-median used elsewhere). Switch between
+      <b>All sectors</b> and <b>Non-financial</b> with the Sector selector — these are two different scored
+      pools, not a filter on one. Edit market caps or gross margins below to try scenarios — every score and
+      rank updates live, against the active pool.
+    </div>
+    <div class="stat-row" id="statRow"></div>
+  </header>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Search company, ticker, country…">
+    <select id="countryFilter"><option value="">All countries</option></select>
+    <select id="archetypeFilter"><option value="">All archetypes</option></select>
+    <select id="topNFilter">
+      <option value="150">Show top 150</option>
+      <option value="300">Show top 300</option>
+      <option value="1000">Show entire pool</option>
+    </select>
+    <select id="sortField">
+      <option value="score">Sort: v6 score</option>
+      <option value="mc">Sort: market cap</option>
+      <option value="gm">Sort: gross margin</option>
+      <option value="roe">Sort: ROE (recent)</option>
+      <option value="revGrowth">Sort: revenue growth</option>
+      <option value="name">Sort: name</option>
+    </select>
+    <select id="sectorFilter">
+      <option value="all">All sectors</option>
+      <option value="nonfinancial">Non-financial only</option>
+    </select>
+    <select id="historyDate"><option value="live">Live (current)</option></select>
+    <button class="btn ghost small" id="editedOnlyBtn">Edited only</button>
+    <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
+    <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
+    <button class="btn ghost small" id="moversBtn">Biggest movers</button>
+    <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
+    <button class="btn ghost small" id="trackerBtn">Tracker</button>
+    <button class="btn ghost small" id="commentsBtn">Comments</button>
+    <button class="btn ghost small" id="profitBonusBtn">Profitability bonus benefactors</button>
+    <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
+    <button class="btn" id="bulkUpdateBtn">Update market caps</button>
+    <button class="btn" id="exportBtn">Download spreadsheet</button>
+  </div>
+  <div class="history-banner" id="historyBanner" style="display:none"></div>
+  <div class="tracker-banner" id="trackerBanner" style="display:none"></div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34px">#</th>
+          <th style="width:52px" class="num-col" title="Rank change since the last frozen snapshot">Δ</th>
+          <th>Company</th>
+          <th class="num-col">Mkt Cap ($M)</th>
+          <th class="num-col">P/B</th>
+          <th class="num-col">ROE</th>
+          <th class="num-col">Rev Growth</th>
+          <th class="num-col">Gross Margin</th>
+          <th class="num-col">v6 Score</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none">No companies match these filters.</div>
+  </div>
+
+  <div class="footnote">
+    <b class="hd">Scoring pool</b>
+    Every score on this page is computed against the <b>entire pool for the active sector view</b> (<span class="poolAll">1,895</span>
+    all-sector or <span class="poolNonfin">1,860</span> non-financial survivors) — the same percentile-ranking basis the methodology uses —
+    regardless of the display filters above (search, country, top-N) which only control what's shown, not
+    what's ranked against what. Switching the Sector selector swaps the whole pool, not just the display.
+    <b class="hd">What's fixed vs. live</b>
+    Revenue consistency, track record, dilution, profitability, cash-flow, revenue growth and dividend consistency
+    are computed directly from the Capital IQ financial history and don't change here. <b>Gross margin</b> (18&nbsp;pts,
+    banded) and <b>valuation</b> (18&nbsp;pts, best-of-three lenses: GM-adjusted P/S, ROE-adjusted P/B, growth-adjusted
+    earnings yield) recompute live from whatever market cap and gross margin you enter. Companies without a
+    verified gross margin use the pool's median GM-band score as a neutral fallback, and are flagged
+    <span class="tag needsgm">needs GM</span> so you can prioritise them.
+    <b class="hd">This page is static — how updates actually happen</b>
+    This is a plain, self-contained HTML file with no server and no database: it was generated from the data in
+    this repository's <code>data-asia/</code> folder at build time. Typing a new market cap or gross margin into the
+    table only changes what <i>you</i> see, in <i>this browser</i> — it's saved to this device's local storage
+    (not shared, not synced anywhere) so it survives a reload, but nobody else who opens this page will see it,
+    and it disappears if you clear site data. Use it freely to try scenarios.
+    <br><br>
+    No market-cap refresh pipeline has run yet for this market — everything shown is the original screening
+    extract, unlike the Europe and USA/Canada dashboards which have been through live refresh batches. The <b>Update
+    market caps</b> / <b>Update gross margins</b> buttons build you a ready-to-paste list of current values in
+    the format a future <code>data-asia/mc_overrides_applied.json</code> would need, once that workflow exists.
+    <b class="hd">Formula note</b>
+    Dilution banding, the growth power-curve, and percentile tie-handling are this dashboard's best-effort
+    reimplementation of the methodology document. Gross margin coverage for this pool (none verified yet) is much thinner than Europe's — expect scores and ranks for companies outside
+    the known top-150 shortlists to differ more than "a place or two" from any prior run, since more of the
+    pool relies on the median-GM fallback than the original methodology used.
+    <div id="dbStatus" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="mcModalBackdrop">
+  <div class="modal">
+    <h3>Update market caps</h3>
+    <p class="hint">
+      Pre-filled with the current 150 shortlist and their present market caps, in
+      <code>TICKER, value in $M</code> format, so you don't have to assemble the list yourself. Research fresh
+      values from a market-data source, paste them back over this box in the same format, and apply — this
+      previews the effect in your browser only. To make it permanent, copy the same lines into
+      <code>data/mc_overrides_applied.json</code> and rebuild (see the note below the table).
+    </p>
+    <textarea id="mcBulkInput" placeholder="BIT:FNM, 251.0&#10;WSE:TXT, 268.4&#10;XTRA:GFT, 510.2"></textarea>
+    <div class="result" id="mcBulkResult"></div>
+    <div class="actions">
+      <button class="btn ghost" id="mcBulkCancel">Cancel</button>
+      <button class="btn" id="mcBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="gmModalBackdrop">
+  <div class="modal">
+    <h3>Update gross margins</h3>
+    <p class="hint">
+      Paste one company per line as <code>TICKER, GM%, [fiscal year], [source note]</code> — fiscal year and
+      source are optional. Research gross margin from official filings only (annual reports, earnings releases,
+      exchange filings — no third-party aggregators) for the tickers below. This previews the effect in your
+      browser only; to make it permanent, copy the same lines into
+      <code>data/gm_overrides_applied.json</code> and rebuild.
+    </p>
+    <div class="ticker-list" id="needsGmList"></div>
+    <textarea id="gmBulkInput" placeholder="BIT:FNM, 61.5, 2025, FY25 annual report&#10;WSE:TXT, 79.0, 2024, Q4 filing"></textarea>
+    <div class="result" id="gmBulkResult"></div>
+    <div class="actions">
+      <button class="btn ghost" id="gmBulkCancel">Cancel</button>
+      <button class="btn gold" id="gmBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="corpActionsModalBackdrop">
+  <div class="modal wide">
+    <h3>Corporate actions</h3>
+    <p class="hint">
+      Tender offers, mergers/acquisitions, spinoffs and other restructuring found for companies in the shortlist
+      range. A company under a pending corporate action is trading on deal terms, not fundamentals — its v6 score
+      may no longer reflect a live value opportunity regardless of what it shows. Manually/agent-researched, not
+      automated; a company not listed here simply hasn't turned up such an event, not necessarily that there is none.
+    </p>
+    <div id="corpActionsContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="corpActionsClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="top150ModalBackdrop">
+  <div class="modal wide">
+    <h3>Top 150 changes</h3>
+    <p class="hint" id="top150Hint"></p>
+    <div id="top150Content"></div>
+    <div class="actions">
+      <button class="btn ghost" id="top150Close">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="moversModalBackdrop">
+  <div class="modal wide">
+    <h3>Biggest movers</h3>
+    <p class="hint" id="moversHint"></p>
+    <div id="moversContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="moversClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="commentsModalBackdrop">
+  <div class="modal wide">
+    <h3>My comments</h3>
+    <p class="hint">
+      Every comment you have written on a company, newest first, each stamped with the date and time you wrote it.
+      You can add a comment from the bottom of any company's detail panel (after "Full financial data").
+      Comments marked <b>saved to Cloudflare</b> are stored in your private Cloudflare store (behind the same login as this site) and appear on every device; <b>saved to repo</b> ones are built into the page from <code>data/comments.json</code>. If the Cloudflare store is not reachable, new comments are kept in <b>this browser only</b> (localStorage) and marked as such — use <b>Export</b> to keep a backup file (or send it to Claude to save into the repo) and <b>Import</b> to load one elsewhere.
+    </p>
+    <div id="commentsContent"></div>
+    <div class="actions">
+      <span class="cm-hint" id="commentsImportMsg" style="margin-right:auto"></span>
+      <button class="btn ghost" id="commentsExport">Export</button>
+      <button class="btn ghost" id="commentsImport">Import</button>
+      <input type="file" id="commentsImportFile" accept="application/json,.json" style="display:none">
+      <button class="btn ghost" id="commentsClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="trackerModalBackdrop">
+  <div class="modal wide">
+    <h3>Tracker</h3>
+    <p class="hint">
+      Track specific companies from anywhere on this page (the table, Biggest movers, Top 150 changes, or
+      Corporate actions) by opening their detail panel and clicking <b>Track this company</b>. Set a market-cap
+      move threshold per company below. There's no live price feed here — this is a static page — so the check
+      runs each time you open this page, comparing the market cap baked in at the last data refresh you saw
+      against the one baked in now. A breach shows whatever explanation is already on file (a corporate action,
+      rank-mover analysis, or research note); if nothing is on file, it says so rather than guessing, and it's a
+      flag for manual follow-up. Tracking is local to this browser only.
+    </p>
+    <div id="trackerContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="trackerClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="profitBonusModalBackdrop">
+  <div class="modal wide">
+    <h3>Profitability bonus benefactors</h3>
+    <p class="hint">
+      <b>This bonus is live in the real score.</b> Rule: a company already in the top gross-margin band (&ge;60%,
+      which already earns full gross-margin points) with long-term revenue growth (full-history CAGR &gt;10%/year)
+      that stays broadly cash-generative (CFO positive &ge;70% of reported periods) gets its profitability score
+      topped up to the full 16/16, regardless of how inconsistent its net income actually was — recognizing
+      genuine high-margin growth stories that reinvest heavily rather than penalizing them for uneven GAAP
+      profitability. Shown below: every company that actually received this bonus and landed in (or climbed
+      within) the top 150 as a result, with the rank/score it would have had without the bonus alongside its
+      real current one. Click a row for full details.
+    </p>
+    <div id="profitBonusContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="profitBonusClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PAYLOAD = __PAYLOAD_JSON__;
+const BUILD_INFO = __BUILD_INFO_JSON__;
+const CORPORATE_ACTIONS = PAYLOAD.corporateActions || { tender_offers: [], mergers_acquisitions: [], spinoffs: [], other: [] };
+
+// Asia/Pacific has two parallel pools (different survivor universes, not a
+// filtered view of one pool) switched via the Sector toggle - COMPANIES/
+// MEDIAN_GM_PTS/HISTORY/HISTORY_DATES are reassigned by setSector() rather
+// than being fixed consts the way the single-pool Europe dashboard has them.
+let COMPANIES, MEDIAN_GM_PTS, HISTORY, HISTORY_DATES;
+function setSector(sector) {
+  const s = PAYLOAD.sectors[sector];
+  COMPANIES = s.companies;
+  MEDIAN_GM_PTS = s.median_gm_pts;
+  HISTORY = s.history || {};
+  HISTORY_DATES = s.historyDates || [];
+  filters.sector = sector;
+  scoredCache = null;
+  historicalCache = {};
+  expandedTicker = null;
+  expandedTop150Ticker = null;
+  expandedMoverTicker = null;
+  expandedCorpActionTicker = null;
+}
+
+const LS_MC_KEY = 'shortlist_us_mc_overrides_v1';
+const LS_GM_KEY = 'shortlist_us_gm_overrides_v1';
+const LS_TRACKER_KEY = 'shortlist_us_tracker_v1';
+
+let mcOverrides = {};   // ticker -> {mc, updatedAt, source} — session/local only
+let gmOverrides = {};   // ticker -> {gm, fiscalYear, sourceNote, updatedAt} — session/local only
+// ticker -> {threshold (%), lastSeenMc, lastSeenAt, lastAlertAt, log: [{date,oldMc,newMc,pct,explanation}, ...]}
+// — session/local only, never leaves this browser. Namespaced separately
+// from Europe's "shortlist_tracker_v1" since both dashboards share one
+// origin (same GitHub Pages site) and so would otherwise collide in
+// localStorage. See the Tracker modal's hint text for exactly what
+// "checking" means on a static page with no live price feed: comparison
+// against the baseline recorded the last time this page was opened, not
+// a real-time push.
+let trackerState = {};
+let lastAlertTickers = [];
+let expandedTicker = null;
+let scoredCache = null;
+let historicalCache = {};  // date -> pre-scored rows, from PAYLOAD.history (read-only, never invalidated)
+let filters = { search: '', country: '', archetype: '', topN: 150, editedOnly: false, needsGm: false, sortField: 'score', historyDate: 'live', sector: 'all' };
+
+function loadLocalOverrides() {
+  try { mcOverrides = JSON.parse(localStorage.getItem(LS_MC_KEY) || '{}'); } catch(e) { mcOverrides = {}; }
+  try { gmOverrides = JSON.parse(localStorage.getItem(LS_GM_KEY) || '{}'); } catch(e) { gmOverrides = {}; }
+}
+function loadTrackerState() {
+  try { trackerState = JSON.parse(localStorage.getItem(LS_TRACKER_KEY) || '{}'); } catch(e) { trackerState = {}; }
+}
+function saveTrackerState() {
+  try { localStorage.setItem(LS_TRACKER_KEY, JSON.stringify(trackerState)); } catch(e) {}
+}
+function saveLocalOverrides() {
+  try { localStorage.setItem(LS_MC_KEY, JSON.stringify(mcOverrides)); } catch(e) {}
+  try { localStorage.setItem(LS_GM_KEY, JSON.stringify(gmOverrides)); } catch(e) {}
+}
+
+// The 10 revHist/niHist slots are Capital IQ LTM snapshots from the
+// original extract: [LTM-36 ... LTM-4, LTM], where the offset is in
+// QUARTERS - so consecutive slots are exactly one YEAR apart and the 10
+// slots span ~9 years. The screen is titled "27nov24" but the data was
+// pulled after FY2025 results (verified: Sopharma Trading's LTM revenue,
+// net income, CFO and equity and MONY's LTM revenue all equal their FY2025
+// figures), so the latest slot is ~2025, not "today". Labels are "LTM 'YY"
+// (trailing-12-months ending around that year; exact month varies with each
+// company's fiscal calendar; thinly-reported/pre-IPO companies can show
+// older annual figures in their earliest slots). Every company in both pools has exactly 10 slots, oldest to
+// latest, so this mapping is fixed and company-independent. (Until
+// 2026-10-13 these were mislabeled as 4-monthly snapshots Nov 2021-Nov
+// 2024.)
+const PERIOD_LABELS = ["LTM '16","LTM '17","LTM '18","LTM '19","LTM '20","LTM '21","LTM '22","LTM '23","LTM '24","LTM '25"];
+// Distress flags (data/distress_flags.json, hand-curated): informational
+// only - they never change scores or ranks.
+function escHtml(v) { return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// ---- Comments: your own timestamped notes per company. Three layers,
+// merged by comment id (priority top to bottom):
+//  1. REPO: data/comments.json embedded at build time (read-only, permanent).
+//  2. CLOUD: the Cloudflare Worker's KV store (GET/POST/DELETE /api/comments,
+//     behind Cloudflare Access, keyed to your login) - saved instantly, shown
+//     on every device. Used automatically when the page is served by that
+//     Worker; silently skipped on file:// or when the API is not deployed.
+//  3. BROWSER: this browser's localStorage - written immediately, and the
+//     fallback (flagged "browser only") until the cloud copy is confirmed.
+//     Same key on the Europe, US/Canada and Asia pages - tickers never overlap.
+const LS_COMMENTS_KEY = 'shortlist_comments_v1';
+const SAVED_COMMENTS = PAYLOAD.savedComments || {};   // repo layer: ticker -> [{id, ts, text}]
+let cloudComments = {};                               // cloud layer
+let cloudState = 'unknown';                           // 'unknown' | 'ok' | 'unavailable'
+let commentsState = {};                               // browser layer (not yet confirmed in the cloud)
+function loadComments() {
+  try { commentsState = JSON.parse(localStorage.getItem(LS_COMMENTS_KEY) || '{}') || {}; } catch(e) { commentsState = {}; }
+}
+function saveComments() {
+  try { localStorage.setItem(LS_COMMENTS_KEY, JSON.stringify(commentsState)); } catch(e) {}
+}
+function commentsFor(t) {
+  const seen = new Set(), out = [];
+  const add = (list, layer) => (list || []).forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); out.push(Object.assign({ layer }, x)); } });
+  add(SAVED_COMMENTS[t], 'repo'); add(cloudComments[t], 'cloud'); add(commentsState[t], 'local');
+  return out.sort((a, b) => (b.ts || '').localeCompare(a.ts || ''));
+}
+function commentTickers() { return Array.from(new Set(Object.keys(SAVED_COMMENTS).concat(Object.keys(cloudComments), Object.keys(commentsState)))); }
+function commentCount(t) { return commentsFor(t).length; }
+function commentsTotal() { return commentTickers().reduce((n, t) => n + commentCount(t), 0); }
+function unsavedCommentsTotal() { return commentTickers().reduce((n, t) => n + commentsFor(t).filter(x => x.layer === 'local').length, 0); }
+function cmFmt(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return String(iso);
+  return d.toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+function cmStatus(x) {
+  if (x.layer === 'repo') return 'saved to repo';
+  if (x.layer === 'cloud') return 'saved to Cloudflare';
+  return cloudState === 'ok' ? 'saving to Cloudflare…' : 'browser only — not backed up yet';
+}
+function cmCanDelete(x) { return x.layer !== 'repo'; }
+// ---- attachments: file bytes live in Cloudflare KV (PUT/GET /api/files/<id>); a comment only holds
+// [{id, name, size, type}]. Uploading needs the Cloudflare connection (cloudState 'ok').
+const CM_MAX_FILES = 5, CM_MAX_FILE = 10 * 1024 * 1024;
+const pendingFiles = {};                              // ticker -> File[] chosen but not yet posted
+const uploading = {};                                 // ticker -> true while a comment with files is being sent
+function cmSize(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+function cmNewId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+function cmAttachmentsHtml(x) {
+  if (!x.attachments || !x.attachments.length) return '';
+  return `<div class="cm-att">${x.attachments.map(a => {
+    const u = '/api/files/' + encodeURIComponent(a.id);
+    const label = `${escHtml(a.name)} (${cmSize(a.size)})`;
+    if (/^image\/(png|jpeg|gif|webp)$/.test(a.type || '')) return `<a href="${u}" target="_blank" rel="noopener" title="${label}"><img class="cm-thumb" src="${u}" alt="${label}" loading="lazy"></a>`;
+    return `<a class="cm-file-link" href="${u}" target="_blank" rel="noopener" ${/^application\/pdf$/.test(a.type || '') ? '' : `download="${escHtml(a.name)}"`}>&#128206; ${label}</a>`;
+  }).join('')}</div>`;
+}
+function cmPickerHtml(t) {
+  const files = pendingFiles[t] || [];
+  const can = cloudState === 'ok';
+  return `<div class="cm-files"><input type="file" class="cm-file" data-ticker="${escHtml(t)}" multiple hidden>
+    <button class="btn small cm-pick" type="button" data-ticker="${escHtml(t)}" ${can ? '' : 'disabled'} title="${can ? `Up to ${CM_MAX_FILES} files, 10 MB each` : 'File attachments need the Cloudflare connection (not available on this page right now)'}">&#128206; Attach files</button>
+    ${files.map((f, i) => `<span class="cm-chip">${escHtml(f.name)} (${cmSize(f.size)}) <button class="cm-unpick" type="button" data-ticker="${escHtml(t)}" data-i="${i}" title="Remove">&times;</button></span>`).join('')}
+    ${uploading[t] ? '<span class="cm-hint">Uploading…</span>' : ''}</div>`;
+}
+function commentTag(c) {
+  const n = commentCount(c.t);
+  return ` <span class="tag cm cm-tag" data-ticker="${c.t}" ${n ? '' : 'style="display:none"'} title="You have ${n} comment(s) on this company">&#128172; ${n}</span>`;
+}
+function commentsBoxInner(t) {
+  const list = commentsFor(t);
+  const hint = cloudState === 'ok' ? 'Comments are saved to your Cloudflare store automatically.' : 'New comments are kept in this browser until you Export them (Comments window) and have them saved to the repo.';
+  return `
+    <h4>Your comments (${list.length})</h4>
+    <textarea class="cm-input" data-ticker="${escHtml(t)}" placeholder="Write a comment — it is saved with today's date and time (Ctrl/Cmd+Enter to add)"></textarea>
+    ${cmPickerHtml(t)}
+    <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}" ${uploading[t] ? 'disabled' : ''}>Add comment</button><span class="cm-hint">${hint}</span></div>
+    ${list.map(x => `
+      <div class="cm-item">
+        <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</div>
+        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
+      </div>`).join('')}
+  `;
+}
+function commentsBox(t) { return `<div class="comments-box" data-ticker="${escHtml(t)}">${commentsBoxInner(t)}</div>`; }
+function refreshCommentUI(t) {
+  document.querySelectorAll('.comments-box').forEach(el => {
+    if (el.dataset.ticker !== t) return;
+    const ta = el.querySelector('.cm-input'), draft = ta ? ta.value : '', focus = ta && document.activeElement === ta;
+    el.innerHTML = commentsBoxInner(t);
+    const nt = el.querySelector('.cm-input');
+    if (nt && draft) { nt.value = draft; if (focus) nt.focus(); }
+  });
+  document.querySelectorAll('.cm-tag').forEach(el => {
+    if (el.dataset.ticker !== t) return;
+    const n = commentCount(t);
+    el.style.display = n ? '' : 'none';
+    el.innerHTML = '&#128172; ' + n;
+    el.title = `You have ${n} comment(s) on this company`;
+  });
+  const btn = document.getElementById('commentsBtn');
+  if (btn) btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
+  if (document.getElementById('commentsModalBackdrop').classList.contains('open')) renderCommentsModal();
+}
+function refreshAllCommentUI() {
+  const ts = new Set(commentTickers());
+  document.querySelectorAll('.comments-box').forEach(el => ts.add(el.dataset.ticker));
+  ts.forEach(refreshCommentUI); refreshCommentUI('__none__');
+}
+// ---- cloud sync
+async function cloudFetch(path, opts) {
+  if (location.protocol === 'file:') throw new Error('file protocol');
+  const r = await fetch(path, Object.assign({ credentials: 'same-origin', redirect: 'manual', headers: { 'content-type': 'application/json' } }, opts || {}));
+  const ct = r.headers.get('content-type') || '';
+  if (!r.ok || !ct.includes('application/json')) throw new Error('cloud unavailable (' + r.status + ')');
+  return r.json();
+}
+function cmPlain(x) { return x.attachments && x.attachments.length ? { id: x.id, ts: x.ts, text: x.text, attachments: x.attachments } : { id: x.id, ts: x.ts, text: x.text }; }
+async function pushLocalToCloud() {
+  for (const t of Object.keys(commentsState)) {
+    for (const x of commentsState[t].slice()) {
+      try {
+        await cloudFetch('/api/comments', { method: 'POST', body: JSON.stringify(Object.assign({ ticker: t }, cmPlain(x))) });
+        (cloudComments[t] = cloudComments[t] || []).push(cmPlain(x));
+        commentsState[t] = commentsState[t].filter(y => y.id !== x.id);
+        if (!commentsState[t].length) delete commentsState[t];
+        saveComments();
+      } catch (e) { cloudState = 'unavailable'; return; }
+    }
+  }
+}
+async function syncComments() {
+  try {
+    const d = await cloudFetch('/api/comments');
+    cloudComments = d.comments || {};
+    cloudState = 'ok';
+  } catch (e) { cloudState = 'unavailable'; refreshAllCommentUI(); return; }
+  refreshAllCommentUI();
+  await pushLocalToCloud();
+  refreshAllCommentUI();
+}
+async function uploadFile(f) {
+  const id = cmNewId() + Math.random().toString(36).slice(2, 6);
+  const r = await fetch('/api/files/' + id, { method: 'PUT', credentials: 'same-origin', redirect: 'manual',
+    headers: { 'content-type': f.type || 'application/octet-stream', 'x-file-name': encodeURIComponent(f.name) }, body: f });
+  const ct = r.headers.get('content-type') || '';
+  if (!r.ok || !ct.includes('application/json')) throw new Error('upload failed (' + r.status + ')');
+  return { id, name: f.name, size: f.size, type: (f.type || 'application/octet-stream').slice(0, 100) };
+}
+async function addComment(t, text) {
+  text = (text || '').trim();
+  const files = pendingFiles[t] || [];
+  if (!text && !files.length) return false;
+  if (uploading[t]) return false;
+  let attachments = [];
+  if (files.length) {
+    if (cloudState !== 'ok') { alert('File attachments need the Cloudflare connection, which is not available on this page right now.'); return false; }
+    uploading[t] = true; refreshCommentUI(t);
+    try {
+      for (const f of files) attachments.push(await uploadFile(f));
+    } catch (e) {
+      attachments.forEach(a => fetch('/api/files/' + a.id, { method: 'DELETE', credentials: 'same-origin' }).catch(() => {}));
+      uploading[t] = false; refreshCommentUI(t);
+      alert('Could not upload the attachment(s): ' + e.message + '. Your comment was not added; try again.');
+      return false;
+    }
+    delete pendingFiles[t]; uploading[t] = false;
+  }
+  const entry = { id: cmNewId(), ts: new Date().toISOString(), text };
+  if (attachments.length) entry.attachments = attachments;
+  (commentsState[t] = commentsState[t] || []).unshift(entry);
+  saveComments();
+  refreshCommentUI(t);
+  const ta = document.querySelector(`.comments-box[data-ticker="${CSS.escape(t)}"] .cm-input`);
+  if (ta) ta.value = '';
+  if (cloudState !== 'unavailable' && location.protocol !== 'file:') pushLocalToCloud().then(() => refreshAllCommentUI());
+  return true;
+}
+async function deleteComment(t, id) {
+  const wasCloud = (cloudComments[t] || []).some(x => x.id === id);
+  if (!wasCloud) (commentsState[t] || []).filter(x => x.id === id).forEach(x => (x.attachments || []).forEach(a => fetch('/api/files/' + a.id, { method: 'DELETE', credentials: 'same-origin' }).catch(() => {})));
+  commentsState[t] = (commentsState[t] || []).filter(x => x.id !== id);
+  if (!commentsState[t].length) delete commentsState[t];
+  saveComments();
+  if (wasCloud) {
+    try {
+      await cloudFetch(`/api/comments?ticker=${encodeURIComponent(t)}&id=${encodeURIComponent(id)}`, { method: 'DELETE' });
+      cloudComments[t] = (cloudComments[t] || []).filter(x => x.id !== id);
+      if (!cloudComments[t].length) delete cloudComments[t];
+    } catch (e) { alert('Could not delete from the cloud store right now - try again later.'); }
+  }
+  refreshCommentUI(t);
+}
+function renderCommentsModal() {
+  const byT = {};
+  COMPANIES.forEach(c => { byT[c.t] = c; });
+  const items = [];
+  commentTickers().forEach(t => commentsFor(t).forEach(x => items.push({ t, x })));
+  items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
+  const unsaved = unsavedCommentsTotal();
+  const banner = unsaved
+    ? (cloudState === 'ok'
+        ? `<p class="cm-hint" style="margin:0 0 10px">${unsaved} comment(s) are still being sent to Cloudflare…</p>`
+        : `<p class="cm-hint" style="margin:0 0 10px"><b>${unsaved} comment(s) exist only in this browser.</b> Click Export and send the file to Claude to have them saved permanently in the repo.</p>`)
+    : (cloudState === 'ok' ? `<p class="cm-hint" style="margin:0 0 10px">Connected to your Cloudflare comment store — new comments save automatically.</p>` : '');
+  document.getElementById('commentsContent').innerHTML = banner + (items.length ? items.map(({ t, x }) => {
+    const c = byT[t];
+    return `
+      <div class="cm-item">
+        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>
+          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && cmCanDelete(x)) ? ' &middot; ' : ''}${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</span></div>
+        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
+      </div>`;
+  }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>');
+}
+function showCompanyInTable(t) {
+  const c = COMPANIES.find(x => x.t === t);
+  if (!c) return;
+  document.getElementById('commentsModalBackdrop').classList.remove('open');
+  filters.historyDate = 'live';
+  const hs = document.getElementById('historyDate'); if (hs) hs.value = 'live';
+  filters.search = c.t; filters.country = ''; filters.archetype = ''; filters.editedOnly = false; filters.needsGm = false;
+  const si = document.getElementById('search'); if (si) si.value = c.t;
+  const sel = document.getElementById('topNFilter');
+  if (sel && sel.options.length) { const last = sel.options[sel.options.length - 1]; sel.value = last.value; filters.topN = parseInt(last.value, 10); }
+  expandedTicker = c.t;
+  render();
+  const row = document.querySelector('tr.row.expanded');
+  if (row) row.scrollIntoView({ block: 'center' });
+}
+function exportComments() {
+  // Full backup = every layer, so the file is complete on its own.
+  const all = {};
+  commentTickers().forEach(t => { all[t] = commentsFor(t).map(cmPlain); });
+  const blob = new Blob([JSON.stringify({ app: 'shortlist-comments', version: 1, exportedAt: new Date().toISOString(), comments: all }, null, 1)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `shortlist-comments-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function importComments(file) {
+  const msg = document.getElementById('commentsImportMsg');
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      const src = data && data.comments ? data.comments : null;
+      if (!src || typeof src !== 'object') throw new Error('not a comments export');
+      let added = 0;
+      Object.keys(src).forEach(t => {
+        if (!Array.isArray(src[t])) return;
+        const have = new Set(commentsFor(t).map(x => x.id));
+        src[t].forEach(x => {
+          if (x && typeof x.id === 'string' && typeof x.text === 'string' && typeof x.ts === 'string' && !have.has(x.id)) {
+            (commentsState[t] = commentsState[t] || []).push(cmPlain(x)); have.add(x.id); added++;
+          }
+        });
+      });
+      saveComments();
+      refreshAllCommentUI();
+      renderCommentsModal();
+      msg.textContent = `Imported ${added} new comment(s).`;
+      if (added && cloudState === 'ok') pushLocalToCloud().then(() => { refreshAllCommentUI(); renderCommentsModal(); });
+    } catch (e) { msg.textContent = 'Import failed: that file is not a comments export.'; }
+  };
+  reader.readAsText(file);
+}
+function initComments() {
+  loadComments();
+  const backdrop = document.getElementById('commentsModalBackdrop');
+  const btn = document.getElementById('commentsBtn');
+  btn.textContent = commentsTotal() ? `Comments (${commentsTotal()})` : 'Comments';
+  btn.addEventListener('click', () => { document.getElementById('commentsImportMsg').textContent = ''; renderCommentsModal(); backdrop.classList.add('open'); });
+  document.getElementById('commentsClose').addEventListener('click', () => backdrop.classList.remove('open'));
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.classList.remove('open'); });
+  document.getElementById('commentsExport').addEventListener('click', exportComments);
+  const file = document.getElementById('commentsImportFile');
+  document.getElementById('commentsImport').addEventListener('click', () => file.click());
+  file.addEventListener('change', () => { if (file.files[0]) importComments(file.files[0]); file.value = ''; });
+  document.addEventListener('click', e => {
+    const add = e.target.closest('.cm-add');
+    if (add) {
+      const box = add.closest('.comments-box');
+      const ta = box && box.querySelector('.cm-input');
+      if (ta) addComment(add.dataset.ticker, ta.value);
+      return;
+    }
+    const pick = e.target.closest('.cm-pick');
+    if (pick) { const inp = pick.parentElement.querySelector('.cm-file'); if (inp) inp.click(); return; }
+    const unpick = e.target.closest('.cm-unpick');
+    if (unpick) {
+      const t = unpick.dataset.ticker;
+      (pendingFiles[t] || []).splice(parseInt(unpick.dataset.i, 10), 1);
+      if (!(pendingFiles[t] || []).length) delete pendingFiles[t];
+      refreshCommentUI(t);
+      return;
+    }
+    const show = e.target.closest('.cm-show');
+    if (show) { showCompanyInTable(show.dataset.ticker); return; }
+    const del = e.target.closest('.cm-del');
+    if (del && del.dataset.id) { if (confirm('Delete this comment?')) deleteComment(del.dataset.ticker, del.dataset.id); }
+  });
+  document.addEventListener('change', e => {
+    const inp = e.target.closest && e.target.closest('.cm-file');
+    if (!inp) return;
+    const t = inp.dataset.ticker, list = pendingFiles[t] || [];
+    const problems = [];
+    Array.from(inp.files).forEach(f => {
+      if (f.size > CM_MAX_FILE) problems.push(`${f.name} is larger than 10 MB`);
+      else if (f.size === 0) problems.push(`${f.name} is empty`);
+      else if (list.length >= CM_MAX_FILES) problems.push(`${f.name}: at most ${CM_MAX_FILES} files per comment`);
+      else list.push(f);
+    });
+    inp.value = '';
+    if (list.length) pendingFiles[t] = list;
+    refreshCommentUI(t);
+    if (problems.length) alert('Not attached:\n' + problems.join('\n'));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && e.target.classList && e.target.classList.contains('cm-input')) {
+      e.preventDefault();
+      addComment(e.target.dataset.ticker, e.target.value);
+    }
+  });
+  syncComments();
+}
+function distressTag(c) {
+  if (!c.distress) return '';
+  const lvl = c.distress.level === 'severe' ? 'severe distress' : 'distress warning';
+  return ` <span class="tag distress" title="${escHtml(c.distress.summary)}">&#9888; ${lvl}</span>`;
+}
+function distressBox(c) {
+  if (!c.distress) return '';
+  const d = c.distress;
+  const links = (d.sources || []).map((u, i) => `<a href="${escHtml(u)}" target="_blank" rel="noopener">source ${i+1}</a>`).join(' &middot; ');
+  return `<div class="distress-note"><b class="lbl">&#9888; ${d.level === 'severe' ? 'Severe financial distress' : 'Financial distress warning'} (as of ${escHtml(d.asOf || '')})</b>${escHtml(d.summary)}${links ? `<div style="margin-top:4px">${links}</div>` : ''}<div style="margin-top:4px;font-size:11px;color:var(--ink-soft)">The score is based on historical financials and does not reflect this.</div></div>`;
+}
+function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+// Thesis prose fields (main_shareholders, insider_ownership, ...) carry
+// their source citation inline as markdown "([label](url))" - never
+// auto-linked at build time, so it rendered as literal bracket text.
+// Converts it to a real, clickable, new-tab link at render time.
+function mdLinksToHtml(text) {
+  if (!text) return '';
+  return text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+function fmtPct(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return (v*100).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})+'%'; }
+
+function effMc(c) { const o = mcOverrides[c.t]; return (o && typeof o.mc==='number') ? o.mc : c.mc0; }
+function isEditedMc(c) { const o = mcOverrides[c.t]; return !!(o && typeof o.mc==='number' && Math.abs(o.mc-c.mc0)>1e-9); }
+function effGm(c) {
+  const o = gmOverrides[c.t];
+  if (o && typeof o.gm === 'number') return { gm: o.gm, isOverride: true, isFallback: false };
+  if (typeof c.gm0 === 'number') return { gm: c.gm0, isOverride: false, isFallback: false };
+  return { gm: null, isOverride: false, isFallback: true };
+}
+
+function gmBandPoints(gm) {
+  if (gm===null||gm===undefined) return null;
+  if (gm>=0.60) return 18.0;
+  if (gm>=0.50) return 15.3;
+  if (gm>=0.40) return 12.6;
+  if (gm>=0.30) return 9.9;
+  if (gm>=0.20) return 7.2;
+  if (gm>=0.10) return 4.5;
+  if (gm>=0.05) return 1.8;
+  return 0.0;
+}
+function computeLenses(c, mc, gmInfo) {
+  let A=null,B=null,C=null;
+  if (gmInfo.gm && gmInfo.gm>0 && c.revLTM) A = (mc/c.revLTM)/gmInfo.gm;
+  const roe = (c.avgNI!==null && c.eq) ? c.avgNI/c.eq : null;
+  if (c.eq && c.eq>0 && roe!==null) B = (mc/c.eq)/Math.max(roe/0.10, 0.1);
+  if (c.avgNI!==null && c.avgNI!==undefined && mc) {
+    const g = Math.min(Math.max(c.revGrowth||0,0),2.0);
+    C = (c.avgNI/mc)*(1+g);
+  }
+  return [A,B,C,roe];
+}
+function percentileRank(values, idx, higherBetter) {
+  const v = values[idx];
+  if (v===null||v===undefined) return null;
+  const others = values.filter(x=>x!==null&&x!==undefined);
+  const n = others.length;
+  if (n<=1) return 100;
+  let beat=0;
+  for (const x of others) { if (higherBetter ? x<v : x>v) beat++; }
+  return 100*beat/(n-1);
+}
+function archetype(gm, revGrowth, roe, pb) {
+  if (gm!==null && gm>=0.40 && (revGrowth||0)>=0.30 && roe!==null && roe<0.08) return 'Revenue Compounder';
+  if (roe!==null && roe>=0.12 && gm!==null && gm>=0.30) return 'Capital-Efficient';
+  if (pb!==null && pb<1.0) return 'Deep Value';
+  return 'Balanced';
+}
+
+// Always score against the FULL pool; filtering happens after.
+function computeAllScores() {
+  const mcs = COMPANIES.map(effMc);
+  const gmInfos = COMPANIES.map(effGm);
+  const A=[], B=[], C=[], ROE=[];
+  COMPANIES.forEach((c,i) => { const [a,b,cc,roe] = computeLenses(c, mcs[i], gmInfos[i]); A.push(a);B.push(b);C.push(cc);ROE.push(roe); });
+  return COMPANIES.map((c,i) => {
+    const pA = percentileRank(A,i,false), pB = percentileRank(B,i,false), pC = percentileRank(C,i,true);
+    const cands = [pA,pB,pC].filter(p=>p!==null);
+    const best = cands.length ? Math.max(...cands) : 0;
+    const valPts = best/100*18;
+    const gmInfo = gmInfos[i];
+    const gmPts = gmInfo.gm!==null ? gmBandPoints(gmInfo.gm) : MEDIAN_GM_PTS;
+    const total = c.fixedSumNoGm + gmPts + valPts;
+    const pb = c.eq ? mcs[i]/c.eq : null;
+    const at = archetype(gmInfo.gm, c.revGrowth, ROE[i], pb);
+    const bestLens = pA===best ? 'A — GM-adjusted P/S' : (pB===best ? 'B — ROE-adjusted P/B' : 'C — growth-adjusted earnings yield');
+    return { c, mc: mcs[i], gmInfo, gmPts, valPts, total, pb, roe: ROE[i], archetype: at, bestLens };
+  });
+}
+// Historical (read-only) rows: PAYLOAD.history[date] joined against COMPANIES
+// for the descriptive fields (thesis, sparkline history, GM source links)
+// that don't change between snapshots. Numeric/ranking fields all come
+// from the frozen snapshot row itself, never recomputed.
+function historicalScored(date) {
+  const rows = HISTORY[date] || [];
+  const byTicker = {};
+  COMPANIES.forEach(c => { byTicker[c.t] = c; });
+  return rows.map(r => {
+    const live = byTicker[r.t] || {};
+    const gmInfo = { gm: r.gm, isOverride: false, isFallback: !!r.gmFb };
+    const at = archetype(r.gm, r.rg, r.roe, r.pb);
+    const c = Object.assign({}, live, {
+      t: r.t, n: r.n, co: r.co, revGrowth: r.rg,
+      fixedPts: {
+        revenue_growth: r.pts.rg, revenue_consistency: r.pts.rc, dilution: r.pts.dl,
+        profitability: r.pts.pf, cfo_positive: r.pts.cfo, track_record: r.pts.tr,
+        dividend_consistency: r.pts.dv,
+      },
+    });
+    return { c, mc: r.mc, gmInfo, gmPts: r.pts.gm, valPts: r.pts.vl, total: r.total,
+              pb: r.pb, roe: r.roe, archetype: at, bestLens: null, rank: r.rank };
+  });
+}
+// "Since the last run" = the checkpoint immediately before whichever view
+// is on screen. HISTORY_DATES is already ordered ['baseline', ...dated
+// snapshots ascending]; 'live' sits after the last one chronologically.
+function previousHistoryKey(forKey) {
+  if (!HISTORY_DATES.length) return null;
+  if (forKey === 'live') return HISTORY_DATES[HISTORY_DATES.length - 1];
+  const idx = HISTORY_DATES.indexOf(forKey);
+  return idx > 0 ? HISTORY_DATES[idx - 1] : null;
+}
+function rankDeltaMap(forKey) {
+  const prevKey = previousHistoryKey(forKey);
+  if (!prevKey) return {};
+  const map = {};
+  (HISTORY[prevKey] || []).forEach(r => { map[r.t] = r.rank; });
+  return map;
+}
+function computeRankByTicker(all, isHistorical) {
+  const rankByTicker = {};
+  if (isHistorical) {
+    all.forEach(r => rankByTicker[r.c.t] = r.rank);
+  } else {
+    all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>rankByTicker[r.c.t]=i+1);
+  }
+  return rankByTicker;
+}
+// Companies whose full-pool rank crossed the top-150 line since the
+// checkpoint immediately before the current view.
+function top150Movers() {
+  const isHist = filters.historyDate !== 'live';
+  const all = ensureScored();
+  const rankByTicker = computeRankByTicker(all, isHist);
+  const prevRanks = rankDeltaMap(filters.historyDate);
+  const prevKey = previousHistoryKey(filters.historyDate);
+  const entrants = [], exits = [];
+  if (!prevKey) return { entrants, exits, prevKey };
+  all.forEach(row => {
+    const t = row.c.t;
+    const curRank = rankByTicker[t];
+    const prevRank = prevRanks[t];
+    if (prevRank === undefined) return;
+    const wasIn = prevRank <= 150, isIn = curRank <= 150;
+    if (!wasIn && isIn) entrants.push({ row, curRank, prevRank });
+    else if (wasIn && !isIn) exits.push({ row, curRank, prevRank });
+  });
+  entrants.sort((a,b)=>a.curRank-b.curRank);
+  exits.sort((a,b)=>a.curRank-b.curRank);
+  return { entrants, exits, prevKey };
+}
+// Biggest rank movers (any position, not just top-150-boundary crossers)
+// since the checkpoint immediately before the current view, with a cause
+// label distinguishing "this company's own data changed" from "pool
+// ripple" (its rank shifted only because other companies' market caps
+// moved around it). Same logic as Europe's dashboard.
+// Shared by biggestMovers() (capped to its top-N climbers/decliners) and
+// explainTicker() (needs this for ANY single ticker, not just the biggest
+// movers) - one piece of "why did this change" logic, not two versions.
+function causeFromPair(b, row) {
+  const mcChanged = Math.abs((row.mc||0) - (b.mc||0)) > 0.005;
+  const bGm = (b.gm===null||b.gm===undefined) ? null : b.gm;
+  const rGm = (row.gmInfo.gm===null||row.gmInfo.gm===undefined) ? null : row.gmInfo.gm;
+  const gmChanged = (bGm===null) !== (rGm===null) || (bGm!==null && rGm!==null && Math.abs(bGm-rGm)>1e-6);
+  if (mcChanged && gmChanged) {
+    return `Own market cap ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M) and gross margin updated`;
+  } else if (mcChanged) {
+    const src = row.c.mcRefreshed ? (row.c.mcSource||'data pipeline') : (isEditedMc(row.c) ? 'edited in this browser' : 'data pipeline');
+    return `Own market cap updated ($${fmtNum(b.mc,0)}M &rarr; $${fmtNum(row.mc,0)}M, via ${src})`;
+  } else if (gmChanged) {
+    return 'Own gross margin updated';
+  }
+  return 'Pool ripple only — no data change for this company; its percentile rank shifted because other companies’ market caps or gross margins were updated';
+}
+function biggestMovers(n = 15) {
+  const isHist = filters.historyDate !== 'live';
+  const all = ensureScored();
+  const rankByTicker = computeRankByTicker(all, isHist);
+  const prevKey = previousHistoryKey(filters.historyDate);
+  if (!prevKey) return { climbers: [], decliners: [], prevKey: null, totalMoved: 0 };
+  const prevRows = HISTORY[prevKey] || [];
+  const prevByTicker = {};
+  prevRows.forEach(r => prevByTicker[r.t] = r);
+  const movers = [];
+  all.forEach(row => {
+    const t = row.c.t;
+    const b = prevByTicker[t];
+    if (!b) return;
+    const curRank = rankByTicker[t];
+    const rankChange = b.rank - curRank; // positive = moved up (improved)
+    if (rankChange === 0) return;
+    const cause = causeFromPair(b, row);
+    movers.push({ row, curRank, prevRank: b.rank, rankChange, totalBefore: b.total, totalAfter: row.total, cause });
+  });
+  const climbers = movers.filter(m=>m.rankChange>0).sort((a,b)=>b.rankChange-a.rankChange).slice(0,n);
+  const decliners = movers.filter(m=>m.rankChange<0).sort((a,b)=>a.rankChange-b.rankChange).slice(0,n);
+  return { climbers, decliners, prevKey, totalMoved: movers.length };
+}
+// Resolves a corporate-action entry's ticker to its current scored row +
+// full-pool rank, so the modal can expand into the same detail panel
+// used everywhere else. Falls back to non-clickable if the ticker isn't
+// found (shouldn't happen - every corp-action ticker is a real pool
+// member - but degrade gracefully rather than throw).
+function findScoredRowAndRank(ticker) {
+  const all = ensureScored();
+  const sorted = all.slice().sort((a,b)=>b.total-a.total);
+  const i = sorted.findIndex(r => r.c.t === ticker);
+  if (i === -1) return null;
+  return { row: sorted[i], rank: i + 1 };
+}
+let expandedCorpActionTicker = null;
+function renderCorpActionRow(a, counterpartyLabel) {
+  const counterparty = a.counterparty || a.spun_off_entity;
+  const found = findScoredRowAndRank(a.ticker);
+  const isOpen = expandedCorpActionTicker === a.ticker;
+  const body = `
+      <div class="name">${a.company}</div>
+      <div class="meta">${a.ticker}${a.date ? ' &middot; ' + a.date : ''}${counterparty ? ` &middot; ${counterpartyLabel}: ${counterparty}` : ''}${a.role ? ` (${a.role})` : ''}${a.type ? ` &middot; ${a.type}` : ''}</div>
+      ${a.terms ? `<div class="terms">${a.terms}</div>` : ''}
+      ${a.note ? `<div class="note">${a.note}</div>` : ''}
+      ${a.source_url ? `<div class="src"><a href="${a.source_url}" target="_blank" rel="noopener">source</a></div>` : ''}
+  `;
+  if (!found) {
+    return `<div class="ca-row">${body}</div>`;
+  }
+  return `
+    <div class="ca-row-wrap">
+      <div class="ca-row clickable ${isOpen?'expanded':''}" data-ticker="${a.ticker}">${body}</div>
+      ${isOpen ? renderDetailPanel(found.row, found.rank) : ''}
+    </div>
+  `;
+}
+function renderCorpActionsModalContent() {
+  const ca = CORPORATE_ACTIONS;
+  const sections = [
+    ['Tender offers', ca.tender_offers, 'Offeror'],
+    ['Mergers & acquisitions', ca.mergers_acquisitions, 'Counterparty'],
+    ['Spinoffs', ca.spinoffs, 'Spun-off entity'],
+    ['Other', ca.other, null],
+  ];
+  document.getElementById('corpActionsContent').innerHTML = sections.map(([label, list, cpLabel]) => `
+    <h4>${label} (${(list||[]).length})</h4>
+    ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
+  `).join('');
+}
+function corpActionsTotal() {
+  const ca = CORPORATE_ACTIONS;
+  return (ca.tender_offers||[]).length + (ca.mergers_acquisitions||[]).length + (ca.spinoffs||[]).length + (ca.other||[]).length;
+}
+function flattenCorporateActions() {
+  const ca = CORPORATE_ACTIONS;
+  const out = [];
+  [['tender_offers','Tender offer'],['mergers_acquisitions','M&A'],['spinoffs','Spinoff'],['other','Other']].forEach(([key,label]) => {
+    (ca[key]||[]).forEach(a => out.push(Object.assign({categoryKey:key, categoryLabel:label}, a)));
+  });
+  return out;
+}
+function latestCorporateActionFor(ticker) {
+  const matches = flattenCorporateActions().filter(a => a.ticker === ticker);
+  if (!matches.length) return null;
+  matches.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  return matches[0];
+}
+// Pulls together whatever explanation already exists on file for a
+// ticker's move — never a live web search (this is a static page), so if
+// nothing is on file it says so rather than guessing. Priority: a named
+// corporate action (most concrete, dated) > a manually-researched news
+// note > the generic rank-mover "cause" (own data vs. pool ripple) >
+// an explicit "nothing on file" fallback.
+function explainTicker(ticker) {
+  const ca = latestCorporateActionFor(ticker);
+  if (ca) {
+    const bits = [ca.categoryLabel];
+    if (ca.date) bits.push(ca.date);
+    let txt = ca.note || ca.terms || `${ca.categoryLabel} event on file`;
+    return { text: `${bits.join(' &middot; ')}: ${txt}`, sourceUrl: ca.source_url || null };
+  }
+  const row = liveRowFor(ticker);
+  if (row && row.c.newsNote) {
+    return { text: row.c.newsNote, sourceUrl: null };
+  }
+  if (row) {
+    const prevKey = HISTORY_DATES[HISTORY_DATES.length - 1];
+    const prevRow = prevKey ? (HISTORY[prevKey]||[]).find(r => r.t === ticker) : null;
+    if (prevRow) {
+      return { text: causeFromPair(prevRow, row), sourceUrl: null };
+    }
+  }
+  return { text: 'No documented catalyst on file yet (no corporate action, research note, or prior checkpoint to compare against) — treat this as a flag for manual follow-up next time corporate-actions/thesis research is updated.', sourceUrl: null };
+}
+
+// ---- Tracker: client-side only, persisted to this browser's localStorage.
+// See the Tracker modal's hint text for what "checking" actually means on
+// a static page with no live price feed.
+const TRACKER_DEFAULT_THRESHOLD = 10;
+function isTracked(ticker) { return !!trackerState[ticker]; }
+function trackCompany(ticker) {
+  if (trackerState[ticker]) return;
+  const row = liveRowFor(ticker);
+  const mc0 = row ? row.c.mc0 : null;
+  trackerState[ticker] = { threshold: TRACKER_DEFAULT_THRESHOLD, lastSeenMc: mc0, lastSeenAt: new Date().toISOString(), lastAlertAt: null, log: [] };
+  saveTrackerState();
+}
+function untrackCompany(ticker) {
+  delete trackerState[ticker];
+  saveTrackerState();
+}
+function setTrackerThreshold(ticker, pct) {
+  if (!trackerState[ticker] || !isFinite(pct) || pct<=0) return;
+  trackerState[ticker].threshold = pct;
+  saveTrackerState();
+}
+// Runs once per page load (in init(), before the first render): compares
+// each tracked company's OFFICIAL baked-in market cap (c.mc0 — never a
+// local what-if scenario edit, so playing with numbers never triggers a
+// false alert) against the baseline recorded the last time this page was
+// opened. A breach is logged with whatever explanation is on file, then
+// the baseline is advanced to the current value so the same move isn't
+// re-reported on every subsequent visit. Returns the list of tickers that
+// just breached, for the top banner.
+function checkTrackerAlerts() {
+  const breached = [];
+  const now = new Date().toISOString();
+  Object.keys(trackerState).forEach(ticker => {
+    const entry = trackerState[ticker];
+    const row = liveRowFor(ticker);
+    if (!row) return;
+    const currentMc = row.c.mc0;
+    if (typeof currentMc !== 'number') return;
+    if (typeof entry.lastSeenMc === 'number' && entry.lastSeenMc > 0) {
+      const pct = (currentMc - entry.lastSeenMc) / entry.lastSeenMc * 100;
+      if (Math.abs(pct) >= entry.threshold) {
+        const explanation = explainTicker(ticker);
+        entry.log = entry.log || [];
+        entry.log.unshift({ date: now, oldMc: entry.lastSeenMc, newMc: currentMc, pct, explanation });
+        entry.log = entry.log.slice(0, 5);
+        entry.lastAlertAt = now;
+        breached.push(ticker);
+      }
+    }
+    entry.lastSeenMc = currentMc;
+    entry.lastSeenAt = now;
+  });
+  if (Object.keys(trackerState).length) saveTrackerState();
+  return breached;
+}
+function renderTrackerBanner() {
+  const banner = document.getElementById('trackerBanner');
+  if (!lastAlertTickers.length) { banner.style.display = 'none'; return; }
+  const names = lastAlertTickers.map(t => { const r = liveRowFor(t); return r ? r.c.n : t; });
+  banner.innerHTML = `<b>&#9888; Tracker alert:</b> ${names.join(', ')} moved beyond your threshold since you last opened this page. <a class="view-link" id="trackerBannerLink">View in Tracker</a>`;
+  banner.style.display = 'block';
+}
+// Shared by the main table's expand-row and the Top 150 changes modal, so
+// both show the exact same score breakdown / thesis / sparklines - never
+// two versions of "what a company looks like" to drift apart.
+function renderDetailPanel(row, rank) {
+  const { c, mc, gmInfo, bestLens } = row;
+  const th = c.thesis;
+  const links = (c.gmLinks||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  return `
+    <div class="detail">
+      <div class="detail-actions">
+        <button class="track-btn ${isTracked(c.t)?'tracked':''}" data-ticker="${c.t}">${isTracked(c.t) ? '★ Tracked — click to untrack' : '☆ Track this company'}</button>
+      </div>
+      ${distressBox(c)}
+      ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
+      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
+      <div class="breakdown">
+        <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
+        <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
+        <div class="bd-row"><span>Dilution${c.dilutionDataMissing ? ' <span class="tag nodata" title="No share-count data exists anywhere in the source extract — this is a neutral pool-median estimate, not a real measurement">&#9679; estimated</span>' : ''}</span><b>${fmtNum(c.fixedPts.dilution,1)} / 12</b></div>
+        <div class="bd-row"><span>Quality-adj valuation</span><b>${fmtNum(row.valPts,1)} / 18</b></div>
+        <div class="bd-row"><span>Profitability</span><b>${fmtNum(c.fixedPts.profitability,1)} / 16</b></div>
+        <div class="bd-row"><span>CFO positive</span><b>${fmtNum(c.fixedPts.cfo_positive,1)} / 6</b></div>
+        <div class="bd-row"><span>Track record</span><b>${fmtNum(c.fixedPts.track_record,1)} / 8</b></div>
+        <div class="bd-row"><span>Dividend consistency</span><b>${fmtNum(c.fixedPts.dividend_consistency,1)} / 4</b></div>
+        <div class="bd-row"><span>Gross margin</span><b>${fmtNum(row.gmPts,1)} / 18${gmInfo.isFallback?' (fallback)':''}</b></div>
+      </div>
+      <div class="detail-grid">
+        <div>
+          ${th ? `
+            <h4>Business description</h4><p>${th.business_description || '—'}</p>
+            <h4>Competitive position</h4><p>${th.competitive_position || '—'}</p>
+            ${(th.main_shareholders || th.insider_ownership) ? `
+              <h4>Shareholding</h4>
+              ${th.main_shareholders ? `<p class="shareholding-row"><b>Main shareholders:</b> ${mdLinksToHtml(th.main_shareholders)}</p>` : ''}
+              ${th.insider_ownership ? `<p class="shareholding-row"><b>Insider holdings:</b> ${mdLinksToHtml(th.insider_ownership)}</p>` : ''}
+            ` : ''}
+            <h4>Red flags</h4><p class="flags">${th.red_flags || 'None noted.'}</p>
+          ` : `<p class="no-thesis">No qualitative research on file for this company yet — it was outside the original top-150 deep-dive.</p>`}
+        </div>
+        <div>
+          <h4>Revenue history ($M, ${PERIOD_LABELS[0]} &rarr; ${PERIOD_LABELS[PERIOD_LABELS.length-1]})</h4>
+          <div class="spark-block">${sparkline(c.revHist)}</div>
+          <h4>Net income history ($M)</h4>
+          <div class="spark-block">${sparkline(c.niHist, 220, 40, 'var(--gold)')}</div>
+          ${th && th.website ? `<p class="website-link"><a href="${th.website}" target="_blank" rel="noopener">${th.website}</a></p>` : ''}
+          <h4>Gross margin source</h4>
+          <p class="gm-source">${gmInfo.isOverride ? 'Edited in this browser (local only).' : (gmInfo.gm!==null ? `FY${c.gmFY||'—'} &middot; ${c.gmSrcType||'—'}` : 'No verified source yet.')}${links ? '<br>'+links : ''}</p>
+        </div>
+      </div>
+      <div class="fin-toggle-row">
+        <button class="fin-toggle" type="button">Full financial data &#9662;</button>
+      </div>
+      <div class="full-financials" style="display:none">${renderFullFinancials(row)}</div>
+      ${commentsBox(c.t)}
+    </div>
+  `;
+}
+function renderFullFinancials(row) {
+  const { c, mc, gmInfo, roe, pb } = row;
+  const items = [
+    ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
+    ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
+    ['Net Debt', c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'],
+    ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
+    ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
+    ['ROE (recent)', fmtPct(roe)],
+    ['P/B', pb!==null ? fmtNum(pb,2)+'x' : '—'],
+    ['Revenue Growth', fmtPct(c.revGrowth,0)],
+    ['Dilution', c.dilution!==null ? fmtPct(c.dilution,1) : (c.dilutionDataMissing ? 'no data' : '—')],
+    ['Gross Margin', gmInfo.gm!==null ? fmtPct(gmInfo.gm,0) : 'fallback'],
+    ['Profitable periods', fmtPct(c.profitPct,0)],
+    ['CFO+ periods', fmtPct(c.cfoPct,0)],
+    ['Dividend periods', fmtPct(c.divPct,0)],
+    ['Periods reported', `${c.nRevPeriods} / 10`],
+    ['Revenue consistency', fmtPct(c.revConsistency,0)],
+  ];
+  const gridHtml = items.map(([label,val]) => `
+    <div class="fin-item"><span class="fin-label">${label}</span><span class="fin-val">${val}</span></div>
+  `).join('');
+  const periodCell = (v, i, n) => `<td class="${i===n-1?'latest':''}">${v!==null&&v!==undefined ? fmtNum(v,1) : '—'}</td>`;
+  const n = c.revHist.length;
+  const labels = PERIOD_LABELS.slice(PERIOD_LABELS.length - n);
+  const headerCells = c.revHist.map((_,i) => `<th class="${i===n-1?'latest':''}">${labels[i]}</th>`).join('');
+  return `
+    <div class="fin-grid">${gridHtml}</div>
+    <h4>Revenue &amp; net income by period ($M, oldest &rarr; latest / LTM)</h4>
+    <table class="fin-table">
+      <thead><tr><th></th>${headerCells}</tr></thead>
+      <tbody>
+        <tr><td>Revenue</td>${c.revHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+        <tr><td>Net Income</td>${c.niHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+      </tbody>
+    </table>
+  `;
+}
+let expandedTop150Ticker = null;
+function renderTop150ModalContent() {
+  const { entrants, exits, prevKey } = top150Movers();
+  const hint = document.getElementById('top150Hint');
+  const content = document.getElementById('top150Content');
+  if (!prevKey) {
+    hint.textContent = 'No earlier checkpoint to compare to yet.';
+    content.innerHTML = '';
+    return;
+  }
+  hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}: ${entrants.length} compan${entrants.length===1?'y':'ies'} entered the top 150, ${exits.length} left it. Click a company for full details.`;
+  content.innerHTML = `
+    <h4>Entered top 150 (${entrants.length})</h4>
+    ${entrants.length ? entrants.map(e=>renderTop150Row(e,'in')).join('') : '<p class="no-thesis">None.</p>'}
+    <h4>Left top 150 (${exits.length})</h4>
+    ${exits.length ? exits.map(e=>renderTop150Row(e,'out')).join('') : '<p class="no-thesis">None.</p>'}
+  `;
+}
+function renderTop150Row(entry, direction) {
+  const { row, curRank, prevRank } = entry;
+  const c = row.c;
+  const arrow = direction === 'in' ? '▲' : '▼';
+  const cls = direction === 'in' ? 'up' : 'down';
+  const isOpen = expandedTop150Ticker === c.t;
+  return `
+    <div class="top150-row-wrap">
+      <div class="top150-row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}</span><br>#${prevRank}&rarr;#${curRank}</div>
+        <div class="t150-co">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(row.mc,0)}M mkt cap &middot; v6 ${fmtNum(row.total,1)}</div>
+          ${c.newsNote ? `<div class="t150-news">${c.newsNote}</div>` : ''}
+        </div>
+      </div>
+      ${isOpen ? renderDetailPanel(row, curRank) : ''}
+    </div>
+  `;
+}
+let expandedMoverTicker = null;
+function renderMoversModalContent() {
+  const { climbers, decliners, prevKey } = biggestMovers();
+  const hint = document.getElementById('moversHint');
+  const content = document.getElementById('moversContent');
+  if (!prevKey) {
+    hint.textContent = 'No earlier checkpoint to compare to yet.';
+    content.innerHTML = '';
+    return;
+  }
+  hint.textContent = `Comparing the current view to ${historyLabel(prevKey)}, across the whole pool (not just the top 150). Click a company for full details.`;
+  content.innerHTML = `
+    <h4>Biggest climbers (${climbers.length})</h4>
+    ${climbers.length ? climbers.map(m=>renderMoverRow(m,'up')).join('') : '<p class="no-thesis">None.</p>'}
+    <h4>Biggest decliners (${decliners.length})</h4>
+    ${decliners.length ? decliners.map(m=>renderMoverRow(m,'down')).join('') : '<p class="no-thesis">None.</p>'}
+  `;
+}
+function renderMoverRow(entry, direction) {
+  const { row, curRank, prevRank, rankChange, totalBefore, totalAfter, cause } = entry;
+  const c = row.c;
+  const arrow = direction === 'up' ? '▲' : '▼';
+  const cls = direction === 'up' ? 'up' : 'down';
+  const isOpen = expandedMoverTicker === c.t;
+  return `
+    <div class="top150-row-wrap">
+      <div class="top150-row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <div class="t150-rank"><span class="rank-delta ${cls}">${arrow}${Math.abs(rankChange)}</span><br>#${prevRank}&rarr;#${curRank}</div>
+        <div class="t150-co">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; v6 ${fmtNum(totalBefore,1)}&rarr;${fmtNum(totalAfter,1)}</div>
+          <div class="t150-news">${cause}</div>
+        </div>
+      </div>
+      ${isOpen ? renderDetailPanel(row, curRank) : ''}
+    </div>
+  `;
+}
+// Live-only rank map (independent of whatever history-date/sector the
+// main page is browsing) so a tracker row can expand into the same
+// detail panel used everywhere else, with a rank that actually matches
+// the live market-cap figures the Tracker itself shows and alerts on.
+function liveRankByTicker() {
+  const all = ensureLiveScored();
+  const map = {};
+  all.slice().sort((a,b)=>b.total-a.total).forEach((r,i)=>map[r.c.t]=i+1);
+  return map;
+}
+let expandedTrackerTicker = null;
+function renderTrackerModalContent() {
+  const content = document.getElementById('trackerContent');
+  const tickers = Object.keys(trackerState);
+  if (!tickers.length) {
+    content.innerHTML = `<p class="no-thesis">No companies tracked yet. Open any company's detail panel (in the table, Biggest movers, Top 150 changes, or Corporate actions) and click <b>Track this company</b>.</p>`;
+    return;
+  }
+  // Most-recently-alerted first, then alphabetical by ticker.
+  tickers.sort((a,b) => {
+    const la = trackerState[a].lastAlertAt||'', lb = trackerState[b].lastAlertAt||'';
+    if (la !== lb) return lb.localeCompare(la);
+    return a.localeCompare(b);
+  });
+  const rankMap = liveRankByTicker();
+  content.innerHTML = tickers.map(t => {
+    const entry = trackerState[t];
+    const row = liveRowFor(t);
+    const rank = rankMap[t];
+    const name = row ? row.c.n : t;
+    const co = row ? row.c.co : '';
+    const mc = row ? row.c.mc0 : null;
+    const latestLog = (entry.log||[])[0];
+    const isAlert = latestLog && entry.lastAlertAt === latestLog.date;
+    const statusHtml = isAlert
+      ? `<div class="tr-status alert">&#9888; Moved ${latestLog.pct>=0?'+':''}${fmtNum(latestLog.pct,1)}% ($${fmtNum(latestLog.oldMc,0)}M &rarr; $${fmtNum(latestLog.newMc,0)}M) since last check</div>
+         <div class="tr-explain">${latestLog.explanation.text}${latestLog.explanation.sourceUrl ? ` <a class="src" href="${latestLog.explanation.sourceUrl}" target="_blank" rel="noopener">source</a>` : ''}</div>`
+      : `<div class="tr-status">Within threshold since last check (baseline $${fmtNum(entry.lastSeenMc,0)}M)</div>`;
+    const isOpen = expandedTrackerTicker === t;
+    return `
+      <div class="tracker-row-wrap">
+        <div class="tracker-row clickable ${isOpen?'expanded':''}" data-ticker="${t}">
+          <div class="tr-top">
+            <div>
+              <div class="name">${name}</div>
+              <div class="meta">${t}${co ? ' &middot; '+co : ''}${mc!==null ? ' &middot; $'+fmtNum(mc,0)+'M now' : ''}${rank ? ' &middot; rank #'+rank : ''}</div>
+            </div>
+            <div class="tr-controls">
+              <label>Alert if moves &plusmn;</label>
+              <input type="number" class="tr-threshold" min="0.1" step="0.5" value="${entry.threshold}" data-ticker="${t}">
+              <label>%</label>
+              <button class="tr-untrack" data-ticker="${t}">Untrack</button>
+            </div>
+          </div>
+          ${statusHtml}
+        </div>
+        ${isOpen && row ? renderDetailPanel(row, rank) : ''}
+      </div>
+    `;
+  }).join('');
+}
+let expandedProfitBonusTicker = null;
+function renderProfitBonusModalContent() {
+  const content = document.getElementById('profitBonusContent');
+  const { inTop150 } = profitabilityBonusPreview();
+  if (!inTop150.length) {
+    content.innerHTML = `<p class="no-thesis">No companies received this bonus.</p>`;
+    return;
+  }
+  content.innerHTML = inTop150.map(r => {
+    const c = r.row.c;
+    const isNew = r.oldRank > 150;
+    const isOpen = expandedProfitBonusTicker === c.t;
+    return `
+      <div class="top150-row-wrap">
+        <div class="top150-row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+          <div class="t150-rank"><br>#${r.oldRank}&rarr;#${r.newRank}</div>
+          <div class="t150-co">
+            <div class="name">${c.n}${isNew ? '<span class="t150-new-tag">NEW</span>' : ''}</div>
+            <div class="meta">${c.t} &middot; ${c.co} &middot; $${fmtNum(r.row.mc,0)}M mkt cap</div>
+            <div class="t150-sim">GM ${fmtPct(r.gm,0)} &middot; CFO+ ${fmtPct(r.cfo,0)} &middot; rev CAGR ${fmtPct(r.cagr,0)}/yr &mdash;
+              profitability <b>${fmtNum(r.rawPts,1)}&rarr;16.0</b>/16 (without&rarr;with bonus), total <b>${fmtNum(r.withoutBonusTotal,1)}&rarr;${fmtNum(r.currentTotal,1)}</b></div>
+          </div>
+        </div>
+        ${isOpen ? renderDetailPanel(r.row, r.newRank) : ''}
+      </div>
+    `;
+  }).join('');
+}
+function ensureScored() {
+  if (filters.historyDate !== 'live') {
+    const d = filters.historyDate;
+    if (!historicalCache[d]) historicalCache[d] = historicalScored(d);
+    return historicalCache[d];
+  }
+  if (!scoredCache) scoredCache = computeAllScores();
+  return scoredCache;
+}
+function invalidate() { scoredCache = null; }
+// The Tracker always evaluates against the LIVE official state, regardless
+// of whatever history-date the user happens to be browsing — a tracked
+// threshold is about the real dataset, not a historical view.
+function ensureLiveScored() {
+  if (!scoredCache) scoredCache = computeAllScores();
+  return scoredCache;
+}
+function liveRowFor(ticker) {
+  return ensureLiveScored().find(r => r.c.t === ticker) || null;
+}
+
+// ---- Profitability bonus benefactors: this rule is LIVE in the real
+// score (scripts/scoring.py's apply_profitability_bonus(), applied via
+// scripts/apply_profitability_bonus.py) - a company in the top
+// gross-margin band (>=60%) with long-term revenue growth (full-history
+// CAGR >10%/yr) that stays broadly cash-generative (CFO positive >=70%
+// of periods) gets its profitability score topped up to 16/16, however
+// inconsistent its NI actually was. Since the stored fixedPts.profitability
+// is now permanently 16 for every company this applied to, this view
+// reconstructs what each benefactor's score/rank would have been
+// WITHOUT the bonus (from its unaffected profitPct field) purely to show
+// the effect - it changes nothing, same as before.
+const PROFIT_BONUS_GM_GATE = 0.60, PROFIT_BONUS_CFO_GATE = 0.70, PROFIT_BONUS_GROWTH_GATE = 0.10;
+// Revenue/NI history slots are LTM snapshots exactly one year apart
+// (see PERIOD_LABELS) - a leading null means "no data that period", NOT
+// zero revenue, so the CAGR window always starts at the first REPORTED
+// value, never index 0 blindly (that would fabricate an infinite/absurd
+// growth rate for any company with a short history).
+function fullHistoryCagr(revHist) {
+  const idxs = [];
+  revHist.forEach((v, i) => { if (typeof v === 'number') idxs.push(i); });
+  if (idxs.length < 2) return null;
+  const fi = idxs[0], li = idxs[idxs.length - 1];
+  const sv = revHist[fi], ev = revHist[li];
+  if (!(sv > 0) || typeof ev !== 'number') return null;
+  const years = li - fi;
+  if (years <= 0) return null;
+  return Math.pow(ev / sv, 1 / years) - 1;
+}
+function profitabilityBonusPreview() {
+  const all = ensureLiveScored();
+  const rows = all.map(row => {
+    const c = row.c;
+    const currentPts = c.fixedPts.profitability; // already 16.0 for benefactors - this is live
+    const rawPts = Math.round(c.profitPct * 16.0 * 1e4) / 1e4; // what it'd be without the bonus
+    const gm = row.gmInfo.gm;
+    const cfo = c.cfoPct;
+    const cagr = fullHistoryCagr(c.revHist);
+    const benefited = gm !== null && gm >= PROFIT_BONUS_GM_GATE &&
+      cfo !== null && cfo !== undefined && cfo >= PROFIT_BONUS_CFO_GATE &&
+      cagr !== null && cagr > PROFIT_BONUS_GROWTH_GATE &&
+      currentPts >= 16.0 - 1e-6 && rawPts < 16.0 - 1e-6;
+    const withoutBonusTotal = benefited ? row.total - currentPts + rawPts : row.total;
+    return { row, currentTotal: row.total, withoutBonusTotal, benefited, rawPts, currentPts, gm, cfo, cagr };
+  });
+  const withoutRank = {};
+  rows.slice().sort((a,b)=>b.withoutBonusTotal-a.withoutBonusTotal).forEach((r,i) => { withoutRank[r.row.c.t] = i+1; });
+  const currentRank = {};
+  rows.slice().sort((a,b)=>b.currentTotal-a.currentTotal).forEach((r,i) => { currentRank[r.row.c.t] = i+1; });
+  rows.forEach(r => { r.oldRank = withoutRank[r.row.c.t]; r.newRank = currentRank[r.row.c.t]; });
+  const inTop150 = rows.filter(r => r.benefited && r.newRank <= 150).sort((a,b) => a.newRank - b.newRank);
+  return { inTop150 };
+}
+
+function formatDateKey(key) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key);
+  if (!m) return key;
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${parseInt(m[3],10)} ${months[parseInt(m[2],10)-1]} ${m[1]}`;
+}
+function historyLabel(key) {
+  if (key === 'baseline') return 'Original baseline (Mar 2026 extract)';
+  return 'As of ' + formatDateKey(key);
+}
+function populateFilterOptions() {
+  const countries = [...new Set(COMPANIES.map(c=>c.co))].sort();
+  const cf = document.getElementById('countryFilter');
+  countries.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; cf.appendChild(o); });
+  ['Revenue Compounder','Capital-Efficient','Deep Value','Balanced'].forEach(v=>{
+    const o=document.createElement('option'); o.value=v; o.textContent=v;
+    document.getElementById('archetypeFilter').appendChild(o);
+  });
+  const hf = document.getElementById('historyDate');
+  HISTORY_DATES.forEach(key => {
+    const o = document.createElement('option'); o.value = key; o.textContent = historyLabel(key);
+    hf.appendChild(o);
+  });
+}
+function archetypeTagClass(a) {
+  if (a==='Revenue Compounder') return 'rc';
+  if (a==='Deep Value') return 'dv';
+  if (a==='Capital-Efficient') return '';
+  return 'bal';
+}
+function sparkline(hist, w=220, h=40, color='var(--green-text)') {
+  const vals = hist.filter(v=>typeof v==='number');
+  if (vals.length<2) return '';
+  const min=Math.min(...vals), max=Math.max(...vals), span=(max-min)||1;
+  const step = w/(hist.length-1);
+  let pts=[];
+  hist.forEach((v,i)=>{ if (typeof v!=='number') return; const x=i*step; const y=h-((v-min)/span)*(h-6)-3; pts.push(x.toFixed(1)+','+y.toFixed(1)); });
+  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><polyline points="${pts.join(' ')}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+
+function render() {
+  const isHistorical = filters.historyDate !== 'live';
+  const all = ensureScored();
+  let scored = all.slice();
+
+  const s = filters.search.trim().toLowerCase();
+  scored = scored.filter(row => {
+    const c = row.c;
+    if (filters.country && c.co !== filters.country) return false;
+    if (filters.archetype && row.archetype !== filters.archetype) return false;
+    if (!isHistorical && filters.editedOnly && !(isEditedMc(c) || gmOverrides[c.t])) return false;
+    if (filters.needsGm && !row.gmInfo.isFallback) return false;
+    if (s) { const hay=(c.n+' '+c.t+' '+c.co).toLowerCase(); if (!hay.includes(s)) return false; }
+    return true;
+  });
+
+  const sf = filters.sortField;
+  scored.sort((x,y) => {
+    if (sf==='score') return y.total - x.total;
+    if (sf==='mc') return y.mc - x.mc;
+    if (sf==='gm') return (y.gmInfo.gm ?? -1) - (x.gmInfo.gm ?? -1);
+    if (sf==='roe') return (y.roe ?? -99) - (x.roe ?? -99);
+    if (sf==='revGrowth') return (y.c.revGrowth ?? -99) - (x.c.revGrowth ?? -99);
+    if (sf==='name') return x.c.n.localeCompare(y.c.n);
+    return 0;
+  });
+
+  // rank is always by full-pool score, independent of display filter.
+  // In historical mode the rank was already fixed at snapshot time.
+  const rankByTicker = computeRankByTicker(all, isHistorical);
+
+  const topN = filters.topN;
+  scored = scored.filter(r => rankByTicker[r.c.t] <= topN);
+
+  const needsGmCount = all.filter(r => r.gmInfo.isFallback).length;
+  const prevRanks = rankDeltaMap(filters.historyDate);
+  if (isHistorical) {
+    document.getElementById('statRow').innerHTML = `
+      <div class="stat"><div class="n">${COMPANIES.length}</div><div class="l">candidate pool</div></div>
+      <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">needed GM research at this date</div></div>
+      <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
+    `;
+  } else {
+    const editedMcCount = COMPANIES.filter(isEditedMc).length;
+    const editedGmCount = Object.keys(gmOverrides).length;
+    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
+    document.getElementById('statRow').innerHTML = `
+      <div class="stat"><div class="n">${COMPANIES.length}</div><div class="l">candidate pool (${filters.sector==='all'?'all sectors':'non-financial'})</div></div>
+      <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
+      <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
+      <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
+      <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
+      <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
+    `;
+  }
+
+  const tbody = document.getElementById('tbody');
+  const emptyEl = document.getElementById('emptyState');
+  if (!scored.length) { tbody.innerHTML=''; emptyEl.style.display='block'; return; }
+  emptyEl.style.display='none';
+
+  let html='';
+  scored.forEach(row => {
+    const { c, mc, gmInfo, total, pb, roe, archetype: at, bestLens } = row;
+    const rank = rankByTicker[c.t];
+    const edited = !isHistorical && isEditedMc(c);
+    const isOpen = expandedTicker===c.t;
+    const prevKeyForRow = previousHistoryKey(filters.historyDate);
+    const prevRank = prevRanks[c.t];
+    let deltaHtml;
+    if (!prevKeyForRow) {
+      deltaHtml = `<span class="rank-delta flat" title="No earlier snapshot to compare to">—</span>`;
+    } else if (prevRank === undefined) {
+      deltaHtml = `<span class="rank-delta new" title="Not present in the previous snapshot">new</span>`;
+    } else {
+      const delta = prevRank - rank; // positive = moved up (rank number went down)
+      const prevLabel = historyLabel(prevKeyForRow);
+      if (delta === 0) deltaHtml = `<span class="rank-delta flat" title="No change since ${prevLabel}">–</span>`;
+      else if (delta > 0) deltaHtml = `<span class="rank-delta up" title="Up from #${prevRank} (${prevLabel})">▲ ${delta}</span>`;
+      else deltaHtml = `<span class="rank-delta down" title="Down from #${prevRank} (${prevLabel})">▼ ${-delta}</span>`;
+    }
+    html += `
+      <tr class="row ${isOpen?'expanded':''}" data-ticker="${c.t}">
+        <td class="rank num">${rank}</td>
+        <td class="num-col">${deltaHtml}</td>
+        <td class="company">
+          <div class="name">${c.n}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+        </td>
+        <td class="num-col">
+          ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `
+          <div class="mc-cell">
+            <input type="number" step="0.1" class="mc-input num ${edited?'edited':''}" data-ticker="${c.t}" value="${mc}">
+            ${edited ? `<button class="mc-reset" data-ticker="${c.t}" title="Reset to build-time value">↺</button>` : ''}
+          </div>`}
+        </td>
+        <td class="num-col num">${pb!==null ? fmtNum(pb,2) : '—'}</td>
+        <td class="num-col num">${fmtPct(roe)}</td>
+        <td class="num-col num">${fmtPct(c.revGrowth,0)}</td>
+        <td class="num-col">
+          <div class="gm-cell">
+            <span class="gm-val num ${gmInfo.isFallback?'fallback':''}">${gmInfo.gm!==null ? fmtPct(gmInfo.gm,0) : 'median*'}</span>
+          </div>
+        </td>
+        <td class="num-col">
+          <div class="score-cell"><span class="val num">${fmtNum(total,1)}</span></div>
+        </td>
+      </tr>
+    `;
+    if (isOpen) {
+      html += `<tr class="detail-row"><td colspan="9">${renderDetailPanel(row, rank)}</td></tr>`;
+    }
+  });
+  tbody.innerHTML = html;
+
+  tbody.querySelectorAll('tr.row').forEach(tr => {
+    tr.addEventListener('click', e => { if (e.target.closest('.mc-cell')) return; const t=tr.dataset.ticker; expandedTicker = (expandedTicker===t)?null:t; render(); });
+  });
+  if (!isHistorical) {
+    tbody.querySelectorAll('.mc-input').forEach(inp => {
+      inp.addEventListener('click', e=>e.stopPropagation());
+      inp.addEventListener('change', () => applyMcEdit(inp.dataset.ticker, parseFloat(inp.value), 'manual'));
+    });
+    tbody.querySelectorAll('.mc-reset').forEach(btn => {
+      btn.addEventListener('click', e => { e.stopPropagation(); resetMc(btn.dataset.ticker); });
+    });
+  }
+
+  ['editedOnlyBtn','gmUpdateBtn','bulkUpdateBtn'].forEach(id => {
+    document.getElementById(id).style.display = isHistorical ? 'none' : '';
+  });
+  const banner = document.getElementById('historyBanner');
+  const hd = document.getElementById('historyDate');
+  hd.classList.toggle('active', isHistorical);
+  if (isHistorical) {
+    banner.style.display = 'block';
+    banner.textContent = filters.historyDate === 'baseline'
+      ? 'Viewing the original baseline — market caps as first loaded, before this project’s refresh work, with data-quality fixes applied. Read-only; switch to Live to edit or update.'
+      : `Viewing the shortlist as it stood on ${formatDateKey(filters.historyDate)}. Read-only; switch to Live to edit or update.`;
+  } else {
+    banner.style.display = 'none';
+  }
+
+  const t150 = top150Movers();
+  const t150Btn = document.getElementById('top150ChangesBtn');
+  t150Btn.textContent = t150.prevKey
+    ? `Top 150 changes (${t150.entrants.length + t150.exits.length})`
+    : 'Top 150 changes';
+  t150Btn.disabled = !t150.prevKey;
+
+  const movers = biggestMovers();
+  const moversBtn = document.getElementById('moversBtn');
+  moversBtn.textContent = movers.prevKey
+    ? `Biggest movers (${movers.totalMoved})`
+    : 'Biggest movers';
+  moversBtn.disabled = !movers.prevKey;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(showToast._h); showToast._h = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+
+// ---- pre-update snapshot: downloaded as .xlsx before any local update is applied ----
+function buildSnapshotAOA() {
+  const all = ensureScored().slice().sort((a,b)=>b.total-a.total);
+  const now = new Date();
+  const stamp = now.toISOString().replace('T',' ').slice(0,16) + ' UTC';
+  const aoa = [
+    ['Asia/Pacific Small/Mid-Cap Value Shortlist — Dashboard Snapshot'],
+    [`Captured ${stamp}, before this update was applied`],
+    [`${all.length} companies in candidate pool (percentile-ranked against full pool)`],
+    [],
+    ['Rank','Ticker','Company','Country','Archetype','Mkt Cap ($M)','Mkt Cap edited?','P/B','ROE',
+     'Rev Growth','Gross Margin','GM fallback?','GM FY','GM Source',
+     'RevGrowth pts','RevConsist pts','Dilution pts','Valuation pts',
+     'Profitability pts','CFO+ pts','TrackRecord pts','Dividend pts','GM pts','v6 Total Score']
+  ];
+  all.forEach((row, i) => {
+    const c = row.c, gmInfo = row.gmInfo;
+    aoa.push([
+      i+1, c.t, c.n, c.co, row.archetype, Number(row.mc.toFixed(2)), isEditedMc(c) ? 'Y' : '',
+      row.pb!==null ? Number(row.pb.toFixed(3)) : null,
+      row.roe!==null ? Number(row.roe.toFixed(4)) : null,
+      c.revGrowth!==null ? Number(c.revGrowth.toFixed(4)) : null,
+      gmInfo.gm!==null ? Number(gmInfo.gm.toFixed(4)) : null,
+      gmInfo.isFallback ? 'Y' : '',
+      c.gmFY || '', c.gmSrcType || '',
+      c.fixedPts.revenue_growth, c.fixedPts.revenue_consistency, c.fixedPts.dilution,
+      Number(row.valPts.toFixed(2)), c.fixedPts.profitability, c.fixedPts.cfo_positive,
+      c.fixedPts.track_record, c.fixedPts.dividend_consistency, Number(row.gmPts.toFixed(2)),
+      Number(row.total.toFixed(2))
+    ]);
+  });
+  return aoa;
+}
+
+function saveSnapshotBeforeUpdate() {
+  if (typeof XLSX === 'undefined') { showToast('Snapshot library unavailable — proceeding without a saved record.'); return; }
+  try {
+    const aoa = buildSnapshotAOA();
+    const ws = XLSX.utils.aoa_to_sheet(aoa);
+    ws['!cols'] = [{wch:6},{wch:14},{wch:32},{wch:16},{wch:18},{wch:12},{wch:14},{wch:7},{wch:8},
+                   {wch:10},{wch:12},{wch:11},{wch:7},{wch:16},{wch:12},{wch:12},{wch:11},{wch:12},
+                   {wch:14},{wch:9},{wch:13},{wch:11},{wch:7},{wch:12}];
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Snapshot');
+    const buf = XLSX.write(wb, {bookType:'xlsx', type:'array'});
+    const blob = new Blob([buf], {type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const dateStr = new Date().toISOString().slice(0,10);
+    downloadBlob(blob, `shortlist-snapshot-${dateStr}.xlsx`);
+    showToast('Snapshot downloaded. Applying local preview…');
+  } catch (e) {
+    showToast('Could not build snapshot — continuing without one.');
+  }
+}
+
+// ---- Full dashboard export: a styled, multi-tab .xlsx of everything on
+// this page (Overview, Investment Thesis, Revenue/Net-Income history,
+// Big Movers, Corporate Actions, Tracker, Methodology), scoped to
+// whichever view is currently selected (sector + live or a saved history
+// date) — uses ExcelJS rather than the xlsx.full.min.js loaded above,
+// since that library's open-source build silently drops cell styling on
+// write; this is the one export meant to look like a real, polished report.
+const XLSX_TEAL = 'FF1B474D';
+const XLSX_HEADER_FILL = { type:'pattern', pattern:'solid', fgColor:{argb:XLSX_TEAL} };
+const XLSX_HEADER_FONT = { name:'Calibri', size:11, bold:true, color:{argb:'FFFFFFFF'} };
+const XLSX_TITLE_FONT = { name:'Calibri', size:16, bold:true, color:{argb:XLSX_TEAL} };
+const XLSX_SUBTITLE_FONT = { name:'Calibri', size:10, italic:true, color:{argb:'FF5B6472'} };
+function stripHtmlEntities(s) {
+  if (!s) return '';
+  return String(s).replace(/&rarr;/g,'→').replace(/&middot;/g,'·').replace(/&mdash;/g,'—')
+    .replace(/&#9888;/g,'⚠').replace(/<[^>]+>/g,'');
+}
+function xlsxTitleBlock(ws, title, subtitle) {
+  ws.getCell('A1').value = title;
+  ws.getCell('A1').font = XLSX_TITLE_FONT;
+  if (subtitle) { ws.getCell('A2').value = subtitle; ws.getCell('A2').font = XLSX_SUBTITLE_FONT; }
+}
+function xlsxHeaderRow(ws, rowNum, headers, colWidths) {
+  const row = ws.getRow(rowNum);
+  headers.forEach((h,i) => {
+    const cell = row.getCell(i+1);
+    cell.value = h;
+    cell.fill = XLSX_HEADER_FILL;
+    cell.font = XLSX_HEADER_FONT;
+  });
+  if (colWidths) colWidths.forEach((w,i) => { ws.getColumn(i+1).width = w; });
+  ws.views = [{ state:'frozen', ySplit: rowNum }];
+}
+function buildOverviewSheet(wb, rows, viewLabel) {
+  const ws = wb.addWorksheet('Overview');
+  xlsxTitleBlock(ws, 'Asia/Pacific Small/Mid-Cap Value Shortlist — Dashboard Export',
+    `${viewLabel} · v6 composite score, ${COMPANIES.length}-company active pool · Generated ${new Date().toISOString().slice(0,10)}`);
+  const headers = ['#','Company','Ticker','Country','Archetype','Mkt Cap ($M)','Total Equity ($M)','P/B','ROE',
+    'Rev Growth','Dilution','Profit %','CFO+ %','Gross Margin','v6 Score'];
+  xlsxHeaderRow(ws, 4, headers, [5,32,16,16,18,14,16,8,9,11,10,9,9,13,10]);
+  rows.forEach((r,i) => {
+    const row = r.row, c = row.c;
+    ws.addRow([
+      r.rank, c.n, c.t, c.co, row.archetype, Number(row.mc.toFixed(1)),
+      c.eq!==null&&c.eq!==undefined ? Number(c.eq.toFixed(1)) : null,
+      row.pb!==null ? Number(row.pb.toFixed(2)) : null,
+      row.roe!==null ? Number(row.roe.toFixed(4)) : null,
+      c.revGrowth!==null&&c.revGrowth!==undefined ? Number(c.revGrowth.toFixed(4)) : null,
+      c.dilution!==null&&c.dilution!==undefined ? Number(c.dilution.toFixed(4)) : null,
+      Number((c.profitPct||0).toFixed(4)), Number((c.cfoPct||0).toFixed(4)),
+      row.gmInfo.gm!==null ? Number(row.gmInfo.gm.toFixed(4)) : null,
+      Number(row.total.toFixed(2)),
+    ]);
+  });
+  ['H','I','J','K','L','M','N'].forEach(col => { ws.getColumn(col).numFmt = '0.0%'; });
+  ws.getColumn('H').numFmt = '0.00"x"';
+  ws.getColumn('F').numFmt = '#,##0.0'; ws.getColumn('G').numFmt = '#,##0.0'; ws.getColumn('O').numFmt = '0.0';
+  return ws;
+}
+function buildThesisSheet(wb, rows) {
+  const ws = wb.addWorksheet('Investment Thesis');
+  xlsxTitleBlock(ws, 'Investment Thesis — Qualitative Research Summary');
+  xlsxHeaderRow(ws, 4, ['#','Company','Ticker','Business Description','Competitive Position','Main Shareholders','Red Flags','Website'],
+    [5,32,16,55,45,45,45,28]);
+  rows.forEach(r => {
+    const c = r.row.c, th = c.thesis;
+    ws.addRow([r.rank, c.n, c.t, th?th.business_description||'':'', th?th.competitive_position||'':'',
+      th?th.main_shareholders||'':'', th?th.red_flags||'':'', th?th.website||'':'']);
+  });
+  ws.getColumn('D').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('E').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('F').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('G').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildHistSheet(wb, rows, title, field, withGrowth) {
+  const ws = wb.addWorksheet(title);
+  xlsxTitleBlock(ws, `${title} ($M) — ${PERIOD_LABELS[0]} to ${PERIOD_LABELS[PERIOD_LABELS.length-1]}`);
+  const headers = ['#','Company','Ticker', ...PERIOD_LABELS].concat(withGrowth ? ['Growth'] : []);
+  xlsxHeaderRow(ws, 4, headers, [5,32,16, ...PERIOD_LABELS.map(()=>10)].concat(withGrowth?[10]:[]));
+  rows.forEach(r => {
+    const c = r.row.c;
+    const hist = c[field] || [];
+    const vals = PERIOD_LABELS.map((_,i) => hist[i]!==undefined && hist[i]!==null ? Number(hist[i].toFixed(1)) : null);
+    const line = [r.rank, c.n, c.t, ...vals];
+    if (withGrowth) line.push(c.revGrowth!==null&&c.revGrowth!==undefined ? Number(c.revGrowth.toFixed(4)) : null);
+    ws.addRow(line);
+  });
+  if (withGrowth) ws.getColumn(headers.length).numFmt = '0.0%';
+  return ws;
+}
+function buildMoversSheet(wb, viewLabel) {
+  const ws = wb.addWorksheet('Big Movers');
+  const { climbers, decliners, prevKey } = biggestMovers(50);
+  xlsxTitleBlock(ws, 'Biggest rank movers', prevKey ? `${viewLabel}, vs. ${historyLabel(prevKey)}` : `${viewLabel} — no earlier checkpoint to compare to`);
+  xlsxHeaderRow(ws, 4, ['Direction','Rank Δ','Prev Rank','Cur Rank','Company','Ticker','Country','Score Before','Score After','Cause'],
+    [10,8,10,10,32,16,16,12,12,60]);
+  [...climbers.map(m=>['Up',m]), ...decliners.map(m=>['Down',m])].forEach(([dir,m]) => {
+    ws.addRow([dir, Math.abs(m.rankChange), m.prevRank, m.curRank, m.row.c.n, m.row.c.t, m.row.c.co,
+      Number(m.totalBefore.toFixed(2)), Number(m.totalAfter.toFixed(2)), stripHtmlEntities(m.cause)]);
+  });
+  ws.getColumn('J').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildCorpActionsSheet(wb) {
+  const ws = wb.addWorksheet('Corporate Actions');
+  const all = flattenCorporateActions();
+  xlsxTitleBlock(ws, 'Corporate Actions', `${all.length} event${all.length===1?'':'s'} on file — manually/agent-researched, not automated`);
+  xlsxHeaderRow(ws, 4, ['Category','Ticker','Company','Date','Counterparty / Role','Terms','Note','Source URL'],
+    [16,16,32,12,28,40,55,40]);
+  all.forEach(a => {
+    ws.addRow([a.categoryLabel, a.ticker, a.company, a.date||'', (a.counterparty||a.spun_off_entity||'') + (a.role?` (${a.role})`:''),
+      a.terms||'', a.note||'', a.source_url||'']);
+  });
+  ws.getColumn('F').alignment = { wrapText:true, vertical:'top' };
+  ws.getColumn('G').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildTrackerSheet(wb) {
+  const ws = wb.addWorksheet('Tracker');
+  const tickers = Object.keys(trackerState);
+  xlsxTitleBlock(ws, 'Tracker', 'Local to this browser — not shared, not synced. See the Tracker modal for how checking works on a static page.');
+  xlsxHeaderRow(ws, 4, ['Ticker','Company','Country','Threshold %','Baseline Mkt Cap ($M)','Current Mkt Cap ($M)','Last Checked','Status','Latest Explanation'],
+    [16,32,16,11,16,16,20,24,60]);
+  if (!tickers.length) {
+    ws.addRow(['', 'No companies tracked in this browser yet.', '', '', '', '', '', '', '']);
+  } else {
+    tickers.forEach(t => {
+      const entry = trackerState[t];
+      const row = liveRowFor(t);
+      const latestLog = (entry.log||[])[0];
+      const isAlert = latestLog && entry.lastAlertAt === latestLog.date;
+      ws.addRow([t, row?row.c.n:'', row?row.c.co:'', entry.threshold, entry.lastSeenMc, row?row.c.mc0:'',
+        entry.lastSeenAt||'', isAlert ? `Alert: ${latestLog.pct>=0?'+':''}${latestLog.pct.toFixed(1)}%` : 'Within threshold',
+        isAlert ? stripHtmlEntities(latestLog.explanation.text) : '']);
+    });
+  }
+  ws.getColumn('I').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+function buildMethodologySheet(wb, viewLabel) {
+  const ws = wb.addWorksheet('Methodology');
+  xlsxTitleBlock(ws, 'v6 Scoring Methodology');
+  const gmVerifiedCount = ensureScored().filter(r => !r.gmInfo.isFallback).length;
+  const rows = [
+    [],
+    ['View exported', viewLabel],
+    ['Sector pool', filters.sector === 'all' ? 'All sectors' : 'Non-financial only'],
+    ['Build date', BUILD_INFO.buildDate],
+    ['Active pool size', COMPANIES.length],
+    ['Market caps refreshed (pipeline, both sectors combined)', BUILD_INFO.mcOverrideCount],
+    ['Gross margins verified (this sector view)', gmVerifiedCount],
+    [],
+    ['Scoring dimension', 'Max points'],
+    ['Revenue growth (power-curve)', 6],
+    ['Revenue consistency', 12],
+    ['Dilution', 12],
+    ['Profitability', 16],
+    ['CFO positive', 6],
+    ['Track record', 8],
+    ['Dividend consistency', 4],
+    ['Gross margin (banded)', 18],
+    ['Valuation (best-of-three lens, percentile-ranked)', 18],
+    ['Total', 100],
+    [],
+    ['Notes'],
+    ['Asia/Pacific has two parallel scored pools (all-sector vs. non-financial) switched via the Sector selector - different survivor universes, not a filter on one pool.'],
+    ['Every score is computed against the entire active pool and percentile-ranked, regardless of any display filter.'],
+    ['Gross margin and valuation recompute live from whatever market cap and gross margin is current; the other seven dimensions are fixed from the underlying financial history.'],
+    ['Companies without a verified gross margin use the active pool’s median GM-band score as a neutral fallback - gross margin coverage here (none verified at launch) is much thinner than the Europe dashboard’s.'],
+  ];
+  rows.forEach(r => ws.addRow(r));
+  ws.getRow(9).font = XLSX_HEADER_FONT; ws.getRow(9).fill = XLSX_HEADER_FILL;
+  ws.getColumn('A').width = 46; ws.getColumn('B').width = 40;
+  ws.getColumn('A').alignment = { wrapText:true, vertical:'top' };
+  return ws;
+}
+async function exportDashboardSpreadsheet() {
+  if (typeof ExcelJS === 'undefined') { showToast('Export library unavailable — try reloading the page.'); return; }
+  showToast('Building spreadsheet…');
+  try {
+    const isHist = filters.historyDate !== 'live';
+    const all = ensureScored();
+    const rankByTicker = computeRankByTicker(all, isHist);
+    const top150 = all.slice().sort((a,b)=>b.total-a.total).slice(0,150)
+      .map(row => ({ row, rank: rankByTicker[row.c.t] })).sort((a,b)=>a.rank-b.rank);
+    const sectorLabel = filters.sector === 'all' ? 'All sectors' : 'Non-financial';
+    const viewLabel = (isHist ? historyLabel(filters.historyDate) : 'Live (current build)') + ` · ${sectorLabel}`;
+
+    const wb = new ExcelJS.Workbook();
+    wb.creator = 'Asia/Pacific Small/Mid-Cap Value Shortlist dashboard';
+    wb.created = new Date();
+    buildOverviewSheet(wb, top150, viewLabel);
+    buildThesisSheet(wb, top150);
+    buildHistSheet(wb, top150, 'Revenue History', 'revHist', true);
+    buildHistSheet(wb, top150, 'Net Income History', 'niHist', false);
+    buildMoversSheet(wb, viewLabel);
+    buildCorpActionsSheet(wb);
+    buildTrackerSheet(wb);
+    buildMethodologySheet(wb, viewLabel);
+
+    const buf = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buf], {type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const slug = (isHist ? filters.historyDate : 'live') + '-' + filters.sector;
+    const dateStr = new Date().toISOString().slice(0,10);
+    downloadBlob(blob, `shortlist-dashboard-${slug}-${dateStr}.xlsx`);
+    showToast('Spreadsheet downloaded.');
+  } catch (e) {
+    showToast('Could not build the spreadsheet — see console for details.');
+    console.error(e);
+  }
+}
+
+function applyMcEdit(ticker, mc, source) {
+  if (!isFinite(mc) || mc<=0) return;
+  mcOverrides[ticker] = { mc, updatedAt: new Date().toISOString(), source };
+  saveLocalOverrides(); invalidate(); render();
+}
+function resetMc(ticker) {
+  delete mcOverrides[ticker]; saveLocalOverrides(); invalidate(); render();
+}
+function applyGmEdit(ticker, gm, fiscalYear, sourceNote) {
+  if (!isFinite(gm)) return;
+  const val = gm > 1 ? gm/100 : gm; // accept both "61.5" and "0.615"
+  gmOverrides[ticker] = { gm: val, fiscalYear: fiscalYear||null, sourceNote: sourceNote||null, updatedAt: new Date().toISOString() };
+  saveLocalOverrides(); invalidate(); render();
+}
+
+function parseBulkLines(text) {
+  return text.split('\n').map(l=>l.trim()).filter(Boolean).map(line => line.split(',').map(p=>p.trim()));
+}
+function tickerLookup(raw) {
+  const up = raw.toUpperCase();
+  return COMPANIES.find(c => c.t.toUpperCase()===up)
+      || COMPANIES.find(c => c.t.toUpperCase().endsWith(':'+up))
+      || COMPANIES.find(c => c.n.toUpperCase()===up);
+}
+
+function wireToolbar() {
+  document.getElementById('marketSelect').addEventListener('change', e => { window.location.href = e.target.value; });
+  document.getElementById('search').addEventListener('input', e => { filters.search=e.target.value; render(); });
+  document.getElementById('countryFilter').addEventListener('change', e => { filters.country=e.target.value; render(); });
+  document.getElementById('archetypeFilter').addEventListener('change', e => { filters.archetype=e.target.value; render(); });
+  document.getElementById('topNFilter').addEventListener('change', e => { filters.topN=parseInt(e.target.value,10); render(); });
+  document.getElementById('sortField').addEventListener('change', e => { filters.sortField=e.target.value; render(); });
+  document.getElementById('historyDate').addEventListener('change', e => { filters.historyDate=e.target.value; expandedTicker=null; render(); });
+  document.getElementById('sectorFilter').addEventListener('change', e => {
+    setSector(e.target.value);
+    document.getElementById('countryFilter').innerHTML = '<option value="">All countries</option>';
+    document.getElementById('archetypeFilter').innerHTML = '<option value="">All archetypes</option>';
+    document.getElementById('historyDate').innerHTML = '<option value="live">Live (current)</option>';
+    filters.historyDate = 'live'; filters.country = ''; filters.archetype = '';
+    populateFilterOptions();
+    document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
+    document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
+    render();
+  });
+  document.getElementById('editedOnlyBtn').addEventListener('click', e => { filters.editedOnly=!filters.editedOnly; e.target.classList.toggle('active', filters.editedOnly); render(); });
+  document.getElementById('needsGmBtn').addEventListener('click', e => { filters.needsGm=!filters.needsGm; e.target.classList.toggle('active', filters.needsGm); render(); });
+
+  const caBackdrop = document.getElementById('corpActionsModalBackdrop');
+  const caContent = document.getElementById('corpActionsContent');
+  document.getElementById('corpActionsBtn').addEventListener('click', () => {
+    expandedCorpActionTicker = null;
+    renderCorpActionsModalContent();
+    caBackdrop.classList.add('open');
+  });
+  caContent.addEventListener('click', e => {
+    const rowEl = e.target.closest('.ca-row.clickable');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedCorpActionTicker = (expandedCorpActionTicker === t) ? null : t;
+    renderCorpActionsModalContent();
+  });
+  document.getElementById('corpActionsClose').addEventListener('click', () => caBackdrop.classList.remove('open'));
+  caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
+
+  const t150Backdrop = document.getElementById('top150ModalBackdrop');
+  const t150Content = document.getElementById('top150Content');
+  document.getElementById('top150ChangesBtn').addEventListener('click', () => {
+    expandedTop150Ticker = null;
+    renderTop150ModalContent();
+    t150Backdrop.classList.add('open');
+  });
+  t150Content.addEventListener('click', e => {
+    const rowEl = e.target.closest('.top150-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedTop150Ticker = (expandedTop150Ticker === t) ? null : t;
+    renderTop150ModalContent();
+  });
+  document.getElementById('top150Close').addEventListener('click', () => t150Backdrop.classList.remove('open'));
+  t150Backdrop.addEventListener('click', e => { if (e.target===t150Backdrop) t150Backdrop.classList.remove('open'); });
+
+  const moversBackdrop = document.getElementById('moversModalBackdrop');
+  const moversContent = document.getElementById('moversContent');
+  document.getElementById('moversBtn').addEventListener('click', () => {
+    expandedMoverTicker = null;
+    renderMoversModalContent();
+    moversBackdrop.classList.add('open');
+  });
+  moversContent.addEventListener('click', e => {
+    const rowEl = e.target.closest('.top150-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedMoverTicker = (expandedMoverTicker === t) ? null : t;
+    renderMoversModalContent();
+  });
+  document.getElementById('moversClose').addEventListener('click', () => moversBackdrop.classList.remove('open'));
+  moversBackdrop.addEventListener('click', e => { if (e.target===moversBackdrop) moversBackdrop.classList.remove('open'); });
+
+  const trackerBackdrop = document.getElementById('trackerModalBackdrop');
+  const trackerContent = document.getElementById('trackerContent');
+  document.getElementById('trackerBtn').addEventListener('click', () => {
+    renderTrackerModalContent();
+    trackerBackdrop.classList.add('open');
+  });
+  trackerContent.addEventListener('click', e => {
+    const untrackBtn = e.target.closest('.tr-untrack');
+    if (untrackBtn) {
+      untrackCompany(untrackBtn.dataset.ticker);
+      refreshAllViews();
+      showToast('Untracked');
+      return;
+    }
+    if (e.target.closest('.tr-controls')) return; // threshold input / untrack button - not a row-expand click
+    const rowEl = e.target.closest('.tracker-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedTrackerTicker = (expandedTrackerTicker === t) ? null : t;
+    renderTrackerModalContent();
+  });
+  trackerContent.addEventListener('change', e => {
+    const inp = e.target.closest('.tr-threshold');
+    if (inp) { setTrackerThreshold(inp.dataset.ticker, parseFloat(inp.value)); showToast('Threshold updated'); }
+  });
+  document.getElementById('trackerClose').addEventListener('click', () => trackerBackdrop.classList.remove('open'));
+  trackerBackdrop.addEventListener('click', e => { if (e.target===trackerBackdrop) trackerBackdrop.classList.remove('open'); });
+  document.getElementById('trackerBanner').addEventListener('click', e => {
+    if (!e.target.closest('#trackerBannerLink')) return;
+    renderTrackerModalContent();
+    trackerBackdrop.classList.add('open');
+  });
+
+  const profitBonusBackdrop = document.getElementById('profitBonusModalBackdrop');
+  const profitBonusContent = document.getElementById('profitBonusContent');
+  document.getElementById('profitBonusBtn').addEventListener('click', () => {
+    expandedProfitBonusTicker = null;
+    renderProfitBonusModalContent();
+    profitBonusBackdrop.classList.add('open');
+  });
+  profitBonusContent.addEventListener('click', e => {
+    const rowEl = e.target.closest('.top150-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedProfitBonusTicker = (expandedProfitBonusTicker === t) ? null : t;
+    renderProfitBonusModalContent();
+  });
+  document.getElementById('profitBonusClose').addEventListener('click', () => profitBonusBackdrop.classList.remove('open'));
+  profitBonusBackdrop.addEventListener('click', e => { if (e.target===profitBonusBackdrop) profitBonusBackdrop.classList.remove('open'); });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    exportDashboardSpreadsheet();
+  });
+
+  const mcBackdrop = document.getElementById('mcModalBackdrop');
+  document.getElementById('bulkUpdateBtn').addEventListener('click', () => {
+    if (confirm('Save a snapshot of the current data (downloads a dated .xlsx) before updating market caps?')) {
+      saveSnapshotBeforeUpdate();
+    }
+    // Always the true top-150 by full-pool score, regardless of the display's top-N filter.
+    const all = ensureScored();
+    const shortlist150 = all.slice().sort((a,b)=>b.total-a.total).slice(0,150);
+    const template = shortlist150.map(r => `${r.c.t}, ${r.mc}`).join('\n');
+    document.getElementById('mcBulkInput').value = template;
+    document.getElementById('mcBulkResult').textContent =
+      `Pre-filled with the current 150 shortlist and their present market caps (${shortlist150.length} tickers). ` +
+      `Research fresh values, paste them over this list (same TICKER, value format), then apply to preview locally.`;
+    mcBackdrop.classList.add('open');
+  });
+  document.getElementById('mcBulkCancel').addEventListener('click', () => mcBackdrop.classList.remove('open'));
+  mcBackdrop.addEventListener('click', e => { if (e.target===mcBackdrop) mcBackdrop.classList.remove('open'); });
+  document.getElementById('mcBulkApply').addEventListener('click', () => {
+    const rows = parseBulkLines(document.getElementById('mcBulkInput').value);
+    let applied=0, errors=[];
+    for (const parts of rows) {
+      if (parts.length<2) { errors.push(parts.join(',')); continue; }
+      const c = tickerLookup(parts[0]);
+      const val = parseFloat(parts[parts.length-1].replace(/[^0-9.\-]/g,''));
+      if (!c || !isFinite(val)) { errors.push(parts.join(',')); continue; }
+      applyMcEdit(c.t, val, 'manual'); applied++;
+    }
+    document.getElementById('mcBulkResult').textContent = `Applied ${applied} update(s) locally.` + (errors.length?` ${errors.length} line(s) not matched: ${errors.slice(0,5).join(' | ')}`:'');
+    if (applied) showToast(`Updated ${applied} market cap${applied>1?'s':''} (this browser only)`);
+    if (!errors.length) setTimeout(()=>mcBackdrop.classList.remove('open'), 900);
+  });
+
+  const gmBackdrop = document.getElementById('gmModalBackdrop');
+  document.getElementById('gmUpdateBtn').addEventListener('click', () => {
+    if (confirm('Save a snapshot of the current data (downloads a dated .xlsx) before updating gross margins?')) {
+      saveSnapshotBeforeUpdate();
+    }
+    const needs = ensureScored().filter(r=>r.gmInfo.isFallback).map(r=>r.c.t+' — '+r.c.n);
+    document.getElementById('needsGmList').innerHTML = needs.length
+      ? `<b>${needs.length} companies still need GM research:</b><br>` + needs.slice(0,60).join('<br>') + (needs.length>60?`<br>… and ${needs.length-60} more`:'')
+      : 'All companies in the pool have a verified gross margin.';
+    gmBackdrop.classList.add('open');
+  });
+  document.getElementById('gmBulkCancel').addEventListener('click', () => gmBackdrop.classList.remove('open'));
+  gmBackdrop.addEventListener('click', e => { if (e.target===gmBackdrop) gmBackdrop.classList.remove('open'); });
+  document.getElementById('gmBulkApply').addEventListener('click', () => {
+    const rows = parseBulkLines(document.getElementById('gmBulkInput').value);
+    let applied=0, errors=[];
+    for (const parts of rows) {
+      if (parts.length<2) { errors.push(parts.join(',')); continue; }
+      const c = tickerLookup(parts[0]);
+      const val = parseFloat(parts[1].replace(/[^0-9.\-]/g,''));
+      if (!c || !isFinite(val)) { errors.push(parts.join(',')); continue; }
+      applyGmEdit(c.t, val, parts[2]||null, parts[3]||null); applied++;
+    }
+    document.getElementById('gmBulkResult').textContent = `Applied ${applied} update(s) locally.` + (errors.length?` ${errors.length} line(s) not matched: ${errors.slice(0,5).join(' | ')}`:'');
+    if (applied) showToast(`Updated ${applied} gross margin${applied>1?'s':''} (this browser only)`);
+    if (!errors.length) setTimeout(()=>gmBackdrop.classList.remove('open'), 900);
+  });
+}
+
+// The Track button lives inside renderDetailPanel(), which is reused by
+// four different containers (main table, Movers/Top150/CorpActions
+// modals) - re-render whichever of those are currently visible rather
+// than tracking which one the click came from.
+function refreshAllViews() {
+  render();
+  if (document.getElementById('moversModalBackdrop').classList.contains('open')) renderMoversModalContent();
+  if (document.getElementById('top150ModalBackdrop').classList.contains('open')) renderTop150ModalContent();
+  if (document.getElementById('corpActionsModalBackdrop').classList.contains('open')) renderCorpActionsModalContent();
+  if (document.getElementById('trackerModalBackdrop').classList.contains('open')) renderTrackerModalContent();
+  if (document.getElementById('profitBonusModalBackdrop').classList.contains('open')) renderProfitBonusModalContent();
+}
+
+function init() {
+  setSector('all');
+  loadLocalOverrides();
+  loadTrackerState();
+  initComments();
+  populateFilterOptions();
+  wireToolbar();
+  document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
+  document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
+  document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
+  lastAlertTickers = checkTrackerAlerts();
+  renderTrackerBanner();
+  if (Object.keys(trackerState).length) saveTrackerState();
+  // Delegated once on body: the "Full financial data" toggle and "Track
+  // this company" button both appear inside renderDetailPanel(), reused
+  // by the main table (re-rendered often) and three modals - a body-level
+  // listener survives any of those containers' innerHTML being replaced,
+  // no per-render rewiring needed.
+  document.body.addEventListener('click', e => {
+    const finBtn = e.target.closest('.fin-toggle');
+    if (finBtn) {
+      const panel = finBtn.closest('.detail').querySelector('.full-financials');
+      const isOpen = panel.style.display !== 'none';
+      panel.style.display = isOpen ? 'none' : 'block';
+      finBtn.innerHTML = isOpen ? 'Full financial data &#9662;' : 'Full financial data &#9652;';
+      return;
+    }
+    const trackBtn = e.target.closest('.track-btn');
+    if (trackBtn) {
+      const t = trackBtn.dataset.ticker;
+      if (isTracked(t)) { untrackCompany(t); showToast('Untracked ' + t); }
+      else { trackCompany(t); showToast('Tracking ' + t); }
+      document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
+      refreshAllViews();
+      return;
+    }
+  });
+  render();
+  const statusEl = document.getElementById('dbStatus');
+  statusEl.textContent = `Static build — data embedded ${BUILD_INFO.buildDate}. Edits here are local to this browser (localStorage) and never leave your device; see "This page is static" above for how to publish a real update.`;
+}
+init();
+</script>
+</body>
+</html>

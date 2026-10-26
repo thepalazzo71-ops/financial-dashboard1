@@ -2636,3 +2636,26 @@ Market caps, corporate-actions screen, theses and gross margins were researched 
   fallback. SMCP's 75% is the company's own "management gross margin". Candidate (unverified)
   margins in the agents' notes: KMR ~5.6%, KEYS ~25.5%, TAM ~44.5%, VIRSI ~11.1%.
 - **Ranks**: Foresight Group #27, SMCP #83 and Purcari #109 enter the top 150; next best is Kenmare #227.
+
+## Asia / Pacific dashboard (started 2026-10-26)
+
+New third market: `docs/asia.html` ("Asia / Pacific" in every page's Market dropdown).
+- **Source**: `data-asia/raw/Asia_15m-1B.xls` - Capital IQ screen "Asia / Pacific Developed
+  Markets (Primary)", US$15M-1B, 8,237 companies, same 87-column layout as Europe/US.
+- **Pipeline**: `scripts/ingest_asia_pool.py` (reuses `ingest_us_pool.build_company` = the same
+  7 quality gates incl. the 2026-10-26 IPO-stub dilution rule, and `us_scoring.compute_fixed_pts`)
+  -> `data-asia/companies_pool_all.json` (1,895 survivors) and `companies_pool_nonfinancial.json`
+  (1,860; the financial flag is a name heuristic). Like USA/Canada, ALL gate survivors form the
+  pool (no top-N cut, unlike Europe's top-1,000); research proceeds in tiers by rank.
+  80 survivors only pass thanks to the stub rule (flagged `dilutionAdjusted`); Korean share
+  series are noisy (splits/restructurings), so treat those with care.
+- **Countries**: shown by country of incorporation, except offshore incorporations
+  (Cayman/Bermuda/BVI/...), which are shown under their listing market (e.g. Hong Kong);
+  the original is kept in `incorporation`. Japan 962, South Korea 555, Hong Kong 167,
+  Singapore 110, Australia 78, New Zealand 15.
+- **Build**: `scripts/build_site_asia.py` + `site/template_asia.html` (a copy of the US template with
+  the Sector toggle); CI rebuilds it with the other two. Data files `data-asia/mc_overrides_applied.json`,
+  `corporate_actions*.json`, `distress_flags.json` start empty.
+- **State**: quantitative scores only - every company is on the pool-median gross margin
+  ("needs GM"), raw-extract market caps, no theses, no corporate-actions screen.
+  Comments (shared store) work as on the other pages.
