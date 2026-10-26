@@ -27,6 +27,7 @@ OUT = ROOT / "docs" / "asia.html"
 MC_OVERRIDES_PATH = DATA_ASIA / "mc_overrides_applied.json"
 CORP_ACTIONS_PATH = DATA_ASIA / "corporate_actions.json"
 DISTRESS_PATH = DATA_ASIA / "distress_flags.json"
+DELISTED_PATH = DATA_ASIA / "delisted.json"
 
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
@@ -49,6 +50,15 @@ def load_corporate_actions():
         return {'tender_offers': [], 'mergers_acquisitions': [], 'spinoffs': [], 'other': []}
     with open(CORP_ACTIONS_PATH) as f:
         return json.load(f)
+
+
+def load_delisted():
+    """ticker -> {date, price, reason, sources}: completed delistings / take-privates
+    (hidden from the table, shown in the 'Delisted' window; same convention as Europe)."""
+    if not DELISTED_PATH.exists():
+        return {}
+    with open(DELISTED_PATH) as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
 
 
 def load_distress_flags():
@@ -124,6 +134,7 @@ def main():
             'nonfinancial': build_sector_payload(nonfin, mc_overrides),
         },
         'corporateActions': load_corporate_actions(),
+        'delisted': load_delisted(),
         'savedComments': load_saved_comments(),
     }
     build_info = {

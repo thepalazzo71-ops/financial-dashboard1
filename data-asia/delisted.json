@@ -1,0 +1,12 @@
+{
+ "_definition": "Companies whose stock is no longer tradable because a takeover, squeeze-out, share exchange or delisting has COMPLETED. Same convention as data/delisted.json (Europe).",
+ "KOSE:A057050": {
+  "date": "2026-07",
+  "price": "Share exchange: 6.357104 Hyundai G.F. Holdings shares per Hyundai Home Shopping share",
+  "reason": "Became a wholly owned subsidiary of Hyundai G.F. Holdings through a comprehensive share exchange (completed end of June 2026; KOSPI delisting followed in July). Exact delisting date not pinned down in sources.",
+  "sources": [
+   "https://dealsite.co.kr/articles/164537",
+   "https://www.ddaily.co.kr/page/view/2026021113444773311"
+  ]
+ }
+}

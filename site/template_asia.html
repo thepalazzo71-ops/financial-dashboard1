@@ -306,6 +306,7 @@
     <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
     <button class="btn ghost small" id="moversBtn">Biggest movers</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
+    <button class="btn ghost small" id="delistedBtn">Delisted</button>
     <button class="btn ghost small" id="trackerBtn">Tracker</button>
     <button class="btn ghost small" id="commentsBtn">Comments</button>
     <button class="btn ghost small" id="profitBonusBtn">Profitability bonus benefactors</button>
@@ -404,6 +405,22 @@
     <div class="actions">
       <button class="btn ghost" id="gmBulkCancel">Cancel</button>
       <button class="btn gold" id="gmBulkApply">Apply updates</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="delistedModalBackdrop">
+  <div class="modal wide">
+    <h3>Delisted / taken private</h3>
+    <p class="hint">
+      Companies whose stock is no longer tradable because a takeover, squeeze-out or delisting has <b>completed</b>.
+      They are hidden from the main table and the movers list, but still sit in the scoring pool of the active sector view, so no
+      other company's score or rank is affected (the rank shown here is where each would have ranked). Offers that are
+      only announced or pending are NOT hidden — see <b>Corporate actions</b>.
+    </p>
+    <div id="delistedContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="delistedClose">Close</button>
     </div>
   </div>
 </div>
@@ -510,6 +527,8 @@
 const PAYLOAD = __PAYLOAD_JSON__;
 const BUILD_INFO = __BUILD_INFO_JSON__;
 const CORPORATE_ACTIONS = PAYLOAD.corporateActions || { tender_offers: [], mergers_acquisitions: [], spinoffs: [], other: [] };
+const DELISTED = PAYLOAD.delisted || {};
+function isDelisted(t) { return Object.prototype.hasOwnProperty.call(DELISTED, t); }
 
 // Asia/Pacific has two parallel pools (different survivor universes, not a
 // filtered view of one pool) switched via the Sector toggle - COMPANIES/
@@ -531,9 +550,9 @@ function setSector(sector) {
   expandedCorpActionTicker = null;
 }
 
-const LS_MC_KEY = 'shortlist_us_mc_overrides_v1';
-const LS_GM_KEY = 'shortlist_us_gm_overrides_v1';
-const LS_TRACKER_KEY = 'shortlist_us_tracker_v1';
+const LS_MC_KEY = 'shortlist_asia_mc_overrides_v1';
+const LS_GM_KEY = 'shortlist_asia_gm_overrides_v1';
+const LS_TRACKER_KEY = 'shortlist_asia_tracker_v1';
 
 let mcOverrides = {};   // ticker -> {mc, updatedAt, source} — session/local only
 let gmOverrides = {};   // ticker -> {gm, fiscalYear, sourceNote, updatedAt} — session/local only
@@ -1063,6 +1082,7 @@ function top150Movers() {
   if (!prevKey) return { entrants, exits, prevKey };
   all.forEach(row => {
     const t = row.c.t;
+    if (isDelisted(t)) return;
     const curRank = rankByTicker[t];
     const prevRank = prevRanks[t];
     if (prevRank === undefined) return;
@@ -1109,6 +1129,7 @@ function biggestMovers(n = 15) {
   const movers = [];
   all.forEach(row => {
     const t = row.c.t;
+    if (isDelisted(t)) return;
     const b = prevByTicker[t];
     if (!b) return;
     const curRank = rankByTicker[t];
@@ -1167,6 +1188,23 @@ function renderCorpActionsModalContent() {
     <h4>${label} (${(list||[]).length})</h4>
     ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
   `).join('');
+}
+function renderDelistedModalContent() {
+  const all = ensureLiveScored();
+  const rank = computeRankByTicker(all, false);
+  const rows = all.filter(r => isDelisted(r.c.t)).sort((a,b) => (DELISTED[b.c.t].date||'').localeCompare(DELISTED[a.c.t].date||''));
+  document.getElementById('delistedContent').innerHTML = rows.length ? rows.map(r => {
+    const c = r.c, d = DELISTED[c.t];
+    const src = (d.sources||[]).map(u => `<a href="${u}" target="_blank" rel="noopener">${u.replace(/^https?:\/\/(www\.)?/,'').slice(0,60)}</a>`).join(' &middot; ');
+    return `
+      <div class="ca-row">
+        <div class="name">${escHtml(c.n)}</div>
+        <div class="meta">${c.t} &middot; ${c.co} &middot; would rank #${rank[c.t]} (v6 ${fmtNum(r.total,1)}) &middot; delisted ${escHtml(d.date)}</div>
+        <div class="terms">${escHtml(d.price||'')}</div>
+        <div class="note">${escHtml(d.reason||'')}</div>
+        <div class="src">${src}</div>
+      </div>`;
+  }).join('') : '<p class="no-thesis">None.</p>';
 }
 function corpActionsTotal() {
   const ca = CORPORATE_ACTIONS;
@@ -1658,6 +1696,7 @@ function render() {
   const s = filters.search.trim().toLowerCase();
   scored = scored.filter(row => {
     const c = row.c;
+    if (isDelisted(c.t)) return false; // completed delistings live in the 'Delisted' window
     if (filters.country && c.co !== filters.country) return false;
     if (filters.archetype && row.archetype !== filters.archetype) return false;
     if (!isHistorical && filters.editedOnly && !(isEditedMc(c) || gmOverrides[c.t])) return false;
@@ -2130,6 +2169,7 @@ function wireToolbar() {
     filters.historyDate = 'live'; filters.country = ''; filters.archetype = '';
     populateFilterOptions();
     document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
+    document.getElementById('delistedBtn').textContent = `Delisted (${COMPANIES.filter(c => isDelisted(c.t)).length})`;
     document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
     render();
   });
@@ -2152,6 +2192,14 @@ function wireToolbar() {
   });
   document.getElementById('corpActionsClose').addEventListener('click', () => caBackdrop.classList.remove('open'));
   caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
+
+  const dlBackdrop = document.getElementById('delistedModalBackdrop');
+  document.getElementById('delistedBtn').addEventListener('click', () => {
+    renderDelistedModalContent();
+    dlBackdrop.classList.add('open');
+  });
+  document.getElementById('delistedClose').addEventListener('click', () => dlBackdrop.classList.remove('open'));
+  dlBackdrop.addEventListener('click', e => { if (e.target===dlBackdrop) dlBackdrop.classList.remove('open'); });
 
   const t150Backdrop = document.getElementById('top150ModalBackdrop');
   const t150Content = document.getElementById('top150Content');
@@ -2323,6 +2371,7 @@ function init() {
   populateFilterOptions();
   wireToolbar();
   document.getElementById('corpActionsBtn').textContent = `Corporate actions (${corpActionsTotal()})`;
+  document.getElementById('delistedBtn').textContent = `Delisted (${COMPANIES.filter(c => isDelisted(c.t)).length})`;
   document.getElementById('trackerBtn').textContent = Object.keys(trackerState).length ? `Tracker (${Object.keys(trackerState).length})` : 'Tracker';
   document.getElementById('profitBonusBtn').textContent = `Profitability bonus benefactors (${profitabilityBonusPreview().inTop150.length})`;
   lastAlertTickers = checkTrackerAlerts();
