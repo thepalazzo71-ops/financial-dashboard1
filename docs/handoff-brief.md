@@ -2659,3 +2659,24 @@ New third market: `docs/asia.html` ("Asia / Pacific" in every page's Market drop
 - **State**: quantitative scores only - every company is on the pool-median gross margin
   ("needs GM"), raw-extract market caps, no theses, no corporate-actions screen.
   Comments (shared store) work as on the other pages.
+
+### Asia tier 1 (top 50 at launch, 2026-10-26)
+Workflow per tier of 50 (by current all-sector rank, excluding done tickers): agents (WebSearch only)
+do market caps + corporate actions (<=3 searches/company), then theses (<=3), then gross margins
+(<=2); search budget is shared (~200 per turn), so split into rounds. Merge helpers live in the
+session scratchpad (not in the repo): data goes to `data-asia/mc_overrides_applied.json`
+(has an extra `quoteDate`), `corporate_actions*.json`, pool files (`thesis`), `gm_research_log.json`.
+- Market caps: 49/50 refreshed. Quote dates range Jun-Oct 2026 and FX (esp. KRW) is uncertain -
+  indicative only. Echomarketing (A230360): Bain Capital holds ~91% after tenders, share exchange
+  planned 15 Jun 2026, delisting likely but unconfirmed -> kept visible with extract mc.
+  Hafary: founders' offer S$0.64 (pending). KC Co: PE owner selling. Clinuvel: considering Nasdaq move.
+- Delisted: Hyundai Home Shopping (A057050) share-exchange into Hyundai G.F. Holdings (Jun/Jul 2026) ->
+  `data-asia/delisted.json`; the Asia page now has the Delisted window (ported from Europe).
+- Theses: 50/50 (minus HHS deleted/kept). Holder percentages are mostly aggregator-sourced and
+  websites for 33 were dropped (guessed). Logen (A033290) identity unclear; PRL Global revenue in the extract
+  looks inconsistent with sourced segment data - check.
+- Gross margins: 24/48 applied (9 verified from announcements/IR tables, 15 aggregator revenue+cost
+  lines, flagged unverified); eSang (low confidence) and Shinsegae Information (sources disagree) skipped;
+  the rest not found (DART largely unreachable via search). Until more GMs are known the pool-median
+  GM fallback is the median of these 24, skewed to low-margin names.
+- localStorage keys on the Asia page are namespaced `shortlist_asia_*` (comments key stays shared).
