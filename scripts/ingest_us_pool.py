@@ -34,6 +34,8 @@ from pathlib import Path
 
 import xlrd
 
+from dilution_rule import measure_dilution
+
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data-us" / "raw" / "USA_and_Canada_15m-1B.xls"
 OUT = ROOT / "data-us" / "companies_pool_all.json"
@@ -191,7 +193,8 @@ def build_company(row):
     dilution = None
     dilution_missing = True
     if dil_first is not None and dil_first > 0:
-        dilution = (dil_last / dil_first) - 1
+        # IPO-era stub rule (scripts/dilution_rule.py), added 2026-10-26.
+        dilution, _ = measure_dilution(shares_hist)
         dilution_missing = False
         if dilution > 0.20:
             return None

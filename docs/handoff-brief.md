@@ -2568,3 +2568,33 @@ gap computation.
   return `{"ok":true,"email":...}`), add a comment, then open the site in a
   second browser. If it fails check the Workers Builds log and that the Access
   application covers all traffic on the hostname (incl. `/api/*`).
+
+## IPO-era share-count artefact in the dilution gate (2026-10-26)
+
+**Problem.** The dilution gate (last / first reported diluted share count − 1 ≤ 20%)
+reads Capital IQ's "Weighted Avg. Diluted Shares Out." slots. For a company that
+listed inside the 10-slot window, the first slot is a pre-listing / part-year
+stub (Trainline 1.1m → 427m, Funko 0.2m → 50.6m, Angling Direct 4.65m → 45.4m),
+so dilution read as hundreds of percent although nothing was diluted.
+
+**Rule** (`scripts/dilution_rule.py`, `measure_dilution`): if either of the first
+two year-on-year steps of the share-count series is a jump of ≥ 2.0×, the counts
+before the jump are ignored and dilution is measured from the first post-jump
+count to the last — only when ≥ 3 counts remain after the jump. A company that
+keeps issuing after listing still fails: **Angling Direct (AIM:ANG) is still
+excluded** (45.4m → 77.5m = +71% after its IPO ramp is genuine placings).
+`scripts/ingest_us_pool.py` uses the same function, so a fresh ingest agrees.
+
+**Applied by** `scripts/ipo_artefact_fix.py` (idempotent), both pools:
+- Europe: 37 companies that passed every other gate were added (pool 1,000 → 1,037;
+  best new rank #205 on GM-fallback scoring; none in the top 150 yet) and Selvita
+  (WSE:SLV) was re-scored (dilution 11.7% → −1.1%). USA/Canada: 8 added (pool 512 → 520).
+- New entries carry `dilutionAdjusted: true`, `gm: null` (pool-median fallback) and
+  no thesis until researched; their market caps are the raw-extract values until
+  refreshed. The template's pool-size text is now computed from the data.
+- Caveat: the original pool was "top 1,000 of the 1,816 gate survivors by a
+  preliminary pre-GM score"; that preliminary score cannot be reproduced, so the
+  rescued names are appended rather than competing for the 1,000th place.
+- Known pre-existing quirk: `is_financial_sector` in `ingest_us_pool.py` lower-cases the
+  name but the 'REIT' hint is upper-case, so REITs (e.g. NexPoint Real Estate Finance)
+  are not flagged financial.

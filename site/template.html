@@ -258,7 +258,7 @@
     </div>
     <h1>European Small/Mid-Cap Value Shortlist</h1>
     <div class="sub">
-      v6 composite score across nine dimensions, percentile-ranked against the <b>full 1,000-candidate pool</b>
+      v6 composite score across nine dimensions, percentile-ranked against the <b>full <span class="poolN">1,000</span>-candidate pool</b>
       (Capital IQ extract, March&nbsp;2026 &middot; quality-gated from 6,109 raw listings &middot;
       gross margin researched from official filings, <span id="gmCoverage">790/1000</span> covered). Edit market caps or gross margins below
       to try scenarios — every score and rank updates live, against the whole pool.
@@ -273,7 +273,7 @@
     <select id="topNFilter">
       <option value="150">Show top 150</option>
       <option value="300">Show top 300</option>
-      <option value="1000">Show all 1,000</option>
+      <option value="100000" id="optShowAll">Show all</option>
     </select>
     <select id="sortField">
       <option value="score">Sort: v6 score</option>
@@ -322,7 +322,7 @@
 
   <div class="footnote">
     <b class="hd">Scoring pool</b>
-    Every score on this page is computed against the <b>entire 1,000-company candidate pool</b> — the same
+    Every score on this page is computed against the <b>entire <span class="poolN">1,000</span>-company candidate pool</b> — the same
     percentile-ranking basis the methodology uses — regardless of the display filters above (search,
     country, top-N) which only control what's shown, not what's ranked against what.
     <b class="hd">What's fixed vs. live</b>
@@ -401,7 +401,7 @@
     <h3>Delisted / taken private</h3>
     <p class="hint">
       Companies whose stock is no longer tradable because a takeover, squeeze-out or delisting has <b>completed</b>.
-      They are hidden from the main table and the movers list, but still sit in the 1,000-company scoring pool, so no
+      They are hidden from the main table and the movers list, but still sit in the <span class="poolN">1,000</span>-company scoring pool, so no
       other company's score or rank is affected (the rank shown here is where each would have ranked). Offers that are
       only announced or pending are NOT hidden — see <b>Corporate actions</b>.
     </p>
@@ -1206,7 +1206,7 @@ function renderDetailPanel(row, rank) {
       </div>
       ${distressBox(c)}
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
-      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of 1,000.</div>
+      <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length.toLocaleString()}.</div>
       <div class="breakdown">
         <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
         <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
@@ -1605,7 +1605,7 @@ function render() {
   const prevRanks = rankDeltaMap(filters.historyDate);
   if (isHistorical) {
     document.getElementById('statRow').innerHTML = `
-      <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
+      <div class="stat"><div class="n">${COMPANIES.length.toLocaleString()}</div><div class="l">candidate pool</div></div>
       <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">needed GM research at this date</div></div>
       <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
     `;
@@ -1614,7 +1614,7 @@ function render() {
     const editedGmCount = Object.keys(gmOverrides).length;
     const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
     document.getElementById('statRow').innerHTML = `
-      <div class="stat"><div class="n">1,000</div><div class="l">candidate pool</div></div>
+      <div class="stat"><div class="n">${COMPANIES.length.toLocaleString()}</div><div class="l">candidate pool</div></div>
       <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
       <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
       <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
@@ -1829,7 +1829,7 @@ function xlsxHeaderRow(ws, rowNum, headers, colWidths) {
 function buildOverviewSheet(wb, rows, viewLabel) {
   const ws = wb.addWorksheet('Overview');
   xlsxTitleBlock(ws, 'European Small/Mid-Cap Value Shortlist — Dashboard Export',
-    `${viewLabel} · v6 composite score, full 1,000-company pool · Generated ${new Date().toISOString().slice(0,10)}`);
+    `${viewLabel} · v6 composite score, full ${COMPANIES.length.toLocaleString()}-company pool · Generated ${new Date().toISOString().slice(0,10)}`);
   const headers = ['#','Company','Ticker','Country','Archetype','Mkt Cap ($M)','Total Equity ($M)','P/B','ROE',
     'Rev Growth','Dilution','Profit %','CFO+ %','Gross Margin','v6 Score'];
   xlsxHeaderRow(ws, 4, headers, [5,32,16,16,18,14,16,8,9,11,10,9,9,13,10]);
@@ -2229,6 +2229,8 @@ function init() {
   loadLocalOverrides();
   loadTrackerState();
   initComments();
+  document.querySelectorAll('.poolN').forEach(el => { el.textContent = COMPANIES.length.toLocaleString(); });
+  { const o = document.getElementById('optShowAll'); if (o) o.textContent = `Show all ${COMPANIES.length.toLocaleString()}`; }
   { const el = document.getElementById('gmCoverage'); if (el) el.textContent = `${COMPANIES.filter(c => c.gm0 !== null && c.gm0 !== undefined).length}/${COMPANIES.length}`; }
   populateFilterOptions();
   wireToolbar();
