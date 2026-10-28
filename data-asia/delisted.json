@@ -8,5 +8,23 @@
    "https://dealsite.co.kr/articles/164537",
    "https://www.ddaily.co.kr/page/view/2026021113444773311"
   ]
+ },
+ "TSE:7250": {
+  "date": "2026-04-13",
+  "price": "JPY 2,050 per share (MBO tender offer)",
+  "reason": "Management buyout: tender offer by CORE Co. (the president's acquisition vehicle) closed successfully on 26 Jan 2026; delisted after a share consolidation (Nagoya SE decision 24 Mar 2026, delisting date 13 Apr 2026).",
+  "sources": [
+   "https://www.nihon-ma.co.jp/news/20260127_7250-11/",
+   "https://www.nse.or.jp/listing/files/20260324s.pdf"
+  ]
+ },
+ "TSE:7420": {
+  "date": "2026-03-30",
+  "price": "Share transfer into MIRAINI Holdings (no cash tender)",
+  "reason": "Became a wholly owned subsidiary of the newly formed joint holding company MIRAINI Holdings via a share transfer (business integration agreed 14 Oct 2025); TSE Prime listing cancelled at the end of March 2026 (one source says 27 Mar).",
+  "sources": [
+   "https://j-lic.com/companies/7420",
+   "https://www.daiwair.co.jp/detail_printable.cgi?code=7420"
+  ]
  }
 }
