@@ -1877,7 +1877,7 @@ function saveSnapshotBeforeUpdate() {
 }
 
 // ---- Full dashboard export: a styled, multi-tab .xlsx of everything on
-// this page (Overview, Investment Thesis, Revenue/Net-Income history,
+// this page (Overview, Investment Thesis, Revenue/Net-Income history, Your Comments,
 // Big Movers, Corporate Actions, Tracker, Methodology), scoped to
 // whichever view is currently selected (sector + live or a saved history
 // date) — uses ExcelJS rather than the xlsx.full.min.js loaded above,
@@ -1909,13 +1909,56 @@ function xlsxHeaderRow(ws, rowNum, headers, colWidths) {
   if (colWidths) colWidths.forEach((w,i) => { ws.getColumn(i+1).width = w; });
   ws.views = [{ state:'frozen', ySplit: rowNum }];
 }
+// Qualitative + personal context reused by several sheets: the research thesis
+// fields and the user's own timestamped comments (all layers: repo, Cloudflare,
+// this browser), newest first.
+let xlsxCompanyIndex = null;
+function xlsxCompanyByTicker(t) {
+  if (!xlsxCompanyIndex) {
+    xlsxCompanyIndex = {};
+    const pools = (typeof PAYLOAD !== 'undefined' && PAYLOAD.sectors) ? Object.values(PAYLOAD.sectors).map(s => s.companies) : [COMPANIES];
+    pools.forEach(list => list.forEach(c => { if (!xlsxCompanyIndex[c.t]) xlsxCompanyIndex[c.t] = c; }));
+  }
+  return xlsxCompanyIndex[t] || null;
+}
+function xlsxCommentsText(t) {
+  return commentsFor(t).map(x => `[${cmFmt(x.ts)}] ${x.text || ''}` +
+    (x.attachments && x.attachments.length ? ` (attachments: ${x.attachments.map(a => a.name).join(', ')})` : '')).join('\n');
+}
+function xlsxThesisCells(c) {
+  const th = c && c.thesis;
+  return [th ? th.business_description || '' : '', th ? th.competitive_position || '' : '', th ? th.red_flags || '' : ''];
+}
+const XLSX_QUAL_HEADERS = ['Business Description', 'Competitive Position', 'Red Flags', 'Your Comments'];
+const XLSX_QUAL_WIDTHS = [55, 50, 50, 50];
+function xlsxWrapColumns(ws, fromCol, n) {
+  for (let i = 0; i < n; i++) ws.getColumn(fromCol + i).alignment = { wrapText:true, vertical:'top' };
+}
+function buildCommentsSheet(wb) {
+  const ws = wb.addWorksheet('Your Comments');
+  const items = [];
+  commentTickers().forEach(t => {
+    const c = xlsxCompanyByTicker(t);
+    if (!c) return; // comments on companies from another market's page
+    commentsFor(t).forEach(x => items.push({ c, x }));
+  });
+  items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
+  xlsxTitleBlock(ws, 'Your Comments', `${items.length} comment${items.length===1?'':'s'} on companies in this market, newest first (repo, Cloudflare and this browser combined)`);
+  xlsxHeaderRow(ws, 4, ['Date', 'Company', 'Ticker', 'Country', 'Comment', 'Attachments', 'Saved in'], [20, 32, 16, 16, 80, 40, 22]);
+  if (!items.length) ws.addRow(['', 'No comments yet.']);
+  items.forEach(({ c, x }) => {
+    ws.addRow([cmFmt(x.ts), c.n, c.t, c.co, x.text || '', (x.attachments || []).map(a => a.name).join(', '), cmStatus(x)]);
+  });
+  xlsxWrapColumns(ws, 5, 2);
+  return ws;
+}
 function buildOverviewSheet(wb, rows, viewLabel) {
   const ws = wb.addWorksheet('Overview');
   xlsxTitleBlock(ws, 'USA/Canada Small/Mid-Cap Value Shortlist — Dashboard Export',
     `${viewLabel} · v6 composite score, ${COMPANIES.length}-company active pool · Generated ${new Date().toISOString().slice(0,10)}`);
   const headers = ['#','Company','Ticker','Country','Archetype','Mkt Cap ($M)','Total Equity ($M)','P/B','ROE',
-    'Rev Growth','Dilution','Profit %','CFO+ %','Gross Margin','v6 Score'];
-  xlsxHeaderRow(ws, 4, headers, [5,32,16,16,18,14,16,8,9,11,10,9,9,13,10]);
+    'Rev Growth','Dilution','Profit %','CFO+ %','Gross Margin','v6 Score','Your Comments'];
+  xlsxHeaderRow(ws, 4, headers, [5,32,16,16,18,14,16,8,9,11,10,9,9,13,10,60]);
   rows.forEach((r,i) => {
     const row = r.row, c = row.c;
     ws.addRow([
@@ -1928,8 +1971,10 @@ function buildOverviewSheet(wb, rows, viewLabel) {
       Number((c.profitPct||0).toFixed(4)), Number((c.cfoPct||0).toFixed(4)),
       row.gmInfo.gm!==null ? Number(row.gmInfo.gm.toFixed(4)) : null,
       Number(row.total.toFixed(2)),
+      xlsxCommentsText(c.t),
     ]);
   });
+  xlsxWrapColumns(ws, 16, 1);
   ['H','I','J','K','L','M','N'].forEach(col => { ws.getColumn(col).numFmt = '0.0%'; });
   ws.getColumn('H').numFmt = '0.00"x"';
   ws.getColumn('F').numFmt = '#,##0.0'; ws.getColumn('G').numFmt = '#,##0.0'; ws.getColumn('O').numFmt = '0.0';
@@ -1971,27 +2016,29 @@ function buildMoversSheet(wb, viewLabel) {
   const ws = wb.addWorksheet('Big Movers');
   const { climbers, decliners, prevKey } = biggestMovers(50);
   xlsxTitleBlock(ws, 'Biggest rank movers', prevKey ? `${viewLabel}, vs. ${historyLabel(prevKey)}` : `${viewLabel} — no earlier checkpoint to compare to`);
-  xlsxHeaderRow(ws, 4, ['Direction','Rank Δ','Prev Rank','Cur Rank','Company','Ticker','Country','Score Before','Score After','Cause'],
-    [10,8,10,10,32,16,16,12,12,60]);
+  xlsxHeaderRow(ws, 4, ['Direction','Rank Δ','Prev Rank','Cur Rank','Company','Ticker','Country','Score Before','Score After','Cause'].concat(XLSX_QUAL_HEADERS),
+    [10,8,10,10,32,16,16,12,12,60].concat(XLSX_QUAL_WIDTHS));
   [...climbers.map(m=>['Up',m]), ...decliners.map(m=>['Down',m])].forEach(([dir,m]) => {
     ws.addRow([dir, Math.abs(m.rankChange), m.prevRank, m.curRank, m.row.c.n, m.row.c.t, m.row.c.co,
-      Number(m.totalBefore.toFixed(2)), Number(m.totalAfter.toFixed(2)), stripHtmlEntities(m.cause)]);
+      Number(m.totalBefore.toFixed(2)), Number(m.totalAfter.toFixed(2)), stripHtmlEntities(m.cause),
+      ...xlsxThesisCells(m.row.c), xlsxCommentsText(m.row.c.t)]);
   });
-  ws.getColumn('J').alignment = { wrapText:true, vertical:'top' };
+  xlsxWrapColumns(ws, 10, 5);
   return ws;
 }
 function buildCorpActionsSheet(wb) {
   const ws = wb.addWorksheet('Corporate Actions');
   const all = flattenCorporateActions();
   xlsxTitleBlock(ws, 'Corporate Actions', `${all.length} event${all.length===1?'':'s'} on file — manually/agent-researched, not automated`);
-  xlsxHeaderRow(ws, 4, ['Category','Ticker','Company','Date','Counterparty / Role','Terms','Note','Source URL'],
-    [16,16,32,12,28,40,55,40]);
+  xlsxHeaderRow(ws, 4, ['Category','Ticker','Company','Date','Counterparty / Role','Terms','Note','Source URL'].concat(XLSX_QUAL_HEADERS),
+    [16,16,32,12,28,40,55,40].concat(XLSX_QUAL_WIDTHS));
   all.forEach(a => {
-    ws.addRow([a.categoryLabel, a.ticker, a.company, a.date||'', (a.counterparty||a.spun_off_entity||'') + (a.role?` (${a.role})`:''),
-      a.terms||'', a.note||'', a.source_url||'']);
+    const c = xlsxCompanyByTicker(a.ticker);
+    ws.addRow([a.categoryLabel, a.ticker, a.company, a.date||'', (a.counterparty||a.spun_off_entity||a.type||'') + (a.role?` (${a.role})`:''),
+      a.terms||'', a.note||'', a.source_url||'', ...xlsxThesisCells(c), xlsxCommentsText(a.ticker)]);
   });
-  ws.getColumn('F').alignment = { wrapText:true, vertical:'top' };
-  ws.getColumn('G').alignment = { wrapText:true, vertical:'top' };
+  xlsxWrapColumns(ws, 6, 2);
+  xlsxWrapColumns(ws, 9, 4);
   return ws;
 }
 function buildTrackerSheet(wb) {
@@ -2074,6 +2121,7 @@ async function exportDashboardSpreadsheet() {
     buildHistSheet(wb, top150, 'Net Income History', 'niHist', false);
     buildMoversSheet(wb, viewLabel);
     buildCorpActionsSheet(wb);
+    buildCommentsSheet(wb);
     buildTrackerSheet(wb);
     buildMethodologySheet(wb, viewLabel);
 
