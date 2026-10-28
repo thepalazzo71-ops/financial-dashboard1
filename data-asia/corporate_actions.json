@@ -26,6 +26,26 @@
    "terms": "Voluntary conditional cash offer S$0.64/share, ~S$275.6m total; irrevocables 89.96%; aims to delist; open >=28 days; final unless competing offer",
    "note": "Founders' privatisation; premium 4.9% to last trade S$0.61 and 19.9% to 12m VWAP.",
    "source_url": "https://recordowl.com/news/hafary-founding-family-privatisation-offer-64-cents"
+  },
+  {
+   "ticker": "TSE:6071",
+   "company": "IBJ, Inc.",
+   "date": "2025-11-12",
+   "counterparty": "Decolte Holdings (7372)",
+   "terms": "TOB to raise stake from 32.96% to 50.10%; Decolte stays listed; settlement from 2025-12-25",
+   "note": "Equity-method affiliate turned consolidated subsidiary via successful TOB (announced 2025-11-12).",
+   "source_url": "https://maonline.jp/news/20251112c",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "KOSDAQ:A215000",
+   "company": "GOLFZON Co., Ltd.",
+   "date": "2026-06-30",
+   "counterparty": "One & Partners (vehicle of Kim Won-il, ex-CEO/largest holder)",
+   "terms": "Voluntary delisting tender offer for parent Golfzon Holdings (121440) at 6,700 KRW/share; 1st TOB lifted holding to ~85.2% voting (below 90% threshold); 2nd TOB ran to 2026-09-02; funded by ~80bn KRW borrowing; US fund Tarton Capital objects",
+   "note": "Target is the parent Golfzon Holdings, not Golfzon Co (215000), which is its listed operating subsidiary; launch day approximate (late June 2026).",
+   "source_url": "https://newstomato.com/ReadNews.aspx?no=1308462",
+   "role": "target (parent)"
   }
  ],
  "mergers_acquisitions": [
@@ -118,6 +138,76 @@
    "terms": "Asset acquisition via Israeli court-supervised bid; price not seen; exact day unknown (reported Jan 2026)",
    "note": "Won the bid for Paxroyla capsule assets; Tel Aviv court consolidated rights to Myung In (asset deal, not equity M&A).",
    "source_url": "https://dealsite.co.kr/articles/160104"
+  },
+  {
+   "ticker": "TSE:3679",
+   "company": "ZIGExN Co., Ltd.",
+   "date": "2025-12-01",
+   "counterparty": "Quantum Reservation (via subsidiary Apple World)",
+   "terms": "Acquisition of all shares; terms undisclosed",
+   "note": "Southeast Asia hotel wholesaler acquired by subsidiary Apple World; day of month not confirmed (announced Dec 2025).",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/zigexn-acquires-quantum-reservation-via-apple-world-subsidiary",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "TSE:7080",
+   "company": "Sportsfield Co., Ltd.",
+   "date": "2025-10-01",
+   "counterparty": "Lind Sports Co., Ltd.",
+   "terms": "Share acquisition making it a subsidiary; terms not found",
+   "note": "Adds sports goods business; day of month not confirmed (Oct 2025), source is aggregator history page.",
+   "source_url": "https://finboard.jp/companies/JP:7080/history",
+   "role": "acquirer"
+  },
+  {
+   "ticker": "ASX:IEL",
+   "company": "IDP Education Limited",
+   "date": "2026-09-22",
+   "counterparty": "Blackstone Inc.",
+   "terms": "Non-binding indicative proposal A$2.50/share cash (~A$695m, ~56% premium to 8 Sep close) after earlier A$2.30 proposal; board rejected both as opportunistic/undervaluing",
+   "note": "Takeover approach by private equity rejected; Blackstone has not said whether it will return.",
+   "source_url": "https://announcements.asx.com.au/asxpdf/20260922/pdf/074cvv9s8r40vs.pdf",
+   "role": "target"
+  },
+  {
+   "ticker": "SEHK:950",
+   "company": "Lee's Pharmaceutical Holdings Limited",
+   "date": "2025-12-10",
+   "counterparty": "Alexza Pharmaceuticals (business assets, incl. Staccato One Breath platform)",
+   "role": "acquirer",
+   "terms": "Subsidiary acquires Alexza business-related assets for US$15M; completed December 2025; ends licence payments owed for Staccato-based products and Adasuve.",
+   "note": "Asset acquisition expanding pipeline and securing UCB Staccato partnership; announcement date approximated from press-release URL.",
+   "source_url": "https://www.utusan.com.my/pr-newswire-en/2025/12/lees-pharmaceutical-holdings-limited-acquires-staccato-one-breath-technology-platform-and-assets-driving-pipeline-expansion-and-advancing-global-partnership-with-ucb-through-acquired-ri/"
+  },
+  {
+   "ticker": "SEHK:2005",
+   "company": "SSY Group Limited",
+   "date": "2026-06-04",
+   "counterparty": "Anhui Xinzheng Heying Medical Technology",
+   "role": "acquirer",
+   "terms": "Non-binding letter of intent for collaboration/potential acquisition of two Class 2 modified new chemical drugs (incl. a paediatric antispasmodic); no price disclosed.",
+   "note": "Small pipeline asset deal by wholly-owned subsidiary Shijiazhuang No. 4 Pharmaceutical; outcome uncertain.",
+   "source_url": "https://www.minichart.com.sg/2026/06/05/ssy-group-signs-letter-of-intent-for-collaboration-on-two-class-2-modified-new-drugs-with-xinzheng-heying-1/"
+  },
+  {
+   "ticker": "TSE:4792",
+   "company": "YAMADA Consulting Group Co.,Ltd.",
+   "date": "2026-01",
+   "counterparty": "Manas Corporate Partners Inc.",
+   "role": "acquirer",
+   "terms": "Acquisition of Manas Corporate Partners as subsidiary (price not found).",
+   "note": "Bolt-on to strengthen M&A advisory in the Indian market; month-level date only, from the securities report history.",
+   "source_url": "https://edinetdb.jp/company/E05135/text?fy=2026"
+  },
+  {
+   "ticker": "KOSDAQ:A001540",
+   "company": "Ahn-Gook Pharmaceutical Co., Ltd.",
+   "date": "2025-10-31",
+   "counterparty": "Mirae Asset-Ankuk New Growth Investment Partnership No.1",
+   "role": "acquirer",
+   "terms": "Acquires 13m units for KRW 13bn, taking a 65% stake in a KRW 20bn venture fund formed with Mirae Asset Capital.",
+   "note": "Investment-purpose fund stake, not an operating acquisition.",
+   "source_url": "https://www.digitaltoday.co.kr/aigongsi/amp/4589/ankuk-pharmaceuticals-acquires-miraeasset-stake"
   }
  ],
  "spinoffs": [
@@ -180,6 +270,97 @@
    "terms": "Terms (size) not seen; Butler lists 09.09 trading halt & resumption and 09.09 share-cancellation decision",
    "note": "Sempio decided to cancel shares (likely treasury) on 2026-09-09; stock halted and resumed same day.",
    "source_url": "https://www.butler.works/ko/companies/00130091"
+  },
+  {
+   "ticker": "TSE:3679",
+   "company": "ZIGExN Co., Ltd.",
+   "date": "2026-06-01",
+   "counterparty": "internal reorganisation",
+   "terms": "Absorption-split of 66.6%-owned subsidiary Hoken Mammoth's insurance consultation/event business into ZIGExN Life Support division; effective 2026-06-01 (announced Apr 2026)",
+   "note": "Intra-group restructuring, not an external deal.",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/zigexn-to-absorb-subsidiary-hoken-mammoths-main-businesses"
+  },
+  {
+   "ticker": "KOSDAQ:A041830",
+   "company": "InBody Co.,Ltd",
+   "date": "2025-10-01",
+   "counterparty": "Naver Corp (type: treasury-share sale to strategic investor)",
+   "terms": "Naver acquired 1.15m InBody treasury shares (~8.5%) for 32.5bn KRW, becoming #4 shareholder",
+   "note": "Minority strategic stake for digital healthcare cooperation; day of month not confirmed (Oct 2025).",
+   "source_url": "https://finder.techleap.nl/news/feed/naver-acquires-inbody-shares-for-23m"
+  },
+  {
+   "ticker": "KOSDAQ:A215000",
+   "company": "GOLFZON Co., Ltd.",
+   "date": "2026-08-01",
+   "counterparty": "control sale of subsidiary Golfzon Country",
+   "terms": "Sale of controlling stake in golf-course unit Golfzon Country, reported valuation ~2tn KRW; ongoing",
+   "note": "Group restructuring reported in Aug 2026; day approximate, status after August not found.",
+   "source_url": "https://newstomato.com/ReadNews.aspx?no=1310149"
+  },
+  {
+   "ticker": "TSE:6034",
+   "company": "MRT Inc.",
+   "date": "2026-05-26",
+   "counterparty": "divestment of subsidiary stake",
+   "terms": "Decision to transfer all shares of consolidated subsidiary (Isha no Tomo's holding in Ishitachi to Tsukuru) to representative Keiko Yanagawa; terms not found",
+   "note": "LOW CONFIDENCE: date taken from nihon-ma.co.jp URL; search summary said identical text appears on 2016 and 2022 pages, so verify before use.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260526_6034-13/"
+  },
+  {
+   "ticker": "NZSE:GXH",
+   "company": "Green Cross Health Limited",
+   "type": "large_divestiture",
+   "date": "2026-06-01",
+   "counterparty": "Tend Health",
+   "role": "seller",
+   "terms": "Sale of Medical division (The Doctors) for NZ$270M, subject to net debt/working capital adjustments; shareholder approval at 14 Jul 2026 AGM; completed 2026-07-31. Board to consider capital return of proceeds.",
+   "note": "Green Cross Health sold its medical clinics division to Tend Health, a major reshaping of the group toward pharmacy.",
+   "source_url": "https://filingreader.com/news-wire/newzealand/2026-06-08/green-cross-health-to-sell-medical-division-for-nz270m"
+  },
+  {
+   "ticker": "TSE:4286",
+   "company": "CL Holdings Inc.",
+   "type": "divestiture",
+   "date": "2025-12",
+   "counterparty": "not identified",
+   "role": "seller",
+   "terms": "Transfer of all shares in consolidated subsidiary Gifu Create Co., Ltd. (exact day, buyer and price not found).",
+   "note": "Small subsidiary disposal reported by a financial data site; date given at month precision only.",
+   "source_url": "https://finboard.jp/companies/JP%3A4286/financials/LiabilitiesNoncurrent"
+  },
+  {
+   "ticker": "KOSE:A033270",
+   "company": "Korea United Pharm Inc.",
+   "type": "largest_shareholder_change (family succession)",
+   "date": "2026-08-18",
+   "counterparty": "Kang Won-ho (CEO), by gift of 800,000 shares",
+   "role": "n/a",
+   "terms": "Succession completed via gift of 800k shares; CEO Kang Won-ho becomes largest shareholder.",
+   "note": "Control succession within the founding family, not a market transaction or bid; date is the press report date.",
+   "source_url": "https://dealsite.co.kr/articles/167088"
+  },
+  {
+   "ticker": "KOSE:A001630",
+   "company": "Chong Kun Dang Holdings Corp.",
+   "type": "subsidiary_stake_increase",
+   "date": "2026-10-16",
+   "counterparty": "Chong Kun Dang Corp (listed subsidiary, holdco owns 26.70%)",
+   "role": "acquirer",
+   "terms": "Bond-financed programme of ~KRW 10bn per year in 2026-2028 (KRW 30bn total) to buy shares in Chong Kun Dang and other subsidiaries, to meet holding-company asset requirement by 2027-06-30.",
+   "note": "Gradual stake-building rather than a discrete deal; date is press-report date.",
+   "source_url": "https://news.mtn.co.kr/article/2026101615494456309"
+  },
+  {
+   "ticker": "KOSDAQ:A001540",
+   "company": "Ahn-Gook Pharmaceutical Co., Ltd.",
+   "type": "asset_acquisition (real estate)",
+   "date": "2026-10-15",
+   "counterparty": "Gwacheon public-housing district special planning zone 3 land and building (seller not named)",
+   "role": "acquirer",
+   "terms": "KRW 163bn (52.4% of consolidated assets); KRW 8.15bn deposit paid 29 Oct, remaining KRW 130.4bn at closing in June 2032.",
+   "note": "New Gwacheon office/HQ-expansion purchase, large relative to size; decision date from press ('15th'), report dated 2026-10-18.",
+   "source_url": "https://dailypharm.com/user/news/343518"
   }
  ]
 }
