@@ -26,5 +26,14 @@
    "https://j-lic.com/companies/7420",
    "https://www.daiwair.co.jp/detail_printable.cgi?code=7420"
   ]
+ },
+ "TSE:7923": {
+  "date": "2026-03-27",
+  "price": "JPY 1,187 per share (tender offer)",
+  "reason": "Taken private by CSRI5 (Enterprise Support Research Institute) via a tender offer (23 Dec 2025 - 16 Feb 2026) followed by a squeeze-out (demand for sale of shares); TSE delisting decided 27 Feb 2026, delisted 27 Mar 2026.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260227-11.html",
+   "https://maonline.jp/tobnews/2025_135a"
+  ]
  }
 }
