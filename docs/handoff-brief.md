@@ -2680,3 +2680,13 @@ session scratchpad (not in the repo): data goes to `data-asia/mc_overrides_appli
   the rest not found (DART largely unreachable via search). Until more GMs are known the pool-median
   GM fallback is the median of these 24, skewed to low-margin names.
 - localStorage keys on the Asia page are namespaced `shortlist_asia_*` (comments key stays shared).
+
+## Editing comments (2026-10-29)
+Comments (browser or Cloudflare layer) can be edited in place: "edit" next to "delete", Save edit / Cancel
+(Ctrl/Cmd+Enter saves, Esc cancels). The original `ts` is kept and an `editedAt` time stamp is added and shown
+("edited 29 Oct 2026, 12:27"). Cloudflare: `PUT /api/comments {ticker,id,text}` (server stamps `editedAt`;
+empty text only if the comment has attachments); the dated KV backups keep earlier versions. Repo-layer
+comments (data/comments.json) stay read-only - edit them in the dashboard and re-export; `scripts/merge_comments.py`
+now takes a newer `editedAt` text for an id it already holds. Exports/imports and the spreadsheet carry `editedAt`
+(Overview comments cell, "Your Comments" tab has a "Last edited" column). Not covered: attachments cannot be swapped
+by editing (delete + re-add the comment).

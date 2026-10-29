@@ -8,6 +8,7 @@
 //   GET    /api/ping                       -> {ok, email}
 //   GET    /api/comments                   -> {comments: {ticker: [{id, ts, text}]}, updatedAt}
 //   POST   /api/comments  {ticker,id,ts,text}   idempotent add (by id)
+//   PUT    /api/comments   edit {ticker,id,text}: replaces the text, stamps `editedAt` (server time)
 //   DELETE /api/comments?ticker=..&id=..   remove one comment (and its attachments)
 //   PUT    /api/files/<id>   raw file body (<= 10 MB), headers Content-Type + X-File-Name (URL-encoded)
 //   GET    /api/files/<id>   the file (images/PDF inline, everything else as a download)
@@ -87,10 +88,18 @@ function validAttachments(a) {
     && Number.isFinite(x.size) && x.size >= 0 && x.size <= MAX_FILE
     && typeof x.type === 'string' && x.type.length <= 100));
 }
+// the stored shape of a comment (only known fields are kept)
+function shape(e) {
+  const o = { id: e.id, ts: e.ts, text: e.text };
+  if (e.editedAt) o.editedAt = e.editedAt;
+  if (e.attachments && e.attachments.length) o.attachments = e.attachments.map(a => ({ id: a.id, name: a.name, size: a.size, type: a.type }));
+  return o;
+}
 function validEntry(e) {
   if (!(e && typeof e.ticker === 'string' && e.ticker.length > 0 && e.ticker.length <= 40
     && typeof e.id === 'string' && ID_RE.test(e.id)
     && typeof e.ts === 'string' && !Number.isNaN(Date.parse(e.ts))
+    && (e.editedAt === undefined || (typeof e.editedAt === 'string' && !Number.isNaN(Date.parse(e.editedAt))))
     && typeof e.text === 'string' && e.text.length <= MAX_TEXT && validAttachments(e.attachments))) return false;
   return e.text.trim().length > 0 || (e.attachments && e.attachments.length > 0); // text may be empty only with attachments
 }
@@ -152,13 +161,21 @@ export async function handleApi(request, env) {
     const s = await load(env, email);
     const list = s.comments[e.ticker] = s.comments[e.ticker] || [];
     if (!list.some(x => x.id === e.id)) {
-      list.push(e.attachments && e.attachments.length
-        ? { id: e.id, ts: e.ts, text: e.text, attachments: e.attachments.map(a => ({ id: a.id, name: a.name, size: a.size, type: a.type })) }
-        : { id: e.id, ts: e.ts, text: e.text });
+      list.push(shape(e));
       list.sort((a, b) => b.ts.localeCompare(a.ts));
       await store(env, email, s);
     }
     return json({ ok: true });
+  }
+  if (request.method === 'PUT') {
+    let e; try { e = await request.json(); } catch (x) { return bad('invalid JSON'); }
+    if (!e || typeof e.ticker !== 'string' || typeof e.id !== 'string' || typeof e.text !== 'string' || e.text.length > MAX_TEXT) return bad('invalid edit');
+    const s = await load(env, email);
+    const cur = (s.comments[e.ticker] || []).find(x => x.id === e.id);
+    if (!cur) return bad('comment not found', 404);
+    if (!e.text.trim() && !(cur.attachments && cur.attachments.length)) return bad('text required');
+    if (e.text !== cur.text) { cur.text = e.text; cur.editedAt = new Date().toISOString(); await store(env, email, s); }
+    return json({ ok: true, editedAt: cur.editedAt || null });
   }
   if (request.method === 'DELETE') {
     const ticker = url.searchParams.get('ticker'), id = url.searchParams.get('id');

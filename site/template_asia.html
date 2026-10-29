@@ -152,6 +152,8 @@
   .cm-text { font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 3px; color: var(--ink); }
   .cm-del { background: none; border: none; color: var(--ink-faint); cursor: pointer; font: inherit; font-size: 11px; padding: 0; }
   .cm-del:hover { color: var(--brick); text-decoration: underline; }
+  .cm-edit-input { display: block; width: 100%; min-height: 64px; box-sizing: border-box; font: inherit; font-size: 13px; line-height: 1.45; color: var(--ink); background: var(--paper); border: 1px solid var(--teal, var(--rule-strong)); border-radius: 4px; padding: 8px 10px; resize: vertical; margin-top: 4px; }
+  .cm-edited { font-style: italic; }
   .cm-files { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; align-items: center; }
   .cm-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; padding: 2px 8px; border: 1px solid var(--rule-strong); border-radius: 12px; background: var(--paper); color: var(--ink); max-width: 100%; }
   .cm-chip button { background: none; border: none; cursor: pointer; color: var(--ink-faint); font: inherit; padding: 0; }
@@ -649,6 +651,8 @@ function cmCanDelete(x) { return x.layer !== 'repo'; }
 // ---- attachments: file bytes live in Cloudflare KV (PUT/GET /api/files/<id>); a comment only holds
 // [{id, name, size, type}]. Uploading needs the Cloudflare connection (cloudState 'ok').
 const CM_MAX_FILES = 5, CM_MAX_FILE = 10 * 1024 * 1024;
+const editing = {};                                   // comment id -> true while its text is being edited
+const editDrafts = {};                                // comment id -> unsaved edit text
 const pendingFiles = {};                              // ticker -> File[] chosen but not yet posted
 const uploading = {};                                 // ticker -> true while a comment with files is being sent
 function cmSize(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
@@ -684,8 +688,8 @@ function commentsBoxInner(t) {
     <div class="cm-bar"><button class="btn small cm-add" type="button" data-ticker="${escHtml(t)}" ${uploading[t] ? 'disabled' : ''}>Add comment</button><span class="cm-hint">${hint}</span></div>
     ${list.map(x => `
       <div class="cm-item">
-        <div class="cm-meta"><span>${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</div>
-        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
+        <div class="cm-meta"><span>${cmFmt(x.ts)}${cmEditedLabel(x)} &middot; ${cmStatus(x)}</span><span>${cmActions(t, x)}</span></div>
+        ${cmBody(t, x)}
       </div>`).join('')}
   `;
 }
@@ -722,7 +726,49 @@ async function cloudFetch(path, opts) {
   if (!r.ok || !ct.includes('application/json')) throw new Error('cloud unavailable (' + r.status + ')');
   return r.json();
 }
-function cmPlain(x) { return x.attachments && x.attachments.length ? { id: x.id, ts: x.ts, text: x.text, attachments: x.attachments } : { id: x.id, ts: x.ts, text: x.text }; }
+function cmPlain(x) {
+  const o = { id: x.id, ts: x.ts, text: x.text };
+  if (x.editedAt) o.editedAt = x.editedAt;
+  if (x.attachments && x.attachments.length) o.attachments = x.attachments;
+  return o;
+}
+// meta line, action buttons and body of one comment (shared by the company box and the Comments window)
+function cmEditedLabel(x) { return x.editedAt ? ` <span class="cm-edited" title="Original text written ${escHtml(cmFmt(x.ts))}">&middot; edited ${cmFmt(x.editedAt)}</span>` : ''; }
+function cmActions(t, x) {
+  if (!cmCanDelete(x)) return '';
+  return (editing[x.id] ? '' : `<button class="cm-del cm-edit" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">edit</button> &middot; `) +
+    `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>`;
+}
+function cmBody(t, x) {
+  if (editing[x.id]) {
+    const v = editDrafts[x.id] !== undefined ? editDrafts[x.id] : (x.text || '');
+    return `<textarea class="cm-edit-input" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">${escHtml(v)}</textarea>
+      <div class="cm-bar"><button class="btn small cm-save" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">Save edit</button><button class="btn ghost small cm-cancel" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">Cancel</button><span class="cm-hint">The edit is saved with its own date and time.</span></div>${cmAttachmentsHtml(x)}`;
+  }
+  return `${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}`;
+}
+async function saveEdit(t, id) {
+  const cur = commentsFor(t).find(x => x.id === id);
+  if (!cur || cur.layer === 'repo') return;
+  const text = (editDrafts[id] !== undefined ? editDrafts[id] : cur.text || '').trim();
+  if (!text && !(cur.attachments && cur.attachments.length)) { alert('A comment needs some text.'); return; }
+  if (text !== (cur.text || '')) {
+    const now = new Date().toISOString();
+    if (cur.layer === 'local') {
+      const e = (commentsState[t] || []).find(x => x.id === id);
+      if (e) { e.text = text; e.editedAt = now; saveComments(); }
+    } else {
+      try {
+        const r = await cloudFetch('/api/comments', { method: 'PUT', body: JSON.stringify({ ticker: t, id, text }) });
+        const e = (cloudComments[t] || []).find(x => x.id === id);
+        if (e) { e.text = text; e.editedAt = r.editedAt || now; }
+      } catch (err) { alert('Could not save the edit to the cloud store right now - your text is still in the box, try again.'); return; }
+    }
+  }
+  delete editing[id]; delete editDrafts[id];
+  refreshCommentUI(t);
+}
+function cancelEdit(t, id) { delete editing[id]; delete editDrafts[id]; refreshCommentUI(t); }
 async function pushLocalToCloud() {
   for (const t of Object.keys(commentsState)) {
     for (const x of commentsState[t].slice()) {
@@ -814,9 +860,9 @@ function renderCommentsModal() {
     const c = byT[t];
     return `
       <div class="cm-item">
-        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)} &middot; ${cmStatus(x)}</span>
-          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && cmCanDelete(x)) ? ' &middot; ' : ''}${cmCanDelete(x) ? `<button class="cm-del" type="button" data-ticker="${escHtml(t)}" data-id="${escHtml(x.id)}">delete</button>` : ''}</span></div>
-        ${x.text ? `<div class="cm-text">${escHtml(x.text)}</div>` : ''}${cmAttachmentsHtml(x)}
+        <div class="cm-meta"><span><b>${c ? escHtml(c.n) : escHtml(t)}</b> &middot; ${escHtml(t)} &middot; ${cmFmt(x.ts)}${cmEditedLabel(x)} &middot; ${cmStatus(x)}</span>
+          <span>${c ? `<button class="cm-del cm-show" type="button" data-ticker="${escHtml(t)}">show in table</button>` : ''}${(c && cmCanDelete(x)) ? ' &middot; ' : ''}${cmActions(t, x)}</span></div>
+        ${cmBody(t, x)}
       </div>`;
   }).join('') : '<p class="no-thesis">No comments yet. Open any company and use the comment box at the bottom of its detail panel.</p>');
 }
@@ -893,6 +939,16 @@ function initComments() {
       if (ta) addComment(add.dataset.ticker, ta.value);
       return;
     }
+    const edit = e.target.closest('.cm-edit');
+    if (edit) {
+      const t = edit.dataset.ticker, id = edit.dataset.id, cur = commentsFor(t).find(x => x.id === id);
+      if (cur) { editing[id] = true; editDrafts[id] = cur.text || ''; refreshCommentUI(t); const ta = document.querySelector(`.cm-edit-input[data-id="${CSS.escape(id)}"]`); if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); } }
+      return;
+    }
+    const save = e.target.closest('.cm-save');
+    if (save) { saveEdit(save.dataset.ticker, save.dataset.id); return; }
+    const cancel = e.target.closest('.cm-cancel');
+    if (cancel) { cancelEdit(cancel.dataset.ticker, cancel.dataset.id); return; }
     const pick = e.target.closest('.cm-pick');
     if (pick) { const inp = pick.parentElement.querySelector('.cm-file'); if (inp) inp.click(); return; }
     const unpick = e.target.closest('.cm-unpick');
@@ -924,7 +980,14 @@ function initComments() {
     refreshCommentUI(t);
     if (problems.length) alert('Not attached:\n' + problems.join('\n'));
   });
+  document.addEventListener('input', e => {
+    if (e.target.classList && e.target.classList.contains('cm-edit-input')) editDrafts[e.target.dataset.id] = e.target.value;
+  });
   document.addEventListener('keydown', e => {
+    if (e.target.classList && e.target.classList.contains('cm-edit-input')) {
+      if (e.key === 'Escape') { e.preventDefault(); cancelEdit(e.target.dataset.ticker, e.target.dataset.id); return; }
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); editDrafts[e.target.dataset.id] = e.target.value; saveEdit(e.target.dataset.ticker, e.target.dataset.id); return; }
+    }
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && e.target.classList && e.target.classList.contains('cm-input')) {
       e.preventDefault();
       addComment(e.target.dataset.ticker, e.target.value);
@@ -1962,7 +2025,7 @@ function xlsxCompanyByTicker(t) {
   return xlsxCompanyIndex[t] || null;
 }
 function xlsxCommentsText(t) {
-  return commentsFor(t).map(x => `[${cmFmt(x.ts)}] ${x.text || ''}` +
+  return commentsFor(t).map(x => `[${cmFmt(x.ts)}${x.editedAt ? ', edited ' + cmFmt(x.editedAt) : ''}] ${x.text || ''}` +
     (x.attachments && x.attachments.length ? ` (attachments: ${x.attachments.map(a => a.name).join(', ')})` : '')).join('\n');
 }
 function xlsxThesisCells(c) {
@@ -1984,12 +2047,12 @@ function buildCommentsSheet(wb) {
   });
   items.sort((a, b) => (b.x.ts || '').localeCompare(a.x.ts || ''));
   xlsxTitleBlock(ws, 'Your Comments', `${items.length} comment${items.length===1?'':'s'} on companies in this market, newest first (repo, Cloudflare and this browser combined)`);
-  xlsxHeaderRow(ws, 4, ['Date', 'Company', 'Ticker', 'Country', 'Comment', 'Attachments', 'Saved in'], [20, 32, 16, 16, 80, 40, 22]);
+  xlsxHeaderRow(ws, 4, ['Date', 'Last edited', 'Company', 'Ticker', 'Country', 'Comment', 'Attachments', 'Saved in'], [20, 20, 32, 16, 16, 80, 40, 22]);
   if (!items.length) ws.addRow(['', 'No comments yet.']);
   items.forEach(({ c, x }) => {
-    ws.addRow([cmFmt(x.ts), c.n, c.t, c.co, x.text || '', (x.attachments || []).map(a => a.name).join(', '), cmStatus(x)]);
+    ws.addRow([cmFmt(x.ts), x.editedAt ? cmFmt(x.editedAt) : '', c.n, c.t, c.co, x.text || '', (x.attachments || []).map(a => a.name).join(', '), cmStatus(x)]);
   });
-  xlsxWrapColumns(ws, 5, 2);
+  xlsxWrapColumns(ws, 6, 2);
   return ws;
 }
 function buildOverviewSheet(wb, rows, viewLabel) {

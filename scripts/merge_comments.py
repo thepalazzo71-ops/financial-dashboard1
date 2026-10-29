@@ -26,11 +26,19 @@ def main():
             continue
         have = {x["id"] for x in store.get(ticker, [])}
         for x in items:
+            # an already-merged comment that was edited later: take the newer text
+            cur = next((y for y in store.get(ticker, []) if isinstance(x, dict) and y["id"] == x.get("id")), None)
+            if cur and isinstance(x.get("editedAt"), str) and x["editedAt"] > cur.get("editedAt", "") and isinstance(x.get("text"), str) and x["text"].strip():
+                cur["text"], cur["editedAt"] = x["text"], x["editedAt"]
+                added += 1
+                continue
             atts = x.get("attachments") if isinstance(x, dict) else None
             atts = atts if isinstance(atts, list) and atts else None
             if (isinstance(x, dict) and isinstance(x.get("id"), str) and isinstance(x.get("ts"), str)
                     and isinstance(x.get("text"), str) and (x["text"].strip() or atts) and x["id"] not in have):
                 item = {"id": x["id"], "ts": x["ts"], "text": x["text"]}
+                if isinstance(x.get("editedAt"), str):
+                    item["editedAt"] = x["editedAt"]
                 if atts:  # metadata only: the file bytes stay in Cloudflare
                     item["attachments"] = atts
                 store.setdefault(ticker, []).append(item)
