@@ -22094,6 +22094,126 @@
    "source_type": "aggregator_statement",
    "notes": "",
    "applied": true
+  },
+  "SGX:XJB": {
+   "status": "ok",
+   "gm": 0.1925,
+   "fiscal_year": "FY2025 (Dec 2025)",
+   "currency": "RMB mm",
+   "revenue": 511.2,
+   "gross_profit": 98.4,
+   "source_url": "https://www.itiger.com/news/1120643006",
+   "source_type": "results_announcement",
+   "notes": "Revenue RMB511.2m, gross profit RMB98.4m (company reported margin 19.2%); simplywall.st figures differ and were ignored.",
+   "applied": true
+  },
+  "KOSDAQ:A047310": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "",
+   "currency": "KRW",
+   "revenue": null,
+   "gross_profit": null,
+   "source_url": "",
+   "source_type": "",
+   "notes": "2025 revenue ~KRW686.5bn seen but no gross profit line found in 2 searches; Simply Wall St gross profit snapshot had unclear period (revenue 695.1bn did not match).",
+   "applied": false
+  },
+  "TSE:7683": {
+   "status": "ok",
+   "gm": 0.6081,
+   "fiscal_year": "FY ended Jan 2026",
+   "currency": "JPY mm",
+   "revenue": 23327,
+   "gross_profit": 14185,
+   "source_url": "https://envalith.com/en/companies/7683",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue 23,327; cost of sales 9,142; GP 14,185.",
+   "applied": true
+  },
+  "TSE:7084": {
+   "status": "ok",
+   "gm": 0.1524,
+   "fiscal_year": "FY ended Mar 2026",
+   "currency": "JPY mm",
+   "revenue": 14517,
+   "gross_profit": 2213,
+   "source_url": "https://finboard.jp/companies/JP:7084/income-statement",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue 14,517 (also j-lic), GP 2,213. Prior FY2025 (Mar 2025): 13,657/1,934.",
+   "applied": true
+  },
+  "KOSE:A003000": {
+   "status": "not_found",
+   "gm": 0.4469,
+   "fiscal_year": "FY2025 (Dec 2025)",
+   "currency": "KRW bn",
+   "revenue": 200.7,
+   "gross_profit": 89.7,
+   "source_url": "https://simplywall.st/stock/kose/a003000",
+   "source_type": "aggregator_statement",
+   "notes": "[merge: rejected - sources conflict] Revenue 200.7bn, cost of revenue 111.0bn, GP 89.7bn (Simply Wall St). Paasa lists GP 95.7bn (GM 47.7%) - sources conflict; used the internally consistent set.",
+   "applied": false
+  },
+  "TSE:3967": {
+   "status": "ok",
+   "gm": 0.3555,
+   "fiscal_year": "FY ended Feb 2026",
+   "currency": "JPY mm",
+   "revenue": 8959,
+   "gross_profit": 3185,
+   "source_url": "https://finboard.jp/companies/JP:3967/income-statement",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue 8,959, GP 3,185. Prior FY Feb 2025: 7,317/2,879 (39.3%).",
+   "applied": true
+  },
+  "SPSE:2928": {
+   "status": "ok",
+   "gm": 0.4591,
+   "fiscal_year": "FY ended Mar 2026",
+   "currency": "JPY mm",
+   "revenue": 167257,
+   "gross_profit": 76791,
+   "source_url": "https://stockanalysis.com/quote/spse/2928/financials/income-statement/",
+   "source_type": "aggregator_statement",
+   "notes": "IFRS; revenue 167,257, cost of sales 90,466, GP 76,791 (aggregator margin 45.91%).",
+   "applied": true
+  },
+  "TSE:3561": {
+   "status": "ok",
+   "gm": 0.695,
+   "fiscal_year": "FY ended Mar 2026",
+   "currency": "JPY mm",
+   "revenue": 36262,
+   "gross_profit": 25202,
+   "source_url": "https://finboard.jp/companies/JP:3561/income-statement",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue 36,262 (tanshin 36,261), cost of sales 11,060, GP 25,202.",
+   "applied": true
+  },
+  "Catalist:OTS": {
+   "status": "ok",
+   "gm": 0.2257,
+   "fiscal_year": "TTM to Dec 2025",
+   "currency": "SGD mm",
+   "revenue": 27.16,
+   "gross_profit": 6.13,
+   "source_url": "https://stockanalysis.com/quote/sgxc/OTS/financials/income-statement/",
+   "source_type": "aggregator_statement",
+   "notes": "FY Jun-2026 results not found; FY2025 (Jun 2025) is >15 months old so TTM used. FY2025 alt: rev 29.75, GP 7.373 (24.8%).",
+   "applied": true
+  },
+  "SEHK:8521": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "",
+   "currency": "HKD",
+   "revenue": null,
+   "gross_profit": null,
+   "source_url": "",
+   "source_type": "",
+   "notes": "FY2025 annual results not found; StockAnalysis columns ambiguous (first column 134.96/25.78 inconsistent with H1-2025 interim revenue HK$36.5m, GP HK$5.8m), so not used.",
+   "applied": false
   }
  }
 }

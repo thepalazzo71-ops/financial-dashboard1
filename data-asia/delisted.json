@@ -35,5 +35,115 @@
    "https://www.jpx.co.jp/news/1023/20260227-11.html",
    "https://maonline.jp/tobnews/2025_135a"
   ]
+ },
+ "TSE:9927": {
+  "date": "2026-06-19",
+  "price": "JPY 972 per share",
+  "reason": "MBO tender offer by IAPF3 Co., Ltd. (IA Partners affiliate) succeeded (offer period 2026-02-16 to 2026-04-02), followed by share consolidation squeeze-out and delisting.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260213-11.html",
+   "https://j-lic.com/companies/9927",
+   "https://kabukiso.com/apply/tob/2026/wattmann.html"
+  ]
+ },
+ "TSE:6489": {
+  "date": "2026-05-28",
+  "price": "Share transfer; exchange ratio not confirmed (Maezawa Kasei 7925 ratio 1.11 per JPX doc; Maezawa Industries ratio not confirmed, one site says 1:1)",
+  "reason": "Maezawa Industries became a wholly owned subsidiary of Maezawa Holdings via joint share transfer with Maezawa Kasei Industries (7925); Holdings technically listed on TSE Prime 2026-06-01.",
+  "sources": [
+   "https://www.jpx.co.jp/listing/stocks/new/t13vrt000001435r-att/06MAEZAWAHoldings-Outline.pdf",
+   "https://www2.jpx.co.jp/disc/575A0/140120260531556279.pdf",
+   "https://j-lic.com/companies/6489"
+  ]
+ },
+ "ASX:SDI": {
+  "date": "2026-07-07",
+  "price": "AUD 1.40 per share cash",
+  "reason": "Scheme of arrangement; InnoXvest Dental Pty Ltd (subsidiary of Beijing Guoci Kebo Technology/Sinocera) acquired 100% of SDI; implemented 2026-07-06.",
+  "sources": [
+   "https://announcements.asx.com.au/asxpdf/20260706/pdf/071fh5gwqzmpt9.pdf",
+   "https://investorpa.com/announcement-pdf/20260707/313902.pdf",
+   "https://kalkinemedia.com/au/news/announcements/innoxvest-dental-pty-ltd-finalizes-acquisition-of-sdi-limited-prompting-asx-delisting"
+  ]
+ },
+ "TSE:7105": {
+  "date": "2026-04-27",
+  "price": "JPY 1,537 per share (tender offer)",
+  "reason": "Tender offer by LVJ Holdings 2 (Japan Industrial Partners) succeeded 2026-02-18, followed by share consolidation squeeze-out; renamed Logisnext 2026-04-30.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260409-11.html",
+   "https://www.nihon-ma.co.jp/news/20260219_7105-13/",
+   "https://www.mhi.com/jp/notice/notice_260219.html"
+  ]
+ },
+ "TSE:3655": {
+  "date": "2026-03-17",
+  "price": "JPY 2,706 per share (tender offer)",
+  "reason": "Fujitsu acquired BrainPad via tender offer (success announced 2025-12-16) then share consolidation squeeze-out approved at shareholders meeting.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260226-12.html",
+   "https://www.jpx.co.jp/news/1023/20251030-13.html",
+   "https://j-lic.com/companies/3655"
+  ]
+ },
+ "TSE:2180": {
+  "date": "2026-09-16",
+  "price": "JPY 1,320 per share (tender offer)",
+  "reason": "Akatsuki Inc. (3932) tender offer (2026-05-14 to 06-24, settlement 07-01) then share consolidation squeeze-out leaving Akatsuki and Next Field as sole shareholders.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260828-11.html",
+   "https://www2.jpx.co.jp/disc/39320/140120260512526453.pdf",
+   "https://www.ssu.co.jp/ir/wp-content/uploads/2026/06/0828bdfee507db5ccb5358d080ec24d7.pdf"
+  ]
+ },
+ "TSE:6734": {
+  "date": "2026-03-23",
+  "price": "JPY 2,650 per share (tender offer; squeeze-out via demand for sale of shares)",
+  "reason": "Saxa Inc. (6675) acquired Newtech via tender offer (2025-12-19 to 2026-02-09, successful) followed by sell-out demand squeeze-out.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260219-11.html",
+   "https://www.jpx.co.jp/news/1023/20251218-11.html",
+   "https://kabukiso.com/apply/tob/2025/newtech.html"
+  ]
+ },
+ "TSE:4974": {
+  "date": "2026-06-12",
+  "price": "JPY 1,150 per share (tender offer)",
+  "reason": "Takara Holdings (60.91% parent) tender offer (2026-02-16 to 04-06, successful) followed by share consolidation squeeze-out; delisted from TSE Prime.",
+  "sources": [
+   "https://www.jpx.co.jp/news/1023/20260520-11.html",
+   "https://www.jpx.co.jp/news/1023/20260213-12.html",
+   "https://j-lic.com/companies/4974"
+  ]
+ },
+ "TSE:7635": {
+  "date": "2026-03-24",
+  "price": "JPY 1,710 per share (tender offer)",
+  "reason": "MBO: UMK Co., Ltd. tender offer (2025-11-13 to 12-25, successful) followed by share consolidation squeeze-out approved at EGM scheduled 2026-03-03.",
+  "sources": [
+   "https://kabukiso.com/apply/tob/2025/sugita-ace.html",
+   "https://j-lic.com/companies/7635",
+   "https://www.rakuten-sec.co.jp/ITS/Companyfile/repay_date_change_20261.html"
+  ]
+ },
+ "TSE:4333": {
+  "date": "2026-03-30",
+  "price": "n/a (share transfer; exchange ratio not seen)",
+  "reason": "Joint share transfer with Land Computer (3924) creating holding company Toranvia (Tranvia), which became parent of Toho System Science; Toranvia listed on TSE Prime 2026-04-01 (code 545A).",
+  "sources": [
+   "https://j-lic.com/companies/4333",
+   "https://www.jpx.co.jp/listing/stocks/new/t13vrt000000oge8-att/04Toranvia-Outline.pdf",
+   "https://www.kabutore.biz/genzaikabuka/4333.html"
+  ]
+ },
+ "-": {
+  "date": "2025-07-16",
+  "price": "n/a (voluntary delisting, no scheme; earlier Kin Group/Geminder takeover bid was A$0.84 per share in 2023-24)",
+  "reason": "Raphael Geminder (Kin Group, ~88% holder) obtained ASX approval and shareholder special resolution (90.73% in favour) for voluntary delisting from ASX, removed 2025-07-16.",
+  "sources": [
+   "https://pactgroup.com/wp-content/uploads/2025/08/Annual-Report_2025.pdf",
+   "https://announcements.asx.com.au/asxpdf/20250429/pdf/06j4nlks2xbn02.pdf",
+   "https://www.packagingnews.com.au/latest/pact-to-delist-from-asx-next-week"
+  ]
  }
 }
