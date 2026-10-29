@@ -3953,7 +3953,17 @@
    "source_url": "https://simplywall.st/stock/kosdaq/a067990",
    "source_type": "aggregator_statement",
    "notes": "FY2025 annual GP not found in 2 searches. SWS TTM to Mar-2026 approx revenue 2.6tn, GP 235.8bn KRW (~0.09) - rounded/TTM, not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 revenue ~KRW2.55tn, OP 40.8bn found; no COGS/GP line in 2 searches. Prior TTM GM ~9% not used."
+   }
   },
   "TSE:4979": {
    "status": "ok",
@@ -4016,16 +4026,26 @@
    "applied": true
   },
   "ASX:JYC": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026/6",
+   "status": "ok",
+   "gm": 0.5482,
+   "fiscal_year": "FY2026 (Jun-2026)",
    "currency": "AUD",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://filingreader.com/news-wire/sydney/2026-08-31/joyce-corporation-reports-strong-fy26-growth-and-higher-dividends",
-   "source_type": "results_announcement",
+   "source_url": "https://stockanalysis.com/quote/asx/JYC/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY26 (Jun-2026) revenue A$169.9m; company reports contribution margin (A$84.3m), no gross profit line found. FY25 StockAnalysis GP 80.99 on rev 148.15 (older than 15 months) not used.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.5482,
+    "fiscal_year": "FY2026 (Jun-2026)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/asx/JYC/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis latest FY gross margin 54.82% (prior FY 54.67% = FY25 80.99/148.15, consistent). Company says KWB operating gross margin >50%. Page dated Aug-2026 so likely FY26 but not independently confirmed."
+   }
   },
   "SGX:BBW": {
    "status": "ok",
@@ -4073,7 +4093,17 @@
    "source_url": "https://stockanalysis.com/quote/hkg/2348/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "Official FY2025 results not found in 2 searches. StockAnalysis FY2025 rev 1,231m / GP 557.4m CNY (gm ~0.453) but its FY2024 GP (532.1m) contradicts official HKEX FY2024 GP 577.6m, so aggregator GP definition unreliable; not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0328/2025032804062.pdf",
+    "source_type": "",
+    "notes": "Official FY2024 GM 54.5% (rev 1,060.3m, GP 577.6m CNY); H1-2025 GM fell ~8.7pp on capacity constraints and VBP price cuts; StockAnalysis FY2025 45.3% (rev 1,231m) unreliable/conflicting; FY2025 official figure not retrieved. Peer/estimate range ~45%."
+   }
   },
   "KOSDAQ:A131220": {
    "status": "not_found",
@@ -4085,7 +4115,17 @@
    "source_url": "https://www.butler.works/ko/companies/00608316",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 81.1bn KRW (Butler) but sources conflict (47.0bn standalone?); no FY2025 annual gross profit found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 revenue 81.1bn, OP 5.5bn found; no COGS/GP line in 2 searches."
+   }
   },
   "KOSE:A092230": {
    "status": "ok",
@@ -4157,7 +4197,17 @@
    "source_url": "https://www.butler.works/ko/companies/00109587",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 266.6bn KRW found; no FY2025 gross profit in 2 searches (SWS TTM figures conflict on revenue scale).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 revenue 266.6bn, OP 10.3bn found; Investing.com shows 11.91% GM with unspecified period - not used."
+   }
   },
   "KOSE:A001680": {
    "status": "ok",
@@ -4229,7 +4279,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: 2025 revenue ~KRW396.3bn found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a104460/dypnfltd-shares",
+    "source_type": "",
+    "notes": "Sources conflict: SWS TTM Sep-2025 GM 17.8% (rev 431bn); Paasa FY2025 rev 459.3bn GP 61.1bn (13.3%, unclear if same company); Butler FY2025 rev 396.3bn. No clean FY2025 GP; not used. Business description uncertain."
+   }
   },
   "KOSDAQ:A089600": {
    "status": "not_found",
@@ -4241,7 +4301,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: no FY2025 annual revenue + gross profit lines found",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 audit report exists on nasmedia.co.kr but contents not retrieved; revenue figures conflict (117.9bn vs ~143bn TTM); cost of revenue definitions unclear. H1-2026 GP 58.7bn mentioned only."
+   }
   },
   "KOSDAQ:A051490": {
    "status": "not_found",
@@ -4253,31 +4323,61 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: 2025 revenue KRW184.6bn (butler.works) found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/051490/financials/income-statement/",
+    "source_type": "",
+    "notes": "FY2025 revenue 184.6bn, OP about -0.1bn; StockAnalysis page exists but GP row not shown in search output."
+   }
   },
   "TSE:6804": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026/3",
+   "status": "ok",
+   "gm": 0.0651,
+   "fiscal_year": "FY2026/3 (Mar-2026)",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/tyo/6804/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "2 searches: FY2026/3 revenue JPY448,250mm (tanshin) found but no gross profit / cost of sales line in results",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0651,
+    "fiscal_year": "FY2026/3 (Mar-2026)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/tyo/6804/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "GP 29,168mm / revenue 448,250mm JPY = 6.51% (StockAnalysis; Quartr and Stockopedia agree). Prior FY 9.35%."
+   }
   },
   "TSE:9691": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026/3",
+   "status": "ok",
+   "gm": 0.2579,
+   "fiscal_year": "FY2026/3 (Mar-2026)",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://www2.jpx.co.jp/disc/96910/081220260511521905_tse-acedjpsm-96910-20260514396910-ixbrl.htm",
+   "source_type": "results_announcement",
    "notes": "2 searches: FY2026/3 revenue JPY25,735mm, OP 3,009mm, SG&A 3,627mm (strainer) found; no explicit GP/cost of sales line (implied GP ~6,636 => ~25.8%, not used)",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2579,
+    "fiscal_year": "FY2026/3 (Mar-2026)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www2.jpx.co.jp/disc/96910/081220260511521905_tse-acedjpsm-96910-20260514396910-ixbrl.htm",
+    "source_type": "results_announcement",
+    "notes": "Derived: revenue 25,735mm, OP 3,009mm, SG&A 3,627mm (strainer, prior pass) => GP = OP + SG&A = 6,636mm, GM 25.79%. No explicit GP line seen; derived by identity, not guessed."
+   }
   },
   "SEHK:1397": {
    "status": "ok",
@@ -4325,7 +4425,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: 2025 revenue KRW279.7bn found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://stockopedia.com/share-prices/motonic-KRX:009680/income-statement",
+    "source_type": "",
+    "notes": "FY2025 revenue 279.7bn, OP 18.5bn found; no FY2025 GP. Stockopedia latest column is FY2024: revenue 290,605mm, GP 48,263mm (16.6%) - older year, not used."
+   }
   },
   "SGX:MR7": {
    "status": "ok",
@@ -4373,7 +4483,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: FY2026/6 consolidated revenue JPY16,777mm (tanshin) found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/78090/140120260814520226.pdf",
+    "source_type": "",
+    "notes": "FY2026/6 revenue 16,777mm; manufacturing cost increase cited; no GP line in 2 searches."
+   }
   },
   "KOSE:A003850": {
    "status": "ok",
@@ -4412,28 +4532,48 @@
    "applied": true
   },
   "KOSE:A010100": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.0891,
+   "fiscal_year": "FY2025 (Dec-2025)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://valueinvesting.io/010100.KS/metric/gross-margin",
+   "source_type": "aggregator_margin",
    "notes": "2 searches: 2025 revenue ~KRW1,699.3bn found; Valueline GP row not attributable to a year",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0891,
+    "fiscal_year": "FY2025 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://valueinvesting.io/010100.KS/metric/gross-margin",
+    "source_type": "aggregator_margin",
+    "notes": "valueinvesting.io GM 8.91% at 2025-12-31; Stockopedia rev 1,699bn GP 151.5bn = 8.92% agrees. Paasa/TipRanks show GP 158.3bn (9.3%) - minor conflict."
+   }
   },
   "TSE:2491": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec)",
+   "status": "ok",
+   "gm": 0.304,
+   "fiscal_year": "FY2025/12 (Dec-2025)",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://strainer.jp/companies/JP-2491/financials/GrossMargin",
+   "source_type": "aggregator_margin",
    "notes": "2 searches: FY2025 consolidated revenue JPY24,169mm found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.304,
+    "fiscal_year": "FY2025/12 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://strainer.jp/companies/JP-2491/financials/GrossMargin",
+    "source_type": "aggregator_margin",
+    "notes": "Strainer FY12/2025 gross margin 30.4% (prior year 32.8%); revenue 24,169mm. Consolidated per FY2025 tanshin basis (assumed from aggregator)."
+   }
   },
   "TSE:7849": {
    "status": "not_found",
@@ -4445,7 +4585,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: FY2025 revenue JPY8,143mm (non-consolidated tanshin) found but no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "non-consolidated",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/78490/081220260212557260_tse-anedjpsm-78490-20260212378490-ixbrl.htm",
+    "source_type": "",
+    "notes": "FY2025/12 non-consolidated revenue 8,143mm, OP 1,756mm; book content segment margin 34.3%; no GP line found."
+   }
   },
   "KOSE:A005810": {
    "status": "ok",
@@ -4496,16 +4646,26 @@
    "applied": true
   },
   "KOSE:A111380": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.2874,
+   "fiscal_year": "latest reported (rev 243.6bn ~ FY2025 244.1bn)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00367710",
+   "source_url": "https://simplywall.st/stock/kose/a111380",
    "source_type": "aggregator_statement",
    "notes": "Code 111380 = 동인기연. FY2025 revenue ~KRW 244.1bn found, but no gross profit/COGS within 2 searches",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2874,
+    "fiscal_year": "latest reported (rev 243.6bn ~ FY2025 244.1bn)",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://simplywall.st/stock/kose/a111380",
+    "source_type": "aggregator_statement",
+    "notes": "Simply Wall St last reported: revenue 243.6bn, COGS 173.7bn, GP 70.0bn = 28.7%; period not labelled but revenue within 0.2% of FY2025 244.1bn (Butler). FY2024 GM 31.4% (Craft: rev 226.7bn, GP 71.2bn). Business description low confidence."
+   }
   },
   "SEHK:57": {
    "status": "ok",
@@ -4544,40 +4704,70 @@
    "applied": true
   },
   "TSE:3916": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY ending 2026-06",
+   "status": "ok",
+   "gm": 0.2484,
+   "fiscal_year": "TTM to ~Mar-2026 (FY6/2026 GP not stated)",
    "currency": "JPY mm",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://scouter.monex.co.jp/news/detail/3916_20260812_act_20260812_153037_4",
+   "source_url": "https://stockanalysis.com/quote/tyo/3916/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "FY6/2026 revenue 25,546 found but 売上総利益 not visible in 2 searches",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2484,
+    "fiscal_year": "TTM to ~Mar-2026 (FY6/2026 GP not stated)",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://stockanalysis.com/quote/tyo/3916/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis latest column: GP 6,279mm, COGS 19,001mm (rev 25,280mm) = 24.84%, likely TTM; FY6/2025 GM 25.44% (GP 6,145 / rev 24,159). FY6/2026 reported revenue 25,546mm, OP 3,053mm. Period of latest column not confirmed."
+   }
   },
   "TSE:4335": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY ending 2026-06",
+   "status": "ok",
+   "gm": 0.2954,
+   "fiscal_year": "FY2026/6 (Jun-2026)",
    "currency": "JPY mm",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/43350/081220260807515764_tse-acedjpsm-43350-20260807343350-ixbrl.htm",
-   "source_type": "results_announcement",
+   "source_url": "https://finboard.net/companies/JP:4335/income-statement",
+   "source_type": "aggregator_statement",
    "notes": "FY6/2026 revenue 3,775 found but 売上総利益 not visible in 2 searches",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2954,
+    "fiscal_year": "FY2026/6 (Jun-2026)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://finboard.net/companies/JP:4335/income-statement",
+    "source_type": "aggregator_statement",
+    "notes": "Aggregator: net sales 3,775mm, COGS 2,660mm, GP 1,115mm = 29.5%; FY6/2025 29.6% (1,106/3,732) consistent. Could not verify against tanshin itself."
+   }
   },
   "KOSE:A006120": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.1316,
+   "fiscal_year": "FY2025 (Dec-2025)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://quartr.com/events/sk-discovery-co-ltd-006120-q4-2025_F1zCcevZ",
-   "source_type": "aggregator_statement",
+   "source_url": "https://valueinvesting.io/006120.KS/metric/gross-margin",
+   "source_type": "aggregator_margin",
    "notes": "Revenue ~KRW 10.16tn; only precomputed GM 13.2% found, no gross profit line -> not used",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1316,
+    "fiscal_year": "FY2025 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://valueinvesting.io/006120.KS/metric/gross-margin",
+    "source_type": "aggregator_margin",
+    "notes": "valueinvesting.io GM 13.16% at 2025-12-31 (2024: 11.69%); revenue ~KRW10.16tn."
+   }
   },
   "SEHK:563": {
    "status": "ok",
@@ -4640,16 +4830,26 @@
    "applied": true
   },
   "KOSDAQ:A025770": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.0757,
+   "fiscal_year": "FY2025 (Dec-2025)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://simplywall.st/ko/stocks/kr/diversified-financials/kosdaq-a025770/korea-information-communications-shares",
+   "source_url": "https://stockanalysis.com/quote/kosdaq/025770/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue ~KRW 829-836bn found; GP only for TTM Sep-2025 (rev 809.9bn, GP 60.0bn, ~7.4%) - not FY, not used",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0757,
+    "fiscal_year": "FY2025 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/025770/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis GP 63,325mm KRW / revenue ~836.3bn = 7.57% (matches FY2025 consolidated revenue 836.3bn); column headers not shown, inferred as FY2025. Research report cites VAN+PG cost ratio 92.4% (segment), consistent."
+   }
   },
   "SEHK:1052": {
    "status": "ok",
@@ -4721,7 +4921,17 @@
    "source_url": "https://kalkinemedia.com/nz/companies/asx-caa",
    "source_type": "aggregator_statement",
    "notes": "GP A$167.6m (Kalkine) but revenue conflicting (634.1 vs just under 690); could not tie same-year lines",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://simplywall.st/ASX:CAA/",
+    "source_type": "",
+    "notes": "Conflicting: SWS TTM Dec-2025 rev 634.1m, GP 185.5m (29.3%); Kalkine GP 167.6m; company-reported revenue ~686-690m; Stockopedia GP/revenue mapping unclear. Could not tie same-year lines; range ~26-29%."
+   }
   },
   "TSE:6034": {
    "status": "ok",
@@ -4769,31 +4979,61 @@
    "source_url": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a002290/samil-enterprise-shares",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue ~852억 found; GP only for TTM Sep-2025 - not used",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a002290/samil-enterprise-shares",
+    "source_type": "",
+    "notes": "FY2025 revenue 85.2bn (-24%), OP 7.4bn; SWS last-reported (rev 96.0bn, GP 13.2bn = 13.8%) is a TTM for an earlier period (Sep-2025), not FY2025 - not used."
+   }
   },
   "FKSE:6076": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY ending 2025-11",
+   "status": "ok",
+   "gm": 0.8667,
+   "fiscal_year": "FY11/2025 (Nov-2025)",
    "currency": "JPY mm",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://finance.matsui.co.jp/stock/6076/settlement/index",
+   "source_url": "https://stockanalysis.com/quote/fkse/6076/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "FY11/2025 revenue 19,560 found; 売上総利益 not visible in 2 searches (hotel operator)",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.8667,
+    "fiscal_year": "FY11/2025 (Nov-2025)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/fkse/6076/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis FY2025 GP 16,953mm, cost of revenue 2,607mm, revenue ~19,560mm = 86.67% (FY2024 87.25%). Very high because cost of sales likely covers only direct F&B/room costs; operating costs sit in SG&A."
+   }
   },
   "KOSE:A007590": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.2548,
+   "fiscal_year": "FY2025 (Dec-2025)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://etfshopping.com/stock/007590",
-   "source_type": "aggregator_statement",
+   "source_url": "https://valueinvesting.io/007590.KS/metric/gross-margin",
+   "source_type": "aggregator_margin",
    "notes": "FY2025 revenue KRW179.0bn and OP KRW12.7bn found, but no cost of sales / gross profit line found in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2548,
+    "fiscal_year": "FY2025 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://valueinvesting.io/007590.KS/metric/gross-margin",
+    "source_type": "aggregator_margin",
+    "notes": "valueinvesting.io GM 25.48% at 2025-12-31 (2024: 28.18%); SWS TTM Sep-2025 447.4/1,761.7bn = 25.4% consistent. Revenue 179.0bn."
+   }
   },
   "SEHK:2678": {
    "status": "ok",
@@ -4844,28 +5084,48 @@
    "applied": true
   },
   "KOSDAQ:A005990": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec)",
+   "status": "ok",
+   "gm": 0.318,
+   "fiscal_year": "TTM Sep-2025 (FY2025 revenue KRW2,196bn)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.google.com/finance/beta/quote/005990:KOSDAQ",
+   "source_url": "https://simplywall.st/stocks/kr/food-beverage-tobacco/kosdaq-a005990/maeil-holdings-shares",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW2,196.2bn found (etfshopping); only Q2-Q4 2025 COGS visible on Google Finance; SWS TTM GP 701bn does not reconcile with rev-COGS. Not found within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.318,
+    "fiscal_year": "TTM Sep-2025 (FY2025 revenue KRW2,196bn)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://simplywall.st/stocks/kr/food-beverage-tobacco/kosdaq-a005990/maeil-holdings-shares",
+    "source_type": "aggregator_statement",
+    "notes": "Simply Wall St: revenue 2.2t, cost of revenue 1.5t, GP 701.0b (31.81% as of Sep-30-2025 TTM). Not a pure FY2025 figure; medium confidence."
+   }
   },
   "KOSE:A009450": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec)",
+   "status": "ok",
+   "gm": 0.425,
+   "fiscal_year": "FY2025 (Dec-2025)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://simplywall.st/stock/kose/a009450",
+   "source_url": "https://www.valueline.co.kr/finance/income/009450",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW1,502.2bn found; no FY2025 gross profit line; SWS TTM Sep-2025 rev/COGS/GP do not reconcile.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.425,
+    "fiscal_year": "FY2025 (Dec-2025)",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://www.valueline.co.kr/finance/income/009450",
+    "source_type": "aggregator_statement",
+    "notes": "Valueline FY2025 COGS 8,637.4 / GP 6,384.9 (KRW 100mm) on revenue 15,022bn = 42.5%; DS Investment report COGS 864bn agrees."
+   }
   },
   "TSE:4722": {
    "status": "ok",
@@ -4889,7 +5149,17 @@
    "source_url": "https://www.butler.works/ko/companies/00141875",
    "source_type": "aggregator_statement",
    "notes": "Now Sajo Oyang. FY2025 revenue KRW417.4bn, OP 13.5bn found; no gross profit line in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://valueinvesting.io/006090.KS/metric/gross-margin",
+    "source_type": "",
+    "notes": "Only undated 'current' GM 10.36% and 2023 GM 11.27% (valueinvesting.io); no FY2025 line. FY2025 rev KRW417.4bn."
+   }
   },
   "KOSE:A002100": {
    "status": "ok",
@@ -4904,16 +5174,26 @@
    "applied": true
   },
   "KOSDAQ:A109080": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.4056,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00660291",
+   "source_url": "https://simplywall.st/stocks/kr/tech/kosdaq-a109080/opticis-shares",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW25.7bn, OP 4.5bn found; no cost of sales / GP line found in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.4056,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "unknown",
+    "how": "revenue_and_cogs",
+    "source_url": "https://simplywall.st/stocks/kr/tech/kosdaq-a109080/opticis-shares",
+    "source_type": "aggregator_statement",
+    "notes": "SWS: rev 25.73bn, cost 15.29bn, GP 10.44bn; valueinvesting.io also 40.56% for 2025 (2024: 39.99%)."
+   }
   },
   "KOSE:A192400": {
    "status": "not_found",
@@ -4925,7 +5205,17 @@
    "source_url": "https://alphasquare.co.kr/home/stock-summary?code=192400",
    "source_type": "aggregator_statement",
    "notes": "FY2025 consolidated revenue KRW920.9bn, OP 114.0bn found; no FY2025 GP/COGS line in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "No FY2025 GP/COGS found; only revenue 920.9bn and OP 114.0bn. Malaysian Cuckoo International GM (31-37%) is a different entity."
+   }
   },
   "KOSE:A084010": {
    "status": "ok",
@@ -4997,7 +5287,17 @@
    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0723/2026072300129.pdf",
    "source_type": "annual_report",
    "notes": "FY2026 (Mar) annual report located but revenue/GP lines not visible in 2 searches; only interim Sep-2025 figures (SWS) found.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://stockanalysis.com/quote/hkg/2663/financials/income-statement/",
+    "source_type": "",
+    "notes": "FY Mar-2026 not visible. FY Mar-2025 GM 16.04% (FY Mar-2024 17.30%) per etnet. Stockanalysis shows an unlabeled recent column rev 392.24m, GP 68.88m (17.56%), period unclear (likely interim/partial)."
+   }
   },
   "KOSE:A102260": {
    "status": "ok",
@@ -5024,16 +5324,26 @@
    "applied": true
   },
   "KOSE:A017940": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.072,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00165583",
+   "source_url": "https://paasa.com/invest-in-e1-stock-from-india",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue ~KRW10.39tn, OP 324.1bn found; no GP/COGS line in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.072,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://paasa.com/invest-in-e1-stock-from-india",
+    "source_type": "aggregator_statement",
+    "notes": "Paasa: FY2025 revenue KRW10.4tn, GP KRW748.2bn (748.2/10,390 = 7.2%); FY2024 GP 678.9bn on 11.2tn. valueinvesting.io undated current GM 7.75%."
+   }
   },
   "KOSDAQ:A039420": {
    "status": "not_found",
@@ -5045,7 +5355,17 @@
    "source_url": "https://www.butler.works/ko/companies/00246620",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW47.6bn, OP 10.5bn found but no FY2025 GP. Stockopedia FY2024: rev 50,168m, GP 17,086m (34.1%) - older year, not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 rev KRW47.6bn, OP 10.5bn; revenue mix 73% value-added telecom, 20% SM, 7% SI. No FY2025 GP found. FY2024 GM 34.1% (Stockopedia) older."
+   }
   },
   "SEHK:912": {
    "status": "ok",
@@ -5069,7 +5389,17 @@
    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0629/2026062901869.pdf",
    "source_type": "results_announcement",
    "notes": "FY2026 results announcement exists but lines not visible. Prior FY (Mar 2025): revenue HK$2,078,872k, cost of sales HK$1,284,376k -> GP 794,496k (38.2%) - superseded year, not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": 0.3864,
+    "fiscal_year": "FY Mar-2026 (TTM to 2026-03-31)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://www.fool.com/quote/sehk/677/",
+    "source_type": "aggregator_margin",
+    "notes": "[merge: rejected - low-confidence/ambiguous source] Fool.com (page flagged AI-generated) TTM GM 38.64%, FY2026 revenue HK$2,104,187k. Low-moderate confidence; consistent with audited FY Mar-2025 GM 38.2% (794.5/2,078.9). Business classification inferred from aggregator category 'consumer retailing'."
+   }
   },
   "KOSDAQ:A011560": {
    "status": "not_found",
@@ -5081,19 +5411,39 @@
    "source_url": "https://www.butler.works/ko/companies/00133876",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW715.8bn, OP 40.4bn found; no GP/COGS line in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": 0.0692,
+    "fiscal_year": "FY2025 (Dec), per Eulerpool, ambiguous",
+    "basis": "unknown",
+    "how": "gm_stated",
+    "source_url": "https://eulerpool.com/stock/Sebo-Manufacturing-Engineering-Construction-Stock-KR7011560000/grossmargin",
+    "source_type": "aggregator_margin",
+    "notes": "[merge: rejected - low-confidence/ambiguous source] Eulerpool: gross margin 6.92% (prior year 7.05%), page dated Aug 2026 so likely FY2025 but period not explicit; medium-low confidence. FY2025 rev 715.8bn, OP 40.4bn."
+   }
   },
   "TSE:7679": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026 (Feb-2026)",
+   "status": "ok",
+   "gm": 0.2147,
+   "fiscal_year": "FY Feb-2026",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://scouter.monex.co.jp/news/detail/7679_20260406_act_20260406_153009_3",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/tyo/7679/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "Revenue 163,808m JPY visible but gross profit not visible in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2147,
+    "fiscal_year": "FY Feb-2026",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/tyo/7679/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "Stockanalysis/Stockopedia: revenue 163,808m, cost of revenue 128,634m, GP 35,174m (21.47%)."
+   }
   },
   "SEHK:722": {
    "status": "no_gross_profit_line",
@@ -5141,7 +5491,17 @@
    "source_url": "https://financialfilings.com/companies/huvitz-co-ltd/",
    "source_type": "",
    "notes": "FY2025 revenue KRW 118.09B seen but no FY gross profit; Simply Wall St figures are TTM Sep-2025, not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 rev 118.0bn, OP 5.6bn; no FY2025 GP found. Older brokerage data (2020) GM ~39-41%. Prior pass: SWS TTM Sep-2025 only."
+   }
   },
   "KOSE:A005180": {
    "status": "ok",
@@ -5180,16 +5540,26 @@
    "applied": true
   },
   "TSE:2791": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026 (May-2026)",
+   "status": "ok",
+   "gm": 0.2325,
+   "fiscal_year": "FY May-2026",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/27910/081220260709590335_tse-acedjpsm-27910-20260709327910-ixbrl.htm",
-   "source_type": "",
+   "source_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260709/20260709590545.pdf",
+   "source_type": "results_announcement",
    "notes": "Revenue 319,208m JPY visible but full-year gross profit not visible in 2 searches (H1 only: GP 36,417 on 156,189, 23.3%).",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.2325,
+    "fiscal_year": "FY May-2026",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260709/20260709590545.pdf",
+    "source_type": "results_announcement",
+    "notes": "Kessan tanshin 2026-07-09: net sales 319,208m, cost of sales 244,985m, GP 74,222m (23.25%). FY May-2025: 68,723/292,940 = 23.5%."
+   }
   },
   "SEHK:8049": {
    "status": "not_found",
@@ -5201,7 +5571,17 @@
    "source_url": "https://stockanalysis.com/quote/hkg/8049/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "[merge: rejected - single aggregator flagged cost line as unusually low] LOW CONFIDENCE: single aggregator; FY2024 GM ~77.8% (685.3/881.2) vs 84% FY2025, cost line flagged as unusually low. HKEX annual announcement not located to verify.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://stockanalysis.com/quote/hkg/8049/financials/income-statement/",
+    "source_type": "",
+    "notes": "Conflicting: stockanalysis FY2025 cost 144.2m on rev 901.9m (84%, cost line suspiciously low, single source); TipRanks FY2024 GP 685.3/881.2 = 77.8%; SWS TTM Jun-2025 GP 731.8/926.9 = 78.9%. Peer-median fallback suggested; if forced, ~0.78-0.84."
+   }
   },
   "KOSDAQ:A036560": {
    "status": "not_found",
@@ -5213,7 +5593,17 @@
    "source_url": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a036560/kz-precision-shares/past",
    "source_type": "",
    "notes": "Only TTM Jun-2025 figures (rev 107.6b, GP 31.5b) found; FY2025 annual lines not found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a036560/kz-precision-shares/past",
+    "source_type": "",
+    "notes": "FY2025 rev 110.5bn, OP 10.2bn. Only TTM Jun-2025 GM 29.32% (SWS: rev 107.6bn, cost 76.1bn, GP 31.5bn) - not latest FY, not used. Business classification from memory, low confidence."
+   }
   },
   "KOSDAQ:A100120": {
    "status": "ok",
@@ -5261,7 +5651,17 @@
    "source_url": "https://www.butler.works/ko/companies/00355089",
    "source_type": "",
    "notes": "FY2025 revenue 275억 KRW visible, gross profit not visible in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY2025 rev 27.5bn (+32.8%), OP 9.4bn; CATOS 67% of H1 revenue. No COGS/GP line found."
+   }
   },
   "TSE:6101": {
    "status": "ok",
@@ -5309,19 +5709,39 @@
    "source_url": "https://valueline.co.kr/finance/income/050860",
    "source_type": "",
    "notes": "Code shown as 아세아텍 (June FY-end); FY lines not found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "June FY-end; FY2025 rev ~KRW121bn. SWS shows undated rev 96.2b, cost 75.6b, GP 20.6b (21.4%) - revenue does not match latest FY, stale; not used."
+   }
   },
   "SEHK:89": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec-2025)",
+   "status": "ok",
+   "gm": 0.6238,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "HKD",
    "revenue": null,
    "gross_profit": null,
    "source_url": "https://stockanalysis.com/quote/hkg/0089/financials/income-statement/",
-   "source_type": "",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue HK$471.3m visible but only 'property expenses' HK$177.3m (not labelled cost of sales); would imply ~0.624. FY2024 audited: rev 481.6m, COS 182.9m, GP 298.6m (0.620). FY2025 GP not directly confirmed.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.6238,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://stockanalysis.com/quote/hkg/0089/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "Stockanalysis: revenue HK$471.3m, cost of revenue 177.3m, GP 294.0m. Consistent with company-reported FY2024 cost of sales 182.9m on rev 481.6m (62.0%) and H1-2026 interim labelling 'cost of sales'."
+   }
   },
   "SGX:BHU": {
    "status": "not_found",
@@ -5333,7 +5753,17 @@
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/6HJ879L8P22J1AZU/882875_Annual%20Report.pdf",
    "source_type": "",
    "notes": "FY2025 revenue S$39,907k visible; FY2025 gross profit/cost of sales not visible in 2 searches (TipRanks FY2024 GP S$33.47M only).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://simplywall.st/stocks/sg/consumer-services/sgx-bhu/sutl-enterprise-shares",
+    "source_type": "",
+    "notes": "FY2025 rev ~S$39.9m, NP S$8.26m; no FY2025 GP found. SWS TTM Jun-2025: rev 40.16m, cost 9.50m, GP 30.66m (76.3%) - not latest FY. TipRanks FY2024 GP 33.47m (~84%) inconsistent with that."
+   }
   },
   "SGX:BFU": {
    "status": "ok",
@@ -5369,7 +5799,17 @@
    "source_url": "https://simplywall.st/stock/kosdaq/a243070",
    "source_type": "",
    "notes": "Only TTM Sep-2025 lines (rev 602.2b, GP 282.1b, ~0.468) and a pre-computed FY2025 GM 45.46% (valueinvesting.io) found; FY2025 revenue+GP lines not both visible.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": 0.4546,
+    "fiscal_year": "FY2025/TTM (period undated on page)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://valueinvesting.io/243070.KQ/metric/gross-margin",
+    "source_type": "aggregator_margin",
+    "notes": "[merge: rejected - low-confidence/ambiguous source] valueinvesting.io current gross margin 45.46% (history ends 2023 at 51.83%); prior pass also saw FY2025 45.46% and SWS TTM Sep-2025 GP 282.1b/rev 602.2b = 46.8%. Medium-low confidence. FY2025 consolidated rev KRW620.8bn."
+   }
   },
   "TSE:6030": {
    "status": "not_found",
@@ -5381,19 +5821,39 @@
    "source_url": "https://www2.jpx.co.jp/disc/60300/140120260813519636.pdf",
    "source_type": "",
    "notes": "IFRS revenue 25,634m JPY visible; gross profit not visible in 2 searches. FY Jun-2025: rev 25,370, cost of revenue 9,724 (older, not used).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "consolidated",
+    "how": "",
+    "source_url": "https://www.marketsmojo.com/stocks-analysis/adventure-inc-1126751-121",
+    "source_type": "",
+    "notes": "FY Jun-2026 revenue 25,634m; FY GP not found. 9M to Mar-2026: rev 19,688m, cost 8,421m (GM ~57.2%, cumulative not FY). SWS CY2025 TTM: GP 15.3b/rev 26.1b (58.6%). FY Jun-2025: 25,370 rev, 9,724 cost (61.7%)."
+   }
   },
   "TSE:4396": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Jun-2025)",
+   "status": "ok",
+   "gm": 0.294,
+   "fiscal_year": "FY Jun-2026",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/43960/140120250805530798.pdf",
-   "source_type": "",
+   "source_url": "https://edinetdb.jp/company/E34111/presentations/",
+   "source_type": "aggregator_margin",
    "notes": "Revenue 26,938m JPY found but gross profit line not visible in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.294,
+    "fiscal_year": "FY Jun-2026",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://edinetdb.jp/company/E34111/presentations/",
+    "source_type": "aggregator_margin",
+    "notes": "FY Jun-2026 earnings presentation summary: gross margin 29.4% (+1.5pt YoY), revenue 31,091m. FY Jun-2025: 7,504/26,938 = 27.86% (Yahoo JP), consistent."
+   }
   },
   "TSE:9450": {
    "status": "not_found",
@@ -5405,31 +5865,61 @@
    "source_url": "https://finance.logmi.jp/articles/380733",
    "source_type": "",
    "notes": "Revenue 13,070m JPY found but gross profit not visible in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "consolidated",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/94500/081220260812518574_tse-acedjpsm-94500-20260814394500-ixbrl.htm",
+    "source_type": "",
+    "notes": "FY Jun-2026 rev 13,664m, OP 1,838m; no gross profit line visible. FY Jun-2025 rev 13,070m; cost ratio rose after switch to equipment outright-sale model."
+   }
   },
   "TSE:2301": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Oct-2025)",
+   "status": "ok",
+   "gm": 0.6519,
+   "fiscal_year": "FY Oct-2025",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/23010/081220251205515268_tse-anedjpsm-23010-20251208323010-ixbrl.htm",
-   "source_type": "",
+   "source_url": "https://finboard.jp/companies/JP:2301/financials/GrossProfit",
+   "source_type": "aggregator_statement",
    "notes": "Revenue 11,019m JPY (non-consolidated filer) found but gross profit not visible in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.6519,
+    "fiscal_year": "FY Oct-2025",
+    "basis": "non-consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://finboard.jp/companies/JP:2301/financials/GrossProfit",
+    "source_type": "aggregator_statement",
+    "notes": "Revenue 11,019m, cost of sales 3,835m, GP 7,184m (65.19%); FY Oct-2024 66.39%."
+   }
   },
   "SGX:H30": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec-2025)",
+   "status": "ok",
+   "gm": 0.7485,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "SGD",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://stockanalysis.com/quote/sgx/H30/financials/income-statement/",
-   "source_type": "",
+   "source_url": "https://simplywall.st/stock/sgx/h30",
+   "source_type": "aggregator_statement",
    "notes": "Revenue S$98.3m; aggregators disagree on cost line (property expenses ~S$25.0m vs valueinvesting 92.7% GM); company gross profit line not confirmed. Property company.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.7485,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://simplywall.st/stock/sgx/h30",
+    "source_type": "aggregator_statement",
+    "notes": "Simply Wall St (Dec 31, 2025): revenue S$99.0m, cost of revenue S$25.0m, GP S$74.1m (74.8%); company headline revenue S$98.3m. valueinvesting.io showed ~92.7% (outlier, not used). Cost line is mainly property expenses; medium confidence."
+   }
   },
   "Catalist:40T": {
    "status": "ok",
@@ -5477,7 +5967,17 @@
    "source_url": "https://www.tipranks.com/news/company-announcements/korvest-ltd-reports-strong-financial-growth-for-fy-2025",
    "source_type": "",
    "notes": "FY2025 revenue A$119.57m found but no FY cost of sales/gross profit line in 2 searches (only Dec-2025 TTM from Simply Wall St).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "consolidated",
+    "how": "",
+    "source_url": "https://www.tipranks.com/news/company-announcements/korvest-ltd-reports-strong-financial-growth-for-fy-2025",
+    "source_type": "",
+    "notes": "FY Jun-2025 rev A$119.57m, EBIT 18.91m, NPAT 13.16m; FY Jun-2026 sales A$129.5m, EBIT 18.29m. No cost of sales / GP line found in searches."
+   }
   },
   "TSE:2788": {
    "status": "ok",
@@ -5516,16 +6016,26 @@
    "applied": true
   },
   "KOSE:A006660": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Dec-2025)",
+   "status": "ok",
+   "gm": 0.1439,
+   "fiscal_year": "TTM Sep-2025 (stale; FY2025 not found)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://simplywall.st/stock/kose/a006660",
-   "source_type": "",
+   "source_url": "https://simplywall.st/stocks/kr/automobiles/kose-a006660/samsung-climate-control-shares",
+   "source_type": "aggregator_statement",
    "notes": "No FY2025 revenue/gross profit lines found in 2 searches; only Sep-2025 TTM (rev 121.2bn, GP 17.4bn KRW) seen.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1439,
+    "fiscal_year": "TTM Sep-2025 (stale; FY2025 not found)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://simplywall.st/stocks/kr/automobiles/kose-a006660/samsung-climate-control-shares",
+    "source_type": "aggregator_statement",
+    "notes": "Simply Wall St TTM to Sep-2025: revenue 121.17bn KRW, cost of revenue 103.73bn, GP 17.44bn, GM 14.39%. FY2025 annual (rev ~117.7bn) not found."
+   }
   },
   "TSE:5997": {
    "status": "ok",
@@ -5621,7 +6131,17 @@
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/HDJYXGE2THZUCGX5/876661_UMS%20-%20FY2025%20press%20release.pdf",
    "source_type": "",
    "notes": "Revenue S$251.1m; company reports only 'gross material margin' (54%), not gross profit; no cost-of-sales line found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY2025",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/HDJYXGE2THZUCGX5/876661_UMS%20-%20FY2025%20press%20release.pdf",
+    "source_type": "company_statement",
+    "notes": "Company reports only 'gross material margin' 54% FY2025 (51% FY2024), revenue S$251.1m; this excludes labour/overheads so not a true gross margin. Aggregator cost-of-revenue (~materials) also not true COGS."
+   }
   },
   "KOSDAQ:A030520": {
    "status": "not_found",
@@ -5633,7 +6153,17 @@
    "source_url": "https://www.valueline.co.kr/finance/income/030520",
    "source_type": "",
    "notes": "FY2025 consolidated revenue/gross profit lines not found in 2 searches (only Simply Wall St Sep-2025 TTM, GM ~62%).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://simplywall.st/stocks/kr/software/kosdaq-a030520/hancom-shares",
+    "source_type": "aggregator_statement",
+    "notes": "Conflicting aggregator data: SWS TTM Sep-2025 GM 62.4%; Stockopedia unlabeled ~52-59%; Google Finance Q2-Q4 2025 implies ~57.5%. No reliable FY2025 figure; range ~52-62%."
+   }
   },
   "TSE:9702": {
    "status": "ok",
@@ -5681,19 +6211,39 @@
    "source_url": "https://www.butler.works/ko/companies/00177199",
    "source_type": "",
    "notes": "FY2025 revenue 227.1bn KRW found but no gross profit/cost of sales line in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://www.butler.works/ko/companies/00177199",
+    "source_type": "aggregator_statement",
+    "notes": "FY2025 revenue 227.1bn KRW, op profit 9.6bn; no GP/COGS found. Investing.com shows 19.7% GM for 024090 with no period - unverified. Industry classification inferred from prior knowledge (ferroalloys); not confirmed in search."
+   }
   },
   "KOSDAQ:A109860": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.0701,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.valueline.co.kr/finance/income/109860",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/kosdaq/109860/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 917억원 found but no reliable annual cost of sales/gross profit line within 2 searches (valueline columns inconsistent).",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0701,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/109860/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis columns TTM/FY2025/...: second column GP 6,433m KRW at GM 7.01% implies revenue ~91.8bn which matches FY2025 revenue 917억; first column (7.98%, revenue ~98.5bn) is TTM. Header row not seen, inferred by revenue match."
+   }
   },
   "SEHK:2293": {
    "status": "not_found",
@@ -5705,7 +6255,17 @@
    "source_url": "https://stockanalysis.com/quote/hkg/2293/financials/income-statement/",
    "source_type": "",
    "notes": "Revenue HK$74.4m confirmed; StockAnalysis cost of revenue 34.15m and GP 40.82m do not sum to 74.4m, so not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY2025 (Jun)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/hkg/2293/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "Revenue HK$74.4m FY Jun-2025 confirmed (HKEX); PBT 22.4m. Aggregator GP figures inconsistent (82.19m GP, 74% GM; or 40.82+34.15 vs 74.4). No reliable gross profit."
+   }
   },
   "SEHK:154": {
    "status": "not_found",
@@ -5717,7 +6277,17 @@
    "source_url": "https://stockanalysis.com/quote/hkg/0154/financials/income-statement/",
    "source_type": "",
    "notes": "FY2025 revenue ~RMB1,421m (aggregator) but FY2025 gross profit not found; only 1H25 (rev 722.36m, GP 298.91m).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043000533.pdf",
+    "source_type": "annual_report",
+    "notes": "FY2025 GP not visible. Reference: 1H25 GM 41.4% (1H24 36.4%); FY2024 continuing ops revenue RMB1,664m, GP 603.1m (36.2%). FY2025 revenue ~RMB1.42bn."
+   }
   },
   "KOSDAQ:A042110": {
    "status": "ok",
@@ -5765,7 +6335,17 @@
    "source_url": "https://www2.jpx.co.jp/disc/27000/081220260212556337_tse-acedjpsm-27000-20260213327000-ixbrl.htm",
    "source_type": "",
    "notes": "Revenue 176,191m JPY found; gross profit line not visible within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY12/2025",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www2.jpx.co.jp/disc/27000/081220260212556337_tse-acedjpsm-27000-20260213327000-ixbrl.htm",
+    "source_type": "results_announcement",
+    "notes": "FY12/2025 revenue 176,191m JPY, op profit 8,025m; GP not visible in search snippets. Rice wholesale GM typically low single digits to ~7%."
+   }
   },
   "ASX:ASG": {
    "status": "ok",
@@ -5792,16 +6372,26 @@
    "applied": true
   },
   "SGX:QES": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY Dec 2025",
+   "status": "ok",
+   "gm": 0.235,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "CNY",
    "revenue": null,
    "gross_profit": null,
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/DINV5WH6LUUVIFIE/883758_China%20Sunsine%20-%20AR2025.pdf",
-   "source_type": "",
+   "source_type": "annual_report",
    "notes": "FY2025 revenue/gross profit not visible within 2 searches (NP RMB404.9m only).",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.235,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/DINV5WH6LUUVIFIE/883758_China%20Sunsine%20-%20AR2025.pdf",
+    "source_type": "annual_report",
+    "notes": "AR2025 financial highlights: gross profit RMB770.3m, GP margin 23.5% (FY2024 24.2%). TipRanks shows 24.08%; annual report used."
+   }
   },
   "SGX:S19": {
    "status": "not_found",
@@ -5813,7 +6403,17 @@
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/EAG29XVTW4INGT8X/847358_SSC_interim%20FS%20FY2025.pdf",
    "source_type": "",
    "notes": "Ship-owning/leasing + logistics; revenue ~48.6m found but no verifiable cost-of-services/gross-profit line within 2 searches (TipRanks GP mislabelled period).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://simplywall.st/stocks/sg/transportation/sgx-s19/singapore-shipping-shares",
+    "source_type": "aggregator_statement",
+    "notes": "Conflicting aggregators: SWS TTM Jun-2025 GM ~36.8% (17.62/47.91); TipRanks 11.1/48.55 (Dec 2024) ~23%; Google quarterly COGS implies ~44%. Depreciation treatment unclear; no reliable figure."
+   }
   },
   "SEHK:1830": {
    "status": "no_gross_profit_line",
@@ -5852,28 +6452,48 @@
    "applied": true
   },
   "KOSDAQ:A141000": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.3705,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00610083",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/kosdaq/141000/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 651억원 found; cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.3705,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/141000/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis FY2025 GP 24,127m KRW, GM 37.05% (FY2024 46.99%); implied revenue ~65.1bn matches 651억."
+   }
   },
   "SEHK:608": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY Dec 2025",
+   "status": "ok",
+   "gm": 0.1781,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "HKD",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0929/2025092901270.pdf",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/hkg/0608/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue HK$3,064m found; FY2025 gross profit not visible within 2 searches (FY2024: rev 3,336.8m, GP 645.7m).",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1781,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/hkg/0608/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis FY2025 GP HK$545.89m on revenue HK$3,064m = 17.81% (FY2024 19.35%); revenue growth -8.16% matches. TipRanks margin labels differ slightly."
+   }
   },
   "TSE:4792": {
    "status": "ok",
@@ -5924,16 +6544,26 @@
    "applied": true
   },
   "KOSE:A009290": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.1767,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.valueline.co.kr/finance/income/009290",
-   "source_type": "",
+   "source_url": "https://paasa.com/invest-in-kwang-dong-pharmaceutical-stock-from-india",
+   "source_type": "aggregator_statement",
    "notes": "Consolidated revenue 1조6,595억 found; consolidated cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1767,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://paasa.com/invest-in-kwang-dong-pharmaceutical-stock-from-india",
+    "source_type": "aggregator_statement",
+    "notes": "Paasa FY2025 GP 293.2bn KRW (FY2024 299.3bn), TipRanks 293.22bn on 1.66T revenue (17.65%); Stockopedia shows 301,182m on 1,659,512m (18.15%). Used 293.2/1659.5. Low-margin Samdasoo distribution dilutes margin."
+   }
   },
   "KOSDAQ:A332370": {
    "status": "not_found",
@@ -5945,31 +6575,61 @@
    "source_url": "https://www.butler.works/ko/companies/01213586",
    "source_type": "",
    "notes": "FY2025 revenue 491억원 found; cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "revenue_and_cogs",
+    "source_url": "https://bbn.kiwoom.com/rfCR11974",
+    "source_type": "aggregator_statement",
+    "notes": "Revenue 491억 (+5.5%), op profit 109억. A Kiwoom broker report table appears to show 2025 COGS 26.4 (264억), implying GM ~46%, but unit/actual-vs-estimate unverified, so not recorded as ok."
+   }
   },
   "KOSE:A248170": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.3949,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/01167056",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/krx/248170/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 4,089억원 found; cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.3949,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/krx/248170/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis FY2025 GP 161,489m KRW on revenue 408,927m = 39.5% (FY2024 35.7%)."
+   }
   },
   "KOSE:A016740": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.1676,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00119672",
-   "source_type": "",
+   "source_url": "https://paasa.com/invest-in-dual-stock-from-india",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue 7,961억원 found; cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1676,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://paasa.com/invest-in-dual-stock-from-india",
+    "source_type": "aggregator_statement",
+    "notes": "Paasa FY2025 revenue 796.1bn KRW (matches), GP 133.4bn = 16.76%; Yahoo shows an undated GP of 127.5bn (16.0%) - unresolved. Industry guessed; business not confirmed in search."
+   }
   },
   "ASX:GNC": {
    "status": "ok",
@@ -5993,7 +6653,17 @@
    "source_url": "https://www.butler.works/ko/companies/01099861",
    "source_type": "aggregator_statement",
    "notes": "Only FY2025 revenue (KRW 64.3bn) and operating profit found; no cost of sales/gross profit in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://www.butler.works/ko/companies/01099861",
+    "source_type": "aggregator_statement",
+    "notes": "FY2025 revenue 643억 (-38.3%), op profit 62억 (9.6%); no GP/COGS found. Business description inferred, not confirmed by search."
+   }
   },
   "SEHK:6123": {
    "status": "ok",
@@ -6017,7 +6687,17 @@
    "source_url": "https://www.butler.works/ko/companies/00170026",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW 168.4bn found; annual cost of sales/gross profit not found (only Q2-Q4 quarterly COGS on Google Finance).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/020710/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "FY2025 revenue 1,684억, op profit 151억. SWS undated rev 192.6bn, cost 163.0bn, GP 29.6bn (15.4%) likely TTM Mar-2026, not FY2025. Business description inferred, not confirmed."
+   }
   },
   "SEHK:46": {
    "status": "ok",
@@ -6053,19 +6733,39 @@
    "source_url": "https://announcements.nzx.com/announcement/476177",
    "source_type": "results_announcement",
    "notes": "FY2026 total revenue NZ$314.8m found; cost of sales/gross profit lines not visible in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY2026 (May)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://announcements.nzx.com/attachment/472595.pdf",
+    "source_type": "annual_report",
+    "notes": "FY2026 (to 31 May 2026) revenue NZ$314.8m. Annual report lists no accessible cost of sales/GP. SWS undated: rev 304.7m, cost 178.6m, GP 126.1m (41.4%) - period unknown, not used."
+   }
   },
   "KOSE:A000970": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.1798,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/00159573",
+   "source_url": "https://www.tipranks.com/stocks/kr:000970/statistics",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW 406.6bn found; no cost of sales/gross profit in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1798,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www.tipranks.com/stocks/kr:000970/statistics",
+    "source_type": "aggregator_statement",
+    "notes": "TipRanks revenue 406.62bn KRW (matches FY2025) with GP 73.12bn = 17.98%; Paasa latest-listed GP 73.1bn agrees. TipRanks states margin 17.54% (unreconciled); SWS TTM Sep-2025 17.95%. Consolidated vs separate not verified."
+   }
   },
   "TSE:4465": {
    "status": "ok",
@@ -6080,16 +6780,26 @@
    "applied": true
   },
   "KOSE:A004150": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.0823,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://dealsite.co.kr/articles/156280",
+   "source_url": "https://paasa.com/invest-in-hansol-stock-from-india",
    "source_type": "aggregator_statement",
    "notes": "FY2025 consolidated revenue KRW 1,098.3bn found; cost of sales/gross profit not found in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0823,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://paasa.com/invest-in-hansol-stock-from-india",
+    "source_type": "aggregator_statement",
+    "notes": "Paasa FY2025 GP 90.4bn on revenue ~1,098.3bn = 8.23% (FY2024 GP 62.7bn). StockAnalysis latest column GP 98.4bn/cost 992.9bn (~9.0%) and SWS 97.4bn differ - possibly TTM. Business mix from name/prior knowledge."
+   }
   },
   "TSE:6340": {
    "status": "not_found",
@@ -6101,19 +6811,39 @@
    "source_url": "https://scouter.monex.co.jp/news/detail/6340_20260813_act_20260813_140017_1",
    "source_type": "results_announcement",
    "notes": "FY6/2026 revenue JPY 135,613m found but full-year gross profit not visible (only 9M GP 17,250m on 96,521m = 17.9%); 2 searches used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "FY6/2026",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www2.jpx.co.jp/disc/63400/081220260801505982_tse-acedjpsm-63400-20260801505982-ixbrl.htm",
+    "source_type": "results_announcement",
+    "notes": "FY6/2026 revenue 135,613m JPY, op profit 13,081m (9.6%); full-year GP not visible. Prior pass saw 9M GP 17,250m/96,521m = 17.9% (not used as FY)."
+   }
   },
   "KOSE:A200880": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.1359,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.butler.works/ko/companies/01036446",
+   "source_url": "https://paasa.com/invest-in-seoyon-e-hwa-stock-from-india",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW 4,505.2bn found; no FY2025 cost of sales/gross profit in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1359,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://paasa.com/invest-in-seoyon-e-hwa-stock-from-india",
+    "source_type": "aggregator_statement",
+    "notes": "Paasa FY2025 GP 612.3bn KRW on revenue 4,505.2bn = 13.59%. valueinvesting.io says 14.37%; SWS (period unclear) GP 629.3bn."
+   }
   },
   "SGX:N08": {
    "status": "ok",
@@ -6128,40 +6858,70 @@
    "applied": true
   },
   "KOSDAQ:A006730": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.5163,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://etfshopping.com/stock/006730/earnings",
+   "source_url": "https://www-proxy.stockopedia.com/share-prices/seobu-t-d-co-KOSDAQ:006730/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "Only quarterly revenue/operating profit found (FY2025 revenue ~KRW 248.3bn summed); no gross profit/cost of sales in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.5163,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://www-proxy.stockopedia.com/share-prices/seobu-t-d-co-KOSDAQ:006730/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "Stockopedia latest column revenue 248,330m KRW (matches FY2025) and GP 128,216m = 51.6%; SWS (period unclear) rev 225.2bn, GP 112.1bn = 49.8%. Year labels not shown in snippet; moderate confidence. Lumpy property sales."
+   }
   },
   "ASX:AX1": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026 (52w to 28 Jun 2026)",
+   "status": "ok",
+   "gm": 0.531,
+   "fiscal_year": "FY2026 (June 2026)",
    "currency": "AUD",
    "revenue": null,
    "gross_profit": null,
    "source_url": "https://announcements.asx.com.au/asxpdf/20260821/pdf/07311dyv21bqs0.pdf",
    "source_type": "results_announcement",
    "notes": "Total sales A$1.64bn found; FY26 gross profit/cost of sales not visible in 2 searches (H1 FY26 GM 54.3% only).",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.531,
+    "fiscal_year": "FY2026 (June 2026)",
+    "basis": "consolidated",
+    "how": "gm_stated",
+    "source_url": "https://announcements.asx.com.au/asxpdf/20260821/pdf/07311dyv21bqs0.pdf",
+    "source_type": "results_announcement",
+    "notes": "Reported group gross margin 53.1% vs 54.9% FY25 (54.1% excl. closed businesses); per search summary of ASX FY26 results release 21-Aug-2026"
+   }
   },
   "KOSE:A002840": {
-   "status": "not_found",
-   "gm": null,
+   "status": "ok",
+   "gm": 0.1925,
    "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://alphasquare.co.kr/home/stock-summary?code=002840",
+   "source_url": "https://stockanalysis.com/quote/krx/002840/financials/income-statement/",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW 441.1bn found; cost of sales/gross profit not found in 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1925,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/krx/002840/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis FY2025 GP 84,920m, cost 356,217m, revenue 441,137m (matches 441.1bn) = 19.25%; Paasa GP 85.6bn."
+   }
   },
   "SGX:J2T": {
    "status": "ok",
@@ -6197,7 +6957,17 @@
    "source_url": "https://gamebiz.jp/news/421042",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue JPY 20,094m found; gross profit not visible in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/39040/081220260216562592_tse-acedjpsm-39040-20260216339040-ixbrl.htm",
+    "source_type": "",
+    "notes": "FY12/2025 rev 20,094m, OP 1,071m; GP not visible in search summaries. Kessan tanshin at the URL has the P&L."
+   }
   },
   "KOSDAQ:A035810": {
    "status": "not_found",
@@ -6209,7 +6979,17 @@
    "source_url": "https://alphasquare.co.kr/home/stock-summary?code=035810",
    "source_type": "aggregator_statement",
    "notes": "FY2025 consolidated revenue KRW 3,388.9bn found; cost of sales/gross profit not found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://alphasquare.co.kr/home/stock-summary?code=035810",
+    "source_type": "",
+    "notes": "FY2025 consol revenue KRW 3,388.9bn, OP 151.4bn; no COGS/GP found. Segments feed 53%, livestock/meat 21%, poultry 18%."
+   }
   },
   "TSE:4356": {
    "status": "ok",
@@ -6269,7 +7049,17 @@
    "source_url": "https://www.butler.works/ko/companies/00151368",
    "source_type": "aggregator_statement",
    "notes": "FY2025 revenue KRW 709.0bn found; FY2025 gross profit not found in 2 searches (only 2023 GP on Stockopedia).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://kr.investing.com/equities/intergis-ratios",
+    "source_type": "",
+    "notes": "FY2025 rev 709.0bn, OP 19.8bn. Investing.com showed ambiguous GM 6.26%/12.58% with no period; not used."
+   }
   },
   "FKSE:4827": {
    "status": "not_found",
@@ -6281,7 +7071,17 @@
    "source_url": "https://finance.matsui.co.jp/stock/4827/settlement/index",
    "source_type": "aggregator_statement",
    "notes": "FY3/2026 revenue JPY 16,895m found; cost of sales/gross profit not found in 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://scouter.monex.co.jp/report/disclose/4827",
+    "source_type": "",
+    "notes": "FY3/2026 consol rev 16,895m, OP 1,535m, OP margin 9.1%; no GP/COGS found."
+   }
   },
   "TSE:4847": {
    "status": "not_found",
@@ -6293,7 +7093,17 @@
    "source_url": "https://www2.jpx.co.jp/disc/48470/081220260804509104_tse-anedjpsm-48470-20260805348470-ixbrl.htm",
    "source_type": "",
    "notes": "Revenue figures found (FY6/2025 15,596m JPY) but gross profit line not visible in search results within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/48470/140120250808537230.pdf",
+    "source_type": "",
+    "notes": "FY6/2025 rev 15,596m, OP 1,848m; GM declined on cloud infra cost but no figure seen."
+   }
   },
   "TSE:3856": {
    "status": "not_found",
@@ -6305,7 +7115,17 @@
    "source_url": "https://www2.jpx.co.jp/disc/38560/081220260819522973_tse-acedjpsm-38560-20260819338560-ixbrl.htm",
    "source_type": "",
    "notes": "FY changed Jun->Mar; FY3/2026 revenue 120,169m JPY but gross profit not visible. Yahoo JP shows 9-month FY3/2025 rev 72,417 / GP 12,177 (irregular period, superseded) - not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "",
+    "source_type": "",
+    "notes": "FY3/2026 ordinary profit 12.4bn; GP not found. 4Q operating margin -8.3%."
+   }
   },
   "SEHK:1419": {
    "status": "not_found",
@@ -6317,7 +7137,17 @@
    "source_url": "https://humanhealth.com.hk/en/news/news_detail/2025annualreport/",
    "source_type": "",
    "notes": "FY6/2026 annual results not found; FY6/2025 revenue HK$644.4m but GP not visible. 1H FY2026 rev 342.4m / GP 159.5m only (interim).",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0925/2025092502096.pdf",
+    "source_type": "",
+    "notes": "FY6/2025 annual results announcement (25-Sep-2025) exists but margin not visible. 1H FY6/2026 rev 342.4m, GP 159.5m (46.6%, interim only, not used). Earlier years GM ~58-59% (FY2021-23) under company definition."
+   }
   },
   "KOSE:A030190": {
    "status": "no_gross_profit_line",
@@ -6356,16 +7186,26 @@
    "applied": true
   },
   "KOSDAQ:A071200": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.606,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://valueline.co.kr/finance/income/071200",
-   "source_type": "",
+   "source_url": "https://stockanalysis.com/quote/kosdaq/071200/financials/income-statement/",
+   "source_type": "aggregator_statement",
    "notes": "FY2025 revenue ~102.4bn KRW found but cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.606,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "unknown",
+    "how": "gp_and_revenue",
+    "source_url": "https://stockanalysis.com/quote/kosdaq/071200/financials/income-statement/",
+    "source_type": "aggregator_statement",
+    "notes": "StockAnalysis gross profit series 70,223 / 62,057 / 57,805 ... KRW m; column labels not visible. FY2025 assumed = 62,057 (matches FY2025 rev ~102.4bn: 60.6%; cross-check with Q2-Q4 2025 COGS ratio ~39%, and 57,805 matches alphaspread ~FY2024 GP). First column (63.8%) is likely TTM. Moderate confidence."
+   }
   },
   "SEHK:119": {
    "status": "ok",
@@ -6380,16 +7220,26 @@
    "applied": true
   },
   "TSE:2477": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026 (Jun-2026)",
+   "status": "ok",
+   "gm": 0.8824,
+   "fiscal_year": "FY6/2026",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/24770/081220260807515350_tse-anedjpsm-24770-20260807324770-ixbrl.htm",
-   "source_type": "",
+   "source_url": "https://envalith.com/en/companies/2477/reports",
+   "source_type": "aggregator_statement",
    "notes": "Revenue 2,414m JPY found; cost of sales / gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.8824,
+    "fiscal_year": "FY6/2026",
+    "basis": "unknown",
+    "how": "revenue_and_cogs",
+    "source_url": "https://envalith.com/en/companies/2477/reports",
+    "source_type": "aggregator_statement",
+    "notes": "Envalith summary: Net sales 2,414m, cost of sales 283m, GP 2,130m (88.3%); prior years 92.0% (FY6/2022) trending down. Not verified vs kessan tanshin."
+   }
   },
   "KOSDAQ:A053610": {
    "status": "ok",
@@ -6416,16 +7266,26 @@
    "applied": true
   },
   "TSE:3187": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025 (Sep-2025)",
+   "status": "ok",
+   "gm": 0.3491,
+   "fiscal_year": "FY9/2025",
    "currency": "JPY",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www2.jpx.co.jp/disc/31870/081220251113501583_tse-acedjpsm-31870-20251114331870-ixbrl.htm",
-   "source_type": "",
+   "source_url": "https://finance.yahoo.co.jp/quote/3187.t/performance",
+   "source_type": "aggregator_statement",
    "notes": "Fiscal year ends September. FY9/2025 consolidated revenue 16,746m JPY found; consolidated cost of sales/gross profit not visible within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.3491,
+    "fiscal_year": "FY9/2025",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://finance.yahoo.co.jp/quote/3187.t/performance",
+    "source_type": "aggregator_statement",
+    "notes": "Yahoo Japan: rev 16,747m, GP 5,847m, GM 34.91% (FY9/2024 35.25%, FY9/2023 35.73%). Became non-consolidated from FY9/2026."
+   }
   },
   "TSE:2975": {
    "status": "ok",
@@ -6509,7 +7369,17 @@
    "source_url": "https://www.valueline.co.kr/finance/income/347740",
    "source_type": "",
    "notes": "Only quarterly/ambiguous-period revenue and gross profit visible; full-year FY2025 lines not confirmed within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www.cosinkorea.com/news/article.html?no=56924",
+    "source_type": "",
+    "notes": "FY2025 consol rev ~KRW 22.8bn, OP ~3.9bn; no COGS/GP found."
+   }
   },
   "KOSE:A023000": {
    "status": "ok",
@@ -6629,7 +7499,17 @@
    "source_url": "https://www.valueline.co.kr/finance/income/021320",
    "source_type": "",
    "notes": "FY2025 revenue KRW1,833.4bn found, but no cost of sales/gross profit visible within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://newstomato.com/ReadNews.aspx?no=1257774",
+    "source_type": "",
+    "notes": "FY2025 rev 1,833bn, OP 88.3bn (4.8%). Cost ratio 2024 89.3% (GM ~10.7%), 1Q25 GM 15.6%; FY2025 not found. Peer-median or ~op margin+SG&A suggested."
+   }
   },
   "SGX:DM0": {
    "status": "not_found",
@@ -6641,7 +7521,17 @@
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/9CGYVN0M1991US1N/c8d64c64978c2ab22ab48fbbc0cc243d6095f072b3d872826060ff1eac8f0228",
    "source_type": "",
    "notes": "FY2025 results filed 27-Feb-2026 but figures not visible; FY2024: rev S$488.6m, GP S$117.1m (24.0%) - not used.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/PP44Y3TJH9TGL3A8/834953_Press%20Release.pdf",
+    "source_type": "",
+    "notes": "FY2025 results exist on SGX (not visible). 1H2025 GM 23.2% (rev 235.3m, GP 54.6m); FY2024 GM 24.0% (rev 488.6m); FY2025 likely ~23-24% but not confirmed."
+   }
   },
   "KOSDAQ:A010470": {
    "status": "not_found",
@@ -6653,7 +7543,17 @@
    "source_url": "https://in.marketscreener.com/quote/stock/ORICOM-INC-120962115/",
    "source_type": "",
    "notes": "Advertising agency; FY2025 revenue/gross profit lines not found within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://stockhub.kr/stock/010470",
+    "source_type": "",
+    "notes": "FY2025 rev ~KRW 227.7bn, OP 8.9bn; no GP found."
+   }
   },
   "SEHK:818": {
    "status": "ok",
@@ -6716,16 +7616,26 @@
    "applied": true
   },
   "KOSDAQ:A020180": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2025",
+   "status": "ok",
+   "gm": 0.1354,
+   "fiscal_year": "FY3/2026",
    "currency": "KRW",
    "revenue": null,
    "gross_profit": null,
    "source_url": "https://valueline.co.kr/finance/income/020180",
-   "source_type": "",
+   "source_type": "aggregator_statement",
    "notes": "IT services; revenue seen (butler.works 2025 KRW202.9bn, period basis unclear) but no gross profit line within 2 searches.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.1354,
+    "fiscal_year": "FY3/2026",
+    "basis": "unknown",
+    "how": "revenue_and_cogs",
+    "source_url": "https://valueline.co.kr/finance/income/020180",
+    "source_type": "aggregator_statement",
+    "notes": "Valueline: FY ended 2026/03 rev 259.54bn, COGS 224.40bn, GP 35.14bn (13.5%); FY ended 2025/03: 203.5bn rev, GP 24.6bn (12.1%). Column 2025/12 (14.6%) appears to be a rolling period."
+   }
   },
   "TSE:2602": {
    "status": "ok",
@@ -6824,16 +7734,26 @@
    "applied": true
   },
   "ASX:NCK": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "FY2026 (Jun-2026)",
+   "status": "ok",
+   "gm": 0.656,
+   "fiscal_year": "FY2026 (June 2026)",
    "currency": "AUD",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "https://www.raskmedia.com.au/2026/08/07/nick-scali-asxnck-share-price-rises-after-31-growth-in-fy26-result/",
+   "source_url": "https://investorpa.com/announcement/325252/",
    "source_type": "results_announcement",
    "notes": "FY26 revenue A$516.7m with reported group gross margin 65.6% (one outlet says 65.1%); no gross profit $ line visible, so not computed per rules. FY25: rev 495.3m, GM 63.5%.",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.656,
+    "fiscal_year": "FY2026 (June 2026)",
+    "basis": "consolidated",
+    "how": "gp_and_revenue",
+    "source_url": "https://investorpa.com/announcement/325252/",
+    "source_type": "results_announcement",
+    "notes": "FY26 results presentation: sales 516.7m, cost of sales 177.8m, GP 338.9m, GM 65.6% (FY25 63.5%). One outlet's 65.1% treated as error."
+   }
   },
   "KOSDAQ:A091700": {
    "status": "not_found",
@@ -6845,7 +7765,17 @@
    "source_url": "https://sa.investing.com/equities/partron-co-ltd",
    "source_type": "",
    "notes": "FY2025 actual revenue/gross profit not found within 2 searches.",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www.valueline.co.kr/finance/income/091700",
+    "source_type": "",
+    "notes": "FY2025 GP not found in 2 searches. Optical segment ~872bn KRW, sensors ~292bn (Daishin est.). stockhub OP margin 2.86% period unclear."
+   }
   },
   "KOSDAQ:A213420": {
    "status": "ok",
@@ -6893,19 +7823,39 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: only revenue/margin % without same-year GP lines visible",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://alphasquare.co.kr/home/stock-summary?code=037350",
+    "source_type": "",
+    "notes": "FY2025 rev 743.4bn (-25.6%), OP 57.7bn (7.8%). Investing.com GM 13.04% shown without period (its OP margin 10.54% does not match FY2025 7.8%), so not used."
+   }
   },
   "KOSDAQ:A054040": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "",
+   "status": "ok",
+   "gm": 0.0808,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://valueinvesting.io/054040.KQ/metric/gross-margin",
+   "source_type": "aggregator_margin",
    "notes": "2 searches: FY2025 revenue KRW 417.8bn found, no gross profit / cost of sales line",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.0808,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "unknown",
+    "how": "gm_stated",
+    "source_url": "https://valueinvesting.io/054040.KQ/metric/gross-margin",
+    "source_type": "aggregator_margin",
+    "notes": "valueinvesting.io gross margin 8.08% at 2025-12-31 (2024: 5.14%); FY2025 rev 417.8bn, OP 22.9bn. Business description not confirmed."
+   }
   },
   "SEHK:214": {
    "status": "ok",
@@ -6929,7 +7879,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: FY12/2025 revenue JPY 129,301m found but gross profit line not visible",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/94410/081220260209551527_tse-acedjpsm-94410-20260209551527-ixbrl.htm",
+    "source_type": "",
+    "notes": "FY12/2025 consol rev 129,301m (goods 81bn, commissions 48bn), OP 5,880m (4.5%); GP not found."
+   }
   },
   "KOSDAQ:A039240": {
    "status": "not_found",
@@ -6941,7 +7901,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: FY2025 revenue KRW 357.1bn found, no gross profit / cost of sales line",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www.valueline.co.kr/finance/income/039240",
+    "source_type": "",
+    "notes": "FY2025 rev 357.1bn (-9.7%), OP ~6.0bn (1.7%); GP not found. Products 74%, goods 25%."
+   }
   },
   "TSE:3445": {
    "status": "ok",
@@ -6965,7 +7935,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: no FY2025 revenue/GP lines (Stockopedia only through FY2023)",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://file.alphasquare.co.kr/media/pdfs/company-report/_251219%20HRS_%EC%98%A8%EB%9D%BC%EC%9D%B8_%EC%A0%95%ED%99%8D%EC%8B%9D_1346_Online%20report%20_%206_10p_HRS.pdf",
+    "source_type": "",
+    "notes": "FY2025 rev ~78.9bn (-1.7%), OP ~13.4bn (17.0%); GP not found (4Q21 cost ratio 62% only)."
+   }
   },
   "ASX:CVL": {
    "status": "ok",
@@ -6992,16 +7972,26 @@
    "applied": true
   },
   "KOSDAQ:A216050": {
-   "status": "not_found",
-   "gm": null,
-   "fiscal_year": "",
+   "status": "ok",
+   "gm": 0.502,
+   "fiscal_year": "FY2025 (Dec)",
    "currency": "",
    "revenue": null,
    "gross_profit": null,
-   "source_url": "",
-   "source_type": "",
+   "source_url": "https://stock.pstatic.net/stock-research/company/74/20260123_company_130604000.pdf",
+   "source_type": "aggregator_margin",
    "notes": "2 searches: FY2025 revenue KRW 50.49bn found, no GP line visible (ad-rep firm, may report operating expenses by nature - unverified)",
-   "applied": false
+   "applied": true,
+   "attempt2": {
+    "status": "ok",
+    "gm": 0.502,
+    "fiscal_year": "FY2025 (Dec)",
+    "basis": "consolidated",
+    "how": "cost_ratio",
+    "source_url": "https://stock.pstatic.net/stock-research/company/74/20260123_company_130604000.pdf",
+    "source_type": "aggregator_margin",
+    "notes": "Korea IR Council report (22-Jan-2026): 2025 cost of sales ratio 49.8% (2024: 53.1%) so GM ~50.2%; SG&A ratio 29.6%. Caveat: cost+SG&A (79.4%) implies OP margin 20.6% vs actual 22.8% (505bn rev, 115bn OP), so classification may differ slightly. Moderate confidence."
+   }
   },
   "TSE:3139": {
    "status": "ok",
@@ -7025,7 +8015,17 @@
    "source_url": "",
    "source_type": "",
    "notes": "2 searches: FY12/2025 revenue JPY 14,376m found but no gross profit / cost of sales line visible",
-   "applied": false
+   "applied": false,
+   "attempt2": {
+    "status": "not_found",
+    "gm": null,
+    "fiscal_year": "",
+    "basis": "unknown",
+    "how": "",
+    "source_url": "https://www2.jpx.co.jp/disc/72280/081220260212558394_tse-acedjpsm-72280-20260213372280-ixbrl.htm",
+    "source_type": "",
+    "notes": "FY12/2025 consol rev 14,376m (-1.4%), OP 1,610m (11.2%); GP not found."
+   }
   },
   "KOSE:A015860": {
    "status": "ok",
