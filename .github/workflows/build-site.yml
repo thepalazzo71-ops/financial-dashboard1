@@ -18,6 +18,7 @@ on:
       - 'scripts/build_site.py'
       - 'scripts/build_site_us.py'
       - 'scripts/build_site_asia.py'
+      - 'scripts/build_all_data.py'
       - 'scripts/scoring.py'
       - 'scripts/us_scoring.py'
   workflow_dispatch: {}
@@ -36,10 +37,11 @@ jobs:
       - run: python scripts/build_site.py
       - run: python scripts/build_site_us.py
       - run: python scripts/build_site_asia.py
+      - run: python scripts/build_all_data.py
       - name: Commit rebuilt site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html docs/us.html docs/asia.html
+          git add docs/index.html docs/us.html docs/asia.html docs/all-data.json
           git diff --cached --quiet || git commit -m "Rebuild dashboard from data/ [skip ci]"
           git diff --cached --quiet || git push

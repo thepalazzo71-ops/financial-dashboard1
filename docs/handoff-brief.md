@@ -2701,3 +2701,8 @@ lives in the repo: Europe `data/`, US `data-us/`, Asia `data-asia/` (pool JSON =
 = every GM lookup incl. misses and notes; `gm_industry.json` = industry groups for the peer estimates;
 `mc_overrides_applied.json`, `corporate_actions*.json`, `delisted.json`, `distress_flags.json`); comments in
 `data/comments.json` + Cloudflare KV.
+
+## "Download ALL data" now covers all regions (one workbook, one tab per region)
+- `scripts/build_all_data.py` writes `docs/all-data.json` (every company of Europe 1,037 / USA & Canada 520 / Asia & Pacific 1,895, all-sector pools, v6 scores via `scoring.score_pool` on the saved market caps + gross margins, GM quality, research text, delisted/distress/corporate-action info). CI runs it after the three `build_site*.py` and commits it.
+- The "Download ALL data" button on every dashboard fetches `all-data.json`, adds the viewer's own comments per ticker, and writes `shortlist-ALL-regions-YYYY-MM-DD.xlsx` with tabs Europe / USA & Canada / Asia & Pacific / Read me. Unsaved in-browser market-cap/GM edits are not in it (saved build values only).
+- Asia GM second pass finished (round 9); `scripts/apply_gm_estimates.py` applied industry-peer estimates to 464 companies (flagged "est. GM", no profitability bonus).
