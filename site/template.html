@@ -307,7 +307,7 @@
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
     <button class="btn" id="exportBtn">Download spreadsheet</button>
-    <button class="btn" id="exportAllBtn" title="Every company of ALL regions (Europe, USA &amp; Canada, Asia &amp; Pacific) on separate tabs: scores, gross margin and its source quality, research text, flags, your comments">Download ALL data</button>
+    <button class="btn" id="exportAllBtn" title="Every company of ALL regions (Europe, USA &amp; Canada, Asia &amp; Pacific) on separate tabs: scores, gross margin and its source quality, research text, flags, your comments. Saved repository data only: manual market-cap / gross-margin edits are NOT included">Download ALL data</button>
   </div>
   <div class="history-banner" id="historyBanner" style="display:none"></div>
   <div class="tracker-banner" id="trackerBanner" style="display:none"></div>
@@ -2195,29 +2195,37 @@ async function exportAllData() {
     const widths = [9, 9, 16, 34, 14, 12, 12, 9, 12, 12, 24, 12, 7, 8, 12, 9, 9, 9, 8, 8, 9, 8, 9, 26, 11, 40, 8, 8, 8, 8, 8, 8, 8, 8, 8, 10, 60, 60, 50, 36, 60, 28, 10, 60, 60];
     const colLetter = n => { let s = ''; for (n++; n > 0; n = Math.floor((n - 1) / 26)) s = String.fromCharCode(65 + (n - 1) % 26) + s; return s; };
     const idx = h => D.headers.indexOf(h);
+    const notes = wb.addWorksheet('Read me');   // first tab
     let total = 0;
     D.regions.forEach(g => {
       const ws = wb.addWorksheet(g.label);
       xlsxHeaderRow(ws, 1, heads, widths);
       g.rows.forEach(r => ws.addRow(r.concat([xlsxCommentsText(r[2])])));
+      ['v6 score', 'Mkt cap ($M)', 'P/B', 'Gross margin', 'Pts: gross margin', 'Pts: valuation'].forEach(h => {
+        if (idx(h) >= 0) ws.getRow(1).getCell(idx(h) + 1).note = 'Saved repository data only - manual market cap / gross margin edits made in the dashboard are NOT included.';
+      });
       ws.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: heads.length } };
       ws.getColumn(colLetter(idx('v6 score'))).numFmt = '0.00';
       D.pctCols.forEach(h => { if (idx(h) >= 0) ws.getColumn(colLetter(idx(h))).numFmt = '0.0%'; });
       ws.getColumn(colLetter(idx('P/B'))).numFmt = '0.00"x"';
       total += g.rows.length;
     });
-    const notes = wb.addWorksheet('Read me');
-    [['What this is'],
+    const NO_EDITS = 'NOT INCLUDED: manual edits. This file holds only the data saved in the repository at the last deploy (' + D.generated + '). Market caps or gross margins you typed or pasted into the dashboard in your browser are NOT reflected here - so scores, ranks, P/B and valuation can differ from what you see on screen. Your COMMENTS are included.';
+    [['READ THIS FIRST'], [NO_EDITS],
+      ['What this is'],
       ['Every company in the pool of each region (' + D.regions.map(g => g.label + ' ' + g.rows.length).join(', ') + '), ranked within its region by the v6 score, one tab per region, with the saved research text and your comments. Region pools are scored separately - ranks and scores are not comparable across tabs.'],
-      ['Scores use the market caps and gross margins saved in the repository at the last deploy (' + D.generated + '); unsaved market-cap / gross-margin edits made in this browser are not included. The all-sector pool is used for every region (the "Non-financial pool" column says whether a company is also in the non-financial pool).'],
+      ['The all-sector pool is used for every region (the "Non-financial pool" column says whether a company is also in the non-financial pool).'],
       ['Gross margin quality: "sourced - ..." = read from a filing, announcement or data page; "ESTIMATE" = median margin of industry peers (shown as est. GM on the dashboard, no profitability bonus); "none" = pool-median points only.'],
       ['Rank (excl. delisted) skips companies in the Delisted list; they stay in the pool so no other score changes.'],
       ['Generated ' + new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC from page build ' + BUILD_INFO.buildDate]].forEach(x => notes.addRow(x));
+    notes.getRow(1).font = { bold: true, size: 14, color: { argb: 'FFC00000' } };
+    notes.getRow(2).font = { bold: true, color: { argb: 'FFC00000' } };
+    notes.getRow(3).font = { bold: true };
     notes.getColumn(1).width = 140; notes.getColumn(1).alignment = { wrapText: true };
     const buf = await wb.xlsx.writeBuffer();
     const blob = new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     downloadBlob(blob, `shortlist-ALL-regions-${new Date().toISOString().slice(0, 10)}.xlsx`);
-    showToast('Full data file downloaded (' + total + ' companies, ' + D.regions.length + ' regions).');
+    showToast('Full data file downloaded (' + total + ' companies, ' + D.regions.length + ' regions). Note: it does NOT include manual market-cap / gross-margin edits - see its Read me tab.');
   } catch (e) { showToast('Could not build the full data file - see console.'); console.error(e); }
 }
 async function exportDashboardSpreadsheet() {
