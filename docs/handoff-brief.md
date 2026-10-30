@@ -2690,3 +2690,14 @@ comments (data/comments.json) stay read-only - edit them in the dashboard and re
 now takes a newer `editedAt` text for an id it already holds. Exports/imports and the spreadsheet carry `editedAt`
 (Overview comments cell, "Your Comments" tab has a "Last edited" column). Not covered: attachments cannot be swapped
 by editing (delete + re-add the comment).
+
+## "Download ALL data" button (2026-10-30)
+All three dashboards have a second download button next to "Download spreadsheet": `exportAllData()` writes ONE
+compact sheet with EVERY company of the active pool (Europe 1,037, US 520/294 by sector view, Asia 1,895/1,860),
+46 columns: ranks, v6 score and its 9 point components, market cap + refresh date/source, fundamentals, gross margin
+with a quality label (sourced - company filing / sourced - aggregator / ESTIMATE / none), fiscal year and source link,
+the thesis text, delisted/distress flags, corporate-action count + latest, and the user's comments. Where the data
+lives in the repo: Europe `data/`, US `data-us/`, Asia `data-asia/` (pool JSON = the facts + thesis + GM; `gm_research_log.json`
+= every GM lookup incl. misses and notes; `gm_industry.json` = industry groups for the peer estimates;
+`mc_overrides_applied.json`, `corporate_actions*.json`, `delisted.json`, `distress_flags.json`); comments in
+`data/comments.json` + Cloudflare KV.

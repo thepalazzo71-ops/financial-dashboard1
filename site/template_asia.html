@@ -315,6 +315,7 @@
     <button class="btn gold" id="gmUpdateBtn">Update gross margins</button>
     <button class="btn" id="bulkUpdateBtn">Update market caps</button>
     <button class="btn" id="exportBtn">Download spreadsheet</button>
+    <button class="btn" id="exportAllBtn" title="Every company in the pool with all saved data (scores, gross margin and its source quality, research text, flags, your comments)">Download ALL data</button>
   </div>
   <div class="history-banner" id="historyBanner" style="display:none"></div>
   <div class="tracker-banner" id="trackerBanner" style="display:none"></div>
@@ -1840,7 +1841,7 @@ function render() {
         <td class="num-col">${deltaHtml}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${(c.gmEst && !gmInfo.isOverride) ? ` <span class="tag needsgm" style="background:#fdf1d8;color:#8a5a00" title="Gross margin ESTIMATED as the median of ${c.gmEstPeers} sourced industry peers (${escHtml(c.gmEstGroup||'')}); not this company's own figure">est. GM</span>` : ''}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
         </td>
         <td class="num-col">
           ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `
@@ -2203,6 +2204,72 @@ function buildMethodologySheet(wb, viewLabel) {
   ws.getColumn('A').alignment = { wrapText:true, vertical:'top' };
   return ws;
 }
+
+// ---- Full-data export: ONE compact sheet with EVERY company of the active pool (not just the shown 150) -
+// scores and their parts, market cap + refresh info, gross margin with its source quality, fundamentals,
+// the research text (business / competitive position / shareholders / red flags), delisted / distress / corporate-action
+// flags and your comments. Meant as the "everything we have saved" snapshot; re-download any time.
+function gmQuality(row) {
+  const c = row.c, g = row.gmInfo;
+  if (g.isOverride) return 'edited in this browser';
+  if (g.isFallback) return 'none (pool-median points)';
+  if (c.gmEst) return 'ESTIMATE (industry-peer median)';
+  if (c.gmSrcType === 'verified_filing') return 'sourced - company filing';
+  if (c.gmSrcType) return 'sourced - ' + String(c.gmSrcType).replace(/_/g, ' ');
+  return 'sourced';
+}
+async function exportAllData() {
+  if (typeof ExcelJS === 'undefined') { showToast('Export library unavailable - try reloading the page.'); return; }
+  showToast('Building full data file...');
+  try {
+    const isDl = t => typeof isDelisted === 'function' && isDelisted(t);
+    const DLmap = typeof DELISTED !== 'undefined' ? DELISTED : {};
+    const all = ensureLiveScored();
+    const ranked = all.slice().sort((a, b) => b.total - a.total);
+    const rankOf = {}; ranked.forEach((r, i) => { rankOf[r.c.t] = i + 1; });
+    const caByT = {};
+    flattenCorporateActions().forEach(a => { (caByT[a.ticker] = caByT[a.ticker] || []).push(a); });
+    const wb = new ExcelJS.Workbook();
+    wb.creator = document.title; wb.created = new Date();
+    const ws = wb.addWorksheet('All companies');
+    const heads = ['Rank (all)', 'Rank (excl. delisted)', 'Ticker', 'Company', 'Country', 'Delisted', 'Distress flag', 'v6 score', 'Mkt cap ($M)', 'Mkt cap refreshed', 'Mkt cap source', 'Equity ($M)', 'P/B', 'ROE', 'Rev LTM ($M)', 'Rev growth', 'Rev consistency', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %', 'Periods',
+      'Gross margin', 'GM quality', 'GM fiscal year', 'GM source link', 'Pts: rev growth', 'Pts: consistency', 'Pts: dilution', 'Pts: profitability', 'Pts: CFO', 'Pts: track', 'Pts: dividend', 'Pts: gross margin', 'Pts: valuation', 'Archetype', 'Best lens',
+      'Business description', 'Competitive position', 'Main shareholders', 'Insider ownership', 'Red flags', 'Website', 'Corporate actions (events)', 'Latest corporate action', 'Your comments'];
+    xlsxHeaderRow(ws, 1, heads, [9, 9, 16, 34, 14, 12, 12, 9, 12, 12, 24, 12, 7, 8, 12, 9, 9, 9, 8, 8, 9, 8, 9, 26, 11, 40, 8, 8, 8, 8, 8, 8, 8, 8, 8, 14, 10, 60, 60, 50, 36, 60, 28, 10, 60, 60]);
+    let live = 0;
+    ranked.forEach(row => {
+      const c = row.c, th = c.thesis || {}, fp = c.fixedPts || {}, dl = isDl(c.t);
+      if (!dl) live++;
+      const ca = (caByT[c.t] || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+      const gmLink = (c.gmLinks && c.gmLinks[0]) ? c.gmLinks[0].url : '';
+      const r = (x, d) => (x === null || x === undefined || Number.isNaN(x)) ? null : Number(Number(x).toFixed(d));
+      ws.addRow([
+        rankOf[c.t], dl ? null : live, c.t, c.n, c.co, dl ? ('yes ' + ((DLmap[c.t] || {}).date || '')) : '', c.distress ? c.distress.level : '', r(row.total, 2),
+        r(row.mc, 1), c.mcRefreshed ? (c.mcUpdatedAt || '').slice(0, 10) : '', c.mcRefreshed ? (c.mcSource || '') : '', r(c.eq, 1), r(row.pb, 2), r(row.roe, 3), r(c.revLTM, 1), r(c.revGrowth, 3), r(c.revConsistency, 2), r(c.dilution, 3), r(c.profitPct, 2), r(c.cfoPct, 2), r(c.divPct, 2), c.nRevPeriods,
+        r(row.gmInfo.gm, 3), gmQuality(row), c.gmFY || '', gmLink,
+        r(fp.revenue_growth, 2), r(fp.revenue_consistency, 2), r(fp.dilution, 2), r(fp.profitability, 2), r(fp.cfo_positive, 2), r(fp.track_record, 2), r(fp.dividend_consistency, 2), r(row.gmPts, 2), r(row.valPts, 2), row.archetype || '', row.bestLens || '',
+        th.business_description || '', th.competitive_position || '', th.main_shareholders || '', th.insider_ownership || '', th.red_flags || '', th.website || '',
+        ca.length, ca[0] ? ((ca[0].date || '') + ' ' + (ca[0].categoryLabel || '') + ': ' + stripHtmlEntities(ca[0].note || ca[0].terms || '')) : '',
+        xlsxCommentsText(c.t),
+      ]);
+    });
+    ws.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: heads.length } };
+    ['H'].forEach(k => ws.getColumn(k).numFmt = '0.00');
+    ['N', 'P', 'R', 'S', 'T', 'U', 'W'].forEach(k => ws.getColumn(k).numFmt = '0.0%');
+    ws.getColumn('M').numFmt = '0.00"x"';
+    const notes = wb.addWorksheet('Read me');
+    [['What this is'], ['Every company in the active pool, ranked by the v6 score on the CURRENT market caps and gross margins in this page, with the saved research text and your comments.'],
+      ['Gross margin quality: "sourced - company filing" = from a filing/announcement; "sourced - aggregator ..." = revenue and cost read from a data page; "ESTIMATE" = median margin of industry peers (shown as est. GM on the dashboard); "none" = pool-median points only.'],
+      ['Rank (excl. delisted) skips companies in the Delisted list; they stay in the pool so no other score changes.'],
+      ['Generated ' + new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC from build ' + BUILD_INFO.buildDate]].forEach(x => notes.addRow(x));
+    notes.getColumn(1).width = 140; notes.getColumn(1).alignment = { wrapText: true };
+    const buf = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const slug = (typeof filters !== 'undefined' && filters.sector) ? '-' + filters.sector : '';
+    downloadBlob(blob, `shortlist-ALL-data${slug}-${new Date().toISOString().slice(0, 10)}.xlsx`);
+    showToast('Full data file downloaded (' + ranked.length + ' companies).');
+  } catch (e) { showToast('Could not build the full data file - see console.'); console.error(e); }
+}
 async function exportDashboardSpreadsheet() {
   if (typeof ExcelJS === 'undefined') { showToast('Export library unavailable — try reloading the page.'); return; }
   showToast('Building spreadsheet…');
@@ -2397,6 +2464,7 @@ function wireToolbar() {
   document.getElementById('profitBonusClose').addEventListener('click', () => profitBonusBackdrop.classList.remove('open'));
   profitBonusBackdrop.addEventListener('click', e => { if (e.target===profitBonusBackdrop) profitBonusBackdrop.classList.remove('open'); });
 
+  document.getElementById('exportAllBtn').addEventListener('click', exportAllData);
   document.getElementById('exportBtn').addEventListener('click', () => {
     exportDashboardSpreadsheet();
   });
