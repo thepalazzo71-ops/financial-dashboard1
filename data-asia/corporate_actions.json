@@ -46,6 +46,16 @@
    "note": "Target is the parent Golfzon Holdings, not Golfzon Co (215000), which is its listed operating subsidiary; launch day approximate (late June 2026).",
    "source_url": "https://newstomato.com/ReadNews.aspx?no=1308462",
    "role": "target (parent)"
+  },
+  {
+   "ticker": "KOSDAQ:A093320",
+   "company": "KINX, Inc.",
+   "date": "2026-10-28",
+   "counterparty": "Macquarie (MAIF4 SPC)",
+   "role": "target",
+   "terms": "Share purchase agreements with major holders at KRW 190,000/share, followed by a tender offer for remaining shares (no minimum/maximum) with voluntary delisting planned; Align Partners agreed to sell its stake at the same price.",
+   "note": "PENDING, not yet delisted. Conditions: MOTIE foreign-investment security review and KFTC merger approval; an earlier tender-offer structure failed and was revised. Exact tender dates not confirmed.",
+   "source_url": "https://core.asiae.co.kr/article/2026102811030289452"
   }
  ],
  "mergers_acquisitions": [
@@ -63,7 +73,7 @@
    "ticker": "KOSDAQ:A036800",
    "company": "Nice Information & Telecommunication, Inc.",
    "date": "2026-06-02",
-   "counterparty": "KIS Information & Communication (KIS\uc815\ubcf4\ud1b5\uc2e0, affiliate)",
+   "counterparty": "KIS Information & Communication (KIS정보통신, affiliate)",
    "role": "acquirer",
    "terms": "Acquire 4,491,623 shares for ~KRW112.3bn, raising stake to 96.1%; scheduled 2026-07-02 (consolidation expected 3Q26)",
    "note": "Acquisition of affiliate KIS Info & Comm (2025 revenue KRW216.5bn, OP KRW15.5bn) to consolidate it as subsidiary.",
@@ -75,7 +85,7 @@
    "date": "2026-05-18",
    "counterparty": "Pepper Savings Bank volleyball club (KOVO women's pro volleyball team)",
    "role": "acquirer",
-   "terms": "Intent to acquire conveyed to KOVO; club to be run by subsidiary SOOP TV (\uc232\ud2f0\ube44); price not seen",
+   "terms": "Intent to acquire conveyed to KOVO; club to be run by subsidiary SOOP TV (숲티비); price not seen",
    "note": "Sports-franchise acquisition, small relative to group.",
    "source_url": "https://sports.khan.co.kr/article/202605181650003"
   },
@@ -216,7 +226,7 @@
    "company": "Hyundai Home Shopping Network Corporation",
    "date": "2026-08-05",
    "spun_off_entity": "Hyundai Home Shopping Holdings (tentative name; investment business incl. Handsome stake)",
-   "terms": "Personal-basis (\uc778\uc801) split of investment business; new co to merge with Hyundai GF Holdings; HHS retains home-shopping business",
+   "terms": "Personal-basis (인적) split of investment business; new co to merge with Hyundai GF Holdings; HHS retains home-shopping business",
    "note": "Per Hyundai GF Holdings disclosure reported 2026-08-05; search summary only, verify in DART.",
    "source_url": "https://dealsite.co.kr/articles/166637"
   }
@@ -265,7 +275,7 @@
    "ticker": "KOSE:A007540",
    "company": "Sempio Company",
    "date": "2026-09-09",
-   "counterparty": "type: share cancellation (\uc8fc\uc2dd\uc18c\uac01\uacb0\uc815); also 1-day trading halt/lift same day",
+   "counterparty": "type: share cancellation (주식소각결정); also 1-day trading halt/lift same day",
    "role": "",
    "terms": "Terms (size) not seen; Butler lists 09.09 trading halt & resumption and 09.09 share-cancellation decision",
    "note": "Sempio decided to cancel shares (likely treasury) on 2026-09-09; stock halted and resumed same day.",
