@@ -65,6 +65,16 @@
    "terms": "First tender offer at KRW 6,700/share, 29 Jun - 5 Aug 2026: 9,742,319 shares acquired, stake to ~85.2% (announced 7 Aug 2026). Second offer 10 Aug - 2 Sep 2026 for 5,742,701 shares drew 0 shares.",
    "note": "Voluntary-delisting tender offer. The acquirer then paused the delisting and moved to a value-up approach (11 Sep 2026); still listed in mid-Oct 2026 (close KRW 7,790 on 15 Oct), above the offer price. NOT delisted.",
    "source_url": "https://www.mt.co.kr/stock/2026/09/11/2026091113262932687"
+  },
+  {
+   "ticker": "TSE:9691",
+   "company": "Ryomo Systems Co., Ltd.",
+   "date": "2026-07-08",
+   "counterparty": "Mitsuba Corporation",
+   "role": "target",
+   "terms": "Tender offer closed 2026-07-08 and succeeded (1,599,686 shares tendered; Mitsuba post-offer voting ownership 97.03%), settlement 2026-07-15. Intended final ownership Mitsuba 80% / Chubu Electric 20% via share consolidation.",
+   "note": "TAKE-PRIVATE IN PROGRESS, NOT YET DELISTED: TSE designated the stock 'on supervision (confirmation)'. Share-consolidation approval and exact delisting date not found as of 2026-11-02. Move to the Delisted list once the delisting date is confirmed.",
+   "source_url": ""
   }
  ],
  "mergers_acquisitions": [
@@ -227,6 +237,16 @@
    "terms": "Acquires 13m units for KRW 13bn, taking a 65% stake in a KRW 20bn venture fund formed with Mirae Asset Capital.",
    "note": "Investment-purpose fund stake, not an operating acquisition.",
    "source_url": "https://www.digitaltoday.co.kr/aigongsi/amp/4589/ankuk-pharmaceuticals-acquires-miraeasset-stake"
+  },
+  {
+   "ticker": "TSE:7740",
+   "company": "Tamron Co., Ltd.",
+   "date": "2026-07-30",
+   "counterparty": "Sony Group (existing holder, 14.7%-15.35% by source)",
+   "role": "target",
+   "terms": "Non-binding acquisition proposal from Sony reported 2026-07-29, confirmed by Tamron on 2026-07-30; Tamron set up a special committee. No price or recommendation disclosed.",
+   "note": "PENDING proposal, not a completed deal; not delisted.",
+   "source_url": ""
   }
  ],
  "spinoffs": [

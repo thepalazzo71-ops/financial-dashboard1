@@ -1,3 +1,12 @@
 {
- "_definition": "Curated list of Asia/Pacific companies in current financial distress (same definition as the Europe file). Informational only."
+ "_definition": "Curated list of Asia/Pacific companies in current financial distress (same definition as the Europe file). Informational only.",
+ "TSE:3856": {
+  "level": "warning",
+  "summary": "Abalance: designated 'security on special alert' by the TSE on 2026-01-31 (auditor disclaimer on interim statements, listing-agreement penalty), then 'under supervision (examination)' on 2026-07-31 over internal management systems - a step toward possible delisting. Prior-period accounting restated after external verification (Feb 2026) and investigation (Jun 2026) committee findings; filing deadlines postponed. Delisting decision pending, no date found.",
+  "asOf": "2026-11-02",
+  "sources": [
+   "https://www.jpx.co.jp/english/news/1023/20260731-12.html",
+   "https://www.jpx.co.jp/english/listing/market-alerts/supervision/vk0khi000002544t-att/vk0khi0000025468.pdf"
+  ]
+ }
 }
