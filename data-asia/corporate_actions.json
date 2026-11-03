@@ -257,6 +257,16 @@
    "terms": "Non-binding acquisition proposal from Sony reported 2026-07-29, confirmed by Tamron on 2026-07-30; Tamron set up a special committee. No price or recommendation disclosed.",
    "note": "PENDING proposal, not a completed deal; not delisted.",
    "source_url": ""
+  },
+  {
+   "ticker": "TSE:6044",
+   "company": "Sanki Service Corporation",
+   "date": "2026-07-15",
+   "counterparty": "Shinmaint Holdings (TSE:6086)",
+   "role": "target",
+   "terms": "Share exchange making Sanki Service a wholly owned subsidiary of Shinmaint Holdings: 1.92 Shinmaint shares per Sanki share; effective 2026-12-01; TSE Standard delisting planned for 2026-11-27. Combined group to be renamed Sanki Shinmaint HD.",
+   "note": "PENDING, not yet delisted as of 2026-11-03. Status after July not verified. Move to the Delisted list once the delisting has happened.",
+   "source_url": ""
   }
  ],
  "spinoffs": [
