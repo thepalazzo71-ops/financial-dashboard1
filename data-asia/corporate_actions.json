@@ -75,6 +75,16 @@
    "terms": "Tender offer closed 2026-07-08 and succeeded (1,599,686 shares tendered; Mitsuba post-offer voting ownership 97.03%), settlement 2026-07-15. Intended final ownership Mitsuba 80% / Chubu Electric 20% via share consolidation.",
    "note": "TAKE-PRIVATE IN PROGRESS, NOT YET DELISTED: TSE designated the stock 'on supervision (confirmation)'. Share-consolidation approval and exact delisting date not found as of 2026-11-02. Move to the Delisted list once the delisting date is confirmed.",
    "source_url": ""
+  },
+  {
+   "ticker": "TSE:7523",
+   "company": "Art Vivant Co., Ltd. (Arvivan)",
+   "date": "2026-10-20",
+   "counterparty": "Orsay (MBO vehicle)",
+   "role": "target",
+   "terms": "Management buy-out: second tender offer succeeded at JPY 1,900/share. TSE scheduled the delisting for 2026-11-11 (liquidation/seiri period 2026-10-20 to 2026-11-10).",
+   "note": "TAKE-PRIVATE, DELISTING SCHEDULED 2026-11-11 - not yet delisted as of 2026-11-03. Squeeze-out vote result not confirmed. Move to the Delisted list once it has delisted.",
+   "source_url": ""
   }
  ],
  "mergers_acquisitions": [
