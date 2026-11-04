@@ -25,6 +25,35 @@ def num(x):
     return x if isinstance(x, (int, float)) and not isinstance(x, bool) else None
 
 
+def apply_overrides(entries, mc_o, byt):
+    """Manual corrections (data/net_debt_overrides.json) applied on top of the researched figures; recomputes the derived fields."""
+    path = ROOT / 'data' / 'net_debt_overrides.json'
+    if not path.exists():
+        return 0
+    n = 0
+    for t, o in json.load(open(path)).items():
+        if t.startswith('_') or t not in byt:
+            continue
+        cur = o['currency']; fx = FX[cur]
+        gd, cash, rep, lease = num(o.get('gross_debt')), num(o.get('cash')), num(o.get('net_debt_reported')), num(o.get('lease_liabilities'))
+        nd = gd - cash if gd is not None and cash is not None else rep
+        mc = (mc_o.get(t) or {}).get('mc') or byt[t].get('mc0')
+        e = {'tier': 'A' if gd is not None and cash is not None else 'B', 'currency': cur, 'balanceSheetDate': o.get('balance_sheet_date'),
+             'periodType': o.get('period_type'), 'grossDebt': gd, 'cash': cash, 'leaseLiabilities': lease, 'netDebtReported': rep,
+             'netDebt': round(nd, 2), 'netDebtUsd': round(nd * fx, 1), 'fx': fx, 'minorityInterest': None,
+             'mcUsd': round(mc, 1) if mc else None, 'evUsd': round(mc + nd * fx, 1) if mc else None,
+             'sourceUrl': o.get('source_url'), 'sourceType': o.get('source_type'), 'notes': (o.get('notes') or '')[:600],
+             'flags': ['manual correction'] + (['balance sheet older than Q1 2026'] if (o.get('balance_sheet_date') or '') < '2026-03-31' else [])}
+        if lease is not None and mc:
+            e['evInclLeasesUsd'] = round(mc + nd * fx + lease * fx, 1)
+        if o.get('ltm_net_income_local') is not None:
+            e['ltmNetIncomeUsd'] = round(o['ltm_net_income_local'] * fx, 1)
+            e['ltmNetIncomeNote'] = o.get('ltm_net_income_note')
+        entries[t] = e
+        n += 1
+    return n
+
+
 def main(rdir):
     rdir = Path(rdir)
     comp = json.load(open(ROOT / 'data' / 'companies_1000_scored.json'))
@@ -91,6 +120,7 @@ def main(rdir):
         e['flags'] = flags
         entries[t] = e
         stats[tier] = stats.get(tier, 0) + 1
+    stats['overrides'] = apply_overrides(entries, mc_o, byt)
     out = {'_definition': 'Net debt = gross interest-bearing debt (excl. IFRS 16 leases) - cash & liquid investments, from the latest published balance sheet (tier A), or the company-reported net debt figure (tier B, definition varies). EV (USD) = current market cap + net debt in USD. Informational only; does not affect the v6 score.',
            '_fx': FX, '_fxNote': FX_NOTE, '_generated': __import__('datetime').date.today().isoformat(), 'entries': entries}
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
@@ -98,4 +128,11 @@ def main(rdir):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    if sys.argv[1] == '--overrides-only':
+        d = json.load(open(OUT))
+        byt = {c['ticker']: c for c in json.load(open(ROOT / 'data' / 'companies_1000_scored.json'))}
+        k = apply_overrides(d['entries'], json.load(open(ROOT / 'data' / 'mc_overrides_applied.json')), byt)
+        OUT.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+        print('overrides applied:', k)
+    else:
+        main(sys.argv[1])

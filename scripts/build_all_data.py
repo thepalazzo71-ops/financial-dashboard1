@@ -96,6 +96,8 @@ def build_region(key, label, folder, pool_file, nonfin_file):
             gm_link = m.group(1) if m else ''
         nd = nd_all.get(t) or {}
         ni = next((x for x in reversed(c.get('niHist') or []) if x is not None), None)
+        if nd.get('ltmNetIncomeUsd') is not None:
+            ni = nd['ltmNetIncomeUsd']
         ev = (s['mc'] + nd['netDebtUsd']) if nd.get('netDebtUsd') is not None and s['mc'] else None
         nd_cols = [r(nd.get('netDebtUsd'), 1), r(ev, 1), r(ev / ni, 2) if ev and ev > 0 and ni and ni > 0 else None,
                    ('financial - n/a' if nd.get('tier') == 'F' else (f"tier {nd['tier']} {nd.get('currency')} {nd.get('balanceSheetDate')}" if nd.get('tier') else ''))]

@@ -434,22 +434,25 @@
    "currency": "EUR",
    "balanceSheetDate": "2026-02-28",
    "periodType": "half_year",
-   "grossDebt": 17.9,
+   "grossDebt": 55.3,
    "cash": 36.6,
    "leaseLiabilities": null,
-   "netDebtReported": -18.7,
-   "netDebt": -18.7,
-   "netDebtUsd": -21.3,
+   "netDebtReported": 18.7,
+   "netDebt": 18.7,
+   "netDebtUsd": 21.3,
    "fx": 1.1383,
    "minorityInterest": null,
-   "mcUsd": 59.7,
-   "evUsd": 38.4,
+   "mcUsd": 50.1,
+   "evUsd": 71.4,
    "sourceUrl": "https://www.trivano.com/persbericht/catana-group-resultats-semestriels-2025-2026-734673.html",
    "sourceType": "half_year_report",
-   "notes": "H1 FY2025/26 (to 28 Feb 2026, published 1 Jun 2026). Company table shows net debt -18.7 (net cash) of which cash 36.6. gross_debt 17.9 is DERIVED (cash + net debt), not seen as a line item; leases not given. Next annual accounts (Aug 2026 year end) not yet published.",
+   "notes": "Corrected from the user-supplied deep dive of 4 Nov 2026: at 28 Feb 2026 gross debt EUR 55.3m, cash EUR 36.6m, company net DEBT EUR 18.7m (first-pass research had read it as net cash). H1 FY26 operating result negative; fire at Canet on 2 Jul 2026; EUR 19m of new bank debt arranged; FY25/26 accounts due early Dec 2026.",
    "flags": [
+    "manual correction",
     "balance sheet older than Q1 2026"
-   ]
+   ],
+   "ltmNetIncomeUsd": 7.5,
+   "ltmNetIncomeNote": "LTM to 28 Feb 2026, group share: FY24/25 EUR 13.6m - H1 FY25 EUR 6.8m + H1 FY26 EUR -0.2m (consolidated H1 FY26 result was EUR -1.7m). The extract's LTM figure (about EUR 14m) predates the H1 FY26 loss."
   },
   "ENXTPA:RBO": {
    "tier": "A",

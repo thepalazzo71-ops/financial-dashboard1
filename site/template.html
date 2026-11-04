@@ -1029,7 +1029,7 @@ function ltmNI(c) {
 }
 function valuationOf(c, mc) {
   const nd = c.nd;
-  const out = { nd, ndUsd: null, ev: null, ni: ltmNI(c), evE: null, pe: null, fin: !!(nd && nd.tier === 'F') };
+  const out = { nd, ndUsd: null, ev: null, ni: (nd && nd.niUsd !== null && nd.niUsd !== undefined) ? nd.niUsd : ltmNI(c), evE: null, pe: null, fin: !!(nd && nd.tier === 'F') };
   if (mc !== null && mc !== undefined && out.ni !== null && out.ni > 0) out.pe = mc / out.ni;
   if (!nd || nd.tier === 'F' || mc === null || mc === undefined) return out;
   out.ndUsd = nd.usd; out.ev = mc + nd.usd;
@@ -1067,13 +1067,14 @@ function valuationBox(row) {
       ${item('Market cap', '$' + fmtNum(mc, 1) + 'M', 'Live market cap (reflects any edit you made)')}
       ${item('Net debt', (v.ndUsd < 0 ? '−' : '') + '$' + fmtNum(Math.abs(v.ndUsd), 1) + 'M' + (v.ndUsd < 0 ? ' (net cash)' : ''))}
       ${item('Enterprise value', '$' + fmtNum(v.ev, 1) + 'M', 'Market cap + net debt')}
-      ${item('LTM net income', v.ni !== null ? '$' + fmtNum(v.ni, 1) + 'M' : '—')}
+      ${item('LTM net income', v.ni !== null ? '$' + fmtNum(v.ni, 1) + 'M' : '—', nd.niNote || 'Last-twelve-months net income from the data extract')}
       ${item('EV / earnings', v.evE !== null ? '<b>' + fmtNum(v.evE, 1) + 'x</b>' : (v.ni !== null && v.ni <= 0 ? 'n/m (loss-making)' : (v.ev <= 0 ? 'n/m (EV ≤ 0)' : '—')), 'Enterprise value ÷ last-twelve-months net income')}
       ${item('P/E', v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m', 'Market cap ÷ last-twelve-months net income, for comparison')}
       ${lease !== null ? item('EV incl. leases', '$' + fmtNum(v.ev + lease, 1) + 'M', 'EV plus IFRS 16 lease liabilities of $' + fmtNum(lease, 1) + 'M') : ''}
     </div>
     <p class="hint val-basis"><b>Net debt basis (tier ${nd.tier}):</b> ${escHtml(ndBasisText(nd))}.${nd.src ? ` <a href="${escHtml(nd.src)}" target="_blank" rel="noopener">source</a>` : ''}${nd.srcType ? ` (${escHtml(String(nd.srcType).replace(/_/g, ' '))})` : ''}</p>
     ${flags.length ? `<p class="hint val-basis" style="color:var(--brick)">&#9888; ${flags.map(escHtml).join(' &middot; ')}</p>` : ''}
+    ${nd.niNote ? `<p class="hint val-basis"><b>Net income basis:</b> ${escHtml(nd.niNote)}</p>` : ''}
     <p class="hint val-basis">Converted to USD at an approximate mid-2026 rate (${escHtml(nd.cur)} ${nd.fx}); EV / earnings uses net income, not EBIT. Informational: not part of the v6 score.</p>
   </div>`;
 }

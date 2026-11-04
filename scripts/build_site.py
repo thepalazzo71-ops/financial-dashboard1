@@ -93,7 +93,8 @@ def load_net_debt():
                       'gd': e.get('grossDebt'), 'cash': e.get('cash'), 'lease': e.get('leaseLiabilities'),
                       'rep': e.get('netDebtReported'), 'local': e.get('netDebt'), 'usd': e['netDebtUsd'], 'fx': e.get('fx'),
                       'mi': e.get('minorityInterest'), 'src': e.get('sourceUrl'), 'srcType': e.get('sourceType'),
-                      'note': e.get('notes'), 'flags': e.get('flags', [])}
+                      'note': e.get('notes'), 'flags': e.get('flags', []),
+                      'niUsd': e.get('ltmNetIncomeUsd'), 'niNote': e.get('ltmNetIncomeNote')}
     return out
 
 
