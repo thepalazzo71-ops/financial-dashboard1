@@ -24,7 +24,8 @@ HEADERS = ['Rank (all)', 'Rank (excl. delisted)', 'Ticker', 'Company', 'Country'
            'Gross margin', 'GM quality', 'GM fiscal year', 'GM source link', 'Pts: rev growth', 'Pts: consistency', 'Pts: dilution',
            'Pts: profitability', 'Pts: CFO', 'Pts: track', 'Pts: dividend', 'Pts: gross margin', 'Pts: valuation', 'Non-financial pool',
            'Business description', 'Competitive position', 'Main shareholders', 'Insider ownership', 'Red flags', 'Website',
-           'Corporate actions (events)', 'Latest corporate action']
+           'Corporate actions (events)', 'Latest corporate action',
+           'Net debt ($M)', 'EV ($M)', 'EV / earnings', 'Net debt basis']
 # column kinds the client uses for number formats: pct columns / multiple
 PCT_COLS = ['ROE', 'Rev growth', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %', 'Gross margin']
 
@@ -64,6 +65,9 @@ def build_region(key, label, folder, pool_file, nonfin_file):
     delisted = {k: v for k, v in load(folder / 'delisted.json', {}).items() if not k.startswith('_')}
     distress = {k: v for k, v in load(folder / 'distress_flags.json', {}).items() if not k.startswith('_')}
     ca = load(folder / 'corporate_actions.json', {})
+    nd_all = {}
+    if key == 'europe' and (folder / 'net_debt.json').exists():
+        nd_all = json.load(open(folder / 'net_debt.json')).get('entries', {})
     ca_by = {}
     for cat, items in ca.items():
         for a in items:
@@ -90,6 +94,11 @@ def build_region(key, label, folder, pool_file, nonfin_file):
             import re
             m = re.search(r'\((https?://[^)]+)\)', gm_link)
             gm_link = m.group(1) if m else ''
+        nd = nd_all.get(t) or {}
+        ni = next((x for x in reversed(c.get('niHist') or []) if x is not None), None)
+        ev = (s['mc'] + nd['netDebtUsd']) if nd.get('netDebtUsd') is not None and s['mc'] else None
+        nd_cols = [r(nd.get('netDebtUsd'), 1), r(ev, 1), r(ev / ni, 2) if ev and ev > 0 and ni and ni > 0 else None,
+                   ('financial - n/a' if nd.get('tier') == 'F' else (f"tier {nd['tier']} {nd.get('currency')} {nd.get('balanceSheetDate')}" if nd.get('tier') else ''))]
         rows.append([
             rank, None if dl else live, t, c['name'], c['country'], ('yes ' + (dl.get('date') or '')) if dl else '',
             (distress.get(t) or {}).get('level', ''), r(s['total'], 2),
@@ -103,7 +112,7 @@ def build_region(key, label, folder, pool_file, nonfin_file):
             th.get('business_description') or '', th.get('competitive_position') or '', th.get('main_shareholders') or '',
             th.get('insider_ownership') or '', th.get('red_flags') or '', th.get('website') or '',
             len(evs), latest,
-        ])
+        ] + nd_cols)
     return {'key': key, 'label': label, 'rows': rows}
 
 

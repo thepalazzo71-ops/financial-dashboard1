@@ -74,6 +74,29 @@ def load_delisted():
         return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
 
 
+def load_net_debt():
+    """ticker -> compact net-debt record from data/net_debt.json (built by
+    scripts/merge_net_debt.py): tier A = gross debt - cash, B = company-reported
+    net debt, F = financial company (EV not meaningful). The page computes EV
+    live as the (possibly edited) market cap + 'usd'."""
+    path = DATA / "net_debt.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        ents = json.load(f).get("entries", {})
+    out = {}
+    for t, e in ents.items():
+        if e.get('tier') == 'F':
+            out[t] = {'tier': 'F'}
+        elif e.get('netDebtUsd') is not None:
+            out[t] = {'tier': e['tier'], 'cur': e['currency'], 'date': e.get('balanceSheetDate'), 'per': e.get('periodType'),
+                      'gd': e.get('grossDebt'), 'cash': e.get('cash'), 'lease': e.get('leaseLiabilities'),
+                      'rep': e.get('netDebtReported'), 'local': e.get('netDebt'), 'usd': e['netDebtUsd'], 'fx': e.get('fx'),
+                      'mi': e.get('minorityInterest'), 'src': e.get('sourceUrl'), 'srcType': e.get('sourceType'),
+                      'note': e.get('notes'), 'flags': e.get('flags', [])}
+    return out
+
+
 def load_saved_comments():
     """ticker -> [{id, ts, text}]: the user's own timestamped per-company
     comments, kept in data/comments.json (merged from the dashboard's Export
@@ -129,6 +152,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
     scored, median_gm_pts = score_pool(companies, mc_overrides, gm_overrides)
     company_news = load_company_news()
     distress = load_distress_flags()
+    net_debt = load_net_debt()
 
     out_companies = []
     for c, s in zip(companies, scored):
@@ -156,6 +180,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'thesis': c.get('thesis'),
             'newsNote': news.get('note') if news else None,
             'distress': distress.get(c['ticker']),
+            'nd': net_debt.get(c['ticker']),
         })
 
     history, history_dates = load_history(companies)
