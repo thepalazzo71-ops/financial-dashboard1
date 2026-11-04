@@ -211,6 +211,10 @@
   .cheap-table th:nth-child(2), .cheap-table td:nth-child(2) { text-align: left; }
   .cheap-table td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
   .cheap-table td .sub { color: var(--ink-faint); font-size: 11px; }
+  .cheap-table tr.cheap-row { cursor: pointer; }
+  .cheap-table tr.cheap-row:hover { background: rgba(47,75,60,0.05); }
+  .cheap-table tr.cheap-row.expanded { background: var(--green-soft); }
+  .cheap-table td.cheap-detail-cell { text-align: left; padding: 0 6px 14px; white-space: normal; font-size: 13px; }
   .modal h4 { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.03em; margin: 18px 0 8px; }
   .modal h4:first-child { margin-top: 0; }
   .top150-row-wrap:last-child .top150-row { border-bottom: none; }
@@ -1326,6 +1330,7 @@ function renderCorpActionsModalContent() {
     ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
   `).join('');
 }
+let expandedCheapTicker = null;
 function renderCheapEvContent() {
   const all = ensureLiveScored();
   const rank = computeRankByTicker(all, false);
@@ -1351,14 +1356,15 @@ function renderCheapEvContent() {
     const c = r.c, nd = c.nd;
     const tag = nd.tier === 'B' ? ' <sup class="nd-b" title="Company-reported net debt only (definition varies)">B</sup>' : '';
     const warn = (nd.flags || []).some(f => /aggregator|older than/.test(f)) ? ' <span title="' + escHtml((nd.flags || []).join('; ')) + '" style="color:var(--brick);cursor:help">&#9888;</span>' : '';
-    return `<tr>
+    const isOpen = expandedCheapTicker === c.t;
+    return `<tr class="cheap-row ${isOpen ? 'expanded' : ''}" data-ticker="${c.t}" title="Click for the full company detail">
       <td>${i + 1}</td>
       <td><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)}</div></td>
       <td>${fmtNum(r.mc, 0)}</td><td>${fmtNum(v.ndUsd, 0)}${tag}</td><td>${fmtNum(v.ev, 0)}</td><td>${fmtNum(v.ni, 1)}</td>
       <td><b>${fmtNum(v.evE, 1)}x</b></td><td>${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : '—'}</td>
       <td>#${rank[c.t]} <span class="sub">(${fmtNum(r.total, 1)})</span></td>
       <td title="${escHtml(ndBasisText(nd))}">${nd.tier} &middot; ${escHtml(nd.date || '?')}${warn}</td>
-    </tr>`;
+    </tr>${isOpen ? `<tr class="cheap-detail"><td colspan="10" class="cheap-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
   }).join('');
   const names = list => list.map(({ r }) => escHtml(r.c.n)).join(', ') || 'none';
   document.getElementById('cheapEvContent').innerHTML = `
@@ -1366,7 +1372,7 @@ function renderCheapEvContent() {
       <thead><tr><th>#</th><th>Company</th><th>Mkt cap ($M)</th><th>Net debt ($M)</th><th>EV ($M)</th><th>LTM NI ($M)</th><th>EV / earnings</th><th>P/E</th><th>v6 rank (score)</th><th>Net debt basis</th></tr></thead>
       <tbody>${body || '<tr><td colspan="10" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
     </table>
-    <p class="hint" style="margin-top:12px">${rows.length} of ${withData} non-financial companies with net-debt data have positive earnings and a positive EV${rows.length > shown.length ? ` (showing the cheapest ${shown.length})` : ''}. Tier A = debt &minus; cash from the balance sheet; <sup class="nd-b">B</sup> = the company's own reported net debt (definition varies); &#9888; = aggregator source or an older balance sheet. Hover a basis for details.</p>
+    <p class="hint" style="margin-top:12px">${rows.length} of ${withData} non-financial companies with net-debt data have positive earnings and a positive EV${rows.length > shown.length ? ` (showing the cheapest ${shown.length})` : ''}. Tier A = debt &minus; cash from the balance sheet; <sup class="nd-b">B</sup> = the company's own reported net debt (definition varies); &#9888; = aggregator source or an older balance sheet. Hover a basis for details. <b>Click any company</b> to open its full detail (score breakdown, research, financials, your comments).</p>
     <p class="hint"><b>Loss-making (EV / earnings not meaningful, ${loss.length}):</b> ${names(loss)}.</p>
     <p class="hint"><b>Net cash exceeds market cap (EV &le; 0, ${netcash.length}):</b> ${names(netcash)}.</p>`;
 }
@@ -2460,10 +2466,17 @@ function wireToolbar() {
   caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
 
   const cheapBackdrop = document.getElementById('cheapEvModalBackdrop');
-  document.getElementById('cheapEvBtn').addEventListener('click', () => { renderCheapEvContent(); cheapBackdrop.classList.add('open'); });
+  document.getElementById('cheapEvBtn').addEventListener('click', () => { expandedCheapTicker = null; renderCheapEvContent(); cheapBackdrop.classList.add('open'); });
   document.getElementById('cheapEvClose').addEventListener('click', () => cheapBackdrop.classList.remove('open'));
   cheapBackdrop.addEventListener('click', e => { if (e.target === cheapBackdrop) cheapBackdrop.classList.remove('open'); });
   ['cheapTierA', 'cheapFresh', 'cheapN'].forEach(id => document.getElementById(id).addEventListener('change', renderCheapEvContent));
+  document.getElementById('cheapEvContent').addEventListener('click', e => {
+    const rowEl = e.target.closest('tr.cheap-row');
+    if (!rowEl) return;
+    const t = rowEl.dataset.ticker;
+    expandedCheapTicker = (expandedCheapTicker === t) ? null : t;
+    renderCheapEvContent();
+  });
 
   const dlBackdrop = document.getElementById('delistedModalBackdrop');
   document.getElementById('delistedBtn').addEventListener('click', () => {
@@ -2634,6 +2647,7 @@ function refreshAllViews() {
   if (document.getElementById('corpActionsModalBackdrop').classList.contains('open')) renderCorpActionsModalContent();
   if (document.getElementById('trackerModalBackdrop').classList.contains('open')) renderTrackerModalContent();
   if (document.getElementById('profitBonusModalBackdrop').classList.contains('open')) renderProfitBonusModalContent();
+  if (document.getElementById('cheapEvModalBackdrop').classList.contains('open')) renderCheapEvContent();
 }
 
 function init() {
