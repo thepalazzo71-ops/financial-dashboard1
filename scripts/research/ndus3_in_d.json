@@ -1,0 +1,90 @@
+[
+ {
+  "rank": 150,
+  "ticker": "NasdaqGS:JBSS",
+  "name": "John B. Sanfilippo & Son, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 793.4,
+  "equity_usd_mm": 360.7
+ },
+ {
+  "rank": 151,
+  "ticker": "NasdaqGS:SLP",
+  "name": "Simulations Plus, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 372.9,
+  "equity_usd_mm": 124.8
+ },
+ {
+  "rank": 152,
+  "ticker": "NasdaqGS:PLAY",
+  "name": "Dave & Buster's Entertainment, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 227.5,
+  "equity_usd_mm": 145.8
+ },
+ {
+  "rank": 153,
+  "ticker": "NasdaqGM:EML",
+  "name": "The Eastern Company",
+  "country": "United States",
+  "mc_usd_mm": 142.4,
+  "equity_usd_mm": 124.6
+ },
+ {
+  "rank": 154,
+  "ticker": "NasdaqCM:CRWS",
+  "name": "Crown Crafts, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 26.6,
+  "equity_usd_mm": 39.6
+ },
+ {
+  "rank": 155,
+  "ticker": "NYSE:HY",
+  "name": "Hyster-Yale, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 562.0,
+  "equity_usd_mm": 492.4
+ },
+ {
+  "rank": 156,
+  "ticker": "NasdaqGS:APEI",
+  "name": "American Public Education, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 786.8,
+  "equity_usd_mm": 294.8
+ },
+ {
+  "rank": 157,
+  "ticker": "NasdaqCM:SMID",
+  "name": "Smith-Midland Corporation",
+  "country": "United States",
+  "mc_usd_mm": 117.4,
+  "equity_usd_mm": 41.7
+ },
+ {
+  "rank": 158,
+  "ticker": "NYSEAM:RLGT",
+  "name": "Radiant Logistics, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 403.0,
+  "equity_usd_mm": 226.1
+ },
+ {
+  "rank": 159,
+  "ticker": "TSX:MRE",
+  "name": "Martinrea International Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 494.3,
+  "equity_usd_mm": 1103.1
+ },
+ {
+  "rank": 160,
+  "ticker": "TSX:BNE",
+  "name": "Bonterra Energy Corp.",
+  "country": "Canada",
+  "mc_usd_mm": 154.7,
+  "equity_usd_mm": 380.7
+ }
+]

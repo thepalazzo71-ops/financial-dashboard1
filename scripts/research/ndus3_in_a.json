@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 108,
+  "ticker": "NasdaqCM:PDEX",
+  "name": "Pro-Dex, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 232.5,
+  "equity_usd_mm": 36.6
+ },
+ {
+  "rank": 109,
+  "ticker": "NasdaqGS:MRTN",
+  "name": "Marten Transport, Ltd.",
+  "country": "United States",
+  "mc_usd_mm": 1036.2,
+  "equity_usd_mm": 767.6
+ },
+ {
+  "rank": 110,
+  "ticker": "NasdaqGS:ARTN.A",
+  "name": "Artesian Resources Corporation",
+  "country": "United States",
+  "mc_usd_mm": 343.0,
+  "equity_usd_mm": 249.9
+ },
+ {
+  "rank": 111,
+  "ticker": "NYSE:NC",
+  "name": "NACCO Industries, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 272.6,
+  "equity_usd_mm": 429.2
+ },
+ {
+  "rank": 112,
+  "ticker": "OTCPK:PPLL",
+  "name": "Peoples Ltd.",
+  "country": "United States",
+  "mc_usd_mm": 103.6,
+  "equity_usd_mm": 54.7
+ },
+ {
+  "rank": 113,
+  "ticker": "NasdaqGS:APOG",
+  "name": "Apogee Enterprises, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 764.2,
+  "equity_usd_mm": 487.9
+ },
+ {
+  "rank": 114,
+  "ticker": "NasdaqGS:JOUT",
+  "name": "Johnson Outdoors Inc.",
+  "country": "United States",
+  "mc_usd_mm": 456.5,
+  "equity_usd_mm": 418.4
+ },
+ {
+  "rank": 115,
+  "ticker": "NYSE:AVD",
+  "name": "American Vanguard Corporation",
+  "country": "United States",
+  "mc_usd_mm": 48.9,
+  "equity_usd_mm": 192.4
+ },
+ {
+  "rank": 116,
+  "ticker": "NasdaqGS:GIII",
+  "name": "G-III Apparel Group, Ltd.",
+  "country": "United States",
+  "mc_usd_mm": 1141.5,
+  "equity_usd_mm": 1789.1
+ },
+ {
+  "rank": 117,
+  "ticker": "NasdaqGS:YORW",
+  "name": "The York Water Company",
+  "country": "United States",
+  "mc_usd_mm": 499.9,
+  "equity_usd_mm": 240.3
+ },
+ {
+  "rank": 118,
+  "ticker": "NYSE:HZO",
+  "name": "MarineMax, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1154.3,
+  "equity_usd_mm": 948.8
+ },
+ {
+  "rank": 119,
+  "ticker": "NYSE:ODC",
+  "name": "Oil-Dri Corporation of America",
+  "country": "United States",
+  "mc_usd_mm": 1266.7,
+  "equity_usd_mm": 259.1
+ },
+ {
+  "rank": 120,
+  "ticker": "NYSE:ASIX",
+  "name": "AdvanSix Inc.",
+  "country": "United States",
+  "mc_usd_mm": 433.2,
+  "equity_usd_mm": 815.2
+ },
+ {
+  "rank": 121,
+  "ticker": "NYSE:NREF",
+  "name": "NexPoint Real Estate Finance, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 298.0,
+  "equity_usd_mm": 571.7
+ }
+]

@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 55,
+  "ticker": "NasdaqGS:ANGI",
+  "name": "Angi Inc.",
+  "country": "United States",
+  "mc_usd_mm": 215.4,
+  "equity_usd_mm": 927.4
+ },
+ {
+  "rank": 56,
+  "ticker": "TSX:DNG",
+  "name": "Dynacor Group Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 181.8,
+  "equity_usd_mm": 99.2
+ },
+ {
+  "rank": 57,
+  "ticker": "NYSEAM:DIT",
+  "name": "AMCON Distributing Company",
+  "country": "United States",
+  "mc_usd_mm": 63.4,
+  "equity_usd_mm": 113.1
+ },
+ {
+  "rank": 58,
+  "ticker": "TSX:SXP",
+  "name": "Supremex Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 63.4,
+  "equity_usd_mm": 78.9
+ },
+ {
+  "rank": 59,
+  "ticker": "NYSE:SMP",
+  "name": "Standard Motor Products, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 834.6,
+  "equity_usd_mm": 698.3
+ },
+ {
+  "rank": 60,
+  "ticker": "NasdaqGS:IART",
+  "name": "Integra LifeSciences Holdings Corporation",
+  "country": "United States",
+  "mc_usd_mm": 1246.5,
+  "equity_usd_mm": 1043.5
+ },
+ {
+  "rank": 61,
+  "ticker": "TSX:SYZ",
+  "name": "Sylogist Ltd.",
+  "country": "Canada",
+  "mc_usd_mm": 52.1,
+  "equity_usd_mm": 26.1
+ },
+ {
+  "rank": 62,
+  "ticker": "NasdaqGM:UG",
+  "name": "United-Guardian, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 33.1,
+  "equity_usd_mm": 11.9
+ },
+ {
+  "rank": 63,
+  "ticker": "NasdaqGM:SGC",
+  "name": "Superior Group of Companies, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 198.6,
+  "equity_usd_mm": 192.8
+ },
+ {
+  "rank": 64,
+  "ticker": "OTCPK:NOBH",
+  "name": "Nobility Homes, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 88.4,
+  "equity_usd_mm": 60.7
+ },
+ {
+  "rank": 65,
+  "ticker": "NasdaqGS:TTEC",
+  "name": "TTEC Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 65.7,
+  "equity_usd_mm": 112.9
+ },
+ {
+  "rank": 66,
+  "ticker": "TSXV:IEI",
+  "name": "Imperial Equities Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 24.1,
+  "equity_usd_mm": 80.1
+ },
+ {
+  "rank": 67,
+  "ticker": "TSX:ALC",
+  "name": "Algoma Central Corporation",
+  "country": "Canada",
+  "mc_usd_mm": 677.2,
+  "equity_usd_mm": 735.4
+ },
+ {
+  "rank": 68,
+  "ticker": "NasdaqGS:RCKY",
+  "name": "Rocky Brands, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 339.4,
+  "equity_usd_mm": 252.1
+ }
+]

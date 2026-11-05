@@ -8,12 +8,13 @@
   "NOK": 0.10276,
   "CHF": 1.2297,
   "PLN": 0.26238,
+  "CAD": 0.70442,
   "DKK": 0.15229,
   "RON": 0.219,
   "ISK": 0.007927
  },
  "_fxNote": "Approximate ECB reference rates from May-July 2026 (see merge_net_debt.py); +/-3% error on the net-debt part of EV.",
- "_generated": "2026-11-04",
+ "_generated": "2026-11-05",
  "entries": {
   "XTRA:ADN1": {
    "tier": "A",

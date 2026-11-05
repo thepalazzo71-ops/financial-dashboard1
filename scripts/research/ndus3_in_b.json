@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 122,
+  "ticker": "NasdaqGM:CLMB",
+  "name": "Climb Global Solutions, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 594.8,
+  "equity_usd_mm": 116.6
+ },
+ {
+  "rank": 123,
+  "ticker": "NYSEAM:CIX",
+  "name": "CompX International Inc.",
+  "country": "United States",
+  "mc_usd_mm": 450.0,
+  "equity_usd_mm": 138.6
+ },
+ {
+  "rank": 124,
+  "ticker": "NYSE:IIIN",
+  "name": "Insteel Industries Inc.",
+  "country": "United States",
+  "mc_usd_mm": 557.5,
+  "equity_usd_mm": 371.5
+ },
+ {
+  "rank": 125,
+  "ticker": "NasdaqGS:CTRN",
+  "name": "Citi Trends, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 410.1,
+  "equity_usd_mm": 116.3
+ },
+ {
+  "rank": 126,
+  "ticker": "NasdaqGM:ESCA",
+  "name": "Escalade, Incorporated",
+  "country": "United States",
+  "mc_usd_mm": 268.3,
+  "equity_usd_mm": 173.2
+ },
+ {
+  "rank": 127,
+  "ticker": "NasdaqGM:MBUU",
+  "name": "Malibu Boats, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 460.1,
+  "equity_usd_mm": 519.8
+ },
+ {
+  "rank": 128,
+  "ticker": "OTCPK:SCIA",
+  "name": "SCI Engineered Materials, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 40.9,
+  "equity_usd_mm": 14.2
+ },
+ {
+  "rank": 129,
+  "ticker": "OTCPK:LICT",
+  "name": "LICT Corporation",
+  "country": "United States",
+  "mc_usd_mm": 260.0,
+  "equity_usd_mm": 203.6
+ },
+ {
+  "rank": 130,
+  "ticker": "NasdaqGM:VIRC",
+  "name": "Virco Mfg. Corporation",
+  "country": "United States",
+  "mc_usd_mm": 102.5,
+  "equity_usd_mm": 109.3
+ },
+ {
+  "rank": 131,
+  "ticker": "NYSE:MPX",
+  "name": "Marine Products Corporation",
+  "country": "United States",
+  "mc_usd_mm": 280.0,
+  "equity_usd_mm": 125.0
+ },
+ {
+  "rank": 132,
+  "ticker": "NasdaqGM:NTIC",
+  "name": "Northern Technologies International Corporation",
+  "country": "United States",
+  "mc_usd_mm": 74.0,
+  "equity_usd_mm": 76.7
+ },
+ {
+  "rank": 133,
+  "ticker": "NasdaqGS:ZUMZ",
+  "name": "Zumiez Inc.",
+  "country": "United States",
+  "mc_usd_mm": 225.8,
+  "equity_usd_mm": 324.3
+ },
+ {
+  "rank": 134,
+  "ticker": "NasdaqGS:TBRG",
+  "name": "TruBridge, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 393.6,
+  "equity_usd_mm": 168.7
+ },
+ {
+  "rank": 135,
+  "ticker": "TSX:VCM",
+  "name": "Vecima Networks Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 206.5,
+  "equity_usd_mm": 156.6
+ }
+]

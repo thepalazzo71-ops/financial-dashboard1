@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 83,
+  "ticker": "NasdaqGS:HELE",
+  "name": "Helen of Troy Limited",
+  "country": "Bermuda",
+  "mc_usd_mm": 689.3,
+  "equity_usd_mm": 1683.4
+ },
+ {
+  "rank": 84,
+  "ticker": "NYSE:DBI",
+  "name": "Designer Brands Inc.",
+  "country": "United States",
+  "mc_usd_mm": 311.0,
+  "equity_usd_mm": 281.8
+ },
+ {
+  "rank": 85,
+  "ticker": "NasdaqGS:FORR",
+  "name": "Forrester Research, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 221.7,
+  "equity_usd_mm": 126.5
+ },
+ {
+  "rank": 86,
+  "ticker": "TSX:DRX",
+  "name": "ADF Group Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 205.1,
+  "equity_usd_mm": 117.0
+ },
+ {
+  "rank": 87,
+  "ticker": "OTCPK:BUKS",
+  "name": "Butler National Corporation",
+  "country": "United States",
+  "mc_usd_mm": 257.6,
+  "equity_usd_mm": 65.1
+ },
+ {
+  "rank": 88,
+  "ticker": "TSX:ADW.A",
+  "name": "Andrew Peller Limited",
+  "country": "Canada",
+  "mc_usd_mm": 162.4,
+  "equity_usd_mm": 169.6
+ },
+ {
+  "rank": 89,
+  "ticker": "NasdaqGS:FOXF",
+  "name": "Fox Factory Holding Corp.",
+  "country": "United States",
+  "mc_usd_mm": 787.6,
+  "equity_usd_mm": 670.0
+ },
+ {
+  "rank": 90,
+  "ticker": "NasdaqGS:CRMT",
+  "name": "America's Car-Mart, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 8.4,
+  "equity_usd_mm": 569.9
+ },
+ {
+  "rank": 91,
+  "ticker": "NasdaqCM:ARKO",
+  "name": "Arko Corp.",
+  "country": "United States",
+  "mc_usd_mm": 471.7,
+  "equity_usd_mm": 367.2
+ },
+ {
+  "rank": 92,
+  "ticker": "NasdaqGS:BBSI",
+  "name": "Barrett Business Services, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 773.1,
+  "equity_usd_mm": 241.0
+ },
+ {
+  "rank": 93,
+  "ticker": "NasdaqGS:ISSC",
+  "name": "Innovative Aerosystems, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 443.4,
+  "equity_usd_mm": 64.6
+ },
+ {
+  "rank": 94,
+  "ticker": "NYSE:EBF",
+  "name": "Ennis, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 550.4,
+  "equity_usd_mm": 302.0
+ },
+ {
+  "rank": 95,
+  "ticker": "TSX:HLF",
+  "name": "High Liner Foods Incorporated",
+  "country": "Canada",
+  "mc_usd_mm": 292.6,
+  "equity_usd_mm": 409.0
+ },
+ {
+  "rank": 96,
+  "ticker": "NasdaqGS:MNRO",
+  "name": "Monro, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 436.8,
+  "equity_usd_mm": 620.8
+ }
+]

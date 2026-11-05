@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 1,
+  "ticker": "NYSE:SSTK",
+  "name": "Shutterstock, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 153.8,
+  "equity_usd_mm": 581.0
+ },
+ {
+  "rank": 2,
+  "ticker": "NasdaqGS:CRAI",
+  "name": "CRA International, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1061.4,
+  "equity_usd_mm": 213.6
+ },
+ {
+  "rank": 3,
+  "ticker": "AIM:SPSY",
+  "name": "Spectra Systems Corporation",
+  "country": "United States",
+  "mc_usd_mm": 107.2,
+  "equity_usd_mm": 36.3
+ },
+ {
+  "rank": 4,
+  "ticker": "TSX:MTY",
+  "name": "MTY Food Group Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 630.8,
+  "equity_usd_mm": 613.4
+ },
+ {
+  "rank": 5,
+  "ticker": "NYSE:MED",
+  "name": "Medifast, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 132.3,
+  "equity_usd_mm": 198.9
+ },
+ {
+  "rank": 6,
+  "ticker": "NasdaqGS:CBRL",
+  "name": "Cracker Barrel Old Country Store, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1135.2,
+  "equity_usd_mm": 461.7
+ },
+ {
+  "rank": 7,
+  "ticker": "TSXV:CTZ",
+  "name": "NamSys Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 23.6,
+  "equity_usd_mm": 7.7
+ },
+ {
+  "rank": 8,
+  "ticker": "NasdaqCM:PNRG",
+  "name": "PrimeEnergy Resources Corporation",
+  "country": "United States",
+  "mc_usd_mm": 339.7,
+  "equity_usd_mm": 202.9
+ },
+ {
+  "rank": 9,
+  "ticker": "NYSE:OXM",
+  "name": "Oxford Industries, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 387.5,
+  "equity_usd_mm": 622.6
+ },
+ {
+  "rank": 10,
+  "ticker": "TSX:PSI",
+  "name": "Pason Systems Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 703.5,
+  "equity_usd_mm": 344.3
+ },
+ {
+  "rank": 11,
+  "ticker": "TSX:ENGH",
+  "name": "Enghouse Systems Limited",
+  "country": "Canada",
+  "mc_usd_mm": 658.9,
+  "equity_usd_mm": 434.9
+ },
+ {
+  "rank": 12,
+  "ticker": "TSX:PSD",
+  "name": "Pulse Seismic Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 116.0,
+  "equity_usd_mm": 12.6
+ },
+ {
+  "rank": 13,
+  "ticker": "NasdaqGS:ERII",
+  "name": "Energy Recovery, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 353.9,
+  "equity_usd_mm": 206.2
+ },
+ {
+  "rank": 14,
+  "ticker": "TSX:CMG",
+  "name": "Computer Modelling Group Ltd.",
+  "country": "Canada",
+  "mc_usd_mm": 230.1,
+  "equity_usd_mm": 59.8
+ }
+]

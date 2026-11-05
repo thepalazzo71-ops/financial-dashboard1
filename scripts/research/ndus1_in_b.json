@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 15,
+  "ticker": "TSX:GOOS",
+  "name": "Canada Goose Holdings Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 1090.0,
+  "equity_usd_mm": 389.6
+ },
+ {
+  "rank": 16,
+  "ticker": "TSXV:MMY",
+  "name": "Monument Mining Limited",
+  "country": "Canada",
+  "mc_usd_mm": 206.0,
+  "equity_usd_mm": 158.8
+ },
+ {
+  "rank": 17,
+  "ticker": "NasdaqGS:AMPH",
+  "name": "Amphastar Pharmaceuticals, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1138.2,
+  "equity_usd_mm": 788.8
+ },
+ {
+  "rank": 18,
+  "ticker": "NYSEAM:ACU",
+  "name": "Acme United Corporation",
+  "country": "United States",
+  "mc_usd_mm": 238.4,
+  "equity_usd_mm": 117.6
+ },
+ {
+  "rank": 19,
+  "ticker": "OTCPK:CRMZ",
+  "name": "CreditRiskMonitor.com, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 22.6,
+  "equity_usd_mm": 11.1
+ },
+ {
+  "rank": 20,
+  "ticker": "NasdaqGS:IMMR",
+  "name": "Immersion Corporation",
+  "country": "United States",
+  "mc_usd_mm": 241.6,
+  "equity_usd_mm": 558.7
+ },
+ {
+  "rank": 21,
+  "ticker": "NasdaqGM:WLFC",
+  "name": "Willis Lease Finance Corporation",
+  "country": "United States",
+  "mc_usd_mm": 1142.0,
+  "equity_usd_mm": 725.5
+ },
+ {
+  "rank": 22,
+  "ticker": "NasdaqCM:XPEL",
+  "name": "XPEL, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1201.0,
+  "equity_usd_mm": 285.2
+ },
+ {
+  "rank": 23,
+  "ticker": "NasdaqCM:VMD",
+  "name": "Viemed Healthcare, Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 352.7,
+  "equity_usd_mm": 143.5
+ },
+ {
+  "rank": 24,
+  "ticker": "NasdaqCM:NATR",
+  "name": "Nature's Sunshine Products, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 225.8,
+  "equity_usd_mm": 161.6
+ },
+ {
+  "rank": 25,
+  "ticker": "AIM:SOM",
+  "name": "Somero Enterprises, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 171.1,
+  "equity_usd_mm": 82.4
+ },
+ {
+  "rank": 26,
+  "ticker": "OTCPK:RSKI.A",
+  "name": "George Risk Industries, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 97.8,
+  "equity_usd_mm": 56.9
+ },
+ {
+  "rank": 27,
+  "ticker": "TSXV:RX",
+  "name": "BioSyent Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 142.3,
+  "equity_usd_mm": 24.3
+ },
+ {
+  "rank": 28,
+  "ticker": "NasdaqGS:NRC",
+  "name": "National Research Corporation",
+  "country": "United States",
+  "mc_usd_mm": 446.4,
+  "equity_usd_mm": 14.0
+ }
+]

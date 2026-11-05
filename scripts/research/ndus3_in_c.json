@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 136,
+  "ticker": "TSXV:BRM",
+  "name": "BioRem Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 42.2,
+  "equity_usd_mm": 7.38
+ },
+ {
+  "rank": 137,
+  "ticker": "NasdaqGM:RICK",
+  "name": "RCI Hospitality Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 206.8,
+  "equity_usd_mm": 263.1
+ },
+ {
+  "rank": 138,
+  "ticker": "NYSEAM:MXC",
+  "name": "Mexco Energy Corporation",
+  "country": "United States",
+  "mc_usd_mm": 22.2,
+  "equity_usd_mm": 18.7
+ },
+ {
+  "rank": 139,
+  "ticker": "TSX:PHX",
+  "name": "PHX Energy Services Corp.",
+  "country": "Canada",
+  "mc_usd_mm": 344.2,
+  "equity_usd_mm": 167.0
+ },
+ {
+  "rank": 140,
+  "ticker": "NasdaqGS:SPWH",
+  "name": "Sportsman's Warehouse Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 46.0,
+  "equity_usd_mm": 235.7
+ },
+ {
+  "rank": 141,
+  "ticker": "NasdaqGS:LGIH",
+  "name": "LGI Homes, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1135.4,
+  "equity_usd_mm": 2096.3
+ },
+ {
+  "rank": 142,
+  "ticker": "NasdaqGS:SNCY",
+  "name": "Sun Country Airlines Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 876.4,
+  "equity_usd_mm": 625.2
+ },
+ {
+  "rank": 143,
+  "ticker": "NasdaqCM:WFCF",
+  "name": "Where Food Comes From, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 57.1,
+  "equity_usd_mm": 9.31
+ },
+ {
+  "rank": 144,
+  "ticker": "NYSE:MLR",
+  "name": "Miller Industries, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 614.2,
+  "equity_usd_mm": 420.6
+ },
+ {
+  "rank": 145,
+  "ticker": "NYSE:GCO",
+  "name": "Genesco Inc.",
+  "country": "United States",
+  "mc_usd_mm": 380.8,
+  "equity_usd_mm": 567.0
+ },
+ {
+  "rank": 146,
+  "ticker": "TSX:GUD",
+  "name": "Knight Therapeutics Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 426.8,
+  "equity_usd_mm": 552.6
+ },
+ {
+  "rank": 147,
+  "ticker": "NYSE:CSV",
+  "name": "Carriage Services, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 508.7,
+  "equity_usd_mm": 254.8
+ },
+ {
+  "rank": 148,
+  "ticker": "NasdaqCM:TAYD",
+  "name": "Taylor Devices, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 206.8,
+  "equity_usd_mm": 62.0
+ },
+ {
+  "rank": 149,
+  "ticker": "NasdaqCM:PCYO",
+  "name": "Pure Cycle Corporation",
+  "country": "United States",
+  "mc_usd_mm": 260.3,
+  "equity_usd_mm": 142.7
+ }
+]

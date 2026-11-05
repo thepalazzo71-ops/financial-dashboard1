@@ -1,0 +1,98 @@
+[
+ {
+  "rank": 43,
+  "ticker": "NYSEAM:EPM",
+  "name": "Evolution Petroleum Corporation",
+  "country": "United States",
+  "mc_usd_mm": 126.6,
+  "equity_usd_mm": 71.8
+ },
+ {
+  "rank": 44,
+  "ticker": "OTCPK:TTSH",
+  "name": "Tile Shop Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 80.0,
+  "equity_usd_mm": 87.2
+ },
+ {
+  "rank": 45,
+  "ticker": "NasdaqGS:SCVL",
+  "name": "Shoe Carnival, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 423.8,
+  "equity_usd_mm": 649.0
+ },
+ {
+  "rank": 46,
+  "ticker": "TSX:ET",
+  "name": "Evertz Technologies Limited",
+  "country": "Canada",
+  "mc_usd_mm": 827.3,
+  "equity_usd_mm": 196.3
+ },
+ {
+  "rank": 47,
+  "ticker": "NasdaqGS:UPBD",
+  "name": "Upbound Group, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 933.5,
+  "equity_usd_mm": 695.7
+ },
+ {
+  "rank": 48,
+  "ticker": "NYSE:TRAK",
+  "name": "ReposiTrak, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 147.4,
+  "equity_usd_mm": 49.5
+ },
+ {
+  "rank": 49,
+  "ticker": "TSX:CPH",
+  "name": "Cipher Pharmaceuticals Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 292.8,
+  "equity_usd_mm": 126.2
+ },
+ {
+  "rank": 50,
+  "ticker": "TSX:ISC",
+  "name": "Information Services Corporation",
+  "country": "Canada",
+  "mc_usd_mm": 672.0,
+  "equity_usd_mm": 125.3
+ },
+ {
+  "rank": 51,
+  "ticker": "NYSE:CAL",
+  "name": "Caleres, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 413.8,
+  "equity_usd_mm": 605.9
+ },
+ {
+  "rank": 52,
+  "ticker": "NYSE:WGO",
+  "name": "Winnebago Industries, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 763.0,
+  "equity_usd_mm": 1224.7
+ },
+ {
+  "rank": 53,
+  "ticker": "TSX:LAS.A",
+  "name": "Lassonde Industries Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 1103.0,
+  "equity_usd_mm": 810.2
+ },
+ {
+  "rank": 54,
+  "ticker": "NYSE:TNC",
+  "name": "Tennant Company",
+  "country": "United States",
+  "mc_usd_mm": 1144.0,
+  "equity_usd_mm": 603.4
+ }
+]

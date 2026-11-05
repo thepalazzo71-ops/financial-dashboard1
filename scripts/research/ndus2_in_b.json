@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 69,
+  "ticker": "NasdaqGS:DLTH",
+  "name": "Duluth Holdings Inc.",
+  "country": "United States",
+  "mc_usd_mm": 152.8,
+  "equity_usd_mm": 179.7
+ },
+ {
+  "rank": 70,
+  "ticker": "NYSE:SGU",
+  "name": "Star Group, L.P.",
+  "country": "United States",
+  "mc_usd_mm": 414.7,
+  "equity_usd_mm": 296.8
+ },
+ {
+  "rank": 71,
+  "ticker": "TSX:ADN",
+  "name": "Acadian Timber Corp.",
+  "country": "Canada",
+  "mc_usd_mm": 226.4,
+  "equity_usd_mm": 262.4
+ },
+ {
+  "rank": 72,
+  "ticker": "TSX:GH",
+  "name": "Gamehost Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 199.2,
+  "equity_usd_mm": 87.1
+ },
+ {
+  "rank": 73,
+  "ticker": "OTCPK:MCEM",
+  "name": "The Monarch Cement Company",
+  "country": "United States",
+  "mc_usd_mm": 1014.4,
+  "equity_usd_mm": 430.8
+ },
+ {
+  "rank": 74,
+  "ticker": "NYSE:NGVC",
+  "name": "Natural Grocers by Vitamin Cottage, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 683.4,
+  "equity_usd_mm": 212.4
+ },
+ {
+  "rank": 75,
+  "ticker": "NasdaqGS:SSP",
+  "name": "The E.W. Scripps Company",
+  "country": "United States",
+  "mc_usd_mm": 224.1,
+  "equity_usd_mm": 1246.1
+ },
+ {
+  "rank": 76,
+  "ticker": "NasdaqGS:HSTM",
+  "name": "HealthStream, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 847.4,
+  "equity_usd_mm": 354.0
+ },
+ {
+  "rank": 77,
+  "ticker": "NYSE:FC",
+  "name": "Franklin Covey Co.",
+  "country": "United States",
+  "mc_usd_mm": 195.1,
+  "equity_usd_mm": 66.9
+ },
+ {
+  "rank": 78,
+  "ticker": "TSXV:VCI",
+  "name": "Vitreous Glass Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 31.5,
+  "equity_usd_mm": 3.59
+ },
+ {
+  "rank": 79,
+  "ticker": "NasdaqCM:EGAN",
+  "name": "eGain Corporation",
+  "country": "United States",
+  "mc_usd_mm": 162.2,
+  "equity_usd_mm": 80.7
+ },
+ {
+  "rank": 80,
+  "ticker": "NYSE:CWH",
+  "name": "Camping World Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 326.8,
+  "equity_usd_mm": 371.8
+ },
+ {
+  "rank": 81,
+  "ticker": "NasdaqGM:EPSN",
+  "name": "Epsilon Energy Ltd.",
+  "country": "Canada",
+  "mc_usd_mm": 179.2,
+  "equity_usd_mm": 96.7
+ },
+ {
+  "rank": 82,
+  "ticker": "NasdaqGS:MSEX",
+  "name": "Middlesex Water Company",
+  "country": "United States",
+  "mc_usd_mm": 994.4,
+  "equity_usd_mm": 495.4
+ }
+]

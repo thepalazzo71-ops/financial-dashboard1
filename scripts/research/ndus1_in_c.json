@@ -1,0 +1,114 @@
+[
+ {
+  "rank": 29,
+  "ticker": "NYSEAM:ELMD",
+  "name": "Electromed, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 228.7,
+  "equity_usd_mm": 43.2
+ },
+ {
+  "rank": 30,
+  "ticker": "TSX:HMM.A",
+  "name": "Hammond Manufacturing Company Limited",
+  "country": "Canada",
+  "mc_usd_mm": 81.3,
+  "equity_usd_mm": 96.0
+ },
+ {
+  "rank": 31,
+  "ticker": "OTCPK:TBTC",
+  "name": "Table Trac, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 25.5,
+  "equity_usd_mm": 11.5
+ },
+ {
+  "rank": 32,
+  "ticker": "NYSE:CABO",
+  "name": "Cable One, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 62.8,
+  "equity_usd_mm": 1433.6
+ },
+ {
+  "rank": 33,
+  "ticker": "TSX:PZA",
+  "name": "Pizza Pizza Royalty Corp.",
+  "country": "Canada",
+  "mc_usd_mm": 304.9,
+  "equity_usd_mm": 207.3
+ },
+ {
+  "rank": 34,
+  "ticker": "NasdaqGM:OFLX",
+  "name": "Omega Flex, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 255.8,
+  "equity_usd_mm": 84.0
+ },
+ {
+  "rank": 35,
+  "ticker": "NYSE:MOV",
+  "name": "Movado Group, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 529.1,
+  "equity_usd_mm": 483.6
+ },
+ {
+  "rank": 36,
+  "ticker": "NasdaqGS:TRIP",
+  "name": "Tripadvisor, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1012.9,
+  "equity_usd_mm": 645.0
+ },
+ {
+  "rank": 37,
+  "ticker": "NYSE:CARS",
+  "name": "Cars.com Inc.",
+  "country": "United States",
+  "mc_usd_mm": 587.0,
+  "equity_usd_mm": 472.5
+ },
+ {
+  "rank": 38,
+  "ticker": "TSX:NOA",
+  "name": "North American Construction Group Ltd.",
+  "country": "Canada",
+  "mc_usd_mm": 350.9,
+  "equity_usd_mm": 333.0
+ },
+ {
+  "rank": 39,
+  "ticker": "NasdaqGS:VLGE.A",
+  "name": "Village Super Market, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 668.4,
+  "equity_usd_mm": 492.0
+ },
+ {
+  "rank": 40,
+  "ticker": "TSX:RIC",
+  "name": "Richards Group Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 218.6,
+  "equity_usd_mm": 158.4
+ },
+ {
+  "rank": 41,
+  "ticker": "TSX:ROOT",
+  "name": "Roots Corporation",
+  "country": "Canada",
+  "mc_usd_mm": 102.5,
+  "equity_usd_mm": 110.2
+ },
+ {
+  "rank": 42,
+  "ticker": "NYSE:BBW",
+  "name": "Build-A-Bear Workshop, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 315.7,
+  "equity_usd_mm": 155.0
+ }
+]

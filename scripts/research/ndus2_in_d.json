@@ -1,0 +1,90 @@
+[
+ {
+  "rank": 97,
+  "ticker": "NYSEAM:INFU",
+  "name": "InfuSystem Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 270.4,
+  "equity_usd_mm": 57.3
+ },
+ {
+  "rank": 98,
+  "ticker": "NYSE:NSP",
+  "name": "Insperity, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 1846.0,
+  "equity_usd_mm": 46.0
+ },
+ {
+  "rank": 99,
+  "ticker": "NYSEAM:FSI",
+  "name": "Flexible Solutions International, Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 74.5,
+  "equity_usd_mm": 41.4
+ },
+ {
+  "rank": 100,
+  "ticker": "OTCPK:VASO",
+  "name": "Vaso Corporation",
+  "country": "United States",
+  "mc_usd_mm": 53.1,
+  "equity_usd_mm": 27.7
+ },
+ {
+  "rank": 101,
+  "ticker": "NasdaqCM:FONR",
+  "name": "FONAR Corporation",
+  "country": "United States",
+  "mc_usd_mm": 117.8,
+  "equity_usd_mm": 160.1
+ },
+ {
+  "rank": 102,
+  "ticker": "NasdaqCM:SOTK",
+  "name": "Sono-Tek Corporation",
+  "country": "United States",
+  "mc_usd_mm": 79.4,
+  "equity_usd_mm": 17.8
+ },
+ {
+  "rank": 103,
+  "ticker": "TSX:MCB",
+  "name": "McCoy Global Inc.",
+  "country": "Canada",
+  "mc_usd_mm": 41.8,
+  "equity_usd_mm": 50.0
+ },
+ {
+  "rank": 104,
+  "ticker": "NasdaqGS:ULH",
+  "name": "Universal Logistics Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 441.7,
+  "equity_usd_mm": 540.4
+ },
+ {
+  "rank": 105,
+  "ticker": "TSX:WJX",
+  "name": "Wajax Corporation",
+  "country": "Canada",
+  "mc_usd_mm": 470.3,
+  "equity_usd_mm": 392.0
+ },
+ {
+  "rank": 106,
+  "ticker": "OTCPK:AMEN",
+  "name": "AMEN Properties, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 26.6,
+  "equity_usd_mm": 5.59
+ },
+ {
+  "rank": 107,
+  "ticker": "OTCPK:BURC.A",
+  "name": "Burnham Holdings, Inc.",
+  "country": "United States",
+  "mc_usd_mm": 78.8,
+  "equity_usd_mm": 103.6
+ }
+]
