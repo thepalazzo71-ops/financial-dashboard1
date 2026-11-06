@@ -34,3 +34,6 @@
   .sw-cols .sw-table th:nth-child(n+4), .sw-cols .sw-table td:nth-child(n+4) { width: 72px; }
   .sw-cols .sw-table td:nth-child(2) .sub { white-space: normal; }
   .sw-cols .sw-table td:nth-child(2) b { overflow-wrap: anywhere; }
+  .sw-detail-full { margin: 0 0 16px; padding: 10px 14px 6px; border: 1px solid var(--rule-strong); border-radius: 5px; background: var(--green-soft); }
+  .sw-detail-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .sw-detail-bar .btn { margin-left: auto; }

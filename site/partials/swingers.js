@@ -26,14 +26,14 @@ function priceCells(c, isHistorical) {
 function priceBox(c) {
   const p = pxOf(c);
   if (!p) return `<div class="px-box"><h4>5-year price range</h4><p class="hint">No usable price history for this company (ticker not found at the price source, delisted, or too little trading history).</p></div>`;
-  const item = (l, v, tip) => `<div class="px-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="px-l">${l}</span><span class="px-v">${v}</span></div>`;
+  const item = (l, v, tip) => `<div class="fin-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="fin-label">${l}</span><span class="fin-val">${v}</span></div>`;
   const path = p.peakFirst ? `peaked ${p.hd}, bottomed ${p.ld}` : `bottomed ${p.ld}, peaked ${p.hd}`;
   return `<div class="px-box">
     <h4>5-year price range</h4>
-    <div class="px-grid">
+    <div class="fin-grid">
       ${item('Last close', pxPrice(p.last) + ' ' + escHtml(p.cur), p.d)}
-      ${item('5y high', pxPrice(p.hi) + ' <span class="sub">' + p.hd + '</span>')}
-      ${item('5y low', pxPrice(p.lo) + ' <span class="sub">' + p.ld + '</span>')}
+      ${item('5y high', pxPrice(p.hi) + '<span class="sub" style="display:block;font-weight:400;font-size:11px">' + p.hd + '</span>')}
+      ${item('5y low', pxPrice(p.lo) + '<span class="sub" style="display:block;font-weight:400;font-size:11px">' + p.ld + '</span>')}
       ${item('vs 5y high', pxPct(p.vsHi), 'Last close ÷ 5-year closing high − 1')}
       ${item('vs 5y low', pxPct(p.vsLo), 'Last close ÷ 5-year closing low − 1')}
       ${item('Range (high ÷ low)', fmtNum(p.range, 1) + 'x')}
@@ -78,7 +78,7 @@ function renderSwingersContent() {
         <td>${pxPrice(p.last)}<div class="sub">${escHtml(p.cur)}</div></td>
         <td>${pxPct(p.vsHi)}</td><td>${pxPct(p.vsLo)}</td>
         <td><b>${fmtNum(p.range, 1)}x</b>${pxShortMark(p)}</td>
-      </tr>${isOpen ? `<tr><td colspan="9" class="sw-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
+      </tr>`;
     }).join('');
     return `<div class="sw-side">
       <h4>${icon} ${title} <span class="sub">(${list.length}${list.length > shown.length ? `, showing ${shown.length}` : ''})</span></h4>
@@ -88,7 +88,14 @@ function renderSwingersContent() {
         <tbody>${body || '<tr><td colspan="9" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
       </table></div>`;
   };
-  document.getElementById('swingersContent').innerHTML = `
+  const openRow = expandedSwingTicker ? rows.find(x => x.r.c.t === expandedSwingTicker) : null;
+  if (expandedSwingTicker && !openRow) expandedSwingTicker = null;
+  const detail = openRow ? `<div class="sw-detail-full" id="swDetail">
+      <div class="sw-detail-bar"><b>${escHtml(openRow.r.c.n)}</b> <span class="sub">${openRow.r.c.t}</span>
+        <button type="button" class="btn ghost small sw-detail-close">Close detail</button></div>
+      ${renderDetailPanel(openRow.r, rank[openRow.r.c.t])}
+    </div>` : '';
+  document.getElementById('swingersContent').innerHTML = detail + `
     <div class="sw-cols">
       ${side(fell, 'Fell', '&#8600;', 'The 5-year high came before the 5-year low: the price dropped from its peak to its trough (it may have bounced since &mdash; see &ldquo;vs low&rdquo;).')}
       ${side(rose, 'Rose', '&#8599;', 'The 5-year low came before the 5-year high: the price climbed from its trough to its peak (it may have slipped back since &mdash; see &ldquo;vs high&rdquo;).')}
@@ -110,11 +117,14 @@ function initSwingers() {
   bd.addEventListener('click', e => { if (e.target === bd) bd.classList.remove('open'); });
   ['swBasis', 'swMinMc', 'swN', 'swLong'].forEach(id => document.getElementById(id).addEventListener('change', () => { expandedSwingTicker = null; renderSwingersContent(); }));
   document.getElementById('swingersContent').addEventListener('click', e => {
+    if (e.target.closest('.sw-detail-close')) { expandedSwingTicker = null; renderSwingersContent(); return; }
     const rowEl = e.target.closest('tr.sw-row');
     if (!rowEl) return;
     const t = rowEl.dataset.ticker;
     expandedSwingTicker = (expandedSwingTicker === t) ? null : t;
     renderSwingersContent();
+    const d = document.getElementById('swDetail');
+    if (d) d.scrollIntoView({ block: 'start', behavior: 'smooth' });
   });
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSwingers); else initSwingers();
