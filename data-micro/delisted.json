@@ -5,5 +5,11 @@
   "price": "",
   "reason": "Last trading day on Spotlight 2026-10-14 (Skatteverket, Inderes release); squeeze-out requested by WPTG 2026-09-24; WPTG controls 96.43% capital after offer. Squeeze-out completion not confirmed.",
   "sources": []
+ },
+ "DB:5XI": {
+  "date": "2026-11-06",
+  "price": "",
+  "reason": "Delisted from Spotlight Stock Market after last trading day 22 April 2026 at request of majority owner Norion Bank; Norion holds ~96.77% of shares and has begun compulsory redemption (tvangsinlosen) of remaining shares. Frankfurt line (5XI) quote of ~EUR 14.8M on 2026-04-23 is stale/residual.",
+  "sources": []
  }
 }

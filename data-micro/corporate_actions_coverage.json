@@ -164,7 +164,26 @@
   "XSAT:PROVIT",
   "ATSE:CPI",
   "WSE:MDI",
-  "WSE:IFA"
+  "WSE:IFA",
+  "WSE:IBC",
+  "NGM:AIK B",
+  "BVB:REFE",
+  "WSE:AGP",
+  "BVB:SINT",
+  "WSE:DRF",
+  "ENXTPA:ALIMR",
+  "BIT:EUK",
+  "WSE:KLN",
+  "NSEL:NTU1L",
+  "WSE:DBE",
+  "BVB:MINO",
+  "DB:5XI",
+  "BVB:CBOT",
+  "BVB:MORA",
+  "WSE:ECC",
+  "HLSE:HONBS",
+  "BVB:TRGI",
+  "CPSE:DAC"
  ],
  "total_priority_pool": 184
 }

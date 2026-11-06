@@ -179,6 +179,16 @@
    "terms": "EGM approved withdrawal of EMTL shares from trading on BVB AeRO and deletion from ASF register; includes independent expert report on price per share and payment right for withdrawing shareholders; 95.1176% in favour",
    "note": "Voluntary delisting resolution (Hotararea nr. 128). Exit price and completion date not found.",
    "source_url": "https://bvb.ro/info/Raportari/EMTL/EMTL_20260713160206_RAPORT-CURENT-AGEA-130726-1.pdf"
+  },
+  {
+   "ticker": "DB:5XI",
+   "company": "Consensus Asset Management AB",
+   "date": "2025-11-21",
+   "counterparty": "Norion Bank AB (publ)",
+   "role": "target",
+   "terms": "Recommended public cash offer SEK 22.50 per share (116% premium); condition >90% ownership",
+   "note": "Offer announced 21.11.2025; completed with ~94.5% (accepted ~84.49% of shares per final outcome 17.04.2026), later ~96.77% after acquisition from shareholder group on 16.04.2026; acceptance period extended to 16.04.2026.",
+   "source_url": "https://www.inderes.fi/releases/norion-bank-announces-a-recommended-public-cash-offer-of-sek-2250-per-share-to-the-shareholders-of-consensus-asset-management-ab-publ"
   }
  ],
  "mergers_acquisitions": [
@@ -341,6 +351,26 @@
    "terms": "Agreement to acquire the remaining 55% stake in STM Sp. z o.o. from unknown seller",
    "note": "Date not seen in search summary; STM activity reported suspended 7 Jul 2026",
    "source_url": "https://in.marketscreener.com/quote/stock/SAKANA-S-A-20705010/news/Sakana-S-A-entered-into-an-agreement-to-acquire-the-remaining-55-stake-in-STM-Sp-z-o-o-from-unkno-38028079/"
+  },
+  {
+   "ticker": "BIT:EUK",
+   "company": "EuKedos S.p.A.",
+   "date": "2026-06",
+   "counterparty": "Poggio Imperiale (stake/quota)",
+   "role": "acquirer",
+   "terms": "Sale of quota in Poggio Imperiale, price ~EUR 2.6M, capital gain ~EUR 167k (company is seller)",
+   "note": "Disposal by Eukedos; role marked acquirer field not applicable - Eukedos is the seller",
+   "source_url": "https://www.soldionline.it/notizie/azioni-italia/conti-eukedos-primo-semestre-2026"
+  },
+  {
+   "ticker": "BIT:EUK",
+   "company": "EuKedos S.p.A.",
+   "date": "2024-06-28",
+   "counterparty": "La Villa S.p.A. (related party)",
+   "role": "acquirer",
+   "terms": "Acquired 100% of Hiberna Regis S.r.l. for ~EUR 6.9M",
+   "note": "Slightly beyond 24 months; related-party deal",
+   "source_url": "https://ca.marketscreener.com/quote/stock/EUKEDOS-S-P-A-10751202/news/EuKedos-S-p-A-acquired-Hiberna-Regis-S-R-L-from-La-Villa-S-p-A-for-approximately-6-9-million-47284212"
   }
  ],
  "spinoffs": [],
@@ -754,6 +784,86 @@
    "terms": "AGM 2025 resolutions incl. up to 150,000 series I shares (nominal 0.10 PLN) and application to admit shares to regulated market",
    "note": "Whether executed not confirmed; planned move from NewConnect to main market undecided (Dec 2025)",
    "source_url": "https://inwestor.platige.com/wp-content/uploads/2025/05/2025.05.16_projekty-uchwal-ZWZ_2-1.pdf"
+  },
+  {
+   "ticker": "NGM:AIK B",
+   "company": "AIK Fotboll AB (publ)",
+   "date": "2026-01/02",
+   "counterparty": "Shareholders (rights issue)",
+   "role": "target",
+   "terms": "Rights issue decided by board 9 Jan 2026 at SEK 1.50/share, fully subscribed, raised SEK 20.2M before costs (77.1% via subscription rights); share capital to SEK 32.8M.",
+   "note": "Penser reportedly arranged funding; AGM 12 Mar 2026 gave new authorization for preemptive issues.",
+   "source_url": "https://www.realtid.se/bors-finans/aiks-nyemission-fulltecknad/"
+  },
+  {
+   "ticker": "WSE:DRF",
+   "company": "Dr.Finance S.A.",
+   "date": "unknown (bankier item id 9031759, likely 2025-26)",
+   "counterparty": "undisclosed",
+   "role": "target",
+   "terms": "Share sale agreement for shares of DR FINANCE S.A. (title only seen: 'Zawarcie umowy zbycia akcji Spolki DR FINANCE S.A.')",
+   "note": "Possible change-of-control/stake sale; details and date not verified, only headline seen in search results",
+   "source_url": "https://www.bankier.pl/wiadomosc/DR-FINANCE-S-A-Zawarcie-umowy-zbycia-akcji-Spolki-DR-FINANCE-S-A-9031759.html"
+  },
+  {
+   "ticker": "WSE:KLN",
+   "company": "KLON Spólka Akcyjna",
+   "date": "2026-01-09",
+   "counterparty": "n/a (EGM)",
+   "role": "target",
+   "terms": "EGM resolution on continued existence of company under art. 397 KSH (triggered by equity falling below half of share capital - general legal rule, not verified in text); result of vote not seen",
+   "note": "Also production to cease in 2026 per 2025 board report",
+   "source_url": "https://newconnect.pl/ebi/files/gpwdata/415_20260109_122000_Treść-uchwał-NWZ-KLON-SA-09.01.2025.pdf"
+  },
+  {
+   "ticker": "NSEL:NTU1L",
+   "company": "Novaturas AB",
+   "date": "2026-07-21",
+   "counterparty": "existing shareholders / strategic investors (pre-emptive offering)",
+   "role": "target",
+   "terms": "Issued 10,294,119 new shares at EUR 0.68 (EUR 7.0M); subscription 1-15 Jul 2026; capital increase registered 21 Jul 2026, shares admitted 22 Jul 2026; authorised capital EUR 543,033.57",
+   "note": "Large capital raise (~133% of prior share count)",
+   "source_url": "https://www.bankier.pl/wiadomosc/NOVATURAS-AB-Increase-of-the-authorised-capital-of-AB-Novaturas-is-completed-new-Articles-of-Association-are-registered-new-shares-are-registered-and-introduced-to-trading-on-AB-Nasdaq-Vilnius-9171518.html"
+  },
+  {
+   "ticker": "DB:5XI",
+   "company": "Consensus Asset Management AB",
+   "date": "2026-04-22",
+   "counterparty": "Spotlight Stock Market / Norion Bank",
+   "role": "target",
+   "terms": "Delisting from Spotlight, last trading day 22.04.2026; compulsory redemption of remaining shares under Swedish Companies Act (2005:551)",
+   "note": "Squeeze-out payment date/final redemption price not found.",
+   "source_url": "https://borsvarlden.com/artiklar/consensus-avnoteras-fran-spotlight-med-sista-handelsdag-22-april"
+  },
+  {
+   "ticker": "WSE:ECC",
+   "company": "ECC Games S.A.",
+   "date": "2025-06 (EGM/AGM 9 Jun 2025; admission to trading planned 2026-04-21)",
+   "counterparty": "8 private investors",
+   "role": "target",
+   "terms": "Private placement of 2,000,000 series K shares at PLN 0.25 (nominal 0.10), ~PLN 0.5M, without pre-emptive rights; proceeds to finish Drift Island early access; GPW communication said series K admission on 21.04.2026",
+   "note": "Small capital raise; subscription closed with 8 investors. Whether admission actually occurred on 21 Apr 2026 not confirmed.",
+   "source_url": "https://www.parkiet.com/komunikaty-ebi/art43164091-eccgames-zakonczenie-subskrypcji-akcji-zwyklych-na-okaziciela-akcji-serii-k"
+  },
+  {
+   "ticker": "CPSE:DAC",
+   "company": "Danish Aerospace Company A/S",
+   "date": "2026-04-17",
+   "counterparty": "existing shareholders (fully guaranteed/underwritten)",
+   "role": "target",
+   "terms": "Rights issue at DKK 3.00 per new share, gross proceeds DKK 24.7M; announced 19 Mar 2026, completed 17 Apr 2026",
+   "note": "Large capital raise relative to market cap (~40%).",
+   "source_url": "https://www.inderes.fi/en/releases/danish-aerospace-company-as-raises-dkk-247-million-in-rights-issue"
+  },
+  {
+   "ticker": "CPSE:DAC",
+   "company": "Danish Aerospace Company A/S",
+   "date": "2026-05-11",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Name change from Danish Aerospace Company A/S to Danish Aerospace and Defence Company A/S",
+   "note": "Rebrand only; ticker DAC retained.",
+   "source_url": "https://www.inderes.dk/companies/Danish-Aerospace-and-Defence-Company"
   }
  ]
 }
