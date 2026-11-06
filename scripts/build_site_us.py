@@ -18,6 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import price_stats
 from scoring import compact_snapshot_rows, gm_band_points, median_gm_points, score_pool
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -133,10 +134,13 @@ def main():
     }
 
     template = TEMPLATE.read_text()
+    px_cov = price_stats.attach(payload)
     html = template.replace('__PAYLOAD_JSON__', json.dumps(payload, separators=(',', ':')))
     html = html.replace('__BUILD_INFO_JSON__', json.dumps(build_info))
+    html = price_stats.inject(html, 25)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html)
+    print(f'price history attached for {px_cov} companies (as of {payload["pxAsOf"]})')
     print(f"built {OUT} ({len(html)/1024:.0f} KB, all-sector={len(all_sector)}, non-financial={len(nonfin)}, "
           f"{len(mc_overrides)} mc overrides)")
 

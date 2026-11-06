@@ -15,6 +15,10 @@ from pathlib import Path
 
 from scoring import score_pool
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import price_stats
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "all-data.json"
 
@@ -25,9 +29,10 @@ HEADERS = ['Rank (all)', 'Rank (excl. delisted)', 'Ticker', 'Company', 'Country'
            'Pts: profitability', 'Pts: CFO', 'Pts: track', 'Pts: dividend', 'Pts: gross margin', 'Pts: valuation', 'Non-financial pool',
            'Business description', 'Competitive position', 'Main shareholders', 'Insider ownership', 'Red flags', 'Website',
            'Corporate actions (events)', 'Latest corporate action',
-           'Net debt ($M)', 'EV ($M)', 'EV / earnings', 'Net debt basis']
+           'Net debt ($M)', 'EV ($M)', 'EV / earnings', 'Net debt basis',
+           'Last close', 'Price currency', '5y high', '5y high date', '5y low', '5y low date', 'vs 5y high', 'vs 5y low', '5y range (x)', 'Price as of']
 # column kinds the client uses for number formats: pct columns / multiple
-PCT_COLS = ['ROE', 'Rev growth', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %', 'Gross margin']
+PCT_COLS = ['vs 5y high', 'vs 5y low', 'ROE', 'Rev growth', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %', 'Gross margin']
 
 REGIONS = [
     ('europe', 'Europe', ROOT / 'data', 'companies_1000_scored.json', None),
@@ -102,6 +107,9 @@ def build_region(key, label, folder, pool_file, nonfin_file):
         ev = (s['mc'] + nd['netDebtUsd']) if nd.get('netDebtUsd') is not None and s['mc'] else None
         nd_cols = [r(nd.get('netDebtUsd'), 1), r(ev, 1), r(ev / ni, 2) if ev and ev > 0 and ni and ni > 0 else None,
                    ('financial - n/a' if nd.get('tier') == 'F' else (f"tier {nd['tier']} {nd.get('currency')} {nd.get('balanceSheetDate')}" if nd.get('tier') else ''))]
+        px = price_stats.px_for(t)
+        px_cols = ([px['l'], px['cur'], px['h'], px['hd'], px['lo'], px['ld'], r(px['l'] / px['h'] - 1, 4), r(px['l'] / px['lo'] - 1, 4),
+                    r(px['h'] / px['lo'], 2), px['d']] if px else [None] * 10)
         rows.append([
             rank, None if dl else live, t, c['name'], c['country'], ('yes ' + (dl.get('date') or '')) if dl else '',
             (distress.get(t) or {}).get('level', ''), r(s['total'], 2),
@@ -115,7 +123,7 @@ def build_region(key, label, folder, pool_file, nonfin_file):
             th.get('business_description') or '', th.get('competitive_position') or '', th.get('main_shareholders') or '',
             th.get('insider_ownership') or '', th.get('red_flags') or '', th.get('website') or '',
             len(evs), latest,
-        ] + nd_cols)
+        ] + nd_cols + px_cols)
     return {'key': key, 'label': label, 'rows': rows}
 
 

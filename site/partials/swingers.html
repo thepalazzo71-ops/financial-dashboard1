@@ -1,0 +1,26 @@
+<div class="modal-backdrop" id="swingersModalBackdrop">
+  <div class="modal wide xwide">
+    <h3>Big swingers &mdash; widest 5-year price swings</h3>
+    <p class="hint">
+      Companies whose share price has swung the most over the last five years, measured on daily <b>closing prices</b> (split-adjusted, in the
+      local trading currency, so the percentages are currency-neutral). <b>Range</b> = 5-year closing high &divide; 5-year closing low.
+      &ldquo;Deepest below peak&rdquo; ranks by how far today&rsquo;s price sits under the 5-year high; &ldquo;Biggest rebound&rdquo; by how far above the 5-year low.
+      Wild swings are risk as much as opportunity (illiquid shares, restructurings, bad data ticks) &mdash; this is a screen, not a score, and does not affect the v6 ranking.
+      Prices as of <span id="swAsOf"></span>.
+    </p>
+    <div class="sw-controls">
+      <label>Rank by <select id="swBasis">
+        <option value="range">Widest 5-year range (high &divide; low)</option>
+        <option value="drawdown">Deepest below the 5-year high</option>
+        <option value="rebound">Biggest rebound from the 5-year low</option>
+      </select></label>
+      <label>Min market cap <select id="swMinMc"><option value="0">any</option><option value="10">$10M</option><option value="25">$25M</option><option value="50">$50M</option><option value="100">$100M</option><option value="250">$250M</option></select></label>
+      <label>Show <select id="swN"><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="9999">all</option></select></label>
+      <label><input type="checkbox" id="swLong" checked> Only shares with at least 3 years of price history</label>
+    </div>
+    <div id="swingersContent"></div>
+    <div class="actions">
+      <button class="btn ghost" id="swingersClose">Close</button>
+    </div>
+  </div>
+</div>

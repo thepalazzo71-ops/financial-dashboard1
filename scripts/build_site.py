@@ -18,6 +18,7 @@ import json
 import re
 from datetime import datetime, timezone
 
+import price_stats
 from scoring import DATA, ROOT, compact_snapshot_rows, load_companies, load_overrides, resync_pool_ranks, score_pool
 
 TEMPLATE = ROOT / "site" / "template.html"
@@ -211,10 +212,13 @@ def main():
 
     payload, build_info = build_payload(companies, mc_overrides, gm_overrides)
     template = TEMPLATE.read_text()
+    px_cov = price_stats.attach(payload)
     html = template.replace('__PAYLOAD_JSON__', json.dumps(payload, separators=(',', ':')))
     html = html.replace('__BUILD_INFO_JSON__', json.dumps(build_info))
+    html = price_stats.inject(html, 25)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html)
+    print(f'price history attached for {px_cov} companies (as of {payload["pxAsOf"]})')
     print(f"resynced ranks for {len(companies)} companies; "
           f"built {OUT} ({len(html)/1024:.0f} KB, {build_info['poolSize']} companies, "
           f"{build_info['mcRefreshedCount']} mc overrides, {build_info['gmOverrideCount']} gm overrides)")

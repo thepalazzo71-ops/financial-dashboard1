@@ -254,6 +254,7 @@
   .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 9px 16px; border-radius: 20px; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 60; }
   .toast.show { opacity: 1; }
   .empty { text-align: center; padding: 40px 20px; color: var(--ink-faint); font-size: 13px; }
+/*__SWINGERS_CSS__*/
 </style>
 </head>
 <body>
@@ -297,6 +298,8 @@
       <option value="gm">Sort: gross margin</option>
       <option value="roe">Sort: ROE (recent)</option>
       <option value="revGrowth">Sort: revenue growth</option>
+      <option value="offHigh">Sort: furthest below 5y high</option>
+      <option value="swing">Sort: widest 5y range</option>
       <option value="name">Sort: name</option>
     </select>
     <select id="sectorFilter">
@@ -308,6 +311,7 @@
     <button class="btn ghost small" id="needsGmBtn">Needs GM research</button>
     <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
     <button class="btn ghost small" id="moversBtn">Biggest movers</button>
+    <button class="btn ghost small" id="swingersBtn" title="Widest 5-year share-price swings">Big swingers (5y)</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
     <button class="btn ghost small" id="delistedBtn">Delisted</button>
     <button class="btn ghost small" id="trackerBtn">Tracker</button>
@@ -329,6 +333,8 @@
           <th style="width:52px" class="num-col" title="Rank change since the last frozen snapshot">Δ</th>
           <th>Company</th>
           <th class="num-col">Mkt Cap ($M)</th>
+          <th class="num-col" title="Last close vs the 5-year closing high (always 0 or negative)">vs 5y High</th>
+          <th class="num-col" title="Last close vs the 5-year closing low (always 0 or positive)">vs 5y Low</th>
           <th class="num-col">P/B</th>
           <th class="num-col">ROE</th>
           <th class="num-col">Rev Growth</th>
@@ -457,6 +463,7 @@
   </div>
 </div>
 
+<!--__SWINGERS_HTML__-->
 <div class="modal-backdrop" id="moversModalBackdrop">
   <div class="modal wide">
     <h3>Biggest movers</h3>
@@ -1008,6 +1015,7 @@ function distressBox(c) {
   const links = (d.sources || []).map((u, i) => `<a href="${escHtml(u)}" target="_blank" rel="noopener">source ${i+1}</a>`).join(' &middot; ');
   return `<div class="distress-note"><b class="lbl">&#9888; ${d.level === 'severe' ? 'Severe financial distress' : 'Financial distress warning'} (as of ${escHtml(d.asOf || '')})</b>${escHtml(d.summary)}${links ? `<div style="margin-top:4px">${links}</div>` : ''}<div style="margin-top:4px;font-size:11px;color:var(--ink-soft)">The score is based on historical financials and does not reflect this.</div></div>`;
 }
+/*__SWINGERS_JS__*/
 function fmtNum(v, d=1) { if (v===null||v===undefined||Number.isNaN(v)) return '—'; return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
 // Thesis prose fields (main_shareholders, insider_ownership, ...) carry
 // their source citation inline as markdown "([label](url))" - never
@@ -1395,6 +1403,7 @@ function renderDetailPanel(row, rank) {
       ${distressBox(c)}
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
       <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
+      ${priceBox(c)}
       <div class="breakdown">
         <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
         <div class="bd-row"><span>Revenue consistency</span><b>${fmtNum(c.fixedPts.revenue_consistency,1)} / 12</b></div>
@@ -1778,6 +1787,8 @@ function render() {
     if (sf==='gm') return (y.gmInfo.gm ?? -1) - (x.gmInfo.gm ?? -1);
     if (sf==='roe') return (y.roe ?? -99) - (x.roe ?? -99);
     if (sf==='revGrowth') return (y.c.revGrowth ?? -99) - (x.c.revGrowth ?? -99);
+    if (sf==='offHigh') { const a = pxOf(x.c), b = pxOf(y.c); return (a ? a.vsHi : 9) - (b ? b.vsHi : 9); }
+    if (sf==='swing') { const a = pxOf(x.c), b = pxOf(y.c); return (b ? b.range : 0) - (a ? a.range : 0); }
     if (sf==='name') return x.c.n.localeCompare(y.c.n);
     return 0;
   });
@@ -1851,6 +1862,7 @@ function render() {
             ${edited ? `<button class="mc-reset" data-ticker="${c.t}" title="Reset to build-time value">↺</button>` : ''}
           </div>`}
         </td>
+        ${priceCells(c, isHistorical)}
         <td class="num-col num">${pb!==null ? fmtNum(pb,2) : '—'}</td>
         <td class="num-col num">${fmtPct(roe)}</td>
         <td class="num-col num">${fmtPct(c.revGrowth,0)}</td>
@@ -1865,7 +1877,7 @@ function render() {
       </tr>
     `;
     if (isOpen) {
-      html += `<tr class="detail-row"><td colspan="9">${renderDetailPanel(row, rank)}</td></tr>`;
+      html += `<tr class="detail-row"><td colspan="11">${renderDetailPanel(row, rank)}</td></tr>`;
     }
   });
   tbody.innerHTML = html;
