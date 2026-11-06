@@ -30,7 +30,8 @@ HEADERS = ['Rank (all)', 'Rank (excl. delisted)', 'Ticker', 'Company', 'Country'
            'Business description', 'Competitive position', 'Main shareholders', 'Insider ownership', 'Red flags', 'Website',
            'Corporate actions (events)', 'Latest corporate action',
            'Net debt ($M)', 'EV ($M)', 'EV / earnings', 'Net debt basis',
-           'Last close', 'Price currency', '5y high', '5y high date', '5y low', '5y low date', 'vs 5y high', 'vs 5y low', '5y range (x)', 'Price as of']
+           'Last close', 'Price currency', '5y high', '5y high date', '5y low', '5y low date', 'vs 5y high', 'vs 5y low', '5y range (x)', 'Price as of',
+           'Mkt cap basis']
 # column kinds the client uses for number formats: pct columns / multiple
 PCT_COLS = ['vs 5y high', 'vs 5y low', 'ROE', 'Rev growth', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %', 'Gross margin']
 
@@ -123,7 +124,9 @@ def build_region(key, label, folder, pool_file, nonfin_file):
             th.get('business_description') or '', th.get('competitive_position') or '', th.get('main_shareholders') or '',
             th.get('insider_ownership') or '', th.get('red_flags') or '', th.get('website') or '',
             len(evs), latest,
-        ] + nd_cols + px_cols)
+        ] + nd_cols + px_cols + [
+            ('ESTIMATED: extract cap x price/FX change since 2026-03-17 (share count assumed unchanged)' if (o and o.get('derived'))
+             else ('researched / quoted' if o else 'Capital IQ extract (17 Mar 2026), not refreshed'))])
     return {'key': key, 'label': label, 'rows': rows}
 
 

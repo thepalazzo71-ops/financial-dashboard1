@@ -82,6 +82,8 @@ def build_sector_payload(companies, mc_overrides):
             'mcRefreshed': c['ticker'] in mc_overrides,
             'mcUpdatedAt': mc_o.get('updatedAt') if mc_o else None,
             'mcSource': mc_o.get('source') if mc_o else None,
+            'mcDerived': bool(mc_o.get('derived')) if mc_o else False,
+            'mcRatio': mc_o.get('ratio') if mc_o else None,
             'eq': c['equity'], 'netDebt': c.get('netDebt'), 'revLTM': c['revLTM'], 'revGrowth': c['revGrowth'],
             'dilution': c['dilution'], 'dilutionDataMissing': c.get('dilutionDataMissing', False),
             'profitPct': c['profitPct'], 'cfoPct': c['cfoPct'], 'divPct': c['divPct'],
@@ -143,6 +145,7 @@ def main():
         'buildDate': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
         'poolSizeAll': len(all_sector), 'poolSizeNonFinancial': len(nonfin),
         'mcOverrideCount': len(mc_overrides),
+        'mcDerivedCount': sum(1 for v in mc_overrides.values() if v.get('derived')),
     }
 
     template = TEMPLATE.read_text()

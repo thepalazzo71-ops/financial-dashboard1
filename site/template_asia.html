@@ -104,6 +104,10 @@
   .tag.needsgm { background: var(--brick-soft); color: var(--brick); cursor: help; }
   .tag.nodata { background: var(--brick-soft); color: var(--brick); cursor: help; font-weight: 700; }
   .tag.refreshed { background: var(--green-soft); color: var(--green-text); cursor: help; }
+  .tag.estmc { background: #fdf1d8; color: #8a5a00; border: 1px dashed #c58a1a; font-weight: 700; cursor: help; }
+  .est-banner { margin: 10px 0 14px; padding: 10px 14px; border: 1px solid #c58a1a; border-left-width: 5px; border-radius: 4px; background: #fdf1d8; color: #5e3d00; font-size: 13px; line-height: 1.45; }
+  .est-banner b { color: #3f2900; }
+  .mc-input.est { border-style: dashed; border-color: #c58a1a; }
   .tag.distress { background: var(--brick); color: var(--paper, #fff); cursor: help; font-weight: 700; }
 
   .rank-delta { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; white-space: nowrap; }
@@ -281,6 +285,7 @@
       rank updates live, against the active pool.
     </div>
     <div class="stat-row" id="statRow"></div>
+    <div class="est-banner" id="estBanner"></div>
   </header>
 
   <div class="toolbar">
@@ -1403,6 +1408,7 @@ function renderDetailPanel(row, rank) {
       ${distressBox(c)}
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
       <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
+      ${c.mcDerived ? `<div class="est-banner" style="margin:0 0 12px"><b>Estimated market cap.</b> It is not a quoted figure: it is the March 2026 Capital IQ market cap scaled by the share-price and FX change since 17 March 2026 (x${c.mcRatio}, price as of ${c.mcUpdatedAt ? c.mcUpdatedAt.slice(0,10) : '?'}), assuming the share count is unchanged since then. Type a real market cap into the field to override it.</div>` : ''}
       ${priceBox(c)}
       <div class="breakdown">
         <div class="bd-row"><span>Revenue growth</span><b>${fmtNum(c.fixedPts.revenue_growth,1)} / 6</b></div>
@@ -1808,18 +1814,23 @@ function render() {
       <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">needed GM research at this date</div></div>
       <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
     `;
+    { const bn = document.getElementById('estBanner'); if (bn) bn.innerHTML = ''; }
   } else {
     const editedMcCount = COMPANIES.filter(isEditedMc).length;
     const editedGmCount = Object.keys(gmOverrides).length;
-    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed).length;
+    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed && !c.mcDerived).length;
+    const estCount = COMPANIES.filter(c=>c.mcDerived).length;
     document.getElementById('statRow').innerHTML = `
       <div class="stat"><div class="n">${COMPANIES.length}</div><div class="l">candidate pool (${filters.sector==='all'?'all sectors':'non-financial'})</div></div>
-      <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps refreshed (pipeline)</div></div>
+      <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps researched / quoted</div></div>
+      <div class="stat" style="border-color:#c58a1a;background:#fdf1d8"><div class="n" style="color:#8a5a00">${estCount}</div><div class="l" style="color:#8a5a00"><b>market caps ESTIMATED</b> from price moves</div></div>
       <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
       <div class="stat"><div class="n">${editedGmCount}</div><div class="l">gross margins edited (this browser)</div></div>
       <div class="stat warn"><div class="n">${needsGmCount}</div><div class="l">still need GM research</div></div>
       <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
     `;
+    const banner = document.getElementById('estBanner');
+    if (banner) banner.innerHTML = estCount ? `<b>Most Asia market caps are ESTIMATES.</b> Only ${refreshedCount.toLocaleString()} companies have a researched or quoted market cap. For the other ${estCount.toLocaleString()} (tagged <span class="tag estmc">mc est.</span>) the market cap is the 17 March 2026 Capital IQ value scaled by each share's price and exchange-rate change since then (Yahoo daily closes), <b>assuming the share count has not changed</b> &mdash; rights issues, placements and buybacks since March are not captured, so individual figures can be off, and the ranking inherits that error. Type a real market cap into the field to override any of them.` : '';
   }
 
   const tbody = document.getElementById('tbody');
@@ -1853,12 +1864,12 @@ function render() {
         <td class="num-col">${deltaHtml}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${(c.gmEst && !gmInfo.isOverride) ? ` <span class="tag needsgm" style="background:#fdf1d8;color:#8a5a00" title="Gross margin ESTIMATED as the median of ${c.gmEstPeers} sourced industry peers (${escHtml(c.gmEstGroup||'')}); not this company's own figure">est. GM</span>` : ''}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>` : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${(c.gmEst && !gmInfo.isOverride) ? ` <span class="tag needsgm" style="background:#fdf1d8;color:#8a5a00" title="Gross margin ESTIMATED as the median of ${c.gmEstPeers} sourced industry peers (${escHtml(c.gmEstGroup||'')}); not this company's own figure">est. GM</span>` : ''}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? (c.mcDerived ? ` <span class="tag estmc" title="ESTIMATED market cap, not a quoted figure: the March 2026 Capital IQ market cap scaled by the share-price and FX change since 17 March 2026 (x${c.mcRatio}), assuming the share count has not changed. Price as of ${c.mcUpdatedAt ? c.mcUpdatedAt.slice(0,10) : '?'}.">mc est.</span>` : ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>`) : ''}</div>
         </td>
         <td class="num-col">
           ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `
           <div class="mc-cell">
-            <input type="number" step="0.1" class="mc-input num ${edited?'edited':''}" data-ticker="${c.t}" value="${mc}">
+            <input type="number" step="0.1" class="mc-input num ${edited?'edited':''} ${(c.mcDerived && !edited)?'est':''}" data-ticker="${c.t}" value="${mc}" ${(c.mcDerived && !edited)?'title="Estimated market cap (see the mc est. tag)"':''}>
             ${edited ? `<button class="mc-reset" data-ticker="${c.t}" title="Reset to build-time value">↺</button>` : ''}
           </div>`}
         </td>
@@ -2191,6 +2202,7 @@ function buildMethodologySheet(wb, viewLabel) {
     ['Build date', BUILD_INFO.buildDate],
     ['Active pool size', COMPANIES.length],
     ['Market caps refreshed (pipeline, both sectors combined)', BUILD_INFO.mcOverrideCount],
+    ['  of which ESTIMATED from price moves since 2026-03-17 (share count assumed unchanged)', BUILD_INFO.mcDerivedCount],
     ['Gross margins verified (this sector view)', gmVerifiedCount],
     [],
     ['Scoring dimension', 'Max points'],
