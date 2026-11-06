@@ -31,6 +31,7 @@ PCT_COLS = ['ROE', 'Rev growth', 'Dilution', 'Profit %', 'CFO+ %', 'Dividend %',
 
 REGIONS = [
     ('europe', 'Europe', ROOT / 'data', 'companies_1000_scored.json', None),
+    ('micro', 'Europe micro', ROOT / 'data-micro', 'companies_pool_all.json', 'companies_pool_nonfinancial.json'),
     ('us', 'USA & Canada', ROOT / 'data-us', 'companies_pool_all.json', 'companies_pool_nonfinancial.json'),
     ('asia', 'Asia & Pacific', ROOT / 'data-asia', 'companies_pool_all.json', 'companies_pool_nonfinancial.json'),
 ]
