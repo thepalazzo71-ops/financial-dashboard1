@@ -1,0 +1,199 @@
+{
+ "tender_offers": [
+  {
+   "ticker": "WSE:KPI",
+   "company": "Kancelaria Prawna-Inkaso WEC Spólka Akcyjna",
+   "date": "2026-09-01",
+   "counterparty": "Company itself (buyback from shareholders)",
+   "role": "acquirer",
+   "terms": "Invitation to submit sale offers; 8,843,220 shares tendered; company bought 250,000 own shares at PLN 4.00 (PLN 1.0M total), settlement 21 Sep 2026; treasury holding afterwards 750,000 shares = 7.59% of 9,882,000",
+   "note": "Issuer self-tender / own-share buyback (ESPI 7/2026 and 8/2026); not a takeover. Heavily oversubscribed vs ~PLN 2 market price.",
+   "source_url": "https://www.biznesradar.pl/a/155320,inkaso-wec-sa-8-2026-podsumowanie-skupu-akcji-wlasnych"
+  },
+  {
+   "ticker": "WSE:FSG",
+   "company": "Fabryki Sprzetu i Narzedzi Górniczych Grupa Kapitalowa FASING S.A.",
+   "date": "2025-08",
+   "counterparty": "Karbon 2 Sp. z o.o. and Anna Bik",
+   "role": "target",
+   "terms": "Tender offer for 1,232,231 shares (remaining ~38.22% stake) at PLN 12.50/share; settlement 9 Oct 2025",
+   "note": "After tender Karbon 2 reported holding 60.34% (1,875,013 shares) per third-party page; final shares acquired not confirmed. Not a delisting offer; stock stayed listed and trades above offer price.",
+   "source_url": "https://in.marketscreener.com/quote/stock/FABRYKI-SPRZETU-I-NARZEDZ-11193955/news/Karbon-2-Sp-z-o-o-launched-a-tender-offer-to-acquire-remaining-38-22-stake-in-Fabryki-Sprzetu-i-N-36098858"
+  },
+  {
+   "ticker": "BUL:AROM",
+   "company": "Aroma AD",
+   "date": "2026-03-27",
+   "counterparty": "Harisson Management Limited",
+   "role": "target",
+   "terms": "Squeeze-out of minority under art. 157a ZPPCK at EUR 0.95 per share for 551,791 shares (3.56%); acquirer already holds 14,940,038 shares = 96.438%; nominal EUR 0.51",
+   "note": "Offer document registered with FSC on 2026-03-27; completion and delisting not confirmed",
+   "source_url": "https://download.bse-sofia.bg/prospekt/AROM-/Squeeze-out202605/1_Aroma_Squeeze-out-Part%20I-final.pdf"
+  },
+  {
+   "ticker": "MTSE:LQS",
+   "company": "Loqus Holdings p.l.c.",
+   "date": "2025-09-26",
+   "counterparty": "JFC Holdings Limited (majority shareholder)",
+   "role": "target",
+   "terms": "Conditional voluntary public takeover bid; results announced 26 Sep 2025, settlement/transfer of shares announced 6 Oct 2025 (JFC + owner at 59.4%). Offer price not seen.",
+   "note": "Trading suspended 19 Aug 2025. In 2026 JFC bought a further 2,151,054 shares (6.74%) taking it to 66.92% (date not seen).",
+   "source_url": "https://cdn.borzamalta.com.mt/download/announcements/LQS250.pdf"
+  },
+  {
+   "ticker": "WSE:IZO",
+   "company": "Izolacja Jarocin Spolka Akcyjna",
+   "date": "2025-07-04",
+   "counterparty": "Selena Industrial Technologies (Selena FM group)",
+   "role": "target",
+   "terms": "Tender for all shares at 3.60 PLN; Selena first bought 1,941,164 shares from main shareholders at 3.50 PLN; tender settled Sept 2025 (UOKiK clearance), total 2,162,236 shares, 56.9% of votes.",
+   "note": "Selena intends to delist shares from GPW per Parkiet; no delisting seen as of Oct 2026.",
+   "source_url": "https://strefainwestorow.pl/wiadomosci/20250911/grupa-selena-rozliczenie-zlecenia-kupna-akcji-izolacja-jarocin-sa"
+  }
+ ],
+ "mergers_acquisitions": [
+  {
+   "ticker": "ENXTPA:BIG",
+   "company": "BigBen Interactive",
+   "date": "2026-10-08",
+   "counterparty": "Modelabs",
+   "role": "target",
+   "terms": "Sale of subsidiary Bigben Connected to Modelabs; vendor credit ~EUR 13m subject to final adjustment",
+   "note": "Bigben is the seller (disposal completed after conditions precedent lifted)",
+   "source_url": "https://www.lesoleil.com/communiques-de-presse/2026/10/08/bigben-interactive-finalise-la-cession-de-sa-filiale-bigben-connected-et-annonce-la-prorogation-de-la-procedure-de-sauvegarde-acceleree-DFVPFDOTKNEKRLASMDD3LTQYSU/"
+  }
+ ],
+ "spinoffs": [],
+ "other": [
+  {
+   "ticker": "WSE:MLB",
+   "company": "MakoLab Spólka Akcyjna",
+   "date": "unknown (MarketScreener headline, undated in result)",
+   "counterparty": "own shares",
+   "role": "target",
+   "terms": "Board intends to launch equity buyback; no terms found",
+   "note": "Share buyback intention; no date/size seen",
+   "source_url": "https://www.marketscreener.com/quote/stock/MAKOLAB-SP-LKA-AKCYJNA-20704172/news/MakoLab-Sp-lka-Akcyjna-s-Board-intends-to-launch-an-Equity-Buyback-38054962/"
+  },
+  {
+   "ticker": "ENXTPA:BIG",
+   "company": "BigBen Interactive",
+   "date": "2026-08-17",
+   "counterparty": "Financial creditors (lenders)",
+   "role": "target",
+   "terms": "Accelerated safeguard procedure covering financial debt only; agreement in principle with main financial creditors announced 4 Aug 2026; part of creditors' new money to be reinvested in Nacon's capital; ORAR bonds not issued if Bigben Connected sold first",
+   "note": "Debt restructuring / accelerated safeguard; plan hearing set for Dec 2026; completion by end Q1 2027; possible change of control/dilution",
+   "source_url": "https://www.boursorama.com/bourse/actualites/bigben-accord-de-principe-des-principaux-creanciers-financiers-et-depot-d-une-requete-aux-fins-d-ouverture-d-une-procedure-de-sauvegarde-acceleree-f53e4776c9c64a672b6c9acc08995642"
+  },
+  {
+   "ticker": "ENXTPA:BIG",
+   "company": "BigBen Interactive",
+   "date": "2026-02-20",
+   "counterparty": "Euronext Paris",
+   "role": "target",
+   "terms": "Temporary suspension of quotation 20 Feb 2026, resumed 4 Mar 2026; conciliation procedure opened earlier",
+   "note": "Temporary trading suspension; also Nacon (56.72% owned subsidiary) in judicial reorganisation since 2 Mar 2026",
+   "source_url": "https://www.abcbourse.com/marches/bigben-obtient-l-ouverture-d-une-procedure-de-conciliation_690914"
+  },
+  {
+   "ticker": "BIT:NPI",
+   "company": "Notorious Pictures S.p.A.",
+   "date": "undated in result (AGM-approved)",
+   "counterparty": "own shares (treasury)",
+   "role": "target",
+   "terms": "Shareholders' meeting approved treasury share purchase programme; headline mentions 'buyback da 29 milioni' (unit/size unclear)",
+   "note": "Share buyback authorisation; date not confirmed",
+   "source_url": "https://www.websim.it/azioni/small-mid-cap/notizie/notorious-l-assemblea-approva-un-buyback-da-29-milioni/"
+  },
+  {
+   "ticker": "WSE:CSR",
+   "company": "Caspar Asset Management S.A.",
+   "date": null,
+   "counterparty": "Caspar Asset Management group (internal)",
+   "role": "acquirer",
+   "terms": "Planned reorganisation of group structure 2026-2028: core activities moved to subsidiaries (incl. development of Caspar TFI); CSR to be holding company",
+   "note": "Internal restructuring plan published by management; exact date not seen.",
+   "source_url": "https://www.biznesradar.pl/a/141072,caspar-asset-management-planuje-reorganizacje-struktury-grupy-i-rozwoj-caspar-tfi"
+  },
+  {
+   "ticker": "WSE:NWA",
+   "company": "NWAI Dom Maklerski S.A.",
+   "date": "2026-07-29",
+   "counterparty": "GPW (Warsaw Stock Exchange)",
+   "role": "target",
+   "terms": "Transfer of listing from NewConnect to GPW main market",
+   "note": "Market upgrade, not a delisting; company stays listed.",
+   "source_url": "https://www.parkiet.com/spolka/PLNWAI000017"
+  },
+  {
+   "ticker": "ENXTPA:ALVAP",
+   "company": "Kumulus Vape S.A.",
+   "date": "2026-06-15",
+   "counterparty": "Company (treasury shares)",
+   "role": "target",
+   "terms": "Cancellation of 100,000 treasury shares (nominal EUR0.05) and corresponding capital reduction",
+   "note": "Minor capital reduction; no tender, delisting or takeover found.",
+   "source_url": "https://www.abcbourse.com/marches/kumulus-vape-annule-100-000-actions-et-reduit-son-capital_698325"
+  },
+  {
+   "ticker": "WSE:MEX",
+   "company": "Mex Polska S.A.",
+   "date": "2026-02",
+   "counterparty": "Fundacje MEX and OSTOJA (selling shareholders); Familiar SA SICAV-SIF",
+   "role": "target",
+   "terms": "Accelerated bookbuild (ABB): foundations MEX and OSTOJA to sell up to 763,300 shares to widen free float; follow-up step announced: purchase of shares from Familiar SA SICAV-SIF",
+   "note": "Secondary placement / shareholder-structure change, not a tender offer; no change of control seen.",
+   "source_url": "https://www.biznesradar.pl/a/143277,dwoch-akcjonariuszy-mex-polska-zakonczylo-abb"
+  },
+  {
+   "ticker": "WSE:LEN",
+   "company": "Lena Lighting S.A.",
+   "date": "2024-08",
+   "counterparty": "own shares",
+   "role": "acquirer",
+   "terms": "Share buyback programme (ESPI report Aug 2024; CEO also bought shares)",
+   "note": "Minor; outside/at edge of 24 months, not a tender offer",
+   "source_url": "https://www.parkiet.com/spolka/Lena_Lighting"
+  },
+  {
+   "ticker": "WSE:7FT",
+   "company": "7FIT S.A.",
+   "date": "2024-12 (KRS registration 2025-02-28)",
+   "counterparty": "own shares",
+   "role": "target",
+   "terms": "Share capital reduction (cancellation of treasury shares) in Dec 2024, registered in KRS on 2025-02-28; company holds 247,085 own shares (13.78%) per Bankier entry of 2024-11-25",
+   "note": "Buyback/capital reduction; not a tender offer",
+   "source_url": "https://www.parkiet.com/firmy/228971-7fit"
+  },
+  {
+   "ticker": "ATSE:CNLCAP",
+   "company": "Cnl Capital E.K.E.S. - AIFM",
+   "date": "2025-06 to 2026-09",
+   "counterparty": "own shares",
+   "role": "acquirer",
+   "terms": "Ongoing share buyback (approved at AGM 2025-05-28); treasury shares 49,420 (6.30%) Jun 2025; 52,200 on 2026-09-29",
+   "note": "Routine buyback; no tender offer",
+   "source_url": "https://www.athexgroup.gr/sites/default/files/hermes/2025-06/26cb56d4-2a0b-4fdd-acaf-2c9cc4e36923/1419_4495_2025_Greek_1.pdf"
+  },
+  {
+   "ticker": "WSE:EXC",
+   "company": "Excellence S.A.",
+   "date": "2026-06-30",
+   "counterparty": "",
+   "role": "target",
+   "terms": "Share consolidation 10:1 (scalenie akcji) per Parkiet corporate-actions table; date is the general meeting date, effective/registration date not confirmed.",
+   "note": "Unverified whether executed; EGM notice 2 Sep 2026 (report 12/2026) agenda unknown.",
+   "source_url": "https://www.parkiet.com/spolka/PLEXCLN00016"
+  },
+  {
+   "ticker": "AIM:AEO",
+   "company": "Aeorema Communications plc",
+   "date": "2025-05",
+   "counterparty": "",
+   "role": "acquirer",
+   "terms": "Share buyback programme announced May 2025; treasury shares cancelled 30 Apr 2026 (257,500 shares) leaving 9,435,500 shares.",
+   "note": "Buyback only; no takeover/tender found.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/aeorema-communications--aeo/treasury-shares-cancellation-total-voting-rights/9547739"
+  }
+ ]
+}

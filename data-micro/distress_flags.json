@@ -1,0 +1,11 @@
+{
+ "_definition": "Curated list of Europe-micro companies in current financial distress / insolvency proceedings (same definition as the Europe file). Informational only.",
+ "ENXTPA:BIG": {
+  "level": "severe",
+  "summary": "Accelerated safeguard (sauvegarde acceleree) proceeding opened by Lille Metropole commercial court judgment of 17 Aug 2026; extended on 7 Oct 2026 to ~9-17 Dec 2026 (sources differ); restructuring to complete by end Q1 2027. Shares were temporarily suspended 20 Feb 2026 and resumed 4 Mar 2026; still quoted in Aug 2026 (AbcBourse 14 Aug 2026). Current trading status after Aug 2026 not confirmed.",
+  "asOf": "2026-11-06",
+  "sources": [
+   "https://www.abcbourse.com/cotation/BIGp"
+  ]
+ }
+}
