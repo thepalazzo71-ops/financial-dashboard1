@@ -11,29 +11,32 @@
   .px-box .hint { margin: 8px 0 0; }
   .sw-controls { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 12px; font-size: 12.5px; align-items: center; }
   .sw-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  .sw-table th { text-align: right; font-weight: 600; color: var(--ink-faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 6px; border-bottom: 1px solid var(--rule-strong); }
-  .sw-table th:nth-child(2), .sw-table td:nth-child(2) { text-align: left; }
-  .sw-table td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
-  .sw-table td .sub { color: var(--ink-faint); font-size: 11px; white-space: nowrap; }
-  .sw-table tr.sw-row { cursor: pointer; }
-  .sw-table tr.sw-row:hover { background: rgba(47,75,60,0.05); }
-  .sw-table tr.sw-row.expanded { background: var(--green-soft); }
-  .sw-table td.sw-detail-cell { text-align: left; padding: 0 6px 14px; white-space: normal; font-size: 13px; }
+  .sw-table > thead > tr > th { text-align: right; font-weight: 600; color: var(--ink-faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 6px; border-bottom: 1px solid var(--rule-strong); }
+  .sw-table > thead > tr > th.swc-co, .sw-table > tbody > tr > td.swc-co { text-align: left; }
+  .sw-table > tbody > tr > td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
+  .sw-table > tbody > tr > td.swc-co .sub, .sw-table > tbody > tr > td.swc-v .sub { color: var(--ink-faint); font-size: 11px; white-space: nowrap; }
+  .sw-table > tbody > tr.sw-row { cursor: pointer; }
+  .sw-table > tbody > tr.sw-row:hover { background: rgba(47,75,60,0.05); }
+  .sw-table > tbody > tr.sw-row.expanded { background: var(--green-soft); }
+  .sw-table > tbody > tr > td.sw-detail-cell { text-align: left; padding: 0 6px 14px; white-space: normal; font-size: 13px; }
   .modal.sw-modal { max-width: min(1500px, 97vw); width: 97vw; }
   .sw-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
   .sw-side { min-width: 0; overflow-x: auto; }
   .sw-side h4 { margin: 0 0 4px; font-size: 15px; }
   .sw-side h4 .sub { color: var(--ink-faint); font-weight: 400; font-size: 12px; }
   .sw-cols .sw-table { font-size: 12px; }
-  .sw-cols .sw-table th, .sw-cols .sw-table td { padding: 5px 4px; }
+  .sw-cols .sw-table > thead > tr > th, .sw-cols .sw-table > tbody > tr > td { padding: 5px 4px; }
   @media (max-width: 1000px) { .sw-cols { grid-template-columns: 1fr; } }
   .sw-table { min-width: 0; }
   .sw-cols .sw-table { table-layout: fixed; }
-  .sw-cols .sw-table th:nth-child(1), .sw-cols .sw-table td:nth-child(1) { width: 26px; }
-  .sw-cols .sw-table th:nth-child(3), .sw-cols .sw-table td:nth-child(3) { width: 52px; }
-  .sw-cols .sw-table th:nth-child(n+4), .sw-cols .sw-table td:nth-child(n+4) { width: 72px; }
-  .sw-cols .sw-table td:nth-child(2) .sub { white-space: normal; }
-  .sw-cols .sw-table td:nth-child(2) b { overflow-wrap: anywhere; }
-  .sw-detail-full { margin: 0 0 16px; padding: 10px 14px 6px; border: 1px solid var(--rule-strong); border-radius: 5px; background: var(--green-soft); }
-  .sw-detail-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .sw-detail-bar .btn { margin-left: auto; }
+  .sw-cols .sw-table > thead > tr > th:nth-child(1), .sw-cols .sw-table > tbody > tr > td.swc-n { width: 26px; }
+  .sw-cols .sw-table > thead > tr > th:nth-child(3), .sw-cols .sw-table > tbody > tr > td.swc-cap { width: 52px; }
+  .sw-cols .sw-table > thead > tr > th:nth-child(n+4), .sw-cols .sw-table > tbody > tr > td.swc-v { width: 72px; }
+  .sw-cols .sw-table > tbody > tr > td.swc-co .sub { white-space: normal; }
+  /* the opened company detail sits in the list at the row's place; keep ITS tables normal (no leaking list rules) */
+  .sw-cols .sw-table > tbody > tr.sw-open > td.sw-detail-cell { padding: 0 0 14px; }
+  .sw-detail-cell table { table-layout: auto; min-width: 0; width: 100%; font-size: 12px; }
+  .sw-detail-cell th, .sw-detail-cell td { white-space: nowrap; }
+  .sw-detail-cell .full-financials { overflow-x: auto; }
+  .sw-detail-cell .detail-grid { grid-template-columns: 1fr; }
+  .sw-detail-cell .full-financials table th, .sw-detail-cell .full-financials table td { padding: 4px 2px; font-size: 11px; }

@@ -70,15 +70,15 @@ function renderSwingersContent() {
       const c = r.c;
       const isOpen = expandedSwingTicker === c.t;
       return `<tr class="sw-row ${isOpen ? 'expanded' : ''}" data-ticker="${c.t}" title="Click for the full company detail">
-        <td>${i + 1}</td>
-        <td><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)} &middot; v6 #${rank[c.t]}</div></td>
-        <td>${fmtNum(r.mc, 0)}</td>
-        <td>${pxPrice(p.hi)}<div class="sub">${p.hd}</div></td>
-        <td>${pxPrice(p.lo)}<div class="sub">${p.ld}</div></td>
-        <td>${pxPrice(p.last)}<div class="sub">${escHtml(p.cur)}</div></td>
-        <td>${pxPct(p.vsHi)}</td><td>${pxPct(p.vsLo)}</td>
-        <td><b>${fmtNum(p.range, 1)}x</b>${pxShortMark(p)}</td>
-      </tr>`;
+        <td class="swc-n">${i + 1}</td>
+        <td class="swc-co"><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)} &middot; v6 #${rank[c.t]}</div></td>
+        <td class="swc-cap">${fmtNum(r.mc, 0)}</td>
+        <td class="swc-v">${pxPrice(p.hi)}<div class="sub">${p.hd}</div></td>
+        <td class="swc-v">${pxPrice(p.lo)}<div class="sub">${p.ld}</div></td>
+        <td class="swc-v">${pxPrice(p.last)}<div class="sub">${escHtml(p.cur)}</div></td>
+        <td class="swc-v">${pxPct(p.vsHi)}</td><td class="swc-v">${pxPct(p.vsLo)}</td>
+        <td class="swc-v"><b>${fmtNum(p.range, 1)}x</b>${pxShortMark(p)}</td>
+      </tr>${isOpen ? `<tr class="sw-open"><td colspan="9" class="sw-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
     }).join('');
     return `<div class="sw-side">
       <h4>${icon} ${title} <span class="sub">(${list.length}${list.length > shown.length ? `, showing ${shown.length}` : ''})</span></h4>
@@ -88,14 +88,7 @@ function renderSwingersContent() {
         <tbody>${body || '<tr><td colspan="9" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
       </table></div>`;
   };
-  const openRow = expandedSwingTicker ? rows.find(x => x.r.c.t === expandedSwingTicker) : null;
-  if (expandedSwingTicker && !openRow) expandedSwingTicker = null;
-  const detail = openRow ? `<div class="sw-detail-full" id="swDetail">
-      <div class="sw-detail-bar"><b>${escHtml(openRow.r.c.n)}</b> <span class="sub">${openRow.r.c.t}</span>
-        <button type="button" class="btn ghost small sw-detail-close">Close detail</button></div>
-      ${renderDetailPanel(openRow.r, rank[openRow.r.c.t])}
-    </div>` : '';
-  document.getElementById('swingersContent').innerHTML = detail + `
+  document.getElementById('swingersContent').innerHTML = `
     <div class="sw-cols">
       ${side(fell, 'Fell', '&#8600;', 'The 5-year high came before the 5-year low: the price dropped from its peak to its trough (it may have bounced since &mdash; see &ldquo;vs low&rdquo;).')}
       ${side(rose, 'Rose', '&#8599;', 'The 5-year low came before the 5-year high: the price climbed from its trough to its peak (it may have slipped back since &mdash; see &ldquo;vs high&rdquo;).')}
@@ -117,14 +110,12 @@ function initSwingers() {
   bd.addEventListener('click', e => { if (e.target === bd) bd.classList.remove('open'); });
   ['swBasis', 'swMinMc', 'swN', 'swLong'].forEach(id => document.getElementById(id).addEventListener('change', () => { expandedSwingTicker = null; renderSwingersContent(); }));
   document.getElementById('swingersContent').addEventListener('click', e => {
-    if (e.target.closest('.sw-detail-close')) { expandedSwingTicker = null; renderSwingersContent(); return; }
     const rowEl = e.target.closest('tr.sw-row');
     if (!rowEl) return;
     const t = rowEl.dataset.ticker;
     expandedSwingTicker = (expandedSwingTicker === t) ? null : t;
     renderSwingersContent();
-    const d = document.getElementById('swDetail');
-    if (d) d.scrollIntoView({ block: 'start', behavior: 'smooth' });
+
   });
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSwingers); else initSwingers();
