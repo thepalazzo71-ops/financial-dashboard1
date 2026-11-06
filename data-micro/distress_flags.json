@@ -31,5 +31,25 @@
   "sources": [
    "https://www.boerse.de/aktien/Aktien-Brauerei-Kaufbeuren-AG-Aktie/DE0005013007"
   ]
+ },
+ "BUL:ELHM": {
+  "level": "warning",
+  "summary": "Elhim-Iskra announced it would cease business operations from 23 Mar 2026 (about 200 jobs cut) and published a restructuring plan on 17 Apr 2026; the shares still trade. Formal insolvency or liquidation not confirmed.",
+  "asOf": "2026-11-06",
+  "sources": [
+   "https://www.halo-technologies.com/markets/shares/bul/elhm/"
+  ]
+ },
+ "HLSE:KELAS": {
+  "level": "warning",
+  "summary": "Kesla is in a restructuring process with bridge financing (per the Tier 3 research round, Nov 2026).",
+  "asOf": "2026-11-06",
+  "sources": []
+ },
+ "BVB:ELJA": {
+  "level": "warning",
+  "summary": "The board filed an insolvency petition in Apr 2024 against the new majority holder Grampet (per the Tier 3 research round, Nov 2026).",
+  "asOf": "2026-11-06",
+  "sources": []
  }
 }
