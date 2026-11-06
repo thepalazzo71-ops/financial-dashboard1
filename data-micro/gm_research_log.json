@@ -1726,6 +1726,193 @@
    "source_url": "",
    "source_type": "",
    "notes": "Aggregators conflict (TTM revenue 1.53m vs 282k PLN); no clean annual revenue/GP pair found in 2 searches."
+  },
+  "WSE:IBC": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "PLN",
+   "revenue": 12368905.65,
+   "gross_profit": null,
+   "source_url": "https://bonnier.pl/static/att/ebi/2026-05/20260529_151203_0000003103_0000077841.pdf",
+   "source_type": "annual_report",
+   "notes": "Consolidated revenue found (12,368,905.65 PLN) but cost of sales / gross profit line not retrievable in 2 searches."
+  },
+  "NGM:AIK B": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "SEK",
+   "revenue": null,
+   "gross_profit": null,
+   "source_url": "https://www.aikfotboll.se/media/amubogpe/aik-fotboll-bokslutskommunike-2025.pdf",
+   "source_type": "results_announcement",
+   "notes": "Income statement is by nature (summa rorelseintakter 300,981 kSEK; handelsvaror, personnel costs etc.); no gross profit line."
+  },
+  "BVB:REFE": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "RON",
+   "revenue": 106463982.0,
+   "gross_profit": null,
+   "source_url": "https://www.bvb.ro/info/Raportari/REFE/REFE_20260327160009_Situatii-financiare-2025.pdf",
+   "source_type": "filing_data_page",
+   "notes": "Turnover 106.46m RON found but cost of goods sold / gross profit not retrievable in 2 searches."
+  },
+  "WSE:AGP": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "PLN",
+   "revenue": 23811874.84,
+   "gross_profit": null,
+   "source_url": "https://bonnier.pl/static/att/ebi/2026-05/20260529_135309_0000003082_0000077560.pdf",
+   "source_type": "annual_report",
+   "notes": "Revenue 23.81m PLN; only 'strata ze sprzedazy' (-1.11m, after selling/admin costs) visible, not gross profit line."
+  },
+  "BVB:SINT": {
+   "status": "ok",
+   "gm": 0.7694,
+   "fiscal_year": "2025",
+   "currency": "RON",
+   "revenue": 12880000.0,
+   "gross_profit": 9910000.0,
+   "source_url": "https://stockanalysis.com/quote/bvb/SINT/financials/income-statement/",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue 12.88m, cost of revenue 2.98m, gross profit 9.91m RON (aggregator, rounded to 0.01m; matches Targetare turnover 12,884,025). Not verified against annual report."
+  },
+  "ENXTPA:ALIMR": {
+   "status": "ok",
+   "gm": 0.4505,
+   "fiscal_year": "TTM to Dec-2025 (derived: FY Jun-2025 + H1 25/26 - H1 24/25)",
+   "currency": "EUR",
+   "revenue": 7170000.0,
+   "gross_profit": 3230000.0,
+   "source_url": "https://www.immersion.fr/wp-content/uploads/2026/04/Immersion_CommuniqueDePresse_ResultatsSemestriels_2025_2026-1.pdf",
+   "source_type": "results_announcement",
+   "notes": "Latest annual FY to 30 Jun 2025 (>15 months old): revenue 7.47m, gross margin 3.27m (43.8%). H1 25/26 revenue 3.28m, GM 1.32m; H1 24/25 GM 1.36m, revenue ~3.58m (derived from '-300k'). TTM approximated from rounded figures; FY2025/26 (Jun-2026) results not found."
+  },
+  "BIT:EUK": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "EUR",
+   "revenue": null,
+   "gross_profit": null,
+   "source_url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/eukedos-valore-della-produzione-sale-a-272-milioni-e-torna-in-utile-nel-semestre-295_2026-09-29_TLB.html",
+   "source_type": "results_announcement",
+   "notes": "Reports Italian-format 'valore della produzione' and MOL (nature-based); no cost-of-sales/gross profit line seen. Inferred, not directly verified from statements."
+  },
+  "WSE:KLN": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "2025",
+   "currency": "PLN",
+   "revenue": 15927000.0,
+   "gross_profit": null,
+   "source_url": "https://newconnect.pl/ebi/files/gpwdata/1693_20260320_193900_Sprawozdanie-Zarzadu-Klon-SA-za-rok-2025.pdf",
+   "source_type": "annual_report",
+   "notes": "Revenue 15,927k PLN, loss on sales -3,626k; cost of sales / gross profit line not found (may be comparative variant)."
+  },
+  "NSEL:NTU1L": {
+   "status": "ok",
+   "gm": 0.1164,
+   "fiscal_year": "FY2025",
+   "currency": "EUR thousand",
+   "revenue": 168483,
+   "gross_profit": 19611,
+   "source_url": "https://www.bankier.pl/wiadomosc/NOVATURAS-AB-Novaturas-Group-s-audited-results-for-2025-losses-reduced-by-32-9131283.html",
+   "source_type": "results_announcement",
+   "notes": "Audited FY2025 revenue 168,483 and gross profit 19,611 (EUR k)."
+  },
+  "WSE:DBE": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2025/26 (Jul-Jun)",
+   "currency": "PLN",
+   "revenue": 19906.07,
+   "gross_profit": null,
+   "source_url": "https://www.money.pl/gielda/komunikaty/7345759266620481.html",
+   "source_type": "filing_data_page",
+   "notes": "Only 'zysk ze sprzedaży' (-503.76k consolidated, after selling/admin costs) seen, not 'zysk brutto ze sprzedaży'; consolidated gross profit/cost of sales not located."
+  },
+  "BVB:MINO": {
+   "status": "ok",
+   "gm": 0.2446,
+   "fiscal_year": "FY2025",
+   "currency": "RON",
+   "revenue": 39740000,
+   "gross_profit": 9720000,
+   "source_url": "https://stockanalysis.com/quote/bvb/MINO/statistics",
+   "source_type": "aggregator_statement",
+   "notes": "Aggregator; gross profit labelled TTM but revenue 39.74M equals FY2025 revenue (termene.ro 39.68M). Rounded to 0.01M."
+  },
+  "BVB:CBOT": {
+   "status": "ok",
+   "gm": 0.0739,
+   "fiscal_year": "FY2025",
+   "currency": "RON",
+   "revenue": 209200000,
+   "gross_profit": 15460000,
+   "source_url": "https://stockanalysis.com/quote/bvb/CBOT/financials/income-statement/",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue ~209.2M, cost of revenue ~193.74M, GP ~15.46M (rounded). Aggregator data (S&P), not cross-checked with filing."
+  },
+  "BVB:MORA": {
+   "status": "ok",
+   "gm": 0.5223,
+   "fiscal_year": "FY2025",
+   "currency": "RON",
+   "revenue": 14150000,
+   "gross_profit": 7390000,
+   "source_url": "https://stockanalysis.com/quote/bvb/MORA/statistics/",
+   "source_type": "aggregator_statement",
+   "notes": "Aggregator; GP likely revenue minus raw materials/direct costs only, so margin may be overstated vs a full cost-of-sales definition. Rounded."
+  },
+  "WSE:ECC": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "PLN",
+   "revenue": 841000.0,
+   "gross_profit": null,
+   "source_url": "https://newconnect.pl/ebi/files/gpwdata/1753_20260323_215500_ECC_GAMES_Raport_Roczny_2025.pdf",
+   "source_type": "annual_report",
+   "notes": "Revenue ~PLN 841k (Bankier shows 594k, inconsistent); no cost-of-sales / gross-profit line visible in search results."
+  },
+  "HLSE:HONBS": {
+   "status": "no_gross_profit_line",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "EUR",
+   "revenue": 37200000.0,
+   "gross_profit": null,
+   "source_url": "https://www.inderes.fi/en/releases/honkarakenne-oyjs-financial-statements-bulletin-1-january-31-december-2025",
+   "source_type": "results_announcement",
+   "notes": "Net sales ~EUR 37.2M; IFRS income statement by nature (materials and services, employee benefits, depreciation) -- no cost-of-sales/gross-profit line seen in results; based on known reporting format."
+  },
+  "BVB:TRGI": {
+   "status": "not_found",
+   "gm": null,
+   "fiscal_year": "FY2025",
+   "currency": "RON",
+   "revenue": 1150000.0,
+   "gross_profit": null,
+   "source_url": "https://stockanalysis.com/quote/bvb/TRGI/revenue/",
+   "source_type": "aggregator_statement",
+   "notes": "Revenue ~RON 1.15M; only an unlabelled-period 'gross profit 560.1k' on Simply Wall St, not tied to FY2025; not used."
+  },
+  "CPSE:DAC": {
+   "status": "ok",
+   "gm": 0.8568,
+   "fiscal_year": "FY2025",
+   "currency": "DKK",
+   "revenue": 18884540,
+   "gross_profit": 16180585,
+   "source_url": "https://www.inderes.fi/en/releases/danish-aerospace-company-as-issues-annual-report-for-2025",
+   "source_type": "results_announcement",
+   "notes": "Net turnover 18,884,540 and 'Gross profit' (bruttoresultat) 16,180,585 DKK. Danish gross profit may net other external costs/other income, so high margin; StockAnalysis lists different figures (rev 20.54M, GP 12.26M) under a DADC name."
   }
  }
 }
