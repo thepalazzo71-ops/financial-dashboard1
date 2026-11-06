@@ -1,3 +1,9 @@
 {
- "_definition": "Companies whose stock is no longer tradable because a takeover, squeeze-out, share exchange or delisting has COMPLETED. Same convention as data/delisted.json (Europe)."
+ "_definition": "Companies whose stock is no longer tradable because a takeover, squeeze-out, share exchange or delisting has COMPLETED. Same convention as data/delisted.json (Europe).",
+ "XSAT:AIXIA B": {
+  "date": "2026-11-06",
+  "price": "",
+  "reason": "Last trading day on Spotlight 2026-10-14 (Skatteverket, Inderes release); squeeze-out requested by WPTG 2026-09-24; WPTG controls 96.43% capital after offer. Squeeze-out completion not confirmed.",
+  "sources": []
+ }
 }

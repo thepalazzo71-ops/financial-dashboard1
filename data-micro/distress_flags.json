@@ -15,5 +15,21 @@
   "sources": [
    "https://uk.investing.com/equities/mediterra-sa"
   ]
+ },
+ "AIM:CRU": {
+  "level": "warning",
+  "summary": "Trading suspended: Shares on AIM temporarily suspended from 2 Nov 2026 (reported; RNS dated 30 Oct 2026) because audit of FY to 30 Apr 2026 delayed, missing AIM Rule 19 deadline of 31 Oct; company expects to publish audited accounts by 30 Nov 2026, trading to resume afterwards. No cancellation of admission found.",
+  "asOf": "2026-11-06",
+  "sources": [
+   "https://www.stockopedia.com/share-prices/coral-products-LON:CRU/"
+  ]
+ },
+ "MUN:ABK": {
+  "level": "severe",
+  "summary": "Insolvency proceedings in self-administration (Eigenverwaltung) opened ~28 Aug 2026 (AG Aalen reported) for the operating subsidiary ABK Betriebsgesellschaft der Aktienbrauerei Kaufbeuren GmbH, application filed June 2026; 84 jobs cut to 38, brewing continues, investor search ongoing. The listed AG (Munich) holds a stake in the subsidiary; no delisting found; AGM was called for 22.07.2026 (result not seen). Whether AG itself is insolvent is unclear.",
+  "asOf": "2026-11-06",
+  "sources": [
+   "https://www.boerse.de/aktien/Aktien-Brauerei-Kaufbeuren-AG-Aktie/DE0005013007"
+  ]
  }
 }

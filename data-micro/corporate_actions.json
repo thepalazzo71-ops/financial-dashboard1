@@ -109,6 +109,76 @@
    "terms": "Voluntary takeover offer announced (intent notified 1 Aug 2025); offer price not found. Fina and RR One Capital each held 9.99%.",
    "note": "HANFA approved Fina's acquisition of the exchange 2025-08-29; completion/result not verified.",
    "source_url": "https://en.lider.media/2025/08/29/hanfa-approves-finas-acquisition-of-the-zagreb-stock-exchange/"
+  },
+  {
+   "ticker": "WSE:LEG",
+   "company": "Legimi S.A.",
+   "date": "2025-02-18",
+   "counterparty": "Wirtualna Polska Media (WP Holding)",
+   "role": "target",
+   "terms": "Invitation to sell up to 428,044 shares (~26.45%) at PLN 45.50; acceptance extended to 2025-03-28, settlement planned 2025-04-01",
+   "note": "WP held 507,682 shares (31.37%) before; WP said it wants to remain a passive investor. Final outcome not confirmed in results.",
+   "source_url": "https://biznes.pap.pl/wiadomosci/gry-i-technologie/wirtualna-polska-media-extends-acceptance-offers-sell-legimi-shares"
+  },
+  {
+   "ticker": "XTRA:FRS",
+   "company": "FORIS AG",
+   "date": "2024-03-26",
+   "counterparty": "FORIS AG (own shares)",
+   "role": "acquirer",
+   "terms": "Voluntary public purchase offer for own shares (buyback)",
+   "note": "Predates 24-month window; no 2025-2026 actions found.",
+   "source_url": "https://www.pressetext.com/news/foris-ag-macht-ein-freiwilliges-oeffentliches-kaufangebot-fuer-eigene-aktien.html"
+  },
+  {
+   "ticker": "XSAT:AIXIA B",
+   "company": "Aixia Group AB (publ)",
+   "date": "2026-06-01",
+   "counterparty": "White Pearl Technology Group AB (WPTG)",
+   "role": "target",
+   "terms": "5.33 new WPTG shares + SEK 10.00 cash per Aixia share; acceptance ended 2026-08-10; WPTG holds 96.43% of capital / 97.73% votes",
+   "note": "Independent bid committee recommended acceptance (2026-07-22). Compulsory redemption initiated 2026-09-24; delisting from Spotlight, last trading day 2026-10-14.",
+   "source_url": "https://www.inderes.se/releases/aixia-group-ab-publ-white-pearl-technology-group-have-initiated-compulsory-redemption-and-aixia-applie-for-delisting"
+  },
+  {
+   "ticker": "AIM:LPA",
+   "company": "LPA Group Plc",
+   "date": "unknown (investegate item, 2025-26)",
+   "counterparty": "LPA Group plc (issuer tender)",
+   "role": "target",
+   "terms": "not seen",
+   "note": "Investegate lists a 'Tender Offer' RNS for LPA Group; date/terms not verified.",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/lpa-group--lpa/tender-offer/1362657"
+  },
+  {
+   "ticker": "AIM:EMR",
+   "company": "Empresaria Group plc",
+   "date": "2025-07-30",
+   "counterparty": "Legacy UK Holdings",
+   "role": "target",
+   "terms": "Possible cash offer at 62p/share, ~GBP 33.4M diluted, 148% premium to 25p; Rule 2.6 deadline extended; Legacy made Rule 2.8 no-intention statement 2025-10-22; offer period ended 2025-10-23",
+   "note": "Approach lapsed, no offer made; Legacy reserved right to return within 6 months under conditions",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/empresaria-group--emr/update-following-gm-and-end-of-offer-period-/9188523"
+  },
+  {
+   "ticker": "WSE:RMK",
+   "company": "Remak-Energomontaz S.A.",
+   "date": "2026-10-02",
+   "counterparty": "Zarmen (controlling shareholder, 51.62%)",
+   "role": "target",
+   "terms": "PLN 20.05/share for 1,451,406 shares (48.38%); ~91% premium to 10.50 close; stock nearly doubled 2026-10-05",
+   "note": "Report 25/2026; no official delisting statement seen; subscription period not retrieved",
+   "source_url": "https://comparic.pl/prawie-100-w-gore-na-1-sesji-wielki-wlasciciel-rusza-po-reszte-akcji-czy-gpw-straci-kolejnego-gieldowego-weterana/"
+  },
+  {
+   "ticker": "BVB:EMTL",
+   "company": "S.C. Electrometal S.A.",
+   "date": "2026-07-13",
+   "counterparty": "Shareholders (EGM); controlling holder historically SC Tim-Cardenas SRL (87.8% as of 2021)",
+   "role": "target",
+   "terms": "EGM approved withdrawal of EMTL shares from trading on BVB AeRO and deletion from ASF register; includes independent expert report on price per share and payment right for withdrawing shareholders; 95.1176% in favour",
+   "note": "Voluntary delisting resolution (Hotararea nr. 128). Exit price and completion date not found.",
+   "source_url": "https://bvb.ro/info/Raportari/EMTL/EMTL_20260713160206_RAPORT-CURENT-AGEA-130726-1.pdf"
   }
  ],
  "mergers_acquisitions": [
@@ -211,6 +281,66 @@
    "terms": "Letter of intent to merge; Nidaros legal acquirer; combined business capital NOK 16.4bn; target legal completion 2027-07-01",
    "note": "Not yet completed; exchange ratio not seen.",
    "source_url": "https://filingreader.com/news-wire/oslo/2026-09-08/nidaros-sparebank-and-stadsbygd-sparebank-agree-merger"
+  },
+  {
+   "ticker": "ENXTPA:ALQWA",
+   "company": "Qwamplify",
+   "date": "2025-07-01",
+   "counterparty": "Eniro Group",
+   "role": "target",
+   "terms": "Sale of Qwamplify Nordics subsidiaries for EUR 0.7M cash (Qwamplify is the seller)",
+   "note": "Disposal; 2024 Nordics revenue EUR 4.4M",
+   "source_url": "https://borsvarlden.com/artiklar/eniro-group-acquisition-of-qwamplify-nordics-redeye"
+  },
+  {
+   "ticker": "ENXTPA:ALQWA",
+   "company": "Qwamplify",
+   "date": "2025-12-12",
+   "counterparty": "Undisclosed buyer",
+   "role": "target",
+   "terms": "Sale of subsidiary Qwamplify Pro for fixed amount plus 3-year vendor note; deconsolidated 1 Jan 2026 (Qwamplify is the seller)",
+   "note": "Price undisclosed",
+   "source_url": "https://www.boursorama.com/bourse/actualites/qwamplify-cession-de-qwamplify-pro-e788c7d3f637083609a4df09842e4ed8"
+  },
+  {
+   "ticker": "ENXTPA:ALQWA",
+   "company": "Qwamplify",
+   "date": "2026-01-01",
+   "counterparty": "Undisclosed",
+   "role": "target",
+   "terms": "Sale of goodwill of B2B activation / network animation activity (Qwamplify is the seller)",
+   "note": "Negative impact on revenue and gross margin",
+   "source_url": "https://www.cfnews.net/L-actualite/M-A-Corporate/Operations/100/Qwamplify-cede-son-activite-d-animation-de-reseaux-551859"
+  },
+  {
+   "ticker": "WSE:EXM",
+   "company": "e-Xim IT S.A.",
+   "date": "2026-07-07",
+   "counterparty": "QnR Group (Quality & Reliability High Tech Applications SA, Greece)",
+   "role": "target",
+   "terms": "SPA by shareholders Matysiak, Chmiela, Czubek for 51% of shares; up to EUR 6.9M (partly fixed, partly earn-out); option for further 31.62% in 2029",
+   "note": "Change of control; per Greek media and Biznesradar; ESPI original not seen",
+   "source_url": "https://www.powergame.gr/epichirisis/1383471/qnr-apokta-to-51-tis-polonikis-e-xim-it-enanti-69-ekat-evro/"
+  },
+  {
+   "ticker": "WSE:SKN",
+   "company": "Sakana S.A.",
+   "date": "2024-12",
+   "counterparty": "UMI Sp. z o.o.",
+   "role": "acquirer",
+   "terms": "Sakana sold its subsidiary UMI Sp. z o.o. (Sakana sushi restaurant closed by end of 2024)",
+   "note": "Disposal of subsidiary, per Techleap/search summary; exact terms not seen",
+   "source_url": "https://finder.techleap.nl/news/feed/sakana-s-a-sells-umi-sp-z-o-o"
+  },
+  {
+   "ticker": "WSE:SKN",
+   "company": "Sakana S.A.",
+   "date": "unknown",
+   "counterparty": "STM Sp. z o.o.",
+   "role": "acquirer",
+   "terms": "Agreement to acquire the remaining 55% stake in STM Sp. z o.o. from unknown seller",
+   "note": "Date not seen in search summary; STM activity reported suspended 7 Jul 2026",
+   "source_url": "https://in.marketscreener.com/quote/stock/SAKANA-S-A-20705010/news/Sakana-S-A-entered-into-an-agreement-to-acquire-the-remaining-55-stake-in-STM-Sp-z-o-o-from-unkno-38028079/"
   }
  ],
  "spinoffs": [],
@@ -484,6 +614,146 @@
    "terms": "Name change from NFI Magna Polonia to Magna Polonia",
    "note": "Not a capital event; rumours (Oct/Nov 2025) of a Cordiant takeover were denied by the board ('no information').",
    "source_url": "https://compabase.com/companies/krs/0000019740"
+  },
+  {
+   "ticker": "HLSE:REBL",
+   "company": "Rebl Group Oyj",
+   "date": "2025-12-05",
+   "counterparty": "Danske Bank / Nordea; L3 Invest shareholders (hybrid lenders)",
+   "role": "target",
+   "terms": "New financing agreements and hybrid loan replacing Sept 2025 short-term loan; EUR 9M loan agreements with certain shareholders (per mfn titles)",
+   "note": "Refinancing, not equity. L3 Invest flagged holding below 5% on 2025-12-31 (notice 2026-01-05).",
+   "source_url": "https://mfn.se/all/a/rebl-group/sisapiiritieto-rebl-group-oyj-on-solminut-yhteensa-9-miljoonan-euron-arvoiset-lainasopimukset-tiettyjen-osakkeenomistajien-kanssa-9996d365"
+  },
+  {
+   "ticker": "BIT:GEL",
+   "company": "Gel S.p.A.",
+   "date": "2026-02-27",
+   "counterparty": "GEL shareholders (majority holder 82.92%, 5,200,650 shares)",
+   "role": "target",
+   "terms": "Board-proposed voluntary delisting from Euronext Growth Milan (Milano Finanza: delisting 'con sconto 20%'); vote 89.163% in favor, below 90% required quorum -> rejected; announced 2026-03-31",
+   "note": "Delisting failed; shares remain listed. Follow-up meeting ~2026-08-03 outcome unknown; H1 2026 results published 2026-10-01 suggest still listed.",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260331_180834.pdf"
+  },
+  {
+   "ticker": "BUL:SBS",
+   "company": "Specialized Business Systems AD",
+   "date": "2024-01-01",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Capital increase registered by court (profit.bg) / IPO on BSE Sept 2024 at BGN 68",
+   "note": "Outside 24-month window; included only as context.",
+   "source_url": "https://profit.bg/article/2024012319541914656"
+  },
+  {
+   "ticker": "BUL:ELHM",
+   "company": "Elhim Iskra AD",
+   "date": "2026-03-04",
+   "counterparty": "n/a (board decision)",
+   "role": "target",
+   "terms": "Board decided to suspend operations and cease business effective 2026-03-23; ~200 layoffs; restructuring strategy to be announced",
+   "note": "Cessation of operations (battery maker, Pazardzhik); stock fell ~13% to EUR 0.29",
+   "source_url": "https://www.ffbham.bg/en/post/elhim-iskra-to-cease-business-operations-negative--177278865627794"
+  },
+  {
+   "ticker": "AIM:EMR",
+   "company": "Empresaria Group plc",
+   "date": "2025-10-15",
+   "counterparty": "Shareholder Tony Martin (requisitioned GM)",
+   "role": "target",
+   "terms": "General meeting ousted CEO and majority of board",
+   "note": "Board change / governance change",
+   "source_url": "https://www.staffingindustry.com/news/global-daily-news/empresaria-shareholders-oust-ceo-and-majority-of-board"
+  },
+  {
+   "ticker": "HLSE:KELAS",
+   "company": "Kesla Oyj",
+   "date": "2025-12-01",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Kesla launched recovery programme and structural evaluation process of the business, covering whole group incl. financing position",
+   "note": "Outcome decisions to be announced separately; no sale/offer found",
+   "source_url": "https://www.inderes.fi/releases/sisapiiritieto-kesla-oyj-kaynnistaa-liiketoimintansa-ja-taloudellisen-tilanteensa-tervehdyttamisen-ja-rakenteellisen-arviointiprosessin"
+  },
+  {
+   "ticker": "HLSE:KELAS",
+   "company": "Kesla Oyj",
+   "date": "2026-03-25",
+   "counterparty": "Nordic bank (unnamed)",
+   "role": "target",
+   "terms": "Bridge financing in two EUR 2.5M tranches, to be repaid by end-2026; plus trade receivables financing arrangement",
+   "note": "Debt financing, not equity; no share issue found",
+   "source_url": "https://www.inderes.fi/releases/sisapiiritieto-kesla-oyj-on-neuvotellut-siltarahoitussopimuksen-osana-liiketoimintansa-ja-taloudellisen-tilanteensa-tervehdyttamista-ja-rakenteellista-arviointiprosessia"
+  },
+  {
+   "ticker": "AIM:CRU",
+   "company": "Coral Products PLC",
+   "date": "2026-09-24",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "CEO and Group Finance Director to step down; challenging market conditions",
+   "note": "Management change / trading update, not a transaction",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/coral-products--cru/board-changes-and-further-trading-update/9789631"
+  },
+  {
+   "ticker": "MUN:ABK",
+   "company": "Aktienbrauerei Kaufbeuren Aktiengesellschaft",
+   "date": "2026-08-28",
+   "counterparty": "ROKiT (majority holder of operating business per reports; boerse.de lists JP's Nevada Trust 95% of AG)",
+   "role": "target",
+   "terms": "Insolvency in self-administration of operating subsidiary; restructuring concept agreed by ROKiT; workforce 84->38; investors sought",
+   "note": "Restructuring/insolvency, not takeover",
+   "source_url": "https://www.about-drinks.com/aktienbrauerei-kaufbeuren-leitet-sanierungsverfahren-in-eigenverwaltung-ein/"
+  },
+  {
+   "ticker": "WSE:AZC",
+   "company": "Aztec International S.A.",
+   "date": "2026-05-13",
+   "counterparty": "n/a (incentive program)",
+   "role": "target",
+   "terms": "Series E share issue of up to 100,000 shares at 1.00 PLN nominal for incentive program, tied to 13 May 2026 shareholder meeting",
+   "note": "Small dilution (~2.9%); per Parkiet company profile",
+   "source_url": "https://www.parkiet.com/firmy/230241-aztec-international"
+  },
+  {
+   "ticker": "XTRA:IS7",
+   "company": "InTiCa Systems SE",
+   "date": "2026-09-30",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Board resolved (ad hoc, EQS) to issue a bond with warrants under AGM authorization; volume/terms not seen",
+   "note": "Potential dilutive capital raise; terms not found",
+   "source_url": "https://www.finanzwire.com/press-release/eqs-adhoc-intica-systems-se-intica-systems-se-resolves-on-the-issuance-of-a-bond-with-warrants-7uFORvCHzU3"
+  },
+  {
+   "ticker": "XTRA:IS7",
+   "company": "InTiCa Systems SE",
+   "date": "2026-10-14",
+   "counterparty": "Frankfurt Stock Exchange",
+   "role": "target",
+   "terms": "Transfer to Scale segment (per boerse.de)",
+   "note": "Segment change, not a delisting",
+   "source_url": "https://www.boerse.de/aktien/InTiCa-Systems-AG-Aktie/DE0005874846"
+  },
+  {
+   "ticker": "WSE:PLI",
+   "company": "Platige Image S.A.",
+   "date": "2026-10-07",
+   "counterparty": "GPW (NewConnect Alert segment)",
+   "role": "target",
+   "terms": "Shares qualified to NewConnect Alert segment from 7 Oct 2026 (GPW resolution 2 Oct 2026)",
+   "note": "Risk-flag segment, not delisting; reason not seen",
+   "source_url": "https://strefainwestorow.pl/wiadomosci/20261002/gpw-w-sprawie-szczegolnego-oznaczania-instrumentow-finansowych-spolki-platige"
+  },
+  {
+   "ticker": "WSE:PLI",
+   "company": "Platige Image S.A.",
+   "date": "2025-05-16",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "AGM 2025 resolutions incl. up to 150,000 series I shares (nominal 0.10 PLN) and application to admit shares to regulated market",
+   "note": "Whether executed not confirmed; planned move from NewConnect to main market undecided (Dec 2025)",
+   "source_url": "https://inwestor.platige.com/wp-content/uploads/2025/05/2025.05.16_projekty-uchwal-ZWZ_2-1.pdf"
   }
  ]
 }
