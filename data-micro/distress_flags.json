@@ -7,5 +7,13 @@
   "sources": [
    "https://www.abcbourse.com/cotation/BIGp"
   ]
+ },
+ "ATSE:MASTIHA": {
+  "level": "warning",
+  "summary": "Trading suspended: Euronext Athens suspended trading in Oct 2026 (company announcement 07/10/2026 on inventory discrepancies found in internal audit; external audit ~2 months; shares remain suspended until further notice). Earlier suspension 2026-05-04 to 2026-07-03 over republished FY2025 financial statements (auditor qualified opinion).",
+  "asOf": "2026-11-06",
+  "sources": [
+   "https://uk.investing.com/equities/mediterra-sa"
+  ]
  }
 }

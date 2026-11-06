@@ -49,6 +49,66 @@
    "terms": "Tender for all shares at 3.60 PLN; Selena first bought 1,941,164 shares from main shareholders at 3.50 PLN; tender settled Sept 2025 (UOKiK clearance), total 2,162,236 shares, 56.9% of votes.",
    "note": "Selena intends to delist shares from GPW per Parkiet; no delisting seen as of Oct 2026.",
    "source_url": "https://strefainwestorow.pl/wiadomosci/20250911/grupa-selena-rozliczenie-zlecenia-kupna-akcji-izolacja-jarocin-sa"
+  },
+  {
+   "ticker": "WSE:GEN",
+   "company": "Genomed Spólka Akcyjna",
+   "date": "2026-05",
+   "counterparty": "Genomed S.A. (own shares, from shareholders)",
+   "role": "acquirer",
+   "terms": "Invitation to sell up to 44,209 own shares at 26 PLN per share",
+   "note": "Company share buyback invitation (May 2026). Diagnostyka S.A. holds 41.17% per investing.com; no takeover bid found.",
+   "source_url": "https://bonnier.pl/static/att/ebi/2026-05/20260526_145737_0000002908_0000075518.pdf"
+  },
+  {
+   "ticker": "BVB:ALRV",
+   "company": "Alimentara SA Slatina",
+   "date": "2026-02-04/2026-02-17",
+   "counterparty": "Alimentara SA Slatina (offeror, with concert party Infinity Capital Investments SA holding 366,342 shares) vs remaining minority shareholders",
+   "role": "target",
+   "terms": "Public purchase offer for 44,733 shares (10.88% of share capital); offer period 4-17 Feb 2026; ASF Decision 79 of 28.01.2026 approved offer document; results published 20 Feb 2026",
+   "note": "Offer price and outcome not visible in search results; likely a mandatory/squeeze-type offer by controlling shareholder group. Verify on BVB filings.",
+   "source_url": "https://bvb.ro/info/Raportari/ALRV/ALRV_20260220174549_RC-20-02-2026-Rezultatele-ofertei-de-cumparare-actiuni-ALRV.pdf"
+  },
+  {
+   "ticker": "CSE:AGRO",
+   "company": "Agros Development Company \"Proodos\" Public Ltd",
+   "date": "2024-09-27",
+   "counterparty": "Balram Chainrai (Hong Kong investor)",
+   "role": "target",
+   "terms": "Announced intention to launch a voluntary public takeover bid for up to 100% of Agros Development (Rodon Mount hotel owner); CSE suspended trading from 27 Sep 2024 at company request; Dec 2024: Chainrai bought 2.67% and said full terms would be in an offer document subject to CySEC approval",
+   "note": "Outcome (offer launched/completed/lapsed) NOT found; company still listed in 2026 with no change-of-control seen. Announcement Sep 2024 is ~25 months old, Dec 2024 stake purchase ~23 months.",
+   "source_url": "https://cyprus-mail.com/2024/12/23/investor-acquires-share-of-rodon-hotel-parent-company-seeks-full-ownership"
+  },
+  {
+   "ticker": "ENXTPA:GJAJ",
+   "company": "Groupe JAJ",
+   "date": "2026-07",
+   "counterparty": "Groupe JAJ (own shares, from shareholders)",
+   "role": "acquirer",
+   "terms": "Press coverage (July 2026): group wants to replace a planned exceptional dividend with a share buyback public offer (OPRA) for liquidity; terms/timing not found",
+   "note": "Unconfirmed proposal; terms not seen.",
+   "source_url": "https://www.boursedirect.fr/en/news/value/groupe-jaj-FR0004010338-GJAJ-EUR-XPAR"
+  },
+  {
+   "ticker": "ENXTPA:SFCA",
+   "company": "Société Française de Casinos Société Anonyme",
+   "date": "2026-09-17",
+   "counterparty": "Merkur Spielbanken Beteiligungs GmbH (Gauselmann/Merkur group)",
+   "role": "target",
+   "terms": "Merkur buys 95% of Casigrangi (holds ~81.21% of SFC) from GPG (Groupe Philippe Ginestet) and DOFA; simplified cash public offer (OPAS) at EUR 6.19/share for remaining shares; intends mandatory squeeze-out and delisting if thresholds met. Premium 157.9% vs 27 Aug close; closing expected Q1 2027, OPAS H1 2027.",
+   "note": "Promise to purchase announced 27/28 Aug 2026; definitive agreement 17/18 Sep 2026.",
+   "source_url": "https://www.abcbourse.com/marches/societe-francaise-de-casinos-merkur-signe-laccord-definitif-pour-une-prise-de_702760"
+  },
+  {
+   "ticker": "ZGSE:ZB",
+   "company": "Zagrebacka burza d.d.",
+   "date": "2025-08-01",
+   "counterparty": "Fina (Financijska agencija)",
+   "role": "target",
+   "terms": "Voluntary takeover offer announced (intent notified 1 Aug 2025); offer price not found. Fina and RR One Capital each held 9.99%.",
+   "note": "HANFA approved Fina's acquisition of the exchange 2025-08-29; completion/result not verified.",
+   "source_url": "https://en.lider.media/2025/08/29/hanfa-approves-finas-acquisition-of-the-zagreb-stock-exchange/"
   }
  ],
  "mergers_acquisitions": [
@@ -61,6 +121,96 @@
    "terms": "Sale of subsidiary Bigben Connected to Modelabs; vendor credit ~EUR 13m subject to final adjustment",
    "note": "Bigben is the seller (disposal completed after conditions precedent lifted)",
    "source_url": "https://www.lesoleil.com/communiques-de-presse/2026/10/08/bigben-interactive-finalise-la-cession-de-sa-filiale-bigben-connected-et-annonce-la-prorogation-de-la-procedure-de-sauvegarde-acceleree-DFVPFDOTKNEKRLASMDD3LTQYSU/"
+  },
+  {
+   "ticker": "BIT:CFV",
+   "company": "Confinvest F.L. S.p.A.",
+   "date": "2026-02-04",
+   "counterparty": "Dierre S.r.l. (precious metals trading business branch)",
+   "role": "acquirer",
+   "terms": "Purchase of the Dierre business branch dedicated to precious metals trading (gold, silver, platinum, palladium coins/bars); related-party transaction; closing 4 Feb 2026",
+   "note": "Consideration not seen. H1 2026 revenue ~EUR 86m (+80%) with Dierre contribution.",
+   "source_url": "https://borsaefinanza.it/confinvest-accelera-sui-metalli-preziosi-con-dierre/"
+  },
+  {
+   "ticker": "BVB:BUCU",
+   "company": "S.C. Bucur Obor S.A.",
+   "date": "unknown (article date not visible; possibly 2023-2025)",
+   "counterparty": "One United Properties (via BO Retail Invest, holding ~54.4%)",
+   "role": "target",
+   "terms": "One United Properties bought majority stake for ~RON 65m at 8.918 RON/share (59% below prior-day trading price per search summary); BO Retail Invest controls 54.4%",
+   "note": "Date uncertain and may be outside the 24-month window; search summary said 2025 but source date not seen. Verify.",
+   "source_url": "https://www.revistabiz.ro/one-united-properties-cumpara-bucur-obor-pentru-aproape-65-mil-lei/"
+  },
+  {
+   "ticker": "XTRA:DTD2",
+   "company": "B+S Banksysteme Aktiengesellschaft",
+   "date": null,
+   "counterparty": "Clinc GmbH (seller: ProSiebenSat.1 Accelerator and others)",
+   "role": "acquirer",
+   "terms": "Acquisition of Clinc GmbH; terms not seen; date not verified (may be older than 24 months)",
+   "note": "Headline only",
+   "source_url": "https://ca.marketscreener.com/quote/stock/B-S-BANKSYSTEME-AG-457656/news/B-S-Banksysteme-Aktiengesellschaft-DB-DTD2-acquired-Clinc-GmbH-from-ProSiebenSat-1-Accelerator-and-34837668/"
+  },
+  {
+   "ticker": "BVB:BCM",
+   "company": "Casa de Bucovina - Club de Munte S.A.",
+   "date": "2026-07-15",
+   "counterparty": "Bucur S.A. (absorbing company; also Semrom Oltenia S.A.); majority holder Longshield Investment Group 73.98%",
+   "role": "target",
+   "terms": "Merger by absorption; exchange ratio 1 Bucur share per 9.3785495891 BCM shares; BCM dissolved without liquidation and withdrawn from trading",
+   "note": "EGM 29.04.2026 approved start; EGM 20.08.2026 resolution challenged in Bucharest Tribunal (report 2026-09-16)",
+   "source_url": "https://bvb.ro/infocont/infocont26/BCM_20260715165456_BCM-Raport-curent-Publicare-Proiect-de-fuziune-en.pdf"
+  },
+  {
+   "ticker": "ATSE:MASTIHA",
+   "company": "Mediterra S.A.",
+   "date": null,
+   "counterparty": "unnamed subsidiary (25% minority stake buyout)",
+   "role": "acquirer",
+   "terms": "Buyout of 25% of a subsidiary completed (forin.gr headline); date and terms not seen",
+   "note": "Date unverified, may be older than 24 months",
+   "source_url": "https://www.forin.gr/articles/article/38724/mediterra-oloklhrwthhke-h-eksagora-posostou-25-thugatrikhs-ths"
+  },
+  {
+   "ticker": "LJSE:UKIG",
+   "company": "UNIOR Kovaska industrija d.d.",
+   "date": "2025-03-11",
+   "counterparty": "Advance Capital Partners (fund)",
+   "role": "target",
+   "terms": "Sale of tourism subsidiary Unitur; completion reported by RTV SLO (date unseen)",
+   "note": "Divestment by Unior",
+   "source_url": "https://app.mergerlinks.com/transactions/2025-03-11-unitur"
+  },
+  {
+   "ticker": "LJSE:UKIG",
+   "company": "UNIOR Kovaska industrija d.d.",
+   "date": "2025-05-08",
+   "counterparty": "Kolektor",
+   "role": "target",
+   "terms": "Sale of Unior Components to Kolektor; terms not seen",
+   "note": "Divestment by Unior",
+   "source_url": "https://app.mergerlinks.com/transactions/2025-05-08-unior-components"
+  },
+  {
+   "ticker": "BIT:TB",
+   "company": "Triboo S.p.A.",
+   "date": "2026",
+   "counterparty": "E-Photo S.r.l. (buyer not identified)",
+   "role": "acquirer",
+   "terms": "Sale of Triboo's 51% stake in E-Photo S.r.l. for EUR 3.5M",
+   "note": "Disposal as reported in a 2026 filing per search summary; exact date and buyer not seen.",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260310_178576.pdf"
+  },
+  {
+   "ticker": "OB:NISB",
+   "company": "Nidaros Sparebank",
+   "date": "2026-09-08",
+   "counterparty": "Stadsbygd Sparebank",
+   "role": "acquirer",
+   "terms": "Letter of intent to merge; Nidaros legal acquirer; combined business capital NOK 16.4bn; target legal completion 2027-07-01",
+   "note": "Not yet completed; exchange ratio not seen.",
+   "source_url": "https://filingreader.com/news-wire/oslo/2026-09-08/nidaros-sparebank-and-stadsbygd-sparebank-agree-merger"
   }
  ],
  "spinoffs": [],
@@ -194,6 +344,146 @@
    "terms": "Share buyback programme announced May 2025; treasury shares cancelled 30 Apr 2026 (257,500 shares) leaving 9,435,500 shares.",
    "note": "Buyback only; no takeover/tender found.",
    "source_url": "https://www.investegate.co.uk/announcement/rns/aeorema-communications--aeo/treasury-shares-cancellation-total-voting-rights/9547739"
+  },
+  {
+   "ticker": "BVB:COVB",
+   "company": "S.C. Confectii Vaslui S.A.",
+   "date": "2026-07-29",
+   "counterparty": "n/a (own shareholders)",
+   "role": "target",
+   "terms": "Consolidation of nominal value of shares (reverse-split-like); approved at AGEA 27 Apr 2026; ORC Vaslui legality check 2 Jun 2026; ASF Decision 673/2026 (1 Jul 2026) refused registration certificate at one point; Board decision CA no. 81 of 29.07.2026; fractional shares cash-settled with payment date 17.02.2027",
+   "note": "Ratio not visible in results (a Profit.ro piece mentions a 10,000-fold consolidation proposal for the company, date unseen). Verify on BVB.",
+   "source_url": "https://m.bvb.ro/FinancialInstruments/SelectedData/NewsItem/COVB-Hotararea-CA-nr-81-29-07-2026-consolidarea-valorii-nominale-a-actiunilor/C7B34"
+  },
+  {
+   "ticker": "BIT:CFV",
+   "company": "Confinvest F.L. S.p.A.",
+   "date": "2026-04-16",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Name change from Confinvest F.L. S.p.A. to Confinvest Oro S.p.A.",
+   "note": "Not a capital action; tickers unchanged (CFV).",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-04/20260416_182202.pdf"
+  },
+  {
+   "ticker": "WSE:RBS",
+   "company": "Robinson Europe S.A.",
+   "date": "2026-04-13",
+   "counterparty": "Robinson Europe S.A. (own treasury shares)",
+   "role": "target",
+   "terms": "Buyback of own shares completed 16 Mar 2026 (company intended to cancel all treasury shares); AGM 13 Apr 2026 agenda: cancellation of treasury shares and share capital reduction by 370,959 shares (nominal 1.00 PLN); KRS registration unconfirmed",
+   "note": "Treasury stock was 269,996 shares (~14.43%) in 2025; share count now ~1.5m (from ~1.87m).",
+   "source_url": "https://www.parkiet.com/firmy/240081-robinson-europe"
+  },
+  {
+   "ticker": "BVB:BUCU",
+   "company": "S.C. Bucur Obor S.A.",
+   "date": "2025-10-10/2025-10-23",
+   "counterparty": "Existing shareholders (public offer with preference rights; intermediary SSIF BRK Financial Group)",
+   "role": "target",
+   "terms": "Share capital increase: 107,006,000 new ordinary shares at 0.10 RON nominal/issue price, 0.125 preference rights per existing share, max proceeds ~10.7m RON; offer 10-23 Oct 2025; shares fell >40% in a week (ZF 14 Oct 2025) and ~60% in 3 days (Economedia)",
+   "note": "Massive dilution; share count went from ~4.16m to ~111.2m.",
+   "source_url": "https://economedia.ro/actiunile-bucur-obor-au-scazut-cu-60-in-trei-zile-dupa-ce-compania-a-anuntat-ca-vinde-actiuni-noi-la-doar-10-bani-bucata-investitorii-le-vand-in-piata-la-cativa-lei-pentru-a-le-cumpara-mai-ieftin.html"
+  },
+  {
+   "ticker": "NSEL:K2LT",
+   "company": "AB K2 LT",
+   "date": "2026-02",
+   "counterparty": "none (company itself; voluntary delisting from Nasdaq Baltic First North)",
+   "role": "target",
+   "terms": "Board proposed EGM on 10 Mar 2026 resolve to end trading of shares on First North and cease public offering; reasons: low liquidity, listing cost ~EUR 50k/yr (~10% of net profit); shareholders offered a voluntary share buyback as the first exit route.",
+   "note": "Outcome of the 10 Mar 2026 vote, buyback price and last trading day not found.",
+   "source_url": "https://www.finanznachrichten.de/nachrichten-2026-02/67659516-k2-lt-k2-lt-board-announcement-on-the-intention-to-terminate-trading-in-the-company-s-shares-on-the-first-north-market-and-to-cease-public-offering-o-399.htm"
+  },
+  {
+   "ticker": "BIT:CLF",
+   "company": "Caleffi S.p.A.",
+   "date": "2025-06-10",
+   "counterparty": "none (own shares)",
+   "role": "target",
+   "terms": "Share buyback programme started 10 Jun 2025 under 14 May 2025 AGM resolution; ended 8 May 2026; 446,774 treasury shares (2.859%) held in May 2026.",
+   "note": "Minor capital action, not a tender/M&A.",
+   "source_url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-05/20260508_183698.pdf"
+  },
+  {
+   "ticker": "ENXTPA:SFCA",
+   "company": "Société Française de Casinos Société Anonyme",
+   "date": "2026-09-17",
+   "counterparty": "Merkur",
+   "role": "target",
+   "terms": "Change of control of SFC via sale of Casigrangi holding; planned delisting.",
+   "note": "Same transaction as above.",
+   "source_url": "https://www.optionfinance.fr/info-financiere-en-continu/d/2026-09-18-merkur-signe-laccord-definitif-pour-le-rachat-du-bloc-de-controle-de-societe-francaise-de-casinos.html"
+  },
+  {
+   "ticker": "BVB:NRF",
+   "company": "Norofert S.A.",
+   "date": "2026-02/2026-03",
+   "counterparty": "existing shareholders / preference rights NRF03",
+   "role": "target",
+   "terms": "Cash capital increase with preference rights at 2.70 RON/share; stage 1 10-23 Feb 2026, stage 2 completed ~4-5 Mar 2026; raised ~6.41M RON; share capital 8,342,983.20 RON = 20,857,458 shares",
+   "note": "Rights issue",
+   "source_url": "https://www.bvb.ro/info/Raportari/NRF/NRF_20260305073026_RO-NRF-Raport-Curent-11-2026.pdf"
+  },
+  {
+   "ticker": "BVB:NRF",
+   "company": "Norofert S.A.",
+   "date": "2026-07-27",
+   "counterparty": "GEM Global Yield (investment fund)",
+   "role": "target",
+   "terms": "Fund to enter shareholding; to finance via loans and/or future capital increases",
+   "note": "Stake acquisition / financing; not a takeover offer per search summary",
+   "source_url": "https://m.bvb.ro/info/Raportari/NRF/NRF_20260727085035_RO-NRF-Raport-Curent-35-2026.pdf"
+  },
+  {
+   "ticker": "XTRA:DTD2",
+   "company": "B+S Banksysteme Aktiengesellschaft",
+   "date": "2025-09",
+   "counterparty": "own shares",
+   "role": "acquirer",
+   "terms": "Share buyback; WpHG s.40 voting-rights notices incl. correction dated 19.09.2025",
+   "note": "Treasury share purchases",
+   "source_url": "https://stock3.com/news/pta-pvr-bs-banksysteme-ag-korrektur-einer-veroeffentlichung-ueber-erwerb-eigener-aktien-nach-40-abs-1-satz-2-wphg-vom-19-09-2025-16667790"
+  },
+  {
+   "ticker": "BVB:TRNG",
+   "company": "Transgex S.A.",
+   "date": "2026-08-21",
+   "counterparty": "FORAJ SONDE S.A. Videle",
+   "role": "target",
+   "terms": "Proposed transfer (going concern) of gas/oil well drilling business (rig Bentec 350 AC, equipment, contracts) at EUR 9.5M subject to adjustments; EGM convened 28.09.2026 (vote outcome unseen); proposed ex-date 13.10.2026",
+   "note": "Company is seller of its drilling division (major asset disposal), not target of bid",
+   "source_url": "https://bvb.ro/info/Raportari/TRNG/TRNG_20260821121724_RC-Convocare-AGEA-28-29-09-2026.pdf"
+  },
+  {
+   "ticker": "LJSE:UKIG",
+   "company": "UNIOR Kovaska industrija d.d.",
+   "date": "2026-05",
+   "counterparty": "creditor banks",
+   "role": "target",
+   "terms": "Standstill agreement within comprehensive financial restructuring; H1 2026 company sounding potential investors for capital increase via new shares",
+   "note": "Restructuring, no capital raise completed per sources",
+   "source_url": "https://www.delo.si/gospodarstvo/novice/unior-po-dveh-letih-izgube-spet-z-dobickom"
+  },
+  {
+   "ticker": "LSE:CFYN",
+   "company": "Caffyns plc",
+   "date": "2024-11-26",
+   "counterparty": "Lidl Great Britain",
+   "role": "target",
+   "terms": "Sale of Brooks Road, Lewes freehold for GBP 4.65M; contracts exchanged late 2024 (update 26 Nov 2024)",
+   "note": "Property disposal, borderline 24-month window",
+   "source_url": "https://www.investegate.co.uk/announcement/rns/caffyns--cfyn/disposal/8517054"
+  },
+  {
+   "ticker": "WSE:06N",
+   "company": "Magna Polonia S.A.",
+   "date": "2026-03-24",
+   "counterparty": "",
+   "role": "target",
+   "terms": "Name change from NFI Magna Polonia to Magna Polonia",
+   "note": "Not a capital event; rumours (Oct/Nov 2025) of a Cordiant takeover were denied by the board ('no information').",
+   "source_url": "https://compabase.com/companies/krs/0000019740"
   }
  ]
 }

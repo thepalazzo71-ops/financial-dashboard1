@@ -13,7 +13,8 @@ D = ROOT / 'data-micro'
 EURUSD = 1.1383
 FX = {'EUR': EURUSD, 'GBP': round(EURUSD / 0.85973, 4), 'SEK': round(EURUSD / 11.036, 5), 'NOK': round(EURUSD / 11.077, 5),
       'CHF': round(EURUSD / 0.9257, 4), 'PLN': round(EURUSD / 4.3383, 5), 'DKK': round(EURUSD / 7.4745, 5),
-      'RON': round(EURUSD / 5.1977, 5), 'BGN': round(EURUSD / 1.95583, 5), 'USD': 1.0}
+      'RON': round(EURUSD / 5.1977, 5), 'HUF': round(EURUSD / 352.68, 6),  # ECB EUR/HUF 352.68 on 19 Jun 2026
+       'BGN': round(EURUSD / 1.95583, 5), 'USD': 1.0}
 
 
 def load(name, default):
@@ -50,6 +51,9 @@ def main(files):
         st = v.get('listing_status')
         if st == 'insolvency':
             dist[t] = {'level': 'severe', 'summary': (v.get('listing_notes') or '')[:600], 'asOf': now[:10],
+                       'sources': [m.get('source_url')] if m.get('source_url') else []}
+        elif st == 'suspended':
+            dist[t] = {'level': 'warning', 'summary': 'Trading suspended: ' + (v.get('listing_notes') or '')[:560], 'asOf': now[:10],
                        'sources': [m.get('source_url')] if m.get('source_url') else []}
         elif st == 'delisted':
             dl[t] = {'date': now[:10], 'price': '', 'reason': (v.get('listing_notes') or '')[:500], 'sources': []}
