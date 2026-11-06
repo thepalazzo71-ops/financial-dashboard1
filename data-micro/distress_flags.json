@@ -51,5 +51,11 @@
   "summary": "The board filed an insolvency petition in Apr 2024 against the new majority holder Grampet (per the Tier 3 research round, Nov 2026).",
   "asOf": "2026-11-06",
   "sources": []
+ },
+ "BVB:MINO": {
+  "level": "warning",
+  "summary": "Squeeze-out risk rather than distress: 98% held by Longshield; the price fell about 10x (possible split, unverified) per the final-tier research round, Nov 2026.",
+  "asOf": "2026-11-06",
+  "sources": []
  }
 }
