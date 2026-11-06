@@ -62,29 +62,38 @@ function renderSwingersContent() {
   });
   const key = { range: x => -x.p.range, drawdown: x => x.p.vsHi, rebound: x => -x.p.vsLo }[basis];
   rows.sort((a, b) => key(a) - key(b));
-  const shown = rows.slice(0, limit);
-  const body = shown.map(({ r, p }, i) => {
-    const c = r.c;
-    const isOpen = expandedSwingTicker === c.t;
-    return `<tr class="sw-row ${isOpen ? 'expanded' : ''}" data-ticker="${c.t}" title="Click for the full company detail">
-      <td>${i + 1}</td>
-      <td><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)}</div></td>
-      <td>${fmtNum(r.mc, 0)}</td>
-      <td>${pxPrice(p.hi)}<div class="sub">${p.hd}</div></td>
-      <td>${pxPrice(p.lo)}<div class="sub">${p.ld}</div></td>
-      <td>${pxPrice(p.last)}<div class="sub">${escHtml(p.cur)}</div></td>
-      <td>${pxPct(p.vsHi)}</td><td>${pxPct(p.vsLo)}</td>
-      <td><b>${fmtNum(p.range, 1)}x</b>${pxShortMark(p)}</td>
-      <td title="${p.peakFirst ? 'High came before the low: price fell from peak to trough' : 'Low came before the high: price rose from trough to peak'}">${p.peakFirst ? '&#8600; fell' : '&#8599; rose'}</td>
-      <td>#${rank[c.t]} <span class="sub">(${fmtNum(r.total, 1)})</span></td>
-    </tr>${isOpen ? `<tr><td colspan="11" class="sw-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
-  }).join('');
+  // Left: price FELL from its 5-year peak to its trough (peak came first). Right: ROSE (trough came first).
+  const fell = rows.filter(x => x.p.peakFirst), rose = rows.filter(x => !x.p.peakFirst);
+  const side = (list, title, icon, hint) => {
+    const shown = list.slice(0, limit);
+    const body = shown.map(({ r, p }, i) => {
+      const c = r.c;
+      const isOpen = expandedSwingTicker === c.t;
+      return `<tr class="sw-row ${isOpen ? 'expanded' : ''}" data-ticker="${c.t}" title="Click for the full company detail">
+        <td>${i + 1}</td>
+        <td><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)} &middot; v6 #${rank[c.t]}</div></td>
+        <td>${fmtNum(r.mc, 0)}</td>
+        <td>${pxPrice(p.hi)}<div class="sub">${p.hd}</div></td>
+        <td>${pxPrice(p.lo)}<div class="sub">${p.ld}</div></td>
+        <td>${pxPrice(p.last)}<div class="sub">${escHtml(p.cur)}</div></td>
+        <td>${pxPct(p.vsHi)}</td><td>${pxPct(p.vsLo)}</td>
+        <td><b>${fmtNum(p.range, 1)}x</b>${pxShortMark(p)}</td>
+      </tr>${isOpen ? `<tr><td colspan="9" class="sw-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
+    }).join('');
+    return `<div class="sw-side">
+      <h4>${icon} ${title} <span class="sub">(${list.length}${list.length > shown.length ? `, showing ${shown.length}` : ''})</span></h4>
+      <p class="hint" style="margin:0 0 6px">${hint}</p>
+      <table class="sw-table">
+        <thead><tr><th>#</th><th>Company</th><th>Cap $M</th><th>5y high</th><th>5y low</th><th>Last</th><th>vs high</th><th>vs low</th><th>Range</th></tr></thead>
+        <tbody>${body || '<tr><td colspan="9" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
+      </table></div>`;
+  };
   document.getElementById('swingersContent').innerHTML = `
-    <table class="sw-table">
-      <thead><tr><th>#</th><th>Company</th><th>Mkt cap ($M)</th><th>5y high</th><th>5y low</th><th>Last</th><th>vs high</th><th>vs low</th><th>Range</th><th>Path</th><th>v6 rank (score)</th></tr></thead>
-      <tbody>${body || '<tr><td colspan="11" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
-    </table>
-    <p class="hint" style="margin-top:12px">${rows.length} of ${withData} companies with price history match${rows.length > shown.length ? ` (showing the top ${shown.length})` : ''}. Prices are in each company&rsquo;s own trading currency (London shares in pence); &dagger; = less than 4.5 years of history. <b>Click any company</b> to open its full detail.</p>`;
+    <div class="sw-cols">
+      ${side(fell, 'Fell', '&#8600;', 'The 5-year high came before the 5-year low: the price dropped from its peak to its trough (it may have bounced since &mdash; see &ldquo;vs low&rdquo;).')}
+      ${side(rose, 'Rose', '&#8599;', 'The 5-year low came before the 5-year high: the price climbed from its trough to its peak (it may have slipped back since &mdash; see &ldquo;vs high&rdquo;).')}
+    </div>
+    <p class="hint" style="margin-top:12px">${rows.length} of ${withData} companies with price history match. Prices are in each company&rsquo;s own trading currency (London shares in pence); &dagger; = less than 4.5 years of history. <b>Click any company</b> to open its full detail.</p>`;
 }
 function initSwingers() {
   const bd = document.getElementById('swingersModalBackdrop');
