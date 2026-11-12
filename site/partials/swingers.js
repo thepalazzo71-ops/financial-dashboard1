@@ -25,11 +25,12 @@ function priceCells(c, isHistorical) {
 }
 function priceBox(c) {
   const p = pxOf(c);
-  if (!p) return `<div class="px-box"><h4>5-year price range</h4><p class="hint">No usable price history for this company (ticker not found at the price source, delisted, or too little trading history).</p></div>`;
+  // Collapsed by default (user preference): a one-line summary opens the full box on click.
+  const wrap = (teaser, inner) => `<details class="px-details"><summary>5-year price range <span class="px-teaser">${teaser}</span></summary>${inner}</details>`;
+  if (!p) return wrap('no price history', `<div class="px-box"><p class="hint">No usable price history for this company (ticker not found at the price source, delisted, or too little trading history).</p></div>`);
   const item = (l, v, tip) => `<div class="fin-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="fin-label">${l}</span><span class="fin-val">${v}</span></div>`;
   const path = p.peakFirst ? `peaked ${p.hd}, bottomed ${p.ld}` : `bottomed ${p.ld}, peaked ${p.hd}`;
-  return `<div class="px-box">
-    <h4>5-year price range</h4>
+  return wrap(`${pxPct(p.vsHi)} vs high &middot; ${pxPct(p.vsLo)} vs low`, `<div class="px-box">
     <div class="fin-grid">
       ${item('Last close', pxPrice(p.last) + ' ' + escHtml(p.cur), p.d)}
       ${item('5y high', pxPrice(p.hi) + '<span class="sub" style="display:block;font-weight:400;font-size:11px">' + p.hd + '</span>')}
@@ -39,7 +40,7 @@ function priceBox(c) {
       ${item('Range (high ÷ low)', fmtNum(p.range, 1) + 'x')}
     </div>
     <p class="hint">${path}. Daily closing prices in ${escHtml(p.cur)}, split-adjusted, last close ${p.d}${p.yrs < 4.5 ? `; <b>only ${p.yrs.toFixed(1)} years of history</b> (since ${p.f})` : ''}. Informational: not part of the v6 score.</p>
-  </div>`;
+  </div>`);
 }
 function renderSwingersContent() {
   const all = ensureLiveScored();

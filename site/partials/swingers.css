@@ -40,3 +40,10 @@
   .sw-detail-cell .full-financials { overflow-x: auto; }
   .sw-detail-cell .detail-grid { grid-template-columns: 1fr; }
   .sw-detail-cell .full-financials table th, .sw-detail-cell .full-financials table td { padding: 4px 2px; font-size: 11px; }
+  .px-details { margin: 6px 0 12px; }
+  .px-details > summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--green-text); padding: 4px 0; list-style: none; }
+  .px-details > summary::-webkit-details-marker { display: none; }
+  .px-details > summary::before { content: '\25B8'; display: inline-block; width: 14px; }
+  .px-details[open] > summary::before { content: '\25BE'; }
+  .px-details > summary:hover { text-decoration: underline; }
+  .px-details .px-teaser { font-weight: 400; color: var(--ink-faint); margin-left: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
