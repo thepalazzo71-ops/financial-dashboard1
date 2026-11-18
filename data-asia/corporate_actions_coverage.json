@@ -305,7 +305,12 @@
   "KOSDAQ:A119850",
   "SGX:U13",
   "KOSE:A002100",
-  "TSE:5187"
+  "TSE:5187",
+  "KOSDAQ:A093190",
+  "KOSE:A013580",
+  "KOSE:A008260",
+  "KOSE:A195870",
+  "KOSDAQ:A053050"
  ],
  "unscreened": [],
  "total_priority_pool": 1895
