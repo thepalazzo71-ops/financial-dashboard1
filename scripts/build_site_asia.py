@@ -18,6 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import nd_payload
 import price_stats
 from scoring import compact_snapshot_rows, gm_band_points, median_gm_points, score_pool
 
@@ -150,9 +151,13 @@ def main():
 
     template = TEMPLATE.read_text()
     px_cov = price_stats.attach(payload)
+    _nd = nd_payload.load(ROOT / 'data-asia')
+    for _sec in payload['sectors'].values():
+        for _c in _sec['companies']:
+            _c['nd'] = _nd.get(_c['t'])
     html = template.replace('__PAYLOAD_JSON__', json.dumps(payload, separators=(',', ':')))
     html = html.replace('__BUILD_INFO_JSON__', json.dumps(build_info))
-    html = price_stats.inject(html, 25)
+    html = price_stats.inject(html, 25, 'South Korea')
     # static header text that quotes the pool sizes / GM coverage
     verified = sum(1 for c in all_sector if c.get('gm') is not None)
     html = html.replace('<span class="poolAll">1,895</span>', f'<span class="poolAll">{len(all_sector):,}</span>')

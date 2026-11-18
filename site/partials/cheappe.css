@@ -1,0 +1,16 @@
+  /* ---- Cheapest by P/E window (shared partial) ---- */
+  .modal.cpe-modal { max-width: min(1250px, 97vw); width: 97vw; }
+  .cpe-controls { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 12px; font-size: 12.5px; align-items: center; }
+  .cpe-table { width: 100%; min-width: 0; border-collapse: collapse; font-size: 12.5px; table-layout: fixed; }
+  .cpe-table > thead > tr > th { text-align: right; font-weight: 600; color: var(--ink-faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 6px; border-bottom: 1px solid var(--rule-strong); }
+  .cpe-table > tbody > tr > td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
+  .cpe-table > thead > tr > th.cpc-co, .cpe-table > tbody > tr > td.cpc-co { text-align: left; }
+  .cpe-table > thead > tr > th:nth-child(1), .cpe-table > tbody > tr > td.cpc-n { width: 34px; }
+  .cpe-table > thead > tr > th:nth-child(n+3), .cpe-table > tbody > tr > td.cpc-v { width: 92px; }
+  .cpe-table > tbody > tr > td .sub { color: var(--ink-faint); font-size: 11px; }
+  .cpe-table > tbody > tr.cpe-row { cursor: pointer; }
+  .cpe-table > tbody > tr.cpe-row:hover { background: rgba(47,75,60,0.05); }
+  .cpe-table > tbody > tr.cpe-row.expanded { background: var(--green-soft); }
+  .cpe-table > tbody > tr.cpe-open > td.cpe-detail-cell { text-align: left; padding: 0 0 14px; white-space: normal; font-size: 13px; }
+  .cpe-table .est-tag { display: inline-block; font-size: 9.5px; font-weight: 700; color: #8a5a00; background: #fdf1d8; border: 1px dashed #c58a1a; border-radius: 8px; padding: 0 5px; margin-left: 4px; cursor: help; }
+  .cpe-table .flag { font-size: 10.5px; color: var(--brick); }
