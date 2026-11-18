@@ -887,6 +887,176 @@
    "terms": "Majority stake acquisition (terms not seen)",
    "note": "Completed per TipRanks announcement.",
    "source_url": "https://www.tipranks.com/news/company-announcements/human-health-holdings-ltd-completes-major-acquisition-in-dental-sector"
+  },
+  {
+   "ticker": "TSE:2929",
+   "company": "Pharma Foods International Co., Ltd.",
+   "date": "2026-10-06",
+   "counterparty": "Marine Pro Foods (seller: DPIP Corporate Support Fund No.1, Daiwa PI Partners)",
+   "role": "acquirer",
+   "terms": "100% of shares, acquisition price JPY 5.03bn, planned completion 2026-10-30",
+   "note": "Reported by M&A Online; not verified against TDnet.",
+   "source_url": "https://maonline.jp/news/20261006b"
+  },
+  {
+   "ticker": "KOSE:A036530",
+   "company": "SNT Holdings Co., Ltd.",
+   "date": "2026-11-09",
+   "counterparty": "SNT Robotics (absorbed by SNT Motiv)",
+   "role": "acquirer",
+   "terms": "Group subsidiary SNT Motiv absorbing its KRW 30bn robotics subsidiary by board resolution",
+   "note": "Merger at group subsidiary level, not SNT Holdings itself; reported per Insight 2026-11-09.",
+   "source_url": "https://www.insight.co.kr/news/571395"
+  },
+  {
+   "ticker": "TSE:3696",
+   "company": "Ceres Inc.",
+   "date": "2026-04",
+   "counterparty": "SQUIZ Inc. (Shibuya, Tokyo; online medical services)",
+   "role": "acquirer",
+   "terms": "Acquisition of 90.0% of issued shares, making it a subsidiary",
+   "note": "Per Nihon M&A Center news item; Ceres is acquirer of a small subsidiary, not a change of control of Ceres.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260401_3696-44/"
+  },
+  {
+   "ticker": "TSE:6533",
+   "company": "Orchestra Holdings Inc.",
+   "date": "2026-08-26",
+   "counterparty": "S-Innovation (listed subsidiary)",
+   "role": "acquirer",
+   "terms": "Share exchange making S-Innovation a wholly owned subsidiary of Orchestra HD; S-Innovation delisting scheduled 2026-11-26",
+   "note": "Reported by Matsui Securities/Kabutan-style market news summary; terms/exchange ratio not seen.",
+   "source_url": "https://edinetdb.jp/company/E37733/ma"
+  },
+  {
+   "ticker": "TSE:6533",
+   "company": "Orchestra Holdings Inc.",
+   "date": "2024-12 to 2026",
+   "counterparty": "Ke-Ways, Land-Ho (via subsidiaries)",
+   "role": "acquirer",
+   "terms": "Share acquisitions by subsidiaries",
+   "note": "Listed on Nihon M&A Center news items; small bolt-ons.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20241226_6533-17/"
+  },
+  {
+   "ticker": "TSE:6287",
+   "company": "Sato Corporation",
+   "date": "2026-06-15",
+   "counterparty": "Hiranoya Bussan (flexible packaging maker)",
+   "role": "acquirer",
+   "terms": "100% share acquisition, wholly owned subsidiary; transfer executed 2026-06-15",
+   "note": "Per Sato IR / Nihon M&A Center; bolt-on.",
+   "source_url": "https://www.sato-global.com/ja/news/ir/2026/20260623/"
+  },
+  {
+   "ticker": "TSE:4318",
+   "company": "Quick Co.,Ltd.",
+   "date": "2026-04-30",
+   "counterparty": "Work Project Co. (Sakai, Osaka; nursery-worker staffing)",
+   "role": "acquirer",
+   "terms": "Share acquisition making it a subsidiary",
+   "note": "Same date Quick also resolved a treasury share buyback.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260430_4318-9/"
+  },
+  {
+   "ticker": "TSE:9416",
+   "company": "Vision Inc.",
+   "date": "2026-03-31",
+   "counterparty": "I-Wish Rental Guarantee (アイウィッシュ賃貸保証)",
+   "role": "acquirer",
+   "terms": "100% share acquisition, subsidiarization",
+   "note": "Small bolt-on.",
+   "source_url": "https://www.bridge-salon.jp/upload/tekiji_pdf/T~~94160~000000~1402~0~20260331~1530~20260330593335G.pdf"
+  },
+  {
+   "ticker": "TSE:9416",
+   "company": "Vision Inc.",
+   "date": "2026-04-08",
+   "counterparty": "Free Plus (フリープラス) inbound travel arrangement business",
+   "role": "acquirer",
+   "terms": "Business transfer to newly set-up subsidiary",
+   "note": "Small bolt-on.",
+   "source_url": "https://www.bridge-salon.jp/upload/tekiji_pdf/T~~94160~000000~1402~0~20260408~1530~20260408500094G.pdf"
+  },
+  {
+   "ticker": "TSE:2148",
+   "company": "ITmedia Inc.",
+   "date": "2026-01-29",
+   "counterparty": "Magisemi Inc. (マジセミ)",
+   "role": "acquirer",
+   "terms": "Share acquisition, subsidiarization; completed 2026-03-31",
+   "note": "Small bolt-on.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260129_2148-20/"
+  },
+  {
+   "ticker": "TSE:2148",
+   "company": "ITmedia Inc.",
+   "date": "2025-09-25",
+   "counterparty": "PP Communications (ピイ.ピイ.コミュニケーションズ)",
+   "role": "acquirer",
+   "terms": "Board resolved share acquisition to subsidiarize",
+   "note": "Small bolt-on.",
+   "source_url": "https://www2.jpx.co.jp/disc/21480/140120250925562288.pdf"
+  },
+  {
+   "ticker": "TSE:2173",
+   "company": "Hakuten Corporation",
+   "date": "2024-09-30",
+   "counterparty": "Hiramiya Co., Ltd. (Hiramiya)",
+   "role": "acquirer",
+   "terms": "Share acquisition to make Hiramiya a subsidiary (date inferred from URL; terms not seen)",
+   "note": "Subsidiarisation of a commercial-fixture manufacturer; date approximate, older than 24 months by ~14 months at most - borderline.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20240930_2173-6/"
+  },
+  {
+   "ticker": "KOSDAQ:A030520",
+   "company": "Hancom Inc.",
+   "date": "2026-06",
+   "counterparty": "undisclosed buyer",
+   "role": "acquirer",
+   "terms": "Hancom sold its entire 3,094,234 shares (26.08%) of Hancom InSpace; ~KRW 31.9bn per Dealsite",
+   "note": "Divestiture of an affiliate stake; buyer not disclosed.",
+   "source_url": "https://www.dt.co.kr/article/12068366"
+  },
+  {
+   "ticker": "KOSDAQ:A030520",
+   "company": "Hancom Inc.",
+   "date": "2025-08",
+   "counterparty": "Hancom InSpace",
+   "role": "acquirer",
+   "terms": "Exercised call option raising stake from 20.7% to 31.4% (became largest shareholder)",
+   "note": "Later sold in June 2026.",
+   "source_url": "https://fintechtimes.co.kr/mobile/article.html?no=50471"
+  },
+  {
+   "ticker": "TSE:7199",
+   "company": "Premium Group Co., Ltd.",
+   "date": "2026-05-26",
+   "counterparty": "Etomo Financing Corporation (Philippines)",
+   "role": "acquirer",
+   "terms": "Premier Co. (subsidiary) to buy additional shares of equity-method affiliate (group held 45.4%) to make it a consolidated subsidiary; contract planned 2026-06-05, transfer 2026-06-12",
+   "note": "Execution not confirmed in sources seen.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260526_7199-5/"
+  },
+  {
+   "ticker": "ASX:XRF",
+   "company": "XRF Scientific Limited",
+   "date": "2026-04-27",
+   "counterparty": "Bruker AXS SE (Combustion Gas Analysis business)",
+   "role": "acquirer",
+   "terms": "A$4m upfront plus earn-out up to A$1m over 3 years; completed 27 April 2026",
+   "note": "Bolt-on acquisition.",
+   "source_url": "https://smallcaps.com.au/article/xrf-scientific-boosts-portfolio-with-acquisition-of-bruker-s-cga-business"
+  },
+  {
+   "ticker": "TSE:5187",
+   "company": "Create Medic Co., Ltd.",
+   "date": "2026-10-14",
+   "counterparty": "Globizz Corporation, Universal Design Life Corporation, Globizz Japan, Globizz Korea",
+   "role": "acquirer",
+   "terms": "100% of four companies acquired 2026-10-14; price undisclosed",
+   "note": "US-based medical device regulatory/market research group; strengthens overseas expansion and adds consulting.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20261014_5187-8/"
   }
  ],
  "spinoffs": [
@@ -908,6 +1078,16 @@
    "terms": "Share-distribution-type spin-off of NE Inc.; NE deconsolidated effective 2025-11-01",
    "note": "Hamee now focuses on Commerce business; FY04/26 sales 22.07bn JPY, operating profit -58.2%.",
    "source_url": "https://www.bridge-salon.jp/report_bridge/pdf/20260713_3134.pdf"
+  },
+  {
+   "ticker": "KOSE:A003850",
+   "company": "Boryung Corporation",
+   "date": "2026 (AGM approved; effective Jan 2027)",
+   "counterparty": "Boryung Pharma Solution (new unlisted subsidiary)",
+   "role": "acquirer",
+   "terms": "Physical (vertical) split of the ETC prescription-drug business into a new wholly owned unlisted subsidiary; planned Jan 2027",
+   "note": "Reported by Korean stock sites; the parent stays listed. Exact date not verified.",
+   "source_url": "https://stockhub.kr/stock/003850"
   }
  ],
  "other": [
@@ -1290,6 +1470,256 @@
    "terms": "A$20M share buy-back, running to 2026-11-04",
    "note": "Capital management, not a bid.",
    "source_url": "https://biotechdispatch.com.au/news/nanosonics-announces-20-million-share-buy-back-as-confidence-in-growth-outlook-strengthens"
+  },
+  {
+   "ticker": "ASX:FID",
+   "company": "Fiducian Group Ltd",
+   "date": "2025-10-07",
+   "counterparty": "MA Financial Group",
+   "role": "target",
+   "terms": "MA Financial became a substantial holder with 5.12% (1,614,939 shares); accumulated Mar 2022 to Oct 2025. No bid.",
+   "note": "Share price fell sharply on 3 Oct 2025 (A$13.17 to A$8.73 per an InvestSMART alert) - cause not verified.",
+   "source_url": "https://filingreader.com/news-wire/sydney/2025-10-09/fiducian-shareholders-back-all-resolutions-as-ma-financial-takes"
+  },
+  {
+   "ticker": "ASX:FID",
+   "company": "Fiducian Group Ltd",
+   "date": "2026-03-30",
+   "counterparty": "unknown (cut off in snippet)",
+   "role": "unknown",
+   "terms": "Heads of agreement announced to ASX 30 Mar 2026 per Appendix 4C of 15 Apr 2026; terms not seen",
+   "note": "Counterparty and nature unverified; not shown to be a takeover.",
+   "source_url": "https://bulletin.webull.com/qbd/announcement/20260415/499501852/90202bb03317440295a640b259b26cf4.pdf"
+  },
+  {
+   "ticker": "KOSDAQ:A104460",
+   "company": "DYPNF Co.,Ltd",
+   "date": "2025-03-25",
+   "counterparty": "n/a (own shares)",
+   "role": "target",
+   "terms": "KRW 3bn share buyback and cancellation, ~1.9% of shares outstanding",
+   "note": "Buyback, not a tender offer.",
+   "source_url": "https://www.asiae.co.kr/en/article/2025032516234794236"
+  },
+  {
+   "ticker": "TSE:2929",
+   "company": "Pharma Foods International Co., Ltd.",
+   "date": "2024-10-22",
+   "counterparty": "Itochu Corporation",
+   "role": "target",
+   "terms": "Capital and business alliance agreement (Oct 2024); terms not seen",
+   "note": "About 25 months ago, outside the 24-month window; included for context.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20241022_2929-5/"
+  },
+  {
+   "ticker": "TSE:3457",
+   "company": "&Do Holdings Co.,Ltd.",
+   "date": "2026 (date not seen)",
+   "counterparty": "n/a (own shares)",
+   "role": "target",
+   "terms": "Treasury share acquisition completed",
+   "note": "Buyback only; details not seen.",
+   "source_url": "https://www.tipranks.com/news/company-announcements/do-holdings-completes-treasury-share-acquisition"
+  },
+  {
+   "ticker": "TSE:3930",
+   "company": "Hatena Co., Ltd.",
+   "date": "2026-04-24",
+   "counterparty": "n/a (funds outflow incident)",
+   "role": "target",
+   "terms": "Funds outflow incident, damage up to ~JPY 1.1bn; special loss JPY 1,221mm booked in FY7/2026; special investigation committee announced 2026-05-07",
+   "note": "Not a bid; restructuring-relevant loss event. Also fell below TSE Growth market-cap maintenance standard on 2026-07-31.",
+   "source_url": "https://finance.yahoo.co.jp/news/detail/aa37c2a338f33cd6c19490731a2b10323c2349ec"
+  },
+  {
+   "ticker": "KOSE:A036530",
+   "company": "SNT Holdings Co., Ltd.",
+   "date": "2025-12",
+   "counterparty": "Convertible and exchangeable bond investors",
+   "role": "acquirer",
+   "terms": "Issuance of convertible and exchangeable bonds (amount not seen)",
+   "note": "Capital raise reported Dec 2025 by Asiae.",
+   "source_url": "https://www.asiae.co.kr/en/article/2025121116573803451"
+  },
+  {
+   "ticker": "KOSE:A036530",
+   "company": "SNT Holdings Co., Ltd.",
+   "date": "2025-12-28",
+   "counterparty": "SMEC (treasury share disposal)",
+   "role": "acquirer",
+   "terms": "SNT Holdings publicly objected to SMEC's treasury share disposal, calling it breach-of-trust conduct",
+   "note": "Dispute with investee/associate over a treasury share sale; no bid seen.",
+   "source_url": "https://www.heraldk.com/article/2025122821111261784"
+  },
+  {
+   "ticker": "TSE:6533",
+   "company": "Orchestra Holdings Inc.",
+   "date": "2026-09-25",
+   "counterparty": "",
+   "role": "target",
+   "terms": "Year-end dividend raised from 30 yen to 50 yen plus expanded shareholder benefits",
+   "note": "Triggered limit-up on 2026-09-28; not a control event.",
+   "source_url": "https://finance.matsui.co.jp/news/623890/index"
+  },
+  {
+   "ticker": "KOSE:A002350",
+   "company": "Nexen Tire Corporation",
+   "date": "2025-09",
+   "counterparty": "VIP Asset Management",
+   "role": "target",
+   "terms": "5.03% stake (activist-type shareholder pressure for shareholder returns); no bid seen",
+   "note": "Per Deal Site article; no offer or bid.",
+   "source_url": "https://dealsite.co.kr/articles/148056"
+  },
+  {
+   "ticker": "SGX:5IC",
+   "company": "Sing Holdings Limited",
+   "date": "2026-05",
+   "counterparty": "",
+   "role": "target",
+   "terms": "Bonus issue (400,994,652 existing shares to ~501.24M, i.e. 1 for 4); S$0.04 dividend declared 2026-02-24",
+   "note": "Share-count change only; not a control event.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/HLTEAVW0SVTQXU0G/875743_SHL%20Announcement%20-%20Proposed%20Bonus%20Issue.pdf"
+  },
+  {
+   "ticker": "KOSDAQ:A067280",
+   "company": "Multicampus Corporation",
+   "date": "2026-09-23",
+   "counterparty": "",
+   "role": "target",
+   "terms": "Own-share buyback, 2026-09-23 to 2026-12-22, target 172,786 shares (about 4bn KRW); 2,652 shares bought as of 2026-09-23",
+   "note": "Shareholder return, not a control event.",
+   "source_url": "https://stockhub.kr/buyback/067280"
+  },
+  {
+   "ticker": "KOSE:A004490",
+   "company": "Sebang Global Battery Co., Ltd.",
+   "date": "2026-2026",
+   "counterparty": "Sebang Lithium Battery (subsidiary)",
+   "role": "acquirer",
+   "terms": "~150bn KRW planned investment in North American ESS battery module assembly",
+   "note": "Capex/investment plan, not control event.",
+   "source_url": "https://www.newstomato.com/ReadNews.aspx?no=1311020"
+  },
+  {
+   "ticker": "KOSDAQ:A131030",
+   "company": "OPTUS Pharmaceutical Co., Ltd.",
+   "date": "2025-10-22",
+   "counterparty": "Samchundang Pharmaceutical (controlling shareholder)",
+   "role": "target",
+   "terms": "Third-party allocation capital increase: 1,493,428 new shares at KRW 6,696, about KRW 10bn, payment 2025-11-05; raised Samchundang stake to 44.5%",
+   "note": "Capital raise strengthening existing controlling holder; not a takeover bid.",
+   "source_url": "https://www.digitaltoday.co.kr/aigongsi/4071/optuspharm-third-party-allocation-capital-increase"
+  },
+  {
+   "ticker": "TSE:7162",
+   "company": "ASTMAX Co., Ltd.",
+   "date": "2025-05-26",
+   "counterparty": "Hulic Property Solutions (Hulic group)",
+   "role": "target",
+   "terms": "Capital and business alliance with third-party disposal of treasury shares plus share secondary sale; Hulic Property Solutions became largest shareholder",
+   "note": "Change in largest shareholder, not a full takeover.",
+   "source_url": "https://www2.jpx.co.jp/disc/71620/140120250521560647.pdf"
+  },
+  {
+   "ticker": "TSE:7162",
+   "company": "ASTMAX Co., Ltd.",
+   "date": "2026-07-17",
+   "counterparty": "Hulic Co., Ltd.",
+   "role": "target",
+   "terms": "Sale of grid battery project rights and land (Komoro, Nagano); execution planned 2026-07-24",
+   "note": "Asset sale to affiliate of main shareholder.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260717_7162-7/"
+  },
+  {
+   "ticker": "KOSE:A017810",
+   "company": "Pulmuone Corporate",
+   "date": "2026-07-29",
+   "counterparty": "NV Mezzanine Growth Equity PEF (Dominus-affiliated per Dealsite)",
+   "role": "target",
+   "terms": "KRW 40.0bn third-party RCPS issue; 3,375,812 shares at KRW 11,849 (35% premium to base price 8,777); payment due 2026-08-12; proceeds to early-redeem convertible bonds",
+   "note": "Third-party allotment of redeemable convertible preferred shares; also KRW 25-30bn hybrid bond issue announced.",
+   "source_url": "https://biz.sbs.co.kr/amp/article/20000325468"
+  },
+  {
+   "ticker": "KOSDAQ:A030520",
+   "company": "Hancom Inc.",
+   "date": "2026-07-10",
+   "counterparty": "Hancom With Inc.",
+   "role": "target",
+   "terms": "Hancom With bought 1,081,666 common shares on market (~KRW 20.6bn), 25% above plan; stake now 31.20%",
+   "note": "Intra-group stake increase, not a bid.",
+   "source_url": "https://www.mt.co.kr/article/2026071009093758485"
+  },
+  {
+   "ticker": "TSE:7199",
+   "company": "Premium Group Co., Ltd.",
+   "date": "2025-08",
+   "counterparty": "Itochu Corporation",
+   "role": "target",
+   "terms": "Capital and business alliance with third-party allotment via disposal of treasury shares (terms not seen)",
+   "note": "Strategic alliance with Itochu; not a takeover bid.",
+   "source_url": "https://www2.jpx.co.jp/disc/71990/140120250808537932.pdf"
+  },
+  {
+   "ticker": "KOSDAQ:A071200",
+   "company": "INFINITT Healthcare Co., Ltd.",
+   "date": "2025-12-19",
+   "counterparty": "Minority shareholders (activist proposals) vs Solborn-related controlling holders",
+   "role": "target",
+   "terms": "EGM 2025-12-19: minority proposals (articles amendment ~6.8% approval, director dismissal ~3.2%) all rejected; Solborn stake ~48.66% (Aug 2025); further EGM called for 2026-11-27 (articles, treasury share buyback, auditor change)",
+   "note": "Control dispute/activism, no tender offer. Court dismissed ex-co-CEO challenge to EGM resolutions (reported 2026-07-31). Company plans KRW 65.4bn cash dividends 2026Q3-2027Q2.",
+   "source_url": "https://view.asiae.co.kr/article/2026073110183666529"
+  },
+  {
+   "ticker": "TSE:4971",
+   "company": "MEC Company Ltd.",
+   "date": "2025-05-12",
+   "counterparty": "n/a (treasury share buyback and cancellation)",
+   "role": "target",
+   "terms": "142,500 shares bought, JPY 365.9mm total (as of July 2025 report)",
+   "note": "Shareholder return only; no M&A or activist filings found.",
+   "source_url": "https://www2.jpx.co.jp/disc/49710/140120250707508901.pdf"
+  },
+  {
+   "ticker": "Catalist:42E",
+   "company": "Choo Chiang Holdings Ltd.",
+   "date": "2026-04-29",
+   "counterparty": "SGX-ST (listing transfer from Catalist to Mainboard)",
+   "role": "target",
+   "terms": "Transfer of listing approved at EGM 29 April 2026; also new share issue mandate",
+   "note": "Change of market, not a bid.",
+   "source_url": "https://www.minichart.com.sg/2026/05/20/choo-chiang-holdings-egm-2026-approval-for-sgx-mainboard-transfer-and-new-share-issue-mandate/"
+  },
+  {
+   "ticker": "SGX:U13",
+   "company": "United Overseas Insurance Limited",
+   "date": "2025-03",
+   "counterparty": "Ong Chin Woo (minority investor, ~4.5% holders)",
+   "role": "target",
+   "terms": "Requisitioned AGM resolutions: distribute Haw Par shares as dividend-in-specie; appoint financial adviser to evaluate options",
+   "note": "Activist campaign, no bid; within ~24 months (about 20 months ago); outcome of AGM vote and 2026 follow-up not found.",
+   "source_url": "https://itiger.com/news/2516302561"
+  },
+  {
+   "ticker": "KOSE:A002100",
+   "company": "Kyung Nong Corporation",
+   "date": "2026-06-08",
+   "counterparty": "unknown (exchangeable bond; terms not found)",
+   "role": "target",
+   "terms": "Exchangeable bond issuance decision listed on IR disclosure list (2026-06-08); exchange target/price not seen",
+   "note": "Only the disclosure title was seen.",
+   "source_url": "https://m.irgo.co.kr/IR-COMP/002100/%EA%B2%BD%EB%86%8D-%EA%B8%B0%EC%97%85%EC%A0%95%EB%B3%B4"
+  },
+  {
+   "ticker": "TSE:5187",
+   "company": "Create Medic Co., Ltd.",
+   "date": "2026-03",
+   "counterparty": "n/a (treasury share buyback via ToSTNeT-3)",
+   "role": "target",
+   "terms": "Off-auction treasury share purchase March 2026",
+   "note": "Shareholder return.",
+   "source_url": "https://www2.jpx.co.jp/disc/51870/140120260327590988.pdf"
   }
  ]
 }
