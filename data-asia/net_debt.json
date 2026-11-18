@@ -1,0 +1,819 @@
+{
+ "_definition": "Net debt = gross interest-bearing debt (excl. IFRS 16 leases) - cash & liquid investments, from the latest published balance sheet (tier A), or the company-reported net debt figure (tier B, definition varies). EV (USD) = current market cap + net debt in USD. Informational only; does not affect the v6 score.",
+ "_fx": {
+  "USD": 1.0,
+  "EUR": 1.1383,
+  "GBP": 1.324,
+  "SEK": 0.10314,
+  "NOK": 0.10276,
+  "CHF": 1.2297,
+  "PLN": 0.26238,
+  "CAD": 0.70442,
+  "DKK": 0.15229,
+  "RON": 0.219,
+  "ISK": 0.007927,
+  "KRW": 0.00075073
+ },
+ "_fxNote": "Approximate ECB reference rates from May-July 2026 (see merge_net_debt.py); +/-3% error on the net-debt part of EV.",
+ "_generated": "2026-11-18",
+ "entries": {
+  "KOSDAQ:A123420": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-06-30",
+   "periodType": "quarter",
+   "grossDebt": 11170,
+   "cash": 57250,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": -46080,
+   "netDebtUsd": -34.6,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 38.3,
+   "evUsd": 3.8,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/123420/statistics",
+   "sourceType": "aggregator",
+   "notes": "Aggregator (StockAnalysis statistics page, KRW mn): cash 57.25bn, total debt 11.17bn; period not stated on page (balance sheet page shows cash 48,804 at 2026-03-31 so this is a later quarter; date 2026-06-30 is an inference, could be 2026-09-30). AlphaSpread also shows total debt ~9.5bn (all long-term), consistent order of magnitude. Older Simply Wall St figure ~96bn debt at Mar-2025 is stale. Lea",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A017370": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": 156810,
+   "cash": 77780,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 79030,
+   "netDebtUsd": 59.3,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 29.5,
+   "evUsd": 88.8,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/017370/statistics/",
+   "sourceType": "aggregator",
+   "notes": "Aggregator (StockAnalysis statistics, KRW mn): cash 77.78bn, debt 156.81bn, net debt 79.03bn (shown as net cash -79.03bn). Period not stated; page listed next earnings date 2026-08-14 so latest balance sheet likely 2026-03-31 (inferred). Debt likely includes leases (not separated). Other snapshots (Simply Wall St: debt 152.7-181.3bn, cash 84-107bn; Google Finance Sep-2025 cash+STI 84.43bn) are con",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A020710": {
+   "tier": "B",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": null,
+   "cash": null,
+   "leaseLiabilities": null,
+   "netDebtReported": -37151,
+   "netDebt": -37151,
+   "netDebtUsd": -27.9,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 46.2,
+   "evUsd": 18.3,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/020710/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "Aggregator (StockAnalysis balance sheet, KRW mn): latest column net cash 37,151 (so net_debt = -37,151; this is the aggregator's computed figure, not company-reported; includes ST investments presumably); total debt shown '-' (nil) in that column; prior year-ends debt 8,388/9,171 etc. AlphaSpread: debt 7.5bn LT at 2025-12-31; Simply Wall St debt 0. Cash and date of column not seen (date inferred).",
+   "flags": [
+    "aggregator source",
+    "company-reported net debt only",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A069730": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-09-30",
+   "periodType": "quarter",
+   "grossDebt": 58990,
+   "cash": 2170,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 56820,
+   "netDebtUsd": 42.7,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 54.8,
+   "evUsd": 97.4,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/069730/statistics",
+   "sourceType": "aggregator",
+   "notes": "LOW CONFIDENCE, probably stale: StockAnalysis statistics (KRW mn): cash 2.17bn, total debt 58.99bn, net debt 56.82bn (shown as net cash -56.82bn); date not stated (page listed next earnings 2026-02-11 so latest = ~2025-09-30, inferred). Conflicting: TipRanks cash+securities 19.06bn/debt 34.37bn; Dodao total debt 26.26bn at Q2-2025. Leases possibly included. Verify against DART before use.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A015360": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-12-31",
+   "periodType": "annual",
+   "grossDebt": 341294,
+   "cash": 153455,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 187839,
+   "netDebtUsd": 141.0,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 207.0,
+   "evUsd": 348.1,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/015360/statistics/",
+   "sourceType": "aggregator",
+   "notes": "Aggregator (StockAnalysis statistics + balance sheet page last updated 2026-04-29, KRW mn): cash and short-term investments 153,455 (combined line; cash alone not seen), total debt 341,294 (probably includes leases), net debt 187,839. Period not stated; date inferred as FY2025 year-end given update date. TipRanks conflicting (cash+securities 312.45bn, debt 383.62bn, undated). Company formerly Yesc",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A025880": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": 24074,
+   "cash": 16416,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 7658,
+   "netDebtUsd": 5.7,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 25.7,
+   "evUsd": 31.5,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/025880/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "Aggregator (StockAnalysis, KRW mn) at 2026-03-31: short-term debt 21,474 + long-term debt 2,600 = 24,074 (sum computed from two seen lines; may include leases); cash & equivalents 16,416 (cash + short-term investments = 29,271 per same source; only plain cash used here). Latest period on page despite page date 2026-07-21; Q2/Q3-2026 not seen. Consolidated basis not confirmed.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A011760": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-06-30",
+   "periodType": "quarter",
+   "grossDebt": 986160,
+   "cash": 417030,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 569130,
+   "netDebtUsd": 427.3,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 200.4,
+   "evUsd": 627.7,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/011760/statistics/",
+   "sourceType": "aggregator",
+   "notes": "STALE aggregator (StockAnalysis statistics, KRW mn): cash 417.03bn, total debt 986.16bn, net debt 569.12bn (shown as net cash -569.12bn). Period not stated; page referenced upcoming earnings 2025-10-31 so latest then = ~2025-06-30 (inferred). Consistent with KIS rating report: consolidated gross borrowings 1,038.5bn won at 2026-03-31 (of which trade finance 826.2bn), debt ratio 284.2%, net debt/EB",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A104460": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 54900,
+   "cash": 63070,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": -8170,
+   "netDebtUsd": -6.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 46.1,
+   "evUsd": 40.0,
+   "sourceUrl": "https://simplywall.st/stocks/kr/capital-goods/kosdaq-a104460/dypnfltd-shares/health",
+   "sourceType": "aggregator",
+   "notes": "Simply Wall St (undated, latest at time of crawl; equity 120.2bn KRW consistent with hint): total debt 54.9bn, cash+short-term investments 63.07bn. Stockanalysis statistics shows different figures (cash 46.42bn, debt 38.34bn, net cash 8.08bn, undated). Leases inclusion unknown. Low confidence on date.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A005710": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 11130,
+   "cash": 437320,
+   "leaseLiabilities": null,
+   "netDebtReported": -426192,
+   "netDebt": -426190,
+   "netDebtUsd": -320.0,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 157.8,
+   "evUsd": -162.1,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/005710/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis (KRW mn): cash & equivalents 437,320, total debt 11,130 (stockanalysis total debt normally includes leases), net cash 426,192 (this is aggregator, not company-reported; sign negative = net cash). Statistics-page EV -207.18bn is consistent. Latest filing seen was Q1 2026 (2026-03-31) so date probably 2026-03-31 but not confirmed.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A052420": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 29330,
+   "cash": 71820,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": -42490,
+   "netDebtUsd": -31.9,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 49.6,
+   "evUsd": 17.7,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/052420/statistics/",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis statistics: cash 71.82bn, total debt 29.33bn, net cash 42.49bn (aggregator-derived; page price date Jul 31 2026, balance sheet date not stated). Simply Wall St shows debt 41.2bn vs cash+STI 78.7bn (undated). Leases inclusion unknown.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A014130": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 287840,
+   "cash": 20960,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 266880,
+   "netDebtUsd": 200.4,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 20.3,
+   "evUsd": 220.6,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/014130/statistics",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis statistics: cash 20.96bn, total debt 287.84bn (likely includes leases), net cash -266.89bn (net debt ~266.9bn), equity 80.91bn. Balance sheet date not stated (IR page shows H1 2026 report filed 2026-08-14). Other aggregators: TipRanks debt 260.68bn/cash 25.45bn; SWS debt 222.0bn/cash 21.0bn.",
+   "flags": [
+    "aggregator source",
+    "net debt > 3x market cap - check units/currency",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A123410": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 104280,
+   "cash": 62600,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 41680,
+   "netDebtUsd": 31.3,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 100.8,
+   "evUsd": 132.1,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/123410/statistics/",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis statistics: cash 62.60bn, total debt 104.28bn (net debt 41.68bn; likely incl. leases), date not stated. A mirror shows cash 57.68bn/debt 106.64bn/equity 255.91bn (also undated). Low confidence on date.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A024830": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 0,
+   "cash": 188201,
+   "leaseLiabilities": null,
+   "netDebtReported": -188201,
+   "netDebt": -188201,
+   "netDebtUsd": -141.3,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 54.1,
+   "evUsd": -87.2,
+   "sourceUrl": "https://stockanalysis.com/quote/kosdaq/024830/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis balance sheet first column (period unlabeled in snippet): cash & short-term investments 188,201 (of which ST investments 178,200); total debt n/a on stockanalysis and Simply Wall St says debt-free, so gross_debt set to 0 (inferred from 'n/a'/debt-free, low confidence). Net cash 188,201 (aggregator-derived). Statistics page older snapshot: cash 179.98bn.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A010100": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 219110,
+   "cash": 107090,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 112020,
+   "netDebtUsd": 84.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 70.3,
+   "evUsd": 154.4,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/010100/statistics",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis statistics: cash 107.09bn, total debt 219.11bn (likely incl. leases), net debt 112.02bn; date not stated. TipRanks: debt 248.24bn, cash+marketable securities 137.12bn. Low confidence on date.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A001390": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": 2138987,
+   "cash": 832126,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 1306861,
+   "netDebtUsd": 981.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 183.2,
+   "evUsd": 1164.3,
+   "sourceUrl": "https://www.roic.ai/quote/001390.KS/statistics",
+   "sourceType": "aggregator",
+   "notes": "roic.ai Mar 2026: cash, equivalents & STI 832,126 mn; stockanalysis newest column total debt 2,138,987 mn (likely incl. leases), net debt 1,306,860 mn (consistent). Aggregator figures, not company filing. Earlier stats page: cash 907.94bn, debt 2.04tn.",
+   "flags": [
+    "aggregator source",
+    "net debt > 3x market cap - check units/currency",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A032190": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A003650": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 13880,
+   "cash": 282100,
+   "leaseLiabilities": null,
+   "netDebtReported": -268220,
+   "netDebt": -268220,
+   "netDebtUsd": -201.4,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 128.2,
+   "evUsd": -73.2,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/003650/statistics",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis-type data (latest filing, date not stated): cash & equivalents 282.10bn, total debt 13.88bn, net cash 268.22bn (aggregator-derived). Conflicting: another source cash 225.95bn/debt 53.08bn (older); SWS cash+STI 141.0bn/debt 10.0bn (older annual). Low confidence on date.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A234080": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": 42251,
+   "cash": 12202,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 30049,
+   "netDebtUsd": 22.6,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 126.7,
+   "evUsd": 149.3,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/234080/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "Stockanalysis balance sheet (KRW mn) Mar 31 2026: total debt 42,251 (likely incl. leases), cash & short-term investments 12,202, net debt 30,049 (consistent). FY2025: debt 50,573, cash+STI 10,489. Statistics page (55.72bn cash/44.74bn debt) is stale, ignored.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A009900": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 404950,
+   "cash": 423770,
+   "leaseLiabilities": null,
+   "netDebtReported": -18820,
+   "netDebt": -18820,
+   "netDebtUsd": -14.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 274.6,
+   "evUsd": 260.5,
+   "sourceUrl": "https://www.tipranks.com/stocks/kr:009900/statistics",
+   "sourceType": "aggregator",
+   "notes": "TipRanks: cash & marketable securities 423.77bn, total debt 404.95bn, net cash 18.82bn; stockanalysis balance sheet shows net cash 18,817 mn in latest column (page snapshot Aug 3 2026), consistent. Date probably Mar 31 2026 but unconfirmed. Net cash is aggregator-derived.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A007860": {
+   "tier": "B",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-12-31",
+   "periodType": "annual",
+   "grossDebt": 865700,
+   "cash": null,
+   "leaseLiabilities": null,
+   "netDebtReported": 551100,
+   "netDebt": 551100,
+   "netDebtUsd": 413.7,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 111.3,
+   "evUsd": 525.1,
+   "sourceUrl": "https://stock-analysis-sveltekit.pages.dev/quote/krx/007860/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (stockanalysis mirror, updated Apr 2026), FY2025 annual: total debt ~KRW 865.7bn, net cash(debt) shown as -551.1bn i.e. NET DEBT +551.1bn. Cash for same period not seen (cash not back-solved). Prior year FY2024 debt 773.0bn/cash 348.8bn/net debt 424.2bn. Lease inclusion unknown. No Q1-Q3 2026 filing seen. Low-medium confidence.",
+   "flags": [
+    "aggregator source",
+    "company-reported net debt only",
+    "net debt > 3x market cap - check units/currency",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A200880": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 767640,
+   "cash": 173450,
+   "leaseLiabilities": null,
+   "netDebtReported": 594200,
+   "netDebt": 594190,
+   "netDebtUsd": 446.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 201.4,
+   "evUsd": 647.5,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/200880/statistics",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (stockanalysis statistics, undated, presumably latest reported period): cash 173.45bn, debt 767.64bn, net debt 594.20bn (net_debt_reported shown +594,200 as net debt: sign corrected below). Other snapshots: TipRanks cash 189.04bn/debt 912.26bn; SWS debt 678.7bn/cash 146.7bn; FY2025 annual debt 847.5bn (mirror). Date uncertain, low confidence.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A041930": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-06-30",
+   "periodType": "half_year",
+   "grossDebt": 82000,
+   "cash": 56600,
+   "leaseLiabilities": null,
+   "netDebtReported": 25400,
+   "netDebt": 25400,
+   "netDebtUsd": 19.1,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 49.8,
+   "evUsd": 68.9,
+   "sourceUrl": "https://simplywall.st/stocks/kr/automobiles/kosdaq-a041930/dong-a-hwa-sungltd-shares/news/dong-a-hwa-sungltd-kosdaq041930-has-a-pretty-healthy-balance",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (Simply Wall St, June 2025): debt ~82.0bn, cash 56.6bn, net debt ~25.4bn (SWS own calc). Stockanalysis stats similar 82.46bn/56.6bn. STALE: newer 2026 data not found. Lease inclusion unknown. Stockanalysis lists the name as SY Dong-A.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A001130": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 289040,
+   "cash": 335410,
+   "leaseLiabilities": null,
+   "netDebtReported": -46370,
+   "netDebt": -46370,
+   "netDebtUsd": -34.8,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 132.4,
+   "evUsd": 97.6,
+   "sourceUrl": "https://www.tipranks.com/stocks/kr:001130/statistics",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (TipRanks, undated): cash & marketable securities 335.41bn, debt 289.04bn, net cash 46.37bn (net_debt_reported negative = net cash). Conflicts: stockanalysis annual debt 291,995 / net cash 85,314; AlphaSpread debt 266.9bn. Date uncertain, low confidence.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A012280": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 82110,
+   "cash": 6660,
+   "leaseLiabilities": null,
+   "netDebtReported": 75450,
+   "netDebt": 75450,
+   "netDebtUsd": 56.6,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 27.9,
+   "evUsd": 84.6,
+   "sourceUrl": "https://www.tipranks.com/stocks/kr:012280/statistics",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (TipRanks, page references earnings dated 2026-05-15 so likely Q1 2026 but date not stated): cash & marketable securities 6.66bn, debt 82.11bn, net debt 75.45bn. Older stockanalysis snapshot: cash 1.79bn/debt 30.21bn (stale). Low confidence.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSDAQ:A021080": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A010690": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2026-03-31",
+   "periodType": "quarter",
+   "grossDebt": 752437,
+   "cash": 264109,
+   "leaseLiabilities": null,
+   "netDebtReported": 488328,
+   "netDebt": 488328,
+   "netDebtUsd": 366.6,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 160.1,
+   "evUsd": 526.7,
+   "sourceUrl": "https://www.roic.ai/quote/010690.KS/classic",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR: stockanalysis/TipRanks total debt 752,437 and roic.ai cash+ST investments 264,109 at Mar'26 (cash incl. short-term investments); aggregator net debt 488,328 (positive = net debt; sign corrected). Debt/cash Mar'26 match consistent with net debt. Lease inclusion unknown.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A002350": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-12-31",
+   "periodType": "annual",
+   "grossDebt": 1628121,
+   "cash": 282070,
+   "leaseLiabilities": null,
+   "netDebtReported": 1346047,
+   "netDebt": 1346051,
+   "netDebtUsd": 1010.5,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 406.1,
+   "evUsd": 1416.7,
+   "sourceUrl": "https://www.tipranks.com/stocks/kr:002350/statistics",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR: stockanalysis FY2025 annual total debt 1,628,121 and net debt 1,346,047 (sign: net debt); TipRanks cash & marketable securities 282.07bn consistent (cash 282.07bn seen at TipRanks). Q2 2026 (earnings 2026-07-29) not seen. Lease inclusion unknown.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A005250": {
+   "tier": "A",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "quarter",
+   "grossDebt": 1228700,
+   "cash": 196110,
+   "leaseLiabilities": null,
+   "netDebtReported": null,
+   "netDebt": 1032590,
+   "netDebtUsd": 775.2,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 331.2,
+   "evUsd": 1106.4,
+   "sourceUrl": "https://simplywall.st/stocks/kr/pharmaceuticals-biotech/kose-a005250/green-cross-holdings-shares/health",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (Simply Wall St health page, undated): total debt 1,228.7bn, cash 196.11bn, equity 1,881.5bn. AlphaSpread debt 1.1T; roic.ai ST debt + LT borrowings sums ~1.51T at Mar'26 (own sum, cash not shown). Date uncertain, probably stale; debt possibly higher now.",
+   "flags": [
+    "aggregator source",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A010960": {
+   "tier": "B",
+   "currency": "KRW",
+   "balanceSheetDate": "2025-12-31",
+   "periodType": "annual",
+   "grossDebt": 10800,
+   "cash": null,
+   "leaseLiabilities": null,
+   "netDebtReported": -95200,
+   "netDebt": -95200,
+   "netDebtUsd": -71.5,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 49.8,
+   "evUsd": -21.7,
+   "sourceUrl": "https://stock-analysis-sveltekit.pages.dev/quote/krx/010960/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (stockanalysis mirror, updated Apr 2026; latest column presumed FY2025): total debt ~10.8bn, net cash 95.2bn (net_debt_reported negative = net cash). Cash not explicitly seen. SWS (undated): cash 96.5bn, net cash 88.0bn. Company in net cash; low-medium confidence.",
+   "flags": [
+    "aggregator source",
+    "company-reported net debt only",
+    "balance sheet older than Q1 2026"
+   ]
+  },
+  "KOSE:A016740": {
+   "tier": "B",
+   "currency": "KRW",
+   "balanceSheetDate": "unknown",
+   "periodType": "annual",
+   "grossDebt": 90105,
+   "cash": null,
+   "leaseLiabilities": null,
+   "netDebtReported": 3948,
+   "netDebt": 3948,
+   "netDebtUsd": 3.0,
+   "fx": 0.00075073,
+   "minorityInterest": null,
+   "mcUsd": 91.6,
+   "evUsd": 94.6,
+   "sourceUrl": "https://stockanalysis.com/quote/krx/016740/financials/balance-sheet/",
+   "sourceType": "aggregator",
+   "notes": "AGGREGATOR (stockanalysis annual balance sheet, latest column presumed, column dates not shown): total debt 90,105, Net Cash(Debt) -3,948 i.e. net debt 3.9bn. Conflicting: stockanalysis statistics cash 62.42bn/debt 74.50bn/net debt 12.08bn (undated; cash figure matches SWS Sep-2024); SWS debt 49.4bn. Very low confidence.",
+   "flags": [
+    "aggregator source",
+    "company-reported net debt only"
+   ]
+  },
+  "TSE:8511": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:7148": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:7184": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8393": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8392": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SGX:S41": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "ASX:LFG": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:7350": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A003470": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:7177": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SEHK:662": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "Catalist:5WJ": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:4765": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8362": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SEHK:900": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8541": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SGX:U13": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SEHK:1848": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A016610": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A006220": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A001200": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8708": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SGX:S35": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SGX:TCU": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A001750": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8596": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A030210": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8301": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSE:A003460": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SGX:S23": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "KOSDAQ:A049720": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "ASX:MAM": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "TSE:8700": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SPSE:8594": {
+   "tier": "F",
+   "status": "financial_na"
+  },
+  "SEHK:1273": {
+   "tier": "F",
+   "status": "financial_na"
+  }
+ }
+}

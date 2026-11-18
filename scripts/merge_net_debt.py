@@ -107,6 +107,10 @@ def main(rdir):
             rep = num(v.get('net_debt_reported'))
             cur = v.get('currency')
             date = v.get('balance_sheet_date') or ''
+            try:
+                FX[cur]
+            except KeyError:
+                pass
             if cur not in FX:
                 continue
             cand = None

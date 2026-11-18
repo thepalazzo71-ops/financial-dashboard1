@@ -1,0 +1,29 @@
+EV / net profit,P/E,Code,Company,Market cap $M,Net debt $M (negative = net cash),EV $M,LTM net income $M,Net-debt tier,Balance-sheet date,Market-cap basis,Net-debt source,Flags
+0.12,1.2,A123420,"Wemade Play Co., Ltd.",38.3,-34.6,3.7,31.9,A,2026-06-30,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+0.81,2.28,A052420,"Osung Advanced Materials Co., Ltd.",49.6,-31.9,17.7,21.8,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+1.0,2.53,A020710,"Sigong Tech Co., Ltd.",46.2,-27.9,18.3,18.3,B,2026-03-31,estimated,aggregator,aggregator source; company-reported net debt only; balance sheet older than Q1 2026
+1.42,1.63,A104460,"DYPNF Co.,Ltd",46.1,-6.1,40.0,28.2,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+2.26,3.07,A001130,"Daehan Flour Mills Co.,Ltd",132.4,-34.8,97.6,43.2,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+3.69,3.89,A009900,"Myoung Shin Industrial Co.,Ltd",274.6,-14.1,260.5,70.5,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+3.87,2.8,A041930,"Dong-A Hwa Sung Co.,Ltd.",49.8,19.1,68.9,17.8,A,2025-06-30,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+3.98,3.04,A123410,Korea Fuel-Tech Corporation,100.8,31.3,132.1,33.2,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+4.03,3.9,A016740,"DUAL Co., Ltd.",91.6,3.0,94.6,23.5,B,unknown,estimated,aggregator,aggregator source; company-reported net debt only
+4.39,3.59,A025880,"KC Feed Co., Ltd.",25.7,5.7,31.4,7.2,A,2026-03-31,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+4.4,3.74,A234080,JW Lifescience Corporation,126.7,22.6,149.3,33.9,A,2026-03-31,research,aggregator,aggregator source; balance sheet older than Q1 2026
+4.82,1.6,A017370,"Wooshin Systems Co., Ltd.",29.5,59.3,88.8,18.4,A,2026-03-31,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+5.79,3.44,A015360,"INVENI Co., Ltd.",207.0,141.0,348.0,60.1,A,2025-12-31,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+5.94,3.34,A069730,DSR Wire Corp,54.8,42.7,97.5,16.4,A,2025-09-30,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+7.28,3.32,A010100,"Korea Movenex Co., Ltd.",70.3,84.1,154.4,21.2,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+7.29,1.55,A007860,"Seoyon Co., Ltd.",111.3,413.7,525.0,72.0,B,2025-12-31,estimated,aggregator,aggregator source; company-reported net debt only; net debt > 3x market cap - check units/currency; balance sheet older than Q1 2026
+8.31,2.59,A200880,"Seoyon E-Hwa Co., Ltd.",201.4,446.1,647.5,77.9,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+9.89,3.27,A012280,"Yeong Hwa Metal Co., Ltd.",27.9,56.6,84.5,8.6,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+11.25,3.42,A010690,"HWASHIN CO.,Ltd",160.1,366.6,526.7,46.8,A,2026-03-31,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+11.62,3.71,A011760,Hyundai Corporation,200.4,427.3,627.7,54.0,A,2025-06-30,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+12.09,3.62,A005250,Green Cross Holdings Corporation,331.2,775.2,1106.4,91.5,A,unknown,research,aggregator,aggregator source; balance sheet older than Q1 2026
+12.31,3.53,A002350,Nexen Tire Corporation,406.1,1010.5,1416.6,115.1,A,2025-12-31,research,aggregator,aggregator source; balance sheet older than Q1 2026
+21.25,3.34,A001390,KG Chemical Corporation,183.2,981.1,1164.3,54.8,A,2026-03-31,estimated,aggregator,aggregator source; net debt > 3x market cap - check units/currency; balance sheet older than Q1 2026
+28.08,2.58,A014130,"Hanexpress.Co., Ltd",20.3,200.4,220.7,7.9,A,unknown,estimated,aggregator,aggregator source; net debt > 3x market cap - check units/currency; balance sheet older than Q1 2026
+,1.98,A005710,"Daewon Sanup Co., Ltd",157.8,-320.0,-162.2,79.9,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+,3.2,A024830,"Sewon Corporation Co.,Ltd.",54.1,-141.3,-87.2,16.9,A,unknown,research,aggregator,aggregator source; balance sheet older than Q1 2026
+,3.61,A003650,"Michang Oil Ind. Co., Ltd.",128.2,-201.4,-73.2,35.5,A,unknown,estimated,aggregator,aggregator source; balance sheet older than Q1 2026
+,3.83,A010960,"Samho Development Co., LTD",49.8,-71.5,-21.7,13.0,B,2025-12-31,estimated,aggregator,aggregator source; company-reported net debt only; balance sheet older than Q1 2026
