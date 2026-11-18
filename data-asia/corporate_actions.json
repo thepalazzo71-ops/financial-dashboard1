@@ -135,6 +135,76 @@
    "terms": "Voluntary unconditional cash offer at S$0.82 raised to S$0.83; closed 25 Sep 2023 with ~87.17% valid acceptances (86.83% at an earlier date)",
    "note": "Outside the 24-month window; company remained listed afterwards (2026 AGM/EGM held)",
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/A2C1HT05P485UWAB/773050_Fairy%202%20-%20Close%20of%20Offer%20Announcement.pdf"
+  },
+  {
+   "ticker": "ASX:TPC",
+   "company": "TPC Consolidated Limited",
+   "date": "2024-04 (SIA announced; terminated 2026-02-27)",
+   "counterparty": "Wollar Solar Holding Pty Ltd (Beijing Energy International)",
+   "role": "target",
+   "terms": "Scheme of arrangement, initial cash consideration A$8.77/share plus other package, equity value about A$100m; SIA amended several times",
+   "note": "FIRB approval not received by sunset 28 Nov 2025; SIA mutually terminated effective 27 Feb 2026; shares fell about 30% to about A$3.50 on termination",
+   "source_url": "https://www.itiger.com/hans/news/2588831741"
+  },
+  {
+   "ticker": "TSE:6099",
+   "company": "Elan Corporation",
+   "date": "2024-09-19 (announced); TOB ended 2024-10-21",
+   "counterparty": "M3, Inc. (エムスリー, 2413)",
+   "role": "target",
+   "terms": "1,040 yen/share, 22.1% premium to 2024-09-19 close; cap of 33,329,453 shares; 45,172,994 tendered so pro-rated",
+   "note": "Elan became M3 consolidated subsidiary 2024-10-21; listing maintained. Slightly outside 24-month window",
+   "source_url": "https://www.nihon-ma.co.jp/news/20241022_2413-32-1/"
+  },
+  {
+   "ticker": "TSE:2491",
+   "company": "ValueCommerce Co., Ltd.",
+   "date": "2024-03-12 to 2024-05-31",
+   "counterparty": "Company itself (self-tender from parent LINE Yahoo)",
+   "role": "target",
+   "terms": "Self-tender at 1,029 yen/share; listing maintained",
+   "note": "Outside 24 months (about 30 months ago); ended LINE Yahoo subsidiary status in 2024",
+   "source_url": "https://kabukiso.com/apply/tob/2024/valuecommerce.html"
+  },
+  {
+   "ticker": "TSE:9441",
+   "company": "Bell-Park Co.,Ltd.",
+   "date": "2025-05",
+   "counterparty": "Self (issuer self-tender)",
+   "role": "target",
+   "terms": "buy back up to 7,000,000 shares at 1,471 yen, 10.79% discount to 1,649 close of 2025-05-09; listing maintained",
+   "note": "Issuer self tender offer for shareholder returns",
+   "source_url": "https://kabukiso.com/apply/tob/2025/bellpark.html"
+  },
+  {
+   "ticker": "KOSDAQ:A069510",
+   "company": "ESTec Corporation",
+   "date": "2026-11-11",
+   "counterparty": "FFEK Co. (SPV of Foster Electric, largest shareholder)",
+   "role": "target",
+   "terms": "24,000 won per share, 57.4% premium to prior close; up to 3,020,000 shares = 27.67% of issued shares; total about 72.5bn won; offer period 2026-11-11 to 2026-12-11; purpose: delisting, wholly-owned subsidiary; agent Korea Investment & Securities",
+   "note": "Delisting-purpose tender offer by controlling shareholder",
+   "source_url": "https://www.smarttoday.co.kr/ko-kr/articles/113617"
+  },
+  {
+   "ticker": "TSE:2674",
+   "company": "Hard Off Corporation Co.,Ltd.",
+   "date": "2025-08-13 to 2025-09-25",
+   "counterparty": "Econos Co., Ltd. (3136, Sapporo Ambitious)",
+   "role": "acquirer",
+   "terms": "1,410 JPY/share, 33.52% premium to 2025-08-12 close of 1,056; min 668,500 shares; 1,078,909 tendered (min cleared)",
+   "note": "Hard Off made Econos a consolidated subsidiary 2025-10-02; Econos planned delisting 2025-11-04 and squeeze-out (completion not confirmed in results).",
+   "source_url": "https://www.nihon-ma.co.jp/news/20250812_2674-7/"
+  },
+  {
+   "ticker": "KOSE:A192080",
+   "company": "DoubleUGames Co., Ltd.",
+   "date": "2026-04-28 (NBO); tender reported 2026-11-16",
+   "counterparty": "DoubleDown Interactive (Nasdaq: DDI)",
+   "role": "acquirer",
+   "terms": "USD 11.25 per ADS cash for remaining 32.95% (up to 16,329,620 ADS, up to KRW 356.1bn); ~26.9% premium to 30-day avg; payment 2026-12-21; then squeeze-out/Nasdaq delisting",
+   "note": "Four Tree Island Advisory opposed price as too low; final completion not confirmed.",
+   "source_url": "https://www.ibtomato.com/ExternalView.aspx?no=20110&type=1"
   }
  ],
  "mergers_acquisitions": [
@@ -647,6 +717,176 @@
    "terms": "asset acquisition via subsidiary Action Workforce; ~A$162m revenue; effective 3 Aug 2026; price not seen",
    "note": "Operating acquisition, no change of control.",
    "source_url": "https://kalkinemedia.com/au/news/announcements/ashley-services-group-finalizes-acquisition-via-action-workforce-subsidiary"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "2026 (Oct 2026 article; exact date not confirmed)",
+   "counterparty": "メタルクリエイション (Metal Creation, Osaka)",
+   "role": "acquirer",
+   "terms": "50.80% of shares acquired, then to be made wholly-owned subsidiary via simplified share exchange",
+   "note": "Timing per article URL date; page text undated, treat as unverified",
+   "source_url": "https://www.nihon-ma.co.jp/news/20261008_7814-154/"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "2026-04-09",
+   "counterparty": "イムラサンプル (Imura Sample, Osaka)",
+   "role": "acquirer",
+   "terms": "100% of shares for 56 million yen",
+   "note": "Small bolt-on",
+   "source_url": "https://www.nihon-ma.co.jp/news/20261008_7814-154/"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "2025-10",
+   "counterparty": "鈴木松風堂 (via subsidiary 日経印刷)",
+   "role": "acquirer",
+   "terms": "Share acquisition, made subsidiary",
+   "note": "Per finboard history",
+   "source_url": "https://finboard.jp/companies/JP:7814/history"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "2025-04",
+   "counterparty": "シルキー・アクト",
+   "role": "acquirer",
+   "terms": "Share acquisition, made subsidiary",
+   "note": "Per finboard history",
+   "source_url": "https://finboard.jp/companies/JP:7814/history"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "date not seen",
+   "counterparty": "Mochizuki Print",
+   "role": "acquirer",
+   "terms": "Agreed to acquire additional 52.97% stake",
+   "note": "MarketScreener headline only; date and price not seen",
+   "source_url": "https://www.marketscreener.com/quote/stock/JAPAN-CREATIVE-PLATFORM-G-18727038/news/JAPAN-Creative-Platform-Group-Co-Ltd-agreed-to-acquire-additional-52-97-stake-in-Mochizuki-Print-45980242/"
+  },
+  {
+   "ticker": "SGX:BHU",
+   "company": "SUTL Enterprise Limited",
+   "date": "2025-12-30",
+   "counterparty": "Keppel Bay Pte Ltd (Marina at Keppel Bay and related assets)",
+   "role": "acquirer",
+   "terms": "S$40m aggregate; put-and-call option agreement; CCS in-depth review commenced 23 Jul 2026, long-stop date extended",
+   "note": "Pending regulatory review",
+   "source_url": "https://www.ccs.gov.sg/media-and-events/newsroom/announcements-and-media-releases/ccs-commences-in-depth-review-of-the-proposed-transaction-between-sutl-enterprise-ltd--one15-marina-kb-pte--ltd--and-keppel-bay-pte-ltd/"
+  },
+  {
+   "ticker": "SGX:BHU",
+   "company": "SUTL Enterprise Limited",
+   "date": "2026-06-30",
+   "counterparty": "UEM Land Berhad (remaining 40% of Sarandra Malaysia Sdn Bhd)",
+   "role": "acquirer",
+   "terms": "2,320,400 shares for MYR50,000 (about S$16k)",
+   "note": "Immaterial; buys out JV partner",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/IE7UBN1ETD8FSA3K/894839_SUTL%20Sarandra%20Buyout%20Announcement%20Final%20Doc.pdf"
+  },
+  {
+   "ticker": "KOSDAQ:A357230",
+   "company": "H.PIO Co., Ltd.",
+   "date": "2025-03 (article date)",
+   "counterparty": "Absorbed failed businesses (e.g. Copenhagen Recipe) into parent; spin-off listing planned for successful units (Arne, Biopharm)",
+   "role": "acquirer",
+   "terms": "Internal absorption mergers; subsidiary IPO plans",
+   "note": "Asiae article critical of shareholder-value impact",
+   "source_url": "https://view.asiae.co.kr/article/2025031915101136949"
+  },
+  {
+   "ticker": "TSE:6184",
+   "company": "Kamakura Shinsho, Ltd.",
+   "date": "2024-11",
+   "counterparty": "ベル少額短期保険 (Bell Small-Amount Short-Term Insurance)",
+   "role": "acquirer",
+   "terms": "Share acquisition, made consolidated subsidiary",
+   "note": "Terms not seen; at edge of 24-month window",
+   "source_url": "https://www.nihon-ma.co.jp/news/20241101_6184/"
+  },
+  {
+   "ticker": "TSE:2491",
+   "company": "ValueCommerce Co., Ltd.",
+   "date": "2024-11-25",
+   "counterparty": "Dynatec (wholly-owned subsidiary)",
+   "role": "acquirer",
+   "terms": "Absorption merger under consideration",
+   "note": "JPX disclosure; at edge of 24-month window",
+   "source_url": "https://www2.jpx.co.jp/disc/24910/140120241125528499.pdf"
+  },
+  {
+   "ticker": "KOSE:A009450",
+   "company": "Kyung Dong Navien Co., Ltd.",
+   "date": "2020",
+   "counterparty": "Kyungdong Electronics (affiliate of largest shareholder)",
+   "role": "acquirer",
+   "terms": "small-scale merger; largest shareholder Kyungdong One stake 50.1% -> 53.7%",
+   "note": "Older than 24 months; context only",
+   "source_url": "https://www.etoday.co.kr/market/mkt_stkinfo?varIssCd=009450"
+  },
+  {
+   "ticker": "KOSE:A248170",
+   "company": "Sempio Foods Company",
+   "date": "2026-10-30",
+   "counterparty": "Sempio Co. (holding company, 49.40% owner of Sempio Foods)",
+   "role": "acquirer",
+   "terms": "Sempio Foods absorbs Sempio (surviving co.); ratio 1 Sempio share = 2.0881235 Sempio Foods shares; 4,208,546 new shares; merger price Sempio Foods KRW 21,050 / Sempio KRW 43,955; EGM 2026-12-17; merger date 2027-02-01; new share listing 2027-02-18",
+   "note": "Parent holding co. absorbed by listed subsidiary; Chairman Park Jin-sun becomes largest holder (~23.41%, 31.51% after cancellation of treasury shares received). Subject to EGM approval.",
+   "source_url": "https://sateconomy.co.kr/news/view/1065616141541007"
+  },
+  {
+   "ticker": "SGX:BHK",
+   "company": "SIIC Environment Holdings Ltd.",
+   "date": "2026-03-30",
+   "counterparty": "Target companies (100% equity interest; names not confirmed in my results)",
+   "role": "acquirer",
+   "terms": "Discloseable transaction to acquire 100% of target companies; DCF valuation; supplemental announcement 2026-04-30",
+   "note": "Acquisition of equity interests; terms/price not seen in snippet.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/V8Q56KW390DUF95H/887085_SIIC%20-%20Supplemental%20Announcement%20on%20the%20Discloseable%20Transaction%20-%20ENG.pdf"
+  },
+  {
+   "ticker": "SGX:KUO",
+   "company": "International Cement Group Ltd.",
+   "date": "2026 (announcement date not seen; completion targeted by 2026-08-31)",
+   "counterparty": "Sharcem LLP (Kazakhstan subsidiary, minority stake)",
+   "role": "acquirer",
+   "terms": "Buy additional 12.5% of Sharcem LLP; effective stake rises from 75% to 87.5%",
+   "note": "Increase of stake in existing subsidiary; no change of control of ICG.",
+   "source_url": "https://www.itiger.com/hant/news/1180683835"
+  },
+  {
+   "ticker": "KOSE:A001750",
+   "company": "Hanyang Securities Co. Ltd.",
+   "date": "2025-06-12",
+   "counterparty": "KCGI",
+   "role": "target",
+   "terms": "KCGI acquisition of Hanyang Securities controlling stake (~KRW 216.7bn reported)",
+   "note": "FSC approved KCGI large-shareholder eligibility 2025-06-12; KCGI later became largest holder.",
+   "source_url": "https://www.ceoscoredaily.com/page/view/2025061215132489313"
+  },
+  {
+   "ticker": "TSE:4345",
+   "company": "CTS Co., Ltd.",
+   "date": "2026-02",
+   "counterparty": "FILEFORCE",
+   "role": "acquirer",
+   "terms": "Basic agreement for additional share acquisition of FILEFORCE (terms not seen)",
+   "note": "Per Simply Wall St announcements list; not a tender offer.",
+   "source_url": "https://simplywall.st/ja/stocks/jp/commercial-services/tse-4345/cts-shares"
+  },
+  {
+   "ticker": "SEHK:1419",
+   "company": "Human Health Holdings Limited",
+   "date": "2025-02-25",
+   "counterparty": "Hong Kong dental clinic operator",
+   "role": "acquirer",
+   "terms": "Majority stake acquisition (terms not seen)",
+   "note": "Completed per TipRanks announcement.",
+   "source_url": "https://www.tipranks.com/news/company-announcements/human-health-holdings-ltd-completes-major-acquisition-in-dental-sector"
   }
  ],
  "spinoffs": [
@@ -950,6 +1190,106 @@
    "terms": "Buy-back notification listed 30 Jul 2026 at ~$5.33; size not seen",
    "note": "Capital management only, not a control event. Interim dividend 7.0c also declared Feb 2026.",
    "source_url": "https://www.investsmart.com.au/security/asx/wat/waterco-limited/announcements"
+  },
+  {
+   "ticker": "TSE:7814",
+   "company": "JAPAN Creative Platform Group Co., Ltd.",
+   "date": "date not seen",
+   "counterparty": "own shares",
+   "role": "acquirer",
+   "terms": "Buyback of 1,881,100 shares",
+   "note": "MarketScreener headline only; date not seen",
+   "source_url": "https://marketscreener.com/quote/stock/JAPAN-CREATIVE-PLATFORM-G-18727038/news/JAPAN-Creative-Platform-Group-Co-Ltd-announces-an-Equity-Buyback-for-1-881-100-shares-representi-45993395"
+  },
+  {
+   "ticker": "KOSDAQ:A950190",
+   "company": "Ghost Studio Co., Ltd.",
+   "date": "2026-08-31 to 2026-11-28",
+   "counterparty": "own shares",
+   "role": "acquirer",
+   "terms": "Buyback of up to 488,095 shares, 4.1B KRW; 161,064 shares done by 2026-09-23",
+   "note": "Treasury share purchase",
+   "source_url": "https://stockhub.kr/buyback/950190"
+  },
+  {
+   "ticker": "KOSDAQ:A038070",
+   "company": "Seoulin Bioscience Co.,Ltd.",
+   "date": "2025-06",
+   "counterparty": "CB investors (private placement)",
+   "role": "acquirer",
+   "terms": "15B KRW (150억) zero-interest 3rd unsecured private convertible bond; later EB (exchangeable bond) using treasury shares",
+   "note": "Dilution controversy per IB Tomato; EB date not seen",
+   "source_url": "https://www.ibtomato.com/View.aspx?no=15269&type=1"
+  },
+  {
+   "ticker": "TSE:9441",
+   "company": "Bell-Park Co.,Ltd.",
+   "date": "2024-12",
+   "counterparty": "Olive Glass Co.",
+   "role": "target",
+   "terms": "planned acquisition of 1,160,000 shares = 6.03% of voting rights (notice of 'kaiatsume' accumulation)",
+   "note": "Stake accumulation notice disclosed by Bell-Park",
+   "source_url": "https://www2.jpx.co.jp/disc/94410/140120241224543312.pdf"
+  },
+  {
+   "ticker": "TSE:2471",
+   "company": "S-Pool, Inc.",
+   "date": "2025-02",
+   "counterparty": "Self (market buyback)",
+   "role": "target",
+   "terms": "treasury share acquisition via ToSTNeT-3 off-auction trade",
+   "note": "Buyback, not a takeover",
+   "source_url": "https://www2.jpx.co.jp/disc/24710/140120250226582218.pdf"
+  },
+  {
+   "ticker": "SGX:BHK",
+   "company": "SIIC Environment Holdings Ltd.",
+   "date": "2025-10",
+   "counterparty": "Shanghai Industrial Group / Jinzhong (parent-level)",
+   "role": "target",
+   "terms": "Proposed internal restructuring at parent level; ultimate control unchanged (Shanghai Municipal Government 100%)",
+   "note": "No change of control.",
+   "source_url": "https://www.itiger.com/news/1117783294"
+  },
+  {
+   "ticker": "Catalist:1A1",
+   "company": "Wong Fong Industries Limited",
+   "date": "2026 (exact date not seen)",
+   "counterparty": "Property at 16 Tuas Avenue 6 (buyer not seen)",
+   "role": "target",
+   "terms": "Disposal of property completed; dilution of Myanmar subsidiary shareholding noted in Rule 706A filing",
+   "note": "Asset disposal, minor; no change of control.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/Z26LU4OTB27ADRA2/880570_Wong%20Fong%20-%20Disposal%20of%20Property%2016%20Tuas%20Avenue%206_Completion.pdf"
+  },
+  {
+   "ticker": "SEHK:838",
+   "company": "EVA Precision Industrial Holdings Limited",
+   "date": "2026 (exact date not seen)",
+   "counterparty": "Weihai Innovation Park (buyer of Weihai land and properties, via subsidiary Intops Electronics)",
+   "role": "target",
+   "terms": "Disposal of land and properties in Weihai City by subsidiary; price not seen",
+   "note": "Asset disposal; no change of control.",
+   "source_url": "https://www.tipranks.com/news/company-announcements/eva-precision-announces-land-and-property-disposal-in-weihai-city"
+  },
+  {
+   "ticker": "KOSE:A001750",
+   "company": "Hanyang Securities Co. Ltd.",
+   "date": "2026-06-25",
+   "counterparty": "KCGI (largest shareholder, KCGI No.2 PEF)",
+   "role": "target",
+   "terms": "KRW 50bn third-party rights issue at a premium; KCGI stake 29.59% -> 40.69%",
+   "note": "Payment completed July 2026; court rejected minority injunction; minority shareholders filed suit to void new shares.",
+   "source_url": "https://www.ibtomato.com/View.aspx?no=19201&type=1"
+  },
+  {
+   "ticker": "ASX:NAN",
+   "company": "Nanosonics Limited",
+   "date": "2025-2026",
+   "counterparty": "On-market buy-back",
+   "role": "target",
+   "terms": "A$20M share buy-back, running to 2026-11-04",
+   "note": "Capital management, not a bid.",
+   "source_url": "https://biotechdispatch.com.au/news/nanosonics-announces-20-million-share-buy-back-as-confidence-in-growth-outlook-strengthens"
   }
  ]
 }
