@@ -3,7 +3,7 @@ and compute Enterprise Value = market cap (current, USD) + net debt (converted t
 
 Tiers:  A = gross debt AND cash found for the same balance sheet  -> net debt = gross debt - cash (leases separate)
         B = only the company-REPORTED net debt (definition varies: see 'definition' note)
-Region: Europe (default, data/) or USA & Canada ('--region us', data-us/, status 'reported_only' = tier B, CAD supported).
+Region: Europe (default, data/), USA & Canada ('--region us', data-us/, status 'reported_only' = tier B, CAD supported) or Asia ('--region asia', data-asia/, KRW etc. fetched from Yahoo FX).
 Not computed: financial companies (banks/insurers), not-found, and balance sheets older than STALE_BEFORE.
 Informational only - nothing here changes the v6 score.   Usage: python3 scripts/merge_net_debt.py <research_dir>
 """
@@ -13,7 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REGION = 'europe'
 CFG = {'europe': {'dir': 'data', 'pool': 'companies_1000_scored.json', 'globs': ['nd[123]_out_*.json', 'ndp2_out_*.json']},
-       'us': {'dir': 'data-us', 'pool': 'companies_pool_all.json', 'globs': ['ndus[123456]_out_*.json']}}
+       'us': {'dir': 'data-us', 'pool': 'companies_pool_all.json', 'globs': ['ndus[123456]_out_*.json']},
+       'asia': {'dir': 'data-asia', 'pool': 'companies_pool_all.json', 'globs': ['ndas[0-9]_out_*.json']}}
 OUT = ROOT / 'data' / 'net_debt.json'
 STALE_BEFORE = '2025-06-30'
 # USD per 1 unit of currency. APPROXIMATE: ECB euro reference rates, EURUSD 1.1383 (1 Jul 2026);
@@ -23,6 +24,21 @@ FX = {'USD': 1.0, 'EUR': EURUSD, 'GBP': round(EURUSD / 0.85973, 4), 'SEK': round
       'NOK': round(EURUSD / 11.077, 5), 'CHF': round(EURUSD / 0.9257, 4), 'PLN': round(EURUSD / 4.3383, 5),
       'CAD': round(1 / 1.4196, 5),  # Bank of Canada USD/CAD 1.4196 on 15 Oct 2026
       'DKK': round(EURUSD / 7.4745, 5), 'RON': round(EURUSD / 5.1977, 5), 'ISK': round(EURUSD / 143.6, 6)}
+
+
+class _FX(dict):
+    """Any currency missing from the table is fetched live from Yahoo (<CUR>USD=X), used for the Asian currencies."""
+    def __missing__(self, cur):
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import derive_market_caps as _D
+        s, _ = _D.series(cur + 'USD=X')
+        if not s:
+            raise KeyError(cur)
+        self[cur] = round(s[max(s)], 8)
+        return self[cur]
+
+
+FX = _FX(FX)
 FX_NOTE = 'Approximate ECB reference rates from May-July 2026 (see merge_net_debt.py); +/-3% error on the net-debt part of EV.'
 
 
@@ -133,7 +149,7 @@ def main(rdir):
         e['flags'] = flags
         entries[t] = e
         stats[tier] = stats.get(tier, 0) + 1
-    if REGION == 'us':
+    if REGION in ('us', 'asia'):
         for t, c in byt.items():
             if c.get('is_financial_sector') and t not in entries:
                 entries[t] = {'tier': 'F', 'status': 'financial_na'}
