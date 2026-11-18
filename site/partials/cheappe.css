@@ -6,7 +6,7 @@
   .cpe-table > tbody > tr > td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
   .cpe-table > thead > tr > th.cpc-co, .cpe-table > tbody > tr > td.cpc-co { text-align: left; }
   .cpe-table > thead > tr > th:nth-child(1), .cpe-table > tbody > tr > td.cpc-n { width: 34px; }
-  .cpe-table > thead > tr > th:nth-child(n+3), .cpe-table > tbody > tr > td.cpc-v { width: 92px; }
+  .cpe-table > thead > tr > th:nth-child(n+3), .cpe-table > tbody > tr > td.cpc-v { width: 84px; }
   .cpe-table > tbody > tr > td .sub { color: var(--ink-faint); font-size: 11px; }
   .cpe-table > tbody > tr.cpe-row { cursor: pointer; }
   .cpe-table > tbody > tr.cpe-row:hover { background: rgba(47,75,60,0.05); }

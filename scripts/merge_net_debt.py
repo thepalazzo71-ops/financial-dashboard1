@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REGION = 'europe'
-CFG = {'europe': {'dir': 'data', 'pool': 'companies_1000_scored.json', 'globs': ['nd[123]_out_*.json', 'ndp2_out_*.json']},
+CFG = {'europe': {'dir': 'data', 'pool': 'companies_1000_scored.json', 'globs': ['nd[123]_out_*.json', 'ndp2_out_*.json', 'ndeu[0-9]_out_*.json']},
        'us': {'dir': 'data-us', 'pool': 'companies_pool_all.json', 'globs': ['ndus[123456]_out_*.json']},
        'asia': {'dir': 'data-asia', 'pool': 'companies_pool_all.json', 'globs': ['ndas[0-9]_out_*.json']}}
 OUT = ROOT / 'data' / 'net_debt.json'
@@ -88,7 +88,9 @@ def main(rdir):
     for f in files:
         for t, v in json.load(open(f)).items():
             rows.setdefault(t, []).append((Path(f).name, v))
-    entries, stats = {}, {}
+    # keep entries from earlier rounds; this run's research files add or replace only their own tickers
+    entries = {t: e for t, e in (json.load(open(OUT)).get('entries', {}) if OUT.exists() else {}).items() if t in byt}
+    stats = {}
     for t, lst in rows.items():
         c = byt.get(t)
         if not c:

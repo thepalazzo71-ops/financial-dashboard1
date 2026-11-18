@@ -3,12 +3,12 @@
     <h3>Cheapest by P/E</h3>
     <p class="hint">
       Companies ranked by <b>price / earnings</b> = live market cap &divide; last-twelve-months net income (companies with positive earnings only; edit a market cap in the table and it updates here).
-      <b>EV / net profit</b> is shown where net-debt data exists (EV = market cap + net debt). A very low P/E often means last-twelve-month profit contains a <b>one-off gain</b> (asset or investment sale), so check the income statement before trusting it.
+      <b>EV / net profit</b> is shown where net-debt data exists (EV = market cap + net debt). A very low P/E often means last-twelve-month profit contains a <b>one-off gain</b> (asset or investment sale): the <b>P/E avg NI</b> column uses the average of the last ~3 years of trailing earnings and <b>NI spike</b> flags companies whose latest profit is far above that average.
       Companies tagged <span class="est-tag">est. cap</span> have an <b>estimated</b> market cap. Follows the sector view (all sectors / non-financial) selected above; banks, insurers and other financial companies naturally show low P/Es, so switch to the non-financial view where there is one. This is a screen, not a score: it does not affect the v6 ranking. <b>Click a company</b> for its full detail.
     </p>
     <div class="cpe-controls">
       <label>Country <select id="cpeCountry"></select></label>
-      <label>Rank by <select id="cpeBasis"><option value="pe">P/E (lowest first)</option><option value="ev">EV / net profit (lowest first; needs net-debt data)</option></select></label>
+      <label>Rank by <select id="cpeBasis"><option value="pe">P/E (lowest first)</option><option value="peN">P/E on average earnings (lowest first)</option><option value="ev">EV / net profit (lowest first; needs net-debt data)</option></select></label>
       <label>Min market cap <select id="cpeMinMc"><option value="0">any</option><option value="15" selected>$15M</option><option value="25">$25M</option><option value="50">$50M</option><option value="100">$100M</option><option value="250">$250M</option></select></label>
       <label>Show <select id="cpeN"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option><option value="9999">all</option></select></label>
     </div>
