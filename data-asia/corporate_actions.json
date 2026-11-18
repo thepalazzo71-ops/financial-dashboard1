@@ -125,6 +125,16 @@
    "terms": "A$1.00 cash per share via scheme of arrangement; 108% premium to A$0.480 undisturbed (4 Feb 2026); ~A$247M equity value; 100% sought",
    "note": "Non-binding indicative proposal; OFX board supportive at 2026 AGM; exclusivity extended to 30 Oct then ended after Equals failed to reconfirm by 23 Oct; discussions continue non-exclusively. OFX also reported a cyber incident and H1 FY27 statutory loss A$6.7M.",
    "source_url": "https://smallcaps.com.au/article/ofx-group-ends-equals-exclusivity-deal-as-quarterly-trading-improves"
+  },
+  {
+   "ticker": "SGX:BTM",
+   "company": "Penguin International Limited",
+   "date": "2023-06 to 2023-09",
+   "counterparty": "Aleph Tav (offeror, Project Fairy 2)",
+   "role": "target",
+   "terms": "Voluntary unconditional cash offer at S$0.82 raised to S$0.83; closed 25 Sep 2023 with ~87.17% valid acceptances (86.83% at an earlier date)",
+   "note": "Outside the 24-month window; company remained listed afterwards (2026 AGM/EGM held)",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/A2C1HT05P485UWAB/773050_Fairy%202%20-%20Close%20of%20Offer%20Announcement.pdf"
   }
  ],
  "mergers_acquisitions": [
@@ -417,6 +427,226 @@
    "terms": "Acquired 80% of Relyon Trip (tourism DX app operator); share transfer executed 2025-06-06",
    "note": "Small bolt-on acquisition.",
    "source_url": "https://www.nihon-ma.co.jp/news/20250606_7849/"
+  },
+  {
+   "ticker": "TSE:3482",
+   "company": "Loadstar Capital K.K.",
+   "date": "2025-12-25",
+   "counterparty": "Hash DasH Holdings Co., Ltd.",
+   "role": "acquirer",
+   "terms": "Acquisition of all shares, making it a wholly owned subsidiary; price not captured",
+   "note": "Date is that of the Nihon M&A Center news item; exact announcement date not verified.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20251225_3482-14/"
+  },
+  {
+   "ticker": "TSE:3904",
+   "company": "KAYAC Inc.",
+   "date": "2026-07-22",
+   "counterparty": "Brain Service (ブレインサービス)",
+   "role": "acquirer",
+   "terms": "Acquisition price approx. 1.3bn yen; share transfer agreement 2026-07-14, acquisition 2026-07-22",
+   "note": "Tourism/inbound business group",
+   "source_url": "https://gamebiz.jp/news/428701"
+  },
+  {
+   "ticker": "TSE:3904",
+   "company": "KAYAC Inc.",
+   "date": "2024-02-29",
+   "counterparty": "Eiji Press (英治出版)",
+   "role": "acquirer",
+   "terms": "Share acquisition, subsidiary; board resolution 2024-02-15",
+   "note": "Within ~24 months",
+   "source_url": "https://gamebiz.jp/news/381871"
+  },
+  {
+   "ticker": "KOSE:A005250",
+   "company": "Green Cross Holdings Corporation",
+   "date": "2026-04",
+   "counterparty": "GC Greencross (GC Pharma) - 22.1% of GC Greencross Wellbeing",
+   "role": "acquirer",
+   "terms": "Purchase of the 22.1% stake in GC Greencross Wellbeing for about 50.5bn won",
+   "note": "Intra-group transfer, not a third-party deal",
+   "source_url": "https://www.ceoscoredaily.com/page/view/2026040211380727300"
+  },
+  {
+   "ticker": "TSE:6200",
+   "company": "Insource Co., Ltd.",
+   "date": "2025-09 (effective 2026-01-01)",
+   "counterparty": "Insource Marketing Design Co. (wholly owned subsidiary)",
+   "role": "acquirer",
+   "terms": "Absorption merger of wholly-owned sub, effective 2026-01-01 (planned)",
+   "note": "Intra-group reorganisation; also merger of subs Insource Digital Academy and Insource Consulting.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20250916_6200-2/"
+  },
+  {
+   "ticker": "Catalist:1J5",
+   "company": "Hyphens Pharma International Limited",
+   "date": "2024-late (proposed)",
+   "counterparty": "Novem group companies",
+   "role": "acquirer",
+   "terms": "About S$16.28 million, partly paid in new shares",
+   "note": "Acquisition of Novem group",
+   "source_url": "https://testing.dev.theedgesingapore.com/news/ma/hyphens-pharma-acquires-novem-group-companies-163-mil"
+  },
+  {
+   "ticker": "Catalist:1J5",
+   "company": "Hyphens Pharma International Limited",
+   "date": "2025-05-09",
+   "counterparty": "Ardence Pharma Sdn Bhd",
+   "role": "acquirer",
+   "terms": "Completion of 17% tranche 2 acquisition (increase in stake)",
+   "note": "Stake increase in Ardence Pharma",
+   "source_url": "https://www-web.itiger.com/news/2534296723"
+  },
+  {
+   "ticker": "TSE:3440",
+   "company": "NISSO GROUP Co.,Ltd.",
+   "date": "2025-12-15",
+   "counterparty": "HIMAWARI SEKKEI VIETNAM Co., Ltd.",
+   "role": "acquirer",
+   "terms": "100% equity acquisition; price undisclosed; closing planned May 2026",
+   "note": "Design firm in Vietnam to become overseas base",
+   "source_url": "https://maonline.jp/news/20251215i"
+  },
+  {
+   "ticker": "TSE:3440",
+   "company": "NISSO GROUP Co.,Ltd.",
+   "date": "2026-04-14",
+   "counterparty": "B SLASH HOLDINGS (holding co. of Belflats condominium developer)",
+   "role": "acquirer",
+   "terms": "Acquired as subsidiary; terms not seen",
+   "note": "M&A newswire headline",
+   "source_url": "https://maonline.jp/news/20260414f"
+  },
+  {
+   "ticker": "TSE:3440",
+   "company": "NISSO GROUP Co.,Ltd.",
+   "date": "2026-06-23",
+   "counterparty": "Kuken Kogyo Co.",
+   "role": "acquirer",
+   "terms": "Sale of subsidiary Dairitsu (HVAC damper maker) for 1.8 billion yen",
+   "note": "Company is the seller (divestiture)",
+   "source_url": "https://maonline.jp/news/20260623c"
+  },
+  {
+   "ticker": "SGX:BTM",
+   "company": "Penguin International Limited",
+   "date": "2026 (SGX filing id 887315, exact date not seen)",
+   "counterparty": "PT LA Engineering",
+   "role": "acquirer",
+   "terms": "Terms not seen",
+   "note": "Announcement titled Acquisition of PT LA Engineering",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/BVG8DARP43NW9A73/887315_Acquisition%20of%20PT%20LA%20Engineering.pdf"
+  },
+  {
+   "ticker": "TSE:7781",
+   "company": "HIRAYAMA HOLDINGS Co.,Ltd.",
+   "date": "2026-05-29",
+   "counterparty": "undisclosed in search snippet (share acquisition pending JFTC clearance)",
+   "role": "acquirer",
+   "terms": "Share acquisition date planned late Jun-early Jul 2026 after Fair Trade Commission approval",
+   "note": "Target not readable from snippet; verify in TDnet",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260529_7781-5/"
+  },
+  {
+   "ticker": "TSE:7781",
+   "company": "HIRAYAMA HOLDINGS Co.,Ltd.",
+   "date": "2026-07-01",
+   "counterparty": "Heiwa Iron Works (平和鉄工所)",
+   "role": "acquirer",
+   "terms": "Absorption merger by Hirayama, effective Jul 1, 2026 (planned)",
+   "note": "Intra-group subsidiary merger",
+   "source_url": "https://edinetdb.jp/company/E31602/ma"
+  },
+  {
+   "ticker": "TSE:7781",
+   "company": "HIRAYAMA HOLDINGS Co.,Ltd.",
+   "date": "2025-12-01",
+   "counterparty": "FUNtoFUN",
+   "role": "acquirer",
+   "terms": "Absorption merger of subsidiary, effective Dec 1, 2025 (planned)",
+   "note": "Intra-group subsidiary merger",
+   "source_url": "https://edinetdb.jp/company/E31602/ma"
+  },
+  {
+   "ticker": "TSE:9828",
+   "company": "Genki Global Dining Concepts Corporation",
+   "date": "2026-02-13",
+   "counterparty": "Godac Co., Ltd. and Kobe Marukan Co., Ltd. (from parent Shinmei Holdings)",
+   "role": "acquirer",
+   "terms": "Acquisition of all shares of both companies from parent Shinmei Holdings, making them subsidiaries",
+   "note": "Intra-group (parent) transaction; not a TOB",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260213_9828-20/"
+  },
+  {
+   "ticker": "TSE:2130",
+   "company": "Members Co., Ltd.",
+   "date": "2025-12-25",
+   "counterparty": "Aji-ke Inc. (アジケ, Meguro, Tokyo)",
+   "role": "acquirer",
+   "terms": "Share transfer agreement; subsidiary from Jan 1, 2026",
+   "note": "UI/UX design firm acquisition",
+   "source_url": "https://www.nihon-ma.co.jp/news/20251225_2130-17/"
+  },
+  {
+   "ticker": "KOSDAQ:A035600",
+   "company": "Kginicis Co.,Ltd",
+   "date": "2026-05",
+   "counterparty": "K Car Capital (financing unit of K Car; K Car 72.19% sold by Hahn & Co fund to KG Steel/Cactus PE group)",
+   "role": "acquirer",
+   "terms": "KG Inicis to take over K Car Capital financing unit; transfer date scheduled Jun 30, 2026 per Kyobo; KG Steel deal for K Car at 15,605 KRW/share, 550B KRW. Kyobo also notes KG Inicis guaranteed 48B KRW of KG Capital debt in May 2026.",
+   "note": "Aug 2026 report says K Car closing delayed by FTC review; completion of Inicis leg not confirmed in my searches.",
+   "source_url": "https://stock.pstatic.net/stock-research/company/62/20260520_company_689286000.pdf"
+  },
+  {
+   "ticker": "SEHK:746",
+   "company": "Lee & Man Chemical Company Limited",
+   "date": null,
+   "counterparty": "Lee & Man Paper Manufacturing (02314) - connected party",
+   "role": "acquirer",
+   "terms": "Transfer of land use rights in Changshu from Lee & Man Paper to L&M Chemical (terms not seen)",
+   "note": "Related-party asset purchase; announcement date not seen in snippets (HKEX PDFs listed include 2025-12-28 and 2026-03-24, not confirmed as this deal)",
+   "source_url": "https://www.itiger.com/news/1131900980"
+  },
+  {
+   "ticker": "KOSDAQ:A035810",
+   "company": "EASY HOLDINGS Co., Ltd.",
+   "date": "2026-07-28",
+   "counterparty": "Maniker (stake purchase)",
+   "role": "acquirer",
+   "terms": "additional 19.84% stake, about KRW 6.1bn",
+   "note": "Strengthens control of listed subsidiary Maniker. Jan 2026 broker note also mentions Biomatrix / Nutribeans purchases, but the acquirer (Easy Holdings vs Easy Bio) is unclear.",
+   "source_url": "https://view.asiae.co.kr/article/2026072809141971414"
+  },
+  {
+   "ticker": "KOSDAQ:A213420",
+   "company": "Duk San Neolux Co.,Ltd",
+   "date": "2024-12-06",
+   "counterparty": "Turbo Machinery Holdings (Hyundai Heavy Industries Turbo Machinery)",
+   "role": "acquirer",
+   "terms": "59.69-60% (2,473,488 shares) for KRW 71.0bn; KRW 55.0bn KDB loan",
+   "note": "Announced early Dec 2024 (article said 'the 6th of last month'); entry into pumps/compressors.",
+   "source_url": "https://www.smarttoday.co.kr/ko-kr/articles/66498"
+  },
+  {
+   "ticker": "KOSDAQ:A213420",
+   "company": "Duk San Neolux Co.,Ltd",
+   "date": "2026-09-08",
+   "counterparty": "S&S Valve (via SPC Canopus Holdings)",
+   "role": "acquirer",
+   "terms": "KRW 71.45bn capital injection into SPC; total M&A over KRW 140bn; 100% stake per broker note (unverified)",
+   "note": "Cryogenic LNG valves; company moved from net cash to net debt. Date is that of the IB Tomato article.",
+   "source_url": "https://www.ibtomato.com/View.aspx?no=19433&type=1"
+  },
+  {
+   "ticker": "ASX:ASH",
+   "company": "Ashley Services Group Limited",
+   "date": "2026-06-25",
+   "counterparty": "undisclosed major logistics company (labour hire contracts and workforce)",
+   "role": "acquirer",
+   "terms": "asset acquisition via subsidiary Action Workforce; ~A$162m revenue; effective 3 Aug 2026; price not seen",
+   "note": "Operating acquisition, no change of control.",
+   "source_url": "https://kalkinemedia.com/au/news/announcements/ashley-services-group-finalizes-acquisition-via-action-workforce-subsidiary"
   }
  ],
  "spinoffs": [
@@ -660,6 +890,66 @@
    "terms": "Proposed dual primary listing on the Main Board of the SEHK",
    "note": "Proposal announced on SGX; completion not confirmed.",
    "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/1AQ9VBAT5SBL6YNZ/3d85c2688bf64943706465b3e99a428feacad6959108487002636711baf6e66d"
+  },
+  {
+   "ticker": "TSE:6200",
+   "company": "Insource Co., Ltd.",
+   "date": "2026-07-21",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Board resolved share buyback and cancellation (amount not seen)",
+   "note": "Treasury share acquisition and cancellation",
+   "source_url": "https://www.insource.co.jp/resource/pdf/ir/26072102.pdf"
+  },
+  {
+   "ticker": "KOSE:A000320",
+   "company": "NOROO Holdings Co., Ltd.",
+   "date": "2025-09",
+   "counterparty": "KCC Corp; DIT",
+   "role": "target",
+   "terms": "KCC raised stake from 7.17% to 9.9%; DIT disclosed 9.98% holding",
+   "note": "Shareholder stake build-ups, no bid reported",
+   "source_url": "https://www.digitaltoday.co.kr/aigongsi/2657/noroo-holdings-dit-stake-increase"
+  },
+  {
+   "ticker": "KOSDAQ:A067990",
+   "company": "Deutsch Motors Inc.",
+   "date": "2026-07",
+   "counterparty": "n/a",
+   "role": "target",
+   "terms": "Cancellation of own shares worth KRW 4.7bn",
+   "note": "Treasury share cancellation",
+   "source_url": "https://www-proxy.stockopedia.com/share-prices/deutsch-motors-KOSDAQ:067990/news/brief-deutsch-motors-to-cancel-4-7-billion-won-worth-of-own-shares-019e6dbf-fd51-7df9-93fe-b3098f219f94/"
+  },
+  {
+   "ticker": "KOSDAQ:A143160",
+   "company": "Intelligent Digital Integrated Security Co., Ltd.",
+   "date": "2026-07-30 and 2026-09-14",
+   "counterparty": "IDIS Holdings (054800)",
+   "role": "target",
+   "terms": "5% large-holding reports: purchases of ~0.11mm and ~0.123mm shares",
+   "note": "Parent/affiliate on-market stake increases; not a tender offer",
+   "source_url": "https://stockhub.kr/stock/143160"
+  },
+  {
+   "ticker": "KOSE:A005610",
+   "company": "SPC Samlip Co., Ltd.",
+   "date": "2026-03-13",
+   "counterparty": "Sangmidang Holdings (new holding company of SPC group)",
+   "role": "target",
+   "terms": "Group moved to holding structure; company name change from SPC Samlip to Samlip proposed at March 2026 AGM; in-kind contribution of Samlip shares to holding co discussed as succession route (not confirmed)",
+   "note": "Reported in Korean press; no tender offer or delisting",
+   "source_url": "https://www.mt.co.kr/article/2026022416374281309"
+  },
+  {
+   "ticker": "ASX:WAT",
+   "company": "Waterco Limited",
+   "date": "2026-07-30",
+   "counterparty": "on-market buy-back",
+   "role": "acquirer",
+   "terms": "Buy-back notification listed 30 Jul 2026 at ~$5.33; size not seen",
+   "note": "Capital management only, not a control event. Interim dividend 7.0c also declared Feb 2026.",
+   "source_url": "https://www.investsmart.com.au/security/asx/wat/waterco-limited/announcements"
   }
  ]
 }
