@@ -14,3 +14,9 @@
   .cpe-table > tbody > tr.cpe-open > td.cpe-detail-cell { text-align: left; padding: 0 0 14px; white-space: normal; font-size: 13px; }
   .cpe-table .est-tag { display: inline-block; font-size: 9.5px; font-weight: 700; color: #8a5a00; background: #fdf1d8; border: 1px dashed #c58a1a; border-radius: 8px; padding: 0 5px; margin-left: 4px; cursor: help; }
   .cpe-table .flag { font-size: 10.5px; color: var(--brick); }
+  .cpe-seglabel { font-weight: 700; }
+  .cpe-seg { display: inline-flex; border: 1px solid var(--green-text); border-radius: 6px; overflow: hidden; }
+  .cpe-seg button { background: var(--paper); color: var(--green-text); border: 0; border-right: 1px solid var(--green-text); padding: 6px 12px; font: inherit; font-weight: 600; cursor: pointer; }
+  .cpe-seg button:last-child { border-right: 0; }
+  .cpe-seg button.on { background: var(--green-text); color: #fff; }
+  .cpe-seg button:hover:not(.on) { background: var(--green-soft); }

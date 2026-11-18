@@ -7,8 +7,11 @@
       Companies tagged <span class="est-tag">est. cap</span> have an <b>estimated</b> market cap. Follows the sector view (all sectors / non-financial) selected above; banks, insurers and other financial companies naturally show low P/Es, so switch to the non-financial view where there is one. This is a screen, not a score: it does not affect the v6 ranking. <b>Click a company</b> for its full detail.
     </p>
     <div class="cpe-controls">
-      <label>Country <select id="cpeCountry"></select></label>
-      <label>Rank by <select id="cpeBasis"><option value="pe">P/E (lowest first)</option><option value="peN">P/E on average earnings (lowest first)</option><option value="ev">EV / net profit (lowest first; needs net-debt data)</option></select></label>
+      <label><b>Country</b> <select id="cpeCountry"></select></label>
+      <span class="cpe-seglabel">Cheapest by</span>
+      <span class="cpe-seg" id="cpeBasisSeg" role="group" aria-label="Rank by">
+        <button type="button" data-basis="pe" class="on" title="Market cap / last-twelve-months net income">P/E</button><button type="button" data-basis="peN" title="Market cap / average of the last ~3 years of net income (filters out one-off profits)">P/E on average earnings</button><button type="button" data-basis="ev" title="(Market cap + net debt) / last-twelve-months net income; only companies with net-debt data">EV / net profit</button>
+      </span>
       <label>Min market cap <select id="cpeMinMc"><option value="0">any</option><option value="15" selected>$15M</option><option value="25">$25M</option><option value="50">$50M</option><option value="100">$100M</option><option value="250">$250M</option></select></label>
       <label>Show <select id="cpeN"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option><option value="9999">all</option></select></label>
     </div>

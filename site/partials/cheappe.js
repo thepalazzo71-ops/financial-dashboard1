@@ -1,5 +1,6 @@
 // ---- "Cheapest by P/E" window (shared partial): P/E and EV / net profit ranking with click-through detail ----
 let expandedCpeTicker = null;
+let cpeBasis = 'pe';
 const CPE_DEFAULT_COUNTRY = '__CPE_DEFAULT_COUNTRY__';
 function cpeLastNi(c) { const h = c.niHist || []; for (let i = h.length - 1; i >= 0; i--) if (h[i] !== null && h[i] !== undefined) return h[i]; return null; }
 // niHist = 10 trailing-twelve-month net incomes over the last ~3 years (quarterly steps). Average = 'normalised' earnings;
@@ -15,7 +16,7 @@ function renderCheapPeContent() {
   const all = ensureLiveScored();
   const rank = computeRankByTicker(all, false);
   const country = document.getElementById('cpeCountry').value;
-  const basis = document.getElementById('cpeBasis').value;
+  const basis = cpeBasis;
   const minMc = parseFloat(document.getElementById('cpeMinMc').value) || 0;
   const limit = parseInt(document.getElementById('cpeN').value, 10);
   const tenders = new Set(((CORPORATE_ACTIONS && CORPORATE_ACTIONS.tender_offers) || []).map(x => x.ticker));
@@ -35,6 +36,8 @@ function renderCheapPeContent() {
     const nm = cpeNorm(c, ni);
     rows.push({ r, ni, pe: r.mc / ni, peN: nm.avg && nm.avg > 0 ? r.mc / nm.avg : null, spike: nm.spike, nd, ev, evNi });
   });
+  const evBtn = document.querySelector('#cpeBasisSeg button[data-basis="ev"]');
+  if (evBtn) evBtn.textContent = 'EV / net profit (' + all.filter(r => (!country || r.c.co === country) && r.c.nd && r.c.nd.tier !== 'F' && r.c.nd.usd !== undefined && r.c.nd.usd !== null && (cpeLastNi(r.c) || 0) > 0).length + ' with net debt)';
   const key = x => basis === 'peN' ? (x.peN === null ? 1e9 : x.peN) : basis === 'ev' ? (x.evNi === null ? (x.ev !== null && x.ev <= 0 ? -1 : 1e9) : x.evNi) : x.pe;
   rows.sort((a, b) => key(a) - key(b));
   const shown = rows.slice(0, limit);
@@ -76,10 +79,17 @@ function initCheapPe() {
   COMPANIES.forEach(c => { counts[c.co] = (counts[c.co] || 0) + 1; });
   sel.innerHTML = '<option value="">All countries</option>' + Object.keys(counts).sort().map(k => `<option value="${escHtml(k)}">${escHtml(k)} (${counts[k]})</option>`).join('');
   if (CPE_DEFAULT_COUNTRY && counts[CPE_DEFAULT_COUNTRY]) sel.value = CPE_DEFAULT_COUNTRY;
-  btn.addEventListener('click', () => { expandedCpeTicker = null; renderCheapPeContent(); bd.classList.add('open'); });
+  btn.addEventListener('click', () => { expandedCpeTicker = null; cpeBasis = 'pe'; document.querySelectorAll('#cpeBasisSeg button').forEach(x => x.classList.toggle('on', x.dataset.basis === 'pe')); renderCheapPeContent(); bd.classList.add('open'); });
   document.getElementById('cheapPeClose').addEventListener('click', () => bd.classList.remove('open'));
   bd.addEventListener('click', e => { if (e.target === bd) bd.classList.remove('open'); });
-  ['cpeCountry', 'cpeBasis', 'cpeMinMc', 'cpeN'].forEach(id => document.getElementById(id).addEventListener('change', () => { expandedCpeTicker = null; renderCheapPeContent(); }));
+  document.getElementById('cpeBasisSeg').addEventListener('click', e => {
+    const b = e.target.closest('button[data-basis]');
+    if (!b) return;
+    cpeBasis = b.dataset.basis;
+    document.querySelectorAll('#cpeBasisSeg button').forEach(x => x.classList.toggle('on', x === b));
+    expandedCpeTicker = null; renderCheapPeContent();
+  });
+  ['cpeCountry', 'cpeMinMc', 'cpeN'].forEach(id => document.getElementById(id).addEventListener('change', () => { expandedCpeTicker = null; renderCheapPeContent(); }));
   document.getElementById('cheapPeContent').addEventListener('click', e => {
     const rowEl = e.target.closest('tr.cpe-row');
     if (!rowEl) return;
