@@ -85,6 +85,46 @@
    "terms": "Management buy-out: second tender offer succeeded at JPY 1,900/share. TSE scheduled the delisting for 2026-11-11 (liquidation/seiri period 2026-10-20 to 2026-11-10).",
    "note": "TAKE-PRIVATE, DELISTING SCHEDULED 2026-11-11 - not yet delisted as of 2026-11-03. Squeeze-out vote result not confirmed. Move to the Delisted list once it has delisted.",
    "source_url": ""
+  },
+  {
+   "ticker": "SEHK:2360",
+   "company": "Best Mart 360 Holdings Limited",
+   "date": "2023-03-27",
+   "counterparty": "Sea Wealth Ventures / Hui Ngai Fan",
+   "role": "target",
+   "terms": "Purchase of 25% (250M shares) at HK$1.76 cash (~HK$440M), followed by unconditional mandatory cash offer, closed Sept 2023",
+   "note": "Change of control, older than 24 months (Mar-Sep 2023); trading halt 16 Aug 2024 pending inside information, follow-up not seen.",
+   "source_url": "https://in.marketscreener.com/quote/stock/BEST-MART-360-HOLDINGS-LI-64310890/news/Hui-agreed-made-an-offer-to-acquire-25-stake-in-Best-Mart-360-Holdings-Limited-SEHK-2360-for-HK-43367017"
+  },
+  {
+   "ticker": "ASX:AX1",
+   "company": "Accent Group Limited",
+   "date": "2026-06-15",
+   "counterparty": "Frasers Group plc",
+   "role": "target",
+   "terms": "All-cash unconditional on-market takeover bid A$0.65/share (zero premium to last close), values remaining shares ~A$391M; Frasers held ~19.9% (119.6M shares); extended 23 Jul to 30 Sep 2026; declared best and final 28 Oct 2026",
+   "note": "Board unanimously recommends rejection; Takeovers Panel application also noted; FY26 goodwill impairment A$48.6M.",
+   "source_url": "https://www.businessnewsaustralia.com/articles/accent-group-shares-shoot-past-391m-zero-premium-takeover-bid-from-uk-retail-giant-frasers-group.html"
+  },
+  {
+   "ticker": "TSE:9160",
+   "company": "Novarese, Inc.",
+   "date": "2024-11-14",
+   "counterparty": "TKP Inc. (3479)",
+   "role": "target",
+   "terms": "Tender offer by TKP with capital/business alliance; price and % not seen",
+   "note": "Board supported; listing expected to be maintained; TKP later cited as ~59.6% holder (finboard). Announced right at the 24-month boundary.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20241114_3479-15/"
+  },
+  {
+   "ticker": "ASX:OFX",
+   "company": "OFX Group Limited",
+   "date": "2026 (proposal at 108% premium to 4 Feb 2026 undisturbed price; exclusivity ended ~23 Oct 2026)",
+   "counterparty": "Equals Group / Alakazam Holdings Bidco",
+   "role": "target",
+   "terms": "A$1.00 cash per share via scheme of arrangement; 108% premium to A$0.480 undisturbed (4 Feb 2026); ~A$247M equity value; 100% sought",
+   "note": "Non-binding indicative proposal; OFX board supportive at 2026 AGM; exclusivity extended to 30 Oct then ended after Equals failed to reconfirm by 23 Oct; discussions continue non-exclusively. OFX also reported a cyber incident and H1 FY27 statutory loss A$6.7M.",
+   "source_url": "https://smallcaps.com.au/article/ofx-group-ends-equals-exclusivity-deal-as-quarterly-trading-improves"
   }
  ],
  "mergers_acquisitions": [
@@ -267,6 +307,116 @@
    "terms": "Share exchange making Sanki Service a wholly owned subsidiary of Shinmaint Holdings: 1.92 Shinmaint shares per Sanki share; effective 2026-12-01; TSE Standard delisting planned for 2026-11-27. Combined group to be renamed Sanki Shinmaint HD.",
    "note": "PENDING, not yet delisted as of 2026-11-03. Status after July not verified. Move to the Delisted list once the delisting has happened.",
    "source_url": ""
+  },
+  {
+   "ticker": "SGX:569",
+   "company": "Vicplas International Ltd",
+   "date": "Sept 8 (year not stated in source)",
+   "counterparty": "Chelle Medical Ltd",
+   "role": "acquirer",
+   "terms": "US$5 million share purchase agreement by subsidiary Forefront Medical Technology",
+   "note": "Small bolt-on acquisition; year not confirmed, date inferred only from brief header 'Sept 8'.",
+   "source_url": "https://www.stockopedia.com/share-prices/vicplas-international-SGX:569/news/brief-vicplas-international-announces-acquisition-of-chelle-medical-ltd-019e6b14-c353-7583-8459-caf9a56e0223/"
+  },
+  {
+   "ticker": "KOSDAQ:A086450",
+   "company": "DongKook Pharmaceutical Co., Ltd.",
+   "date": "2026-03",
+   "counterparty": "Englewood Lab (US, via subsidiary Cosmecca Korea)",
+   "role": "acquirer",
+   "terms": "Subsidiary Cosmecca Korea expanded its control/stake in Englewood Lab; terms not seen",
+   "note": "Subsidiary-level deal from Asiae headline; details not read.",
+   "source_url": "https://www.asiae.co.kr/en/article/2026030310002024817"
+  },
+  {
+   "ticker": "KOSDAQ:A200130",
+   "company": "KOLMAR BNH Co.,Ltd.",
+   "date": "2026-10-28",
+   "counterparty": "HNG (wholly owned subsidiary)",
+   "role": "acquirer",
+   "terms": "Absorption merger of 100% subsidiary HNG; completion expected 2026-12-29",
+   "note": "Small-scale merger; board resolution 28 Oct 2026. Also controlling-family dispute (2025) won by Yoon Sang-hyun in Sept 2025 at parent Kolmar Holdings.",
+   "source_url": "https://www.metroseoul.co.kr/article/20261105500078"
+  },
+  {
+   "ticker": "KOSDAQ:A092460",
+   "company": "Hanla IMS Co., Ltd.",
+   "date": "2025-12-26",
+   "counterparty": "Daesun Shipbuilding (Yeongdo shipyard)",
+   "role": "acquirer",
+   "terms": "Asset purchase of Yeongdo shipyard for KRW 107.15bn (preferred bidder 2025-10-23, MOU 2025-10-31 with 10% deposit)",
+   "note": "Asset acquisition via stalking-horse sale; shipyard used for ship MRO from early 2026.",
+   "source_url": "https://core.asiae.co.kr/article/2025102309545442541"
+  },
+  {
+   "ticker": "SEHK:1052",
+   "company": "Yuexiu Transport Infrastructure Limited",
+   "date": "2025-12-03",
+   "counterparty": "Shandong Qinbin Expressway Construction Co.",
+   "role": "acquirer",
+   "terms": "85% equity for RMB1,153.5M cash (3.86% discount to appraised value); SGM approval 31 Dec 2025; completed 14 Feb 2026",
+   "note": "Fitch: ~12-15% of consolidated revenue/EBITDA.",
+   "source_url": "https://filingreader.com/news-wire/hongkong/2025-12-15/yuexiu-transport-acquires-85-stake-in-shandong-expressway-for-rmb115-bn"
+  },
+  {
+   "ticker": "SEHK:1052",
+   "company": "Yuexiu Transport Infrastructure Limited",
+   "date": "2026",
+   "counterparty": "unnamed subsidiary buyer",
+   "role": "acquirer",
+   "terms": "Disposal of 60% stake in a subsidiary for RMB190.8M",
+   "note": "Subsidiary disposal; date not confirmed from snippet. Also Infrastructure REIT IPO on Shenzhen exchange.",
+   "source_url": "https://www.nasdaq.com/articles/yuexiu-transport-sells-60-stake-subsidiary"
+  },
+  {
+   "ticker": "TSE:7187",
+   "company": "J-Lease Co.,Ltd.",
+   "date": "2025-07-01",
+   "counterparty": "AFB Inc. (エイエフビイ, Oita advertising agency)",
+   "role": "acquirer",
+   "terms": "Acquisition of 100% of shares, wholly-owned subsidiary",
+   "note": "Small bolt-on acquisition.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20250701_7187-3/"
+  },
+  {
+   "ticker": "TSE:3788",
+   "company": "GMO GlobalSign Holdings K.K.",
+   "date": "2026-06-15",
+   "counterparty": "Strategit Inc. (ストラテジット), Minato-ku Tokyo",
+   "role": "acquirer",
+   "terms": "Decision to acquire shares, making it a subsidiary; terms not seen",
+   "note": "Date approximate (nihon-ma article dated 2026-06-15).",
+   "source_url": "https://www.nihon-ma.co.jp/news/20260615_410A-4/"
+  },
+  {
+   "ticker": "KOSDAQ:A243070",
+   "company": "Huons Co., Ltd.",
+   "date": "2026-08-26",
+   "counterparty": "Huons Lab (휴온스랩)",
+   "role": "acquirer",
+   "terms": "Absorption merger, ratio 1 : 0.426; appraisal-rights exposure reported up to ~220bn won",
+   "note": "Merger agreement cancelled and EGM called off on 2026-08-26 after shareholder opposition and share price drop; Huons fell 8%+.",
+   "source_url": "https://sateconomy.co.kr/news/view/1065602893310165"
+  },
+  {
+   "ticker": "KOSDAQ:A084110",
+   "company": "Huons Global Co., Ltd.",
+   "date": "2026-05-18 (announced); terminated 2026-08-26",
+   "counterparty": "Huons Co., Ltd. (243070) / Huons Lab",
+   "role": "acquirer",
+   "terms": "Absorption merger of subsidiaries Huons Co. and Huons Lab (Huons Global is parent). Minority shareholders opposed; in-kind dividend shareholder-return plan announced June 2026 also scrapped.",
+   "note": "Huons Global EGM to approve merger postponed (June 2026) then cancelled; merger agreement terminated by Huons board 2026-08-26.",
+   "source_url": "https://view.asiae.co.kr/en/article/2026082617470036387"
+  },
+  {
+   "ticker": "TSE:7849",
+   "company": "Starts Publishing Corporation",
+   "date": "2025-06-06",
+   "counterparty": "Relyon Trip",
+   "role": "acquirer",
+   "terms": "Acquired 80% of Relyon Trip (tourism DX app operator); share transfer executed 2025-06-06",
+   "note": "Small bolt-on acquisition.",
+   "source_url": "https://www.nihon-ma.co.jp/news/20250606_7849/"
   }
  ],
  "spinoffs": [
@@ -278,6 +428,16 @@
    "terms": "Personal-basis (인적) split of investment business; new co to merge with Hyundai GF Holdings; HHS retains home-shopping business",
    "note": "Per Hyundai GF Holdings disclosure reported 2026-08-05; search summary only, verify in DART.",
    "source_url": "https://dealsite.co.kr/articles/166637"
+  },
+  {
+   "ticker": "TSE:3134",
+   "company": "Hamee Corp.",
+   "date": "2025-11-01",
+   "counterparty": "NE Inc. (Next Engine platform business)",
+   "role": "target",
+   "terms": "Share-distribution-type spin-off of NE Inc.; NE deconsolidated effective 2025-11-01",
+   "note": "Hamee now focuses on Commerce business; FY04/26 sales 22.07bn JPY, operating profit -58.2%.",
+   "source_url": "https://www.bridge-salon.jp/report_bridge/pdf/20260713_3134.pdf"
   }
  ],
  "other": [
@@ -420,6 +580,86 @@
    "terms": "KRW 163bn (52.4% of consolidated assets); KRW 8.15bn deposit paid 29 Oct, remaining KRW 130.4bn at closing in June 2032.",
    "note": "New Gwacheon office/HQ-expansion purchase, large relative to size; decision date from press ('15th'), report dated 2026-10-18.",
    "source_url": "https://dailypharm.com/user/news/343518"
+  },
+  {
+   "ticker": "KOSDAQ:A189980",
+   "company": "HYUNGKUK F&B Co., Ltd.",
+   "date": "2026",
+   "counterparty": "Hengliang Technology (China)",
+   "role": "target",
+   "terms": "3-year exclusive supply contract (AI beverage machine)",
+   "note": "Commercial contract only, not a corporate action in the M&A sense; included for completeness.",
+   "source_url": "https://www.stockhub.kr/stock/189980"
+  },
+  {
+   "ticker": "TSE:3983",
+   "company": "oRo Co., Ltd.",
+   "date": "2026-03-18 to 2026-09-30",
+   "counterparty": "n/a (treasury share buyback)",
+   "role": "target",
+   "terms": "Share buyback programme running 18 Mar - 30 Sep 2026; completed a treasury share cancellation earlier",
+   "note": "Shareholder-return measure, not a bid.",
+   "source_url": "https://www2.jpx.co.jp/disc/39830/140120260807515076.pdf"
+  },
+  {
+   "ticker": "KOSE:A003090",
+   "company": "Daewoong Co., Ltd.",
+   "date": "2026-11",
+   "counterparty": "iN Therapeutics (third parties)",
+   "role": "acquirer",
+   "terms": "Subsidiary Daewoong Pharmaceutical sounding out sale of control of 41.2%-owned iN Therapeutics",
+   "note": "Subsidiary-level; not a corporate action of the listed parent itself. Also Daewoong Pharmaceutical (subsidiary) booked ~KRW 220bn goodwill impairment from past merger (FY2025) and acquired Turn Bio core assets (May 2026).",
+   "source_url": "https://www.asiae.co.kr/en/article/2026052109234222475"
+  },
+  {
+   "ticker": "TSE:6196",
+   "company": "Strike Company,Limited",
+   "date": "2026-04-01",
+   "counterparty": "n/a (internal reorganisation)",
+   "role": "target",
+   "terms": "Transition to holding company structure; renamed Strike Group (ストライクグループ)",
+   "note": "Corporate reorganisation only, not a change of control.",
+   "source_url": "https://www.strike.co.jp/group/downloads/pdf/strike_no58.pdf"
+  },
+  {
+   "ticker": "TSE:4848",
+   "company": "Fullcast Holdings Co., Ltd.",
+   "date": "2026-02-13",
+   "counterparty": "CEO Takeshi Hirano via asset company Hirano Associates",
+   "role": "target",
+   "terms": "Market purchases of company shares (not a tender offer); size not seen",
+   "note": "Insider/CEO stake build-up; not a bid.",
+   "source_url": "https://www.fullcastholdings.co.jp/assets/upload/2026/02/timelydisclosure_20260213-4.pdf"
+  },
+  {
+   "ticker": "KOSDAQ:A008470",
+   "company": "Booster Co., Ltd.",
+   "date": "2026 (month not seen; record date ~Oct 2026)",
+   "counterparty": null,
+   "role": "target",
+   "terms": "Bonus (free) share issue, 1.0 new share per existing common share",
+   "note": "Bonus issue (무상증자) announced by Booster/Busta; not a capital raise. No rights issue, change of control or tender offer found.",
+   "source_url": "https://bullstory.io/news/news-867c18980931501f-mrakyw2b-1"
+  },
+  {
+   "ticker": "Catalist:5TP",
+   "company": "CNMC Goldmine Holdings Limited",
+   "date": "2026-08-19 (EGM approval); effective ~2026-08-28",
+   "counterparty": "SGX-ST",
+   "role": "target",
+   "terms": "Board transfer from Catalist to SGX Main Board",
+   "note": "Listing-venue upgrade, not a restructuring.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/AMGJU67TJ1ATLDK2/2a4a4bff0c47ddf2f73a45f1cf18921a1a28dfcdd451736f9d681a7e97aad8c0"
+  },
+  {
+   "ticker": "Catalist:5TP",
+   "company": "CNMC Goldmine Holdings Limited",
+   "date": "2026 (proposal; exact date not seen)",
+   "counterparty": "SEHK",
+   "role": "target",
+   "terms": "Proposed dual primary listing on the Main Board of the SEHK",
+   "note": "Proposal announced on SGX; completion not confirmed.",
+   "source_url": "https://links.sgx.com/1.0.0/corporate-announcements/1AQ9VBAT5SBL6YNZ/3d85c2688bf64943706465b3e99a428feacad6959108487002636711baf6e66d"
   }
  ]
 }
