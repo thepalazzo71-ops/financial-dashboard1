@@ -1073,7 +1073,7 @@ function valuationBox(row) {
   const { c, mc, pb } = row;
   const v = valuationOf(c, mc), nd = c.nd;
   if (v.fin) return `<div class="val-box"><h4>Valuation</h4><p class="hint">Enterprise value is not meaningful for banks, insurers and other financial companies, so no net debt or EV / earnings is shown.</p></div>`;
-  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data yet &mdash; only the top 150 were researched so far, so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
+  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data yet &mdash; it was researched for Europe&rsquo;s top 150 and for the cheapest companies by P/E in Europe and Asia, and was either not found or not yet looked up for this company, so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
   const item = (l, val, tip) => `<div class="fin-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="fin-label">${l}</span><span class="fin-val">${val}</span></div>`;
   const lease = nd.lease !== null && nd.lease !== undefined ? nd.lease * (nd.fx || 0) : null;
   const flags = (nd.flags || []).filter(f => f !== 'company-reported net debt only');
@@ -1082,7 +1082,7 @@ function valuationBox(row) {
     <div class="fin-grid val-grid">
       ${item('Market cap', '$' + fmtNum(mc, 1) + 'M', 'Live market cap (reflects any edit you made)')}
       ${item('Net debt', (v.ndUsd < 0 ? '−' : '') + '$' + fmtNum(Math.abs(v.ndUsd), 1) + 'M' + (v.ndUsd < 0 ? ' (net cash)' : ''))}
-      ${item('Enterprise value', '$' + fmtNum(v.ev, 1) + 'M', 'Market cap + net debt')}
+      ${item('Enterprise value', (v.ev < 0 ? '\u2212' : '') + '$' + fmtNum(Math.abs(v.ev), 1) + 'M' + (v.ev < 0 ? ' (net cash exceeds market cap)' : ''), 'Market cap + net debt')}
       ${item('LTM net income', v.ni !== null ? '$' + fmtNum(v.ni, 1) + 'M' : '—', nd.niNote || 'Last-twelve-months net income from the data extract')}
       ${item('EV / earnings', v.evE !== null ? '<b>' + fmtNum(v.evE, 1) + 'x</b>' : (v.ni !== null && v.ni <= 0 ? 'n/m (loss-making)' : (v.ev <= 0 ? 'n/m (EV ≤ 0)' : '—')), 'Enterprise value ÷ last-twelve-months net income')}
       ${item('P/E', v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m', 'Market cap ÷ last-twelve-months net income, for comparison')}
@@ -1583,7 +1583,7 @@ function renderFullFinancials(row) {
   const items = [
     ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
     ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
-    ['Net Debt', c.nd && c.nd.tier==='F' ? 'n/a (financial)' : (c.nd ? `$${fmtNum(c.nd.usd,1)}M (tier ${c.nd.tier})` : (c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'))],
+    ['Net Debt', c.nd && c.nd.tier==='F' ? 'n/a (financial)' : (c.nd ? `${c.nd.usd<0?'\u2212':''}$${fmtNum(Math.abs(c.nd.usd),1)}M${c.nd.usd<0?' (net cash)':''} (tier ${c.nd.tier})` : (c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'))],
     ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
     ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
     ['ROE (recent)', fmtPct(roe)],

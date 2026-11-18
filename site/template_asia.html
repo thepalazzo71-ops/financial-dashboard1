@@ -1416,6 +1416,7 @@ function renderDetailPanel(row, rank) {
       ${distressBox(c)}
       ${c.newsNote ? `<div class="news-note"><b class="lbl">What likely moved the rank</b>${c.newsNote}</div>` : ''}
       <div class="lens-note">${bestLens ? `Best lens: <b>${bestLens}</b> at ` : 'At '}$${fmtNum(mc,0)}M market cap, ${gmInfo.gm!==null?fmtPct(gmInfo.gm,0):'fallback'} GM. Rank ${rank} of ${COMPANIES.length}.</div>
+      ${valuationBox(row)}
       ${c.mcDerived ? `<div class="est-banner" style="margin:0 0 12px"><b>Estimated market cap.</b> It is not a quoted figure: it is the March 2026 Capital IQ market cap scaled by the share-price and FX change since 17 March 2026 (x${c.mcRatio}, price as of ${c.mcUpdatedAt ? c.mcUpdatedAt.slice(0,10) : '?'}), assuming the share count is unchanged since then. Type a real market cap into the field to override it.</div>` : ''}
       ${priceBox(c)}
       <div class="breakdown">
@@ -1465,7 +1466,7 @@ function renderFullFinancials(row) {
   const items = [
     ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
     ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
-    ['Net Debt', c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'],
+    ['Net Debt', c.nd && c.nd.tier==='F' ? 'n/a (financial)' : (c.nd && c.nd.usd !== undefined ? `${c.nd.usd<0?'\u2212':''}$${fmtNum(Math.abs(c.nd.usd),1)}M${c.nd.usd<0?' (net cash)':''} (tier ${c.nd.tier})` : (c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'))],
     ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
     ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
     ['ROE (recent)', fmtPct(roe)],

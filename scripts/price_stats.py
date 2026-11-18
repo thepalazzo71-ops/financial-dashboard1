@@ -59,8 +59,8 @@ def attach(payload):
 
 
 def inject(html, default_min_mc=10, default_country=''):
-    html = html.replace('/*__SWINGERS_CSS__*/', (PARTIALS / 'swingers.css').read_text() + (PARTIALS / 'cheappe.css').read_text())
+    html = html.replace('/*__SWINGERS_CSS__*/', (PARTIALS / 'swingers.css').read_text() + (PARTIALS / 'cheappe.css').read_text() + (PARTIALS / 'valuation.css').read_text())
     html = html.replace('<!--__SWINGERS_HTML__-->', (PARTIALS / 'swingers.html').read_text() + (PARTIALS / 'cheappe.html').read_text())
     js = (PARTIALS / 'swingers.js').read_text().replace('__SW_DEFAULT_MINMC__', str(default_min_mc))
-    js += '\n' + (PARTIALS / 'cheappe.js').read_text().replace('__CPE_DEFAULT_COUNTRY__', default_country)
+    js += '\n' + (PARTIALS / 'valuation.js').read_text() + '\n' + (PARTIALS / 'cheappe.js').read_text().replace('__CPE_DEFAULT_COUNTRY__', default_country)
     return html.replace('/*__SWINGERS_JS__*/', js)
