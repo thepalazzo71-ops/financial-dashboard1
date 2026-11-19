@@ -2806,3 +2806,4 @@ Branch `claude/gracious-goldberg-v4yuql`; never open PRs unless asked; commit tr
   equity EUR -21m; net debt EUR 168m confirmed; accelerated safeguard since 17 Aug 2026).
   `scripts/research/fix_bigben_fy2026.py` corrects equity, last niHist slot/avgNI and the market cap (18.5m shares x
   last close) - re-run it after any micro re-ingest. Rank 6 -> 34.
+- `docs/valuation-ev-movers.pdf` (scripts/research/movers_data.py + movers_report.py): biggest risers/fallers per region after the EV switch, with drivers and a watch-list of fragile inputs (UWM 3-yr-average spike, Nanyang, CTT bank deposits, micro tiny-earnings climbers). Re-run `python3 scripts/research/movers_report.py` after any rescoring.
