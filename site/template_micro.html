@@ -1469,12 +1469,23 @@ function renderDetailPanel(row, rank) {
     </div>
   `;
 }
+function evDisplay(c, mc) {
+  // Enterprise value = market cap + net debt. Scoring uses a variant with net cash capped at 50% of market cap.
+  const nd = c.nd;
+  if (nd && nd.tier==='F') return 'n/a (financial)';
+  if (mc===null || mc===undefined) return '\u2014';
+  if (!nd || nd.usd===undefined || nd.usd===null || (nd.tier!=='A' && nd.tier!=='B')) return 'no net-debt data \u2014 score uses market cap';
+  const ev = mc + nd.usd, sev = scoringEV(c, mc);
+  const capped = Math.abs(sev - ev) > 0.05;
+  return `${ev<0?'\u2212':''}$${fmtNum(Math.abs(ev),1)}M` + (capped ? ` (score uses $${fmtNum(sev,1)}M: net cash capped at 50% of market cap)` : '');
+}
 function renderFullFinancials(row) {
   const { c, mc, gmInfo, roe, pb } = row;
   const items = [
     ['Market Cap', mc!==null ? `$${fmtNum(mc,1)}M` : '—'],
     ['Equity', c.eq!==null ? `$${fmtNum(c.eq,1)}M` : '—'],
     ['Net Debt', c.nd && c.nd.tier==='F' ? 'n/a (financial)' : (c.nd && c.nd.usd !== undefined ? `${c.nd.usd<0?'\u2212':''}$${fmtNum(Math.abs(c.nd.usd),1)}M${c.nd.usd<0?' (net cash)':''} (tier ${c.nd.tier})` : (c.netDebt!==null && c.netDebt!==undefined ? `$${fmtNum(c.netDebt,1)}M` : 'no data yet'))],
+    ['Enterprise Value', evDisplay(c, mc)],
     ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
     ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
     ['ROE (recent)', fmtPct(roe)],
