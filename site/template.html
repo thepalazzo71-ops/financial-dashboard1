@@ -350,7 +350,7 @@
           <th style="width:52px" class="num-col" title="Rank change since the last frozen snapshot">Δ</th>
           <th>Company</th>
           <th class="num-col">Mkt Cap ($M)</th>
-          <th class="num-col" title="Net debt = interest-bearing debt minus cash (top-150 companies researched so far; negative = net cash). Hover the cells for the basis.">Net Debt ($M)</th>
+          <th class="num-col" title="Net debt = interest-bearing debt (excl. leases) minus cash and short-term investments, from the latest balance sheet (negative = net cash). Hover the cells for the basis.">Net Debt ($M)</th>
           <th class="num-col" title="Enterprise value = market cap + net debt">EV ($M)</th>
           <th class="num-col" title="Enterprise value divided by last-twelve-months net income. Only for companies with net-debt data and positive earnings.">EV / Earn.</th>
           <th class="num-col" title="Last close vs the 5-year closing high (always 0 or negative)">vs 5y High</th>
@@ -1063,7 +1063,7 @@ function valuationCells(c, mc, isHistorical) {
   if (isHistorical) return dash + dash + dash;
   const v = valuationOf(c, mc), nd = c.nd;
   if (v.fin) { const na = '<td class="num-col num" title="Enterprise value is not meaningful for banks, insurers and other financial companies">n/a</td>'; return na + na + na; }
-  if (!nd) return `<td class="num-col num" title="No net-debt data yet (only the top 150 were researched)">—</td>` + dash + dash;
+  if (!nd) return `<td class="num-col num" title="No net-debt data for this company">—</td>` + dash + dash;
   const tip = escHtml(ndBasisText(nd) + (nd.flags && nd.flags.length ? ' | ' + nd.flags.join('; ') : ''));
   const tag = nd.tier === 'B' ? '<sup class="nd-b" title="Company-reported net debt only">B</sup>' : '';
   const evE = v.evE !== null ? fmtNum(v.evE, 1) + 'x' : (v.ni !== null && v.ni <= 0 ? '<span title="Loss-making: not meaningful">n/m</span>' : (v.ev !== null && v.ev <= 0 ? '<span title="Net cash exceeds market cap">EV&le;0</span>' : '—'));
@@ -1073,7 +1073,7 @@ function valuationBox(row) {
   const { c, mc, pb } = row;
   const v = valuationOf(c, mc), nd = c.nd;
   if (v.fin) return `<div class="val-box"><h4>Valuation</h4><p class="hint">Enterprise value is not meaningful for banks, insurers and other financial companies, so no net debt or EV / earnings is shown.</p></div>`;
-  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data yet &mdash; it was researched for Europe&rsquo;s top 150 and for the cheapest companies by P/E in Europe and Asia, and was either not found or not yet looked up for this company, so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
+  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data for this company &mdash; it is not in Yahoo Finance&rsquo;s fundamentals feed and was not found by research &mdash; so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
   const item = (l, val, tip) => `<div class="fin-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="fin-label">${l}</span><span class="fin-val">${val}</span></div>`;
   const lease = nd.lease !== null && nd.lease !== undefined ? nd.lease * (nd.fx || 0) : null;
   const flags = (nd.flags || []).filter(f => f !== 'company-reported net debt only');

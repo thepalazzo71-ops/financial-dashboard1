@@ -1827,10 +1827,12 @@ function render() {
   } else {
     const editedMcCount = COMPANIES.filter(isEditedMc).length;
     const editedGmCount = Object.keys(gmOverrides).length;
-    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed && !c.mcDerived).length;
+    const refreshedCount = COMPANIES.filter(c=>c.mcRefreshed && !c.mcDerived && !c.mcComputed).length;
+    const computedCount = COMPANIES.filter(c=>c.mcComputed).length;
     const estCount = COMPANIES.filter(c=>c.mcDerived).length;
     document.getElementById('statRow').innerHTML = `
       <div class="stat"><div class="n">${COMPANIES.length}</div><div class="l">candidate pool (${filters.sector==='all'?'all sectors':'non-financial'})</div></div>
+      <div class="stat"><div class="n">${computedCount}</div><div class="l">market caps = shares &times; last price</div></div>
       <div class="stat"><div class="n">${refreshedCount}</div><div class="l">market caps researched / quoted</div></div>
       <div class="stat" style="border-color:#c58a1a;background:#fdf1d8"><div class="n" style="color:#8a5a00">${estCount}</div><div class="l" style="color:#8a5a00"><b>market caps ESTIMATED</b> from price moves</div></div>
       <div class="stat"><div class="n">${editedMcCount}</div><div class="l">market caps edited (this browser)</div></div>
@@ -1839,7 +1841,7 @@ function render() {
       <div class="stat"><div class="n">${scored.length}</div><div class="l">shown now</div></div>
     `;
     const banner = document.getElementById('estBanner');
-    if (banner) banner.innerHTML = estCount ? `<b>Most Asia market caps are ESTIMATES.</b> Only ${refreshedCount.toLocaleString()} companies have a researched or quoted market cap. For the other ${estCount.toLocaleString()} (tagged <span class="tag estmc">mc est.</span>) the market cap is the 17 March 2026 Capital IQ value scaled by each share's price and exchange-rate change since then (Yahoo daily closes), <b>assuming the share count has not changed</b> &mdash; rights issues, placements and buybacks since March are not captured, so individual figures can be off, and the ranking inherits that error. Type a real market cap into the field to override any of them.` : '';
+    if (banner) banner.innerHTML = estCount ? `<b>${estCount.toLocaleString()} Asia market caps are still ESTIMATES</b> (tagged <span class="tag estmc">mc est.</span>): the 17 March 2026 Capital IQ value scaled by the share-price and exchange-rate change since then, <b>assuming the share count has not changed</b>. All other market caps are either share count &times; last close (${computedCount.toLocaleString()}, share count from the latest balance sheet in Yahoo Finance's fundamentals feed) or researched quotes (${refreshedCount.toLocaleString()}). Type a real market cap into the field to override any of them.` : '';
   }
 
   const tbody = document.getElementById('tbody');
@@ -1873,7 +1875,7 @@ function render() {
         <td class="num-col">${deltaHtml}</td>
         <td class="company">
           <div class="name">${c.n}</div>
-          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${(c.gmEst && !gmInfo.isOverride) ? ` <span class="tag needsgm" style="background:#fdf1d8;color:#8a5a00" title="Gross margin ESTIMATED as the median of ${c.gmEstPeers} sourced industry peers (${escHtml(c.gmEstGroup||'')}); not this company's own figure">est. GM</span>` : ''}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited) ? (c.mcDerived ? ` <span class="tag estmc" title="ESTIMATED market cap, not a quoted figure: the March 2026 Capital IQ market cap scaled by the share-price and FX change since 17 March 2026 (x${c.mcRatio}), assuming the share count has not changed. Price as of ${c.mcUpdatedAt ? c.mcUpdatedAt.slice(0,10) : '?'}.">mc est.</span>` : ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>`) : ''}</div>
+          <div class="meta">${c.t} &middot; ${c.co} &middot; <span class="tag ${archetypeTagClass(at)}">${at}</span>${distressTag(c)}${commentTag(c)}${(c.gmEst && !gmInfo.isOverride) ? ` <span class="tag needsgm" style="background:#fdf1d8;color:#8a5a00" title="Gross margin ESTIMATED as the median of ${c.gmEstPeers} sourced industry peers (${escHtml(c.gmEstGroup||'')}); not this company's own figure">est. GM</span>` : ''}${gmInfo.isFallback ? ` <span class="tag needsgm" title="No verified gross margin — using pool median fallback">needs GM</span>` : ''}${c.dilutionDataMissing ? ` <span class="tag nodata" title="No share-count data exists anywhere in the source extract for this company. Its dilution score (${fmtNum(c.fixedPts.dilution,1)}/12) is a neutral pool-median estimate, not a real measurement.">&#9679; no share data</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited && c.mcComputed) ? ` <span class="tag refreshed" title="Market cap = ${escHtml(c.mcSource||'')}">mc = shares &times; price</span>` : ''}${(!isHistorical && c.mcRefreshed && !edited && !c.mcComputed) ? (c.mcDerived ? ` <span class="tag estmc" title="ESTIMATED market cap, not a quoted figure: the March 2026 Capital IQ market cap scaled by the share-price and FX change since 17 March 2026 (x${c.mcRatio}), assuming the share count has not changed. Price as of ${c.mcUpdatedAt ? c.mcUpdatedAt.slice(0,10) : '?'}.">mc est.</span>` : ` <span class="tag refreshed" title="Market cap refreshed ${c.mcUpdatedAt ? 'on '+c.mcUpdatedAt.slice(0,10) : ''} via ${c.mcSource||'data pipeline'}">mc refreshed</span>`) : ''}</div>
         </td>
         <td class="num-col">
           ${isHistorical ? `<span class="num">${fmtNum(mc,1)}</span>` : `

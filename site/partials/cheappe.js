@@ -69,7 +69,7 @@ function renderCheapPeContent() {
       <thead><tr><th>#</th><th class="cpc-co">Company</th><th>Mkt cap ($M)</th><th>LTM NI ($M)</th><th>P/E</th><th title="P/E on average earnings of the last ~3 years">P/E avg NI</th><th>Net debt ($M)</th><th>EV ($M)</th><th>EV / net profit</th></tr></thead>
       <tbody>${body || '<tr><td colspan="9" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
     </table>
-    <p class="hint" style="margin-top:12px">${rows.length} of ${pool} companies${country ? ' in ' + escHtml(country) : ''} have positive earnings${rows.length > shown.length ? ` (showing the cheapest ${shown.length})` : ''}. Net debt and EV exist only where it was researched (Europe's top 150 and the cheapest Korean names) and come from the sources noted in the company's detail; &mdash; = not available.</p>`;
+    <p class="hint" style="margin-top:12px">${rows.length} of ${pool} companies${country ? ' in ' + escHtml(country) : ''} have positive earnings${rows.length > shown.length ? ` (showing the cheapest ${shown.length})` : ''}. Net debt comes from the latest balance sheet (Yahoo Finance's fundamentals feed for most companies, company filings or research for the rest; see the valuation box in each company's detail); &mdash; = not available.</p>`;
 }
 function initCheapPe() {
   const bd = document.getElementById('cheapPeModalBackdrop'), btn = document.getElementById('cheapPeBtn');

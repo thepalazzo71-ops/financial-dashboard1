@@ -24,7 +24,7 @@ window.valuationBox = function(row) {
   const { c, mc, pb } = row;
   const v = valuationOf(c, mc), nd = c.nd;
   if (v.fin) return `<div class="val-box"><h4>Valuation</h4><p class="hint">Enterprise value is not meaningful for banks, insurers and other financial companies, so no net debt or EV / earnings is shown.</p></div>`;
-  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data yet &mdash; it was researched for Europe&rsquo;s top 150 and for the cheapest companies by P/E in Europe and Asia, and was either not found or not yet looked up for this company, so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
+  if (!nd) return `<div class="val-box"><h4>Valuation</h4><p class="hint">No net-debt data for this company &mdash; it is not in Yahoo Finance&rsquo;s fundamentals feed and was not found by research &mdash; so EV and EV / earnings are not available. P/E (market cap &divide; LTM net income): ${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : 'n/m'}.</p></div>`;
   const item = (l, val, tip) => `<div class="fin-item"${tip ? ` title="${escHtml(tip)}"` : ''}><span class="fin-label">${l}</span><span class="fin-val">${val}</span></div>`;
   const lease = nd.lease !== null && nd.lease !== undefined ? nd.lease * (nd.fx || 0) : null;
   const flags = (nd.flags || []).filter(f => f !== 'company-reported net debt only');
