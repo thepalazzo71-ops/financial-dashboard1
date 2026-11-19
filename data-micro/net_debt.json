@@ -1723,11 +1723,11 @@
    "netDebtUsd": 177.0,
    "fx": 1.10023105,
    "minorityInterest": -34.85,
-   "mcUsd": 3.8,
-   "evUsd": 180.8,
+   "mcUsd": 1.1,
+   "evUsd": 178.1,
    "sourceUrl": "https://finance.yahoo.com/quote/BIG.PA/balance-sheet/",
    "sourceType": "data_feed",
-   "notes": "Yahoo Finance fundamentals feed (quarter balance sheet 2026-03-31, EUR m): total debt minus leases 192.44, cash + short-term investments 31.57; Yahoo's own net debt (cash and equivalents only) 160.87. Minority interests -34.85. Shares 18.5m. Fetched 2026-11-19.",
+   "notes": "Yahoo Finance fundamentals feed (quarter balance sheet 2026-03-31, EUR m): total debt minus leases 192.44, cash + short-term investments 31.57; Yahoo's own net debt (cash and equivalents only) 160.87. Minority interests -34.85. Shares 18.5m. Fetched 2026-11-19. Confirmed against the company: FY2025/26 results report net debt of EUR 167.9m (incl. EUR 59.1m bonds) and cash of EUR 31.6m at 31 Mar 2026; the company is in accelerated safeguard (bond default Feb 2026).",
    "sharesMm": 18.5,
    "flags": [
     "net debt > 3x market cap (highly leveraged)"

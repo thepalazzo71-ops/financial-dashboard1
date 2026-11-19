@@ -1,15 +1,11 @@
-"""Model: v6 score with EV-based valuation lenses, compared with the current v6 ranking (all four dashboards).
+"""Before/after: v6 ranking with the OLD market-cap valuation lenses vs the LIVE EV-based lenses (all four dashboards).
 
-Current valuation (18 pts) = 18 x best percentile of
-   A = market cap / gross profit (lower better)
-   B = (P/B) / max(ROE/10%, 0.1)       (lower better)
-   C = (avg NI last ~yr / market cap) x (1 + growth capped 0-200%)   (higher better)
-Model:
-   A' = EV / gross profit
-   B  unchanged
-   C' = (3-year average NI / EV) x (1 + growth capped 0-200%)
-   EV = market cap + net debt (data/.../net_debt.json tier A/B), floored at 5% of market cap;
-        market cap when no net debt / financial.  Everything else in the score is unchanged.
+Old valuation (until Nov 2026; 18 pts = 18 x best percentile of):
+   A = market cap / gross profit, B = (P/B) / max(ROE/10%, 0.1), C = (avg NI last ~yr / market cap) x (1 + growth 0-200%)
+Live (scripts/scoring.lenses, adopted Nov 2026):
+   A = EV / gross profit, B unchanged, C = (3-year average NI / EV) x (1 + growth 0-200%)
+   EV = market cap + net debt (net_debt.json tier A/B), net cash credited only up to 50% of market cap;
+        market cap when there is no net-debt record or the company is a financial.
 Writes docs/valuation-ev-model.xlsx (one tab per dashboard: top 50 before vs after, plus all movers) and prints a summary.
 """
 import json, sys
@@ -39,28 +35,25 @@ def model(folder, poolf):
         nd = json.load(open(ROOT / folder / 'net_debt.json'))['entries']
     except Exception:
         nd = {}
-    base, _ = S.score_pool(pool, ov, {})
-    A2, B2, C2, evs = [], [], [], []
-    for c, r in zip(pool, base):
+    gmo = S.load_overrides()[1] if folder == 'data' else {}
+    live_sc, _ = S.score_pool(pool, ov, gmo)
+    ND = S.net_debt_lookup()
+    A1, B1, C1 = [], [], []
+    for c, r in zip(pool, live_sc):
         mc, gm = r['mc'], r['gm']
-        e = nd.get(c['ticker']) or {}
-        has = e.get('tier') in ('A', 'B') and e.get('netDebtUsd') is not None
-        ev = max(mc + e['netDebtUsd'], 0.05 * mc) if has and mc else mc
-        evs.append((ev, has))
-        a, b, _, _ = S.lenses(c, mc, gm)
-        A2.append((ev / c['revLTM']) / gm if gm and gm > 0 and c['revLTM'] else None)
-        B2.append(b)
-        ni = avg3(c)
+        A1.append((mc / c['revLTM']) / gm if gm and gm > 0 and c['revLTM'] else None)
+        B1.append(S.lenses(c, mc, gm)[1])
         g = min(max(c['revGrowth'] or 0, 0), 2.0)
-        C2.append((ni / ev) * (1 + g) if ni is not None and ev else None)
+        C1.append((c['avgNI'] / mc) * (1 + g) if c['avgNI'] is not None and mc else None)
     out = []
-    for i, (c, r) in enumerate(zip(pool, base)):
-        ps = [S.percentile_rank(A2, i, False), S.percentile_rank(B2, i, False), S.percentile_rank(C2, i, True)]
-        best = max([p for p in ps if p is not None], default=0)
-        val2 = best / 100 * 18
-        tot2 = r['total'] - r['val_pts'] + val2
-        out.append(dict(t=c['ticker'], n=c['name'], co=c['country'], dl=c['ticker'] in dl, mc=r['mc'], ev=evs[i][0], has_nd=evs[i][1],
-                        val1=r['val_pts'], val2=val2, tot1=r['total'], tot2=tot2))
+    for i, (c, r) in enumerate(zip(pool, live_sc)):
+        ps = [S.percentile_rank(A1, i, False), S.percentile_rank(B1, i, False), S.percentile_rank(C1, i, True)]
+        val1 = max([p for p in ps if p is not None], default=0) / 100 * 18
+        tot1 = r['total'] - r['val_pts'] + val1
+        nd = ND.get(c['ticker'])
+        ev = S.enterprise_value(r['mc'], nd)
+        out.append(dict(t=c['ticker'], n=c['name'], co=c['country'], dl=c['ticker'] in dl, mc=r['mc'], ev=ev, has_nd=nd is not None,
+                        val1=val1, val2=r['val_pts'], tot1=tot1, tot2=r['total']))
     live = [x for x in out if not x['dl']]
     for k, key in (('r1', 'tot1'), ('r2', 'tot2')):
         for rank, x in enumerate(sorted(live, key=lambda x: -x[key]), 1):
@@ -82,9 +75,9 @@ def main():
         summary[label] = dict(n=len(rows), nd=sum(x['has_nd'] for x in rows), overlap=len(s1 & s2),
                               entered=[x for x in by2 if x['t'] not in s1], left=[x for x in by1 if x['t'] not in s2], by1=by1, by2=by2)
         ws = wb.create_sheet(label[:31])
-        ws.append([f'{label}: top 50 by v6 score, current valuation vs EV-based valuation model (everything else unchanged)'])
+        ws.append([f'{label}: top 50 by v6 score, BEFORE (market-cap valuation lenses) vs LIVE (EV-based lenses, net cash capped at 50% of market cap); everything else unchanged'])
         ws['A1'].font = Font(name='Arial', bold=True, size=12)
-        ws.append(['Rank', 'CURRENT: company', 'Country', 'Total', 'Val pts', '', 'MODEL: company', 'Country', 'Total', 'Val pts',
+        ws.append(['Rank', 'BEFORE: company', 'Country', 'Total', 'Val pts', '', 'LIVE: company', 'Country', 'Total', 'Val pts',
                    'Was rank', 'Net debt used?', 'EV / market cap'])
         for c in ws[2]:
             c.font = Font(name='Arial', bold=True, color='FFFFFF'); c.fill = PatternFill('solid', fgColor='2F4B3C')
@@ -96,9 +89,9 @@ def main():
                 for col in range(7, 14):
                     ws.cell(row=ws.max_row, column=col).fill = PatternFill('solid', fgColor='E3EFE7')
         ws.append([])
-        ws.append(['Biggest movers (whole pool, by rank change)'])
+        ws.append(['Biggest movers (whole pool, by rank change before -> live)'])
         ws.cell(row=ws.max_row, column=1).font = Font(name='Arial', bold=True)
-        ws.append(['Company', 'Country', 'Current rank', 'Model rank', 'Change', 'EV / market cap', 'Net debt used?'])
+        ws.append(['Company', 'Country', 'Rank before', 'Rank live', 'Change', 'EV / market cap', 'Net debt used?'])
         movers = sorted(rows, key=lambda x: -abs(x['r1'] - x['r2']))[:40]
         for x in movers:
             ws.append([x['n'], x['co'], x['r1'], x['r2'], x['r1'] - x['r2'], round(x['ev'] / x['mc'], 2) if x['mc'] else None, 'yes' if x['has_nd'] else 'no'])

@@ -115,16 +115,59 @@ def effective_gm(c, gm_overrides):
     return None, False, True
 
 
-def lenses(c, mc, gm):
+# --- EV-based valuation (Nov 2026) -------------------------------------------------------------
+# Lenses A and C use enterprise value instead of market cap:
+#   EV = market cap + net debt (tier A/B record in <folder>/net_debt.json, USD m), with net CASH
+#   credited only up to NET_CASH_CAP x market cap (so EV >= 50% of market cap: cash that is customer
+#   money, trapped or simply not distributable cannot make a company look many times cheaper).
+#   No record / financial (tier F) -> EV = market cap (the pre-Nov-2026 behaviour).
+# Lens C also uses the ~3-year average of the trailing-12-month net income history (niHist) instead
+# of the last-year average, which dampens one-off years.  Lens B (P/B vs ROE) is unchanged.
+NET_CASH_CAP = 0.5
+_ND_FOLDERS = ('data', 'data-us', 'data-asia', 'data-micro')
+_ND = None
+
+
+def net_debt_lookup():
+    """{ticker: netDebtUsd} for every tier A/B record in the four regions' net_debt.json (cached)."""
+    global _ND
+    if _ND is None:
+        _ND = {}
+        for f in _ND_FOLDERS:
+            p = ROOT / f / 'net_debt.json'
+            if not p.exists():
+                continue
+            for t, e in json.load(open(p)).get('entries', {}).items():
+                if e.get('tier') in ('A', 'B') and e.get('netDebtUsd') is not None:
+                    _ND[t] = e['netDebtUsd']
+    return _ND
+
+
+def enterprise_value(mc, nd_usd):
+    if not mc or nd_usd is None:
+        return mc
+    return mc + max(nd_usd, -NET_CASH_CAP * mc)
+
+
+def ni_3y(c):
+    h = [v for v in (c.get('niHist') or []) if v is not None]
+    return sum(h) / len(h) if len(h) >= 4 else c['avgNI']
+
+
+def lenses(c, mc, gm, ev=None):
+    """A = EV / gross profit, B = (P/B) / max(ROE/10%, 0.1), C = (3-yr avg NI / EV) x (1 + growth 0-200%)."""
+    if ev is None:
+        ev = enterprise_value(mc, net_debt_lookup().get(c['ticker']))
     A = B = C = None
-    if gm is not None and gm > 0 and c['revLTM']:
-        A = (mc / c['revLTM']) / gm
+    if gm is not None and gm > 0 and c['revLTM'] and ev:
+        A = (ev / c['revLTM']) / gm
     roe = (c['avgNI'] / c['equity']) if (c['avgNI'] is not None and c['equity']) else None
     if c['equity'] and c['equity'] > 0 and roe is not None:
         B = (mc / c['equity']) / max(roe / 0.10, 0.1)
-    if c['avgNI'] is not None and mc:
+    ni = ni_3y(c)
+    if ni is not None and ev:
         g = min(max(c['revGrowth'] or 0, 0), 2.0)
-        C = (c['avgNI'] / mc) * (1 + g)
+        C = (ni / ev) * (1 + g)
     return A, B, C, roe
 
 

@@ -62,9 +62,14 @@ summary:
 | Gross Margin | 18 | banded (≥60%→18.0 down to <5%→0.0); missing GM → pool median fallback |
 
 **Valuation lenses** (company gets credit on whichever is best):
-- Lens A (GM-adjusted P/S) = (MktCap / Rev_LTM) / GM — lower better
-- Lens B (ROE-adjusted P/B) = (MktCap / Equity) / max(ROE_recent/10%, 0.1) — lower better
-- Lens C (growth-adj earnings yield) = (avg_recent_NI / MktCap) × (1 + min(rev_growth, 2.0)) — higher better
+- Lens A (EV / gross profit) = (EV / Rev_LTM) / GM — lower better
+- Lens B (ROE-adjusted P/B) = (MktCap / Equity) / max(ROE_recent/10%, 0.1) — lower better (unchanged)
+- Lens C (growth-adj earnings yield on EV) = (3-yr avg NI / EV) × (1 + min(max(rev_growth,0), 2.0)) — higher better
+- EV (since Nov 2026) = MktCap + net debt from <folder>/net_debt.json (tier A/B), net cash credited only up to
+  50% of MktCap (scoring.NET_CASH_CAP); no record or financial (tier F) → EV = MktCap. 3-yr avg NI = mean of the
+  niHist trailing-12-month values (≥4 required, else avgNI). Same formula in scripts/scoring.py and the templates'
+  computeLenses(). Before Nov 2026 lenses A and C used MktCap and avg_recent_NI (see docs/valuation-ev-model.xlsx
+  for the before/after).
 
 ROE uses the average of the **four most-recent** NI periods over **current**
 equity (not average-of-all-periods — v6 fixed a v5 distortion here).
@@ -2785,3 +2790,19 @@ Branch `claude/gracious-goldberg-v4yuql`; never open PRs unless asked; commit tr
 - 2026-11-19 bulk run (user: "do both"): `fetch_yahoo_net_debt.py --replace-weak` over every non-financial company: Asia 1,842 -> 1,703 with net debt (139 missing: no feed data / too old), Europe 943 (name-based financial filter) -> +739 feed entries, 75 researched kept, 129 missing; US 294 -> 265; micro 174 -> 115. US and micro payloads now load net debt (`nd_payload`), so their valuation box / EV columns work. EV-ranking coverage in the Cheapest-by-P/E window: Korea 462, Europe 715, US 192, micro 75 companies.
 - Market caps: `scripts/compute_market_caps.py --region asia` = feed share count (sharesMm) x last close (trading currency, live FX). Replaced 1,467 of the ESTIMATED Asian caps (tag `computed`, shown as "mc = shares x price"); 144 remain estimated (mostly no share data), 234 researched kept; 5 outliers (5x gaps: probable splits / bad ticks: EXEM, Ilshinstone, LabGenomics, Daelim Paper, Kwang Myung Electric) left on their old value. Validation vs recent researched quotes: median ratio 0.96, 84% within +/-15%. Asia ranking moved little (median 3 places, top-50 unchanged). Not applied to Europe/US/micro (their caps are researched quotes; ratio medians 0.93/0.99/0.91 because those quotes are 1-3 months old) - `--also-researched-older-than DAYS` would refresh them.
 - Asia banner/tiles now split: "market caps = shares x last price" / "researched / quoted" / "ESTIMATED" (payload `mcComputed`).
+
+## EV-based valuation lenses adopted (Nov 2026)
+
+- `scripts/scoring.lenses()` and every template's `computeLenses()` now use **EV** for lenses A (EV / gross profit) and
+  C ((3-yr avg NI / EV) x (1 + growth)); lens B is unchanged. EV = market cap + net debt from the region's
+  `net_debt.json` (tier A/B), with **net cash credited only up to 50% of market cap** (`scoring.NET_CASH_CAP`, JS
+  `NET_CASH_CAP`), so EV >= 0.5 x market cap. No record / financial -> EV = market cap. 3-yr avg NI = mean of `niHist`
+  (>= 4 values, else `avgNI`). `scoring.net_debt_lookup()` reads all four regions' files (tickers do not collide).
+- Browser and Python totals verified identical on Europe/US/Asia (micro differs by <= 0.1 pt only because its payload
+  rounds market caps to 0.01, pre-existing).
+- Before/after: `docs/valuation-ev-model.xlsx` (script `scripts/research/model_ev_valuation.py`). Top-50 overlap
+  Europe 42, US 46, Asia 42, micro 47.
+- BigBen Interactive (ENXTPA:BIG): Capital IQ fundamentals predated its FY to 31 Mar 2026 results (net loss EUR 237m,
+  equity EUR -21m; net debt EUR 168m confirmed; accelerated safeguard since 17 Aug 2026).
+  `scripts/research/fix_bigben_fy2026.py` corrects equity, last niHist slot/avgNI and the market cap (18.5m shares x
+  last close) - re-run it after any micro re-ingest. Rank 6 -> 34.

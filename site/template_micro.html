@@ -364,8 +364,9 @@
     <b class="hd">What's fixed vs. live</b>
     Revenue consistency, track record, dilution, profitability, cash-flow, revenue growth and dividend consistency
     are computed directly from the Capital IQ financial history and don't change here. <b>Gross margin</b> (18&nbsp;pts,
-    banded) and <b>valuation</b> (18&nbsp;pts, best-of-three lenses: GM-adjusted P/S, ROE-adjusted P/B, growth-adjusted
-    earnings yield) recompute live from whatever market cap and gross margin you enter. Companies without a
+    banded) and <b>valuation</b> (18&nbsp;pts, best-of-three lenses: EV / gross profit, ROE-adjusted P/B, growth-adjusted
+    earnings yield on EV using ~3-year average net income; EV = market cap + net debt, with net cash credited only up to
+    50% of market cap, and market cap alone where there is no net-debt record or the company is a financial) recompute live from whatever market cap and gross margin you enter. Companies without a
     verified gross margin use the pool's median GM-band score as a neutral fallback, and are flagged
     <span class="tag needsgm">needs GM</span> so you can prioritise them.
     <b class="hd">This page is static — how updates actually happen</b>
@@ -1054,14 +1055,28 @@ function gmBandPoints(gm) {
   if (gm>=0.05) return 1.8;
   return 0.0;
 }
+// EV-based valuation (Nov 2026; same as scripts/scoring.py): EV = market cap + net debt (tier A/B record),
+// net cash credited only up to 50% of market cap; no record / financial -> EV = market cap.
+const NET_CASH_CAP = 0.5;
+function scoringEV(c, mc) {
+  const nd = c.nd;
+  if (!mc || !nd || (nd.tier!=='A' && nd.tier!=='B') || nd.usd===null || nd.usd===undefined) return mc;
+  return mc + Math.max(nd.usd, -NET_CASH_CAP*mc);
+}
+function ni3y(c) {
+  const h = (c.niHist||[]).filter(v=>v!==null&&v!==undefined);
+  return h.length>=4 ? h.reduce((a,b)=>a+b,0)/h.length : c.avgNI;
+}
 function computeLenses(c, mc, gmInfo) {
   let A=null,B=null,C=null;
-  if (gmInfo.gm && gmInfo.gm>0 && c.revLTM) A = (mc/c.revLTM)/gmInfo.gm;
+  const ev = scoringEV(c, mc);
+  if (gmInfo.gm && gmInfo.gm>0 && c.revLTM && ev) A = (ev/c.revLTM)/gmInfo.gm;
   const roe = (c.avgNI!==null && c.eq) ? c.avgNI/c.eq : null;
   if (c.eq && c.eq>0 && roe!==null) B = (mc/c.eq)/Math.max(roe/0.10, 0.1);
-  if (c.avgNI!==null && c.avgNI!==undefined && mc) {
+  const ni = ni3y(c);
+  if (ni!==null && ni!==undefined && ev) {
     const g = Math.min(Math.max(c.revGrowth||0,0),2.0);
-    C = (c.avgNI/mc)*(1+g);
+    C = (ni/ev)*(1+g);
   }
   return [A,B,C,roe];
 }
@@ -1098,7 +1113,7 @@ function computeAllScores() {
     const total = c.fixedSumNoGm + gmPts + valPts;
     const pb = c.eq ? mcs[i]/c.eq : null;
     const at = archetype(gmInfo.gm, c.revGrowth, ROE[i], pb);
-    const bestLens = pA===best ? 'A — GM-adjusted P/S' : (pB===best ? 'B — ROE-adjusted P/B' : 'C — growth-adjusted earnings yield');
+    const bestLens = pA===best ? 'A — EV / gross profit' : (pB===best ? 'B — ROE-adjusted P/B' : 'C — growth-adjusted earnings yield on EV');
     return { c, mc: mcs[i], gmInfo, gmPts, valPts, total, pb, roe: ROE[i], archetype: at, bestLens };
   });
 }
