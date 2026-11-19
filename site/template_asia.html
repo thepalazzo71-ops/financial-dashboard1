@@ -1486,6 +1486,21 @@ function evDisplay(c, mc) {
   const capped = Math.abs(sev - ev) > 0.05;
   return `${ev<0?'\u2212':''}$${fmtNum(Math.abs(ev),1)}M` + (capped ? ` (score uses $${fmtNum(sev,1)}M: net cash capped at 50% of market cap)` : '');
 }
+function divDisplay(c) {
+  // Dividends paid ($M, cash out): latest period, plus payout vs the 4-period average net income.
+  const h = c.divHist;
+  if (!h || !h.length) return '\u2014';
+  const last = h[h.length-1];
+  const l4 = h.slice(-4).filter(v=>v!==null&&v!==undefined);
+  if (last===null || last===undefined) return l4.length && l4.some(v=>v>0) ? `not reported (LTM)` : '\u2014';
+  if (last===0 && !l4.some(v=>v>0)) return 'none paid';
+  let s = `$${fmtNum(last,1)}M (LTM)`;
+  if (l4.length && c.avgNI!==null && c.avgNI!==undefined && c.avgNI>0) {
+    const pay = (l4.reduce((a,b)=>a+b,0)/l4.length) / c.avgNI;
+    if (pay>0) s += ` · payout ${Math.round(pay*100)}% of NI`;
+  }
+  return s;
+}
 function renderFullFinancials(row) {
   const { c, mc, gmInfo, roe, pb } = row;
   const items = [
@@ -1495,6 +1510,7 @@ function renderFullFinancials(row) {
     ['Enterprise Value', evDisplay(c, mc)],
     ['Revenue (LTM)', c.revLTM!==null ? `$${fmtNum(c.revLTM,1)}M` : '—'],
     ['Avg Net Income', c.avgNI!==null ? `$${fmtNum(c.avgNI,1)}M` : '—'],
+    ['Dividends paid', divDisplay(c)],
     ['ROE (recent)', fmtPct(roe)],
     ['P/B', pb!==null ? fmtNum(pb,2)+'x' : '—'],
     ['Revenue Growth', fmtPct(c.revGrowth,0)],
@@ -1515,12 +1531,13 @@ function renderFullFinancials(row) {
   const headerCells = c.revHist.map((_,i) => `<th class="${i===n-1?'latest':''}">${labels[i]}</th>`).join('');
   return `
     <div class="fin-grid">${gridHtml}</div>
-    <h4>Revenue &amp; net income by period ($M, oldest &rarr; latest / LTM)</h4>
+    <h4>Revenue, net income &amp; dividends by period ($M, oldest &rarr; latest / LTM)</h4>
     <table class="fin-table">
       <thead><tr><th></th>${headerCells}</tr></thead>
       <tbody>
         <tr><td>Revenue</td>${c.revHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
         <tr><td>Net Income</td>${c.niHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+        <tr><td>Dividends paid</td>${(c.divHist||c.niHist.map(()=>null)).map((v,i)=>periodCell(v,i,n)).join('')}</tr>
       </tbody>
     </table>
   `;
