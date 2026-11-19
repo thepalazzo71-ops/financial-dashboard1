@@ -1,0 +1,1421 @@
+{
+"NYSE:SOR": {
+"status": "ok",
+"sym": "SOR",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 161,
+"lastEvent": "2026-11-13",
+"firstTrade": "1980-03-17",
+"fetched": "2026-11-19"
+},
+"OTCPK:MSBC": {
+"status": "ok",
+"sym": "MSBC",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 0,
+"lastEvent": null,
+"firstTrade": "2005-02-17",
+"fetched": "2026-11-19"
+},
+"OTCPK:WEBC": {
+"status": "ok",
+"sym": "WEBC",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 0,
+"lastEvent": null,
+"firstTrade": "1994-02-08",
+"fetched": "2026-11-19"
+},
+"OTCPK:BMBN": {
+"status": "ok",
+"sym": "BMBN",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+3.162,
+3.526,
+3.672,
+6.058
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 3.162,
+"usd_m": 3.162
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 3.526,
+"usd_m": 3.526
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 3.672,
+"usd_m": 3.672
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 6.058,
+"usd_m": 6.058
+}
+],
+"nEvents": 50,
+"lastEvent": "2026-06-05",
+"firstTrade": "1999-01-12",
+"fetched": "2026-11-19"
+},
+"OTCPK:KISB": {
+"status": "ok",
+"sym": "KISB",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+3.448,
+3.884,
+4.419,
+4.691
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 3.448,
+"usd_m": 3.448
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 3.884,
+"usd_m": 3.884
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 4.419,
+"usd_m": 4.419
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 4.691,
+"usd_m": 4.691
+}
+],
+"nEvents": 60,
+"lastEvent": "2026-10-15",
+"firstTrade": "2000-03-14",
+"fetched": "2026-11-19"
+},
+"OTCPK:CWBK": {
+"status": "ok",
+"sym": "CWBK",
+"flags": [
+0,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.986,
+2.945,
+2.784,
+2.728
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.986,
+"usd_m": 2.986
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.945,
+"usd_m": 2.945
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.784,
+"usd_m": 2.784
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.728,
+"usd_m": 2.728
+}
+],
+"nEvents": 37,
+"lastEvent": "2026-09-11",
+"firstTrade": "2003-10-07",
+"fetched": "2026-11-19"
+},
+"OTCPK:TYBT": {
+"status": "ok",
+"sym": "TYBT",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+1.54,
+1.676,
+1.806,
+1.949,
+null
+],
+"annual": [
+{
+"date": "2021-12-31",
+"cur": "USD",
+"local_m": 1.54,
+"usd_m": 1.54
+},
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 1.676,
+"usd_m": 1.676
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 1.806,
+"usd_m": 1.806
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.949,
+"usd_m": 1.949
+}
+],
+"nEvents": 32,
+"lastEvent": "2026-10-15",
+"firstTrade": "2007-05-07",
+"fetched": "2026-11-19"
+},
+"OTCPK:OXBC": {
+"status": "ok",
+"sym": "OXBC",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 28,
+"lastEvent": "2007-08-22",
+"firstTrade": "2000-01-03",
+"fetched": "2026-11-19"
+},
+"OTCPK:CYVF": {
+"status": "ok",
+"sym": "CYVF",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.31,
+2.296,
+2.287,
+2.749
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.31,
+"usd_m": 2.31
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.296,
+"usd_m": 2.296
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.287,
+"usd_m": 2.287
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.749,
+"usd_m": 2.749
+}
+],
+"nEvents": 82,
+"lastEvent": "2026-11-05",
+"firstTrade": "2007-05-16",
+"fetched": "2026-11-19"
+},
+"OTCPK:HARL": {
+"status": "ok",
+"sym": "HARL",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+4.285,
+8.717,
+8.869,
+4.705
+],
+"annual": [
+{
+"date": "2022-09-30",
+"cur": "USD",
+"local_m": 4.285,
+"usd_m": 4.285
+},
+{
+"date": "2023-09-30",
+"cur": "USD",
+"local_m": 8.717,
+"usd_m": 8.717
+},
+{
+"date": "2024-09-30",
+"cur": "USD",
+"local_m": 8.869,
+"usd_m": 8.869
+},
+{
+"date": "2025-09-30",
+"cur": "USD",
+"local_m": 4.705,
+"usd_m": 4.705
+}
+],
+"nEvents": 157,
+"lastEvent": "2026-11-04",
+"firstTrade": "1987-09-03",
+"fetched": "2026-11-19"
+},
+"OTCPK:CNBB": {
+"status": "ok",
+"sym": "CNBB",
+"flags": [
+0,
+0,
+0,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.86,
+2.986,
+2.964,
+2.964
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.86,
+"usd_m": 2.86
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.986,
+"usd_m": 2.986
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.964,
+"usd_m": 2.964
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.964,
+"usd_m": 2.964
+}
+],
+"nEvents": 30,
+"lastEvent": "2026-09-30",
+"firstTrade": "2017-11-06",
+"fetched": "2026-11-19"
+},
+"OTCPK:KSBI": {
+"status": "ok",
+"sym": "KSBI",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+0.62,
+0.798,
+1.052,
+1.141,
+null
+],
+"annual": [
+{
+"date": "2021-12-31",
+"cur": "USD",
+"local_m": 0.62,
+"usd_m": 0.62
+},
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 0.798,
+"usd_m": 0.798
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 1.052,
+"usd_m": 1.052
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.141,
+"usd_m": 1.141
+}
+],
+"nEvents": 61,
+"lastEvent": "2026-11-02",
+"firstTrade": "2003-01-24",
+"fetched": "2026-11-19"
+},
+"OTCPK:JBTC": {
+"status": "ok",
+"sym": "JBTC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.142,
+2.385,
+2.434,
+2.677
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.142,
+"usd_m": 2.142
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.385,
+"usd_m": 2.385
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.434,
+"usd_m": 2.434
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.677,
+"usd_m": 2.677
+}
+],
+"nEvents": 55,
+"lastEvent": "2026-10-26",
+"firstTrade": "2012-10-17",
+"fetched": "2026-11-19"
+},
+"OTCPK:BKOR": {
+"status": "ok",
+"sym": "BKOR",
+"flags": [
+0,
+0,
+0,
+0,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+0.835,
+1.037,
+1.266,
+1.932
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 0.835,
+"usd_m": 0.835
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 1.037,
+"usd_m": 1.037
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.266,
+"usd_m": 1.266
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.932,
+"usd_m": 1.932
+}
+],
+"nEvents": 24,
+"lastEvent": "2026-11-13",
+"firstTrade": "2021-01-08",
+"fetched": "2026-11-19"
+},
+"OTCPK:IBTN": {
+"status": "ok",
+"sym": "IBTN",
+"flags": [
+0,
+0,
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+1.227,
+0.995,
+1.206,
+1.31
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 1.227,
+"usd_m": 1.227
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 0.995,
+"usd_m": 0.995
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.206,
+"usd_m": 1.206
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.31,
+"usd_m": 1.31
+}
+],
+"nEvents": 23,
+"lastEvent": "2026-11-13",
+"firstTrade": "2018-03-14",
+"fetched": "2026-11-19"
+},
+"OTCPK:CZBC": {
+"status": "ok",
+"sym": "CZBC",
+"flags": [
+1,
+1,
+0,
+1,
+0,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.72,
+2.135,
+1.422,
+1.564
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.72,
+"usd_m": 2.72
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.135,
+"usd_m": 2.135
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.422,
+"usd_m": 1.422
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.564,
+"usd_m": 1.564
+}
+],
+"nEvents": 17,
+"lastEvent": "2025-12-12",
+"firstTrade": "2007-09-06",
+"fetched": "2026-11-19"
+},
+"OTCPK:LFGP": {
+"status": "ok",
+"sym": "LFGP",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.818,
+2.827,
+2.855,
+2.899
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 2.818,
+"usd_m": 2.818
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.827,
+"usd_m": 2.827
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.855,
+"usd_m": 2.855
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.899,
+"usd_m": 2.899
+}
+],
+"nEvents": 76,
+"lastEvent": "2026-08-14",
+"firstTrade": "2007-10-18",
+"fetched": "2026-11-19"
+},
+"OTCPK:HLFN": {
+"status": "ok",
+"sym": "HLFN",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+2.537,
+2.686,
+2.701,
+null,
+2.97
+],
+"annual": [
+{
+"date": "2022-06-30",
+"cur": "USD",
+"local_m": 2.537,
+"usd_m": 2.537
+},
+{
+"date": "2023-06-30",
+"cur": "USD",
+"local_m": 2.686,
+"usd_m": 2.686
+},
+{
+"date": "2024-06-30",
+"cur": "USD",
+"local_m": 2.701,
+"usd_m": 2.701
+},
+{
+"date": "2026-06-30",
+"cur": "USD",
+"local_m": 2.97,
+"usd_m": 2.97
+}
+],
+"nEvents": 113,
+"lastEvent": "2026-10-30",
+"firstTrade": "1998-03-26",
+"fetched": "2026-11-19"
+},
+"OTCPK:BBBK": {
+"status": "ok",
+"sym": "BBBK",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+4.275,
+3.443,
+2.621,
+2.631
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 4.275,
+"usd_m": 4.275
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 3.443,
+"usd_m": 3.443
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 2.621,
+"usd_m": 2.621
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 2.631,
+"usd_m": 2.631
+}
+],
+"nEvents": 103,
+"lastEvent": "2026-09-18",
+"firstTrade": "1999-07-21",
+"fetched": "2026-11-19"
+},
+"OTCPK:LSFG": {
+"status": "ok",
+"sym": "LSFG",
+"flags": [
+0,
+0,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+0.412,
+0.515,
+0.567,
+null,
+0.67
+],
+"annual": [
+{
+"date": "2022-06-30",
+"cur": "USD",
+"local_m": 0.412,
+"usd_m": 0.412
+},
+{
+"date": "2023-06-30",
+"cur": "USD",
+"local_m": 0.515,
+"usd_m": 0.515
+},
+{
+"date": "2024-06-30",
+"cur": "USD",
+"local_m": 0.567,
+"usd_m": 0.567
+},
+{
+"date": "2026-06-30",
+"cur": "USD",
+"local_m": 0.67,
+"usd_m": 0.67
+}
+],
+"nEvents": 43,
+"lastEvent": "2026-09-30",
+"firstTrade": "1998-08-21",
+"fetched": "2026-11-19"
+},
+"OTCPK:FFWC": {
+"status": "ok",
+"sym": "FFWC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+1.188,
+2.676,
+1.306,
+null,
+1.345
+],
+"annual": [
+{
+"date": "2022-06-30",
+"cur": "USD",
+"local_m": 1.188,
+"usd_m": 1.188
+},
+{
+"date": "2023-06-30",
+"cur": "USD",
+"local_m": 2.676,
+"usd_m": 2.676
+},
+{
+"date": "2024-06-30",
+"cur": "USD",
+"local_m": 1.306,
+"usd_m": 1.306
+},
+{
+"date": "2026-06-30",
+"cur": "USD",
+"local_m": 1.345,
+"usd_m": 1.345
+}
+],
+"nEvents": 85,
+"lastEvent": "2026-09-11",
+"firstTrade": "2005-11-10",
+"fetched": "2026-11-19"
+},
+"OTCPK:STBI": {
+"status": "ok",
+"sym": "STBI",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+1.453,
+1.457,
+1.466,
+1.47
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 1.453,
+"usd_m": 1.453
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 1.457,
+"usd_m": 1.457
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.466,
+"usd_m": 1.466
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.47,
+"usd_m": 1.47
+}
+],
+"nEvents": 94,
+"lastEvent": "2026-11-13",
+"firstTrade": "1999-04-26",
+"fetched": "2026-11-19"
+},
+"OTCPK:HCBN": {
+"status": "no Yahoo symbol / chart"
+},
+"OTCPK:WDFN": {
+"status": "ok",
+"sym": "WDFN",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+1.531,
+1.59,
+1.619,
+1.622
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 1.531,
+"usd_m": 1.531
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 1.59,
+"usd_m": 1.59
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.619,
+"usd_m": 1.619
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.622,
+"usd_m": 1.622
+}
+],
+"nEvents": 79,
+"lastEvent": "2026-11-13",
+"firstTrade": "2007-05-09",
+"fetched": "2026-11-19"
+},
+"OTCPK:HCBC": {
+"status": "ok",
+"sym": "HCBC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+1.919,
+1.93,
+1.925,
+1.922
+],
+"annual": [
+{
+"date": "2023-06-30",
+"cur": "USD",
+"local_m": 1.919,
+"usd_m": 1.919
+},
+{
+"date": "2024-06-30",
+"cur": "USD",
+"local_m": 1.93,
+"usd_m": 1.93
+},
+{
+"date": "2025-06-30",
+"cur": "USD",
+"local_m": 1.925,
+"usd_m": 1.925
+},
+{
+"date": "2026-06-30",
+"cur": "USD",
+"local_m": 1.922,
+"usd_m": 1.922
+}
+],
+"nEvents": 69,
+"lastEvent": "2026-11-10",
+"firstTrade": "1997-12-11",
+"fetched": "2026-11-19"
+},
+"OTCPK:FRFC": {
+"status": "ok",
+"sym": "FRFC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 61,
+"lastEvent": "2026-09-04",
+"firstTrade": "1997-06-30",
+"fetched": "2026-11-19"
+},
+"OTCPK:LOGN": {
+"status": "ok",
+"sym": "LOGN",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+0.978,
+2.624,
+1.101,
+1.103
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "USD",
+"local_m": 0.978,
+"usd_m": 0.978
+},
+{
+"date": "2023-12-31",
+"cur": "USD",
+"local_m": 2.624,
+"usd_m": 2.624
+},
+{
+"date": "2024-12-31",
+"cur": "USD",
+"local_m": 1.101,
+"usd_m": 1.101
+},
+{
+"date": "2025-12-31",
+"cur": "USD",
+"local_m": 1.103,
+"usd_m": 1.103
+}
+],
+"nEvents": 128,
+"lastEvent": "2026-09-18",
+"firstTrade": "1995-06-14",
+"fetched": "2026-11-19"
+},
+"OTCPK:ORBT": {
+"status": "ok",
+"sym": "ORBT",
+"flags": [
+0,
+0,
+1,
+1,
+1,
+0,
+1,
+1,
+1,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 16,
+"lastEvent": "2024-03-27",
+"firstTrade": "1980-03-18",
+"fetched": "2026-11-19"
+}
+}

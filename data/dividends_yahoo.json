@@ -1,0 +1,1309 @@
+{
+"CPSE:HVID": {
+"status": "ok",
+"sym": "HVID.CO",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 10,
+"lastEvent": "2025-03-20",
+"firstTrade": "2000-01-03",
+"fetched": "2026-11-19"
+},
+"XTRA:VVV3": {
+"status": "ok",
+"sym": "VVV3.DE",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+16.974,
+16.974,
+16.962,
+17.359
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 15.438,
+"usd_m": 16.974
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 15.438,
+"usd_m": 16.974
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 15.427,
+"usd_m": 16.962
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 15.788,
+"usd_m": 17.359
+}
+],
+"nEvents": 20,
+"lastEvent": "2026-06-22",
+"firstTrade": "2004-02-13",
+"fetched": "2026-11-19"
+},
+"XTRA:BWB": {
+"status": "ok",
+"sym": "BWB.DE",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+1,
+1,
+1,
+0,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+4.123,
+9.531,
+2.888,
+null,
+6.975
+],
+"annual": [
+{
+"date": "2021-12-31",
+"cur": "EUR",
+"local_m": 3.75,
+"usd_m": 4.123
+},
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 8.668,
+"usd_m": 9.531
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 2.627,
+"usd_m": 2.888
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 6.344,
+"usd_m": 6.975
+}
+],
+"nEvents": 19,
+"lastEvent": "2026-07-10",
+"firstTrade": "1998-11-09",
+"fetched": "2026-11-19"
+},
+"XTRA:MBK": {
+"status": "ok",
+"sym": "MBK.DE",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 21,
+"lastEvent": "2025-06-24",
+"firstTrade": "2002-01-22",
+"fetched": "2026-11-19"
+},
+"XTRA:MUB": {
+"status": "ok",
+"sym": "MUB.DE",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+23.428,
+15.604,
+15.604,
+23.406
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 21.307,
+"usd_m": 23.428
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 14.192,
+"usd_m": 15.604
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 14.192,
+"usd_m": 15.604
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 21.288,
+"usd_m": 23.406
+}
+],
+"nEvents": 27,
+"lastEvent": "2026-07-30",
+"firstTrade": "1998-11-09",
+"fetched": "2026-11-19"
+},
+"XTRA:ETG": {
+"status": "ok",
+"sym": "ETG.DE",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+16.328,
+32.655,
+48.983,
+8.164
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 14.85,
+"usd_m": 16.328
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 29.7,
+"usd_m": 32.655
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 44.55,
+"usd_m": 48.983
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 7.425,
+"usd_m": 8.164
+}
+],
+"nEvents": 13,
+"lastEvent": "2025-07-07",
+"firstTrade": "2007-07-12",
+"fetched": "2026-11-19"
+},
+"BIT:BEC": {
+"status": "ok",
+"sym": "BEC.MI",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+3.824,
+7.15,
+8.444,
+11.947
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 3.478,
+"usd_m": 3.824
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 6.503,
+"usd_m": 7.15
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 7.68,
+"usd_m": 8.444
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 10.865,
+"usd_m": 11.947
+}
+],
+"nEvents": 21,
+"lastEvent": "2026-05-04",
+"firstTrade": "2007-07-20",
+"fetched": "2026-11-19"
+},
+"BVB:VAC": {
+"status": "ok",
+"sym": "VAC.RO",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 21,
+"lastEvent": "2025-12-04",
+"firstTrade": "2007-12-21",
+"fetched": "2026-11-19"
+},
+"XTRA:MWB0": {
+"status": "ok",
+"sym": "MWB0.DE",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+0,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 14,
+"lastEvent": "2026-07-24",
+"firstTrade": "1999-04-23",
+"fetched": "2026-11-19"
+},
+"ATSE:TELL": {
+"status": "ok",
+"sym": "TELL.AT",
+"flags": [
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 29,
+"lastEvent": "2026-04-23",
+"firstTrade": "1986-01-02",
+"fetched": "2026-11-19"
+},
+"DB:FHW": {
+"status": "ok",
+"sym": "FHW.F",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+0,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+4.552,
+4.552,
+null,
+3.035,
+1.77
+],
+"annual": [
+{
+"date": "2021-12-31",
+"cur": "EUR",
+"local_m": 4.14,
+"usd_m": 4.552
+},
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 4.14,
+"usd_m": 4.552
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 2.76,
+"usd_m": 3.035
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 1.61,
+"usd_m": 1.77
+}
+],
+"nEvents": 14,
+"lastEvent": "2026-06-12",
+"firstTrade": "2007-12-28",
+"fetched": "2026-11-19"
+},
+"BME:IBG": {
+"status": "ok",
+"sym": "IBG.MC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.993,
+10.579,
+11.866,
+11.149
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 2.722,
+"usd_m": 2.993
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 9.622,
+"usd_m": 10.579
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 10.792,
+"usd_m": 11.866
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 10.14,
+"usd_m": 11.149
+}
+],
+"nEvents": 49,
+"lastEvent": "2026-06-05",
+"firstTrade": "2000-01-03",
+"fetched": "2026-11-19"
+},
+"CPSE:SKJE": {
+"status": "ok",
+"sym": "SKJE.CO",
+"flags": [
+0,
+0,
+0,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 12,
+"lastEvent": "2026-03-03",
+"firstTrade": "2003-02-24",
+"fetched": "2026-11-19"
+},
+"ATSE:FOYRK": {
+"status": "ok",
+"sym": "FOYRK.AT",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+6.598,
+7.068,
+10.241,
+8.371
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 6.001,
+"usd_m": 6.598
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 6.428,
+"usd_m": 7.068
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 9.314,
+"usd_m": 10.241
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 7.613,
+"usd_m": 8.371
+}
+],
+"nEvents": 17,
+"lastEvent": "2026-06-29",
+"firstTrade": "1988-04-21",
+"fetched": "2026-11-19"
+},
+"BIT:CAI": {
+"status": "ok",
+"sym": "CAI.MI",
+"flags": [
+1,
+1,
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+39.912,
+34.305,
+39.582,
+15.943
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 36.3,
+"usd_m": 39.912
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 31.2,
+"usd_m": 34.305
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 36.0,
+"usd_m": 39.582
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 14.5,
+"usd_m": 15.943
+}
+],
+"nEvents": 25,
+"lastEvent": "2026-05-25",
+"firstTrade": "2000-07-19",
+"fetched": "2026-11-19"
+},
+"SWX:LEHN": {
+"status": "ok",
+"sym": "LEHN.SW",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+56.712,
+67.495,
+70.214,
+67.469,
+null
+],
+"annual": [
+{
+"date": "2022-03-31",
+"cur": "CHF",
+"local_m": 47.858,
+"usd_m": 56.712
+},
+{
+"date": "2023-03-31",
+"cur": "CHF",
+"local_m": 56.958,
+"usd_m": 67.495
+},
+{
+"date": "2024-03-31",
+"cur": "CHF",
+"local_m": 59.252,
+"usd_m": 70.214
+},
+{
+"date": "2025-03-31",
+"cur": "CHF",
+"local_m": 56.936,
+"usd_m": 67.469
+}
+],
+"nEvents": 22,
+"lastEvent": "2024-07-02",
+"firstTrade": "2000-01-04",
+"fetched": "2026-11-19"
+},
+"ENXTPA:ALHIT": {
+"status": "ok",
+"sym": "ALHIT.PA",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 22,
+"lastEvent": "2026-07-01",
+"firstTrade": "2006-11-28",
+"fetched": "2026-11-19"
+},
+"BVB:ATRD": {
+"status": "ok",
+"sym": "ATRD.RO",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+1,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 2,
+"lastEvent": "2026-05-25",
+"firstTrade": "2012-04-26",
+"fetched": "2026-11-19"
+},
+"DB:PEH": {
+"status": "ok",
+"sym": "PEH.F",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+2.695,
+3.234,
+3.413,
+3.592
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 2.451,
+"usd_m": 2.695
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 2.941,
+"usd_m": 3.234
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 3.104,
+"usd_m": 3.413
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 3.267,
+"usd_m": 3.592
+}
+],
+"nEvents": 15,
+"lastEvent": "2026-08-24",
+"firstTrade": "2000-01-03",
+"fetched": "2026-11-19"
+},
+"BVB:AVSL": {
+"status": "ok",
+"sym": "AVSL.RO",
+"flags": [
+1,
+0,
+1,
+1,
+1,
+0,
+0,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 9,
+"lastEvent": "2025-12-10",
+"firstTrade": "2012-05-16",
+"fetched": "2026-11-19"
+},
+"BST:ATW": {
+"status": "ok",
+"sym": "ATW.SG",
+"flags": [
+1,
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 15,
+"lastEvent": "2026-07-16",
+"firstTrade": "2007-12-28",
+"fetched": "2026-11-19"
+},
+"BVB:MOIB": {
+"status": "ok",
+"sym": "MOIB.RO",
+"flags": [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 3,
+"lastEvent": "2026-09-02",
+"firstTrade": "2024-01-24",
+"fetched": "2026-11-19"
+},
+"XTRA:QB7": {
+"status": "ok",
+"sym": "QB7.DE",
+"flags": [
+0,
+1,
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 9,
+"lastEvent": "2026-06-22",
+"firstTrade": "2006-11-09",
+"fetched": "2026-11-19"
+},
+"BME:ISUR": {
+"status": "ok",
+"sym": "ISUR.MC",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+6.267,
+6.631,
+5.955,
+11.224
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 5.7,
+"usd_m": 6.267
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 6.031,
+"usd_m": 6.631
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 5.416,
+"usd_m": 5.955
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 10.208,
+"usd_m": 11.224
+}
+],
+"nEvents": 34,
+"lastEvent": "2026-06-29",
+"firstTrade": "2007-11-05",
+"fetched": "2026-11-19"
+},
+"SWX:BCJ": {
+"status": "ok",
+"sym": "BCJ.SW",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 27,
+"lastEvent": "2026-05-15",
+"firstTrade": "1995-04-03",
+"fetched": "2026-11-19"
+},
+"XTRA:PZS": {
+"status": "ok",
+"sym": "PZS.DE",
+"flags": [
+1,
+1,
+1,
+0,
+0,
+1,
+1,
+0,
+0,
+0
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 7,
+"lastEvent": "2026-05-28",
+"firstTrade": "2005-09-26",
+"fetched": "2026-11-19"
+},
+"DB:BFV": {
+"status": "ok",
+"sym": "BFV.F",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+14.727,
+14.596,
+7.205,
+7.154
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 13.394,
+"usd_m": 14.727
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 13.275,
+"usd_m": 14.596
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 6.553,
+"usd_m": 7.205
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 6.507,
+"usd_m": 7.154
+}
+],
+"nEvents": 15,
+"lastEvent": "2026-06-08",
+"firstTrade": "2000-01-03",
+"fetched": "2026-11-19"
+},
+"XTRA:LUS1": {
+"status": "ok",
+"sym": "LUS1.DE",
+"flags": [
+1,
+1,
+1,
+1,
+0,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+15.566,
+6.641,
+5.708,
+18.168
+],
+"annual": [
+{
+"date": "2022-12-31",
+"cur": "EUR",
+"local_m": 14.157,
+"usd_m": 15.566
+},
+{
+"date": "2023-12-31",
+"cur": "EUR",
+"local_m": 6.04,
+"usd_m": 6.641
+},
+{
+"date": "2024-12-31",
+"cur": "EUR",
+"local_m": 5.191,
+"usd_m": 5.708
+},
+{
+"date": "2025-12-31",
+"cur": "EUR",
+"local_m": 16.524,
+"usd_m": 18.168
+}
+],
+"nEvents": 14,
+"lastEvent": "2026-08-27",
+"firstTrade": "2006-09-28",
+"fetched": "2026-11-19"
+},
+"BVB:FOSB": {
+"status": "ok",
+"sym": "FOSB.RO",
+"flags": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"amounts": [
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null
+],
+"annual": [],
+"nEvents": 15,
+"lastEvent": "2026-05-14",
+"firstTrade": "2012-04-19",
+"fetched": "2026-11-19"
+}
+}

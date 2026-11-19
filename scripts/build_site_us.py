@@ -83,7 +83,7 @@ def build_sector_payload(companies, mc_overrides):
             'gmSrcType': 'verified_filing' if c.get('gmIsVerified') else None,
             'gmLinks': [{'label': 'Company filing', 'url': c['gmSourceUrl']}] if c.get('gmSourceUrl') else [],
             'fixedPts': c['fixedPts'], 'fixedSumNoGm': c['fixedSumNoGm'],
-            'revHist': c['revHist'], 'niHist': c['niHist'], 'divHist': c.get('divHist'),
+            'revHist': c['revHist'], 'niHist': c['niHist'], 'divHist': c.get('divHist'), 'divFlags': c.get('divFlags'), 'divSrc': c.get('divSrc'),
             'thesis': c.get('thesis'),
             'industry': c.get('industry'), 'archetypePrecomputed': c.get('archetype'),
             'newsNote': None,

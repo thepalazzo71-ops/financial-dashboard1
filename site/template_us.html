@@ -1443,18 +1443,35 @@ function evDisplay(c, mc) {
 }
 function divDisplay(c) {
   // Dividends paid ($M, cash out): latest period, plus payout vs the 4-period average net income.
-  const h = c.divHist;
+  // Companies without Capital IQ dividend data use Yahoo Finance (c.divSrc === 'yahoo'): per-period paid/not-paid flags
+  // for all 10 periods, cash amounts for the fiscal years Yahoo reports (~4).
+  const h = c.divHist, fl = c.divFlags, yh = c.divSrc === 'yahoo';
+  const tag = yh ? ' <span class="tag" title="From Yahoo Finance (Capital IQ extract has no dividend data for this company). Amounts: last ~4 fiscal years at today\'s exchange rates.">Yahoo</span>' : '';
   if (!h || !h.length) return '\u2014';
   const last = h[h.length-1];
   const l4 = h.slice(-4).filter(v=>v!==null&&v!==undefined);
-  if (last===null || last===undefined) return l4.length && l4.some(v=>v>0) ? `not reported (LTM)` : '\u2014';
-  if (last===0 && !l4.some(v=>v>0)) return 'none paid';
+  if (last===null || last===undefined) {
+    if (yh && fl) {
+      if (fl[fl.length-1] === 1) return (l4.length ? `$${fmtNum(l4[l4.length-1],1)}M (latest reported)` : 'paid \u2014 amount n/a') + tag;
+      return (fl.some(v=>v===1) ? 'no dividend in the latest period' : 'none paid') + tag;
+    }
+    return l4.some(v=>v>0) ? `$${fmtNum(l4[l4.length-1],1)}M (latest reported)` : '\u2014';
+  }
+  if (last===0 && !l4.some(v=>v>0)) return 'none paid' + tag;
   let s = `$${fmtNum(last,1)}M (LTM)`;
   if (l4.length && c.avgNI!==null && c.avgNI!==undefined && c.avgNI>0) {
     const pay = (l4.reduce((a,b)=>a+b,0)/l4.length) / c.avgNI;
-    if (pay>0) s += ` · payout ${Math.round(pay*100)}% of NI`;
+    if (pay>0) s += ` \u00b7 payout ${Math.round(pay*100)}% of NI`;
   }
-  return s;
+  return s + tag;
+}
+function divCell(c, i, n) {
+  const v = c.divHist ? c.divHist[i] : null, f = c.divFlags ? c.divFlags[i] : null;
+  const cls = i===n-1 ? 'latest' : '';
+  if (v!==null && v!==undefined) return `<td class="${cls}">${fmtNum(v,1)}</td>`;
+  if (f===1) return `<td class="${cls}" title="Dividend paid (Yahoo Finance); amount not available">paid</td>`;
+  if (f===0) return `<td class="${cls}" title="No dividend paid (Yahoo Finance)">0.0</td>`;
+  return `<td class="${cls}">\u2014</td>`;
 }
 function renderFullFinancials(row) {
   const { c, mc, gmInfo, roe, pb } = row;
@@ -1492,9 +1509,10 @@ function renderFullFinancials(row) {
       <tbody>
         <tr><td>Revenue</td>${c.revHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
         <tr><td>Net Income</td>${c.niHist.map((v,i)=>periodCell(v,i,n)).join('')}</tr>
-        <tr><td>Dividends paid</td>${(c.divHist||c.niHist.map(()=>null)).map((v,i)=>periodCell(v,i,n)).join('')}</tr>
+        <tr><td>Dividends paid</td>${c.niHist.map((_,i)=>divCell(c,i,n)).join('')}</tr>
       </tbody>
     </table>
+    ${c.divSrc==='yahoo' ? `<div class="lens-note" style="margin-top:8px">Dividends: this company has no dividend data in the Capital IQ extract, so they come from <b>Yahoo Finance</b> &mdash; paid / not-paid for each period from its dividend payments, cash amounts for the last ~4 fiscal years (converted at today\'s exchange rates).</div>` : ''}
   `;
 }
 let expandedTop150Ticker = null;

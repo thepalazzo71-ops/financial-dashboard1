@@ -178,7 +178,7 @@ def build_payload(companies, mc_overrides, gm_overrides):
             'gmSrcType': 'manual_override' if gm_o else c['gmSourceType'],
             'gmLinks': parse_links(c.get('gmSourceUrl')),
             'fixedPts': c['fixedPts'], 'fixedSumNoGm': c['fixedSumNoGm'],
-            'revHist': c['revHist'], 'niHist': c['niHist'], 'divHist': c.get('divHist'),
+            'revHist': c['revHist'], 'niHist': c['niHist'], 'divHist': c.get('divHist'), 'divFlags': c.get('divFlags'), 'divSrc': c.get('divSrc'),
             'thesis': c.get('thesis'),
             'newsNote': news.get('note') if news else None,
             'distress': distress.get(c['ticker']),
