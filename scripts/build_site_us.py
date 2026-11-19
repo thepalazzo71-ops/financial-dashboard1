@@ -18,6 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import nd_payload
 import price_stats
 from scoring import compact_snapshot_rows, gm_band_points, median_gm_points, score_pool
 
@@ -135,6 +136,10 @@ def main():
 
     template = TEMPLATE.read_text()
     px_cov = price_stats.attach(payload)
+    _nd = nd_payload.load(ROOT / 'data-us')
+    for _sec in payload['sectors'].values():
+        for _c in _sec['companies']:
+            _c['nd'] = _nd.get(_c['t'])
     html = template.replace('__PAYLOAD_JSON__', json.dumps(payload, separators=(',', ':')))
     html = html.replace('__BUILD_INFO_JSON__', json.dumps(build_info))
     html = price_stats.inject(html, 25)
