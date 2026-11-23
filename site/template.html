@@ -212,16 +212,6 @@
   .val-box .val-basis { margin: 6px 0 0; }
   .val-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 12px; }
   .nd-b { font-size: 9px; color: var(--gold); margin-left: 2px; cursor: help; }
-  .cheap-controls { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; margin: 0 0 10px; color: var(--ink-soft); }
-  .cheap-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  .cheap-table th { text-align: right; font-weight: 600; color: var(--ink-faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 6px; border-bottom: 1px solid var(--rule-strong); }
-  .cheap-table th:nth-child(2), .cheap-table td:nth-child(2) { text-align: left; }
-  .cheap-table td { padding: 6px 6px; border-bottom: 1px solid var(--rule); text-align: right; vertical-align: top; }
-  .cheap-table td .sub { color: var(--ink-faint); font-size: 11px; }
-  .cheap-table tr.cheap-row { cursor: pointer; }
-  .cheap-table tr.cheap-row:hover { background: rgba(47,75,60,0.05); }
-  .cheap-table tr.cheap-row.expanded { background: var(--green-soft); }
-  .cheap-table td.cheap-detail-cell { text-align: left; padding: 0 6px 14px; white-space: normal; font-size: 13px; }
   .modal h4 { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.03em; margin: 18px 0 8px; }
   .modal h4:first-child { margin-top: 0; }
   .top150-row-wrap:last-child .top150-row { border-bottom: none; }
@@ -327,10 +317,9 @@
     <button class="btn ghost small" id="top150ChangesBtn">Top 150 changes</button>
     <button class="btn ghost small" id="moversBtn">Biggest movers</button>
     <button class="btn ghost small" id="swingersBtn" title="Widest 5-year share-price swings">Big swingers (5y)</button>
-    <button class="btn ghost small" id="cheapPeBtn" title="Companies with the lowest price / earnings, with EV / net profit where net debt is known">Cheapest by P/E</button>
+    <button class="btn ghost small" id="cheapPeBtn" title="Companies with the lowest price / earnings or EV / net profit (choose inside), by country">Cheapest by P/E / EV</button>
     <button class="btn ghost small" id="corpActionsBtn">Corporate actions</button>
     <button class="btn ghost small" id="delistedBtn">Delisted</button>
-    <button class="btn ghost small" id="cheapEvBtn" title="Companies with the lowest enterprise value / earnings">Cheapest EV / earnings</button>
     <button class="btn ghost small" id="trackerBtn">Tracker</button>
     <button class="btn ghost small" id="commentsBtn">Comments</button>
     <button class="btn ghost small" id="profitBonusBtn">Profitability bonus benefactors</button>
@@ -444,26 +433,6 @@
   </div>
 </div>
 
-<div class="modal-backdrop" id="cheapEvModalBackdrop">
-  <div class="modal wide xwide">
-    <h3>Cheapest by EV / earnings</h3>
-    <p class="hint">
-      Enterprise value (live market cap + net debt) divided by last-twelve-months net income, lowest first. Only companies with
-      <b>net-debt data</b> (the top 150 researched so far) and <b>positive earnings</b> appear; banks and insurers are excluded and loss-makers
-      or companies whose net cash exceeds their market cap (EV &le; 0) are listed separately below. Net income, not EBIT, so heavily
-      indebted or lease-heavy companies can look cheaper than they are. This is a screen, not a score: it does not affect the v6 ranking.
-    </p>
-    <div class="cheap-controls">
-      <label><input type="checkbox" id="cheapTierA"> Only net debt built from debt &minus; cash (tier A)</label>
-      <label><input type="checkbox" id="cheapFresh"> Only balance sheets from Q1 2026 or later</label>
-      <label>Show <select id="cheapN"><option value="25">25</option><option value="50">50</option><option value="9999">all</option></select></label>
-    </div>
-    <div id="cheapEvContent"></div>
-    <div class="actions">
-      <button class="btn ghost" id="cheapEvClose">Close</button>
-    </div>
-  </div>
-</div>
 
 <div class="modal-backdrop" id="delistedModalBackdrop">
   <div class="modal wide">
@@ -1362,52 +1331,6 @@ function renderCorpActionsModalContent() {
     <h4>${label} (${(list||[]).length})</h4>
     ${(list||[]).length ? list.map(a=>renderCorpActionRow(a, cpLabel)).join('') : '<p class="no-thesis">None found yet.</p>'}
   `).join('');
-}
-let expandedCheapTicker = null;
-function renderCheapEvContent() {
-  const all = ensureLiveScored();
-  const rank = computeRankByTicker(all, false);
-  const onlyA = document.getElementById('cheapTierA').checked;
-  const fresh = document.getElementById('cheapFresh').checked;
-  const limit = parseInt(document.getElementById('cheapN').value, 10);
-  const rows = [], loss = [], netcash = [];
-  let withData = 0;
-  all.forEach(r => {
-    const c = r.c;
-    if (isDelisted(c.t) || !c.nd || c.nd.tier === 'F') return;
-    withData++;
-    if (onlyA && c.nd.tier !== 'A') return;
-    if (fresh && (c.nd.date || '') < '2026-03-31') return;
-    const v = valuationOf(c, r.mc);
-    if (v.evE !== null) rows.push({ r, v });
-    else if (v.ni !== null && v.ni <= 0) loss.push({ r, v });
-    else if (v.ev !== null && v.ev <= 0) netcash.push({ r, v });
-  });
-  rows.sort((a, b) => a.v.evE - b.v.evE);
-  const shown = rows.slice(0, limit);
-  const body = shown.map(({ r, v }, i) => {
-    const c = r.c, nd = c.nd;
-    const tag = nd.tier === 'B' ? ' <sup class="nd-b" title="Company-reported net debt only (definition varies)">B</sup>' : '';
-    const warn = (nd.flags || []).some(f => /aggregator|older than/.test(f)) ? ' <span title="' + escHtml((nd.flags || []).join('; ')) + '" style="color:var(--brick);cursor:help">&#9888;</span>' : '';
-    const isOpen = expandedCheapTicker === c.t;
-    return `<tr class="cheap-row ${isOpen ? 'expanded' : ''}" data-ticker="${c.t}" title="Click for the full company detail">
-      <td>${i + 1}</td>
-      <td><b>${escHtml(c.n)}</b><div class="sub">${c.t} &middot; ${escHtml(c.co)}</div></td>
-      <td>${fmtNum(r.mc, 0)}</td><td>${fmtNum(v.ndUsd, 0)}${tag}</td><td>${fmtNum(v.ev, 0)}</td><td>${fmtNum(v.ni, 1)}</td>
-      <td><b>${fmtNum(v.evE, 1)}x</b></td><td>${v.pe !== null ? fmtNum(v.pe, 1) + 'x' : '—'}</td>
-      <td>#${rank[c.t]} <span class="sub">(${fmtNum(r.total, 1)})</span></td>
-      <td title="${escHtml(ndBasisText(nd))}">${nd.tier} &middot; ${escHtml(nd.date || '?')}${warn}</td>
-    </tr>${isOpen ? `<tr class="cheap-detail"><td colspan="10" class="cheap-detail-cell">${renderDetailPanel(r, rank[c.t])}</td></tr>` : ''}`;
-  }).join('');
-  const names = list => list.map(({ r }) => escHtml(r.c.n)).join(', ') || 'none';
-  document.getElementById('cheapEvContent').innerHTML = `
-    <table class="cheap-table">
-      <thead><tr><th>#</th><th>Company</th><th>Mkt cap ($M)</th><th>Net debt ($M)</th><th>EV ($M)</th><th>LTM NI ($M)</th><th>EV / earnings</th><th>P/E</th><th>v6 rank (score)</th><th>Net debt basis</th></tr></thead>
-      <tbody>${body || '<tr><td colspan="10" class="no-thesis">No company matches these filters.</td></tr>'}</tbody>
-    </table>
-    <p class="hint" style="margin-top:12px">${rows.length} of ${withData} non-financial companies with net-debt data have positive earnings and a positive EV${rows.length > shown.length ? ` (showing the cheapest ${shown.length})` : ''}. Tier A = debt &minus; cash from the balance sheet; <sup class="nd-b">B</sup> = the company's own reported net debt (definition varies); &#9888; = aggregator source or an older balance sheet. Hover a basis for details. <b>Click any company</b> to open its full detail (score breakdown, research, financials, your comments).</p>
-    <p class="hint"><b>Loss-making (EV / earnings not meaningful, ${loss.length}):</b> ${names(loss)}.</p>
-    <p class="hint"><b>Net cash exceeds market cap (EV &le; 0, ${netcash.length}):</b> ${names(netcash)}.</p>`;
 }
 function renderDelistedModalContent() {
   const all = ensureLiveScored();
@@ -2548,19 +2471,6 @@ function wireToolbar() {
   document.getElementById('corpActionsClose').addEventListener('click', () => caBackdrop.classList.remove('open'));
   caBackdrop.addEventListener('click', e => { if (e.target===caBackdrop) caBackdrop.classList.remove('open'); });
 
-  const cheapBackdrop = document.getElementById('cheapEvModalBackdrop');
-  document.getElementById('cheapEvBtn').addEventListener('click', () => { expandedCheapTicker = null; renderCheapEvContent(); cheapBackdrop.classList.add('open'); });
-  document.getElementById('cheapEvClose').addEventListener('click', () => cheapBackdrop.classList.remove('open'));
-  cheapBackdrop.addEventListener('click', e => { if (e.target === cheapBackdrop) cheapBackdrop.classList.remove('open'); });
-  ['cheapTierA', 'cheapFresh', 'cheapN'].forEach(id => document.getElementById(id).addEventListener('change', renderCheapEvContent));
-  document.getElementById('cheapEvContent').addEventListener('click', e => {
-    const rowEl = e.target.closest('tr.cheap-row');
-    if (!rowEl) return;
-    const t = rowEl.dataset.ticker;
-    expandedCheapTicker = (expandedCheapTicker === t) ? null : t;
-    renderCheapEvContent();
-  });
-
   const dlBackdrop = document.getElementById('delistedModalBackdrop');
   document.getElementById('delistedBtn').addEventListener('click', () => {
     renderDelistedModalContent();
@@ -2730,7 +2640,6 @@ function refreshAllViews() {
   if (document.getElementById('corpActionsModalBackdrop').classList.contains('open')) renderCorpActionsModalContent();
   if (document.getElementById('trackerModalBackdrop').classList.contains('open')) renderTrackerModalContent();
   if (document.getElementById('profitBonusModalBackdrop').classList.contains('open')) renderProfitBonusModalContent();
-  if (document.getElementById('cheapEvModalBackdrop').classList.contains('open')) renderCheapEvContent();
 }
 
 function init() {
