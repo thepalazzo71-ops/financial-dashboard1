@@ -41,7 +41,7 @@ def screen(label, folder, pf, nf):
     nfset = {c['ticker'] for c in json.load(open(R + f'{folder}/{nf}'))} if nf else {t for t in by if (nd.get(t) or {}).get('tier') != 'F'}
     dl = {k for k in L(R + f'{folder}/delisted.json', {}) if not k.startswith('_')}
     ds = {k for k in L(R + f'{folder}/distress_flags.json', {}) if not k.startswith('_')}
-    st = dict(pool=len(by), nonfin=len(nfset), excluded=0, hist=0, nocfo=0, nogm=0, passed=0, A=0, B=0, C=0)
+    st = dict(pool=len(by), nonfin=len(nfset), excluded=0, hist=0, nocfo=0, nogm=0, passed=0, A=0, B=0, C=0, D=0)
     out = []
     for t, (c, s) in by.items():
         if t not in nfset:
@@ -50,7 +50,7 @@ def screen(label, folder, pf, nf):
             st['excluded'] += 1
             continue
         h = [v for v in c['revHist'] if v is not None]
-        if len(h) < 9 or h[0] <= 0:
+        if len(h) < 7 or h[0] <= 0:
             continue
         st['hist'] += 1
         if c['cfoPct'] is None:
@@ -65,23 +65,23 @@ def screen(label, folder, pf, nf):
             st['nogm'] += 1
         if base and (s['gm'] or 0) >= 0.30:
             e = nd.get(t) or {}
-            tier = 'A' if (prev_ok and cagr >= 0.08 and worst > -0.10) else ('B' if prev_ok else 'C')
+            tier = 'D' if len(h) < 9 else ('A' if (prev_ok and cagr >= 0.08 and worst > -0.10) else ('B' if prev_ok else 'C'))
             out.append(dict(c=c, t=t, cagr=cagr, ups=ups, worst=worst, s=s, rank=rk[t], hist=h, g1=h[-1] / h[-2] - 1,
                             nd=e.get('netDebtUsd') if e.get('tier') in ('A', 'B') else None, ndfl=e.get('flags') or [],
                             tier=tier, strict=(tier == 'A')))
     st['passed'] = len(out)
-    for k in 'ABC':
+    for k in 'ABCD':
         st[k] = sum(r['tier'] == k for r in out)
     st['strict'] = st['A']
     return out, st
 
 
-HEAD = ['v6 rank', 'Company', 'Ticker', 'Country', 'Revenue 9 yrs ago ($m)', 'Revenue LTM ($m)', 'Revenue growth per year',
+HEAD = ['v6 rank', 'Company', 'Ticker', 'Country', 'Revenue, first period reported ($m)', 'Revenue LTM ($m)', 'Revenue growth per year',
         '% of periods revenue up', 'Worst single-period change', 'Last-period revenue growth', 'Gross margin', 'Profitable periods',
         'CFO+ periods', 'Dividend periods', 'Dilution', 'Market cap ($m)', 'Avg net income, last 4 periods ($m)', 'P/E (on avg NI)',
         'Net debt ($m)', 'Net debt / market cap', 'Screen notes', 'Business', 'Competitive position', 'Main shareholders',
-        'Insider ownership', 'Red flags', 'Website', 'Screen tier']
-WIDTH = [8, 30, 15, 12, 11, 11, 10, 10, 11, 11, 9, 10, 9, 10, 9, 11, 13, 9, 11, 11, 38, 60, 70, 50, 40, 36, 28, 30]
+        'Insider ownership', 'Red flags', 'Website', 'Screen tier', 'Periods of revenue history']
+WIDTH = [8, 30, 15, 12, 11, 11, 10, 10, 11, 11, 9, 10, 9, 10, 9, 11, 13, 9, 11, 11, 38, 60, 70, 50, 40, 36, 28, 30, 11]
 hdr_fill = PatternFill('solid', fgColor='2F4B3C')
 thin = Side(style='thin', color='D5DDD8')
 
@@ -128,19 +128,20 @@ def sheet(ws, items, title):
         th = c.get('thesis') if isinstance(c.get('thesis'), dict) else {}
         link = th.get('website') or ''
         avg = c['avgNI']
-        vals = [r['rank'], c['name'], r['t'], c['country'], r['hist'][0], r['hist'][-1], f'=(F{row}/E{row})^(1/9)-1', r['ups'], r['worst'], r['g1'],
+        vals = [r['rank'], c['name'], r['t'], c['country'], r['hist'][0], r['hist'][-1], f'=(F{row}/E{row})^(1/(AC{row}-1))-1', r['ups'], r['worst'], r['g1'],
                 s['gm'], c['profitPct'], c['cfoPct'], c['divPct'], c['dilution'], round(s['mc'], 1), None if avg is None else round(avg, 2),
                 f'=IF(AND(ISNUMBER(Q{row}),Q{row}>0),P{row}/Q{row},"n/m")', None if r['nd'] is None else round(r['nd'], 1),
                 f'=IF(ISNUMBER(S{row}),S{row}/P{row},"")', notes_for(r),
                 th.get('business_description') or 'No thesis in the dashboard yet.', th.get('competitive_position') or '',
                 th.get('main_shareholders') or '', th.get('insider_ownership') or '', th.get('red_flags') or '', link,
-                {'A': 'A - strict (8%+ a year, no drop worse than -10%, profit and cash flow 80%+)', 'B': 'B - 6%+ a year, profit and cash flow 80%+', 'C': 'C - added by looser limits (profit 70%+, cash flow 50%+)'}[r['tier']]]
+                {'A': 'A - strict (8%+ a year, no drop worse than -10%, profit and cash flow 80%+)', 'B': 'B - 6%+ a year, profit and cash flow 80%+', 'C': 'C - added by looser limits (profit 70%+, cash flow 50%+)', 'D': 'D - short record: 7-8 periods of revenue history (passes the looser limits)'}[r['tier']], len(r['hist'])]
         for i, v in enumerate(vals, 1):
             cell = ws.cell(row=row, column=i, value=clean(v))
             cell.font = Font(name=F, size=9, color='0000FF' if (i in (5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19) and not isinstance(v, str)) else '000000')
             cell.alignment = Alignment(wrap_text=i >= 21, vertical='top', horizontal='left' if i in (2, 3, 4) or i >= 21 else 'right')
             cell.border = Border(bottom=thin)
         ws.cell(row=row, column=28).alignment = Alignment(wrap_text=True, horizontal='left', vertical='top')
+        ws.cell(row=row, column=29).alignment = Alignment(horizontal='center', vertical='top')
         for i, fmt in ((5, '#,##0.0'), (6, '#,##0.0'), (7, '0.0%'), (8, '0%'), (9, '0%;[Red]-0%'), (10, '0%;[Red]-0%'), (11, '0%'), (12, '0%'), (13, '0%'), (14, '0%'),
                        (15, '0.0%;-0.0%'), (16, '#,##0'), (17, '#,##0.0'), (18, '0.0"x"'), (19, '#,##0;-#,##0'), (20, '0.00;-0.00')):
             ws.cell(row=row, column=i).number_format = fmt
@@ -164,16 +165,16 @@ ov.title = 'Overview'
 tabs = []
 for label in ('Asia & Pacific', 'Europe', 'USA & Canada', 'Europe micro'):
     items, st = res[label]
-    tabs.append((f'{label} ({len(items)})', items, f'{label}: {len(items)} companies pass the screen - tier A {st["A"]}, tier B {st["B"]}, tier C {st["C"]} (see the last column and the Overview)'))
+    tabs.append((f'{label} ({len(items)})', items, f'{label}: {len(items)} companies pass the screen - tier A {st["A"]}, B {st["B"]}, C {st["C"]}, D (short record) {st["D"]} (see the last column and the Overview)'))
 for name, items, title in tabs:
     sheet(wb.create_sheet(name), items, title)
 
 # ---- overview sheet
 ov.append(['Revenue compounders - non-financial companies with steady revenue growth, by region'])
 ov['A1'].font = Font(name=F, bold=True, size=13)
-ov.append(['Screen: revenue growth >= 6% a year, revenue up in >= 70% of periods, profitable in >= 70% and operating cash flow positive in >= 50% of periods, gross margin >= 30%, dilution <= 10%. No limit on single-period drops.'])
+ov.append(['Screen: revenue growth >= 6% a year, revenue up in >= 70% of periods, profitable in >= 70% and operating cash flow positive in >= 50% of periods, gross margin >= 30%, dilution <= 10%, at least 7 periods of revenue history (tier D = 7-8 periods). No limit on single-period drops.'])
 ov['A2'].font = Font(name=F, italic=True, size=9, color='5B6B62')
-hdr = ['Region', 'Companies in pool', 'Non-financial', 'Delisted / distress flagged', 'With 9+ periods of revenue and cash-flow data', 'Pass the screen', 'Tier A: strict', 'Tier B: 6%+ growth, profit and cash flow 80%+', 'Tier C: added by looser profit / cash-flow limits', 'Pass the growth tests but have no gross margin (cannot be screened)', 'Share of screened that pass']
+hdr = ['Region', 'Companies in pool', 'Non-financial', 'Delisted / distress flagged', 'With 7+ periods of revenue and cash-flow data', 'Pass the screen', 'Tier A: strict', 'Tier B: 6%+ growth, profit and cash flow 80%+', 'Tier C: added by looser profit / cash-flow limits', 'Tier D: short record (7-8 periods)', 'Pass the growth tests but have no gross margin (cannot be screened)', 'Share of screened that pass']
 ov.append([])
 ov.append(hdr)
 for i, h in enumerate(hdr, 1):
@@ -185,26 +186,26 @@ ov.row_dimensions[4].height = 58
 for k, label in enumerate(['Asia & Pacific', 'Europe', 'USA & Canada', 'Europe micro']):
     st = res[label][1]
     row = 5 + k
-    vals = [label, st['pool'], st['nonfin'], st['excluded'], st['hist'] - st['nocfo'], st['passed'], st['A'], st['B'], st['C'], st['nogm'], f'=F{row}/E{row}']
+    vals = [label, st['pool'], st['nonfin'], st['excluded'], st['hist'] - st['nocfo'], st['passed'], st['A'], st['B'], st['C'], st['D'], st['nogm'], f'=F{row}/E{row}']
     for i, v in enumerate(vals, 1):
         cell = ov.cell(row=row, column=i, value=v)
         cell.font = Font(name=F, size=10, color='0000FF' if isinstance(v, int) else '000000')
         cell.alignment = Alignment(horizontal='left' if i == 1 else 'right')
         cell.border = Border(bottom=thin)
-    ov.cell(row=row, column=11).number_format = '0.0%'
+    ov.cell(row=row, column=12).number_format = '0.0%'
 row = 9
 ov.cell(row=row, column=1, value='Total').font = Font(name=F, bold=True, size=10)
-for i in range(2, 11):
+for i in range(2, 12):
     col = get_column_letter(i)
     c = ov.cell(row=row, column=i, value=f'=SUM({col}5:{col}8)')
     c.font = Font(name=F, bold=True, size=10)
     c.alignment = Alignment(horizontal='right')
-ov.cell(row=row, column=11, value='=F9/E9').number_format = '0.0%'
-ov.cell(row=row, column=11).font = Font(name=F, bold=True, size=10)
-ov.cell(row=row, column=11).alignment = Alignment(horizontal='right')
+ov.cell(row=row, column=12, value='=F9/E9').number_format = '0.0%'
+ov.cell(row=row, column=12).font = Font(name=F, bold=True, size=10)
+ov.cell(row=row, column=12).alignment = Alignment(horizontal='right')
 notes = [
     'Reading the overview',
-    '- "Pass the screen" lists are on the other tabs, sorted by v6 rank, with thesis commentary (business, competitive position, shareholders, red flags) from the dashboard research notes. The last column of each tab gives the tier: A = strict screen, B = previous screen (6%+ growth, profit and cash flow 80%+), C = added by the looser profit (70%) and cash-flow (50%) limits.',
+    '- "Pass the screen" lists are on the other tabs, sorted by v6 rank, with thesis commentary (business, competitive position, shareholders, red flags) from the dashboard research notes. The last column of each tab gives the tier: A = strict screen, B = previous screen (6%+ growth, profit and cash flow 80%+), C = added by the looser profit (70%) and cash-flow (50%) limits, D = short record of only 7-8 periods of revenue history (growth per year is measured over the periods available, so it is a younger track record).',
     '- Europe uses tier F in the net-debt file to mark financial companies (banks, insurers); the other pools have a separate non-financial file.',
     '- Companies without a gross margin cannot pass the margin test; the column "have no gross margin" shows how many would otherwise have passed (the overview column shows the count per region).',
     '- Colour code in the data tabs: blue = values taken from the dashboard data, black = formulas (revenue growth per year, P/E, net debt / market cap) and text.',
@@ -215,7 +216,7 @@ for k, t in enumerate(notes):
     c = ov.cell(row=11 + k, column=1, value=t)
     c.font = Font(name=F, bold=(k == 0), size=10)
     c.alignment = Alignment(wrap_text=False)
-for i, w in enumerate([18, 14, 14, 16, 16, 14, 14, 20, 22, 30, 14], 1):
+for i, w in enumerate([18, 14, 14, 16, 16, 14, 14, 20, 22, 18, 30, 14], 1):
     ov.column_dimensions[get_column_letter(i)].width = w
 
 out = R + 'docs/revenue-compounders.xlsx'
